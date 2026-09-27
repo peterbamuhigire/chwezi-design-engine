@@ -1,0 +1,35 @@
+{
+  "label": "SYNTHETIC TEST DATA - internal output-format demonstration",
+  "currency_label": "SCU (synthetic cash units; not a real currency)",
+  "periods": 4,
+  "opening_cash": 0,
+  "monthly_billings": 100,
+  "monthly_cash_costs": 60,
+  "available_liquidity": 100,
+  "collection_rate_percent": 100,
+  "assumption_date": "2026-09-27",
+  "source_id": "P13-SYNTHETIC-CASH-TIMING-FIXTURE",
+  "source_note": "Values reproduce the bounded P13 synthetic fixture for document-format testing; no customer, market or accounting source was supplied.",
+  "scenarios": [
+    {
+      "id": "No lag",
+      "lag": 0,
+      "action": "Synthetic baseline only"
+    },
+    {
+      "id": "One-period lag",
+      "lag": 1,
+      "action": "Use the synthetic liquidity buffer; defer the next test milestone until collections are confirmed"
+    },
+    {
+      "id": "Two-period lag",
+      "lag": 2,
+      "action": "Synthetic funding gap exceeds the assumed buffer; any real rollout would require a funding-owner decision"
+    }
+  ],
+  "limits": [
+    "No customer, product, geography or market denominator is established.",
+    "Revenue recognition, reporting framework, tax and statutory treatment are NOT_ASSESSED.",
+    "No actual financing source, approved threshold, transaction or management decision is represented."
+  ]
+}

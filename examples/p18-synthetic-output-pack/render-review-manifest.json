@@ -23,6 +23,22 @@
     {
       "path": "renders/final/synthetic-executive-briefing.pdf",
       "state": "local-review-export"
+    },
+    {
+      "path": "renders/final/mutation-proof/synthetic-internal-proposal.docx",
+      "state": "synthetic-one-input-mutation-review-export"
+    },
+    {
+      "path": "renders/final/mutation-proof/synthetic-cash-timing-report.docx",
+      "state": "synthetic-one-input-mutation-review-export"
+    },
+    {
+      "path": "renders/final/mutation-proof/synthetic-cash-timing-model.xlsx",
+      "state": "synthetic-one-input-mutation-review-export"
+    },
+    {
+      "path": "renders/final/mutation-proof/synthetic-executive-briefing.pptx",
+      "state": "synthetic-one-input-mutation-review-export"
     }
   ],
   "stages": {
@@ -32,13 +48,25 @@
         {
           "type": "retained-artifact",
           "reference": "build_pack.py",
-          "sha256": "e7d6ccee0ee49e242f1a8ee9693d9c9f9c6f606ddd6ea0dba6c67ce6991be730",
+          "sha256": "33e1d5ff5957c5857c67febadbb328e58da66caf6ba8b1aa82e1084af96c5eaf",
           "verification": "AUTOMATED"
         },
         {
           "type": "retained-artifact",
           "reference": "source-data.json",
           "sha256": "7f6d0726f2b51e598aa3919f5cc58a656aa8c07a5792cf0833d212db57a5c241",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "build_mutation_fixture.py",
+          "sha256": "f3bb24d97356784eedf96e19ec31f3e04332004aee06b72af37fd405b8779900",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "verify_mutation_fixture.py",
+          "sha256": "66eafb998894bcec7c81dcf2d8a4313822553cb815d5a14434f21a26081027b7",
           "verification": "AUTOMATED"
         }
       ]
@@ -49,19 +77,19 @@
         {
           "type": "retained-artifact",
           "reference": "renders/final/reopened/synthetic-internal-proposal.docx",
-          "sha256": "df191d07c0e6251649b0f8f00ce468e380cf1885fe0ab19988f2aaeceb1e5535",
+          "sha256": "c7aa0f5655cf79cd9b2613f4b0d98b3d47c50821e71b4d782a98e141ed653a48",
           "verification": "AUTOMATED"
         },
         {
           "type": "retained-artifact",
           "reference": "renders/final/reopened/synthetic-cash-timing-model.xlsx",
-          "sha256": "002a40b24ff80c6b06c70e0d6fe2cdf2ba4331068b64099f31863e72ae3d6582",
+          "sha256": "8e91916a0663e478f2837a13c380f541bdec38915f593cdc0074a27bbafed9bf",
           "verification": "AUTOMATED"
         },
         {
           "type": "retained-artifact",
           "reference": "renders/final/reopened/synthetic-executive-briefing.pptx",
-          "sha256": "7f2620e42febd9f35dc435c023f9bec05ecc6ea09b366ec36e10becf51fad832",
+          "sha256": "5c2e6d79da6421df9024832ae59e40f3138e4de3564581dec9c156655bee562e",
           "verification": "AUTOMATED"
         }
       ]
@@ -72,7 +100,7 @@
         {
           "type": "retained-artifact",
           "reference": "renders/final/synthetic-cash-timing-report.pdf",
-          "sha256": "1b20e526eb06cc7b3a6ed035bf602326229ee85c4bbe844b264d93cbdbebc204",
+          "sha256": "d8a8147d40042fcc5e9803a6a2afe7cde11d5864871992a23984a01b92e9e572",
           "verification": "AUTOMATED"
         },
         {
@@ -86,12 +114,24 @@
           "reference": "renders/final/pages/cash-timing-chart-mobile-preview.png",
           "sha256": "8feef8c635943df17849a664d3414fc1b0872a52f9f376be84202e280343f510",
           "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/mutation-proof/synthetic-cash-timing-report.pdf",
+          "sha256": "df03241e2b6384e1457c5519775fb0a9cf75a8d70de63f3a401e90ac1cb7c9ab",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/mutation-proof/cash-timing-gap.png",
+          "sha256": "adbc66f9195f5e79895812c93abc89a44c6c438db032b37c3d2ece9ffae37a6c",
+          "verification": "AUTOMATED"
         }
       ]
     },
     "visual_qa": {
       "result": "CONDITIONAL",
-      "evidence": "Lead Consultant heuristic inspection of all final PDF pages, deck slides, workbook print regions and the 390-pixel infographic preview is recorded in render-review.md. The mobile preview is resized evidence only, not actual-device or independent professional review."
+      "evidence": "Lead Consultant heuristic inspection of all final PDF pages, deck slides, workbook print regions, the 390-pixel infographic preview and the retained mutation report/chart renders is recorded in render-review.md. The mobile preview is resized evidence only, not actual-device or independent professional review."
     },
     "accessibility": {
       "result": "NOT ASSESSED",
@@ -139,22 +179,37 @@
   },
   "artifact_sha256": {
     ".gitignore": "88145b4f75a7cd2a9065e2067317c3d4785d976b8cef1485f5550273700593f6",
-    "synthetic-internal-proposal.docx": "46982fc768bf1884f597dee1f3b2c3ff7c24982763a5b74309de03c926b88453",
-    "synthetic-cash-timing-report.docx": "cd30b8831602e6dfe1b074ac3f2541fa97c5d001b0083b906b298615244cbd4a",
-    "synthetic-cash-timing-model.xlsx": "171de88ca4a5ea4da7557336f884e8186ae22ceccb5027b683eeb6e8e9cb5c3d",
-    "synthetic-executive-briefing.pptx": "1d3c50581f3c3eeea9cfd65b15480b5952d65c00ecd9ca88c16ddd6c458cf533",
+    "build_mutation_fixture.py": "f3bb24d97356784eedf96e19ec31f3e04332004aee06b72af37fd405b8779900",
+    "build_pack.py": "33e1d5ff5957c5857c67febadbb328e58da66caf6ba8b1aa82e1084af96c5eaf",
     "cash-timing-chart.png": "81f33093d170a4ece0df71b65d742086baba6e9266b988a86f2d8c8343f4f0c6",
-    "source-data.json": "7f6d0726f2b51e598aa3919f5cc58a656aa8c07a5792cf0833d212db57a5c241",
-    "build_pack.py": "e7d6ccee0ee49e242f1a8ee9693d9c9f9c6f606ddd6ea0dba6c67ce6991be730",
-    "verify_pack.py": "42ca6f08c5e89b126c75eba822e337956d603cd7b3930e3e403a1534816bbf49",
-    "README.md": "87f785501fbe45aa899200aecb570086f95169792b1135569eae1e5791872ecf",
-    "render-review.md": "5fd13ac7474b8dab5554e362c9826ae9edd3b3634f791c2c0c525400e93be481",
+    "README.md": "9590eabe7d61606e55fcf44a01288b01cc98b92e68d8c355509b198a150a9c2e",
+    "render-review.md": "0e672ba3eea688757835408ba5a80913f794c70a75e1ff82ec150793b702fd81",
     "renders/final/font-substitution-check.pdf": "3928faec4d7bb843bab2a39aa57bcf3f15878e6ee25c6d6207348c38ab15681c",
+    "renders/final/mutation-proof/cash-timing-gap.png": "adbc66f9195f5e79895812c93abc89a44c6c438db032b37c3d2ece9ffae37a6c",
+    "renders/final/mutation-proof/pages/synthetic-cash-timing-model-01.png": "0348d7f0f3ef88f86f833ddd88b6a6e4835c637b86eb6ae64129e98a0b9640ff",
+    "renders/final/mutation-proof/pages/synthetic-cash-timing-model-02.png": "6af9d75877d5a87441f1a17b030f7b7b1f8586c1dee7a99e17ff8deb1ae83941",
+    "renders/final/mutation-proof/pages/synthetic-cash-timing-model-03.png": "aac2a7debf8d985538c3139b7ad94293dacfb89d3887cc441aa74a82bb3f26b9",
+    "renders/final/mutation-proof/pages/synthetic-cash-timing-report-01.png": "7de3e34d1f64fd325084b16cd5ec72df2f641780653ca08824b0a0aab0495683",
+    "renders/final/mutation-proof/pages/synthetic-cash-timing-report-02.png": "8592df7f8ccb93ddf516517b5b42cb79849b2f7d8a92fd3e3a5fabbf05149be8",
+    "renders/final/mutation-proof/pages/synthetic-executive-briefing-01.png": "67e112e3643611f94db886c69acf56796711ded922ee76a1f540b5e7aa8eec4c",
+    "renders/final/mutation-proof/pages/synthetic-executive-briefing-02.png": "9d134da47d9b0b841189eb787ca24609b26e828e45674d8cf1ddb5979b879438",
+    "renders/final/mutation-proof/pages/synthetic-executive-briefing-03.png": "36a9eaac0e776fbf06f192b0ff15e39917b19c45199191777eee81eb396af98c",
+    "renders/final/mutation-proof/pages/synthetic-executive-briefing-04.png": "9d3e957cbfc7020b931b14bea436df71a844aaa2eca40478bf974e800e5c5efb",
+    "renders/final/mutation-proof/pages/synthetic-executive-briefing-05.png": "9c88241df6dd913ca35f437747aa0e4358196a8817211ef63f8066e07dd2bc4e",
+    "renders/final/mutation-proof/recalculated/synthetic-cash-timing-model.xlsx": "323241183b48750414e39e3a981739f5a741d4abde427bcc31cab990826c060c",
+    "renders/final/mutation-proof/source-data.json": "c2f983df134f463fa8c986537dc5264b5db6f2e1f8c11113f067127693150f7a",
+    "renders/final/mutation-proof/synthetic-cash-timing-model.pdf": "e631931652a6bd3910cd1c3097334dbb94f75aaa47814db8ceefd8c2e89f51f2",
+    "renders/final/mutation-proof/synthetic-cash-timing-model.xlsx": "d3db010f84a16d03a98955c08fbbff3eca3f5e1cd900b95b012418f980266624",
+    "renders/final/mutation-proof/synthetic-cash-timing-report.docx": "3f0e20d907771fb4e707add032bc1423df4073584b0f031e4b66302a7f0ca680",
+    "renders/final/mutation-proof/synthetic-cash-timing-report.pdf": "df03241e2b6384e1457c5519775fb0a9cf75a8d70de63f3a401e90ac1cb7c9ab",
+    "renders/final/mutation-proof/synthetic-executive-briefing.pdf": "3ecd9bbad3f3cc3f2519aac3bef0948d23b04cd4a795c1677a694eefaed2c53f",
+    "renders/final/mutation-proof/synthetic-executive-briefing.pptx": "e3874ae46355b72f8df51a07a9d8285d888b9882da6d1de3634c23454ba94672",
+    "renders/final/mutation-proof/synthetic-internal-proposal.docx": "483daa3e7ac2d709ebc424b4c43726189269d1777aa223c631f2c822770eb095",
     "renders/final/pages/cash-timing-chart-mobile-preview.png": "8feef8c635943df17849a664d3414fc1b0872a52f9f376be84202e280343f510",
     "renders/final/pages/synthetic-cash-timing-model-01.png": "c7e3f01a655c646a1e268adbc6c970b131116be72c133ca2eaec1aabafdf13af",
     "renders/final/pages/synthetic-cash-timing-model-02.png": "e9d0c9d3b2d279f0ca5c5c393f8c93554a6adf3fb69b63536c4b06dc505eb063",
     "renders/final/pages/synthetic-cash-timing-model-03.png": "aac2a7debf8d985538c3139b7ad94293dacfb89d3887cc441aa74a82bb3f26b9",
-    "renders/final/pages/synthetic-cash-timing-report-01.png": "6511be59bce624faffce1237f8f520b59bf43e9185c66dcb23df23c728b2cd47",
+    "renders/final/pages/synthetic-cash-timing-report-01.png": "a8ff306237031dd1038a4f85d5045aabc98429fcd20466550bc900a88507aa28",
     "renders/final/pages/synthetic-cash-timing-report-02.png": "d048414291ae32056c5032cfc7de3090273f00e9d7ff880ad47e3e7090946e2f",
     "renders/final/pages/synthetic-executive-briefing-01.png": "b3ca4f94cce10a14501b77b47e83d6bcea490a83afd368bd9d0bbff0a80379f9",
     "renders/final/pages/synthetic-executive-briefing-02.png": "86ccb13b91e693bd207cbdd14fbffb217bac9e2050f2a9ffeace4ddc18995ece",
@@ -162,15 +217,22 @@
     "renders/final/pages/synthetic-executive-briefing-04.png": "70025d121204e604091c88281375dcad8e9381ab6e3373c1a0035aeec8c0267f",
     "renders/final/pages/synthetic-executive-briefing-05.png": "9c88241df6dd913ca35f437747aa0e4358196a8817211ef63f8066e07dd2bc4e",
     "renders/final/pages/synthetic-internal-proposal-01.png": "48f07a8ce315aee831236303c7e14929ab35ee0f62c513b774bd81d44a832e72",
-    "renders/final/recalculated/synthetic-cash-timing-model.xlsx": "171de88ca4a5ea4da7557336f884e8186ae22ceccb5027b683eeb6e8e9cb5c3d",
-    "renders/final/reopened/synthetic-cash-timing-model.xlsx": "002a40b24ff80c6b06c70e0d6fe2cdf2ba4331068b64099f31863e72ae3d6582",
-    "renders/final/reopened/synthetic-cash-timing-report.docx": "3c3c73d69d3ba5874d31a780c1c4da35974d246067ebc771f5fd2f0d70c33f79",
-    "renders/final/reopened/synthetic-executive-briefing.pptx": "7f2620e42febd9f35dc435c023f9bec05ecc6ea09b366ec36e10becf51fad832",
-    "renders/final/reopened/synthetic-internal-proposal.docx": "df191d07c0e6251649b0f8f00ce468e380cf1885fe0ab19988f2aaeceb1e5535",
-    "renders/final/synthetic-cash-timing-model.pdf": "4becfd6bd83a2b1e36386cdae09eb003b815e15fd3eda9f9c5ae59724997480f",
-    "renders/final/synthetic-cash-timing-report.pdf": "1b20e526eb06cc7b3a6ed035bf602326229ee85c4bbe844b264d93cbdbebc204",
-    "renders/final/synthetic-executive-briefing.pdf": "b4fdc60daad6cb87e79b26a2a331bd46b4a77c080429487c1f35a50c2c28affd",
-    "renders/final/synthetic-internal-proposal.pdf": "2456a407bb50ca5e7e8f6454b9406981fd9b33e256d5691eabd958b00a4fabf4"
+    "renders/final/recalculated/synthetic-cash-timing-model.xlsx": "0952d42094ed45638e3aa97a91dd98c680a58c236425908a28fc1ab2406f3386",
+    "renders/final/reopened/synthetic-cash-timing-model.xlsx": "8e91916a0663e478f2837a13c380f541bdec38915f593cdc0074a27bbafed9bf",
+    "renders/final/reopened/synthetic-cash-timing-report.docx": "ca5f8b38c06c195fb79421c0d83dda45a19c84740c265ddf97cd1f1acc474911",
+    "renders/final/reopened/synthetic-executive-briefing.pptx": "5c2e6d79da6421df9024832ae59e40f3138e4de3564581dec9c156655bee562e",
+    "renders/final/reopened/synthetic-internal-proposal.docx": "c7aa0f5655cf79cd9b2613f4b0d98b3d47c50821e71b4d782a98e141ed653a48",
+    "renders/final/synthetic-cash-timing-model.pdf": "b5065b56837896f1135dced4d2a8ecbcdb366eb7b10079f7a05885df3a3a25a4",
+    "renders/final/synthetic-cash-timing-report.pdf": "d8a8147d40042fcc5e9803a6a2afe7cde11d5864871992a23984a01b92e9e572",
+    "renders/final/synthetic-executive-briefing.pdf": "2b8e62755a184b247318baffcc126c5da079e433c12a378a0bb000e14327a13c",
+    "renders/final/synthetic-internal-proposal.pdf": "c61382644b48ccd8a8e76f44c01964c64873fe05498b4354a1e67010435287f1",
+    "source-data.json": "7f6d0726f2b51e598aa3919f5cc58a656aa8c07a5792cf0833d212db57a5c241",
+    "synthetic-cash-timing-model.xlsx": "0952d42094ed45638e3aa97a91dd98c680a58c236425908a28fc1ab2406f3386",
+    "synthetic-cash-timing-report.docx": "4ebadad40d2271de247a0b5955de4f6bfb63d261931e3f0a3799ba82bf50d090",
+    "synthetic-executive-briefing.pptx": "69395fd480f26955ece57f307189e3c271e5cf0c52a3c8b725268dd5035d81ce",
+    "synthetic-internal-proposal.docx": "60e160876dd1cf27b009f3ad414bc3e76912d7c13df3cb199291a1ba3720d74c",
+    "verify_mutation_fixture.py": "66eafb998894bcec7c81dcf2d8a4313822553cb815d5a14434f21a26081027b7",
+    "verify_pack.py": "42ca6f08c5e89b126c75eba822e337956d603cd7b3930e3e403a1534816bbf49"
   },
   "limitations": [
     "Synthetic P13 cash-timing data only; no real client, transaction, business plan, accounting opinion, tax treatment, financing decision or source ledger.",

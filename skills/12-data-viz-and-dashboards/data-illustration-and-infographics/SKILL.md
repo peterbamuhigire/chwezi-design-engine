@@ -51,6 +51,16 @@ Own the visual translation of a complex idea into a memorable, truthful, self-co
 9. **Exercise failure paths.** Test a missing value, long label, narrow viewport, greyscale print, colour-vision deficiency, 200% zoom, screen reader reading order, and a serious-topic or low-attention interpretation.
 10. **Render, refine, and record.** Inspect at the target size and a reduced thumbnail. Remove one unnecessary element, correct one ambiguity, and retain the design decision that works. Record source/rights, assumptions, checks, reviewer, and unresolved `NOT_ASSESSED` items.
 
+### Mobile product and social infographics
+
+For a product-listing image, social post, or other image commonly scanned on a phone, treat the actual image slot as the design canvas. At its delivered size, the reader should be able to identify the subject, the single buyer-relevant message, and the evidence for that message at a glance. If the copy needs zooming, split or recompose the story; do not reduce type to preserve every detail. Keep supporting facts in a companion image, caption, or accessible text alternative.
+
+- Choose one message for each image. Make one benefit, comparison, instruction, or proof point dominant; move secondary benefits and specifications elsewhere.
+- Prefer visible proof when the category supports it: a truthful before/after, a product beside a familiar scale reference, or a clearly enumerated package-contents view. Show context and limitations so a comparison does not imply an unsupported result or included item.
+- Use a consistent, purpose-fit type, colour, shape, and image treatment across the image set. Balance, contrast, hierarchy, proximity, whitespace, proportion, repetition, and movement should reinforce the same reading path; variety must not compete with the focal point.
+- Treat hooks, novelty, density, point-of-view, saves, shares, virality, and conversion lift as hypotheses for a specific audience and channel. Do not equate information density with value or claim a design will outperform without valid comparative evidence.
+- Review the exported asset in the real listing/feed slot and on a representative narrow viewport. Record dimensions, smallest essential text, the first three-second reading, crop behaviour, and any device or audience checks that were not performed. A resized preview is not a device or comprehension test.
+
 ## Decision Rules
 
 | Condition | Action | Wrong-choice failure |
@@ -61,6 +71,8 @@ Own the visual translation of a complex idea into a memorable, truthful, self-co
 | Data is uncertain, incomplete, or estimated | Show range, missingness, definition, and confidence in plain language | A clean icon or single number implies certainty |
 | The topic involves harm, grief, inequality, illness, or trauma | Use warmth and clarity without jokes, caricature, gamification, or sensational contrast | Humour trivialises the subject or damages trust |
 | The output will be read on mobile or shared as an image | Create a mobile composition or split sequence; preserve type size and text alternative | Shrinking the desktop poster makes it unreadable |
+| The infographic is a secondary product-listing or social image | Give the image one buyer- or reader-relevant message; show contextual proof where it is truthful; check it at the delivered slot size | Dense copy, unsupported before/after claims, and unexplained measurements are skipped or misread |
+| A proposed hook, novelty, or dense save-worthy checklist is meant to improve reach or conversion | State it as a channel-specific hypothesis and define a valid comparison before claiming impact | Virality anecdotes or design rules are mistaken for causal evidence |
 | A visual choice cannot be explained by audience, message, or medium | Remove it or mark it as an experiment | Decoration masquerades as design |
 
 ## Capability Contract

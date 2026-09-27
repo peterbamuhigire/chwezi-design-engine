@@ -19,6 +19,8 @@ The visual system uses deep ink, warm paper and teal for the primary path, with 
 | `source-data.json` | — | Synthetic inputs and explicit scope boundary |
 | `build_pack.py` | — | Deterministic source generator |
 | `verify_pack.py` | — | Formula, structure, reopen and render consistency checks |
+| `build_mutation_fixture.py` | — | Rebuilds the pack with a synthetic 100 SCU buffer assumption |
+| `verify_mutation_fixture.py` | — | Checks changed values across the recalculated workbook, report and deck |
 | `render-review-manifest.json` | — | Output hashes, checks and unresolved presentation evidence |
 
 The workbook figures recalculate to cash troughs of 0, -60 and -120 SCU; funding needs of 0, 60 and 120; gaps of 0, 0 and 45; and fixture receivables of 0, 100 and 200. SCU is not a currency. These values reproduce only the synthetic P13 cash-timing fixture. They do not model accounting recognition, tax, customer credit, financing availability or a real business.
@@ -30,7 +32,11 @@ From this directory:
 ```powershell
 python build_pack.py
 python verify_pack.py
+python build_mutation_fixture.py
+python verify_mutation_fixture.py
 ```
+
+The mutation command creates an isolated variant under `renders/final/mutation-proof/`; recalculate its workbook and export its report, workbook and deck through the same LibreOffice workflow before running its verifier. The retained proof changes the buffer from 75 to 100 SCU and confirms the gap updates from 45 to 20 SCU across formats without stale figures.
 
 The local proof used LibreOffice 26.2.4.2 for XLSX recalculation, DOCX/XLSX/PPTX reopen-roundtrip and PDF export, then Ghostscript 10.07.0 for 100-DPI page previews. Python 3.13 with `python-docx`, `openpyxl`, `python-pptx`, Pillow and PyMuPDF read and verify the native files, caches and PDFs. The Excel cache was checked after LibreOffice recalculation. See `renders/final/pages/` for every inspected page and slide, including the 390-pixel infographic preview. `renders/final/reopened/` contains separate round-trip copies; it does not replace the generated editable sources.
 

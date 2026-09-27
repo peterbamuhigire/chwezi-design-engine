@@ -72,9 +72,20 @@ def simulate(lag: int) -> dict:
 
 
 RESULTS = [(scenario, simulate(scenario["lag"])) for scenario in DATA["scenarios"]]
-assert [x[1]["need"] for x in RESULTS] == [0, 60, 120]
-assert [x[1]["gap"] for x in RESULTS] == [0, 0, 45]
-assert all(sum(x[1]["billings"]) == 400 for x in RESULTS)
+assert all(r["need"] == max(0, -r["trough"]) for _, r in RESULTS)
+assert all(r["gap"] == max(0, r["need"] - r["liquidity"]) for _, r in RESULTS)
+assert len({sum(r["billings"]) for _, r in RESULTS}) == 1
+
+
+def gap_headline() -> str:
+    positive = [(scenario, result) for scenario, result in RESULTS if result["gap"] > 0]
+    if not positive:
+        return "Every timing case remains within the assumed buffer"
+    if len(positive) == 1:
+        lag = positive[0][0]["lag"]
+        label = {1: "one-period", 2: "two-period"}.get(lag, f"{lag}-period")
+        return f"Only the {label} delay leaves a gap"
+    return "Collection delays leave different funding gaps"
 
 
 def set_cell_fill(cell, colour: str) -> None:
@@ -200,8 +211,8 @@ def make_chart() -> None:
         kicker.set_variation_by_axes([600])
     metric = ImageFont.truetype(str(display_path), 132) if display_path.exists() else ImageFont.load_default()
     draw.text((82, 46), "SYNTHETIC CASH UNITS", font=kicker, fill=f"#{MUTED}")
-    draw.text((80, 104), "Only the two-period delay leaves a gap", font=title, fill=f"#{INK}")
-    draw.text((84, 194), "Unfunded amount beyond the assumed 75 SCU buffer", font=body, fill=f"#{MUTED}")
+    draw.text((80, 104), gap_headline(), font=title, fill=f"#{INK}")
+    draw.text((84, 194), f"Unfunded amount beyond the assumed {DATA['available_liquidity']} SCU buffer", font=body, fill=f"#{MUTED}")
     colours = ["#176B68", "#1466A5", "#9C3F35"]
     names = ["No lag", "One period", "Two periods"]
     gaps = [result["gap"] for _, result in RESULTS]
@@ -220,7 +231,8 @@ def make_chart() -> None:
 def make_report() -> None:
     doc = setup_doc(OUT["report"], "Collection delay and cash timing", "Synthetic research note  /  Four-period operating cash bridge")
     doc.add_heading("Finding", 1)
-    doc.add_paragraph("With billings and cash costs held constant, longer collection delays deepen the temporary cash trough. In this artificial four-period example, the two-period delay creates a 45 SCU gap beyond the assumed 75 SCU buffer. The numbers demonstrate timing arithmetic only.", style="Normal")
+    max_gap = max(r["gap"] for _, r in RESULTS)
+    doc.add_paragraph(f"With billings and cash costs held constant, longer collection delays deepen the temporary cash trough. In this artificial four-period example, the largest scenario gap is {max_gap} SCU beyond the assumed {DATA['available_liquidity']} SCU buffer. The numbers demonstrate timing arithmetic only.", style="Normal")
     doc.add_paragraph("The result is conditional on the input fixture. It does not establish a customer, market, revenue-recognition rule, financing source, accounting basis, tax treatment or rollout decision.")
     doc.add_heading("Scenario comparison", 1)
     summary = [[s["id"], str(s["lag"]), str(sum(r["billings"])), str(r["trough"]), str(r["need"]), str(r["gap"]), str(r["receivables"])] for s, r in RESULTS]
@@ -232,8 +244,9 @@ def make_report() -> None:
     doc.add_heading("Buffer gap by collection delay", 1)
     pic = doc.add_picture(str(OUT["chart"]), width=Inches(5.2))
     doc_pr = pic._inline.docPr
-    doc_pr.set("descr", "Three synthetic collection-delay cases show the gap beyond an assumed 75 SCU buffer: zero for no lag, zero for one-period lag, and 45 SCU for two-period lag.")
-    cap = doc.add_paragraph("Figure 1. Only the two-period delay leaves a gap beyond the assumed buffer.")
+    gap_detail = "; ".join(f"{scenario['lag']}-period lag: {result['gap']} SCU" for scenario, result in RESULTS)
+    doc_pr.set("descr", f"Three synthetic collection-delay cases show the gap beyond the assumed {DATA['available_liquidity']} SCU buffer: {gap_detail}.")
+    cap = doc.add_paragraph("Figure 1. Scenario comparison of unfunded gaps beyond the assumed buffer.")
     cap.style = doc.styles["Caption"]
     source = doc.add_paragraph(f"Source: {DATA['source_id']} (synthetic fixture; {DATA['assumption_date']}).")
     source.style = doc.styles["Caption"]
@@ -250,7 +263,7 @@ def make_report() -> None:
     doc.add_heading("Inputs and interpretation", 1)
     inputs = [
         ["Billings / cash costs", "100 / 60 SCU per period", "Artificial inputs; held constant across all scenarios."],
-        ["Opening cash / buffer", "0 / 75 SCU", "The buffer is assumed; it is not committed funding."],
+        ["Opening cash / buffer", f"{DATA['opening_cash']} / {DATA['available_liquidity']} SCU", "The buffer is assumed; it is not committed funding."],
         ["Horizon / collection", "4 periods / 100%", "Simplifying test assumptions; credit risk is not modelled."],
         ["Reporting framework", "Not selected", "No entity-specific financial statements are produced."],
         ["Revenue / tax", "NOT ASSESSED", "No recognition, tax rate or statutory treatment is included."],
@@ -393,14 +406,15 @@ def make_workbook() -> None:
     chart = BarChart()
     chart.type = "col"
     chart.style = 10
-    chart.title = "Only the two-period delay leaves a gap"
+    chart.title = gap_headline()
     chart.x_axis.title, chart.y_axis.title = "Collection delay", "Unfunded gap (SCU)"
     chart.height, chart.width = 8, 22
     chart.add_data(Reference(chartdata, min_col=2, min_row=3, max_row=6), titles_from_data=True)
     chart.set_categories(Reference(chartdata, min_col=1, min_row=4, max_row=6))
     chart.legend = None
-    chart.y_axis.scaling.min, chart.y_axis.scaling.max = 0, 50
-    chart.y_axis.majorUnit = 10
+    chart.y_axis.scaling.min = 0
+    chart.y_axis.scaling.max = max(10, ((max(r["gap"] for _, r in RESULTS) + 9) // 10) * 10)
+    chart.y_axis.majorUnit = max(1, chart.y_axis.scaling.max // 5)
     chart.series[0].graphicalProperties.solidFill = TEAL
     chart.series[0].graphicalProperties.line.solidFill = TEAL
     summary.add_chart(chart, "A8")
@@ -442,17 +456,17 @@ def make_deck() -> None:
     add_text(slides[0], .8, 1.05, 11.6, .7, "Collection delay shifts cash needs", 30, INK, True, DISPLAY)
     add_text(slides[0], .85, 2.0, 10.8, .7, "A four-period synthetic fixture keeps billings and cash costs fixed", 18, TEAL, False)
     add_text(slides[0], .85, 3.65, 11.5, .35, "UNFUNDED GAP AFTER THE ASSUMED BUFFER", 11, MUTED, True)
-    for i, (name, value, colour) in enumerate((("No lag", "0 SCU", TEAL), ("One-period lag", "0 SCU", BLUE_INPUT), ("Two-period lag", "45 SCU", RED))):
+    for i, ((scenario, result), name, colour) in enumerate(zip(RESULTS, ("No lag", "One-period lag", "Two-period lag"), (TEAL, BLUE_INPUT, RED))):
         x = .85 + i * 4.1
-        add_text(slides[0], x, 4.12, 3.55, .55, value, 25, colour, True, DISPLAY)
+        add_text(slides[0], x, 4.12, 3.55, .55, f"{result['gap']} SCU", 25, colour, True, DISPLAY)
         add_text(slides[0], x, 4.78, 3.55, .38, name, 13, INK, True)
     add_text(slides[0], .85, 5.65, 11.4, .45, DATA["label"], 11, MUTED, True)
     add_text(slides[0], .85, 6.25, 11.4, .5, "SCU is not a real currency. Internal format test; no client or accounting conclusion.", 10, MUTED)
     add_text(slides[1], .75, .65, 11.8, .6, "The scenario holds billings and costs constant", 25, INK, True, DISPLAY)
     for i, (label, value, detail, color) in enumerate([
-        ("Billings", "400 SCU", "same in all cases", TEAL),
-        ("Cash costs", "240 SCU", "same in all cases", BLUE_INPUT),
-        ("Available buffer", "75 SCU", "assumption only", RED),
+        ("Billings", f"{sum(RESULTS[0][1]['billings'])} SCU", "same in all cases", TEAL),
+        ("Cash costs", f"{sum(RESULTS[0][1]['costs'])} SCU", "same in all cases", BLUE_INPUT),
+        ("Available buffer", f"{DATA['available_liquidity']} SCU", "assumption only", RED),
     ]):
         x = .85 + i * 4.1
         shape = slides[1].shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, SInches(x), SInches(2.05), SInches(3.55), SInches(2.0))
@@ -463,7 +477,7 @@ def make_deck() -> None:
     add_text(slides[1], .85, 5.2, 11.6, .8, "Assumptions are artificial test inputs; the fixture does not model revenue recognition, taxes, customer credit risk or actual financing.", 13, MUTED)
     add_text(slides[2], .75, .65, 11.8, .6, "Buffer gap by collection delay", 25, INK, True, DISPLAY)
     pic = slides[2].shapes.add_picture(str(OUT["chart"]), SInches(1.25), SInches(1.48), width=SInches(9.65))
-    pic._element._nvXxPr.cNvPr.set("descr", "Three-case synthetic comparison of gap beyond an assumed 75 SCU buffer: 0 SCU with no lag, 0 SCU with a one-period lag, 45 SCU with a two-period lag.")
+    pic._element._nvXxPr.cNvPr.set("descr", f"Three-case synthetic comparison of the gap beyond an assumed {DATA['available_liquidity']} SCU buffer. " + "; ".join(f"{scenario['lag']}-period lag: {result['gap']} SCU" for scenario, result in RESULTS) + ".")
     add_text(slides[2], .95, 7.15, 11.3, .2, "Synthetic calculation; not a forecast or committed funding gap.", 8, MUTED)
     add_text(slides[3], .75, .65, 11.8, .6, "Only receipt timing changes across the three cases", 25, INK, True, DISPLAY)
     headers = ["Lag", "Cash trough", "Funding need", "Buffer", "Gap", "Ending AR"]
