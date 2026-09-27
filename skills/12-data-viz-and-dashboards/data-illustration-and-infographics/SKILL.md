@@ -60,6 +60,13 @@ For a product-listing image, social post, or other image commonly scanned on a p
 - Use a consistent, purpose-fit type, colour, shape, and image treatment across the image set. Balance, contrast, hierarchy, proximity, whitespace, proportion, repetition, and movement should reinforce the same reading path; variety must not compete with the focal point.
 - Treat hooks, novelty, density, point-of-view, saves, shares, virality, and conversion lift as hypotheses for a specific audience and channel. Do not equate information density with value or claim a design will outperform without valid comparative evidence.
 - Review the exported asset in the real listing/feed slot and on a representative narrow viewport. Record dimensions, smallest essential text, the first three-second reading, crop behaviour, and any device or audience checks that were not performed. A resized preview is not a device or comprehension test.
+- Compare materially different treatments in the same target slot when the channel permits testing. Change one meaningful design choice at a time, define the audience, exposure, success measure, and stopping rule, and report uncertainty. Likes, anecdotes, and an uncontrolled before/after are not evidence of conversion lift.
+
+### Composition and data-story principles
+
+Use design principles as a set of checks on the visual argument, not a template that must add elements. The viewer should find the main claim first, understand its evidence next, and reach supporting detail only when needed. Give the focal point enough contrast and space to stand out; keep the composition balanced even when it is asymmetrical. Group related labels and exhibits by proximity, and use movement, rhythm, and directional cues to make the reading order feel natural. Repeat a restrained set of type, colour, shape, and annotation styles to create unity; introduce variety through scale or form only when it improves comparison or interest. Check that proportion accurately represents quantities and that emphasis does not exaggerate certainty. Remove any device that competes with the takeaway.
+
+For review, verify that balance, contrast, hierarchy, unity, repetition or pattern, movement or rhythm, emphasis, proximity, whitespace, proportion, and variety each support the intended audience and medium. A principle can be satisfied by a deliberate decision to keep an element simple or absent; do not add decoration to tick a box.
 
 ## Decision Rules
 
@@ -73,6 +80,7 @@ For a product-listing image, social post, or other image commonly scanned on a p
 | The output will be read on mobile or shared as an image | Create a mobile composition or split sequence; preserve type size and text alternative | Shrinking the desktop poster makes it unreadable |
 | The infographic is a secondary product-listing or social image | Give the image one buyer- or reader-relevant message; show contextual proof where it is truthful; check it at the delivered slot size | Dense copy, unsupported before/after claims, and unexplained measurements are skipped or misread |
 | A proposed hook, novelty, or dense save-worthy checklist is meant to improve reach or conversion | State it as a channel-specific hypothesis and define a valid comparison before claiming impact | Virality anecdotes or design rules are mistaken for causal evidence |
+| Multiple visual treatments are proposed for a performance decision | Compare at the actual target size with a defined audience, measure, and stopping rule; isolate meaningful design differences where practical | Confounded exposure or engagement proxies are mistaken for causal conversion evidence |
 | A visual choice cannot be explained by audience, message, or medium | Remove it or mark it as an experiment | Decoration masquerades as design |
 
 ## Capability Contract
