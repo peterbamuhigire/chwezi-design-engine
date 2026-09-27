@@ -1,4 +1,5 @@
 {
+  "name": "design-system",
   "version": "1.0.0",
   "skills": [
     "./skills/00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance/",
