@@ -91,7 +91,7 @@
     },
     "visual_qa": {
       "result": "CONDITIONAL",
-      "evidence": "Lead Consultant heuristic inspection of all final PDF pages, deck slides, workbook print regions and 390-pixel infographic preview is recorded in render-review.md. This is not independent professional design review or actual-device testing."
+      "evidence": "Lead Consultant heuristic inspection of all final PDF pages, deck slides, workbook print regions and the 390-pixel infographic preview is recorded in render-review.md. The mobile preview is resized evidence only, not actual-device or independent professional review."
     },
     "accessibility": {
       "result": "NOT ASSESSED",
@@ -176,6 +176,6 @@
     "Synthetic P13 cash-timing data only; no real client, transaction, business plan, accounting opinion, tax treatment, financing decision or source ledger.",
     "French disclosure is a layout sample, not language-owner-approved.",
     "No Microsoft Office or recipient-machine parity test; no assistive-technology, contrast, keyboard, print-room, or human comprehension test.",
-    "Visual QA is self-review; the 390-pixel graphic is a resized preview, not an actual device test; no independent professional designer acceptance."
+    "Visual QA is Lead Consultant self-review; the 390-pixel graphic is a resized preview, not an actual-device test; no independent professional designer acceptance."
   ]
 }
