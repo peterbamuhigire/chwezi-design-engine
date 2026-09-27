@@ -1,11 +1,12 @@
 {
   "artifact_id": "p18-synthetic-output-pack",
-  "artifact_type": "Synthetic editable DOCX/XLSX/PPTX pack with PDF and page-render evidence",
+  "artifact_type": "Synthetic editable DOCX/XLSX/PPTX pack with a square mobile infographic, plain-text alternative, PDF and page-render evidence",
   "surfaces": [
     "proposal-docx-pdf",
     "research-report-docx-pdf",
     "cash-timing-xlsx-pdf",
-    "executive-briefing-pptx-pdf"
+    "executive-briefing-pptx-pdf",
+    "mobile-square-infographic-1080px-with-390px-target-size-preview"
   ],
   "renders": [
     {
@@ -39,6 +40,30 @@
     {
       "path": "renders/final/mutation-proof/synthetic-executive-briefing.pptx",
       "state": "synthetic-one-input-mutation-review-export"
+    },
+    {
+      "path": "cash-timing-chart-mobile.png",
+      "state": "1080px-square-phone-first-secondary-image"
+    },
+    {
+      "path": "cash-timing-chart-mobile-alt.txt",
+      "state": "plain-text-equivalent"
+    },
+    {
+      "path": "renders/final/pages/cash-timing-chart-mobile-preview.png",
+      "state": "390px-square-resized-target-size-review"
+    },
+    {
+      "path": "renders/final/mutation-proof/cash-timing-gap-mobile.png",
+      "state": "synthetic-one-input-mutated-mobile-image"
+    },
+    {
+      "path": "renders/final/mutation-proof/cash-timing-gap-mobile-preview.png",
+      "state": "390px-square-mutated-preview"
+    },
+    {
+      "path": "renders/final/mutation-proof/cash-timing-gap-mobile-alt.txt",
+      "state": "synthetic-one-input-mutated-text-equivalent"
     }
   ],
   "stages": {
@@ -48,7 +73,7 @@
         {
           "type": "retained-artifact",
           "reference": "build_pack.py",
-          "sha256": "33e1d5ff5957c5857c67febadbb328e58da66caf6ba8b1aa82e1084af96c5eaf",
+          "sha256": "6f551592a49981eba7db97bdbf335b44420f93f79798b8f9cc6a3517fc35c85d",
           "verification": "AUTOMATED"
         },
         {
@@ -60,13 +85,37 @@
         {
           "type": "retained-artifact",
           "reference": "build_mutation_fixture.py",
-          "sha256": "f3bb24d97356784eedf96e19ec31f3e04332004aee06b72af37fd405b8779900",
+          "sha256": "08478af7cd615afc3aad30a807bb86dab9edc5d6796340867358819a53689fd3",
           "verification": "AUTOMATED"
         },
         {
           "type": "retained-artifact",
           "reference": "verify_mutation_fixture.py",
-          "sha256": "66eafb998894bcec7c81dcf2d8a4313822553cb815d5a14434f21a26081027b7",
+          "sha256": "e8b9f51414109403043fc4937baa2427045ece759aa6e9652b02b9aadd24493f",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "cash-timing-chart-mobile.png",
+          "verification": "AUTOMATED",
+          "sha256": "93987279a640397c48188ba7d13a8b5cba208560a94ae53f6ec0372b8dcd575e"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "cash-timing-chart-mobile-alt.txt",
+          "verification": "AUTOMATED",
+          "sha256": "4cccd58fe551bc17d7f31bd8bc9c2c7646b3f9fb65b51dd3c74158d0e4094ce8"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/mutation-proof/cash-timing-gap-mobile.png",
+          "sha256": "e52b174cbd4589d0d23f77b590b3d3bc152d9f43f7dba49fc7c1a2c8b64d3c78",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/mutation-proof/cash-timing-gap-mobile-alt.txt",
+          "sha256": "b929c459dd67a612fda66080d7b31cde8fa47b32af14d695364755422206f6e5",
           "verification": "AUTOMATED"
         }
       ]
@@ -112,7 +161,7 @@
         {
           "type": "retained-artifact",
           "reference": "renders/final/pages/cash-timing-chart-mobile-preview.png",
-          "sha256": "8feef8c635943df17849a664d3414fc1b0872a52f9f376be84202e280343f510",
+          "sha256": "12707193d367c7f30ca9ea2a3a560d7d258242ed351030ca47294f04cd3d52a7",
           "verification": "AUTOMATED"
         },
         {
@@ -126,12 +175,18 @@
           "reference": "renders/final/mutation-proof/cash-timing-gap.png",
           "sha256": "adbc66f9195f5e79895812c93abc89a44c6c438db032b37c3d2ece9ffae37a6c",
           "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/mutation-proof/cash-timing-gap-mobile-preview.png",
+          "verification": "AUTOMATED",
+          "sha256": "89167079dfb6943f19119fe626cab1d8b986cf57680f619b95123020b18ab29b"
         }
       ]
     },
     "visual_qa": {
       "result": "CONDITIONAL",
-      "evidence": "Lead Consultant heuristic inspection of all final PDF pages, deck slides, workbook print regions, the 390-pixel infographic preview and the retained mutation report/chart renders is recorded in render-review.md. The mobile preview is resized evidence only, not actual-device or independent professional review."
+      "evidence": "Lead Consultant inspected the exported 1080px square asset and its 390px square preview at display size. One message, label hierarchy, unit and values are identifiable without zoom in the retained preview. This is resized-image evidence only; actual device, crop, customer comprehension and independent designer review remain NOT ASSESSED."
     },
     "accessibility": {
       "result": "NOT ASSESSED",
@@ -154,6 +209,11 @@
     {
       "id": "render-parity",
       "result": "CONDITIONAL"
+    },
+    {
+      "id": "mobile-slot-legibility",
+      "result": "CONDITIONAL",
+      "evidence": "1080x1080 square source; 390x390 preview; one claim; three large values; SCU unit; plain-text equivalent. Sized-file review only; actual device, marketplace crop and audience comprehension NOT ASSESSED."
     }
   ],
   "verdict": "CONDITIONAL",
@@ -163,7 +223,12 @@
     "body": "Atkinson Hyperlegible",
     "licence": "OFL in engine font library",
     "office_embedding": "not embedded; recipient substitution possible",
-    "local_pdf_embedding": "embedded subsets observed in local PDF inspection"
+    "local_pdf_embedding": "embedded subsets observed in local PDF inspection",
+    "infographic": {
+      "display": "Spectral SemiBold",
+      "labels": "Public Sans medium/semibold",
+      "reason": "Editorial headline and numeric voice paired with a clear, heavier label layer for phone-size reading."
+    }
   },
   "tools": {
     "python": "3.13",
@@ -179,11 +244,11 @@
   },
   "artifact_sha256": {
     ".gitignore": "88145b4f75a7cd2a9065e2067317c3d4785d976b8cef1485f5550273700593f6",
-    "build_mutation_fixture.py": "f3bb24d97356784eedf96e19ec31f3e04332004aee06b72af37fd405b8779900",
-    "build_pack.py": "33e1d5ff5957c5857c67febadbb328e58da66caf6ba8b1aa82e1084af96c5eaf",
+    "build_mutation_fixture.py": "08478af7cd615afc3aad30a807bb86dab9edc5d6796340867358819a53689fd3",
+    "build_pack.py": "6f551592a49981eba7db97bdbf335b44420f93f79798b8f9cc6a3517fc35c85d",
     "cash-timing-chart.png": "81f33093d170a4ece0df71b65d742086baba6e9266b988a86f2d8c8343f4f0c6",
-    "README.md": "9590eabe7d61606e55fcf44a01288b01cc98b92e68d8c355509b198a150a9c2e",
-    "render-review.md": "0e672ba3eea688757835408ba5a80913f794c70a75e1ff82ec150793b702fd81",
+    "README.md": "00ae77f2e36e1e59f9cae0dfc4f6f80fc6838337459830ec9f7726f0b005e89c",
+    "render-review.md": "b5154b161f104e7acbf14cf07bfeac8ca67f040c0bf05b3cfc100e54628f10ef",
     "renders/final/font-substitution-check.pdf": "3928faec4d7bb843bab2a39aa57bcf3f15878e6ee25c6d6207348c38ab15681c",
     "renders/final/mutation-proof/cash-timing-gap.png": "adbc66f9195f5e79895812c93abc89a44c6c438db032b37c3d2ece9ffae37a6c",
     "renders/final/mutation-proof/pages/synthetic-cash-timing-model-01.png": "0348d7f0f3ef88f86f833ddd88b6a6e4835c637b86eb6ae64129e98a0b9640ff",
@@ -205,7 +270,7 @@
     "renders/final/mutation-proof/synthetic-executive-briefing.pdf": "3ecd9bbad3f3cc3f2519aac3bef0948d23b04cd4a795c1677a694eefaed2c53f",
     "renders/final/mutation-proof/synthetic-executive-briefing.pptx": "e3874ae46355b72f8df51a07a9d8285d888b9882da6d1de3634c23454ba94672",
     "renders/final/mutation-proof/synthetic-internal-proposal.docx": "483daa3e7ac2d709ebc424b4c43726189269d1777aa223c631f2c822770eb095",
-    "renders/final/pages/cash-timing-chart-mobile-preview.png": "8feef8c635943df17849a664d3414fc1b0872a52f9f376be84202e280343f510",
+    "renders/final/pages/cash-timing-chart-mobile-preview.png": "12707193d367c7f30ca9ea2a3a560d7d258242ed351030ca47294f04cd3d52a7",
     "renders/final/pages/synthetic-cash-timing-model-01.png": "c7e3f01a655c646a1e268adbc6c970b131116be72c133ca2eaec1aabafdf13af",
     "renders/final/pages/synthetic-cash-timing-model-02.png": "e9d0c9d3b2d279f0ca5c5c393f8c93554a6adf3fb69b63536c4b06dc505eb063",
     "renders/final/pages/synthetic-cash-timing-model-03.png": "aac2a7debf8d985538c3139b7ad94293dacfb89d3887cc441aa74a82bb3f26b9",
@@ -231,13 +296,19 @@
     "synthetic-cash-timing-report.docx": "4ebadad40d2271de247a0b5955de4f6bfb63d261931e3f0a3799ba82bf50d090",
     "synthetic-executive-briefing.pptx": "69395fd480f26955ece57f307189e3c271e5cf0c52a3c8b725268dd5035d81ce",
     "synthetic-internal-proposal.docx": "60e160876dd1cf27b009f3ad414bc3e76912d7c13df3cb199291a1ba3720d74c",
-    "verify_mutation_fixture.py": "66eafb998894bcec7c81dcf2d8a4313822553cb815d5a14434f21a26081027b7",
-    "verify_pack.py": "42ca6f08c5e89b126c75eba822e337956d603cd7b3930e3e403a1534816bbf49"
+    "verify_mutation_fixture.py": "e8b9f51414109403043fc4937baa2427045ece759aa6e9652b02b9aadd24493f",
+    "verify_pack.py": "73d425c728842a88fadffb7ed07a8afcdf25423e823c592b56478c66cede122f",
+    "cash-timing-chart-mobile.png": "93987279a640397c48188ba7d13a8b5cba208560a94ae53f6ec0372b8dcd575e",
+    "cash-timing-chart-mobile-alt.txt": "4cccd58fe551bc17d7f31bd8bc9c2c7646b3f9fb65b51dd3c74158d0e4094ce8",
+    "renders/final/mutation-proof/cash-timing-gap-mobile.png": "e52b174cbd4589d0d23f77b590b3d3bc152d9f43f7dba49fc7c1a2c8b64d3c78",
+    "renders/final/mutation-proof/cash-timing-gap-mobile-preview.png": "89167079dfb6943f19119fe626cab1d8b986cf57680f619b95123020b18ab29b",
+    "renders/final/mutation-proof/cash-timing-gap-mobile-alt.txt": "b929c459dd67a612fda66080d7b31cde8fa47b32af14d695364755422206f6e5"
   },
   "limitations": [
     "Synthetic P13 cash-timing data only; no real client, transaction, business plan, accounting opinion, tax treatment, financing decision or source ledger.",
     "French disclosure is a layout sample, not language-owner-approved.",
     "No Microsoft Office or recipient-machine parity test; no assistive-technology, contrast, keyboard, print-room, or human comprehension test.",
     "Visual QA is Lead Consultant self-review; the 390-pixel graphic is a resized preview, not an actual-device test; no independent professional designer acceptance."
-  ]
+  ],
+  "visual_qa": "Lead Consultant resized-file review of a 1080x1080 square mobile infographic and 390x390 preview. The previous 390x219 landscape preview was inadequate. New target-size preview is legible in file inspection; actual-device/listing crop, independent professional review, accessibility and audience comprehension remain NOT ASSESSED."
 }

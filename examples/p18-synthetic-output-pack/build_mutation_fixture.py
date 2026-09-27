@@ -19,12 +19,16 @@ pack.DATA["available_liquidity"] = 100
 pack.RESULTS = [(scenario, pack.simulate(scenario["lag"])) for scenario in pack.DATA["scenarios"]]
 pack.OUT = {
     "chart": OUT / "cash-timing-gap.png",
+    "mobile_chart": OUT / "cash-timing-gap-mobile.png",
+    "mobile_preview": OUT / "cash-timing-gap-mobile-preview.png",
+    "mobile_alt": OUT / "cash-timing-gap-mobile-alt.txt",
     "proposal": OUT / "synthetic-internal-proposal.docx",
     "report": OUT / "synthetic-cash-timing-report.docx",
     "workbook": OUT / "synthetic-cash-timing-model.xlsx",
     "deck": OUT / "synthetic-executive-briefing.pptx",
 }
 pack.make_chart()
+pack.make_mobile_chart()
 pack.make_report()
 pack.make_proposal()
 pack.make_workbook()

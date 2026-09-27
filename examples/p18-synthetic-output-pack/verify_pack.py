@@ -7,6 +7,7 @@ from pathlib import Path
 
 import fitz
 import openpyxl
+from PIL import Image
 from docx import Document
 from pptx import Presentation
 
@@ -72,7 +73,14 @@ def main() -> None:
     actual_pages = {path.name for path in (RENDERS / "pages").glob("*.png")}
     require(actual_pages == expected_pages, f"unexpected or missing final previews: {sorted(actual_pages ^ expected_pages)}")
     phone_preview = RENDERS / "pages" / "cash-timing-chart-mobile-preview.png"
+    mobile_chart = ROOT / "cash-timing-chart-mobile.png"
+    require(mobile_chart.is_file(), "square mobile infographic missing")
+    require(Image.open(mobile_chart).size == (1080, 1080), "mobile infographic must render square at 1080 px")
     require(phone_preview.is_file(), "390-pixel infographic preview missing")
+    require(Image.open(phone_preview).size == (390, 390), "mobile preview must match the 390-pixel square target")
+    mobile_alt = ROOT / "cash-timing-chart-mobile-alt.txt"
+    require(mobile_alt.is_file() and "45 synthetic cash units" in mobile_alt.read_text(encoding="utf-8"),
+            "mobile chart text alternative missing the synthetic finding")
     print("P18 synthetic pack verification: PASS")
     print("editable formats=DOCX(2), XLSX(1), PPTX(1); PDFs=1/2/3/5 pages; formula cache and roundtrip checks passed")
 

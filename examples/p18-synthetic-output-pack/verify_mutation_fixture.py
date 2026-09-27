@@ -8,6 +8,7 @@ from pathlib import Path
 
 import fitz
 import openpyxl
+from PIL import Image
 from pptx import Presentation
 
 
@@ -38,6 +39,13 @@ def main() -> None:
     require("45 SCU" not in deck_text and "75 SCU" not in deck_text, "deck retained stale baseline figures")
     deck = Presentation(ROOT / "synthetic-executive-briefing.pptx")
     require(len(deck.slides) == 5, "mutated deck did not preserve slide structure")
+    mobile_alt = (ROOT / "cash-timing-gap-mobile-alt.txt").read_text(encoding="utf-8")
+    require("20 synthetic cash units" in mobile_alt and "100 SCU buffer" in mobile_alt,
+            "mobile infographic text alternative did not carry mutated buffer/gap")
+    require("45 synthetic cash units" not in mobile_alt and "75 SCU buffer" not in mobile_alt,
+            "mobile infographic text alternative retained stale figures")
+    mobile_preview = Image.open(ROOT / "cash-timing-gap-mobile-preview.png")
+    require(mobile_preview.size == (390, 390), "mutated mobile preview must remain square at 390 px")
     with zipfile.ZipFile(ROOT / "synthetic-executive-briefing.pptx") as package:
         descriptions = " ".join(package.read(name).decode("utf-8") for name in package.namelist()
                                  if name.startswith("ppt/slides/slide") and name.endswith(".xml"))

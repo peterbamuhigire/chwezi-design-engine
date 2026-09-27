@@ -1,0 +1,1 @@
+Only the two-period delay leaves a gap. The largest gap is 45 synthetic cash units (SCU) beyond the assumed 75 SCU buffer. No lag: 0; one-period lag: 0; two-period lag: 45. Synthetic example, not a forecast.

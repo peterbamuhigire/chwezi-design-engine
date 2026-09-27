@@ -38,6 +38,9 @@ DISPLAY = "Spectral"
 BODY = "Atkinson Hyperlegible"
 OUT = {
     "chart": ROOT / "cash-timing-chart.png",
+    "mobile_chart": ROOT / "cash-timing-chart-mobile.png",
+    "mobile_preview": ROOT / "renders" / "final" / "pages" / "cash-timing-chart-mobile-preview.png",
+    "mobile_alt": ROOT / "cash-timing-chart-mobile-alt.txt",
     "proposal": ROOT / "synthetic-internal-proposal.docx",
     "report": ROOT / "synthetic-cash-timing-report.docx",
     "workbook": ROOT / "synthetic-cash-timing-model.xlsx",
@@ -226,6 +229,76 @@ def make_chart() -> None:
         draw.text((x + (460 - value_width) // 2, 418), value, font=metric, fill=colour)
         draw.text((x + 150, 622), "SCU gap", font=body, fill=f"#{INK}")
     img.save(OUT["chart"], dpi=(300, 300), optimize=True)
+
+
+def make_mobile_chart() -> None:
+    """Render a square, phone-first version of the same single-message comparison."""
+    from PIL import Image, ImageDraw, ImageFont
+
+    design = Path(__file__).resolve().parents[2]
+    display_path = design / "fonts/01-formal-institutional/spectral/Spectral-SemiBold.ttf"
+    body_path = design / "fonts/08-body-ui-workhorses/public-sans/PublicSans-VF.ttf"
+    if not display_path.is_file() or not body_path.is_file():
+        raise FileNotFoundError("Mobile chart requires the approved Spectral and Public Sans font files.")
+
+    canvas = Image.new("RGB", (1080, 1080), f"#{PAPER}")
+    draw = ImageDraw.Draw(canvas)
+
+    title = ImageFont.truetype(str(display_path), 82)
+    kicker = ImageFont.truetype(str(body_path), 32)
+    subtitle = ImageFont.truetype(str(body_path), 38)
+    section_label = ImageFont.truetype(str(body_path), 36)
+    case_label = ImageFont.truetype(str(body_path), 38)
+    metric = ImageFont.truetype(str(display_path), 190)
+    for font, weight in ((kicker, 600), (subtitle, 500), (section_label, 650), (case_label, 650)):
+        if hasattr(font, "set_variation_by_axes"):
+            font.set_variation_by_axes([weight])
+
+    def centered(text: str, y: int, font, colour: str) -> None:
+        box = draw.textbbox((0, 0), text, font=font)
+        width = box[2] - box[0]
+        draw.text(((1080 - width) / 2, y), text, font=font, fill=f"#{colour}")
+
+    draw.text((76, 48), "SYNTHETIC CASH UNITS", font=kicker, fill=f"#{MUTED}")
+    headline = gap_headline()
+    if headline == "Only the two-period delay leaves a gap":
+        title_lines = ("Only the two-period", "delay leaves a gap")
+    else:
+        title_lines = (headline,)
+    for index, line in enumerate(title_lines):
+        centered(line, 112 + index * 92, title, INK)
+
+    centered(f"Beyond the assumed {DATA['available_liquidity']} SCU buffer", 306, subtitle, MUTED)
+    centered("UNFUNDED GAP · SCU", 376, section_label, INK)
+
+    colours = [TEAL, BLUE_INPUT, RED]
+    names = ["NO LAG", "ONE PERIOD", "TWO PERIODS"]
+    gaps = [result["gap"] for _, result in RESULTS]
+    x_positions = (75, 393, 711)
+    for x, name, gap, colour in zip(x_positions, names, gaps, colours):
+        width, top, bottom = 294, 448, 1010
+        draw.rounded_rectangle((x, top, x + width, bottom), radius=30, fill="#FFFFFF", outline=f"#{RULE}", width=3)
+        draw.rounded_rectangle((x, top, x + width, top + 16), radius=8, fill=f"#{colour}")
+        label_box = draw.textbbox((0, 0), name, font=case_label)
+        label_width = label_box[2] - label_box[0]
+        draw.text((x + (width - label_width) / 2, 514), name, font=case_label, fill=f"#{INK}")
+        value = str(gap)
+        value_box = draw.textbbox((0, 0), value, font=metric)
+        value_width = value_box[2] - value_box[0]
+        draw.text((x + (width - value_width) / 2, 638), value, font=metric, fill=f"#{colour}")
+
+    for key in ("mobile_chart", "mobile_preview", "mobile_alt"):
+        OUT[key].parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(OUT["mobile_chart"], dpi=(300, 300), optimize=True)
+    preview = canvas.resize((390, 390), Image.Resampling.LANCZOS)
+    preview.save(OUT["mobile_preview"], optimize=True)
+    largest_gap = max(gaps)
+    (OUT["mobile_alt"]).write_text(
+        f"{headline}. The largest gap is {largest_gap} synthetic cash units (SCU) beyond the assumed "
+        f"{DATA['available_liquidity']} SCU buffer. No lag: {gaps[0]}; one-period lag: {gaps[1]}; "
+        f"two-period lag: {gaps[2]}. Synthetic example, not a forecast.\n",
+        encoding="utf-8",
+    )
 
 
 def make_report() -> None:
@@ -505,6 +578,7 @@ def make_deck() -> None:
 
 def main() -> None:
     make_chart()
+    make_mobile_chart()
     make_report()
     make_proposal()
     make_workbook()
