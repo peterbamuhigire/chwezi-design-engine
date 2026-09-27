@@ -1,0 +1,181 @@
+{
+  "artifact_id": "p18-synthetic-output-pack",
+  "artifact_type": "Synthetic editable DOCX/XLSX/PPTX pack with PDF and page-render evidence",
+  "surfaces": [
+    "proposal-docx-pdf",
+    "research-report-docx-pdf",
+    "cash-timing-xlsx-pdf",
+    "executive-briefing-pptx-pdf"
+  ],
+  "renders": [
+    {
+      "path": "renders/final/synthetic-internal-proposal.pdf",
+      "state": "local-review-export"
+    },
+    {
+      "path": "renders/final/synthetic-cash-timing-report.pdf",
+      "state": "local-review-export"
+    },
+    {
+      "path": "renders/final/synthetic-cash-timing-model.pdf",
+      "state": "local-review-export"
+    },
+    {
+      "path": "renders/final/synthetic-executive-briefing.pdf",
+      "state": "local-review-export"
+    }
+  ],
+  "stages": {
+    "generation": {
+      "result": "PASS",
+      "evidence": [
+        {
+          "type": "retained-artifact",
+          "reference": "build_pack.py",
+          "sha256": "e7d6ccee0ee49e242f1a8ee9693d9c9f9c6f606ddd6ea0dba6c67ce6991be730",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "source-data.json",
+          "sha256": "7f6d0726f2b51e598aa3919f5cc58a656aa8c07a5792cf0833d212db57a5c241",
+          "verification": "AUTOMATED"
+        }
+      ]
+    },
+    "reopen": {
+      "result": "PASS",
+      "evidence": [
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/reopened/synthetic-internal-proposal.docx",
+          "sha256": "df191d07c0e6251649b0f8f00ce468e380cf1885fe0ab19988f2aaeceb1e5535",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/reopened/synthetic-cash-timing-model.xlsx",
+          "sha256": "002a40b24ff80c6b06c70e0d6fe2cdf2ba4331068b64099f31863e72ae3d6582",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/reopened/synthetic-executive-briefing.pptx",
+          "sha256": "7f2620e42febd9f35dc435c023f9bec05ecc6ea09b366ec36e10becf51fad832",
+          "verification": "AUTOMATED"
+        }
+      ]
+    },
+    "render": {
+      "result": "PASS",
+      "evidence": [
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/synthetic-cash-timing-report.pdf",
+          "sha256": "1b20e526eb06cc7b3a6ed035bf602326229ee85c4bbe844b264d93cbdbebc204",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/pages/synthetic-executive-briefing-05.png",
+          "sha256": "9c88241df6dd913ca35f437747aa0e4358196a8817211ef63f8066e07dd2bc4e",
+          "verification": "AUTOMATED"
+        },
+        {
+          "type": "retained-artifact",
+          "reference": "renders/final/pages/cash-timing-chart-mobile-preview.png",
+          "sha256": "8feef8c635943df17849a664d3414fc1b0872a52f9f376be84202e280343f510",
+          "verification": "AUTOMATED"
+        }
+      ]
+    },
+    "visual_qa": {
+      "result": "CONDITIONAL",
+      "evidence": "Lead Consultant heuristic inspection of all final PDF pages, deck slides, workbook print regions and 390-pixel infographic preview is recorded in render-review.md. This is not independent professional design review or actual-device testing."
+    },
+    "accessibility": {
+      "result": "NOT ASSESSED",
+      "evidence": "Screen-reader order, keyboard usage, contrast measurements, Office accessibility checkers, and human-reader usability were not tested."
+    }
+  },
+  "checks": [
+    {
+      "id": "design-doctrine",
+      "result": "PASS"
+    },
+    {
+      "id": "typography",
+      "result": "PASS"
+    },
+    {
+      "id": "accessibility",
+      "result": "NOT ASSESSED"
+    },
+    {
+      "id": "render-parity",
+      "result": "CONDITIONAL"
+    }
+  ],
+  "verdict": "CONDITIONAL",
+  "owner": "Peter Bamuhigire / Lead Consultant; visual inspection was self-review, not independent acceptance",
+  "font_pair": {
+    "display": "Spectral",
+    "body": "Atkinson Hyperlegible",
+    "licence": "OFL in engine font library",
+    "office_embedding": "not embedded; recipient substitution possible",
+    "local_pdf_embedding": "embedded subsets observed in local PDF inspection"
+  },
+  "tools": {
+    "python": "3.13",
+    "libreoffice": "26.2.4.2 0229ac93fcf0d7cbc6376066c6f35021cef002dc",
+    "ghostscript": "10.07.0",
+    "packages": [
+      "python-docx",
+      "openpyxl",
+      "python-pptx",
+      "Pillow",
+      "PyMuPDF"
+    ]
+  },
+  "artifact_sha256": {
+    ".gitignore": "88145b4f75a7cd2a9065e2067317c3d4785d976b8cef1485f5550273700593f6",
+    "synthetic-internal-proposal.docx": "46982fc768bf1884f597dee1f3b2c3ff7c24982763a5b74309de03c926b88453",
+    "synthetic-cash-timing-report.docx": "cd30b8831602e6dfe1b074ac3f2541fa97c5d001b0083b906b298615244cbd4a",
+    "synthetic-cash-timing-model.xlsx": "171de88ca4a5ea4da7557336f884e8186ae22ceccb5027b683eeb6e8e9cb5c3d",
+    "synthetic-executive-briefing.pptx": "1d3c50581f3c3eeea9cfd65b15480b5952d65c00ecd9ca88c16ddd6c458cf533",
+    "cash-timing-chart.png": "81f33093d170a4ece0df71b65d742086baba6e9266b988a86f2d8c8343f4f0c6",
+    "source-data.json": "7f6d0726f2b51e598aa3919f5cc58a656aa8c07a5792cf0833d212db57a5c241",
+    "build_pack.py": "e7d6ccee0ee49e242f1a8ee9693d9c9f9c6f606ddd6ea0dba6c67ce6991be730",
+    "verify_pack.py": "42ca6f08c5e89b126c75eba822e337956d603cd7b3930e3e403a1534816bbf49",
+    "README.md": "87f785501fbe45aa899200aecb570086f95169792b1135569eae1e5791872ecf",
+    "render-review.md": "5fd13ac7474b8dab5554e362c9826ae9edd3b3634f791c2c0c525400e93be481",
+    "renders/final/font-substitution-check.pdf": "3928faec4d7bb843bab2a39aa57bcf3f15878e6ee25c6d6207348c38ab15681c",
+    "renders/final/pages/cash-timing-chart-mobile-preview.png": "8feef8c635943df17849a664d3414fc1b0872a52f9f376be84202e280343f510",
+    "renders/final/pages/synthetic-cash-timing-model-01.png": "c7e3f01a655c646a1e268adbc6c970b131116be72c133ca2eaec1aabafdf13af",
+    "renders/final/pages/synthetic-cash-timing-model-02.png": "e9d0c9d3b2d279f0ca5c5c393f8c93554a6adf3fb69b63536c4b06dc505eb063",
+    "renders/final/pages/synthetic-cash-timing-model-03.png": "aac2a7debf8d985538c3139b7ad94293dacfb89d3887cc441aa74a82bb3f26b9",
+    "renders/final/pages/synthetic-cash-timing-report-01.png": "6511be59bce624faffce1237f8f520b59bf43e9185c66dcb23df23c728b2cd47",
+    "renders/final/pages/synthetic-cash-timing-report-02.png": "d048414291ae32056c5032cfc7de3090273f00e9d7ff880ad47e3e7090946e2f",
+    "renders/final/pages/synthetic-executive-briefing-01.png": "b3ca4f94cce10a14501b77b47e83d6bcea490a83afd368bd9d0bbff0a80379f9",
+    "renders/final/pages/synthetic-executive-briefing-02.png": "86ccb13b91e693bd207cbdd14fbffb217bac9e2050f2a9ffeace4ddc18995ece",
+    "renders/final/pages/synthetic-executive-briefing-03.png": "f04bef91beb2e269c73632f1503d911c9cb71885a30a07c4c9a7a18105ba1a36",
+    "renders/final/pages/synthetic-executive-briefing-04.png": "70025d121204e604091c88281375dcad8e9381ab6e3373c1a0035aeec8c0267f",
+    "renders/final/pages/synthetic-executive-briefing-05.png": "9c88241df6dd913ca35f437747aa0e4358196a8817211ef63f8066e07dd2bc4e",
+    "renders/final/pages/synthetic-internal-proposal-01.png": "48f07a8ce315aee831236303c7e14929ab35ee0f62c513b774bd81d44a832e72",
+    "renders/final/recalculated/synthetic-cash-timing-model.xlsx": "171de88ca4a5ea4da7557336f884e8186ae22ceccb5027b683eeb6e8e9cb5c3d",
+    "renders/final/reopened/synthetic-cash-timing-model.xlsx": "002a40b24ff80c6b06c70e0d6fe2cdf2ba4331068b64099f31863e72ae3d6582",
+    "renders/final/reopened/synthetic-cash-timing-report.docx": "3c3c73d69d3ba5874d31a780c1c4da35974d246067ebc771f5fd2f0d70c33f79",
+    "renders/final/reopened/synthetic-executive-briefing.pptx": "7f2620e42febd9f35dc435c023f9bec05ecc6ea09b366ec36e10becf51fad832",
+    "renders/final/reopened/synthetic-internal-proposal.docx": "df191d07c0e6251649b0f8f00ce468e380cf1885fe0ab19988f2aaeceb1e5535",
+    "renders/final/synthetic-cash-timing-model.pdf": "4becfd6bd83a2b1e36386cdae09eb003b815e15fd3eda9f9c5ae59724997480f",
+    "renders/final/synthetic-cash-timing-report.pdf": "1b20e526eb06cc7b3a6ed035bf602326229ee85c4bbe844b264d93cbdbebc204",
+    "renders/final/synthetic-executive-briefing.pdf": "b4fdc60daad6cb87e79b26a2a331bd46b4a77c080429487c1f35a50c2c28affd",
+    "renders/final/synthetic-internal-proposal.pdf": "2456a407bb50ca5e7e8f6454b9406981fd9b33e256d5691eabd958b00a4fabf4"
+  },
+  "limitations": [
+    "Synthetic P13 cash-timing data only; no real client, transaction, business plan, accounting opinion, tax treatment, financing decision or source ledger.",
+    "French disclosure is a layout sample, not language-owner-approved.",
+    "No Microsoft Office or recipient-machine parity test; no assistive-technology, contrast, keyboard, print-room, or human comprehension test.",
+    "Visual QA is self-review; the 390-pixel graphic is a resized preview, not an actual device test; no independent professional designer acceptance."
+  ]
+}
