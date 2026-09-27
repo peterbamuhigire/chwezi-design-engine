@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Kraal Code | Operations overview specimen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f3f7fa;
+      --surface: #ffffff;
+      --ink: #172b3a;
+      --muted: #4c6470;
+      --line: #72858f;
+      --accent: #0054a5;
+      --accent-soft: #e8f1fa;
+      --success: #256746;
+      --success-soft: #e5f2e9;
+      --warning: #7b4300;
+      --warning-soft: #fff0d7;
+      --danger: #8f2e2e;
+      --danger-soft: #fbe5e3;
+      --focus: #0054a5;
+      --shadow: 0 2px 6px rgb(23 43 58 / 7%);
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --canvas: #101a20;
+      --surface: #1b2c35;
+      --ink: #ebf2f5;
+      --muted: #bdcbd1;
+      --line: #637985;
+      --accent: #8ccBff;
+      --accent-soft: #233c4a;
+      --success: #9cddb4;
+      --success-soft: #1d392f;
+      --warning: #ffd08a;
+      --warning-soft: #453720;
+      --danger: #ffaaa1;
+      --danger-soft: #462c2d;
+      --focus: #8ccbff;
+      --shadow: 0 2px 8px rgb(0 0 0 / 22%);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 400 1rem/1.5 "IBM Plex Sans", "Public Sans", sans-serif;
+    }
+    button { font: inherit; }
+    a { color: var(--accent); }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      scroll-margin-block: 1rem;
+    }
+    .shell { width: min(100% - 2rem, 88rem); margin-inline: auto; }
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .topbar-inner {
+      min-height: 4.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand { display: flex; align-items: center; gap: .75rem; min-width: 0; }
+    .brand-name { margin: 0; font: 600 1.12rem/1.15 "IBM Plex Serif", Georgia, serif; }
+    .brand-sub { color: var(--muted); font-size: .78rem; }
+    .controls { display: flex; align-items: center; justify-content: flex-end; gap: .55rem; }
+    .control-group { display: flex; gap: .2rem; padding: .18rem; border: 1px solid var(--line); border-radius: .5rem; }
+    .control {
+      min-width: 2.75rem; min-height: 2.75rem; padding: .4rem .65rem;
+      border: 0; border-radius: .35rem; background: transparent;
+      color: var(--muted); cursor: pointer; font-size: .875rem; font-weight: 600;
+    }
+    .control[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); }
+    .main { padding-block: 1.7rem 3rem; }
+    .page-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.15rem; }
+    .eyebrow { margin: 0 0 .25rem; color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: .25rem; font: 600 clamp(1.75rem, 3vw, 2.35rem)/1.15 "IBM Plex Serif", Georgia, serif; letter-spacing: -.025em; }
+    h2 { margin-bottom: .25rem; font: 600 1.25rem/1.25 "IBM Plex Serif", Georgia, serif; }
+    h3 { margin-bottom: .4rem; font-size: 1rem; font-weight: 600; }
+    .subhead, .freshness { margin: 0; color: var(--muted); font-size: .875rem; }
+    .freshness { text-align: right; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .85rem; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: .7rem; box-shadow: var(--shadow); }
+    .kpi { min-height: 9rem; padding: 1.05rem 1.1rem; }
+    .kpi-label { display: flex; align-items: center; gap: .45rem; margin: 0 0 .65rem; color: var(--muted); font-size: .82rem; font-weight: 600; }
+    .kpi-icon { display: inline-grid; width: 1.35rem; height: 1.35rem; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: .8rem; }
+    .kpi-value { margin: 0 0 .35rem; font: 500 clamp(1.55rem, 2.7vw, 2rem)/1.15 "IBM Plex Mono", monospace; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .kpi-foot { display: flex; align-items: center; gap: .35rem; margin: 0; color: var(--muted); font-size: .78rem; }
+    .positive { color: var(--success); font-weight: 600; }
+    .work-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(18rem, .85fr); gap: .85rem; margin-top: .85rem; }
+    .section-panel { min-width: 0; padding: 1.15rem; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .75rem; margin-bottom: .9rem; }
+    .section-note { margin: .25rem 0 0; color: var(--muted); font-size: .8125rem; }
+    .period { padding: .45rem .6rem; border: 1px solid var(--line); border-radius: .45rem; color: var(--muted); font-size: .78rem; white-space: nowrap; }
+    .chart-summary { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-bottom: .25rem; }
+    .chart-stat { display: grid; gap: .1rem; }
+    .chart-stat span { color: var(--muted); font-size: .75rem; }
+    .chart-stat strong { font: 500 1rem "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
+    .chart-wrap { margin-top: .25rem; }
+    .chart { display: block; width: 100%; height: auto; overflow: visible; }
+    .chart text { fill: var(--muted); font: 12px "IBM Plex Sans", sans-serif; }
+    .chart .gridline { stroke: var(--line); stroke-dasharray: 4 5; }
+    .chart .series { fill: none; stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }
+    .chart .point { fill: var(--surface); stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; }
+    .chart-caption { margin: .25rem 0 0; color: var(--muted); font-size: .75rem; }
+    .chart-mobile-summary { display: none; margin: .35rem 0; color: var(--muted); font-size: .875rem; }
+    .attention-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+    .attention-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .6rem; align-items: center; padding-block: .85rem; border-top: 1px solid var(--line); }
+    .attention-item:first-child { border-top: 0; padding-top: .15rem; }
+    .attention-title { margin: 0; font-weight: 600; }
+    .attention-meta { margin: .2rem 0 0; color: var(--muted); font-size: .8rem; }
+    .status { display: inline-flex; align-items: center; gap: .3rem; max-width: 100%; padding: .3rem .45rem; border-radius: .35rem; font-size: .75rem; font-weight: 600; white-space: nowrap; }
+    .status-warn { background: var(--warning-soft); color: var(--warning); }
+    .status-ok { background: var(--success-soft); color: var(--success); }
+    .status-error { background: var(--danger-soft); color: var(--danger); }
+    .status-info { background: var(--accent-soft); color: var(--accent); }
+    .owner { display: flex; align-items: center; gap: .5rem; margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+    .avatar { display: grid; width: 2rem; height: 2rem; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+    .demo-states { margin-top: .85rem; padding: 1rem 1.15rem; }
+    .state-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-block: .8rem; }
+    .state-button, .primary-button {
+      min-height: 2.75rem; padding: .55rem .8rem; border: 1px solid var(--line);
+      border-radius: .45rem; background: var(--surface); color: var(--ink);
+      cursor: pointer; font-size: .8125rem; font-weight: 600;
+    }
+    .state-button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .primary-button { display: inline-flex; align-items: center; justify-content: center; border-color: var(--accent); background: var(--accent); color: #fff; text-decoration: none; }
+    html[data-theme="dark"] .primary-button { color: #101a20; }
+    .state-output { min-height: 4rem; display: flex; align-items: center; gap: .65rem; padding: .8rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--canvas); }
+    .state-output p { margin: 0; }
+    .state-output[hidden] { display: none; }
+    .state-symbol { display: inline-grid; flex: 0 0 1.6rem; width: 1.6rem; height: 1.6rem; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+    .state-error .state-symbol { background: var(--danger-soft); color: var(--danger); }
+    .state-denied .state-symbol { background: var(--warning-soft); color: var(--warning); }
+    .fine-print { margin: .85rem 0 0; color: var(--muted); font-size: .75rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    @media (max-width: 54rem) {
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .work-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 37rem) {
+      .shell { width: min(100% - 1.25rem, 88rem); }
+      .topbar-inner { min-height: 4rem; gap: .5rem; }
+      .brand { gap: .5rem; }
+      .brand-name { font-size: 1rem; }
+      .brand-sub { font-size: .68rem; }
+      .controls { gap: .3rem; }
+      .control-group { gap: 0; }
+      .control { min-width: 2.75rem; min-height: 2.75rem; padding-inline: .45rem; font-size: .78rem; }
+      .main { padding-top: 1.2rem; }
+      .page-heading { align-items: flex-start; flex-direction: column; gap: .55rem; }
+      .freshness { text-align: left; }
+      .kpi-grid { gap: .55rem; }
+      .kpi { min-height: 8.15rem; padding: .8rem; }
+      .kpi-value { font-size: 1.38rem; }
+      .kpi-foot { align-items: flex-start; flex-wrap: wrap; }
+      .section-panel { padding: .9rem; }
+      .section-head { flex-wrap: wrap; }
+      .attention-item { grid-template-columns: 1fr; }
+      .attention-item .status { justify-self: start; }
+      .period { white-space: normal; }
+      .chart text { display: none; }
+      .chart-mobile-summary { display: block; }
+    }
+    @media (max-width: 21rem) {
+      .shell { width: calc(100% - 1rem); }
+      .brand-sub { display: none; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .controls { flex-wrap: wrap; }
+    }
+    @media print {
+      :root, html[data-theme="dark"] { color-scheme: light; --canvas: #fff; --surface: #fff; --ink: #172b3a; --muted: #4c6470; --line: #9aabb4; --accent: #0054a5; }
+      .controls, .state-bar, .demo-states { display: none !important; }
+      .shell { width: 100%; }
+      .panel { box-shadow: none; break-inside: avoid; }
+      body { font-size: 10pt; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand" aria-label="Kraal Code operations specimen">
+        <div><p class="brand-name">Kraal Code</p><span class="brand-sub" data-i18n="suite">Operations workspace</span></div>
+      </div>
+      <div class="controls" aria-label="Display settings">
+        <div class="control-group" role="group" data-label-en="Language" data-label-fr="Langue" aria-label="Language">
+          <button class="control lang-button" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button class="control lang-button" type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+        <div class="control-group" role="group" data-label-en="Colour theme" data-label-fr="Thème de couleur" aria-label="Colour theme">
+          <button class="control theme-button" type="button" data-theme-choice="light" aria-pressed="true" data-title-en="Light theme" data-title-fr="Thème clair" aria-label="Light theme">☼</button>
+          <button class="control theme-button" type="button" data-theme-choice="dark" aria-pressed="false" data-title-en="Dark theme" data-title-fr="Thème sombre" aria-label="Dark theme">◐</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="shell main">
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">Daily overview</p>
+        <h1 data-i18n="title">Operations dashboard</h1>
+        <p class="subhead" data-i18n="subhead">A clear view of sales, orders and work that needs a follow-up.</p>
+      </div>
+      <p class="freshness"><span aria-hidden="true">◷</span> <span data-i18n="updated">Sample updated 09:30 EAT</span><br><span data-i18n="demo">Fictional demonstration data</span></p>
+    </div>
+
+    <section class="kpi-grid" aria-label="Key measures" data-label-en="Key measures" data-label-fr="Indicateurs clés">
+      <article class="panel kpi">
+        <p class="kpi-label"><span class="kpi-icon" aria-hidden="true">◎</span><span data-i18n="farmers">Active producers</span></p>
+        <p class="kpi-value">1,284</p>
+        <p class="kpi-foot"><span class="positive">+6.2%</span><span data-i18n="vsLastMonth">compared with last month</span></p>
+      </article>
+      <article class="panel kpi">
+        <p class="kpi-label"><span class="kpi-icon" aria-hidden="true">↗</span><span data-i18n="sales">Sales · last 30 days</span></p>
+        <p class="kpi-value">UGX 48.2M</p>
+        <p class="kpi-foot"><span class="positive">+4.8%</span><span data-i18n="vsPrevious">compared with previous 30 days</span></p>
+      </article>
+      <article class="panel kpi">
+        <p class="kpi-label"><span class="kpi-icon" aria-hidden="true">▣</span><span data-i18n="orders">Orders completed</span></p>
+        <p class="kpi-value">86</p>
+        <p class="kpi-foot"><span data-i18n="ordersFoot">in the last 7 days</span></p>
+      </article>
+      <article class="panel kpi">
+        <p class="kpi-label"><span class="kpi-icon" aria-hidden="true">!</span><span data-i18n="pending">Pending requests</span></p>
+        <p class="kpi-value">12</p>
+        <p class="kpi-foot"><span class="status status-warn"><span aria-hidden="true">!</span><span data-i18n="needsReview">review needed</span></span></p>
+      </article>
+    </section>
+
+    <div class="work-grid">
+      <section class="panel section-panel" aria-labelledby="sales-title">
+        <div class="section-head">
+          <div><h2 id="sales-title" data-i18n="salesTitle">Sales trend</h2><p class="section-note" data-i18n="salesDescription">Daily recorded sales, Ugandan shillings</p></div>
+          <span class="period" data-i18n="period">Last 30 days</span>
+        </div>
+        <div class="chart-summary">
+          <div class="chart-stat"><span data-i18n="totalSales">Total sales</span><strong>UGX 48.2M</strong></div>
+          <div class="chart-stat"><span data-i18n="dailyAverage">Daily average</span><strong>UGX 1.61M</strong></div>
+          <div class="chart-stat"><span data-i18n="transactions">Transactions</span><strong>326</strong></div>
+        </div>
+        <div class="chart-wrap">
+          <svg class="chart" viewBox="0 0 720 230" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title" data-i18n="chartTitle">Sales over the last 30 days</title>
+            <desc id="chart-desc" data-i18n="chartDescription">Synthetic values fluctuate between 0.8 and 2.1 million Ugandan shillings per day, with the highest point near day 24.</desc>
+            <line class="gridline" x1="54" y1="24" x2="700" y2="24"/><line class="gridline" x1="54" y1="75" x2="700" y2="75"/><line class="gridline" x1="54" y1="126" x2="700" y2="126"/><line class="gridline" x1="54" y1="177" x2="700" y2="177"/>
+            <text x="4" y="29">2.4M</text><text x="4" y="80">1.8M</text><text x="4" y="131">1.2M</text><text x="28" y="182">0</text>
+            <text x="54" y="213" data-i18n="dayOne">1 Jul</text><text x="203" y="213" data-i18n="dayEight">8 Jul</text><text x="354" y="213" data-i18n="dayFifteen">15 Jul</text><text x="505" y="213" data-i18n="dayTwentyTwo">22 Jul</text><text x="662" y="213" data-i18n="dayThirty">30 Jul</text>
+            <path class="series" d="M54 135 C82 118 99 142 125 127 S170 129 196 120 S241 147 268 126 S314 111 340 119 S386 108 412 124 S458 105 484 102 S531 70 556 93 S602 115 628 88 S673 112 700 77"/>
+            <circle class="point" cx="556" cy="93" r="5"/><circle class="point" cx="700" cy="77" r="5"/>
+          </svg>
+          <p class="chart-mobile-summary" data-i18n="mobileChartSummary">1–30 Jul · UGX 0.8M–2.1M per day</p>
+          <p class="chart-caption" data-i18n="chartCaption">Direction and values are illustrative; the chart does not represent a live ledger.</p>
+        </div>
+      </section>
+
+      <section class="panel section-panel" aria-labelledby="attention-title">
+        <div class="section-head">
+          <div><h2 id="attention-title" data-i18n="attentionTitle">Needs your attention</h2><p class="section-note" data-i18n="attentionDescription">Three items have a next step assigned.</p></div>
+          <a class="primary-button" href="#attention-list" data-i18n="openQueue">Open queue</a>
+        </div>
+        <ul class="attention-list" id="attention-list">
+          <li class="attention-item">
+            <div><p class="attention-title" data-i18n="itemOne">Payment reconciliation</p><p class="attention-meta"><span data-i18n="for">For</span> <span lang="lg">Amina Nabirye</span> · <span data-i18n="dueToday">due today</span></p></div>
+            <span class="status status-warn"><span aria-hidden="true">!</span><span data-i18n="review">Review</span></span>
+          </li>
+          <li class="attention-item">
+            <div><p class="attention-title" data-i18n="itemTwo">Supplier invoice approval</p><p class="attention-meta"><span data-i18n="for">For</span> <span lang="lg">Kato Lwanga</span> · <span data-i18n="waitingTwoDays">waiting 2 days</span></p></div>
+            <span class="status status-info"><span aria-hidden="true">•</span><span data-i18n="pendingStatus">Pending</span></span>
+          </li>
+          <li class="attention-item">
+            <div><p class="attention-title" data-i18n="itemThree">Delivery quantity mismatch</p><p class="attention-meta"><span data-i18n="for">For</span> <span lang="lg">Sarah Nanyonga</span> · <span data-i18n="dueTomorrow">due tomorrow</span></p></div>
+            <span class="status status-error"><span aria-hidden="true">×</span><span data-i18n="resolve">Resolve</span></span>
+          </li>
+        </ul>
+        <div class="owner"><span class="avatar" aria-hidden="true">AN</span><span><strong lang="lg">Amina Nabirye</strong> · <span data-i18n="operationsLead">Operations lead</span></span></div>
+      </section>
+    </div>
+
+    <section class="panel demo-states" aria-labelledby="states-heading">
+      <h2 id="states-heading" data-i18n="statesHeading">Operational states</h2>
+      <p class="section-note" data-i18n="statesDescription">Select a state to review its message and recovery cue.</p>
+      <div class="state-bar" role="group" data-label-en="Operational state preview" data-label-fr="Aperçu des états opérationnels" aria-label="Operational state preview">
+        <button class="state-button" type="button" data-state="ready" aria-pressed="true" data-state-en="Ready" data-state-fr="Prêt">Ready</button>
+        <button class="state-button" type="button" data-state="loading" aria-pressed="false" data-state-en="Loading" data-state-fr="Chargement">Loading</button>
+        <button class="state-button" type="button" data-state="empty" aria-pressed="false" data-state-en="Empty" data-state-fr="Vide">Empty</button>
+        <button class="state-button" type="button" data-state="error" aria-pressed="false" data-state-en="Error" data-state-fr="Erreur">Error</button>
+        <button class="state-button" type="button" data-state="denied" aria-pressed="false" data-state-en="Access restricted" data-state-fr="Accès restreint">Access restricted</button>
+      </div>
+      <div class="state-output" id="state-output" role="status" aria-live="polite">
+        <span class="state-symbol" aria-hidden="true">✓</span><p data-i18n="stateReady">The latest sample data is available. Review assigned items before closing the day.</p>
+      </div>
+      <p class="fine-print" data-i18n="synthetic">All names, values and states are synthetic. This specimen is not connected to a production system.</p>
+    </section>
+  </main>
+  <script>
+    const copy = {
+      en: {
+        suite: 'Operations workspace', eyebrow: 'Daily overview', title: 'Operations dashboard',
+        subhead: 'A clear view of sales, orders and work that needs a follow-up.', updated: 'Sample updated 09:30 EAT', demo: 'Fictional demonstration data',
+        farmers: 'Active producers', vsLastMonth: 'compared with last month', sales: 'Sales · last 30 days', vsPrevious: 'compared with previous 30 days',
+        orders: 'Orders completed', ordersFoot: 'in the last 7 days', pending: 'Pending requests', needsReview: 'review needed', salesTitle: 'Sales trend',
+        salesDescription: 'Daily recorded sales, Ugandan shillings', period: 'Last 30 days', totalSales: 'Total sales', dailyAverage: 'Daily average', transactions: 'Transactions',
+        chartTitle: 'Sales over the last 30 days', chartDescription: 'Synthetic values fluctuate between 0.8 and 2.1 million Ugandan shillings per day, with the highest point near day 24.',
+        chartCaption: 'Direction and values are illustrative; the chart does not represent a live ledger.', mobileChartSummary: '1–30 Jul · UGX 0.8M–2.1M per day', attentionTitle: 'Needs your attention',
+        attentionDescription: 'Three items have a next step assigned.', openQueue: 'Open queue', for: 'For', dueToday: 'due today', waitingTwoDays: 'waiting 2 days', dueTomorrow: 'due tomorrow',
+        itemOne: 'Payment reconciliation', itemTwo: 'Supplier invoice approval', itemThree: 'Delivery quantity mismatch', review: 'Review', pendingStatus: 'Pending', resolve: 'Resolve', operationsLead: 'Operations lead',
+        statesHeading: 'Operational states', statesDescription: 'Select a state to review its message and recovery cue.', synthetic: 'All names, values and states are synthetic. This specimen is not connected to a production system.',
+        stateReady: 'The latest sample data is available. Review assigned items before closing the day.',
+        stateLoading: 'Loading the latest activity… Keep this page open while the sample updates.',
+        stateEmpty: 'No pending items match these filters. Clear a filter or return to the full queue.',
+        stateError: 'Activity could not be loaded. Your last saved view is still available; retry when your connection is stable.',
+        stateDenied: 'You do not have access to payment approvals. Ask an administrator to review your role.',
+        dayOne: '1 Jul', dayEight: '8 Jul', dayFifteen: '15 Jul', dayTwentyTwo: '22 Jul', dayThirty: '30 Jul',
+        languageName: 'Language', themeName: 'Colour theme', themeLight: 'Light theme', themeDark: 'Dark theme', statesGroup: 'Operational state preview'
+      },
+      fr: {
+        suite: 'Espace de travail opérationnel', eyebrow: 'Aperçu quotidien', title: 'Tableau de bord des opérations',
+        subhead: 'Une vue claire des ventes, des commandes et des tâches qui nécessitent un suivi.', updated: 'Exemple mis à jour à 09 h 30 EAT', demo: 'Données de démonstration fictives',
+        farmers: 'Producteurs actifs', vsLastMonth: 'par rapport au mois dernier', sales: 'Ventes · 30 derniers jours', vsPrevious: 'par rapport aux 30 jours précédents',
+        orders: 'Commandes terminées', ordersFoot: 'au cours des 7 derniers jours', pending: 'Demandes en attente', needsReview: 'vérification requise', salesTitle: 'Évolution des ventes',
+        salesDescription: 'Ventes quotidiennes enregistrées, en shillings ougandais', period: '30 derniers jours', totalSales: 'Ventes totales', dailyAverage: 'Moyenne quotidienne', transactions: 'Transactions',
+        chartTitle: 'Ventes au cours des 30 derniers jours', chartDescription: 'Les valeurs fictives varient entre 0,8 et 2,1 millions de shillings ougandais par jour, avec un pic vers le 24.',
+        chartCaption: 'La tendance et les montants sont illustratifs ; ce graphique ne représente pas un registre comptable en direct.', mobileChartSummary: '1–30 juil. · 0,8–2,1 M UGX par jour', attentionTitle: 'Actions à traiter',
+        attentionDescription: 'Trois éléments ont une prochaine étape attribuée.', openQueue: 'Ouvrir la file', for: 'Pour', dueToday: 'à traiter aujourd’hui', waitingTwoDays: 'en attente depuis 2 jours', dueTomorrow: 'à traiter demain',
+        itemOne: 'Rapprochement des paiements', itemTwo: 'Approbation de la facture fournisseur', itemThree: 'Écart sur la quantité livrée', review: 'À vérifier', pendingStatus: 'En attente', resolve: 'Résoudre', operationsLead: 'Responsable des opérations',
+        statesHeading: 'États opérationnels', statesDescription: 'Choisissez un état pour examiner son message et la prochaine action proposée.', synthetic: 'Tous les noms, montants et états sont fictifs. Cet exemple n’est relié à aucun système de production.',
+        stateReady: 'Les dernières données de démonstration sont disponibles. Vérifiez les éléments attribués avant la clôture de la journée.',
+        stateLoading: 'Chargement des dernières activités… Laissez cette page ouverte pendant la mise à jour de l’exemple.',
+        stateEmpty: 'Aucun élément en attente ne correspond à ces filtres. Effacez un filtre ou revenez à toute la file.',
+        stateError: 'Impossible de charger les activités. Votre dernière vue enregistrée reste disponible ; réessayez lorsque la connexion sera stable.',
+        stateDenied: 'Vous n’avez pas accès aux approbations de paiement. Demandez à un administrateur de vérifier votre rôle.',
+        dayOne: '1 juil.', dayEight: '8 juil.', dayFifteen: '15 juil.', dayTwentyTwo: '22 juil.', dayThirty: '30 juil.',
+        languageName: 'Langue', themeName: 'Thème de couleur', themeLight: 'Thème clair', themeDark: 'Thème sombre', statesGroup: 'Aperçu des états opérationnels'
+      }
+    };
+    const stateCopy = { ready: ['stateReady', '✓', ''], loading: ['stateLoading', '…', ''], empty: ['stateEmpty', '0', ''], error: ['stateError', '!', 'state-error'], denied: ['stateDenied', '×', 'state-denied'] };
+    let language = 'en';
+    function setLanguage(next) {
+      language = next;
+      document.documentElement.lang = next;
+      document.querySelectorAll('[data-i18n]').forEach(el => { const value = copy[next][el.dataset.i18n]; if (value) el.textContent = value; });
+      document.querySelectorAll('.control-group[data-label-en]').forEach(el => el.setAttribute('aria-label', el.dataset[`label${next === 'en' ? 'En' : 'Fr'}`]));
+      document.querySelectorAll('.theme-button').forEach(el => el.setAttribute('aria-label', el.dataset[next === 'en' ? 'titleEn' : 'titleFr']));
+      document.querySelectorAll('.state-button').forEach(el => { el.textContent = el.dataset[next === 'en' ? 'stateEn' : 'stateFr']; });
+      document.querySelectorAll('.lang-button').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.lang === next)));
+      const activeState = document.querySelector('.state-button[aria-pressed="true"]')?.dataset.state || 'ready';
+      showState(activeState);
+    }
+    function showState(state) {
+      const [key, symbol, className] = stateCopy[state];
+      const output = document.getElementById('state-output');
+      output.className = `state-output ${className}`;
+      output.querySelector('.state-symbol').textContent = symbol;
+      output.querySelector('[data-i18n]').textContent = copy[language][key];
+      document.querySelectorAll('.state-button').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.state === state)));
+    }
+    document.querySelectorAll('.lang-button').forEach(el => el.addEventListener('click', () => setLanguage(el.dataset.lang)));
+    document.querySelectorAll('.theme-button').forEach(el => el.addEventListener('click', () => {
+      const selected = el.dataset.themeChoice;
+      document.documentElement.dataset.theme = selected;
+      document.querySelectorAll('.theme-button').forEach(button => button.setAttribute('aria-pressed', String(button === el)));
+    }));
+    document.querySelectorAll('.state-button').forEach(el => el.addEventListener('click', () => showState(el.dataset.state)));
+  </script>
+</body>
+</html>
