@@ -67,6 +67,19 @@ Use contrast deliberately across scale, position, weight, colour, and density. E
 
 The system must work in a thumbnail, at the target viewing size, and when printed or compressed. A “busy” composition is not automatically rich; it is often an unresolved editorial decision.
 
+### Product-listing image sequence for phone viewing
+
+Use this pattern when the brief is a set of secondary product images. It is a content and review method, not a required number or fixed order of images; verify current platform-specific requirements against the platform's own documentation.
+
+1. **Assign one buyer question to each image.** Give the frame one dominant benefit, proof point, dimension question, use step, or contents question. Split distinct benefits across frames instead of shrinking several claims into one graphic. Keep safety-critical or genuinely procedural instructions when the task requires them, but make that image an intentional instruction with a clear sequence.
+2. **Put product and evidence first.** Make the object large enough to recognise at the rendered slot size. Use one short headline or label for the takeaway; remove copy that merely repeats the headline. Put secondary explanation in another image, the listing copy, or an accessible text alternative.
+3. **Choose proof to match the buyer's uncertainty.** A before/after can suit a visible transformation; use comparable angle, lighting, conditions, and timeframe, and show only results supported by the product evidence. For size, pair a labelled measurement with a familiar reference shown at a truthful scale and matching plane; perspective props orient, but never replace the units. For package contents, show the complete included set and label any prop, accessory, or optional item that is not included.
+4. **Keep the set recognisably one brand.** Reuse a small type system, palette roles, label grammar, annotation style, and image treatment. Vary composition when the message changes; consistency is recognition, not cloning every frame into the same template.
+5. **Prove legibility in the delivery context.** Inspect the exported image inside the actual marketplace/feed slot on a representative phone at normal display size, without zoom. A reviewer should be able to name the product, main message, and proof on first viewing. If not, remove detail, increase the dominant type and proof area, or split the message. Record crop, device, rendered size, smallest essential text, and first-look notes. Do not substitute a desktop preview, source-file zoom, or 200% accessibility zoom for this check.
+6. **Test performance without assuming the winner.** If marketplace tooling allows a valid comparison, define the audience/traffic allocation, exposure window, one meaningful visual difference, primary business metric, guardrails, and stopping rule before the test. Treat click, save, or engagement changes as proxies unless the decision is specifically about that outcome; do not claim conversion lift from likes, anecdotes, or an uncontrolled before/after.
+
+The mobile review is a design acceptance check, not evidence that a listing will convert. Claims about platform traffic, scan duration, ranking, or conversion need current, claim-matched evidence; otherwise mark them `NOT_ASSESSED` and keep performance as a hypothesis.
+
 ### 6. Make joy humane and conditional
 
 Warmth can lower the intimidation of numbers. Use a friendly voice, recognisable human situations, visual wit, or a gentle surprise when the audience and subject allow it. Do not use jokes, cartoon violence, caricature, gamified rewards, or playful distortion for tragedy, health risk, discrimination, or other high-stakes subjects. In those cases, joy means clarity, dignity, and the relief of understanding.
@@ -124,6 +137,9 @@ Require the tool to return a short decision record before generating the final a
 - [ ] One focal point is emphasised; decoration does not compete with it.
 - [ ] Colour has a role and is backed by text, shape, pattern, or position.
 - [ ] The visual survives thumbnail, target size, greyscale, CVD, and 200% zoom review.
+- [ ] For phone-viewed product images, essential text is readable without zoom in the actual rendered slot; the product, one main message, and its proof are identifiable at first viewing. A desktop or 200% zoom result does not substitute.
+- [ ] Before/after conditions, scale references, and package contents are truthful, labelled, and not confused with props or optional items.
+- [ ] A listing image set uses a coherent brand system while assigning each frame one distinct buyer question; performance claims have a valid comparison or remain hypotheses.
 - [ ] Alt text or a text-equivalent narrative is supplied.
 - [ ] Sources, rights, fonts, asset provenance, and AI involvement are recorded.
 - [ ] At least one human reviewer has read the visual as a first-time viewer.
