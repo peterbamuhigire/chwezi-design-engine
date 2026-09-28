@@ -3,7 +3,7 @@
 **Screen:** Transactions list + transaction detail, "Maduuka Pay" (a fintech wallet app).
 **Source of truth:** Figma authored on iOS. **Build target shown:** native (Swift + Kotlin);
 the RN/Flutter equivalents are noted per row from `references/rn-flutter-mapping.md`.
-**Brand constants (Unified, both platforms):** display face *Fraunces* (from group 1 Editorial,
+**Brand constants (Unified, both platforms):** display face *Andada Pro* (from group 1 Editorial,
 embedded), body *Source Sans 3*; brand teal `#0E7C6B` and ink `#13241F` as semantic tokens;
 logo, transaction iconography, and voice ("Sent · Received · Pending"). None of these change
 across platforms — see `doctrine/design-doctrine.md` §0.

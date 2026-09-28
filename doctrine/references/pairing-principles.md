@@ -45,8 +45,8 @@ Ran Segall, *Complete Guide to Choosing Fonts* (Flux Academy); Massimo Vignelli'
 
 | Context | Display / Header | Body |
 |---|---|---|
-| Editorial document | Fraunces (or Newsreader) | Source Serif 4 / Public Sans |
-| Technical / dashboard | IBM Plex Sans (Bold) | IBM Plex Sans (Regular) + Mono accents |
+| Editorial document | Andada Pro (or Newsreader) | Source Serif 4 / Public Sans |
+| Technical / dashboard | Public Sans (Bold) | Public Sans (Regular, `tabular-nums`) + JetBrains Mono accents |
 | Startup / product | Clash Display (premium) or Bricolage Grotesque | Satoshi (premium) / Hanken Grotesk |
 | App / web body layer | Bricolage Grotesque | Hanken Grotesk |
 

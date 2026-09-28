@@ -33,7 +33,7 @@ Personal websites sell YOU before your work. Hiring managers spend 7 seconds sca
 | **Developer/Engineer** | Monospace accent (JetBrains Mono, Fira Code) | Sans (Inter, Rubik) | Technical, precise |
 | **Writer/Editor** | Elegant serif (Cormorant, Literata) | Readable serif (Lora, Source Serif) | Literary, thoughtful |
 | **Photographer** | Minimal sans (Jost, Outfit) | Light sans (DM Sans) | Clean, lets images speak |
-| **Illustrator/Artist** | Playful display (Fraunces, Quicksand) | Warm sans (Nunito) | Expressive, personal |
+| **Illustrator/Artist** | Playful display (Quicksand) | Warm sans (Nunito) | Expressive, personal |
 | **Consultant/Coach** | Modern sans (Plus Jakarta Sans, Satoshi) | Clean sans (Source Sans Pro) | Professional, approachable |
 
 ## Photography Direction

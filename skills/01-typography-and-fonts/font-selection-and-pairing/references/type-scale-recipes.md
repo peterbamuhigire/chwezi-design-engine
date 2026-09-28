@@ -148,9 +148,9 @@ Notes:
   same axis — `font-variation-settings` wins and resets the others.
 - A variable font enables the **weight extremes** the doctrine demands (300 vs 800) from one file —
   use that, don't ship five static weights.
-- Approved variable faces among the baselines: Fraunces (`opsz`,`wght`,`SOFT`,`WONK`), Newsreader
-  (`opsz`,`wght`,`ital`), Recursive, Public Sans, Hanken Grotesk, Bricolage Grotesque, IBM Plex
-  Sans (`wght`). None are on `ai-slop-banned-fonts.md`.
+- Approved variable faces among the baselines: Source Serif 4 (`opsz`,`wght`), Newsreader
+  (`opsz`,`wght`,`ital`), Recursive, Public Sans, Hanken Grotesk, Bricolage Grotesque, Andada Pro
+  (`wght`). None are on `ai-slop-banned-fonts.md`.
 
 ---
 

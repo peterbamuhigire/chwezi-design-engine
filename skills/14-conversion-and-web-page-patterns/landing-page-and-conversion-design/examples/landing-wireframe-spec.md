@@ -19,7 +19,7 @@ WCAG/perf constraints applied. Use this as the *shape* of the spec this skill pr
 
 ### Distinctive decision (stated before markup, per `distinctive-by-design`)
 > "Tallymark's distinctive idea is an **editorial, ledger-inspired layout**: a tight left rule
-> column (like a ledger margin) running the page, a **serif display face (Fraunces) for the
+> column (like a ledger margin) running the page, a **serif display face (Andada Pro) for the
 > headline** against a precise grotesque for body, and a recurring **tick/check-mark motif** as the
 > section marker — because the audience is finance professionals who trust precision and ledgers,
 > grounded in editorial type practice (`pairing-principles.md`). Explicitly NOT the SaaS template
@@ -34,7 +34,7 @@ Colour intent: ink-near-black on warm paper-white, one deep accountant's-green a
 
 - **Purpose:** message-match the ad, state the outcome, make one credible ask, earn the scroll.
 - **Real content:**
-  - Headline (Fraunces, ~64px, weight 600): **"Close your books in 2 days, not 9."**
+  - Headline (Andada Pro, ~64px, weight 600): **"Close your books in 2 days, not 9."**
   - Subhead (grotesque, ~20px, weight 400): "Tallymark automates reconciliations, accruals, and the
     close checklist — on top of the ERP you already run. No rip-and-replace."
   - Primary CTA (button): **"Book a 20-min demo"**  — accountant's-green, the brightest element here.
@@ -93,7 +93,7 @@ Colour intent: ink-near-black on warm paper-white, one deep accountant's-green a
 ## Section 6 — Closing CTA  *(answers: "how do I start?")*
 
 - **Purpose:** restate value, repeat the identical ask.
-- **Real content:** Heading (Fraunces): **"See your next close in 2 days."** Subhead: "20 minutes,
+- **Real content:** Heading (Andada Pro): **"See your next close in 2 days."** Subhead: "20 minutes,
   your real data, no commitment." CTA: **"Book a 20-min demo"** — *identical* label, weight, and
   green as the hero. Risk reversal stated: "No card. No sales pressure. A real walkthrough."
 
@@ -124,11 +124,11 @@ Colour intent: ink-near-black on warm paper-white, one deep accountant's-green a
 | 8 | Risk reversal & pricing honest/visible | Pass — "no card, cancel anytime", pricing linked |
 | 9 | CTA passes WCAG 2.2 | Pass — focusable, visible focus, ≥48px, contrast verified |
 | 10 | Hero respects perf budget | Pass — sized AVIF LCP, CLS reserved, fonts preloaded |
-| 11 | No convergent default | Pass — Fraunces+grotesque, paper/ink+green, ledger layout, no indigo gradient, no icon-row |
+| 11 | No convergent default | Pass — Andada Pro+grotesque, paper/ink+green, ledger layout, no indigo gradient, no icon-row |
 
 **Verdict:** ships. Authored (ledger/editorial idea), honest (real proof, zero dark patterns),
 accessible and fast — conversion earned by clarity and trust, per `doctrine/design-doctrine.md` §0.
 
-> Fonts named here (Fraunces, a grotesque body) are illustrative of the *editorial* intent for this
+> Fonts named here (Andada Pro, a grotesque body) are illustrative of the *editorial* intent for this
 > sample; on a real build, run `01-typography-and-fonts/font-selection-and-pairing` and scan
 > `fonts/` for a licensed premium family before committing.

@@ -82,8 +82,8 @@ redesign states its choice (doctrine).
 - **F6 — warped logo** (→ `ai-image-direction` / real asset). Replace the baked-in malformed logo
   with a **real product screenshot** of the dashboard; the logo lives as clean vector chrome.
 - **F5 — type system** (→ `font-selection-and-pairing`, `type-scale-and-spacing`). **Stated
-  choice:** drop Inter (banned default). Pair **Fraunces** (editorial display, for the H1/value
-  prop — it carries authored character a grotesque cannot) with **Source Sans 3** body on a Major
+  choice:** drop Inter (banned default). Pair **Andada Pro** (editorial display, for the H1/value
+  prop — its calligraphic serif carries authored character a grotesque cannot) with **Source Sans 3** body on a Major
   Third scale, regular + bold only. Authored, not convergent; both OFL.
 - **F7 — signup states** (→ `error-empty-and-system-messaging`, `micro-interactions-and-feedback`).
   CTA gets a **loading state** ("Creating your trial…"); the submit gets **inline, solution-bearing
@@ -92,7 +92,7 @@ redesign states its choice (doctrine).
 - **F8 / F9 (Could)** — differentiate the four cards by emphasis; rewrite the empty state to
   acknowledge + show value + offer a first action.
 
-**Doctrine check:** no banned font (Fraunces/Source Sans 3 are authored OFL choices, stated);
+**Doctrine check:** no banned font (Andada Pro/Source Sans 3 are authored OFL choices, stated);
 no slop gradient reintroduced; the screenshot replaces the warped-logo tell. No fix opened a new
 gate finding → none re-enters triage.
 
@@ -140,4 +140,4 @@ a recorded "Won't" for the next cycle.
 `references/triage-matrix.md`; sequenced and re-validated per `references/remediation-lifecycle.md`;
 right-patterns from `doctrine/references/interaction-anti-patterns.md`; redesigns satisfy the
 `doctrine/design-doctrine.md` Anti-Slop Charter. Numbers are illustrative-but-coherent, not lorem;
-fonts named (Fraunces / Source Sans 3) are authored OFL choices, no banned default.*
+fonts named (Andada Pro / Source Sans 3) are authored OFL choices, no banned default.*

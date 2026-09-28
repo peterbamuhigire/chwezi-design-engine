@@ -19,7 +19,7 @@ opposite of slop.
 
 Confirmed on Windows 11 (T1), macOS (T1), and Apple mobile, ~97–99% desktop install rate.
 Designed for screens, reads as a deliberate editorial choice, and appears on **no** AI-tell
-list. This is the best "professional default serif" when you can't embed Fraunces et al.
+list. This is the best "professional default serif" when you can't embed Andada Pro et al.
 
 ## Borderline rulings (asked and answered)
 
@@ -56,7 +56,7 @@ font-family: "SF Mono", "Cascadia Code", Consolas, "Roboto Mono", "Courier New",
 ```
 
 > These are the *fallback* tier. The **preferred** path is still a deliberate embedded face from
-> `font-groups-and-usage.md` (Fraunces, IBM Plex, Clash Display, etc.). Reach for system fonts
+> `font-groups-and-usage.md` (Andada Pro, Public Sans, Clash Display, etc.). Reach for system fonts
 > when embedding is impossible or as the safety net after the chosen face — never instead of a
 > deliberate choice when embedding is available.
 

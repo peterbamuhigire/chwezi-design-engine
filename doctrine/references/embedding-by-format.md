@@ -16,12 +16,12 @@ How to actually get the chosen font into each artifact so it renders as designed
 
 ```css
 @font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/Fraunces-Variable.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "Andada Pro";
+  src: url("/fonts/AndadaPro-Variable.woff2") format("woff2");
+  font-weight: 400 840;
   font-display: swap;
 }
-:root { --font-display: "Fraunces", Georgia, serif; }
+:root { --font-display: "Andada Pro", Georgia, serif; }
 ```
 
 ## DOCX

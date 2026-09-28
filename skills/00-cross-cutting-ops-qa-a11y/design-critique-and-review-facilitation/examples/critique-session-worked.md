@@ -36,7 +36,7 @@ out, and resolve the open questions K. brought.
   1. Does putting the *single* setup question **before** the first value moment help or hurt
      first-run completion?
   2. Is the welcome screen earning its place, or should it be cut?
-- **Locked / out of scope (do not re-open):** the brand palette and the Fraunces/Public Sans pairing
+- **Locked / out of scope (do not re-open):** the brand palette and the Andada Pro/Public Sans pairing
   (already decided in the brand crit); the decision to ask **one** setup question, not five.
 
 Frame written to the top of the capture doc. Reviewers acknowledged the out-of-scope list.

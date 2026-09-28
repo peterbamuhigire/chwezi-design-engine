@@ -51,7 +51,7 @@ Schools need **readability first**, then personality:
 |-------------|-------------|-----------|-------------|
 | **Traditional/Heritage** | Serif (Playfair Display, Lora) | Sans-serif (Source Sans Pro) | Established, trusted |
 | **Modern/Progressive** | Geometric sans (Poppins, Outfit) | Humanist sans (Inter, Nunito) | Forward-thinking |
-| **Creative/Arts** | Display (Fraunces, Literata) | Clean sans (DM Sans) | Expressive, unique |
+| **Creative/Arts** | Display (Alegreya, Literata) | Clean sans (DM Sans) | Expressive, unique |
 | **STEM/Tech** | Monospace accent (JetBrains Mono) | Sans (Inter, Rubik) | Innovative, precise |
 | **Early Years** | Rounded (Nunito, Quicksand) | Rounded sans (Nunito Sans) | Warm, approachable |
 | **International** | Clean sans (Plus Jakarta Sans) | Neutral sans (Inter) | Global, professional |

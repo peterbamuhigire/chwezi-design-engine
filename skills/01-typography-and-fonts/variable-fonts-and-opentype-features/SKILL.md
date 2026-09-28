@@ -51,8 +51,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Workflow
 
 1. **Confirm the file is variable and list its axes.** Map each registered axis (`wght`, `opsz`,
-   `slnt`, `ital`, `wdth`, `GRAD`) and any custom axis the foundry ships (e.g. Fraunces `SOFT`/
-   `WONK`, Recursive `MONO`/`CASL`/`CRSV`). Reference: `references/variable-axes.md`.
+   `slnt`, `ital`, `wdth`, `GRAD`) and any custom axis the foundry ships (e.g. Recursive
+   `MONO`/`CASL`/`CRSV`). Reference: `references/variable-axes.md`.
 2. **Register the weight range once** in `@font-face` with `font-weight: <min> <max>` and
    `format("woff2-variations")` so one file carries the whole hierarchy
    (`doctrine/references/embedding-by-format.md` already prefers one variable woff2).
@@ -137,7 +137,7 @@ Read and font inspection are required. Edit only for authorised implementation; 
 Without inspection or rendering, return a conditional plan, label support unverified, and provide a specimen matrix. Never claim a feature exists without evidence.
 
 - `examples/dashboard-type-system.md` — a real analytics/finance product type system on Recursive
-  + IBM Plex: variable axes wired, `opsz` bound to size, tabular numerals in the data layer,
+  + Newsreader: variable axes wired, `opsz` bound to size, tabular numerals in the data layer,
   old-style numerals in prose, one stylistic set adopted, with the full CSS.
 
 ## References

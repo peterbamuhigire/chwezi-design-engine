@@ -73,7 +73,7 @@ heading size and sturdier at caption size automatically.
 }
 
 :root {
-  --font-data: "Recursive", ui-monospace, "IBM Plex Sans", system-ui, sans-serif;
+  --font-data: "Recursive", ui-monospace, "Public Sans", system-ui, sans-serif;
   --font-prose: "Newsreader", Georgia, serif;
   font-optical-sizing: auto;                 /* opsz ← font-size, both faces */
 }

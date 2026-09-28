@@ -52,8 +52,8 @@ underline so colour is never the sole signal.
 
 ## 3. Typography Specimen
 
-**Approved pairing — Fraunces (display) + Public Sans (body).** An editorial high-contrast serif
-against a clean grotesque body: cross-category contrast, distinct moods committed to fixed roles.
+**Approved pairing — Andada Pro (display) + Public Sans (body).** A sturdy, calligraphic editorial
+serif (Huerta Tipográfica) against a clean grotesque body: cross-category contrast, distinct moods committed to fixed roles.
 Both are open-licence (SIL OFL / US Government) and self-hosted via Fontsource. Neither appears on
 the banned-font list.
 
@@ -63,9 +63,9 @@ the banned-font list.
 
 | Element | Font | px / rem | Weight | Line-height | Tracking |
 |---|---|---|---|---|---|
-| Display / H1 | Fraunces | 52 / 3.25 | 600 | 1.1 | -0.02em |
-| H2 | Fraunces | 34 / 2.125 | 600 | 1.15 | -0.01em |
-| H3 | Fraunces | 24 / 1.5 | 500 | 1.25 | 0 |
+| Display / H1 | Andada Pro | 52 / 3.25 | 600 | 1.1 | -0.02em |
+| H2 | Andada Pro | 34 / 2.125 | 600 | 1.15 | -0.01em |
+| H3 | Andada Pro | 24 / 1.5 | 500 | 1.25 | 0 |
 | Body | Public Sans | 16 / 1.0 | 400 | 1.6 | 0 |
 | Caption | Public Sans | 13 / 0.8125 | 400 | 1.5 | 0.01em |
 | Label / Tag | Public Sans | 12 / 0.75 | 600 | 1.4 | 0.06em (uppercase) |
@@ -105,10 +105,10 @@ across any page. No generic posed stock; AI-generated imagery is not approved fo
 
 ## 6. One Do / One Don't
 
-**Do** — Set headlines in **Fraunces 600 in Espresso on a Bone background**, with Ember reserved
+**Do** — Set headlines in **Andada Pro 600 in Espresso on a Bone background**, with Ember reserved
 for the buttons and the mark. The serif carries the editorial, harvest-to-cup warmth the brand
 sells, and the contrast clears AAA.
 
 **Don't** — Don't set Ember body text on Bone (4.6:1 fails AA below 18px and looks muddy), don't
 stretch or recolour the lockup, and don't add a third typeface to "spice up" a layout — hierarchy
-lives in Fraunces and Public Sans weights alone.
+lives in Andada Pro and Public Sans weights alone.

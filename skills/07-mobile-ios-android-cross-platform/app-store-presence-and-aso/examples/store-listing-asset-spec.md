@@ -16,7 +16,7 @@ shop owners. Locales for v1.0: **English (en)** and **Swahili (sw)**.
 
 ## 0. Stated type & color intent (named before composing — doctrine §2)
 
-> **Caption / marketing type:** **Fraunces** (approved *02 Editorial / Literary* category,
+> **Caption / marketing type:** **Andada Pro** (approved *02 Editorial / Literary* category,
 > `doctrine/references/font-groups-and-usage.md`) for caption **headlines**; **Source Sans 3**
 > (approved *08 Body / UI workhorse*) for caption **sub-lines**. Both pass the banned-list check
 > (`doctrine/references/ai-slop-banned-fonts.md`) — **not** Inter, **not** Roboto-as-brand. The
@@ -31,7 +31,7 @@ shop owners. Locales for v1.0: **English (en)** and **Swahili (sw)**.
 > **top third**. That continuity is the authored "one hand" signal vs five isolated raw screenshots.
 
 *Why:* Maduuka is a trust-sensitive money product for non-technical shop owners. Editorial
-Fraunces headlines read *credible and human*; the continuous teal field + consistent tilt make
+Andada Pro headlines read *credible and human*; the continuous teal field + consistent tilt make
 the page read as a designed product, not a template upload.
 
 ---
@@ -65,7 +65,7 @@ No price/badge/screenshot baked in. Not pre-rounded; no alpha on the App Store m
 
 Dimensions: **iPhone 6.9" → 1290 × 2796 px** (primary); iPad 13" → 2064 × 2752; Play phone →
 1080 × 1920. Same composition template re-exported per size. Device floated at −6°, teal field
-continuous, caption top-third. Headline = Fraunces; sub-line = Source Sans 3; text off-white
+continuous, caption top-third. Headline = Andada Pro; sub-line = Source Sans 3; text off-white
 `#FAF7F0` on teal `#0E5C55` → contrast ratio **≈ 9.4:1**, clears WCAG 2.2 §1.4.3 — and stays
 legible at the search-result thumbnail size.
 
@@ -159,7 +159,7 @@ Same layout template; locale is a fill-in, not a redesign.
 
 ## Why this beats the default (doctrine §0)
 A reviewer sees **one hand**: a single teal field flows across all five frames, every device
-sits at the same −6°, the caption headline is the same Fraunces in the same top-third slot, and
+sits at the same −6°, the caption headline is the same Andada Pro in the same top-third slot, and
 the icon, the first screenshot, and the subtitle tell **one** story — "see your sales, get paid,
 track stock." The convergent template version — three raw screenshots on white, the icon
 pre-rounded with alpha, captions in Inter, copy that wastes its first line — would have none of

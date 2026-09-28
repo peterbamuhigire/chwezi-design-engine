@@ -27,6 +27,6 @@ High-personality display faces for campaigns, posters, event identities, cultura
 | ThorowgoodDReg | `thorowgood` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
 | ThunderbirdDReg | `thunderbird` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
 
-**Baseline fallbacks (OFL, always available):** Syne, Unbounded, Bodoni Moda, Eczar, Fraunces.
+**Baseline fallbacks (OFL, always available):** Syne, Unbounded, Bodoni Moda, Eczar, Theano Didot.
 
 **Legend / licence policy:** `Docs + web OK` = OFL/CC0/CC-BY/MIT-class, safe to embed and self-host as webfonts. `Docs OK / web NO` = Summitsoft (documents & rasterised design only, not live @font-face or app-bundle embedding). `Docs OK / web ?` = 1001Fonts FFC (web tier unconfirmed). `*` = free-commercial per the source site (e.g. font.download / fontspace); the source is not always authoritative - confirm with the foundry for high-stakes / client work. `No` redistribute = the font file may not be re-shared on its own; binaries are kept out of git regardless. Per-family terms live in each folder's `LICENSE.txt`.

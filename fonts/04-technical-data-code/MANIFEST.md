@@ -24,6 +24,6 @@ Precise, engineered type for dashboards, admin panels, analytics, API docs, deve
 | sono | `sono` | UI/body (technical) | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 0f) |
 | Terminal Land Mono | `terminal-land` | Code/data (mono/techno) | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 8f) |
 
-**Baseline fallbacks (OFL, always available):** IBM Plex Sans/Serif/Mono, JetBrains Mono, Fira Code.
+**Baseline fallbacks (OFL, always available):** Public Sans (with `tabular-nums`), Source Serif 4, JetBrains Mono, Fira Code.
 
 **Legend / licence policy:** `Docs + web OK` = OFL/CC0/CC-BY/MIT-class, safe to embed and self-host as webfonts. `Docs OK / web NO` = Summitsoft (documents & rasterised design only, not live @font-face or app-bundle embedding). `Docs OK / web ?` = 1001Fonts FFC (web tier unconfirmed). `*` = free-commercial per the source site (e.g. font.download / fontspace); the source is not always authoritative - confirm with the foundry for high-stakes / client work. `No` redistribute = the font file may not be re-shared on its own; binaries are kept out of git regardless. Per-family terms live in each folder's `LICENSE.txt`.

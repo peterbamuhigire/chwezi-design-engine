@@ -36,7 +36,6 @@ Read the foundry's spec sheet; there is no universal list. Common ones among app
 
 | Face | Custom axes | Effect |
 |---|---|---|
-| Fraunces | `SOFT`, `WONK` | softens terminals; toggles the "wonky" quirky glyphs |
 | Recursive | `MONO`, `CASL`, `CRSV` | sans↔mono, linear↔casual, cursive italic forms |
 
 Custom axes have no CSS property — they are only reachable through `font-variation-settings`.
@@ -75,7 +74,7 @@ body { font-weight: 380; }                            /* light body → weight c
 /* axes with NO CSS property → font-variation-settings only */
 .dark h1 { font-variation-settings: "GRAD" 50; }      /* +grade in dark mode, no reflow */
 .cond    { font-variation-settings: "wdth" 88; }      /* condensed label */
-.fraunces-soft { font-variation-settings: "SOFT" 60, "opsz" 48; } /* custom + pinned optical */
+.lockup { font-family: "Source Serif 4"; font-variation-settings: "opsz" 60; } /* pinned display optical on a small lockup */
 ```
 
 ### Rules of the cascade (this is where bugs live)
@@ -101,7 +100,7 @@ body { font-weight: 380; }                            /* light body → weight c
 
 ## Approved variable baselines (none on `ai-slop-banned-fonts.md`)
 
-Fraunces (`opsz`,`wght`,`SOFT`,`WONK`), Newsreader (`opsz`,`wght`,`ital`), Recursive
+Source Serif 4 (`opsz`,`wght`), Newsreader (`opsz`,`wght`,`ital`), Recursive
 (`wght`,`slnt`,`MONO`,`CASL`,`CRSV`), Public Sans (`wght`), Hanken Grotesk (`wght`), Bricolage
-Grotesque (`opsz`,`wght`), IBM Plex Sans (`wght`). Confirm a specific face's axes against the
+Grotesque (`opsz`,`wght`), Andada Pro (`wght`). Confirm a specific face's axes against the
 foundry/Google Fonts spec before relying on one — not every cut ships every axis.

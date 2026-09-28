@@ -15,17 +15,17 @@ dresses the signed-off result. Nothing here changes a number's meaning.
 
 ## 0. Type, palette & encoding intent (stated first, per the charter)
 
-> **Numeric body & headers:** IBM Plex Sans (headers/labels) + IBM Plex Mono is unnecessary here —
-> IBM Plex Sans ships **tabular lining figures**, so columns stack cleanly; chosen from
-> `04-technical-data-code`. **Accent:** Maduuka green `#0B3D2E` for one emphasis only; **negative
-> cue:** `[Red]` + parentheses. **Conditional-encoding palette:** a single-hue green tint ramp for
+> **Numeric body & headers:** Public Sans (headers/labels) + JetBrains Mono for the figure columns —
+> Excel does not expose OpenType `tnum`, so the mono face supplies **equal-width lining figures**
+> and columns stack cleanly; both chosen from `04-technical-data-code`. **Accent:** Maduuka green `#0B3D2E` for one
+> emphasis only; **negative cue:** `[Red]` + parentheses. **Conditional-encoding palette:** a single-hue green tint ramp for
 > the sensitivity heatmap (light `#EAF4EE` → `#0B3D2E`), data-bar accent `#2E7D55`, icon set = the
 > 3-**shape** flag set (▲ ► ▼), never coloured dots. All colour-blind-safe (green-only ramp + shape
 > + number); greyscale-tested for the printed pack. Rejected: Calibri/Aptos (Excel default = slop),
 > rainbow 3-colour scale (chart-junk), red+green RAG by colour alone (fails WCAG 1.4.1).
 
-Premium scan: `fonts/04-technical-data-code/` held no purchased family for this job, so the IBM
-Plex baseline stands.
+Premium scan: `fonts/04-technical-data-code/` held no purchased family for this job, so the Public
+Sans + JetBrains Mono baseline stands.
 
 ---
 
@@ -128,7 +128,7 @@ A **combo column+line** chart (actual revenue columns + cumulative-vs-budget lin
 
 ## 6. One-paragraph rationale (per the charter)
 
-> IBM Plex Sans (tabular figures) on a near-black/Maduuka-green palette, with a single green accent,
+> Public Sans labels with JetBrains Mono figures on a near-black/Maduuka-green palette, with a single green accent,
 > presents the signed-off FY2026 model as a board-grade exhibit. Each conditional encoding is matched
 > to its signal — **data bars** for regional magnitude, a **single-hue heatmap** for the sensitivity
 > matrix, a **shape-based icon set** for budget status — every one paired with the number and a

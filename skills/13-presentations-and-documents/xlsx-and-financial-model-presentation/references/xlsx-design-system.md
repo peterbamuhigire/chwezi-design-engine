@@ -127,7 +127,7 @@ styles** so they apply in one click and restyle globally.
 - **Alignment & whitespace:** numbers right-aligned, text left, headers matching their column;
   generous row height (≥ 18 px) and column padding; indent sub-items one level under their parent.
 - **Tabular figures:** choose a numeric face whose digits are **tabular/lining** (equal-width) so
-  decimal points and digits stack vertically down a column — IBM Plex Mono/Sans and most 04
+  decimal points and digits stack vertically down a column — JetBrains Mono, Fira Code and most 04
   Technical/Data faces qualify; proportional-figure faces make columns ragged.
 
 ---

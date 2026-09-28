@@ -11,20 +11,20 @@ wanted. This is the workflow in `SKILL.md` turned into a shippable spec — read
 
 | Decision | Choice | Reason |
 |---|---|---|
-| Type pairing | **Fraunces** (headings, drop cap, pull-quotes) → **Newsreader** (body) | 02 Editorial / Literary baseline; Fraunces' optical sizing carries the editorial voice, Newsreader is a screen-tuned reading serif. Both OFL — embed-safe. Not a banned default. |
+| Type pairing | **Andada Pro** (headings, drop cap, pull-quotes) → **Newsreader** (body) | 02 Editorial / Literary baseline; Andada Pro's calligraphic, semi-slab serif (Huerta Tipográfica) carries the editorial voice, Newsreader is a screen-tuned reading serif. Both OFL — embed-safe. Not a banned default. |
 | Measure | **66ch** target (`max-width: 66ch`) | Bringhurst's ideal; comfortable single-glance return |
 | Body | **19px / line-height 1.6**, near-black `#1a1a1a` | type-scale reference: ≥1.6 leading for body; never `#000` |
 | Heading scale | 1.25 ratio off 19px → 24 · 30 · 38 · 47px | real ≥1.25 jumps |
 | Baseline unit | **`--rhythm: 1.6rem`** (= body line); all gaps are multiples | typeset rhythm, not arbitrary gaps |
 | Paragraph separation | **spaced blocks** (no indent) | web convention; one method only |
 | Drop cap | **one**, 3 lines, optically hung, + small-caps opening words | marks the start of the read once |
-| Pull-quotes | **two**, Fraunces, broken out to the breakout track | amplify striking lines; ~1 per 1,200 words |
+| Pull-quotes | **two**, Andada Pro, broken out to the breakout track | amplify striking lines; ~1 per 1,200 words |
 | Notes | **sidenotes** on wide screens, **footnote fallback** below 60rem | a few rich asides on a wide page; robust on mobile |
 | Figures | three bands: 1 full-bleed hero, 1 breakout chart, 2 inset diagrams | varied rhythm, not a column of identical insets |
 | Columns | **single measured column** for body | continuous reading; multi-column reserved for the end glossary |
 
 **Focal point** (from the sibling `layout-grid-and-spacing`): the full-bleed hero + the headline
-set in 47px Fraunces, pinned to the top of the measure with air to its right on wide screens.
+set in 47px Andada Pro, pinned to the top of the measure with air to its right on wide screens.
 
 ---
 
@@ -56,12 +56,12 @@ set in 47px Fraunces, pinned to the top of the measure with air to its right on 
 .prose p { margin-block: 0 0.85em; }            /* spaced blocks, no indent */
 
 .prose h2 {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Andada Pro", Georgia, serif;
   font-size: 30px; line-height: 1.2; font-weight: 600;
   margin-block: calc(var(--rhythm) * 2) var(--rhythm);   /* more above than below */
 }
 .prose h3 {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Andada Pro", Georgia, serif;
   font-size: 24px; line-height: 1.25; font-weight: 560;
   margin-block: calc(var(--rhythm) * 1.5) calc(var(--rhythm) * 0.5);
 }
@@ -84,13 +84,13 @@ item: something to be skimmed at full viewport width, three columns deep, and fo
 
 ```css
 .headline {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Andada Pro", Georgia, serif;
   font-size: 47px; line-height: 1.1; font-weight: 650; letter-spacing: -0.01em;
   text-wrap: balance; margin-block-end: var(--rhythm);
 }
 .prose > .opening::first-letter {
   initial-letter: 3; -webkit-initial-letter: 3;
-  font-family: "Fraunces", Georgia, serif; font-weight: 600;
+  font-family: "Andada Pro", Georgia, serif; font-weight: 600;
   margin-inline-end: 0.5rem; margin-inline-start: -0.06em;   /* optical hang */
 }
 @supports not (initial-letter: 3) {
@@ -108,7 +108,7 @@ it's a place to lose your eye.</blockquote>
 
 ```css
 .pullquote {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Andada Pro", Georgia, serif;
   font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem); line-height: 1.2; font-weight: 450;
   text-wrap: balance;
   padding-block: var(--rhythm); padding-inline-start: 1rem;

@@ -27,7 +27,7 @@ possible up to confirmation submit, not after.
 
 ## Stated design choice (Anti-Slop Charter, before building)
 
-- **Type:** **Fraunces** (humanist serif, display weight) for the primary amount and screen title
+- **Type:** **Alegreya** (Huerta Tipográfica humanist, calligraphic serif, display weight) for the primary amount and screen title
   — signals "written by people, established" — paired with **Hanken Grotesk** for body, labels and
   all figures, because it ships **true tabular lining figures** (`tnum`) so amounts column-align.
   Explicitly **not** Inter / Roboto / Geist / Space Grotesk (`ai-slop-banned-fonts.md`).
@@ -42,11 +42,11 @@ possible up to confirmation submit, not after.
 ## Screen 1 — Amount & recipient
 
 Layout (top → bottom):
-- **Title:** "Send to M-Pesa" (Fraunces).
+- **Title:** "Send to M-Pesa" (Alegreya).
 - **Recipient field:** Kenyan MSISDN input, formatted live as `+254 7XX XXX XXX`. On a valid number,
   **echo the registered name back**: "Sending to **JANE W.**" (catches a wrong number — the user's
   top fear). If the name can't be resolved, say so plainly and require a confirm tick.
-- **Amount field:** large, Fraunces, tabular. User enters in **UGX** (their currency).
+- **Amount field:** large, Alegreya, lining tabular figures (`lnum` + `tnum`; confirm in the specimen). User enters in **UGX** (their currency).
   - Below it, live: **"Jane receives ≈ KES 1,200"** with the rate shown to 4 dp.
 - **No submit/auto-advance here.** A single "Review" button, disabled until recipient is valid and
   amount is within balance + limits, with the reason shown when disabled
@@ -129,7 +129,7 @@ balance. Pending vs. cleared distinguished by label, not colour.
 
 Every cross-border incumbent the audience knows signals trust through cool, corporate, tech-forward
 cues — the exact aesthetic they associate with being overcharged. Sente inverts it: terracotta +
-sand + Fraunces serif, with the margin shown openly. A competitor can copy the calculator; they
+sand + Alegreya serif, with the margin shown openly. A competitor can copy the calculator; they
 can't copy the calculator **and** the warm anti-fintech skin without abandoning their own brand.
 Per `ANTI-HOMOGENEITY-PRINCIPLE.md`, the sector default was named and then deliberately not
 occupied, and the differentiation is bound to *this* audience's pain — so a second wallet built

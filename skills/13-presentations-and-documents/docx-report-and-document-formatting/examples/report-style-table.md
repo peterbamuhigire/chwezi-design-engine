@@ -8,10 +8,10 @@ what "state the choice, then apply real values" produces — copy these settings
 
 ## 0. Type choice (stated first, per the charter)
 
-> **Headings:** Fraunces (variable serif, optical sizing) — its high-contrast, slightly
-> idiosyncratic letterforms read as authored and institutional, right for a bankable report.
+> **Headings:** Andada Pro (variable serif, Huerta Tipográfica) — its sturdy, calligraphic,
+> semi-slab letterforms read as authored and institutional, right for a bankable report.
 > **Body:** Source Serif 4 — a calm, screen-and-print legible serif that holds at 11 pt over 28
-> pages. **Data/code:** IBM Plex Mono, only in the financial appendix. Three families, all OFL,
+> pages. **Data/code:** JetBrains Mono, only in the financial appendix. Three families, all OFL,
 > all licence-clear to embed and subset. Rejected: Calibri/Aptos (Word default = slop signal),
 > Times New Roman (dated reflex), Inter (the AI mean).
 
@@ -33,10 +33,10 @@ baseline pairing stands.
 
 | Style | Font | Size | Line | Before/After | Weight/Case | Colour | Outline |
 |---|---|---:|---|---|---|---|---|
-| Title | Fraunces | 32 | Exact 36 | 0 / 18 | 600 sentence | `#1A1A1A` | — |
+| Title | Andada Pro | 32 | Exact 36 | 0 / 18 | 600 sentence | `#1A1A1A` | — |
 | Subtitle | Source Serif 4 | 15 | 20 | 0 / 24 | 400 italic | `#5A5A5A` | — |
-| Heading 1 | Fraunces | 20 | Exact 24 | 24 / 8 | 600 | `#0B3D2E` (Maduuka green) | L1 |
-| Heading 2 | Fraunces | 15 | 20 | 18 / 6 | 600 | `#1A1A1A` | L2 |
+| Heading 1 | Andada Pro | 20 | Exact 24 | 24 / 8 | 600 | `#0B3D2E` (Maduuka green) | L1 |
+| Heading 2 | Andada Pro | 15 | 20 | 18 / 6 | 600 | `#1A1A1A` | L2 |
 | Heading 3 | Source Serif 4 | 12.5 | 16 | 14 / 4 | 600 | `#1A1A1A` | L3 |
 | Heading 4 | Source Serif 4 | 11 | 15 | 12 / 3 | 600 italic | `#5A5A5A` | L4 |
 | Body Text | Source Serif 4 | 11 | 1.15 | 0 / 8 | 400 | `#1A1A1A` | body |
@@ -45,7 +45,7 @@ baseline pairing stands.
 | Caption | Source Serif 4 | 9 | 12 | 4 / 10 | 500 ("Table N."/"Figure N." run-in) | `#5A5A5A` | — |
 | Table Header | Source Serif 4 | 10 | single | 2 / 2 | 600, on `#0B3D2E` 12% tint | `#1A1A1A` | — |
 | Table Text | Source Serif 4 | 10 | single | 2 / 2 | 400 | `#1A1A1A` | — |
-| Code | IBM Plex Mono | 9.5 | 13 | 6 / 6 | 400 on `#F4F4F4` | `#1A1A1A` | — |
+| Code | JetBrains Mono | 9.5 | 13 | 6 / 6 | 400 on `#F4F4F4` | `#1A1A1A` | — |
 | Header Text | Source Serif 4 | 8.5 | single | 0 / 0 | 400 caps, +6% tracking | `#5A5A5A` | — |
 | Footer Text | Source Serif 4 | 8.5 | single | 0 / 0 | 400 | `#5A5A5A` | — |
 
@@ -99,7 +99,7 @@ numbers, hyperlinked. Placed in Section 1, set to **update on open**. H4 exclude
 ## 7. Embed and subset (applied)
 
 File -> Options -> Save -> [x] "Embed fonts in the file" + [x] "Embed only the characters used".
-Result: Fraunces + Source Serif 4 + Plex Mono subset ~ **+180 KB** total on a 2.1 MB document —
+Result: Andada Pro + Source Serif 4 + JetBrains Mono subset ~ **+180 KB** total on a 2.1 MB document —
 negligible, and it renders identically on the bank's machines.
 
 ---

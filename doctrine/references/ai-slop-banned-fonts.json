@@ -1,14 +1,30 @@
 {
   "$comment": "Machine-readable mirror of ai-slop-banned-fonts.md, section 1-3. This is the sidecar the banned-font-gate hook actually reads. Keep in sync with the markdown by hand when the doctrine changes (per §6, Living refresh rule) — the markdown is the authored, evidenced source; this file exists only so the hook doesn't parse prose.",
   "source": "doctrine/references/ai-slop-banned-fonts.md",
-  "lastSynced": "2026-09-20",
+  "lastSynced": "2026-09-29",
   "hardBan": [
     { "family": "Inter", "reason": "AI" },
     { "family": "Geist", "reason": "AI" },
     { "family": "Roboto", "reason": "POP/AI" },
     { "family": "Open Sans", "reason": "POP" },
     { "family": "Lato", "reason": "POP" },
-    { "family": "Arial", "reason": "SYS" }
+    { "family": "Arial", "reason": "SYS" },
+    { "family": "Fraunces", "reason": "HOUSE" },
+    { "family": "IBM Plex", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans", "reason": "HOUSE" },
+    { "family": "IBM Plex Serif", "reason": "HOUSE" },
+    { "family": "IBM Plex Mono", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans Condensed", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans Arabic", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans Devanagari", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans Thai", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans Thai Looped", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans Hebrew", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans KR", "reason": "HOUSE" },
+    { "family": "IBM Plex Sans JP", "reason": "HOUSE" }
+  ],
+  "hardBanFamilyPrefixes": [
+    { "prefix": "IBM Plex", "reason": "HOUSE", "note": "Whole IBM Plex superfamily banned 2026-09-29; the gate treats any family name starting with this prefix as banned, so future or unlisted Plex cuts are caught too." }
   ],
   "secondaryBan": [
     { "family": "Space Grotesk", "reason": "AI" },
@@ -26,7 +42,8 @@
     "-apple-system", "BlinkMacSystemFont", "Segoe UI", "system-ui"
   ],
   "monospaceBanned": [
-    { "family": "Roboto Mono", "reason": "banned as a deliberate design choice; system default use is not checked by this gate" }
+    { "family": "Roboto Mono", "reason": "banned as a deliberate design choice; system default use is not checked by this gate" },
+    { "family": "IBM Plex Mono", "reason": "HOUSE — whole IBM Plex superfamily banned 2026-09-29 (also listed under hardBan so the gate blocks it)" }
   ],
-  "monospaceApproved": ["JetBrains Mono", "IBM Plex Mono", "Fira Code"]
+  "monospaceApproved": ["JetBrains Mono", "Fira Code"]
 }

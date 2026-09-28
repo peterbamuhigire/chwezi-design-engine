@@ -38,7 +38,7 @@ Every exhibit on every page uses this identical frame so the set reads as design
 | **Exhibit keyline** | 0.5 pt rule, `#1A1A1A` at 25%, enclosing the figure area |
 | **Top accent tab** | a 3 mm × 24 mm solid `#0F4C4A` block flush to the frame's top-left (the recurring teal thread) |
 | **Exhibit label** | "EXHIBIT 4.2" — Source Serif 4, 9/12 pt, 600, `#0F4C4A`, +0.06em UPPERCASE, sits on the accent tab row |
-| **Caption (title)** | "Sensitivity of minimum DSCR to PPA tariff and capex" — Fraunces, 14/18 pt, 600, `#1A1A1A`, directly under the label |
+| **Caption (title)** | "Sensitivity of minimum DSCR to PPA tariff and capex" — Andada Pro, 14/18 pt, 600, `#1A1A1A`, directly under the label |
 | **Figure area** | the table/chart, inside the keyline, 8 mm internal padding |
 | **Source note** | "Source: Sponsor financial model v3.0, base case; bank case adjustments per §4.3." — Source Serif 4, 8.5/12 pt, 400 italic, `#1A1A1A` at 80%, **in the marginalia column**, top-aligned to the figure |
 
@@ -69,7 +69,7 @@ DSCR matrix — rows = PPA tariff (US¢/kWh), columns = capex variance.
 ## Marginalia column (the 42 mm outer column)
 
 - **Source note** (top, as above).
-- **One-line read** beneath it — Fraunces italic 9.5/13 pt: *"Base case clears the 1.20× floor; the
+- **One-line read** beneath it — Andada Pro italic 9.5/13 pt: *"Base case clears the 1.20× floor; the
   +20% capex / ≤7.5¢ corner does not — the key sensitivity for the IC."* This pre-digested takeaway is
   the strongest authored signal on the page.
 

@@ -16,8 +16,8 @@ steps in `font-selection-and-pairing/references/type-scale-recipes.md` (Recipe B
 > zoom** — none of which may clip or hide content. Output: web (HTML/CSS).
 
 Faces (chosen in `font-selection-and-pairing`, stated here for completeness, neither banned):
-**Fraunces** (display, variable `opsz`/`wght`) over **Public Sans** (body) — an editorial-but-warm
-serif headline above a calm civic body. We deliberately avoided Inter/Poppins/Montserrat. This
+**Andada Pro** (display, variable `wght`) over **Public Sans** (body) — an editorial-but-warm
+calligraphic serif headline above a calm civic body. We deliberately avoided Inter/Poppins/Montserrat. This
 example is about the **fluid sizing**, not the pairing.
 
 ---
@@ -92,13 +92,13 @@ sign-check passes). Hero ÷ body at 1440px = 89 ÷ 16 ≈ **5.6×** — the modu
 body          { font-family:"Public Sans", system-ui, sans-serif;
                 font-size: var(--fs-body); line-height: 1.6; }
 .caption      { font-size: var(--fs-caption); line-height: 1.5; }
-h3            { font-family:"Fraunces", Georgia, serif;
+h3            { font-family:"Andada Pro", Georgia, serif;
                 font-size: var(--fs-h3); line-height: 1.25; }
-h2            { font-family:"Fraunces", Georgia, serif;
+h2            { font-family:"Andada Pro", Georgia, serif;
                 font-size: var(--fs-h2); line-height: 1.15; }
-h1            { font-family:"Fraunces", Georgia, serif;
+h1            { font-family:"Andada Pro", Georgia, serif;
                 font-size: var(--fs-h1); line-height: 1.1; letter-spacing: -0.01em; }
-.hero .display{ font-family:"Fraunces", Georgia, serif;
+.hero .display{ font-family:"Andada Pro", Georgia, serif;
                 font-size: var(--fs-display); line-height: 1.05; letter-spacing: -0.01em; }
 ```
 

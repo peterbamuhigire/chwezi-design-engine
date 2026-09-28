@@ -37,7 +37,7 @@ Corporate websites sell credibility before services. Decision-makers (C-suite, p
 | **Financial/Investment** | Classic serif (EB Garamond, Lora) | Neutral sans (Inter, Nunito Sans) | Established, trustworthy |
 | **Creative Consulting** | Display sans (Clash Display, Satoshi) | Clean sans (DM Sans) | Bold, distinctive |
 | **Legal/Compliance** | Traditional serif (Cormorant, Literata) | Readable sans (Source Sans Pro) | Formal, credible |
-| **Boutique/Specialist** | Distinctive serif or sans (Fraunces, General Sans) | Warm sans (Plus Jakarta Sans) | Personal, expert |
+| **Boutique/Specialist** | Distinctive serif or sans (Andada Pro, General Sans) | Warm sans (Plus Jakarta Sans) | Personal, expert |
 
 ### Key Rules
 - Body text: 16px minimum, 1.6 line-height (decision-makers scan quickly)

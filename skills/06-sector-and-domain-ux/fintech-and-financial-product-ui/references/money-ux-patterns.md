@@ -23,8 +23,8 @@ system before any visual styling.
 - Enable with `font-feature-settings: "tnum" 1;` (and `"lnum" 1;` for lining) or
   `font-variant-numeric: tabular-nums lining-nums;`. Confirm the chosen face actually ships `tnum`.
 - Approved faces with genuine tabular figures include workhorse grotesques such as **Hanken
-  Grotesk**, **IBM Plex Sans**, and technical/data faces like **IBM Plex Mono** / **JetBrains
-  Mono** for dense ledgers. **Never** Inter/Roboto/Geist/Arial/Space Grotesk as the primary face
+  Grotesk** and **Public Sans**, and technical/data faces like **JetBrains Mono** / **Fira Code**
+  for dense ledgers. **Never** Inter/Roboto/Geist/Arial/Space Grotesk as the primary face
   (`ai-slop-banned-fonts.md`) — even though incumbents reach for them.
 
 ### Currency display

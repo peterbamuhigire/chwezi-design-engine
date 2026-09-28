@@ -80,6 +80,41 @@ const cases = [
     payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: "Source Sans 3", sans-serif; }' } },
     expect: 2,
   },
+  {
+    name: 'CSS primary Fraunces (HOUSE ban 2026-09-29) — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: Fraunces, Georgia, serif; }' } },
+    expect: 2,
+  },
+  {
+    name: 'Quoted primary "Fraunces" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: "Fraunces", serif; }' } },
+    expect: 2,
+  },
+  {
+    name: 'Quoted primary "IBM Plex Sans" (HOUSE ban) — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'body { font-family: "IBM Plex Sans", sans-serif; }' } },
+    expect: 2,
+  },
+  {
+    name: 'Unquoted primary IBM Plex Mono — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'code { font-family: IBM Plex Mono, monospace; }' } },
+    expect: 2,
+  },
+  {
+    name: 'python-docx "IBM Plex Serif" literal — BLOCK',
+    payload: { tool_input: { file_path: '/proj/gen/report.py', content: 'run.font.name = "IBM Plex Serif"' } },
+    expect: 2,
+  },
+  {
+    name: 'Unlisted Plex cut "IBM Plex Sans Tamil" caught by prefix — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.tsx', content: 'fontFamily: "IBM Plex Sans Tamil"' } },
+    expect: 2,
+  },
+  {
+    name: 'Replacement faces Andada Pro + Public Sans + JetBrains Mono — ALLOW',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: "Andada Pro", serif; } body { font-family: "Public Sans", sans-serif; } code { font-family: "JetBrains Mono", monospace; }' } },
+    expect: 0,
+  },
 ];
 
 let failures = 0;

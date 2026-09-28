@@ -21,9 +21,11 @@ do not use the `Skill` tool for them.**
 
 ## The one rule that overrides convenience
 
-Never use a banned AI-slop font as a primary typeface (`doctrine/references/ai-slop-banned-fonts.md`):
-Inter, Roboto, Arial, Open Sans, Lato, bare system stacks; nor the secondary escapes Space
-Grotesk, Poppins, Montserrat, Nunito, or standalone Source Sans. **State the chosen typeface(s)
+Never use a banned AI-slop font as a primary typeface (`doctrine/references/ai-slop-banned-fonts.md`).
+Hard ban: Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces, IBM Plex (all faces), and bare
+system stacks used alone. Secondary ban: Space Grotesk, Instrument Serif, Poppins, Montserrat,
+Nunito, Nunito Sans. Roboto Mono and IBM Plex Mono are banned as monospace choices; Source Sans 3
+is permitted only as a paired body face. **State the chosen typeface(s)
 and reason before producing any artifact.** If you cannot satisfy the anti-slop checklist, say
 so and ask — never silently fall back to Inter or a system stack.
 

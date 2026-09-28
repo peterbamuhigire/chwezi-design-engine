@@ -47,18 +47,18 @@ No TOC (or one typed by hand). No letterhead. Fonts not embedded.
 ## AFTER — the designed, tagged version
 
 ```
-[ Fraunces headings + Source Serif 4 body, embedded + subset ]
+[ Andada Pro headings + Source Serif 4 body, embedded + subset ]
 
 --- Letterhead band: Maduuka logo + identity block, 1pt green rule ---
 
-Market Entry Report                      <- Title style, Fraunces 32/36, 600
+Market Entry Report                      <- Title style, Andada Pro 32/36, 600
 FY2026 opportunity, landscape and risk   <- Subtitle, Source Serif 4 15 italic, Muted
 
-1  Introduction                          <- Heading 1, Fraunces 20, green #0B3D2E, OUTLINE L1
+1  Introduction                          <- Heading 1, Andada Pro 20, green #0B3D2E, OUTLINE L1
 Maduuka is entering FMCG distribution.   <- Lead, Source Serif 4 12.5/18
 This report covers the opportunity, ...  <- Body Text, Source Serif 4 11/1.15
 
-1.1  Market size                         <- Heading 2, Fraunces 15, OUTLINE L2
+1.1  Market size                         <- Heading 2, Andada Pro 15, OUTLINE L2
 
 Table 1. Revenue build-up by quarter     <- Caption style (SEQ field), 9 pt Muted, above table
 +------------------------------------+
@@ -75,7 +75,7 @@ Footer: Confidential — prepared for [Bank]   |   Page { PAGE } of { NUMPAGES }
 ### What changed, line by line
 | # | Before | After | Source rule |
 |---|---|---|---|
-| 1 | Calibri/Aptos default | Fraunces + Source Serif 4, stated & justified | charter section 2; font-groups-and-usage.md |
+| 1 | Calibri/Aptos default | Andada Pro + Source Serif 4, stated & justified | charter section 2; font-groups-and-usage.md |
 | 2 | Bold 16 pt run | **Title** style 32/36 | docx-style-system.md |
 | 3 | Bold heading runs | **Heading 1-4** bound to outline levels | docx-style-system.md |
 | 4 | No TOC | TOC auto-generated from Heading 1-3 | SKILL workflow step 5 |

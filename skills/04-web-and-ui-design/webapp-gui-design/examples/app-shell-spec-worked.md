@@ -11,7 +11,7 @@ This is a deep, session-heavy operations tool, so the structural call (doctrine 
 hours and need a stable rail and visible context, not a hamburger.
 
 **Typeface & palette (stated before layout, per `doctrine/design-doctrine.md` §2):** UI text in
-**IBM Plex Sans**; numerics and IDs in **IBM Plex Mono** (tabular figures for column alignment).
+**Public Sans**; numerics and IDs in **JetBrains Mono** (tabular figures for column alignment).
 No banned default (no Inter/Geist/Roboto/system stack). Palette: neutral slate surfaces, a single
 deep-teal brand accent (`--accent`), and semantic status hues (amber/red/green/slate) reserved
 **only** for reconciliation state — never decoration.
@@ -119,8 +119,8 @@ Top bar (utility): Org switcher · ⌘K Search · EOD timer · Alerts · {User �
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **KPI cards** — `--surface`, `r-lg`, padding `space-6`, hairline `--border`. Value in IBM Plex
-  Mono 28px/600; label in Plex Sans 13px `--muted`; trend chip uses a status hue **plus** a ▲/▼
+- **KPI cards** — `--surface`, `r-lg`, padding `space-6`, hairline `--border`. Value in JetBrains
+  Mono 28px/600; label in Public Sans 13px `--muted`; trend chip uses a status hue **plus** a ▲/▼
   glyph (never colour alone). A KPI loading shows a shimmer block of the **same height** so the
   grid never reflows.
 - **Charts** read theme CSS variables (`--accent`, status hues) so dark mode and the chart library
@@ -149,10 +149,10 @@ Toolbar:  [⌕ Filter…]  Status ▾  Date range ▾  Bank ▾  Amount ▾     
 Footer:  3 selected · [ Bulk match ] [ Ignore ]      Rows 1–25 of 1,284   ◀ 1 2 3 … ▶  [25 ▾]
 ```
 
-- **Columns:** checkbox; `REF` (Plex Mono, deep-links to the record); Bank; Amount
-  (Plex Mono, **right-aligned**, tabular figures); Date; Status as a `StatusPill`; a row-anchored
+- **Columns:** checkbox; `REF` (JetBrains Mono, deep-links to the record); Bank; Amount
+  (JetBrains Mono, **right-aligned**, tabular figures); Date; Status as a `StatusPill`; a row-anchored
   `⋯` actions menu (never a single global menu).
-- **Numerics** use IBM Plex Mono so amounts and refs align down the column.
+- **Numerics** use JetBrains Mono so amounts and refs align down the column.
 - **Facets** mirror object fields (Status, Date range, Bank, Amount range), are additive, show as
   removable chips, and are URL-encoded so a filtered view is bookmarkable/shareable.
 - **Selection** reveals a bulk action bar in the footer (match / ignore); `aria-live="polite"`
@@ -244,7 +244,7 @@ item, and the table degrades to a card list rather than an unreadable x-scroll o
 The default SaaS template would have shipped a top-only nav, an Inter/Geist body face, and a table
 that x-scrolls into oblivion on mobile. The deliberate calls here, each stated before build per
 doctrine Mission §0 and Anti-Slop Charter §2: a **persistent left rail** for a long-session ops
-tool; **IBM Plex Sans + Plex Mono** with tabular figures because this product is fundamentally
+tool; **Public Sans + JetBrains Mono** with tabular figures because this product is fundamentally
 about reading money in aligned columns; **status hues reserved strictly for reconciliation state**
 (never decoration), always paired with a label; and a **card-list table fallback** plus
 **bottom-bar + More** so nothing orphans on a phone.

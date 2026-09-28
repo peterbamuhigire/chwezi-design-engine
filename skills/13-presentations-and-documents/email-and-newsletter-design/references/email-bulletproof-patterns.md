@@ -196,11 +196,11 @@ Space Grotesk, Montserrat, Poppins. Then commit a web-safe fallback that **carri
 
 | Voice | Brand webfont (enhancement) | Committed web-safe fallback stack (the real design in most clients) |
 |---|---|---|
-| Editorial / literary serif | Fraunces, Spectral, Source Serif 4 | `Georgia, 'Times New Roman', Times, serif` |
+| Editorial / literary serif | Andada Pro, Spectral, Source Serif 4 | `Georgia, 'Times New Roman', Times, serif` |
 | Formal / institutional serif | Source Serif 4, Newsreader | `Georgia, Cambria, 'Times New Roman', serif` |
 | Modern product grotesque | (non-banned grotesque, e.g. Work Sans/Public Sans) | `'Helvetica Neue', Helvetica, Arial, sans-serif` |
 | Friendly humanist sans | (non-banned humanist) | `Tahoma, Verdana, Segoe, sans-serif` |
-| Technical / data / mono | JetBrains Mono, IBM Plex Mono | `'Courier New', Courier, monospace` |
+| Technical / data / mono | JetBrains Mono, Fira Code | `'Courier New', Courier, monospace` |
 
 Arial/Helvetica/Georgia/Verdana/Tahoma/Courier are acceptable **as fallback tiers** — they are the
 universally installed email-safe faces — but never stated as the *primary* design face.
@@ -212,12 +212,12 @@ universally installed email-safe faces — but never stated as the *primary* des
 <style>
   @media screen {
     @font-face {
-      font-family:'Fraunces';
+      font-family:'Andada Pro';
       font-style:normal; font-weight:400;
-      src:url('https://example.org/fonts/Fraunces.woff2') format('woff2');
+      src:url('https://example.org/fonts/AndadaPro.woff2') format('woff2');
     }
   }
-  .display{font-family:'Fraunces',Georgia,'Times New Roman',serif!important;}
+  .display{font-family:'Andada Pro',Georgia,'Times New Roman',serif!important;}
 </style>
 <!--<![endif]-->
 ```

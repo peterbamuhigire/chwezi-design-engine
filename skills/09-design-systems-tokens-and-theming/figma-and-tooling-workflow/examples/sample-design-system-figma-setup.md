@@ -7,8 +7,8 @@ on auto-layout with its component-property/variant API, and the naming/branching
 conventions. Every value maps to the token model from `design-tokens-and-naming`. No lorem; the
 typefaces named are licensed system/OFL choices, not banned defaults.
 
-> **Stated design choice first** (Anti-Slop Charter §2): Maduuka pairs **Fraunces** (display, the one
-> authored choice — its optical sizing and slight warmth read as a hand-made marketplace, not a
+> **Stated design choice first** (Anti-Slop Charter §2): Maduuka pairs **Andada Pro** (display, the one
+> authored choice — its calligraphic, semi-slab serif and slight warmth read as a hand-made marketplace, not a
 > templated SaaS) with **Source Sans 3** for UI/body. Accent hue is a deliberate amber-leaning
 > primary, not a reflexive blue. These are decided in groups 01/02 and only *assembled* here.
 
@@ -97,7 +97,7 @@ frame can be `Theme=Dark` + `Breakpoint=Expanded` independently.
 |---|---|---|
 | All colour fills/strokes | **Variable** | themes via `Theme` mode |
 | Spacing, radius, container width | **Variable** | `space/*`, `radius/*`, `container/*` |
-| `text/body/md`, `text/display/h1` | **Text style** | font Fraunces/Source Sans 3; **size backed by `type/step/*` number variable** |
+| `text/body/md`, `text/display/h1` | **Text style** | font Andada Pro/Source Sans 3; **size backed by `type/step/*` number variable** |
 | `effect/shadow/raised` | **Effect style** | shadow **colour bound to a `color/*` variable** so it themes |
 | 12-col layout grid | **Grid style** | columns reference `container/max` |
 

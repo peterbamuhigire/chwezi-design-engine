@@ -7,7 +7,7 @@
   <title>Kraal Code | Operations overview specimen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
@@ -50,7 +50,7 @@
       margin: 0;
       background: var(--canvas);
       color: var(--ink);
-      font: 400 1rem/1.5 "IBM Plex Sans", "Public Sans", sans-serif;
+      font: 400 1rem/1.5 "Public Sans", sans-serif;
     }
     button { font: inherit; }
     a { color: var(--accent); }
@@ -73,7 +73,7 @@
       gap: 1rem;
     }
     .brand { display: flex; align-items: center; gap: .75rem; min-width: 0; }
-    .brand-name { margin: 0; font: 600 1.12rem/1.15 "IBM Plex Serif", Georgia, serif; }
+    .brand-name { margin: 0; font: 600 1.12rem/1.15 "Source Serif 4", Georgia, serif; }
     .brand-sub { color: var(--muted); font-size: .78rem; }
     .controls { display: flex; align-items: center; justify-content: flex-end; gap: .55rem; }
     .control-group { display: flex; gap: .2rem; padding: .18rem; border: 1px solid var(--line); border-radius: .5rem; }
@@ -87,8 +87,8 @@
     .page-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.15rem; }
     .eyebrow { margin: 0 0 .25rem; color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
     h1, h2, h3, p { margin-top: 0; }
-    h1 { margin-bottom: .25rem; font: 600 clamp(1.75rem, 3vw, 2.35rem)/1.15 "IBM Plex Serif", Georgia, serif; letter-spacing: -.025em; }
-    h2 { margin-bottom: .25rem; font: 600 1.25rem/1.25 "IBM Plex Serif", Georgia, serif; }
+    h1 { margin-bottom: .25rem; font: 600 clamp(1.75rem, 3vw, 2.35rem)/1.15 "Source Serif 4", Georgia, serif; letter-spacing: -.025em; }
+    h2 { margin-bottom: .25rem; font: 600 1.25rem/1.25 "Source Serif 4", Georgia, serif; }
     h3 { margin-bottom: .4rem; font-size: 1rem; font-weight: 600; }
     .subhead, .freshness { margin: 0; color: var(--muted); font-size: .875rem; }
     .freshness { text-align: right; }
@@ -97,7 +97,7 @@
     .kpi { min-height: 9rem; padding: 1.05rem 1.1rem; }
     .kpi-label { display: flex; align-items: center; gap: .45rem; margin: 0 0 .65rem; color: var(--muted); font-size: .82rem; font-weight: 600; }
     .kpi-icon { display: inline-grid; width: 1.35rem; height: 1.35rem; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: .8rem; }
-    .kpi-value { margin: 0 0 .35rem; font: 500 clamp(1.55rem, 2.7vw, 2rem)/1.15 "IBM Plex Mono", monospace; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .kpi-value { margin: 0 0 .35rem; font: 500 clamp(1.55rem, 2.7vw, 2rem)/1.15 "JetBrains Mono", monospace; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
     .kpi-foot { display: flex; align-items: center; gap: .35rem; margin: 0; color: var(--muted); font-size: .78rem; }
     .positive { color: var(--success); font-weight: 600; }
     .work-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(18rem, .85fr); gap: .85rem; margin-top: .85rem; }
@@ -108,10 +108,10 @@
     .chart-summary { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-bottom: .25rem; }
     .chart-stat { display: grid; gap: .1rem; }
     .chart-stat span { color: var(--muted); font-size: .75rem; }
-    .chart-stat strong { font: 500 1rem "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; }
+    .chart-stat strong { font: 500 1rem "JetBrains Mono", monospace; font-variant-numeric: tabular-nums; }
     .chart-wrap { margin-top: .25rem; }
     .chart { display: block; width: 100%; height: auto; overflow: visible; }
-    .chart text { fill: var(--muted); font: 12px "IBM Plex Sans", sans-serif; }
+    .chart text { fill: var(--muted); font: 12px "Public Sans", sans-serif; }
     .chart .gridline { stroke: var(--line); stroke-dasharray: 4 5; }
     .chart .series { fill: none; stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }
     .chart .point { fill: var(--surface); stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; }

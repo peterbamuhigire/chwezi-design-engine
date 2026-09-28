@@ -40,7 +40,7 @@ E-commerce websites sell products in a split second. 75% of consumers judge cred
 | **Fashion** | Bold sans (Clash Display, Outfit) | Neutral sans (DM Sans) | Trend-forward, bold |
 | **Food** | Warm serif or rounded sans (Nunito) | Readable sans | Appetising, friendly |
 | **Tech** | Geometric sans (Space Grotesk, Rubik) | Clean sans (Inter) | Technical, precise |
-| **Artisan** | Hand-drawn or distinctive serif (Fraunces) | Warm sans (Plus Jakarta Sans) | Personal, crafted |
+| **Artisan** | Hand-drawn or distinctive serif (Alegreya) | Warm sans (Plus Jakarta Sans) | Personal, crafted |
 | **Kids** | Rounded bold (Quicksand, Nunito) | Readable sans | Playful but clear |
 
 ## Photography Direction

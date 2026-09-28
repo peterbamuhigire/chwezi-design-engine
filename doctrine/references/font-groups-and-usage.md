@@ -25,7 +25,7 @@ Individual font selections may differ by device; category names must not.
 **Use for:** official, legal, finance, government, board, policy, SRS/BRD, business plans,
 formal proposals, statutory or audit-ready documents.
 
-**Baseline faces:** Source Serif 4, Spectral, Crimson Pro, IBM Plex Serif, Libre Baskerville.
+**Baseline faces:** Source Serif 4, Spectral, Crimson Pro, Libre Baskerville.
 
 **Premium folder:** `fonts/01-formal-institutional/`
 **Typical role:** serious serif display/body with a quiet sans body or UI layer.
@@ -35,7 +35,8 @@ formal proposals, statutory or audit-ready documents.
 **Use for:** authored reports, whitepapers, essays, thought leadership, premium report covers,
 cultural or magazine-like documents.
 
-**Baseline faces:** Fraunces, Newsreader, Cormorant Garamond, Alegreya, Libre Caslon Text.
+**Baseline faces:** Andada Pro (local: Andada ht_2015), Newsreader, Cormorant Garamond, Alegreya,
+Libre Caslon Text.
 
 **Premium folder:** `fonts/02-editorial-literary/`
 **Typical role:** distinctive editorial display with a readable serif or quiet sans body.
@@ -56,11 +57,12 @@ Grotesk, General Sans.
 **Use for:** dashboards, developer tools, admin panels, API docs, code-adjacent UI, analytics,
 data products, technical documentation.
 
-**Baseline faces:** IBM Plex Sans, IBM Plex Serif, IBM Plex Mono, JetBrains Mono, Fira Code,
-Space Mono for short labels only.
+**Baseline faces:** Public Sans (with `tabular-nums` for data), Source Serif 4, JetBrains Mono,
+Fira Code, Space Mono for short labels only.
 
 **Premium folder:** `fonts/04-technical-data-code/`
-**Typical role:** IBM Plex Sans for UI/body; mono faces only for code, IDs, logs, or data accents.
+**Typical role:** Public Sans for UI/body with JetBrains Mono accents; mono faces only for code,
+IDs, logs, or data accents.
 
 ## 05 - Friendly / Humanist
 
@@ -77,7 +79,7 @@ forms, service design, accessibility-sensitive interfaces.
 **Use for:** campaign heads, posters, event identities, cultural brands, portfolio covers,
 beauty/luxury moments, bold hero sections.
 
-**Baseline faces:** Syne, Unbounded, Bodoni Moda, Eczar, Fraunces.
+**Baseline faces:** Syne, Unbounded, Bodoni Moda, Eczar, Theano Didot.
 
 **Premium folder:** `fonts/06-expressive-display-artistic/`
 **Typical role:** display only, paired with a quiet body face.
@@ -97,8 +99,7 @@ human annotation effects.
 **Use for:** the readable body and UI layer beneath a distinctive display face from another
 category.
 
-**Baseline faces:** Public Sans, Hanken Grotesk, Source Sans 3 body-only, IBM Plex Sans,
-Atkinson Hyperlegible.
+**Baseline faces:** Public Sans, Hanken Grotesk, Source Sans 3 body-only, Atkinson Hyperlegible.
 
 **Premium folder:** `fonts/08-body-ui-workhorses/`
 **Typical role:** body, captions, labels, forms, and UI text. Never the whole identity by itself.
@@ -108,10 +109,10 @@ Atkinson Hyperlegible.
 | Artifact | Default category | Header -> Body example |
 |---|---|---|
 | Business plan / statutory report / SRS / legal proposal | 01 Formal / Institutional | Source Serif 4 -> Public Sans |
-| Premium report / whitepaper / thought leadership | 02 Editorial / Literary | Fraunces -> Source Serif 4 or Public Sans |
-| Dashboard / admin UI / API docs | 04 Technical / Data / Code | IBM Plex Sans -> IBM Plex Sans + IBM Plex Mono accents |
+| Premium report / whitepaper / thought leadership | 02 Editorial / Literary | Andada Pro -> Source Serif 4 or Public Sans |
+| Dashboard / admin UI / API docs | 04 Technical / Data / Code | Public Sans (Semibold) -> Public Sans (`tabular-nums`) + JetBrains Mono accents |
 | SaaS landing / product marketing / pitch deck | 03 Modern Product / Grotesque | Bricolage Grotesque or Clash Display -> Hanken Grotesk or Satoshi |
-| Healthcare / education / civic service UI | 05 Friendly / Humanist | Atkinson Hyperlegible -> Public Sans, or Fraunces -> Atkinson Hyperlegible |
+| Healthcare / education / civic service UI | 05 Friendly / Humanist | Atkinson Hyperlegible -> Public Sans, or Alegreya -> Atkinson Hyperlegible |
 | Campaign / poster / expressive hero | 06 Expressive Display / Artistic | Syne or Bodoni Moda -> Public Sans |
 | Signature / boutique accent / handwritten note | 07 Script / Cursive / Handwritten | Great Vibes or Caveat -> Public Sans |
 | Generic readable body layer | 08 Body / UI Workhorses | Any approved display -> Hanken Grotesk or Public Sans |
@@ -122,4 +123,5 @@ Atkinson Hyperlegible.
 - Never use a script/cursive face for body text.
 - Never let body workhorses become a monotype identity.
 - Never place Geist in any folder; it is banned.
+- Never use Fraunces or any IBM Plex face; banned 2026-09-29 (HOUSE).
 - State the chosen display + body pair and reason before producing output.

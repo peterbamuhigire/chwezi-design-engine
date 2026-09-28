@@ -66,7 +66,7 @@ All colors verified for WCAG AA minimum (4.5:1 contrast) in both light and dark 
 - Navigation, labels, CTAs, short copy
 - Body text on mobile
 
-**Display Example**: Playfair Display or Fraunces (DO NOT USE — find your own)
+**Display Example**: Playfair Display (DO NOT USE — find your own)
 - Hero headline (one word or short phrase)
 - Accent headers
 

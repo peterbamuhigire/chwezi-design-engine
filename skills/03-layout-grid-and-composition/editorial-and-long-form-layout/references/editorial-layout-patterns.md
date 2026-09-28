@@ -8,7 +8,7 @@ literature, never AI-vendor picks — `doctrine/design-doctrine.md` §2).
 
 Worked CSS uses custom properties on the reading column so it composes with the page grid from
 `layout-grid-and-spacing`. Faces shown are the **02 Editorial / Literary** baseline pairing
-(Fraunces headings → Newsreader/Source Serif 4 body) from
+(Andada Pro headings → Newsreader/Source Serif 4 body) from
 `doctrine/references/font-groups-and-usage.md` — never a banned default.
 
 ---
@@ -115,7 +115,7 @@ pieces), never sprinkled. 2–4 lines deep, optically **hung** to the margin.
 .prose > p:first-of-type::first-letter {
   initial-letter: 3;                 /* 3 lines deep where supported */
   -webkit-initial-letter: 3;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Andada Pro", Georgia, serif;
   font-weight: 600;
   margin-inline-end: 0.5rem;
   margin-inline-start: -0.06em;      /* OPTICAL HANG: pull left to the text margin */
@@ -152,7 +152,7 @@ measure, asymmetric space. At most one per ~400–600 words.
   width: min(90vw, 52rem);
   margin-inline: calc(50% - 50vw);  /* simple breakout; or use a grid full-bleed track */
   max-width: none;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: "Andada Pro", Georgia, serif;
   font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
   line-height: 1.2;
   font-weight: 450;

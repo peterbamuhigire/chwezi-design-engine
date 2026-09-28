@@ -47,7 +47,7 @@ leans **warm, grounded, and plainspoken** — closer to a trusted local agent th
   decisive signal-green for "money arrived / on its way" (`#1F7A4D`, used only on confirmation and
   the rate line). No blue as a brand color — blue appears only as a muted info state. This is the
   load-bearing differentiation choice (see section 4).
-- **Type:** a confident humanist serif for headlines (**Fraunces** at display weight) paired with a
+- **Type:** a confident humanist serif for headlines (**Alegreya** at display weight) paired with a
   clear grotesque for numbers and body (**Hanken Grotesk**, an approved workhorse with true tabular
   figures). The serif signals "established, written by people," the grotesk keeps figures legible and
   tabular. Numbers use tabular lining so rates and amounts align in columns. **Not** Inter, Roboto,

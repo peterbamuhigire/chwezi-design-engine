@@ -78,7 +78,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 1. **State the type, palette, and encoding intent first.** Per the Anti-Slop Charter
    (`doctrine/design-doctrine.md` §2), name the numeric face (a **04 Technical / Data** family with
-   **tabular lining figures** so columns align — e.g. IBM Plex Mono / IBM Plex Sans for headers, or
+   **tabular lining figures** so columns align — e.g. JetBrains Mono for figure columns with Public Sans for headers, or
    a workhorse with tabular figures from `doctrine/references/font-groups-and-usage.md`), the single
    accent colour, and — if you will encode with conditional formatting — *which* signal (magnitude /
    threshold / category) and the colour-blind-safe scale, **before** touching the sheet. Scan

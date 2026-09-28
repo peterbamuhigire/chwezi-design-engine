@@ -10,8 +10,8 @@ in `references/cover-and-divider-systems.md`), with a thin left accent band as t
 
 - **Document:** "Kabaale Solar IPP — Project Finance Proposal", prepared for a development-finance
   lender's investment committee.
-- **Type (group 01 Editorial):** **Fraunces** (display, headline) over **Source Serif 4** (body /
-  marks). Reason: Fraunces' high-contrast, slightly old-style cut reads as institutional and authored
+- **Type (group 01 Editorial):** **Andada Pro** (display, headline) over **Source Serif 4** (body /
+  marks). Reason: Andada Pro's sturdy, calligraphic semi-slab cut reads as institutional and authored
   — the opposite of a Calibri export — while Source Serif 4 keeps the body credible and quiet. Both
   are OFL, safe to embed (`font-groups-and-usage.md`). Scanned `fonts/01-formal-institutional/`
   first; no licensed premium family present, so baseline used.
@@ -41,8 +41,8 @@ All vertical positions snap to the 12 pt baseline grid.
 | Block | Y (from trim top) | Type | Size / leading | Weight / colour | Tracking |
 |---|---|---|---|---|---|
 | **Eyebrow** — "PROJECT FINANCE PROPOSAL" | 40 mm | Source Serif 4 | 9 / 12 pt | 600, `#0F4C4A`, UPPERCASE | +0.06em |
-| **Title** — "Kabaale Solar IPP" | 96 mm | Fraunces | **64 / 64 pt** | 600, `#1A1A1A` | -0.01em |
-| **Title line 2** — "40 MW · Hoima District" | (next baseline) | Fraunces | 64 / 64 pt | 600, `#1A1A1A` | -0.01em |
+| **Title** — "Kabaale Solar IPP" | 96 mm | Andada Pro | **64 / 64 pt** | 600, `#1A1A1A` | -0.01em |
+| **Title line 2** — "40 MW · Hoima District" | (next baseline) | Andada Pro | 64 / 64 pt | 600, `#1A1A1A` | -0.01em |
 | **Subtitle** — "Senior Debt Facility — Information Memorandum" | +14 mm below title | Source Serif 4 | 14 / 20 pt | 400 italic, `#1A1A1A` | 0 |
 | **Thin rule** | +12 mm | — | 0.75 pt rule, `#0F4C4A`, 90 mm wide | — | — |
 | **Prepared for** — "Prepared for: [Lender] Investment Committee" | 244 mm | Source Serif 4 | 10 / 14 pt | 400, `#1A1A1A` | 0 |
@@ -56,7 +56,7 @@ All vertical positions snap to the 12 pt baseline grid.
 
 ## Why this passes the gate
 
-- **Authored, not exported:** one strong typographic idea (giant Fraunces title, left teal band),
+- **Authored, not exported:** one strong typographic idea (giant Andada Pro title, left teal band),
   top-aligned to the grid, no centered-on-gradient cliché.
 - **No banned font;** display face carries the cover; real size extreme.
 - **Recurring thread:** the teal band + teal eyebrow + teal rule reappear on every divider and exhibit

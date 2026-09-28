@@ -22,11 +22,13 @@ and we note the convergence risk on any the cookbook also happens to push. Corro
 Vercel/shadcn defaults and designer commentary; verified via the digital-research engine's
 source-verification pass (2026-06-21).
 
-> **Label every ban by its failure mode — they are not all the same.** Three distinct reasons:
+> **Label every ban by its failure mode — they are not all the same.** Four distinct reasons:
 > **[AI]** = genuine AI-ecosystem default / tell · **[POP]** = generic-popular & overused (reads
-> as "no design," predates AI) · **[SYS]** = lazy system default. Only **[AI]** is truly an "AI
-> tell"; all three are still banned as a *primary* typeface for Chwezi work, but stating the
-> right reason keeps the doctrine honest.
+> as "no design," predates AI) · **[SYS]** = lazy system default · **[HOUSE]** = house ruling by
+> Peter Bamuhigire, Lead Consultant, Chwezi Core Systems, 29 Sep 2026; supporting AI-tool
+> evidence: the pbakaus/impeccable deterministic detector and its reflex-font list. Only **[AI]**
+> is truly an "AI tell" on independent evidence; all four are banned as a *primary* typeface for
+> Chwezi work, but stating the right reason keeps the doctrine honest.
 
 ---
 
@@ -41,6 +43,14 @@ source-verification pass (2026-06-21).
 - **Open Sans** — **[POP]** Cookbook "never use"; ~#2 Google Font. Banned.
 - **Lato** — **[POP]** Cookbook "never use"; ~#3 Google Font. Banned.
 - **Arial** — **[SYS]** "lazy default," reads as no-design. Banned as a deliberate choice.
+- **Fraunces** — **[HOUSE]** *added 2026-09-29.* The "soft, wonky" variable serif has become
+  the reflex "I avoided Inter" display serif in generated editorial and landing work; flagged by
+  the pbakaus/impeccable deterministic detector. Banned outright — as display, heading and body.
+- **IBM Plex (the entire superfamily)** — **[HOUSE]** *added 2026-09-29.* IBM Plex Sans, Serif,
+  Mono, Sans Condensed and every script companion (Sans Arabic, Devanagari, Thai, Thai Looped,
+  Hebrew, KR, JP, and any later cut). Listed among the reflex / AI-default fonts by
+  pbakaus/impeccable; it had become the engine's own "safe technical" reflex. Banned outright;
+  the gate matches any family name beginning "IBM Plex".
 - **Bare system-font stacks used alone** — **[SYS]** e.g. `-apple-system, BlinkMacSystemFont,
   "Segoe UI", sans-serif` with no deliberate face layered on top. (Note: a *deliberate,
   documented* system-font fallback chain is different — see `system-font-fallbacks.md`.)
@@ -82,7 +92,10 @@ client deliverable shipped under the Chwezi Core Systems name.
 ## 5. Edge cases
 
 - **Code/monospace** in a technical artifact may need a monospace face — use an approved one
-  (JetBrains Mono, IBM Plex Mono, Fira Code), never Roboto Mono as a *design* choice.
+  (JetBrains Mono, Fira Code), never Roboto Mono or IBM Plex Mono as a *design* choice.
+- **Non-Latin script coverage** that previously leaned on an IBM Plex script companion (e.g.
+  IBM Plex Sans Arabic) now uses the matching **Noto** family (e.g. Noto Sans Arabic, Noto Sans
+  Devanagari) — chosen for script coverage, not as a display statement.
 - **A client brand guideline that mandates a banned font** overrides this list for that client
   only — state it explicitly, record it, do not generalise it.
 - **A deliberate device-common fallback** (e.g. Georgia, the system stacks in
@@ -99,3 +112,20 @@ Font defaults move. Before adding, removing, or reclassifying a banned face, run
 `doctrine/references/living-slop-refresh-protocol.md` with the digital-research engine's source
 evaluation discipline. Record the observed shift, evidence grade, design consequence, scope, and
 date checked. Weak evidence becomes a watchlist note, not a hard ban.
+
+## 7. Change log
+
+- **2026-09-29 — Fraunces and IBM Plex (whole superfamily) added to the hard ban [HOUSE].**
+  `Observed shift:` both faces had become reflex "tasteful" defaults — Fraunces as the go-to
+  soft editorial display serif, IBM Plex as the go-to "technical but not Inter" sans/serif/mono —
+  including inside this engine's own baselines. `Evidence grade:` moderate (one AI-tool source:
+  the pbakaus/impeccable deterministic detector flags Fraunces; its reflex/AI-default font list
+  includes IBM Plex) — admissible for bans only, per the asymmetry principle above. The ban's
+  authority is the house ruling of Peter Bamuhigire (Lead Consultant, Chwezi Core Systems), not
+  the evidence grade. `Design consequence:` hard ban as primary type in every format; binaries
+  removed from `fonts/02-editorial-literary/`; role replacements — editorial/document display →
+  Andada (web: "Andada Pro"), luxury/expressive display → Theano Didot, warm heading over humanist
+  UI → Alegreya, variable-axis examples → Source Serif 4, UI/body/data → Public Sans (with
+  `tabular-nums`), serif text → Source Serif 4, monospace → JetBrains Mono (fallback Fira Code),
+  non-Latin script coverage → matching Noto family. `Scope:` typography — web, UI, DOCX, PPTX,
+  PDF, XLSX. `Date checked:` 2026-09-29.

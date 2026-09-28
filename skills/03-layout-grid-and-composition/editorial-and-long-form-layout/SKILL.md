@@ -271,7 +271,7 @@ mean to *avoid*, not as endorsement.
 - `doctrine/references/type-scale-and-spacing.md` — the body size, line-height-by-size, weight
   extremes, spacing unit, and near-black text colour this reading rhythm is built on.
 - `doctrine/references/font-groups-and-usage.md` — the **02 Editorial / Literary** baseline pairing
-  (Fraunces / Newsreader / Source Serif 4) the long-form register usually wants.
+  (Andada Pro / Newsreader / Source Serif 4) the long-form register usually wants.
 - `doctrine/references/wcag-2.2-criteria.md` — contrast floor (AA), reading order, focusable note
   links.
 - `doctrine/references/web-performance-budgets-2026.md` — keep webfont and image weight within

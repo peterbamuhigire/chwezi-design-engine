@@ -87,7 +87,7 @@ Never use generic navy + white + gold. Every law firm uses it. Differentiate wit
 | Family Law | Lora | Nunito | Warm, approachable |
 | Corporate/Business | DM Serif Display | DM Sans | Sharp, modern |
 | Solo/Boutique | Spectral | Work Sans | Distinctive, human |
-| Immigration | Fraunces | Outfit | Welcoming, friendly |
+| Immigration | Alegreya | Outfit | Welcoming, friendly |
 
 **Rule**: Never Inter/Roboto/Arial for headings. These fonts erase brand personality.
 

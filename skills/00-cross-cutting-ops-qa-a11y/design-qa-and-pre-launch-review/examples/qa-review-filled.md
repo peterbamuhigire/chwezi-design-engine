@@ -28,7 +28,7 @@ Both sides present (build + Figma + redline). Proceed.
 |---|---|---|
 | Design tokens | **FAIL** | "Place order" button uses hard-coded `#1F6FEB`; system token is `--color-action` (`#1A5FD4`). One-off, will drift. → Finding S-1 |
 | Type scale | PASS | All sizes on the project Major-Third scale. |
-| Pairing | PASS | Stated pairing (Fraunces display / Public Sans body) present; no banned font; no monotype. |
+| Pairing | PASS | Stated pairing (Andada Pro display / Public Sans body) present; no banned font; no monotype. |
 | Component variants | PASS | All three address-card variants present. |
 | **State set** | **FAIL** | "Place order" button has no **disabled** and no **loading** state — double-submit possible while the charge resolves. → Finding S-2 (also a11y + UX) |
 | Microcopy | **FAIL** | Primary button reads "Submit"; approved copy is "Place order". Empty-cart text is "No items." vs approved "Your cart is empty — browse the catalogue to add items." → Finding S-3 |
@@ -49,7 +49,7 @@ Both sides present (build + Figma + redline). Proceed.
 
 Ran `visual-product-slop-audit` + `ai-slop-typography-audit`.
 
-- [x] No banned default typeface — Fraunces + Public Sans, both intentional, stated in the design doc.
+- [x] No banned default typeface — Andada Pro + Public Sans, both intentional, stated in the design doc.
 - [x] Type/colour/layout choice stated before build (design doc §2).
 - [x] No visual slop tells — no AI imagery, no decorative blur/glow/gradient-as-design.
 - [x] No product slop tells — no gratuitous "AI" feature; the "estimate delivery" call is grounded in a real API with a visible fallback.

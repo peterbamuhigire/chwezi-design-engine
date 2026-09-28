@@ -6,7 +6,7 @@ paragraph styles** (and a few character styles), bind the heading styles to Word
 **outline levels** so the TOC and the accessibility tag tree read them. Never format headings
 with manual bold/size runs.
 
-> Default pairing (baseline, always available): **Fraunces** (display serif) for Title/Headings,
+> Default pairing (baseline, always available): **Andada Pro** (display serif) for Title/Headings,
 > **Source Serif 4** for body — or **Public Sans** body for a quieter sans counterpoint. Scan
 > `fonts/01-formal-institutional/` for a purchased premium family and prefer it when it
 > improves the result. Never Calibri, Aptos, Inter, or Times New Roman as a reflex.
@@ -50,7 +50,7 @@ thesis), switch from fixed L/R margins to a symmetric, binding-aware layout:
 
 ## The named style hierarchy
 
-Font = heading face (H) = Fraunces; body face (B) = Source Serif 4. Colour `Ink` = `#1A1A1A`
+Font = heading face (H) = Andada Pro; body face (B) = Source Serif 4. Colour `Ink` = `#1A1A1A`
 (near-black, never pure `#000`), `Accent` = brand hex, `Muted` = `#5A5A5A`.
 
 | Style name | Based on / font | Size (pt) | Line spacing | Space before / after | Weight & case | Colour | Outline level | Notes |
@@ -69,7 +69,7 @@ Font = heading face (H) = Fraunces; body face (B) = Source Serif 4. Colour `Ink`
 | **Caption** | (none) · B | 9 | 12 pt | 4 / 10 pt | 500, "Table N." / "Figure N." run-in | Muted | — | Above tables / below figures |
 | **Table Text** | Body · B | 10 | Single | 2 / 2 pt | 400 | Ink | — | Tighter than body |
 | **Table Header** | Table Text · B | 10 | Single | 2 / 2 pt | 600 | Ink on Accent-tint | — | Repeats as header row |
-| **Code** | (none) · IBM Plex Mono | 9.5 | 13 pt | 6 / 6 pt | 400 | Ink on `#F4F4F4` | — | Inline accents allowed |
+| **Code** | (none) · JetBrains Mono | 9.5 | 13 pt | 6 / 6 pt | 400 | Ink on `#F4F4F4` | — | Inline accents allowed |
 | **Footer Text** | (none) · B | 8.5 | Single | 0 / 0 | 400 | Muted | — | Page numbering, ref line |
 | **Header Text** | (none) · B | 8.5 | Single | 0 / 0 | 400 letter-spaced caps | Muted | — | Running section title |
 
@@ -82,7 +82,7 @@ Word values: 11 → 12.5 → 15 → 20 → 32 (Title). Caption steps **down** to
 never competes with body. This is a *real* scale with five distinguishable steps — the antidote
 to the single-size monotype slop signal (charter §3).
 
-- **One** display face (headings) + **one** body face. Code uses IBM Plex Mono only where data/
+- **One** display face (headings) + **one** body face. Code uses JetBrains Mono only where data/
   code appears. Three families maximum.
 - Use weight (400 vs 600) and case, not extra fonts, to differentiate within a level.
 

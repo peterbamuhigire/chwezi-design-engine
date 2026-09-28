@@ -79,7 +79,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Warm, earthy. Terracotta + warm gold, ochre + deep brown, or warm violet + cream. Heritage feel.
-- **Typography:** Distinctive serif (Fraunces, Literata, Lora) + warm sans (Plus Jakarta Sans, Nunito). Character-rich.
+- **Typography:** Distinctive serif (Alegreya, Literata, Lora) + warm sans (Plus Jakarta Sans, Nunito). Character-rich.
 - **Photography:** Cultural moments — local crafts, cooking, ceremonies, markets, architecture. Warm tones.
 - **Tone:** Warm, curious, respectful. "Meet the people behind the places."
 

@@ -12,7 +12,7 @@ Send a monthly update to members of a regional growers' co-operative. The email 
 
 - **Target clients:** Gmail web and app, Outlook desktop, and Apple Mail on iPhone. No client rendering has been run for this example; it is a design handoff, not a production-ready or tested email.
 - **Layout:** one 600 px maximum-width, table-based column that becomes fluid on narrow screens. The main message and action stay in live text.
-- **Type:** Fraunces for an optional display enhancement, with Georgia as the committed serif fallback for headings and body copy. The fallback carries the intended warm, editorial voice when a client drops the webfont. Arial appears only in the final generic sans-serif fallback tier for interface labels.
+- **Type:** Andada Pro for an optional display enhancement, with Georgia as the committed serif fallback for headings and body copy. The fallback carries the intended warm, editorial voice when a client drops the webfont. Arial appears only in the final generic sans-serif fallback tier for interface labels.
 - **Colour:** deep forest `#183B32` for headings and the action button, warm paper `#FFF9EF` for the canvas, and dark ink `#252923` for body text. Recheck contrast after rendering, including dark mode.
 - **Dark mode:** provide a dark logo asset if a logo is added; keep the heading and action as live text with explicit colours and inspect how each target client rewrites them.
 - **Preheader:** name the useful detail rather than repeat the subject.

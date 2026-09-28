@@ -113,7 +113,7 @@ The sector template uses Playfair Display + Inter. Your brand should feel differ
 - Font name: ______________
 - Why? (What does it say about you?)
   _______________________________________________________________________________
-- Examples: Clash Display, Cabinet Grotesk, Instrument Serif, Fraunces, Outfit
+- Examples: Clash Display, Cabinet Grotesk, Instrument Serif, Theano Didot, Outfit
 
 **Body Font (must be highly readable):**
 - Font name: ______________

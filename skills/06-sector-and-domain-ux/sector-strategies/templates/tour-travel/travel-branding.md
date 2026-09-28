@@ -69,7 +69,7 @@ Travel sites need **emotional impact first**, then readability:
 |-----------|-------------|-----------|-------------|
 | **Luxury Safari/Lodge** | Elegant serif (Cormorant, DM Serif Display) | Clean sans (DM Sans, Inter) | Premium, refined |
 | **Adventure/Expedition** | Bold geometric (Outfit, Sora, Clash Display) | Humanist sans (Nunito, Source Sans Pro) | Bold, energetic |
-| **Cultural Immersion** | Distinctive serif (Fraunces, Literata, Lora) | Warm sans (Plus Jakarta Sans, Nunito) | Authentic, warm |
+| **Cultural Immersion** | Distinctive serif (Alegreya, Literata, Lora) | Warm sans (Plus Jakarta Sans, Nunito) | Authentic, warm |
 | **Eco-Tourism** | Organic sans (Quicksand, Nunito) | Natural sans (DM Sans) | Approachable, earthy |
 | **Wellness/Retreat** | Light serif (Cormorant Garamond, EB Garamond) | Elegant sans (Jost, Outfit) | Calm, refined |
 | **Budget/Backpacker** | Bold sans (Rubik, Outfit, Plus Jakarta Sans) | Clean sans (Inter, Nunito Sans) | Casual, direct |

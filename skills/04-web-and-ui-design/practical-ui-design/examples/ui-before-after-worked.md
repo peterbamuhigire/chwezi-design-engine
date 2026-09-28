@@ -2,7 +2,7 @@
 
 One real screen, fixed against the practical-ui-design rules. The screen is the **"Pro" plan card** from a three-tier SaaS pricing page. Each change below is mapped to the exact rule it satisfies (section numbers refer to `SKILL.md` and `references/skill-deep-dive.md`).
 
-Typeface choice: display face **Fraunces** (headings/price), body face **Source Sans 3** (everything else). Deliberate pairing — neither is a banned AI-slop default (no Inter / Roboto / Open Sans / Lato / Montserrat / Poppins / Nunito).
+Typeface choice: display face **Andada Pro** (headings/price), body face **Source Sans 3** (everything else). Deliberate pairing — neither is a banned AI-slop default (no Inter / Roboto / Open Sans / Lato / Montserrat / Poppins / Nunito).
 
 ---
 
@@ -73,7 +73,7 @@ Palette derived per §1.4 (1 hue + variations), brand hue **230**, neutrals tint
     text-transform:uppercase; margin:0 0 8px;">Pro</p>
 
   <!-- Price: display face, Darkest neutral, dominant in hierarchy §2 -->
-  <div style="font-family:'Fraunces', serif;">
+  <div style="font-family:'Andada Pro', serif;">
     <span style="color:#1f212e; font-size:44px; font-weight:600; line-height:1;">$29</span>
     <span style="color:#5a5d72; font-size:16px;">/mo</span>
   </div>
@@ -122,7 +122,7 @@ Palette derived per §1.4 (1 hue + variations), brand hue **230**, neutrals tint
 | 8 | Real type hierarchy | flat → 44px price (display) / 15px body / 13px label | Deep-dive §2 Type scale |
 | 9 | Button copy states outcome | `Buy` → `Start Pro plan` | Deep-dive §4/§5 Action-specific labels |
 | 10 | Feature list left-aligned, full-width button | centred → left-aligned, `width:100%` CTA | Deep-dive §3 Scannable alignment |
-| 11 | Deliberate typeface pairing | `Inter` → Fraunces (display) + Source Sans 3 (body) | Banned-fonts list + pairing principle |
+| 11 | Deliberate typeface pairing | `Inter` → Andada Pro (display) + Source Sans 3 (body) | Banned-fonts list + pairing principle |
 
 ### Net effect
 

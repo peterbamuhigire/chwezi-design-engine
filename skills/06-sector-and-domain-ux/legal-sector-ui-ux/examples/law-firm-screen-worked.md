@@ -45,7 +45,7 @@ corporate practice: the emotional register is *calm and protective*, not *aggres
 **Type pairing** (both outside the banned list — no Inter, Roboto, Open Sans, Lato, Montserrat,
 Poppins, Geist, Arial, system defaults):
 
-- **Headings:** *Fraunces* (humanist serif) — authored, warm, conveys judgment and care.
+- **Headings:** *Alegreya* (humanist, calligraphic serif) — authored, warm, conveys judgment and care.
 - **Body / UI:** *Source Sans 3* — highly legible at small sizes, calm, not a slop default.
 - Fallback tier if embedding is constrained: Georgia (headings) / a device-common humanist
   sans, declared explicitly — never a silent fall-back to Inter.
@@ -61,7 +61,7 @@ consultation room photo also doubles as a local-trust signal.
 ### Above the fold — problem first, then the small first step
 
 ```
-H1 (Fraunces, 40px):
+H1 (Alegreya, 40px):
     Divorce and Custody Lawyers in Kampala — Protecting Your Time With Your Children
 
 Intro (Source Sans, 18px, 2 sentences, ~45 words):
@@ -177,7 +177,7 @@ sites (mistake #10).
 
 A templated build would open with "Welcome to [Firm], established 2009," drop a navy hero with
 a gavel photo, set everything in Inter, and bury the phone number. This screen instead leads
-with the parent's fear, uses a deliberately non-default teal/clay palette and a Fraunces/Source
+with the parent's fear, uses a deliberately non-default teal/clay palette and an Alegreya/Source
 Sans pairing, sequences reassurance → process → authority → action, and treats the bar's
 advertising and disclaimer rules as design requirements rather than afterthoughts. That is the
 difference between a page that reads as *authored for a frightened parent* and one that reads

@@ -137,7 +137,7 @@ degradation* beats five choices that only render in one client.
    others strip it** and fall straight to your fallback. Therefore design the email so it looks
    *right in the web-safe fallback first*, then layer the webfont as an enhancement for the
    clients that honour it. Pick a non-banned brand webfont per `doctrine/design-doctrine.md` §2 and
-   `references/ai-slop-banned-fonts.md` (e.g. a **Fraunces** display face or a **Source Serif /
+   `references/ai-slop-banned-fonts.md` (e.g. an **Andada Pro** display face or a **Source Serif /
    Spectral** body face — never Inter, Roboto, Open Sans, Lato, Arial, Geist, Space Grotesk), but
    **commit a real web-safe stack** that carries the same voice when it loads instead: a
    serif-voiced email falls back to `Georgia, 'Times New Roman', serif`; a grotesque-voiced one to

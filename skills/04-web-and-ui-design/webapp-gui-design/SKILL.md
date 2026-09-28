@@ -119,7 +119,7 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 ## References
 
 - `doctrine/design-doctrine.md` — the anti-slop charter; state the typeface and palette before building any screen.
-- `doctrine/references/ai-slop-banned-fonts.md` — banned primary typefaces; choose a deliberate face from `doctrine/references/font-groups-and-usage.md` (04 Technical / Data / Code: IBM Plex Sans + JetBrains/IBM Plex Mono suits dashboard/technical SaaS).
+- `doctrine/references/ai-slop-banned-fonts.md` — banned primary typefaces; choose a deliberate face from `doctrine/references/font-groups-and-usage.md` (04 Technical / Data / Code: Public Sans with `tabular-nums` + JetBrains Mono suits dashboard/technical SaaS).
 - `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — pairing, type scale, and spacing rhythm for the shell, tables, and forms.
 - Companion skills in this engine: `interaction-design-patterns`, `motion-design`, `design-audit`, `practical-ui-design`, `visual-product-slop-audit`. (The former chwezi-dev-engine siblings `react-development`, `tailwind-css`, `responsive-design`, `form-ux-design`, `premium-ui-ux-design` did not migrate; their visual concerns are covered by the doctrine references above.)
 - Use `references/interface-consistency.md` when a new module risks drifting from the established UI language.

@@ -42,8 +42,8 @@ product feels branded without a single logo splash.
 ## 3. Typography roles
 
 Type families: **Source Serif 4** for the hero figure and section labels (editorial weight),
-**IBM Plex Sans** for all UI, data, and dense tables — engineered, neutral, with true tabular
-figures that pair cleanly under the Source Serif 4 hero. (Never Inter/Geist, no Poppins, no
+**Public Sans** for all UI, data, and dense tables (`font-variant-numeric: tabular-nums`) — plain,
+rational, with tabular figures that pair cleanly under the Source Serif 4 hero. (Never Inter/Geist, no Poppins, no
 Montserrat, no system-default sans masquerading as a choice.)
 
 - **Hero figure** — Source Serif 4, ~44px, tabular figures: the "$418,200 at risk" number.

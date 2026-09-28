@@ -92,7 +92,7 @@ Without final assets or approvals, create a marked draft with an open-decisions 
 
 ## Examples
 - `examples/mini-style-guide-worked.md` — a worked compact brand style-guide deliverable for a
-  sample roaster (Köya): logo usage, colour palette (hex + OKLCH + roles), an approved Fraunces +
+  sample roaster (Köya): logo usage, colour palette (hex + OKLCH + roles), an approved Andada Pro +
   Public Sans typography specimen with scale, spacing system, photography note, and a do/don't.
   Use it as the calibration target for specificity and the stated-choice discipline.
 

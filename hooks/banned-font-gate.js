@@ -117,7 +117,7 @@ function extractTargetPath(toolInput) {
  * fallback is not what this gate exists to catch, since the doctrine bans
  * banned-as-PRIMARY, not banned-as-anywhere-in-a-fallback-chain.
  */
-function findBannedInCssFontFamily(text, bannedNames) {
+function findBannedInCssFontFamily(text, bannedNames, bannedPrefixes = []) {
   const hits = [];
   const re = /font-family\s*:\s*([^;}"']+)/gi;
   let m;
@@ -126,6 +126,11 @@ function findBannedInCssFontFamily(text, bannedNames) {
     for (const name of bannedNames) {
       if (stack.toLowerCase() === name.toLowerCase()) {
         hits.push({ family: name, context: m[0].trim() });
+      }
+    }
+    for (const prefix of bannedPrefixes) {
+      if (stack.toLowerCase().startsWith(prefix.toLowerCase())) {
+        hits.push({ family: stack, context: m[0].trim() });
       }
     }
   }
@@ -143,6 +148,25 @@ function findBannedInQuotedLiteral(text, bannedNames) {
   for (const name of bannedNames) {
     const re = new RegExp(`["'\`]${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["'\`]`, 'g');
     if (re.test(text)) hits.push({ family: name, context: `quoted literal "${name}"` });
+  }
+  return hits;
+}
+
+/**
+ * Whole-superfamily bans (doctrine.hardBanFamilyPrefixes, e.g. "IBM Plex"):
+ * any quoted family name that begins with the prefix — "IBM Plex Sans",
+ * "IBM Plex Sans Arabic", a future Plex cut — is caught, not only the
+ * exact names enumerated in hardBan.
+ */
+function findBannedPrefixInQuotedLiteral(text, bannedPrefixes) {
+  const hits = [];
+  for (const prefix of bannedPrefixes) {
+    const escaped = prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`["'\`](${escaped}[^"'\`\\n]{0,40})["'\`]`, 'g');
+    let m;
+    while ((m = re.exec(text))) {
+      hits.push({ family: m[1], context: `quoted literal "${m[1]}"` });
+    }
   }
   return hits;
 }
@@ -179,12 +203,17 @@ function main() {
     .concat((doctrine.secondaryBan || []).map((f) => f.family))
     .concat((doctrine.conditionalPrimaryOnly || []).map((f) => f.family));
 
+  const bannedPrefixes = (doctrine.hardBanFamilyPrefixes || [])
+    .map((f) => f.prefix)
+    .filter(Boolean);
+
   const text = extractWrittenText(toolInput);
   if (!text) process.exit(0);
 
   const hits = [
-    ...findBannedInCssFontFamily(text, bannedPrimaryOnly),
+    ...findBannedInCssFontFamily(text, bannedPrimaryOnly, bannedPrefixes),
     ...findBannedInQuotedLiteral(text, bannedPrimaryOnly),
+    ...findBannedPrefixInQuotedLiteral(text, bannedPrefixes),
   ];
 
   if (hits.length === 0) process.exit(0);

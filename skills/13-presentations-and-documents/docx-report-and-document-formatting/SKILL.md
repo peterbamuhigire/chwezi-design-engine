@@ -59,7 +59,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 1. **Pick the 01 Formal / Institutional type and state it.** Per the Anti-Slop Charter
    (`doctrine/design-doctrine.md` §2), name the heading face, the body face, and *why they fit
    this document* **before** formatting. Default baseline pairing: **Source Serif 4 -> Public Sans**
-   for formal institutional documents, or **Fraunces -> Source Serif 4** when the brief calls for
+   for formal institutional documents, or **Andada Pro -> Source Serif 4** when the brief calls for
    a more editorial/literary register. Confirm against
    `doctrine/references/font-groups-and-usage.md`; scan `fonts/01-formal-institutional/` for a
    purchased premium family and prefer it when it improves the result. Never use a banned font
