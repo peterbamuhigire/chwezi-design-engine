@@ -298,7 +298,7 @@ This skill is a **cross-cutting quality gate**. Reference it from:
 
 ---
 
-*Source: Impeccable — Design fluency for AI harnesses (Bakaus, 2025). Anti-patterns observed across AI-generated interfaces 2024-2025.*
+*Source: Impeccable — Design fluency for AI harnesses (Bakaus, 2025) — Impeccable (Paul Bakaus), Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d (reviewed 2026-09-29). Anti-patterns observed across AI-generated interfaces 2024-2025.*
 ## Multi-Tenant Addendum
 
 Anti-slop discipline at platform scale means: per-feature SLOs (faithfulness, abstain), per-tenant golden eval, citation grounding tied to live sources, and rollback when quality regresses.

@@ -496,4 +496,4 @@ input contract. That closes the loop: **audit → fix → re-validate → ship.*
 
 ---
 
-*Sources: Impeccable audit and critique skills (Bakaus, 2025); WCAG 2.2 AA; Nielsen Norman Group heuristic evaluation framework; triage method after Maioli, "Fixing Bad UX Designs" (2018).*
+*Sources: Impeccable audit and critique skills (Bakaus, 2025) — Impeccable (Paul Bakaus), Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d (reviewed 2026-09-29); WCAG 2.2 AA; Nielsen Norman Group heuristic evaluation framework; triage method after Maioli, "Fixing Bad UX Designs" (2018).*

@@ -15,7 +15,7 @@ Add this to the routing/engine-table section of each consumer engine. Adapt the 
 if the engine lives elsewhere on a given device.
 
 ```markdown
-<!-- design-system-skills:trigger v1 -->
+<!-- design-system-skills:trigger v2 -->
 ### Design / typography / UI/UX (cross-cutting — consult IN ADDITION)
 
 Any work touching how an artifact LOOKS — font/typeface choice, type scale, colour, layout/grid,
@@ -23,8 +23,8 @@ visual identity, web/desktop/mobile UI screens, or the visual formatting of a DO
 — routes to the **`design-system-skills`** engine, the single home for ALL design/UI/UX skills
 and the anti-AI-slop doctrine.
 
-**Resolve its location on THIS device from your global engine-routing table** (`~/.claude/CLAUDE.md`,
-or `AGENTS.md` for Codex) — never assume an absolute path; it varies per machine. Then read its
+**Resolve its location on THIS device from the active runner's global engine-routing table or
+`AGENTS.md`** — never assume an absolute path; it varies per machine. Then read its
 `README.md` → `doctrine/design-doctrine.md` → glob `skills/**/SKILL.md` fresh and route by
 frontmatter (read SKILL.md directly, not via the Skill tool). Content and structure stay in THIS
 engine; presentation comes from design-system-skills. Hard rule: never use a banned AI-slop font
@@ -36,20 +36,32 @@ any artifact.
 <!-- /design-system-skills:trigger -->
 ```
 
-The `<!-- design-system-skills:trigger v1 -->` marker makes the block idempotent (re-runs detect
-it) and lets a future version be found and replaced cleanly.
+The `<!-- design-system-skills:trigger v2 -->` marker makes the block idempotent (re-runs detect
+it) and lets a future version be found and replaced cleanly. The canonical text is
+`integration/trigger-block.md`; every engine copy must be byte-identical to it.
+
+Version history:
+- `v1` (2026-06-21): first block; the 2026-09-29 house ruling added Fraunces and IBM Plex to its
+  ban list without changing the marker.
+- `v2` (2026-09-29, M10-01-T13): marker bumped; adopts the runner-neutral location wording
+  ("the active runner's global engine-routing table or `AGENTS.md`") first used by linux-skills,
+  so the block no longer names a Claude-specific path. Engine-specific notes (for example the
+  chwezi-dev-engine migration status) sit after the closing marker, never inside the block.
 
 ### Consumer engines (where the block goes)
 
-| Engine | Path | Block added? |
-|---|---|---|
-| business-plan-skills | `C:\wamp64\www\business-plan-skills` | ✅ 2026-06-21 |
-| srs-skills | `C:\wamp64\www\srs-skills` | ✅ 2026-06-21 |
-| proposal-skills | `C:\wamp64\www\proposal-skills` | ✅ 2026-06-21 |
-| website-skills | `C:\wamp64\www\website-skills` | ✅ 2026-06-21 |
-| social-media-skills | `C:\wamp64\www\social-media-skills` | ✅ 2026-06-21 |
-| engineering-catalog (`~/.claude/skills`) | `C:\Users\Peter\.claude\skills` | ✅ 2026-06-21 |
-| digital-research-engine | `C:\Users\Peter\Documents\Claude Projects\digital-research-engine` | ✅ 2026-06-21 |
+| Engine | Path | Block added? | `v2` copies (2026-09-29) |
+|---|---|---|---|
+| business-plan-skills | `C:\wamp64\www\business-plan-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| srs-skills | `C:\wamp64\www\srs-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| proposal-skills | `C:\wamp64\www\proposal-skills` | ✅ 2026-06-21 | `AGENTS.md` |
+| website-skills | `C:\wamp64\www\website-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| social-media-skills | `C:\wamp64\www\social-media-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| chwezi-dev-engine (formerly `~/.claude/skills`) | `C:\wamp64\www\chwezi-dev-engine` | ✅ 2026-06-21 | `AGENTS.md` (migration note kept after the block) |
+| digital-research-engine | `C:\wamp64\www\digital-research-engine` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| linux-skills | `C:\wamp64\www\linux-skills` | ✅ (runner-neutral variant, now canonical) | `AGENTS.md`, `CLAUDE.md` |
+
+Accounting, windows-admin and engine-agents hold no block; M10-02-T06 decides whether to add it.
 
 > The user's global `~/.claude/CLAUDE.md` engine-routing table should also gain a row for
 > design-system-skills as a cross-cutting engine (alongside the finance engine note).

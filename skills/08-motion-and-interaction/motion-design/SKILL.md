@@ -400,4 +400,4 @@ Before shipping animations:
 
 ---
 
-*Sources: Impeccable motion-design reference (Bakaus, 2025); Material Design 3 motion-physics spec; Apple Human Interface Guidelines — Motion; W3C CSS View Transitions Module L1/L2 (MDN); WCAG 2.2 (2.3.1 / 2.3.3 / 2.2.2). Deep-dives in `references/`.*
+*Sources: Impeccable motion-design reference (Bakaus, 2025) — Impeccable (Paul Bakaus), Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d (reviewed 2026-09-29); `superseded-upstream`: upstream reference removed in v4; retained as house guidance; Material Design 3 motion-physics spec; Apple Human Interface Guidelines — Motion; W3C CSS View Transitions Module L1/L2 (MDN); WCAG 2.2 (2.3.1 / 2.3.3 / 2.2.2). Deep-dives in `references/`.*
