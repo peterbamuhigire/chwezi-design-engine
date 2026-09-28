@@ -62,6 +62,18 @@ For a product-listing image, social post, or other image commonly scanned on a p
 - Review the exported asset in the real listing/feed slot on a representative narrow viewport. Record rendered dimensions, smallest essential text, the first-look interpretation, crop behaviour, and device/audience checks not performed. Use a fixed scan time only when the brief defines and validates it; do not present a three-second limit as a universal fact. A resized preview is not a device or comprehension test.
 - Compare materially different treatments in the same target slot when the channel permits testing. Change one meaningful design choice at a time, define the audience, exposure, success measure, and stopping rule, and report uncertainty. Likes, anecdotes, and an uncontrolled before/after are not evidence of conversion lift.
 
+### Social-feed and educational infographics
+
+Use this optional editorial review for expertise-led posts and feed graphics; it is not a virality score or a required set of decorative elements.
+
+- Start from a recognizable audience problem and give the viewer one useful takeaway or action. Make the title specific and intriguing without inventing urgency, statistics, or results.
+- State the point of view and distinguish evidence, interpretation, and recommendation. Add one defensible angle or example that helps the intended audience; novelty alone is not value.
+- Choose a shape-based visual grammar only when the shapes explain a relationship, sequence, category, or mechanism. Avoid unrelated boxes, circles, icons, and gradients used only to make the layout look novel.
+- Make the reading order apparent: hook, visual argument, evidence or worked example, then implication. Let scale, contrast, spacing, repetition, and alignment guide the eye; preserve whitespace around the focal point.
+- Keep useful detail only when it strengthens the takeaway. Use examples and supporting beats to make the graphic worth revisiting, but split or move material that makes labels hard to read at the delivered size.
+- Let the post text synthesize the graphic, name the practical next step, and provide sources or qualifications that do not fit in the image. Supply alt text or an equivalent accessible summary.
+- If reach, saves, shares, or discussion matter, define the intended audience and a measurable outcome before comparing versions. Treat engagement as a channel measure, not proof of learning, conversion, or business impact.
+
 ### Composition and data-story principles
 
 Use design principles as a set of checks on the visual argument, not a template that must add elements. The viewer should find the main claim first, understand its evidence next, and reach supporting detail only when needed. Give the focal point enough contrast and space to stand out; keep the composition balanced even when it is asymmetrical. Group related labels and exhibits by proximity, and use movement, rhythm, and directional cues to make the reading order feel natural. Repeat a restrained set of type, colour, shape, and annotation styles to create unity; introduce variety through scale or form only when it improves comparison or interest. Check that proportion accurately represents quantities and that emphasis does not exaggerate certainty. Remove any device that competes with the takeaway.
