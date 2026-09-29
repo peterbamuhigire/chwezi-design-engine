@@ -23,13 +23,13 @@ Professional services websites sell expertise and relationships. Clients are cho
 
 | Service Type | Header Font | Body Font | Personality |
 |-------------|-------------|-----------|-------------|
-| **Accounting/Tax** | Classic serif (EB Garamond) | Clean sans (DM Sans) | Precise, trustworthy |
-| **Legal** | Traditional serif (Cormorant) | Readable sans (Source Sans Pro) | Authoritative, formal |
-| **Architecture/Design** | Modern sans (Outfit, Satoshi) | Clean sans (DM Sans) | Creative precision |
-| **Engineering** | Geometric sans (Space Grotesk) | Technical sans (Rubik) | Technical, reliable |
-| **IT/Digital** | Modern sans (Plus Jakarta Sans) | Clean sans (Inter) | Contemporary, expert |
-| **Real Estate** | Elegant serif (DM Serif Display) | Clean sans (DM Sans) | Premium, trustworthy |
-| **Marketing/PR** | Bold display (Clash Display) | Warm sans (Nunito Sans) | Creative, energetic |
+| **Accounting/Tax** | Classic serif (EB Garamond) | Clean sans (Public Sans) | Precise, trustworthy |
+| **Legal** | Traditional serif (Theano Didot) | Readable sans (Source Sans Pro) | Authoritative, formal |
+| **Architecture/Design** | Modern sans (Bricolage Grotesque, Satoshi) | Clean sans (Public Sans) | Creative precision |
+| **Engineering** | Geometric sans (Unbounded) | Technical sans (Rubik) | Technical, reliable |
+| **IT/Digital** | Modern sans (Hanken Grotesk) | Clean sans (Public Sans) | Contemporary, expert |
+| **Real Estate** | Elegant serif (DM Serif Display) | Clean sans (Public Sans) | Premium, trustworthy |
+| **Marketing/PR** | Bold display (Clash Display) | Warm sans (Alegreya Sans) | Creative, energetic |
 
 ## Brand Voice
 

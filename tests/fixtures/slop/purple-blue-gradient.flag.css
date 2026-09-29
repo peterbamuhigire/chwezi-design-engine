@@ -1,0 +1,2 @@
+/* chwezi-slop fixture: purple-blue-gradient (should flag). Synthetic; written for this engine. */
+.hero { background: linear-gradient(135deg, #7c3aed, #2563eb); }

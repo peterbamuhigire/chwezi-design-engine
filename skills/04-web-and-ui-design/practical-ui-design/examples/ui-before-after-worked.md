@@ -9,6 +9,7 @@ Typeface choice: display face **Andada Pro** (headings/price), body face **Sourc
 ## BEFORE — the weak version
 
 ```html
+<!-- chwezi-slop-disable banned-primary-font,thin-border-wide-shadow -- Chwezi design engine (M10-09 review, 29 Sep 2026): deliberate BEFORE state that the AFTER version fixes -->
 <div style="
   background:#fff; border:1px solid #ddd; border-radius:14px;
   box-shadow:0 8px 30px rgba(0,0,0,0.35);
@@ -32,6 +33,7 @@ Typeface choice: display face **Andada Pro** (headings/price), body face **Sourc
 
   <a href="#" style="color:#2563eb; font-size:13px;">Compare all plans</a>
 </div>
+<!-- chwezi-slop-enable banned-primary-font,thin-border-wide-shadow -->
 ```
 
 ### What's wrong

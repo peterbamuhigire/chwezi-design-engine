@@ -82,12 +82,12 @@ Never use generic navy + white + gold. Every law firm uses it. Differentiate wit
 
 | Firm Type | Heading | Body | Personality |
 |-----------|---------|------|-------------|
-| High-Stakes Litigation | Cormorant Garamond / Playfair Display | Source Serif Pro | Heritage, serious |
-| Personal Injury | Libre Baskerville | Inter | Trustworthy, clear |
-| Family Law | Lora | Nunito | Warm, approachable |
-| Corporate/Business | DM Serif Display | DM Sans | Sharp, modern |
+| High-Stakes Litigation | Theano Didot / Bodoni Moda | Source Serif Pro | Heritage, serious |
+| Personal Injury | Libre Baskerville | Public Sans | Trustworthy, clear |
+| Family Law | Source Serif 4 | Lexend | Warm, approachable |
+| Corporate/Business | DM Serif Display | Public Sans | Sharp, modern |
 | Solo/Boutique | Spectral | Work Sans | Distinctive, human |
-| Immigration | Alegreya | Outfit | Welcoming, friendly |
+| Immigration | Alegreya | Bricolage Grotesque | Welcoming, friendly |
 
 **Rule**: Never Inter/Roboto/Arial for headings. These fonts erase brand personality.
 

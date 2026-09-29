@@ -29,12 +29,12 @@ Personal websites sell YOU before your work. Hiring managers spend 7 seconds sca
 
 | Creator Type | Header Font | Body Font | Personality |
 |-------------|-------------|-----------|-------------|
-| **Designer/Creative** | Display (Clash Display, Cabinet Grotesk) | Clean sans (DM Sans) | Bold, distinctive |
-| **Developer/Engineer** | Monospace accent (JetBrains Mono, Fira Code) | Sans (Inter, Rubik) | Technical, precise |
-| **Writer/Editor** | Elegant serif (Cormorant, Literata) | Readable serif (Lora, Source Serif) | Literary, thoughtful |
-| **Photographer** | Minimal sans (Jost, Outfit) | Light sans (DM Sans) | Clean, lets images speak |
-| **Illustrator/Artist** | Playful display (Quicksand) | Warm sans (Nunito) | Expressive, personal |
-| **Consultant/Coach** | Modern sans (Plus Jakarta Sans, Satoshi) | Clean sans (Source Sans Pro) | Professional, approachable |
+| **Designer/Creative** | Display (Clash Display, Cabinet Grotesk) | Clean sans (Public Sans) | Bold, distinctive |
+| **Developer/Engineer** | Monospace accent (JetBrains Mono, Fira Code) | Sans (Public Sans, Rubik) | Technical, precise |
+| **Writer/Editor** | Elegant serif (Theano Didot, Literata) | Readable serif (Source Serif 4, Libre Caslon Text) | Literary, thoughtful |
+| **Photographer** | Minimal sans (Jost, Bricolage Grotesque) | Light sans (Public Sans) | Clean, lets images speak |
+| **Illustrator/Artist** | Playful display (Quicksand) | Warm sans (Lexend) | Expressive, personal |
+| **Consultant/Coach** | Modern sans (Hanken Grotesk, Satoshi) | Clean sans (Source Sans Pro) | Professional, approachable |
 
 ## Photography Direction
 

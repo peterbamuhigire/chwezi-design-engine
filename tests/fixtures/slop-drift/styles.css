@@ -1,0 +1,5 @@
+/* chwezi-slop T09 acceptance fixture: exactly one off-token colour (advisory) and one off-token font (block). */
+body { font-family: "Public Sans", sans-serif; color: #1f2328; background: #ffffff; }
+h1 { font-family: "Bodoni Moda", serif; color: #1f2328; }
+.alert { color: #b3261e; }
+.muted { color: #1f2329; }

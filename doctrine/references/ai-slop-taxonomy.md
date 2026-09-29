@@ -140,6 +140,22 @@ choices. Functional status, accessibility, data encoding, and approved brand-sys
 state their reason and evidence mode. The overlay is not a ban on an intentional non-decorative
 choice merely because it is common.
 
+<!-- rule:layout.decorative-side-stripe -->
+**Side-stripe ruling (Option A, 29 Sep 2026; decided by orchestrator under Peter's delegated
+authority).** A coloured border wider than 1 px on one side of a card, callout, alert or list item
+is a decorative scaffold (AS2) and fails at `warning` severity. Use a background tint, an icon and a
+text label, or a 1 px full border. A side stripe stays only as a status encoding: the element
+carries a status token and a non-colour text or icon marker, and the source records the reason in
+a `chwezi-slop` waiver. Blockquotes and state indicators (active, selected, focused) are outside
+the rule. The rule may rise to `block` on Persuade surfaces once visitor modes are wired (M10-10).
+
+<!-- rule:detector.chwezi-slop -->
+**Mechanical enforcement.** `tools/slop-detector/` (`chwezi-slop`) turns AS1-AS7 into registry
+rules with pass/flag fixtures and is the `cli` and `browser` evidence mode for this overlay. Its
+severity ladder keeps it from becoming an aesthetic blacklist: `block` needs a standard (WCAG), an
+engine doctrine line or a dated house ruling; `warning` needs an engine doctrine line; rules whose
+only support is AI-tool evidence stay `advisory` and never fail a run.
+
 ## How the engine uses this
 
 - The **`visual-product-slop-audit`** skill (`skills/00-cross-cutting-ops-qa-a11y/`) runs these

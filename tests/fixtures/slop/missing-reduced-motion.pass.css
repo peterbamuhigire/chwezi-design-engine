@@ -1,0 +1,4 @@
+/* chwezi-slop fixture: missing-reduced-motion (should pass). Synthetic; written for this engine. */
+.drawer { transition: transform 400ms ease-out; }
+.link { transition: color 300ms ease; }
+@media (prefers-reduced-motion: reduce) { .drawer { transition: none; } }

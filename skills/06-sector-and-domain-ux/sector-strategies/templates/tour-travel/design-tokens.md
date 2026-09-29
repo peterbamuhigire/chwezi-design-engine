@@ -58,15 +58,15 @@ All colors verified for WCAG AA minimum (4.5:1 contrast) in both light and dark 
 
 ### Example Font Pairing (This Is NOT Your Pairing)
 
-**Serif Example**: Lora or Merriweather (DO NOT USE — find your own)
+**Serif Example**: Source Serif 4 or Merriweather (DO NOT USE — find your own)
 - Headlines: H1–H3
 - Long-form content (about, blog, testimonials)
 
-**Sans-serif Example**: Poppins or Sora (DO NOT USE — find your own)
+**Sans-serif Example**: Hanken Grotesk or Sora (DO NOT USE — find your own)
 - Navigation, labels, CTAs, short copy
 - Body text on mobile
 
-**Display Example**: Playfair Display (DO NOT USE — find your own)
+**Display Example**: Bodoni Moda (DO NOT USE — find your own)
 - Hero headline (one word or short phrase)
 - Accent headers
 
@@ -84,12 +84,12 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 
 | Element | Font | Size | Weight | Line-height |
 |---------|------|------|--------|-------------|
-| **H1** | Playfair Display | 48px | 700 | 1.2 |
-| **H2** | Lora | 36px | 600 | 1.3 |
-| **H3** | Lora | 24px | 600 | 1.4 |
-| **Body** | Poppins | 16px | 400 | 1.6 |
-| **Small text** | Poppins | 14px | 400 | 1.5 |
-| **CTA buttons** | Poppins | 16px | 600 | 1.5 |
+| **H1** | Bodoni Moda | 48px | 700 | 1.2 |
+| **H2** | Source Serif 4 | 36px | 600 | 1.3 |
+| **H3** | Source Serif 4 | 24px | 600 | 1.4 |
+| **Body** | Hanken Grotesk | 16px | 400 | 1.6 |
+| **Small text** | Hanken Grotesk | 14px | 400 | 1.5 |
+| **CTA buttons** | Hanken Grotesk | 16px | 600 | 1.5 |
 
 ### Mobile Typography
 
@@ -147,7 +147,7 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 - Input background: Cream
 - Border: 1px Stone Gray
 - Focus: 2px Deep Forest border, blue ring +2px
-- Label: Poppins 14px, Charcoal
+- Label: Hanken Grotesk 14px, Charcoal
 - Error: Red #D32F2F on light background
 
 ## Animation & Motion
@@ -171,7 +171,7 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 
 ## Anti-Homogeneity Principle
 
-**Every travel website built with this system must look visually distinctive.** If two tour operators both use Sky Blue + Poppins + the same component patterns, they become indistinguishable from each other and generic booking sites.
+**Every travel website built with this system must look visually distinctive.** If two tour operators both use Sky Blue + Hanken Grotesk + the same component patterns, they become indistinguishable from each other and generic booking sites.
 
 To ensure your site is unique:
 
@@ -180,7 +180,7 @@ To ensure your site is unique:
    - Align with the destinations you promote (but don't be limited by it)
    - Consider your market: Budget travelers want different colors than luxury travelers
 
-2. **Choose distinctive fonts** (not Poppins/Lora/Playfair Display)
+2. **Choose distinctive fonts** (not Hanken Grotesk/Source Serif 4/Bodoni Moda)
    - Start at [Fontsource](https://fontsource.org)
    - Choose ONE heading font that feels distinctive to your brand
    - Choose ONE body font that's invisible (easy to read)

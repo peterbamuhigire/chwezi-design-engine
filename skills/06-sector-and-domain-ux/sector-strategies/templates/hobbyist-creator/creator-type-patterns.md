@@ -26,7 +26,7 @@ Each creator type has distinct audience expectations and engagement patterns.
 ## Writer / Blogger
 
 - **Palette:** Warm, literary. Cream/off-white + rich accent (burgundy, forest, navy). Easy on eyes.
-- **Typography:** Elegant serif headers (Cormorant, Playfair) + readable serif body (Lora, Crimson Text). 18px+ body.
+- **Typography:** Elegant serif headers (Theano Didot, Bodoni Moda) + readable serif body (Source Serif 4, Crimson Text). 18px+ body.
 - **Layout:** Content-first, generous margins, long-form optimised, minimal distraction.
 - **Key elements:** Blog with categories/tags, book/publication list, writing samples, newsletter signup, reading time estimates
 - **Unique:** Reading progress bar, estimated reading time, "also by me" section, publication timeline, writing process page
@@ -34,7 +34,7 @@ Each creator type has distinct audience expectations and engagement patterns.
 ## Photographer / Videographer
 
 - **Palette:** Minimal. Black/white/one accent. Let images dominate completely.
-- **Typography:** Thin, minimal sans (Outfit 300, DM Sans 300). Never competes with images.
+- **Typography:** Thin, minimal sans (Hanken Grotesk 300, Public Sans 300). Never competes with images.
 - **Layout:** Image-dominant, full-bleed galleries, minimal chrome, immersive viewing.
 - **Key elements:** Gallery by category/project, before/after comparison modules, equipment list, booking form, location availability
 - **Unique:** Fullscreen gallery mode, lazy-loaded high-res images, EXIF data display (optional), client gallery portal, booking calendar
@@ -42,7 +42,7 @@ Each creator type has distinct audience expectations and engagement patterns.
 ## YouTuber / Content Creator
 
 - **Palette:** Bold, energetic. Matches YouTube channel branding. High contrast.
-- **Typography:** Bold, modern sans (Plus Jakarta Sans, Outfit 700). Energetic, thumbnail-inspired.
+- **Typography:** Bold, modern sans (Hanken Grotesk, Bricolage Grotesque 700). Energetic, thumbnail-inspired.
 - **Layout:** Video-grid focused, merch integration, social feed, community links.
 - **Key elements:** Latest videos feed (YouTube API or manual), merch shop, about/story, collaboration info, media kit
 - **Unique:** Video embed grid, subscriber counter, merch store integration, sponsor/collaboration page, community Discord link
@@ -58,7 +58,7 @@ Each creator type has distinct audience expectations and engagement patterns.
 ## Educator / Course Creator
 
 - **Palette:** Accessible, trustworthy. Blue/green base + warm accent. Clear, organised.
-- **Typography:** Friendly sans headers (Nunito Sans, DM Sans) + highly readable body. 18px minimum.
+- **Typography:** Friendly sans headers (Alegreya Sans, Public Sans) + highly readable body. 18px minimum.
 - **Layout:** Structured, curriculum-like, progress-oriented, resource-rich.
 - **Key elements:** Course catalog, free resources, student testimonials, teaching philosophy, blog/articles, webinar schedule
 - **Unique:** Course curriculum preview, student success stories, free mini-course funnel, certification badges, learning path visualisation

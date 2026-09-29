@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "waivers": [
+    {
+      "rule": "ai-beige-ground",
+      "scope": "value",
+      "value": "#f5f0e8",
+      "reason": "Claude agent: paper colour matches the printed brand stock, brand book 2026",
+      "granted_by": "agent",
+      "date": "2026-09-29",
+      "recheck_due": "2026-12-29"
+    }
+  ]
+}

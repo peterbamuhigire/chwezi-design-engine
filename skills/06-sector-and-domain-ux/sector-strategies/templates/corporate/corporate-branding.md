@@ -32,12 +32,12 @@ Corporate websites sell credibility before services. Decision-makers (C-suite, p
 
 | Firm Type | Header Font | Body Font | Personality |
 |-----------|-------------|-----------|-------------|
-| **Strategy/Management** | Elegant serif (DM Serif Display, Cormorant) | Clean sans (DM Sans, Inter) | Authoritative, premium |
-| **Technology/Digital** | Modern geometric (Outfit, Space Grotesk) | Humanist sans (Source Sans Pro) | Innovative, precise |
-| **Financial/Investment** | Classic serif (EB Garamond, Lora) | Neutral sans (Inter, Nunito Sans) | Established, trustworthy |
-| **Creative Consulting** | Display sans (Clash Display, Satoshi) | Clean sans (DM Sans) | Bold, distinctive |
-| **Legal/Compliance** | Traditional serif (Cormorant, Literata) | Readable sans (Source Sans Pro) | Formal, credible |
-| **Boutique/Specialist** | Distinctive serif or sans (Andada Pro, General Sans) | Warm sans (Plus Jakarta Sans) | Personal, expert |
+| **Strategy/Management** | Elegant serif (DM Serif Display, Theano Didot) | Clean sans (Public Sans) | Authoritative, premium |
+| **Technology/Digital** | Modern geometric (Bricolage Grotesque, Unbounded) | Humanist sans (Source Sans Pro) | Innovative, precise |
+| **Financial/Investment** | Classic serif (EB Garamond, Source Serif 4) | Neutral sans (Public Sans, Alegreya Sans) | Established, trustworthy |
+| **Creative Consulting** | Display sans (Clash Display, Satoshi) | Clean sans (Public Sans) | Bold, distinctive |
+| **Legal/Compliance** | Traditional serif (Theano Didot, Literata) | Readable sans (Source Sans Pro) | Formal, credible |
+| **Boutique/Specialist** | Distinctive serif or sans (Andada Pro, General Sans) | Warm sans (Hanken Grotesk) | Personal, expert |
 
 ### Key Rules
 - Body text: 16px minimum, 1.6 line-height (decision-makers scan quickly)

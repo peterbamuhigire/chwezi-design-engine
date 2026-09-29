@@ -9,7 +9,7 @@ HTML/Tailwind patterns for professional service websites.
 
 ## Service Card
 ```html
-<div class="p-8 border-l-4 border-accent">
+<div class="p-8 border border-accent/25 rounded">
   <h3 class="font-serif text-2xl font-bold text-charcoal mb-3">Service Name</h3>
   <p class="text-gray-600 leading-relaxed">
     Clear description of service, outcomes, and ideal client fit.
@@ -40,7 +40,7 @@ HTML/Tailwind patterns for professional service websites.
 
 ## Testimonial
 ```html
-<div class="border-l-4 border-gold bg-cream p-6 rounded">
+<div class="border border-gold/40 bg-cream p-6 rounded">
   <p class="font-serif text-lg italic text-charcoal mb-4">
     "They brought strategic clarity and execution excellence. Results exceeded expectations."
   </p>

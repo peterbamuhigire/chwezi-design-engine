@@ -89,7 +89,7 @@ HTML/Tailwind patterns optimized for tour & travel websites. Use these as refere
 ## Testimonial Card
 
 ```html
-<div class="bg-cream rounded-lg p-8 border-l-4 border-terracotta shadow-sm">
+<div class="bg-cream rounded-lg p-8 border border-terracotta/25 shadow-sm">
   <!-- Stars -->
   <div class="flex gap-1 mb-3">
     ⭐⭐⭐⭐⭐

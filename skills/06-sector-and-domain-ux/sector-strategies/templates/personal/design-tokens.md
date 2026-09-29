@@ -37,12 +37,12 @@ Your personal brand should NOT default to this palette. Answer your sector-brief
 
 ### Example Font Pairing (This Is NOT Your Pairing)
 
-**Serif Example**: Playfair Display (DO NOT USE — find your own)
+**Serif Example**: Bodoni Moda (DO NOT USE — find your own)
 - Headlines, hero section
 - About me section
 - Blog post titles
 
-**Sans-serif Example**: Inter (DO NOT USE — find your own)
+**Sans-serif Example**: Public Sans (DO NOT USE — find your own)
 - Navigation, labels, body text
 - All devices and sizes
 
@@ -61,10 +61,10 @@ The design-system skill explicitly forbids Inter, Roboto, and Arial to prevent g
 
 **Font Selection by Personality:**
 - **Creative/Designer**: Modern, distinctive display fonts (Clash Display, Cabinet Grotesk, Satoshi)
-- **Developer**: Bold, code-friendly pairing (Courier Prime + Outfit)
-- **Writer**: Elegant, readable serif (Cormorant Garamond + Lora)
+- **Developer**: Bold, code-friendly pairing (Courier Prime + Bricolage Grotesque)
+- **Writer**: Elegant, readable serif (Theano Didot + Source Serif 4)
 - **Visual Artist**: Minimal fonts (let visuals dominate)
-- **Entrepreneur**: Confident, bold fonts (Poppins + Crimson Text)
+- **Entrepreneur**: Confident, bold fonts (Bricolage Grotesque + Crimson Text)
 
 See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hosted font options.
 
@@ -109,7 +109,7 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 
 ## Anti-Homogeneity Principle
 
-**Every personal website must look distinctly like YOU.** If two portfolios both use Slate + Inter + same layout, they become indistinguishable. This defeats the purpose of a personal site.
+**Every personal website must look distinctly like YOU.** If two portfolios both use Slate + Public Sans + same layout, they become indistinguishable. This defeats the purpose of a personal site.
 
 To ensure your site is unique:
 

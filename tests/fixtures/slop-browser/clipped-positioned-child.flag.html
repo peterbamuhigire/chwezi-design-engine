@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixture</title>
+</head>
+<body>
+<main>
+<!-- chwezi-slop fixture: clipped-positioned-child (should flag) -->
+<div style="position: relative; overflow: hidden; width: 200px; height: 40px">
+  <button>Help</button>
+  <span style="position: absolute; top: 30px; left: 0; width: 180px">Tooltip text that is cut off</span>
+</div>
+</main>
+</body>
+</html>

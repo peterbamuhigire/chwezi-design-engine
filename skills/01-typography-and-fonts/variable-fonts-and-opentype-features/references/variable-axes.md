@@ -100,7 +100,7 @@ body { font-weight: 380; }                            /* light body → weight c
 
 ## Approved variable baselines (none on `ai-slop-banned-fonts.md`)
 
-Source Serif 4 (`opsz`,`wght`), Newsreader (`opsz`,`wght`,`ital`), Recursive
+Source Serif 4 (`opsz`,`wght`; italic ships as a separate file), Recursive
 (`wght`,`slnt`,`MONO`,`CASL`,`CRSV`), Public Sans (`wght`), Hanken Grotesk (`wght`), Bricolage
 Grotesque (`opsz`,`wght`), Andada Pro (`wght`). Confirm a specific face's axes against the
 foundry/Google Fonts spec before relying on one — not every cut ships every axis.

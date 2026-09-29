@@ -15,7 +15,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Community-warm colors. Avoid cold corporate. Earth tones + one bright accent.
-- **Typography:** Clean, accessible sans-serif (Nunito, Source Sans Pro). Nothing flashy.
+- **Typography:** Clean, accessible sans-serif (Atkinson Hyperlegible, with Source Sans 3 as a paired body face only). Nothing flashy.
 - **Photography:** Community events, diverse student body, local context, outdoor spaces.
 - **Tone:** Welcoming, inclusive, community-proud. "Your neighbourhood school."
 
@@ -47,7 +47,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Premium, distinctive. Deep navy + gold, emerald + cream, or burgundy + slate. Never default blue.
-- **Typography:** Serif headlines (Playfair Display, Cormorant) + clean sans body. Premium feel.
+- **Typography:** Serif headlines (Bodoni Moda, Theano Didot) + clean sans body. Premium feel.
 - **Photography:** High-quality professional shots. Polished campus, small class sizes, modern facilities.
 - **Tone:** Confident, aspirational, exclusive but welcoming. "Excellence in education."
 
@@ -79,7 +79,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Mission-aligned. Environmental school = green + earth. Arts = bold + vibrant. STEM = teal + electric.
-- **Typography:** Modern, approachable. Geometric sans (Outfit, Plus Jakarta Sans) for progressive feel.
+- **Typography:** Modern, approachable. Geometric sans (Bricolage Grotesque, Hanken Grotesk) for progressive feel.
 - **Photography:** Students in action — project-based learning, hands-on activities, community projects.
 - **Tone:** Mission-driven, innovative, community-centred. "Education reimagined."
 
@@ -111,7 +111,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Globally sophisticated. Avoid single-nation colours. Teal + gold, deep blue + coral, or sage + navy.
-- **Typography:** International-friendly fonts with broad character support. Plus Jakarta Sans, Inter (for body), or Noto Sans.
+- **Typography:** International-friendly fonts with broad character support. Hanken Grotesk, Public Sans (for body), or Noto Sans.
 - **Photography:** Diverse student body, international events, modern facilities, global connections.
 - **Tone:** Worldly, inclusive, excellence-focused. "A world of possibilities."
 
@@ -144,7 +144,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Heritage colours often mandatory (use institutional colours). Add modern accent for digital.
-- **Typography:** Heritage serif for prestige (EB Garamond, Cormorant Garamond) + modern sans for clarity.
+- **Typography:** Heritage serif for prestige (EB Garamond, Theano Didot) + modern sans for clarity.
 - **Photography:** Campus life, research labs, graduation, student organisations, events.
 - **Tone:** Authoritative yet inviting. "Where ambition meets opportunity."
 
@@ -177,7 +177,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Reverent but not sombre. Gold + deep blue (Catholic), green + gold (Islamic), burgundy + cream (Anglican). Warm, welcoming.
-- **Typography:** Serif headers for tradition (Cormorant, EB Garamond, Lora). Warm sans for body.
+- **Typography:** Serif headers for tradition (Theano Didot, EB Garamond, Source Serif 4). Warm sans for body.
 - **Photography:** Chapel/mosque/prayer spaces, community worship, values-in-action, character development.
 - **Tone:** Faith-centred, nurturing, community-strong. "Faith, knowledge, and service."
 
@@ -210,7 +210,7 @@ No two schools should look the same — even within the same type. Each school t
 ### Design Direction
 
 - **Palette:** Industrial-modern. Slate + electric blue, charcoal + safety orange, steel + green. Bold, functional.
-- **Typography:** Modern sans (Rubik, DM Sans, Outfit). No-frills, professional, clear.
+- **Typography:** Modern sans (Rubik, Public Sans, Bricolage Grotesque). No-frills, professional, clear.
 - **Photography:** Workshops, labs, hands-on training, industry placements, real-world equipment.
 - **Tone:** Practical, career-focused, opportunity-driven. "Skills that work."
 

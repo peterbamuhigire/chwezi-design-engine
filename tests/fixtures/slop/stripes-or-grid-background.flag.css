@@ -1,0 +1,2 @@
+/* chwezi-slop fixture: stripes-or-grid-background (should flag). Synthetic; written for this engine. */
+.panel-bg { background-image: repeating-linear-gradient(45deg, #eeeeee 0 2px, transparent 2px 8px); }

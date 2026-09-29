@@ -17,8 +17,9 @@ Dense data tables, KPI tiles with currency, sparklines with timestamps, and a sh
 - **Display + UI + data:** **Recursive** — variable (`wght`, `slnt`, `MONO`, `CASL`), ships
   tabular numerals and a usable mono axis for the data layer. Chosen over a static grotesque
   because one file gives the weight extremes *and* a mono mode for figures/IDs.
-- **Insights prose body:** **Newsreader** — variable (`opsz`, `wght`, `ital`), ships old-style
-  numerals and a real italic, so narrative numbers blend into lowercase text.
+- **Insights prose body:** **Source Serif 4** (Frank Grießhammer, Adobe) — variable (`opsz`, `wght`,
+  with a separate variable italic file), ships old-style numerals and a real italic, so narrative
+  numbers blend into lowercase text.
 - Both are approved baselines, neither on `ai-slop-banned-fonts.md`. See
   `doctrine/references/font-groups-and-usage.md` (category 04 + editorial body).
 
@@ -29,11 +30,11 @@ Dense data tables, KPI tiles with currency, sparklines with timestamps, and a sh
 | KPI numbers / table headers | Recursive | `wght` → `font-weight` | 760 (display contrast) |
 | Table body / labels | Recursive | `wght` → `font-weight` | 420 |
 | Mono figures (IDs, raw amounts) | Recursive | `MONO` → `font-variation-settings` | 1 |
-| Insights H | Newsreader | `wght` + `opsz` (auto) | 700, opsz←size |
-| Insights body | Newsreader | `wght` + `opsz` (auto) | 400, opsz←size |
+| Insights H | Source Serif 4 | `wght` + `opsz` (auto) | 700, opsz←size |
+| Insights body | Source Serif 4 | `wght` + `opsz` (auto) | 400, opsz←size |
 | Any text, dark mode | Recursive | `GRAD` → `font-variation-settings` | +40 (no reflow) |
 
-Optical sizing is wired to size globally (`font-optical-sizing: auto`); Newsreader gets refined at
+Optical sizing is wired to size globally (`font-optical-sizing: auto`); Source Serif 4 gets refined at
 heading size and sturdier at caption size automatically.
 
 ## Numeral policy (the load-bearing decision)
@@ -66,15 +67,15 @@ heading size and sturdier at caption size automatically.
   font-display: swap;
 }
 @font-face {
-  font-family: "Newsreader";
-  src: url("/fonts/newsreader.woff2") format("woff2-variations");
-  font-weight: 200 800;
+  font-family: "Source Serif 4";
+  src: url("/fonts/source-serif-4.woff2") format("woff2-variations");
+  font-weight: 200 900;
   font-display: swap;
 }
 
 :root {
   --font-data: "Recursive", ui-monospace, "Public Sans", system-ui, sans-serif;
-  --font-prose: "Newsreader", Georgia, serif;
+  --font-prose: "Source Serif 4", Georgia, serif;
   font-optical-sizing: auto;                 /* opsz ← font-size, both faces */
 }
 
@@ -99,7 +100,7 @@ heading size and sturdier at caption size automatically.
 .acronym      { font-variant-caps: small-caps; }      /* real smcp, not faux */
 .alloc-cell   { font-variant-numeric: diagonal-fractions tabular-nums lining-nums; } /* 1/4, 3/8 */
 
-/* ---- insights prose (Newsreader) ---- */
+/* ---- insights prose (Source Serif 4) ---- */
 .insights        { font-family: var(--font-prose); font-weight: 400;
                    font-variant-numeric: proportional-nums oldstyle-nums; }
 .insights h2     { font-weight: 700; }                /* opsz auto-refines at this size */

@@ -1,0 +1,4 @@
+/* chwezi-slop fixture: flat-type-hierarchy (should pass). Synthetic; written for this engine. */
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }

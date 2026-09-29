@@ -139,14 +139,14 @@ All components feature full light mode + dark mode support using Tailwind CSS v4
 ### Story Card
 ```html
 <!-- Light Mode -->
-<div class="bg-white border-l-4 border-magenta-600 rounded-lg shadow p-8">
+<div class="bg-white border border-magenta-600/25 rounded-lg shadow p-8">
   <p class="text-gray-700 italic">"{quote}"</p>
   <p class="text-sm text-gray-500 mt-4">— Name, Role</p>
 </div>
 
 <!-- With Dark Mode -->
 <div class="bg-white dark:bg-neutral-800
-            border-l-4 border-magenta-600 dark:border-magenta-400
+            border border-magenta-600/25 dark:border-magenta-400/30
             rounded-lg shadow-sm dark:shadow-lg p-8">
   <p class="text-gray-700 dark:text-gray-300 italic">"{quote}"</p>
   <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">— Name, Role</p>

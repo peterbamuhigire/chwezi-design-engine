@@ -1,0 +1,4 @@
+/* chwezi-slop fixture: marquee (should flag). Synthetic; written for this engine. */
+.logo-strip { animation: scroll 20s linear infinite; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .logo-strip { animation: none; } }

@@ -1,4 +1,5 @@
 {
+  "description": "Chwezi design engine hooks. PreToolUse: banned-font gate (first and blocking), destructive-command gate, token-file gate. PostToolUse: chwezi-slop immediate tier (block-severity mechanical rules on the edited file; exit 2 returns feedback). Stop: chwezi-slop deep pass (all static rules over the session's edited files; blocks at most once per session). All honour the plugin hooks_enabled setting and fail open. The chwezi-slop hooks also stop with CHWEZI_SLOP_HOOKS=off. Claude Code runtime only: Codex and other runners run node tools/slop-detector/cli.mjs from skill verification steps (degraded mode).",
   "hooks": {
     "PreToolUse": [
       {
@@ -28,6 +29,29 @@
             "type": "command",
             "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/token-file-gate.js\"",
             "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/slop-immediate.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/slop-deep-pass.js\"",
+            "timeout": 30
           }
         ]
       }

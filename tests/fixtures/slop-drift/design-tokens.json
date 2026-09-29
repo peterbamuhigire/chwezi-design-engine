@@ -1,0 +1,19 @@
+{
+  "artifact": "design-tokens",
+  "version": 1,
+  "project": "chwezi-slop-fixture",
+  "owner": "design-lead",
+  "status": "approved",
+  "updated": "2026-09-29",
+  "tokens": {
+    "font.display": "Andada Pro",
+    "font.body": "Public Sans",
+    "color.text": "#1f2328",
+    "color.surface": "#ffffff",
+    "color.accent": "#0b5d4b",
+    "radius.card": "8px",
+    "radius.control": "4px",
+    "size.body": "16px",
+    "size.h1": "40px"
+  }
+}

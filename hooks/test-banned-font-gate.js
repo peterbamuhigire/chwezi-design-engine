@@ -188,6 +188,72 @@ const cases = [
     payload: { tool_input: { file_path: '/proj/data/fonts-seen.json', content: '{"observed": ["Arial", "Inter"], "note": "font-family: Inter"}' } },
     expect: 0,
   },
+  // -- Gap closure (M10-09-T03): all five sidecar categories -----------------
+  {
+    name: '(a) bare system stack alone -apple-system, BlinkMacSystemFont, sans-serif — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; }' } },
+    expect: 2,
+  },
+  {
+    name: '(a) bare system stack with "Segoe UI" quoted — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'body { font-family: system-ui, "Segoe UI", Roboto, sans-serif; }' } },
+    expect: 2,
+  },
+  {
+    name: '(a) deliberate face with system fallback "Andada Pro", system-ui, serif — ALLOW',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: "Andada Pro", system-ui, serif; }' } },
+    expect: 0,
+  },
+  {
+    name: '(a) system-ui first but a deliberate face layered in the same stack — ALLOW',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'body { font-family: system-ui, "Public Sans", sans-serif; }' } },
+    expect: 0,
+  },
+  {
+    name: '(b) monospaceBanned "Roboto Mono" first — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'code { font-family: "Roboto Mono"; }' } },
+    expect: 2,
+  },
+  {
+    name: '(b) unquoted Roboto Mono first in a stack — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.scss', content: 'pre { font-family: Roboto Mono, monospace; }' } },
+    expect: 2,
+  },
+  {
+    name: '(c) Source Sans 3 as body beneath an approved display face — ALLOW',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: "Andada Pro", serif; }\nbody { font-family: "Source Sans 3", sans-serif; }' } },
+    expect: 0,
+  },
+  {
+    name: '(c) python-docx body run "Source Sans 3" literal — ALLOW (no longer a quoted-literal false positive)',
+    payload: { tool_input: { file_path: '/proj/gen/report.py', content: 'body_run.font.name = "Source Sans 3"' } },
+    expect: 0,
+  },
+  {
+    name: '(c) --font-display: "Source Sans 3" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/tokens.css', content: ':root { --font-display: "Source Sans 3", sans-serif; }' } },
+    expect: 2,
+  },
+  {
+    name: '(c) Source Sans Pro first in .display-title — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/App.css', content: '.display-title { font-family: "Source Sans Pro", sans-serif; }' } },
+    expect: 2,
+  },
+  {
+    name: '(d) tailwind.config.cjs fontFamily.sans Inter — BLOCK',
+    payload: { tool_input: { file_path: '/proj/tailwind.config.cjs', content: "module.exports = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } } };" } },
+    expect: 2,
+  },
+  {
+    name: '(d) tailwind.config.mjs with approved faces — ALLOW',
+    payload: { tool_input: { file_path: '/proj/tailwind.config.mjs', content: "export default { theme: { fontFamily: { display: ['\"Andada Pro\"', 'serif'], sans: ['\"Public Sans\"', 'sans-serif'] } } };" } },
+    expect: 0,
+  },
+  {
+    name: '--font-sans custom property holding Geist — BLOCK',
+    payload: { tool_input: { file_path: '/proj/src/globals.css', content: ':root { --font-sans: "Geist", sans-serif; --font-size-base: 1rem; }' } },
+    expect: 2,
+  },
 ];
 
 let failures = 0;

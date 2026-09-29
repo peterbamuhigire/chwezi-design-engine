@@ -15,6 +15,7 @@ every finding critical/major/minor, then state one deliberate, non-slop remediat
 > Context: startup/product, web (HTML/CSS). No binding brand guideline mandates fonts.
 
 ```css
+/* chwezi-slop-disable banned-primary-font,pure-black-body-text -- Chwezi design engine (M10-09 review, 29 Sep 2026): audited stylesheet quoted as found, before the fix */
 :root {
   --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "Geist", "Inter", sans-serif;
@@ -34,6 +35,7 @@ h2 { font-size: 32px; }
 h3 { font-size: 24px; }
 p  { font-size: 17px; }
 .small { font-size: 15px; }
+/* chwezi-slop-enable banned-primary-font,pure-black-body-text */
 ```
 
 Classify → **03 Modern Product / Grotesque** (`doctrine/references/font-groups-and-usage.md`) — this

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "waivers": [
+    {
+      "rule": "ai-beige-ground",
+      "scope": "value",
+      "value": "#f5f0e8",
+      "reason": "ok",
+      "granted_by": "human",
+      "date": "2026-09-29"
+    }
+  ]
+}

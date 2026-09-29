@@ -1,0 +1,2 @@
+/* chwezi-slop fixture: focus-indicator-removed (should flag). Synthetic; written for this engine. */
+button:focus { outline: none; }

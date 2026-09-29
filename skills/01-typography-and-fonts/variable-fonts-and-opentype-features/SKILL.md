@@ -137,7 +137,7 @@ Read and font inspection are required. Edit only for authorised implementation; 
 Without inspection or rendering, return a conditional plan, label support unverified, and provide a specimen matrix. Never claim a feature exists without evidence.
 
 - `examples/dashboard-type-system.md` — a real analytics/finance product type system on Recursive
-  + Newsreader: variable axes wired, `opsz` bound to size, tabular numerals in the data layer,
+  + Source Serif 4: variable axes wired, `opsz` bound to size, tabular numerals in the data layer,
   old-style numerals in prose, one stylistic set adopted, with the full CSS.
 
 ## References

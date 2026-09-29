@@ -67,13 +67,13 @@ Travel sites need **emotional impact first**, then readability:
 
 | Tour Type | Header Font | Body Font | Personality |
 |-----------|-------------|-----------|-------------|
-| **Luxury Safari/Lodge** | Elegant serif (Cormorant, DM Serif Display) | Clean sans (DM Sans, Inter) | Premium, refined |
-| **Adventure/Expedition** | Bold geometric (Outfit, Sora, Clash Display) | Humanist sans (Nunito, Source Sans Pro) | Bold, energetic |
-| **Cultural Immersion** | Distinctive serif (Alegreya, Literata, Lora) | Warm sans (Plus Jakarta Sans, Nunito) | Authentic, warm |
-| **Eco-Tourism** | Organic sans (Quicksand, Nunito) | Natural sans (DM Sans) | Approachable, earthy |
-| **Wellness/Retreat** | Light serif (Cormorant Garamond, EB Garamond) | Elegant sans (Jost, Outfit) | Calm, refined |
-| **Budget/Backpacker** | Bold sans (Rubik, Outfit, Plus Jakarta Sans) | Clean sans (Inter, Nunito Sans) | Casual, direct |
-| **City Breaks** | Modern sans (Space Grotesk, Satoshi) | Neutral sans (DM Sans) | Urban, contemporary |
+| **Luxury Safari/Lodge** | Elegant serif (Theano Didot, DM Serif Display) | Clean sans (Public Sans) | Premium, refined |
+| **Adventure/Expedition** | Bold geometric (Bricolage Grotesque, Sora, Clash Display) | Humanist sans (Lexend, Source Sans Pro) | Bold, energetic |
+| **Cultural Immersion** | Distinctive serif (Alegreya, Literata, Source Serif 4) | Warm sans (Hanken Grotesk, Lexend) | Authentic, warm |
+| **Eco-Tourism** | Organic sans (Quicksand, Lexend) | Natural sans (Public Sans) | Approachable, earthy |
+| **Wellness/Retreat** | Light serif (Theano Didot, EB Garamond) | Elegant sans (Jost, Bricolage Grotesque) | Calm, refined |
+| **Budget/Backpacker** | Bold sans (Rubik, Bricolage Grotesque, Hanken Grotesk) | Clean sans (Public Sans, Alegreya Sans) | Casual, direct |
+| **City Breaks** | Modern sans (Unbounded, Satoshi) | Neutral sans (Public Sans) | Urban, contemporary |
 
 **Never use:** Inter alone, Roboto alone, Arial, generic system fonts. These signal "booking engine" not "travel brand."
 

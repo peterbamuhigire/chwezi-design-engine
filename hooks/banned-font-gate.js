@@ -21,6 +21,14 @@
  * it, and widen INPUT FIELD EXTRACTION below if a real payload uses a field
  * this script doesn't check.
  *
+ * Matching lives in hooks/lib/font-matcher.js, shared with the chwezi-slop
+ * detector (tools/slop-detector). Since M10-09-T03 the gate checks all five
+ * sidecar categories: hardBan (+ hardBanFamilyPrefixes), secondaryBan,
+ * monospaceBanned, bareSystemStackAlone (a system stack with no deliberate
+ * face in the same declaration), and conditionalPrimaryOnly (Source Sans,
+ * blocked only as the first family in a heading/display selector or a
+ * --font-display/--font-heading property, never as a paired body face).
+ *
  * Graduated controls (mirrors ECC's gateguard pattern):
  *   CHWEZI_FONT_GATE=off              — disable entirely for the session
  *   CHWEZI_FONT_EXEMPT_GLOBS=a,b,c    — comma-separated globs (matched
@@ -39,12 +47,14 @@ if (!require('./plugin-hook-config').isEnabled()) process.exit(0);
 
 const fs = require('fs');
 const path = require('path');
+const matcher = require('./lib/font-matcher');
 
 const DOCTRINE_PATH = path.join(__dirname, '..', 'doctrine', 'references', 'ai-slop-banned-fonts.json');
 const FULL_DENIAL_DOC = 'doctrine/references/ai-slop-banned-fonts.md';
 const RELEVANT_EXTENSIONS = new Set([
   '.css', '.scss', '.sass', '.less', '.html', '.htm',
-  '.tsx', '.jsx', '.ts', '.js', '.vue', '.svelte',
+  '.tsx', '.jsx', '.ts', '.js', '.cjs', '.mjs', '.vue', '.svelte',
+  // .cjs/.mjs added M10-09-T03 (d): tailwind.config.cjs / .mjs
   '.py', // python-docx / python-pptx font assignment
   // Diagram files (M10-07, AR-13): SVG exports, Mermaid sources and JSON
   // configs (Mermaid config, figure IR, theme files). For .json only the
@@ -118,79 +128,6 @@ function extractTargetPath(toolInput) {
 }
 
 /**
- * Checks CSS-style font-family declarations for a banned family in the
- * PRIMARY (first) position of the stack — a banned face named later as a
- * fallback is not what this gate exists to catch, since the doctrine bans
- * banned-as-PRIMARY, not banned-as-anywhere-in-a-fallback-chain.
- */
-function findBannedInCssFontFamily(text, bannedNames, bannedPrefixes = []) {
-  const hits = [];
-  const re = /font-family\s*:\s*([^;}"']+)/gi;
-  let m;
-  while ((m = re.exec(text))) {
-    const stack = m[1].split(',')[0].trim().replace(/["']/g, '');
-    for (const name of bannedNames) {
-      if (stack.toLowerCase() === name.toLowerCase()) {
-        hits.push({ family: name, context: m[0].trim() });
-      }
-    }
-    for (const prefix of bannedPrefixes) {
-      if (stack.toLowerCase().startsWith(prefix.toLowerCase())) {
-        hits.push({ family: stack, context: m[0].trim() });
-      }
-    }
-  }
-  return hits;
-}
-
-/**
- * Checks for a banned family name inside a quoted string literal anywhere
- * in the text — the fallback check for document-generation code
- * (python-docx `run.font.name = "Inter"`, pptx equivalents, JS font-name
- * assignment) where there is no CSS-shaped declaration to anchor on.
- */
-function findBannedInQuotedLiteral(text, bannedNames) {
-  const hits = [];
-  for (const name of bannedNames) {
-    const re = new RegExp(`["'\`]${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["'\`]`, 'g');
-    if (re.test(text)) hits.push({ family: name, context: `quoted literal "${name}"` });
-  }
-  return hits;
-}
-
-/**
- * Whole-superfamily bans (doctrine.hardBanFamilyPrefixes, e.g. "IBM Plex"):
- * any quoted family name that begins with the prefix — "IBM Plex Sans",
- * "IBM Plex Sans Arabic", a future Plex cut — is caught, not only the
- * exact names enumerated in hardBan.
- */
-function findBannedPrefixInQuotedLiteral(text, bannedPrefixes) {
-  const hits = [];
-  for (const prefix of bannedPrefixes) {
-    const escaped = prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const re = new RegExp(`["'\`](${escaped}[^"'\`\\n]{0,40})["'\`]`, 'g');
-    let m;
-    while ((m = re.exec(text))) {
-      hits.push({ family: m[1], context: `quoted literal "${m[1]}"` });
-    }
-  }
-  return hits;
-}
-
-function stackFamilies(stack) {
-  return stack
-    .split(',')
-    .map((f) => f.replace(/\\/g, '').replace(/["'`]/g, '').trim())
-    .filter(Boolean);
-}
-
-function isBannedFamily(family, bannedNames, bannedPrefixes) {
-  const low = family.toLowerCase();
-  return bannedNames.some((n) => n.toLowerCase() === low) ||
-    bannedPrefixes.some((p) => low.startsWith(p.toLowerCase()));
-}
-
-/**
  * Diagram-file font stacks (M10-07, AR-13):
  *   - SVG attribute   font-family="Arial, sans-serif"  or  font-family='…'
  *   - Mermaid / JSON  "fontFamily": "Inter"  (JSON form, including inside a
@@ -200,7 +137,7 @@ function isBannedFamily(family, bannedNames, bannedPrefixes) {
  * fallbacks are banned families later in the stack (warn only, because
  * renderers fall back silently when the primary face is missing).
  */
-function findBannedInDiagramStacks(text, bannedNames, bannedPrefixes, { svgAttr, fontFamilyKey, cssStack }) {
+function findBannedInDiagramStacks(text, lists, { svgAttr, fontFamilyKey, cssStack }) {
   const hits = [];
   const fallbacks = [];
   const patterns = [];
@@ -218,16 +155,34 @@ function findBannedInDiagramStacks(text, bannedNames, bannedPrefixes, { svgAttr,
   for (const { re, group } of patterns) {
     let m;
     while ((m = re.exec(text))) {
-      const families = stackFamilies(m[group]);
-      families.forEach((family, idx) => {
-        if (!isBannedFamily(family, bannedNames, bannedPrefixes)) return;
-        const rec = { family, context: m[0].trim().slice(0, 120) };
-        if (idx === 0) hits.push(rec);
-        else fallbacks.push(rec);
+      const families = matcher.stackFamilies(m[group]);
+      const primary = matcher.classifyStack(families, lists, {});
+      if (primary) hits.push({ family: primary.family, context: m[0].trim().slice(0, 120) });
+      families.slice(1).forEach((family) => {
+        if (matcher.isBannedFamily(family, lists)) fallbacks.push({ family, context: m[0].trim().slice(0, 120) });
       });
     }
   }
   return { hits, fallbacks };
+}
+
+/**
+ * Stack-aware hits for CSS, JS/TS, Tailwind configs (.js/.cjs/.mjs/.ts) and
+ * document generators: the PRIMARY family of each font-family declaration,
+ * --font-* custom property and fontFamily key/Tailwind entry is classified by
+ * the shared matcher (hooks/lib/font-matcher.js), which covers all five
+ * doctrine categories: hard/prefix, secondary, monospace, bare system stack
+ * alone, and Source Sans only in heading/display context. A banned face
+ * named later as a fallback is not what this gate exists to catch.
+ */
+function findPrimaryStackHits(text, lists) {
+  const hits = [];
+  const decls = [...matcher.findCssFontDeclarations(text), ...matcher.findScriptFontStacks(text)];
+  for (const d of decls) {
+    const hit = matcher.classifyStack(d.families, lists, { selector: d.selector, prop: d.prop });
+    if (hit) hits.push({ family: hit.family, kind: hit.kind, context: `${d.prop}: ${d.value}`.slice(0, 120) });
+  }
+  return hits;
 }
 
 function main() {
@@ -257,14 +212,7 @@ function main() {
     process.exit(0);
   }
 
-  const bannedPrimaryOnly = []
-    .concat((doctrine.hardBan || []).map((f) => f.family))
-    .concat((doctrine.secondaryBan || []).map((f) => f.family))
-    .concat((doctrine.conditionalPrimaryOnly || []).map((f) => f.family));
-
-  const bannedPrefixes = (doctrine.hardBanFamilyPrefixes || [])
-    .map((f) => f.prefix)
-    .filter(Boolean);
+  const lists = matcher.buildLists(doctrine);
 
   const text = extractWrittenText(toolInput);
   if (!text) process.exit(0);
@@ -272,7 +220,7 @@ function main() {
   const isJson = ext === '.json';
   const isDiagram = DIAGRAM_EXTENSIONS.has(ext);
   const diagram = (isJson || isDiagram)
-    ? findBannedInDiagramStacks(text, bannedPrimaryOnly, bannedPrefixes, {
+    ? findBannedInDiagramStacks(text, lists, {
       svgAttr: ext === '.svg',
       fontFamilyKey: true,
       cssStack: isDiagram,
@@ -285,12 +233,14 @@ function main() {
   } else if (isDiagram) {
     // Diagram files: stack-aware matchers only, so a banned face named as a
     // fallback warns instead of tripping the bare quoted-literal check.
-    hits = [...findBannedInCssFontFamily(text, bannedPrimaryOnly, bannedPrefixes), ...diagram.hits];
+    hits = [...matcher.findCssFontDeclarations(text)
+      .map((d) => matcher.classifyStack(d.families, lists, { selector: d.selector, prop: d.prop }))
+      .filter(Boolean)
+      .map((h) => ({ family: h.family, context: 'font-family' })), ...diagram.hits];
   } else {
     hits = [
-      ...findBannedInCssFontFamily(text, bannedPrimaryOnly, bannedPrefixes),
-      ...findBannedInQuotedLiteral(text, bannedPrimaryOnly),
-      ...findBannedPrefixInQuotedLiteral(text, bannedPrefixes),
+      ...findPrimaryStackHits(text, lists),
+      ...matcher.findBannedQuotedLiterals(text, lists),
     ];
   }
 

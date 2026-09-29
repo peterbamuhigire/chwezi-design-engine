@@ -36,12 +36,12 @@ Creator websites sell personality, authenticity, and niche expertise. Visitors a
 
 | Creator Type | Header Font | Body Font | Personality |
 |-------------|-------------|-----------|-------------|
-| **Digital Artist** | Display/decorative (Clash Display) | Clean sans (DM Sans) | Bold, expressive |
-| **Developer/Tech** | Geometric mono (Space Grotesk) | Clean sans (Inter, but customize) | Technical, precise |
-| **Writer/Blogger** | Elegant serif (Cormorant) | Readable serif (Lora) | Literary, thoughtful |
-| **Photographer** | Thin sans (Outfit 300) | Minimal sans (DM Sans) | Let images speak |
-| **YouTuber/Streamer** | Bold sans (Plus Jakarta Sans 800) | Friendly sans (Nunito Sans) | Energetic, accessible |
-| **Craftsperson** | Hand-drawn or slab serif (Zilla Slab) | Warm sans (Nunito) | Authentic, handmade |
+| **Digital Artist** | Display/decorative (Clash Display) | Clean sans (Public Sans) | Bold, expressive |
+| **Developer/Tech** | Mono display (JetBrains Mono) | Clean sans (Public Sans, but customise) | Technical, precise |
+| **Writer/Blogger** | Elegant serif (Theano Didot) | Readable serif (Source Serif 4) | Literary, thoughtful |
+| **Photographer** | Thin sans (Hanken Grotesk 300) | Minimal sans (Public Sans) | Let images speak |
+| **YouTuber/Streamer** | Bold sans (Bricolage Grotesque 800) | Friendly sans (Alegreya Sans) | Energetic, accessible |
+| **Craftsperson** | Hand-drawn or slab serif (Zilla Slab) | Warm sans (Lexend) | Authentic, handmade |
 | **Musician** | Display font (Cabinet Grotesk) | Clean sans (Satoshi) | Genre-dependent, distinctive |
 
 ### Font Rules for Creators

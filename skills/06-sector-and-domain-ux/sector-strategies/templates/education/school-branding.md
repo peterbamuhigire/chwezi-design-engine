@@ -49,13 +49,13 @@ Schools need **readability first**, then personality:
 
 | School Type | Header Font | Body Font | Personality |
 |-------------|-------------|-----------|-------------|
-| **Traditional/Heritage** | Serif (Playfair Display, Lora) | Sans-serif (Source Sans Pro) | Established, trusted |
-| **Modern/Progressive** | Geometric sans (Poppins, Outfit) | Humanist sans (Inter, Nunito) | Forward-thinking |
-| **Creative/Arts** | Display (Alegreya, Literata) | Clean sans (DM Sans) | Expressive, unique |
-| **STEM/Tech** | Monospace accent (JetBrains Mono) | Sans (Inter, Rubik) | Innovative, precise |
-| **Early Years** | Rounded (Nunito, Quicksand) | Rounded sans (Nunito Sans) | Warm, approachable |
-| **International** | Clean sans (Plus Jakarta Sans) | Neutral sans (Inter) | Global, professional |
-| **Religious** | Serif (Cormorant, EB Garamond) | Serif body (Lora, Merriweather) | Reverent, traditional |
+| **Traditional/Heritage** | Serif (Bodoni Moda, Source Serif 4) | Sans-serif (Source Sans Pro) | Established, trusted |
+| **Modern/Progressive** | Geometric sans (Bricolage Grotesque, Unbounded) | Humanist sans (Public Sans, Lexend) | Forward-thinking |
+| **Creative/Arts** | Display (Alegreya, Literata) | Clean sans (Public Sans) | Expressive, unique |
+| **STEM/Tech** | Monospace accent (JetBrains Mono) | Sans (Public Sans, Rubik) | Innovative, precise |
+| **Early Years** | Rounded (Lexend, Quicksand) | Rounded sans (Alegreya Sans) | Warm, approachable |
+| **International** | Clean sans (Hanken Grotesk) | Neutral sans (Public Sans) | Global, professional |
+| **Religious** | Serif (Theano Didot, EB Garamond) | Serif body (Source Serif 4, Merriweather) | Reverent, traditional |
 
 **Never use:** Inter alone, Roboto alone, Arial, Times New Roman, Comic Sans. These signal "default" or "unbranded."
 

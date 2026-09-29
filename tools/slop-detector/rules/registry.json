@@ -1,0 +1,1964 @@
+{
+  "$comment": "chwezi-slop rule registry (M10-09-T01). Data rows keyed to the K5 AS1-AS7 overlay. Enforces Chwezi doctrine, not Impeccable's: Impeccable rule ideas and thresholds are adapted in paraphrase with attribution (Apache-2.0, commit 114ea1d) and its font lists are ban evidence only. Validate with: node tools/slop-detector/cli.mjs --validate-registry",
+  "schema": 1,
+  "tool": "chwezi-slop",
+  "rules": [
+    {
+      "id": "banned-primary-font",
+      "name": "Banned AI-slop font as primary type",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx",
+        "py"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-banned-fonts.md#1-hard-ban-primary-offenders",
+      "doctrine_markers": [
+        "font.ban.hard.*",
+        "font.ban.secondary.*",
+        "font.ban.mono.*"
+      ],
+      "authority": {
+        "human_authority": "Chwezi font doctrine: doctrine/references/ai-slop-banned-fonts.md (approvals trace to human design authority per pairing-principles.md)",
+        "house_ruling": "Peter Bamuhigire, house rulings of 21 Jun 2026 and 29 Sep 2026 (Fraunces, IBM Plex); watchlist refresh 29 Sep 2026",
+        "ban_evidence": [
+          "impeccable@114ea1d:overused-font (evidence for bans only)"
+        ]
+      },
+      "provenance": "Chwezi doctrine read from doctrine/references/ai-slop-banned-fonts.json through hooks/lib/font-matcher.js (shared with banned-font-gate.js). Impeccable list used as ban evidence only (Apache-2.0, commit 114ea1d).",
+      "check": {
+        "kind": "named",
+        "name": "bannedPrimaryFont",
+        "params": {
+          "matcher_rule": "banned-primary-font"
+        }
+      },
+      "exceptions": [
+        "banned face named only as a fallback",
+        "client brand guideline recorded as a waiver",
+        "deliberate documented system-font fallback chain (system-font-fallbacks.md)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/banned-primary-font.flag.css",
+        "pass": "tests/fixtures/slop/banned-primary-font.pass.css"
+      }
+    },
+    {
+      "id": "conditional-source-sans-primary",
+      "name": "Source Sans as display or heading face",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-banned-fonts.md#rule:font.conditional.source-sans-3",
+      "doctrine_markers": [
+        "font.conditional.*"
+      ],
+      "authority": {
+        "human_authority": "Chwezi font doctrine §3 (Source Sans 3 permitted as a paired body face only)",
+        "house_ruling": "Chwezi house rule, ai-slop-banned-fonts.md §3",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "bannedPrimaryFont",
+        "params": {
+          "matcher_rule": "conditional-source-sans-primary"
+        }
+      },
+      "exceptions": [
+        "Source Sans as a body face beneath a distinctive display face"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/conditional-source-sans-primary.flag.css",
+        "pass": "tests/fixtures/slop/conditional-source-sans-primary.pass.css"
+      }
+    },
+    {
+      "id": "flat-type-hierarchy",
+      "name": "Flat type hierarchy",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#type-scale-use-a-real-ratio-not-arbitrary-sizes",
+      "authority": {
+        "human_authority": "Chwezi doctrine: governance/design-quality-gate.md Typography (type scale ratio >= 1.25)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:flat-type-hierarchy"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "flatTypeHierarchy",
+        "params": {
+          "min_ratio": 1.25
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/flat-type-hierarchy.flag.css",
+        "pass": "tests/fixtures/slop/flat-type-hierarchy.pass.css"
+      }
+    },
+    {
+      "id": "body-leading-tight",
+      "name": "Body line-height below 1.5",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#line-height-inverse-to-size",
+      "authority": {
+        "human_authority": "Chwezi doctrine: governance/design-quality-gate.md Typography (inverse line-height rule); WCAG 2.2 SC 1.4.8 guidance (1.5 within paragraphs)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:tight-leading"
+        ]
+      },
+      "provenance": "Chwezi threshold 1.5 (stricter than Impeccable's 1.3). Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "leading",
+        "params": {
+          "min": 1.5
+        }
+      },
+      "exceptions": [
+        "headings and display type (inverse rule)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/body-leading-tight.flag.css",
+        "pass": "tests/fixtures/slop/body-leading-tight.pass.css"
+      }
+    },
+    {
+      "id": "body-leading-loose",
+      "name": "Body line-height above 1.9",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#line-height-inverse-to-size",
+      "authority": {
+        "human_authority": "Chwezi doctrine: governance/design-quality-gate.md Typography; website-skills slop-rules.md §11 (body line-height 1.5-1.9)",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "leading",
+        "params": {
+          "max": 1.9
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/body-leading-loose.flag.css",
+        "pass": "tests/fixtures/slop/body-leading-loose.pass.css"
+      }
+    },
+    {
+      "id": "heading-wide-tracking",
+      "name": "Wide-tracked headings",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#letter-spacing-tracking",
+      "authority": {
+        "human_authority": "Chwezi doctrine: type-scale-and-spacing.md Letter-spacing; website-skills slop-rules.md §11 (heading letter-spacing above 0.04em fails)",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "tracking",
+        "params": {
+          "scope": "heading",
+          "max": 0.04
+        }
+      },
+      "exceptions": [
+        "uppercase or small-caps settings, which need added tracking"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/heading-wide-tracking.flag.css",
+        "pass": "tests/fixtures/slop/heading-wide-tracking.pass.css"
+      }
+    },
+    {
+      "id": "body-wide-tracking",
+      "name": "Wide-tracked body text",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#letter-spacing-tracking",
+      "authority": {
+        "human_authority": "Chwezi doctrine: governance/design-quality-gate.md Typography (body not wide-tracked)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:wide-tracking"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "tracking",
+        "params": {
+          "scope": "body",
+          "max": 0.05
+        }
+      },
+      "exceptions": [
+        "uppercase or small-caps settings"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/body-wide-tracking.flag.css",
+        "pass": "tests/fixtures/slop/body-wide-tracking.pass.css"
+      }
+    },
+    {
+      "id": "extreme-negative-tracking",
+      "name": "Extreme negative tracking",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#letter-spacing-tracking",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:extreme-negative-tracking"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "tracking",
+        "params": {
+          "scope": "any",
+          "min": -0.05
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/extreme-negative-tracking.flag.css",
+        "pass": "tests/fixtures/slop/extreme-negative-tracking.pass.css"
+      }
+    },
+    {
+      "id": "justified-body-text",
+      "name": "Justified text",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 1.4.8 Visual Presentation (text not justified), W3C Recommendation",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:justified-text"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "justifiedText"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/justified-body-text.flag.css",
+        "pass": "tests/fixtures/slop/justified-body-text.pass.css"
+      }
+    },
+    {
+      "id": "tiny-text",
+      "name": "Text below 12px",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#type-scale-use-a-real-ratio-not-arbitrary-sizes",
+      "authority": {
+        "human_authority": "Chwezi doctrine: type-scale-and-spacing.md (body and UI sizes); WCAG 2.2 SC 1.4.4 resize context",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:tiny-text"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "tinyText",
+        "params": {
+          "min_px": 12
+        }
+      },
+      "exceptions": [
+        "sup and sub"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/tiny-text.flag.css",
+        "pass": "tests/fixtures/slop/tiny-text.pass.css"
+      }
+    },
+    {
+      "id": "all-caps-body",
+      "name": "All-caps running text",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#letter-spacing-tracking",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:all-caps-body"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "allCapsBody",
+        "params": {
+          "min_chars": 60
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/all-caps-body.flag.css",
+        "pass": "tests/fixtures/slop/all-caps-body.pass.css"
+      }
+    },
+    {
+      "id": "line-length",
+      "name": "Measure outside 45-80ch",
+      "category": "slop",
+      "as_overlay": "AS7",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#spacing-rhythm",
+      "authority": {
+        "human_authority": "Measure of 45-75 characters: Bringhurst, The Elements of Typographic Style §2.1.2 (human authority; 80ch upper bound per WCAG 1.4.8)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:line-length"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "lineLength",
+        "params": {
+          "min_ch": 45,
+          "max_ch": 80
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/line-length.flag.css",
+        "pass": "tests/fixtures/slop/line-length.pass.css"
+      }
+    },
+    {
+      "id": "skipped-heading",
+      "name": "Skipped heading level",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 1.3.1 Info and Relationships, W3C Recommendation",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:skipped-heading"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "skippedHeading"
+      },
+      "exceptions": [
+        "component snippets whose first heading is not h1 (only jumps are flagged)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/skipped-heading.flag.html",
+        "pass": "tests/fixtures/slop/skipped-heading.pass.html"
+      }
+    },
+    {
+      "id": "italic-serif-display",
+      "name": "Italic serif display reflex",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:italic-serif-display"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "italicSerifDisplay"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/italic-serif-display.flag.css",
+        "pass": "tests/fixtures/slop/italic-serif-display.pass.css"
+      }
+    },
+    {
+      "id": "gradient-text",
+      "name": "Gradient text",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS4; design-audit gradient-text tell",
+        "house_ruling": "Owner no-ship boundary, doctrine/references/ai-slop-taxonomy.md (K5 overlay, design 0c36d84, 3 Sep 2026)",
+        "ban_evidence": [
+          "impeccable@114ea1d:gradient-text"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "gradientText"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/gradient-text.flag.css",
+        "pass": "tests/fixtures/slop/gradient-text.pass.css"
+      }
+    },
+    {
+      "id": "purple-blue-gradient",
+      "name": "Purple gradient",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md no-ship list (purple gradients)",
+        "house_ruling": "Owner no-ship boundary, doctrine/references/ai-slop-taxonomy.md (K5 overlay, design 0c36d84, 3 Sep 2026)",
+        "ban_evidence": [
+          "impeccable@114ea1d:ai-color-palette"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "purpleBlueGradient"
+      },
+      "exceptions": [
+        "approved brand-system gradient recorded as a waiver"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/purple-blue-gradient.flag.css",
+        "pass": "tests/fixtures/slop/purple-blue-gradient.pass.css"
+      }
+    },
+    {
+      "id": "neon-glow",
+      "name": "Neon glow",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md no-ship list (neon glow)",
+        "house_ruling": "Owner no-ship boundary, doctrine/references/ai-slop-taxonomy.md (K5 overlay, design 0c36d84, 3 Sep 2026)",
+        "ban_evidence": [
+          "impeccable@114ea1d:dark-glow"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "neonGlow",
+        "params": {
+          "min_blur_px": 8
+        }
+      },
+      "exceptions": [
+        "focus rings with zero blur (spread only)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/neon-glow.flag.css",
+        "pass": "tests/fixtures/slop/neon-glow.pass.css"
+      }
+    },
+    {
+      "id": "glassmorphism",
+      "name": "Glassmorphism surface",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#counter-doctrinal-best-practices--taught-by-the-literature-rejected-here",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md rejected practice (glassmorphism as a default surface)",
+        "house_ruling": "Owner no-ship boundary, doctrine/references/ai-slop-taxonomy.md (K5 overlay, design 0c36d84, 3 Sep 2026)",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "glassmorphism"
+      },
+      "exceptions": [
+        "navigation, header, toolbar and modal-backdrop chrome (platform material, not decoration)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/glassmorphism.flag.css",
+        "pass": "tests/fixtures/slop/glassmorphism.pass.css"
+      }
+    },
+    {
+      "id": "ai-beige-ground",
+      "name": "AI-beige page ground",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md no-ship list (AI-beige defaults); heuristic hue/lightness band, hence warning",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:cream-palette"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "aiBeigeGround"
+      },
+      "exceptions": [
+        "approved brand paper colour recorded as a value waiver"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/ai-beige-ground.flag.css",
+        "pass": "tests/fixtures/slop/ai-beige-ground.pass.css"
+      }
+    },
+    {
+      "id": "radial-halo",
+      "name": "Radial chromatic halo",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:radial-halo",
+          "impeccable@114ea1d:radial-spotlight-glow"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "radialHalo"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/radial-halo.flag.css",
+        "pass": "tests/fixtures/slop/radial-halo.pass.css"
+      }
+    },
+    {
+      "id": "pure-black-body-text",
+      "name": "Pure black body text",
+      "category": "slop",
+      "as_overlay": "AS1",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/type-scale-and-spacing.md#colour-of-text-not-pure-black",
+      "authority": {
+        "human_authority": "Chwezi doctrine: governance/design-quality-gate.md Typography (body text is not pure black)",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "pureBlackBodyText"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/pure-black-body-text.flag.css",
+        "pass": "tests/fixtures/slop/pure-black-body-text.pass.css"
+      }
+    },
+    {
+      "id": "gray-on-color",
+      "name": "Grey text on a chromatic ground",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#contrast-method-note-design-with-a-perceptual-check-certify-with-wcag-22",
+      "authority": {
+        "human_authority": "Chwezi doctrine: wcag-2.2-criteria.md contrast method; WCAG 2.2 SC 1.4.3 risk",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:gray-on-color"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "grayOnColor"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/gray-on-color.flag.css",
+        "pass": "tests/fixtures/slop/gray-on-color.pass.css"
+      }
+    },
+    {
+      "id": "stripes-or-grid-background",
+      "name": "Stripe or grid background",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:repeating-stripes-gradient",
+          "impeccable@114ea1d:codex-grid-background"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "stripesOrGrid"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/stripes-or-grid-background.flag.css",
+        "pass": "tests/fixtures/slop/stripes-or-grid-background.pass.css"
+      }
+    },
+    {
+      "id": "decorative-side-stripe",
+      "name": "Decorative side stripe",
+      "category": "slop",
+      "as_overlay": "AS2",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#rule:layout.decorative-side-stripe",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md side-stripe ruling (Option A)",
+        "house_ruling": "Side-stripe ruling Option A, 29 Sep 2026, decided by orchestrator under Peter Bamuhigire's delegated authority",
+        "ban_evidence": [
+          "impeccable@114ea1d:side-tab",
+          "impeccable@114ea1d:border-accent-on-rounded"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "decorativeSideStripe",
+        "params": {
+          "min_px": 2
+        }
+      },
+      "exceptions": [
+        "status encoding: status token plus a text or icon marker (HTML/Tailwind), or a recorded waiver (CSS)",
+        "blockquote",
+        "state indicators (:hover, :focus, .active, [aria-current], .selected)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/decorative-side-stripe.flag.css",
+        "pass": "tests/fixtures/slop/decorative-side-stripe.pass.css"
+      }
+    },
+    {
+      "id": "nested-cards",
+      "name": "Nested cards",
+      "category": "slop",
+      "as_overlay": "AS3",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS3 (nested cards flatten hierarchy)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:nested-cards"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "nestedCards"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/nested-cards.flag.html",
+        "pass": "tests/fixtures/slop/nested-cards.pass.html"
+      }
+    },
+    {
+      "id": "hero-eyebrow-chip",
+      "name": "Hero eyebrow chip",
+      "category": "slop",
+      "as_overlay": "AS2",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS2 (eyebrow, chip)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:hero-eyebrow-chip"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "heroEyebrowChip"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/hero-eyebrow-chip.flag.html",
+        "pass": "tests/fixtures/slop/hero-eyebrow-chip.pass.html"
+      }
+    },
+    {
+      "id": "kicker-above-heading",
+      "name": "Kicker above heading",
+      "category": "slop",
+      "as_overlay": "AS2",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS2 (eyebrow)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:kicker-above-heading"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "kickerAboveHeading"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/kicker-above-heading.flag.html",
+        "pass": "tests/fixtures/slop/kicker-above-heading.pass.html"
+      }
+    },
+    {
+      "id": "numbered-section-labels",
+      "name": "Numbered section labels",
+      "category": "slop",
+      "as_overlay": "AS2",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS2 (tiny section number)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:numbered-section-labels"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "numberedSectionLabels",
+        "params": {
+          "min_count": 2
+        }
+      },
+      "exceptions": [
+        "genuine step sequences (ordered lists, wizards) recorded as a waiver"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/numbered-section-labels.flag.html",
+        "pass": "tests/fixtures/slop/numbered-section-labels.pass.html"
+      }
+    },
+    {
+      "id": "identical-three-column-feature-grid",
+      "name": "Identical three-column feature grid",
+      "category": "slop",
+      "as_overlay": "AS3",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS3; website-skills banned-patterns.md (identical three-column feature grid)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:icon-tile-stack"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "identicalThreeColumnGrid"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/identical-three-column-feature-grid.flag.html",
+        "pass": "tests/fixtures/slop/identical-three-column-feature-grid.pass.html"
+      }
+    },
+    {
+      "id": "thin-border-wide-shadow",
+      "name": "Thin border with a wide soft shadow",
+      "category": "slop",
+      "as_overlay": "AS3",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:gpt-thin-border-wide-shadow"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "thinBorderWideShadow",
+        "params": {
+          "min_blur_px": 24
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/thin-border-wide-shadow.flag.css",
+        "pass": "tests/fixtures/slop/thin-border-wide-shadow.pass.css"
+      }
+    },
+    {
+      "id": "bounce-easing",
+      "name": "Bounce or elastic easing",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#counter-doctrinal-best-practices--taught-by-the-literature-rejected-here",
+      "authority": {
+        "human_authority": "Chwezi doctrine: motion-design damping ratio >= 0.7 (no bounce); ai-slop-taxonomy.md rejected ease-back",
+        "house_ruling": "Owner no-ship boundary, doctrine/references/ai-slop-taxonomy.md (K5 overlay, design 0c36d84, 3 Sep 2026)",
+        "ban_evidence": [
+          "impeccable@114ea1d:bounce-easing"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "bounceEasing"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/bounce-easing.flag.css",
+        "pass": "tests/fixtures/slop/bounce-easing.pass.css"
+      }
+    },
+    {
+      "id": "pulsing-dot",
+      "name": "Decorative pulsing dot",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS4 (pulse)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:pulsing-dot"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "pulsingDot"
+      },
+      "exceptions": [
+        "live status indicators (status, live, online, recording, presence, role=status)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/pulsing-dot.flag.html",
+        "pass": "tests/fixtures/slop/pulsing-dot.pass.html"
+      }
+    },
+    {
+      "id": "blinking-cursor",
+      "name": "Blinking cursor in a hero",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS4 (cursor)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:blinking-cursor"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "blinkingCursor"
+      },
+      "exceptions": [
+        "streaming-text caret in AI output (ai-agent-ux); only hero and landing selectors are checked"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/blinking-cursor.flag.css",
+        "pass": "tests/fixtures/slop/blinking-cursor.pass.css"
+      }
+    },
+    {
+      "id": "marquee",
+      "name": "Marquee or infinite ticker",
+      "category": "slop",
+      "as_overlay": "AS4",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS4 (marquee); WCAG 2.2 SC 2.2.2 Pause, Stop, Hide",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:marquee"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "marquee"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/marquee.flag.css",
+        "pass": "tests/fixtures/slop/marquee.pass.css"
+      }
+    },
+    {
+      "id": "missing-reduced-motion",
+      "name": "Motion with no reduced-motion path",
+      "category": "quality",
+      "as_overlay": "AS4",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "governance/design-quality-gate.md#motion-when-animated",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 2.3.3 Animation from Interactions; Chwezi design-quality-gate.md Motion (house floor)",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "missingReducedMotion",
+        "params": {
+          "min_ms": 200
+        }
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/missing-reduced-motion.flag.css",
+        "pass": "tests/fixtures/slop/missing-reduced-motion.pass.css"
+      }
+    },
+    {
+      "id": "broken-local-image",
+      "name": "Broken local image",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "html",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 1.1.1 Non-text Content (missing image has no rendered alternative); Chwezi AS7",
+        "house_ruling": "Chwezi AS7 (broken assets concealed by polish)",
+        "ban_evidence": [
+          "impeccable@114ea1d:broken-image"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "named",
+        "name": "brokenLocalImage"
+      },
+      "exceptions": [
+        "Markdown code fences (illustrative paths)",
+        "absolute site-root paths and template placeholders"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/broken-local-image.flag.html",
+        "pass": "tests/fixtures/slop/broken-local-image.pass.html"
+      }
+    },
+    {
+      "id": "placeholder-image-host",
+      "name": "Placeholder image host",
+      "category": "slop",
+      "as_overlay": "AS5",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "html",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS5 (placeholder-valued imagery)",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "placeholderImageHost"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/placeholder-image-host.flag.html",
+        "pass": "tests/fixtures/slop/placeholder-image-host.pass.html"
+      }
+    },
+    {
+      "id": "focus-indicator-removed",
+      "name": "Focus indicator removed",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "skills/04-web-and-ui-design/interface-craft-micro-details/SKILL.md#browser-surfaces",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 2.4.7 Focus Visible and SC 2.4.11 Focus Not Obscured (Minimum), W3C Recommendation",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "named",
+        "name": "focusIndicatorRemoved"
+      },
+      "exceptions": [
+        "outline removed where a :focus-visible replacement exists in the same stylesheet"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/focus-indicator-removed.flag.css",
+        "pass": "tests/fixtures/slop/focus-indicator-removed.pass.css"
+      }
+    },
+    {
+      "id": "design-system-font",
+      "name": "Font outside the design system",
+      "category": "quality",
+      "as_overlay": "AS1",
+      "severity": "block",
+      "tier": "immediate",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/SKILL.md#decision-rules",
+      "authority": {
+        "human_authority": "Project token artefact (design-tokens.json, approved) is the brand authority; Chwezi design-tokens-and-naming decision rules",
+        "house_ruling": "Chwezi token contract: approved design-tokens artefact (website-skills templates/project-artifacts)",
+        "ban_evidence": [
+          "impeccable@114ea1d:design-system-font"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "drift",
+        "name": "designSystemFont"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/drift/design-system-font.flag.css",
+        "pass": "tests/fixtures/slop/drift/design-system-font.pass.css"
+      }
+    },
+    {
+      "id": "design-system-color",
+      "name": "Colour outside the design system",
+      "category": "quality",
+      "as_overlay": "AS1",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/SKILL.md#decision-rules",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:design-system-color"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "drift",
+        "name": "designSystemColor",
+        "params": {
+          "delta_e": 2
+        }
+      },
+      "exceptions": [
+        "colours within CIEDE2000 2.0 of a token (OKLCH/hex round-trips, declared neutrals)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/drift/design-system-color.flag.css",
+        "pass": "tests/fixtures/slop/drift/design-system-color.pass.css"
+      }
+    },
+    {
+      "id": "design-system-radius",
+      "name": "Radius outside the design system",
+      "category": "quality",
+      "as_overlay": "AS3",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/SKILL.md#decision-rules",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:design-system-radius"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "drift",
+        "name": "designSystemRadius"
+      },
+      "exceptions": [
+        "0 and pill radii (>= 999px)"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/drift/design-system-radius.flag.css",
+        "pass": "tests/fixtures/slop/drift/design-system-radius.pass.css"
+      }
+    },
+    {
+      "id": "design-system-font-size",
+      "name": "Font size outside the design system",
+      "category": "quality",
+      "as_overlay": "AS1",
+      "severity": "advisory",
+      "tier": "deep",
+      "engines": [
+        "css",
+        "scss",
+        "html",
+        "tailwind",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/SKILL.md#decision-rules",
+      "authority": {
+        "human_authority": "NOT_ASSESSED",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:design-system-font-size"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "drift",
+        "name": "designSystemFontSize"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/drift/design-system-font-size.flag.css",
+        "pass": "tests/fixtures/slop/drift/design-system-font-size.pass.css"
+      }
+    },
+    {
+      "id": "horizontal-overflow",
+      "name": "Horizontal page overflow",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 1.4.10 Reflow",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (M10-09, 29 Sep 2026).",
+      "check": {
+        "kind": "browser",
+        "name": "horizontalOverflow"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/horizontal-overflow.flag.html",
+        "pass": "tests/fixtures/slop-browser/horizontal-overflow.pass.html"
+      }
+    },
+    {
+      "id": "clipped-positioned-child",
+      "name": "Positioned child clipped by overflow",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS7 (clipping)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:clipped-overflow-container"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "browser",
+        "name": "clippedPositionedChild"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/clipped-positioned-child.flag.html",
+        "pass": "tests/fixtures/slop-browser/clipped-positioned-child.pass.html"
+      }
+    },
+    {
+      "id": "text-occlusion",
+      "name": "Text covered by another element",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS7 (hidden content)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:text-occlusion"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "browser",
+        "name": "textOcclusion"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/text-occlusion.flag.html",
+        "pass": "tests/fixtures/slop-browser/text-occlusion.pass.html"
+      }
+    },
+    {
+      "id": "content-hidden-at-rest",
+      "name": "Content hidden at rest (failed reveal)",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS7 (hidden content)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:content-hidden-at-rest"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "browser",
+        "name": "contentHiddenAtRest"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/content-hidden-at-rest.flag.html",
+        "pass": "tests/fixtures/slop-browser/content-hidden-at-rest.pass.html"
+      }
+    },
+    {
+      "id": "script-error",
+      "name": "Script error on load",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/ai-slop-taxonomy.md#impeccable-derived-as-overlay",
+      "authority": {
+        "human_authority": "Chwezi doctrine: ai-slop-taxonomy.md AS7 (delivery debt)",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:script-error"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "browser",
+        "name": "scriptError"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/script-error.flag.html",
+        "pass": "tests/fixtures/slop-browser/script-error.pass.html"
+      }
+    },
+    {
+      "id": "low-contrast-computed",
+      "name": "Low computed text contrast",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "block",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 1.4.3 Contrast (Minimum), W3C Recommendation",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:low-contrast"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "browser",
+        "name": "lowContrastComputed"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/low-contrast-computed.flag.html",
+        "pass": "tests/fixtures/slop-browser/low-contrast-computed.pass.html"
+      }
+    },
+    {
+      "id": "first-viewport-column-overflow",
+      "name": "First-viewport text overflowing the viewport",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 1.4.10 Reflow",
+        "house_ruling": "",
+        "ban_evidence": [
+          "impeccable@114ea1d:first-viewport-column-overflow"
+        ]
+      },
+      "provenance": "Adapted in paraphrase from Impeccable (pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d); no source or fixture copied.",
+      "check": {
+        "kind": "browser",
+        "name": "firstViewportColumnOverflow"
+      },
+      "exceptions": [],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/first-viewport-column-overflow.flag.html",
+        "pass": "tests/fixtures/slop-browser/first-viewport-column-overflow.pass.html"
+      }
+    }
+  ]
+}

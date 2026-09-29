@@ -2,7 +2,10 @@
 
 Run before declaring any artifact with type, colour, or layout "done." Mirrors the finance
 engine's quality-gate pattern. A failed item blocks shipment until fixed or explicitly waived
-(with a recorded reason).
+(with a recorded reason). A waiver of a `chwezi-slop` detector finding uses the machine format in
+`tools/slop-detector/README.md` (`.chwezi/slop.json` or an inline comment, reason "<who>:
+<evidence>", agents limited to value-scope waivers) and is listed in
+`templates/design-delivery-evidence.md`.
 
 For a meaningful change, record the gate evidence in
 `templates/design-delivery-evidence.md`. A checked box without a linked render, measurement,

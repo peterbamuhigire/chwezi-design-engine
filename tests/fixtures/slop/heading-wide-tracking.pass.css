@@ -1,0 +1,3 @@
+/* chwezi-slop fixture: heading-wide-tracking (should pass). Synthetic; written for this engine. */
+h2 { letter-spacing: -0.01em; }
+h6 { text-transform: uppercase; letter-spacing: 0.08em; }

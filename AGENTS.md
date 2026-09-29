@@ -98,7 +98,8 @@ any skill, frontmatter, router, doctrine, or governance change.
 - No banned AI-slop fonts as primary type (`doctrine/references/ai-slop-banned-fonts.md`). Hard
   ban: Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces, IBM Plex (all faces), bare system
   stacks alone; secondary ban: Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito, Nunito
-  Sans; Roboto Mono and IBM Plex Mono banned as monospace choices; Source Sans 3 paired body only.
+  Sans, and (added 2026-09-29) Newsreader, Cormorant / Cormorant Garamond, Crimson Pro, Space Mono,
+  Plus Jakarta Sans, Instrument Sans, DM Sans, Outfit, Playfair Display, Lora; Roboto Mono and IBM Plex Mono banned as monospace choices; Source Sans 3 paired body only.
 - Always state typeface + reason before producing output.
 - The banned-font rule overrides convenience. If you cannot satisfy the anti-slop checklist, say
   so and ask — never silently fall back to Inter or a system stack.

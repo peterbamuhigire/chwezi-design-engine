@@ -269,9 +269,19 @@ Patients > James Smith > Medications > Metformin
 }
 .clinical-table tr.critical {
   background: #FEF2F2;
+  /* chwezi-slop-disable-next-line decorative-side-stripe -- Peter Bamuhigire (side-stripe ruling, 29 Sep 2026): status encoding paired with a text label */
   border-left: 4px solid #EF4444;
 }
+.clinical-table tr.critical td:first-child::before {
+  content: "⛔ CRITICAL ";   /* text + icon marker: the stripe is never the only signal */
+  font-weight: 700;
+  color: #B91C1C;
+}
 ```
+
+Status-encoding reason (side-stripe ruling, Option A, 29 Sep 2026): the critical-row stripe is a
+functional status encoding paired with the "CRITICAL" text label and icon, so it is kept with an
+inline waiver. Decorative side stripes on cards, callouts or list items are not allowed.
 
 - Minimum row height: 48px (touch), 40px (mouse-only)
 - Sortable columns: show sort indicator (↑↓) on hover; active: filled arrow

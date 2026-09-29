@@ -147,20 +147,34 @@ Beyond 60-30-10, use colors semantically for user feedback:
   color: var(--color-text-primary);
 }
 
-/* Warning state */
+/* Warning state: tint + 1px full border + icon + text label */
 .alert-warning {
-  background-color: var(--color-warning);
-  color: #000;  /* Dark text for contrast */
-  border-left: 4px solid darken(var(--color-warning), 20%);
-}
-
-/* Info state */
-.notification {
-  background-color: lighten(var(--color-info), 40%);
-  border-left: 4px solid var(--color-info);
+  background-color: color-mix(in oklch, var(--color-warning) 14%, white);
+  border: 1px solid color-mix(in oklch, var(--color-warning) 55%, black);
   color: var(--color-text-primary);
 }
+.alert-warning::before {
+  content: "⚠ Warning: ";  /* icon + text label, so colour is never the only signal */
+  font-weight: 600;
+}
+
+/* Info state: tint + icon + text label */
+.notification {
+  background-color: color-mix(in oklch, var(--color-info) 12%, white);
+  border: 1px solid color-mix(in oklch, var(--color-info) 40%, white);
+  color: var(--color-text-primary);
+}
+.notification::before {
+  content: "ℹ Note: ";
+  font-weight: 600;
+}
 ```
+
+Status callouts use a background tint, a 1px full border, an icon and a text label. A coloured
+`border-left` stripe wider than 1px on cards, callouts, alerts or list items is a decorative
+slop tell (side-stripe ruling, Option A, 29 Sep 2026; detector rule `decorative-side-stripe`).
+Stripes are kept only as a genuine status encoding paired with a text marker, with the reason
+recorded.
 
 ---
 

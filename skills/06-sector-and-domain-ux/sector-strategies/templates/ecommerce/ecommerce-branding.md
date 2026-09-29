@@ -36,12 +36,12 @@ E-commerce websites sell products in a split second. 75% of consumers judge cred
 
 | Store Type | Header Font | Body Font | Key Rule |
 |-----------|-------------|-----------|----------|
-| **Luxury** | Elegant serif (Cormorant, DM Serif) | Clean sans | Generous spacing, premium feel |
-| **Fashion** | Bold sans (Clash Display, Outfit) | Neutral sans (DM Sans) | Trend-forward, bold |
-| **Food** | Warm serif or rounded sans (Nunito) | Readable sans | Appetising, friendly |
-| **Tech** | Geometric sans (Space Grotesk, Rubik) | Clean sans (Inter) | Technical, precise |
-| **Artisan** | Hand-drawn or distinctive serif (Alegreya) | Warm sans (Plus Jakarta Sans) | Personal, crafted |
-| **Kids** | Rounded bold (Quicksand, Nunito) | Readable sans | Playful but clear |
+| **Luxury** | Elegant serif (Theano Didot, DM Serif) | Clean sans | Generous spacing, premium feel |
+| **Fashion** | Bold sans (Clash Display, Bricolage Grotesque) | Neutral sans (Public Sans) | Trend-forward, bold |
+| **Food** | Warm serif or rounded sans (Lexend) | Readable sans | Appetising, friendly |
+| **Tech** | Geometric sans (Unbounded, Rubik) | Clean sans (Public Sans) | Technical, precise |
+| **Artisan** | Hand-drawn or distinctive serif (Alegreya) | Warm sans (Hanken Grotesk) | Personal, crafted |
+| **Kids** | Rounded bold (Quicksand, Lexend) | Readable sans | Playful but clear |
 
 ## Photography Direction
 

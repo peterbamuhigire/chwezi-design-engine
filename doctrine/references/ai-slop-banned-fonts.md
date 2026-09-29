@@ -47,7 +47,11 @@ typography is set in
   historic `--font-sans` default. Banned outright.
 <!-- rule:font.ban.hard.geist -->
 - **Geist** — **[AI]** *added 2026-06-21.* Vercel's own font, now the **v0 / shadcn / Vercel
-  template default that replaced Inter** — the modern successor AI tell. Banned outright.
+  template default that replaced Inter** — the modern successor AI tell. Banned outright. The ban
+  covers every Geist cut (Geist Sans, Geist Mono and later cuts): the gate matches any family name
+  beginning "Geist" (doctrine clarification 2026-09-29; Geist Mono is flagged by the
+  pbakaus/impeccable detector and bundled in Anthropic's `canvas-design` fonts, evidence for bans
+  only).
 <!-- rule:font.ban.hard.roboto -->
 - **Roboto** — **[POP/AI]** on the Cookbook list; also the #1 Google Font and Android/Material
   system face. Banned.
@@ -95,6 +99,58 @@ for Chwezi work — but note the honest evidence label:
 - **Nunito / Nunito Sans** — **[POP]** no direct AI-tell evidence found; banned as a Chwezi
   house preference (rounded-friendly cliché), not on evidence grounds.
 
+### 2a. Added 2026-09-29 — AI-default faces with two or more independent AI-tool signals
+
+Each face below is named as a default or reflex choice by at least two independent AI-tool
+sources (the pbakaus/impeccable detector or reflex list, the UI UX Pro Max typography data, and
+Anthropic's own `canvas-design` font bundle or Claude Cookbook "Prompting for frontend
+aesthetics" recommendation list). These sources are **evidence for bans only**. Decided by the
+orchestrator under Peter's delegated authority, 29 Sep 2026; the graded record is
+`docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md`.
+
+<!-- rule:font.ban.secondary.newsreader -->
+- **Newsreader** — **[AI]** Impeccable reflex list; Claude Cookbook "distinctive" recommendation.
+  Replaced in the 02 Editorial baselines by Libre Caslon Text and Source Serif 4.
+<!-- rule:font.ban.secondary.cormorant -->
+<!-- rule:font.ban.secondary.cormorant-garamond -->
+- **Cormorant / Cormorant Garamond** — **[AI]** Impeccable reflex list; UI UX Pro Max (four
+  pairings). Replaced as the elegant title face by Theano Didot (display sizes only).
+<!-- rule:font.ban.secondary.crimson-pro -->
+- **Crimson Pro** — **[AI]** Impeccable reflex list ("Crimson"); UI UX Pro Max; Anthropic
+  `canvas-design` bundle and Claude Cookbook "editorial" recommendation. Replaced in the 01 Formal
+  baselines by Arapey; pairing F3 now uses Spectral.
+<!-- rule:font.ban.secondary.space-mono -->
+- **Space Mono** — **[AI]** Impeccable reflex list; UI UX Pro Max (two pairings). Short labels
+  now use JetBrains Mono.
+<!-- rule:font.ban.secondary.plus-jakarta-sans -->
+- **Plus Jakarta Sans** — **[AI]** Impeccable detector and reflex list; UI UX Pro Max (three
+  headings, three bodies).
+<!-- rule:font.ban.secondary.instrument-sans -->
+- **Instrument Sans** — **[AI]** Impeccable detector and reflex list; Anthropic `canvas-design`
+  bundle (alongside the already banned Instrument Serif).
+<!-- rule:font.ban.secondary.dm-sans -->
+- **DM Sans** — **[AI]** Impeccable reflex list; UI UX Pro Max (three bodies, one heading).
+<!-- rule:font.ban.secondary.outfit -->
+- **Outfit** — **[AI]** Impeccable reflex list; UI UX Pro Max (three headings); Anthropic
+  `canvas-design` bundle.
+<!-- rule:font.ban.secondary.playfair-display -->
+- **Playfair Display** — **[AI]** Impeccable reflex list; UI UX Pro Max (three headings plus live
+  output); Claude Cookbook "editorial" recommendation.
+<!-- rule:font.ban.secondary.lora -->
+- **Lora** — **[AI]** Impeccable reflex list; Anthropic `canvas-design` bundle.
+
+### 2b. Watchlist (not banned; recheck 2026-12-29)
+
+One independent AI-tool signal only. These faces are **not** banned. Choosing one requires a
+stated human-design reason; the next refresh re-grades them.
+
+- **Syne** (approved 06 baseline) — Impeccable reflex list only.
+- **DM Serif Display / DM Serif Text** — Impeccable reflex list only.
+- **Helvetica** — Impeccable detector only (not treated as a system default like Arial).
+- **Mona Sans** — Impeccable detector only.
+- **Recoleta** — Impeccable detector only.
+- **DejaVu Sans** — Anthropic `theme-factory` body default only.
+
 ## 3. Conditional — Source Sans 3 (paired body only)
 
 <!-- rule:font.conditional.source-sans-3 -->
@@ -140,6 +196,20 @@ evaluation discipline. Record the observed shift, evidence grade, design consequ
 date checked. Weak evidence becomes a watchlist note, not a hard ban.
 
 ## 7. Change log
+
+- **2026-09-29 — Font watchlist refresh (M10-09 T12): eleven families secondary-banned [AI],
+  seven faces on the watchlist, Geist prefix clarified.** `Observed shift:` a second wave of
+  "tasteful" AI defaults (Newsreader, Cormorant, Crimson Pro, Space Mono, Plus Jakarta Sans,
+  Instrument Sans, DM Sans, Outfit, Playfair Display, Lora) recurs across AI design tools, including
+  in this engine's own baselines and sector templates. `Evidence grade:` moderate to strong per
+  face (two to three independent AI-tool sources each; see the record) — admissible for bans only.
+  Faces with one signal (Syne, DM Serif, Helvetica, Mona Sans, Recoleta, DejaVu Sans) are weak and
+  go to the watchlist. `Design consequence:` secondary ban as primary type; baselines replaced by
+  human-authority faces (Arapey, Spectral, Libre Caslon Text, Theano Didot, Source Serif 4,
+  JetBrains Mono); `fonts/` folders for Crimson Pro, Newsreader and Cormorant Garamond retained
+  pending Peter's per-operation removal decision. `Scope:` typography — web, UI, DOCX, PPTX, PDF,
+  XLSX. `Date checked:` 2026-09-29. Decided by the orchestrator under Peter's delegated authority,
+  29 Sep 2026. Record: `docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md`.
 
 - **2026-09-29 — Fraunces and IBM Plex (whole superfamily) added to the hard ban [HOUSE].**
   `Observed shift:` both faces had become reflex "tasteful" defaults — Fraunces as the go-to

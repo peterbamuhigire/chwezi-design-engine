@@ -45,7 +45,7 @@ Ran Segall, *Complete Guide to Choosing Fonts* (Flux Academy); Massimo Vignelli'
 
 | Context | Display / Header | Body |
 |---|---|---|
-| Editorial document | Andada Pro (or Newsreader) | Source Serif 4 / Public Sans |
+| Editorial document | Andada Pro (or Libre Caslon Text) | Source Serif 4 / Public Sans |
 | Technical / dashboard | Public Sans (Bold) | Public Sans (Regular, `tabular-nums`) + JetBrains Mono accents |
 | Startup / product | Clash Display (premium) or Bricolage Grotesque | Satoshi (premium) / Hanken Grotesk |
 | App / web body layer | Bricolage Grotesque | Hanken Grotesk |

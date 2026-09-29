@@ -133,9 +133,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'system-ui', 'sans-serif'],
-        serif: ['Lora', 'system-ui', 'serif'],
+        sans: ['Public Sans', 'system-ui', 'sans-serif'],
+        display: ['Bodoni Moda', 'Georgia', 'serif'],
+        serif: ['Source Serif 4', 'system-ui', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

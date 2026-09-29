@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/peterbamuhigire/design-system-skills/tools/slop-detector/rules/registry.schema.json",
+  "title": "chwezi-slop rule registry",
+  "description": "Rule rows for the chwezi-slop detector. Severity ladder: block needs a standard, an engine doctrine line or a dated house ruling; warning needs an engine doctrine line; advisory covers rules whose only support is AI-tool ban evidence.",
+  "type": "object",
+  "required": ["schema", "tool", "rules"],
+  "properties": {
+    "$comment": { "type": "string" },
+    "schema": { "const": 1 },
+    "tool": { "const": "chwezi-slop" },
+    "rules": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/rule" } }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["id", "category", "as_overlay", "severity", "tier", "engines", "modes", "doctrine_ref", "authority", "provenance", "check", "exceptions", "fixtures"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "enum": ["slop", "quality"] },
+        "as_overlay": { "enum": ["AS1", "AS2", "AS3", "AS4", "AS5", "AS6", "AS7"] },
+        "severity": { "enum": ["block", "warning", "advisory"] },
+        "tier": { "enum": ["immediate", "deep", "browser"] },
+        "engines": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["css", "scss", "html", "tailwind", "jsx", "py", "browser", "text"] } },
+        "modes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["persuade", "operate", "read", "experience"] } },
+        "doctrine_ref": { "type": "string", "pattern": "^[A-Za-z0-9_./-]+\\.md#[A-Za-z0-9_.:-]+$" },
+        "doctrine_markers": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(\\.[a-z0-9*-]+)+$" } },
+        "authority": {
+          "type": "object",
+          "required": ["human_authority", "house_ruling", "ban_evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "human_authority": { "type": "string", "minLength": 1 },
+            "house_ruling": { "type": "string" },
+            "ban_evidence": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+          }
+        },
+        "provenance": { "type": "string", "minLength": 1 },
+        "check": {
+          "type": "object",
+          "required": ["kind", "name"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": { "enum": ["named", "drift", "browser", "regex", "phrase-list"] },
+            "name": { "type": "string", "minLength": 1 },
+            "params": { "type": "object" }
+          }
+        },
+        "exceptions": { "type": "array", "items": { "type": "string" } },
+        "fixtures": {
+          "type": "object",
+          "required": ["flag", "pass"],
+          "additionalProperties": false,
+          "properties": {
+            "flag": { "type": "string", "minLength": 1 },
+            "pass": { "type": "string", "minLength": 1 }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "severity": { "const": "block" } } },
+          "then": {
+            "properties": {
+              "authority": {
+                "anyOf": [
+                  { "properties": { "human_authority": { "minLength": 1, "not": { "const": "NOT_ASSESSED" } } } },
+                  { "properties": { "house_ruling": { "minLength": 1 } } }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "check": { "properties": { "kind": { "const": "browser" } } } } },
+          "then": { "properties": { "tier": { "const": "browser" } } }
+        },
+        {
+          "if": { "properties": { "tier": { "const": "browser" } } },
+          "then": { "properties": { "check": { "properties": { "kind": { "const": "browser" } } } } }
+        }
+      ]
+    }
+  }
+}

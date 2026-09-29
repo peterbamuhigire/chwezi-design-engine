@@ -197,7 +197,7 @@ Space Grotesk, Montserrat, Poppins. Then commit a web-safe fallback that **carri
 | Voice | Brand webfont (enhancement) | Committed web-safe fallback stack (the real design in most clients) |
 |---|---|---|
 | Editorial / literary serif | Andada Pro, Spectral, Source Serif 4 | `Georgia, 'Times New Roman', Times, serif` |
-| Formal / institutional serif | Source Serif 4, Newsreader | `Georgia, Cambria, 'Times New Roman', serif` |
+| Formal / institutional serif | Source Serif 4, Libre Caslon Text | `Georgia, Cambria, 'Times New Roman', serif` |
 | Modern product grotesque | (non-banned grotesque, e.g. Work Sans/Public Sans) | `'Helvetica Neue', Helvetica, Arial, sans-serif` |
 | Friendly humanist sans | (non-banned humanist) | `Tahoma, Verdana, Segoe, sans-serif` |
 | Technical / data / mono | JetBrains Mono, Fira Code | `'Courier New', Courier, monospace` |

@@ -45,12 +45,12 @@ From Nahai's framework, with agency application notes. Use these principles when
 
 ### Typeface category associations
 
-**Serif fonts** (e.g., Playfair Display, Cormorant Garamond, Lora, Source Serif)
+**Serif fonts** (e.g., Source Serif 4, Libre Caslon Text, Andada Pro, Spectral)
 - Associations: tradition, authority, trustworthiness, formality, heritage, expertise
 - Appropriate for: law firms, newspapers, academia, financial services, established luxury brands, healthcare
 - Agency note: Serif headings paired with sans-serif body text is the premium editorial combination. The contrast in formality creates visual interest while maintaining readability.
 
-**Sans-serif fonts** (e.g., Inter, DM Sans, Manrope, Outfit, Plus Jakarta Sans)
+**Sans-serif fonts** (e.g., Public Sans, Hanken Grotesk, Atkinson Hyperlegible, Bricolage Grotesque)
 - Associations: modernity, approachability, clarity, technology, efficiency, friendliness
 - Appropriate for: SaaS, tech, startups, consumer apps, retail, service businesses
 - Agency note: A humanist sans-serif (slightly rounded, warm proportions) reads warmer than a geometric sans-serif (precise, cold). Match to archetype: Caregiver and Everyman benefit from humanist; Ruler and Sage can use geometric.

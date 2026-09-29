@@ -26,6 +26,19 @@ Use this record for meaningful visual changes. Link evidence; do not replace it 
 | Render or implementation parity | | | |
 | Performance, where applicable | | | |
 | Content and localisation | | | |
+| Slop detector (`node tools/slop-detector/cli.mjs --json <path>`) | | | |
+
+## Slop-detector waivers
+
+List every `chwezi-slop` waiver this change adds or relies on. The machine format is
+`.chwezi/slop.json` (`scope` is `value`, `rule-in-file`, `file` or `project`) or an inline
+`chwezi-slop-disable-next-line <rule> -- <who>: <evidence>` comment; see
+`tools/slop-detector/README.md`. The reason must read "<who>: <evidence>". An agent may grant a
+`value` waiver only; every wider scope needs a named human.
+
+| Rule | Scope and location | Reason (`<who>: <evidence>`) | Granted by (human or agent) | Date | Recheck due |
+|---|---|---|---|---|---|
+| | | | | | |
 
 ## Machine-readable stage evidence
 

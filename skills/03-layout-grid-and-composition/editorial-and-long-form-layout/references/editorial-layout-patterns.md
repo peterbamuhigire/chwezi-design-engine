@@ -8,7 +8,7 @@ literature, never AI-vendor picks — `doctrine/design-doctrine.md` §2).
 
 Worked CSS uses custom properties on the reading column so it composes with the page grid from
 `layout-grid-and-spacing`. Faces shown are the **02 Editorial / Literary** baseline pairing
-(Andada Pro headings → Newsreader/Source Serif 4 body) from
+(Andada Pro headings → Source Serif 4 or Libre Caslon Text body) from
 `doctrine/references/font-groups-and-usage.md` — never a banned default.
 
 ---

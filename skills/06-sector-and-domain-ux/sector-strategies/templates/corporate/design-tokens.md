@@ -59,15 +59,15 @@ All colors verified for WCAG AAA standard (7:1 contrast) in both light and dark 
 
 ### Example Font Pairing (This Is NOT Your Pairing)
 
-**Serif Example**: Georgia or Lora (DO NOT USE — find your own)
+**Serif Example**: Georgia or Source Serif 4 (DO NOT USE — find your own)
 - Headlines: H1–H2
 - Long-form content (about, case studies, thought leadership)
 
-**Sans-serif Example**: Inter or Sora (DO NOT USE — find your own)
+**Sans-serif Example**: Public Sans or Sora (DO NOT USE — find your own)
 - Navigation, labels, CTAs, metadata
 - Body text on all devices
 
-**Display Example**: Playfair Display (DO NOT USE — find your own)
+**Display Example**: Bodoni Moda (DO NOT USE — find your own)
 - Hero headline (company mission, value proposition)
 - Section headers (accent use only)
 
@@ -85,13 +85,13 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 
 | Element | Font | Size | Weight | Line-height |
 |---------|------|------|--------|-------------|
-| **H1** | Playfair Display | 52px | 700 | 1.1 |
-| **H2** | Lora | 40px | 600 | 1.2 |
-| **H3** | Lora | 28px | 600 | 1.3 |
-| **Body** | Inter | 16px | 400 | 1.6 |
-| **Small text** | Inter | 14px | 400 | 1.5 |
-| **CTA buttons** | Inter | 16px | 600 | 1.5 |
-| **Data labels** | Inter | 13px | 500 | 1.4 |
+| **H1** | Bodoni Moda | 52px | 700 | 1.1 |
+| **H2** | Source Serif 4 | 40px | 600 | 1.2 |
+| **H3** | Source Serif 4 | 28px | 600 | 1.3 |
+| **Body** | Public Sans | 16px | 400 | 1.6 |
+| **Small text** | Public Sans | 14px | 400 | 1.5 |
+| **CTA buttons** | Public Sans | 16px | 600 | 1.5 |
+| **Data labels** | Public Sans | 13px | 500 | 1.4 |
 
 ### Mobile Typography
 
@@ -157,7 +157,7 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 - Input background: Warm Neutral
 - Border: 1px Light Gray
 - Focus: 2px Accent Brand border, blue ring +2px
-- Label: Inter 14px 600, Deep Navy
+- Label: Public Sans 14px 600, Deep Navy
 - Placeholder: Slate Gray 14px 400
 - Error: Alert Red (#DC2626) on light background, clear error message below
 
@@ -168,7 +168,7 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 - Success metric: Forest Green
 - Warning: Alert Red
 - Neutral: Light Gray
-- Font: Inter (all sizes)
+- Font: Public Sans (all sizes)
 
 ## Animation & Motion
 
@@ -193,7 +193,7 @@ See [Fontsource](https://fontsource.org) for hundreds of distinctive, self-hoste
 
 ## Anti-Homogeneity Principle
 
-**Every website built with this system must look visually distinctive.** If two corporate sites both use Deep Navy + Inter + the same component patterns, they become indistinguishable from generic templates.
+**Every website built with this system must look visually distinctive.** If two corporate sites both use Deep Navy + Public Sans + the same component patterns, they become indistinguishable from generic templates.
 
 To ensure your site is unique:
 
@@ -202,7 +202,7 @@ To ensure your site is unique:
    - Align with your logo (but don't be limited by it)
    - Consider your market: What colors do leaders in your space avoid?
 
-2. **Choose distinctive fonts** (not Inter/Lora/Playfair Display)
+2. **Choose distinctive fonts** (not Public Sans/Source Serif 4/Bodoni Moda)
    - Start at [Fontsource](https://fontsource.org) or Google Fonts
    - Choose ONE heading font that feels distinctive
    - Choose ONE body font that's invisible (easy to read)

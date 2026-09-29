@@ -11,7 +11,7 @@ wanted. This is the workflow in `SKILL.md` turned into a shippable spec — read
 
 | Decision | Choice | Reason |
 |---|---|---|
-| Type pairing | **Andada Pro** (headings, drop cap, pull-quotes) → **Newsreader** (body) | 02 Editorial / Literary baseline; Andada Pro's calligraphic, semi-slab serif (Huerta Tipográfica) carries the editorial voice, Newsreader is a screen-tuned reading serif. Both OFL — embed-safe. Not a banned default. |
+| Type pairing | **Andada Pro** (headings, drop cap, pull-quotes) → **Source Serif 4** (body) | 02 Editorial / Literary baseline; Andada Pro's calligraphic, semi-slab serif (Huerta Tipográfica) carries the editorial voice, Source Serif 4 (Frank Grießhammer, Adobe) is an optical-size-aware reading serif. Both OFL — embed-safe. Not a banned default. |
 | Measure | **66ch** target (`max-width: 66ch`) | Bringhurst's ideal; comfortable single-glance return |
 | Body | **19px / line-height 1.6**, near-black `#1a1a1a` | type-scale reference: ≥1.6 leading for body; never `#000` |
 | Heading scale | 1.25 ratio off 19px → 24 · 30 · 38 · 47px | real ≥1.25 jumps |
@@ -34,7 +34,7 @@ set in 47px Andada Pro, pinned to the top of the measure with air to its right o
 .prose {
   --measure: 66ch;
   --rhythm: 1.6rem;
-  font-family: "Newsreader", Georgia, serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 19px;
   line-height: 1.6;
   color: #1a1a1a;

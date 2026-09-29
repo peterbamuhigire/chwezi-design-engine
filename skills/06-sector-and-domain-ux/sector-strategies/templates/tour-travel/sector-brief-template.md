@@ -39,9 +39,9 @@ Reference: See `design-tokens.md` for sector-standard palettes.
 ---
 
 **Which fonts feel right?**
-- Serif for heritage/trust: (e.g., Lora, Merriweather, Crimson Text)
-- Sans-serif for clarity: (e.g., Poppins, Sora, Inter)
-- Display font for adventure: (e.g., Playfair Display, Outfit)
+- Serif for heritage/trust: (e.g., Source Serif 4, Merriweather, Crimson Text)
+- Sans-serif for clarity: (e.g., Hanken Grotesk, Sora, Public Sans)
+- Display font for adventure: (e.g., Bodoni Moda, Bricolage Grotesque)
 
 ---
 

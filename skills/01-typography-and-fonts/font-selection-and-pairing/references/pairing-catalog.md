@@ -13,7 +13,7 @@ face, category, and one-line reason before producing the artifact.
 |---|---|---|---|
 | F1 | Source Serif 4 700 | Public Sans 400 | Serious serif authority over a civic, quiet sans body; strong for formal proposals and statutory reports. |
 | F2 | Spectral 600 | Public Sans 400 | Literary but restrained serif display over a plain body; good for policy, public-sector, and board documents. |
-| F3 | Crimson Pro 700 | Source Serif 4 400 | Formal all-serif register with enough contrast in structure and weight to avoid muddiness. |
+| F3 | Spectral 700 | Source Serif 4 400 | Formal all-serif register (Spectral by Production Type; Source Serif 4 by Frank Grießhammer, Adobe) with enough contrast in structure and weight to avoid muddiness. |
 | F4 | Source Serif 4 600 | Public Sans 400 (`tabular-nums`) + JetBrains Mono for IDs/figures | Technical-formal tone for reports, standards, governance packs, and SRS/BRD work; mono confined to identifiers and figures. |
 
 ## 02 Editorial / Literary
@@ -21,8 +21,8 @@ face, category, and one-line reason before producing the artifact.
 | # | Display / Header | Body | Why it works |
 |---|---|---|---|
 | E1 | Andada Pro 800 | Source Serif 4 400 | Sturdy, calligraphic editorial headline (Huerta Tipográfica) over a calm reading serif. |
-| E2 | Newsreader 700 | Public Sans 400 | News/editorial warmth with neutral sans body clarity. |
-| E3 | Cormorant Garamond 700 | Source Serif 4 400 | Elegant high-contrast title face over a durable body serif. Use for covers and title pages. |
+| E2 | Libre Caslon Text 700 | Public Sans 400 | Caslon's English old-style warmth (Impallari Type revival) with neutral sans body clarity. |
+| E3 | Theano Didot 400 | Source Serif 4 400 | Elegant high-contrast Didone title face (Alexey Kryukov, after Didot) over a durable body serif. Use for covers and title pages, at display sizes only. |
 | E4 | Alegreya 700 | Alegreya Sans 400 | Humanist editorial pair for education, culture, and long-form narrative reports. |
 
 ## 03 Modern Product / Grotesque
@@ -56,7 +56,7 @@ face, category, and one-line reason before producing the artifact.
 
 | # | Display / Header | Body | Why it works |
 |---|---|---|---|
-| A1 | Syne 800 | Public Sans 400 | Artistic geometric display over quiet civic body; strong for campaigns and posters. |
+| A1 | Syne 800 | Public Sans 400 | Artistic geometric display over quiet civic body; strong for campaigns and posters. Watchlist face (recheck 2026-12-29): state the human-design reason when choosing it. |
 | A2 | Bodoni Moda 700 | Public Sans 400 | Dramatic high-contrast display with readable body support for luxury/beauty/culture. |
 | A3 | Eczar 700 | Alegreya Sans 400 | Textured expressive headline with warm humanist body. |
 | A4 | Unbounded 700 | Public Sans 400 | Futuristic display with plain, rational clarity beneath it. |
@@ -67,7 +67,7 @@ Script and cursive faces are accents only. They must sit beside a readable displ
 
 | # | Accent | Display / Body System | Why it works |
 |---|---|---|---|
-| C1 | Great Vibes | Cormorant Garamond 700 -> Public Sans 400 | Formal script for a signature or short flourish without sacrificing readability. |
+| C1 | Great Vibes | Theano Didot 400 -> Public Sans 400 | Formal script for a signature or short flourish without sacrificing readability. |
 | C2 | Caveat | Alegreya 800 -> Atkinson Hyperlegible 400 | Casual human annotation over an accessible service-oriented pair. |
 | C3 | Kalam | Alegreya 700 -> Alegreya Sans 400 | Handwritten education/workshop accent over a humanist reading pair. |
 | C4 | Sacramento | Bodoni Moda 700 -> Public Sans 400 | Boutique/lifestyle accent with a controlled high-contrast display system. |
@@ -94,13 +94,14 @@ These are partners, not complete identities.
 | SaaS landing / pitch deck | Bricolage Grotesque -> Hanken Grotesk | Distinctive product display over a quiet modern body. |
 | Healthcare / education service UI | Alegreya -> Atkinson Hyperlegible | Warm authored headings with accessibility-first body text. |
 | Campaign / expressive hero | Syne -> Public Sans | Artistic display energy with readable body support. |
-| Cursive accent | Great Vibes accent + Cormorant/Public Sans system | Script is limited to a human signature moment, not body text. |
+| Cursive accent | Great Vibes accent + Theano Didot/Public Sans system | Script is limited to a human signature moment, not body text. |
 
 ## Banned-face guard
 
 Neither display nor body may be: Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces, any IBM Plex
-face, bare system stack, Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito/Nunito Sans, or Source Sans 3 as a
-display/standalone face. Full reasons are in `doctrine/references/ai-slop-banned-fonts.md`.
+face, bare system stack, Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito/Nunito Sans, Newsreader,
+Cormorant / Cormorant Garamond, Crimson Pro, Space Mono, Plus Jakarta Sans, Instrument Sans, DM Sans, Outfit,
+Playfair Display, Lora, or Source Sans 3 as a display/standalone face. Full reasons are in `doctrine/references/ai-slop-banned-fonts.md`.
 
 ## References
 

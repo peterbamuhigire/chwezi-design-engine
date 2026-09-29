@@ -24,7 +24,8 @@
     { "family": "IBM Plex Sans JP", "reason": "HOUSE" }
   ],
   "hardBanFamilyPrefixes": [
-    { "prefix": "IBM Plex", "reason": "HOUSE", "note": "Whole IBM Plex superfamily banned 2026-09-29; the gate treats any family name starting with this prefix as banned, so future or unlisted Plex cuts are caught too." }
+    { "prefix": "IBM Plex", "reason": "HOUSE", "note": "Whole IBM Plex superfamily banned 2026-09-29; the gate treats any family name starting with this prefix as banned, so future or unlisted Plex cuts are caught too." },
+    { "prefix": "Geist", "reason": "AI", "note": "Doctrine clarification 2026-09-29 (M10-09 T12): the Geist ban covers every Geist cut (Geist Sans, Geist Mono, later cuts). Geist Mono is flagged by the pbakaus/impeccable detector and bundled in Anthropic canvas-design; evidence for bans only." }
   ],
   "secondaryBan": [
     { "family": "Space Grotesk", "reason": "AI" },
@@ -32,7 +33,18 @@
     { "family": "Poppins", "reason": "POP" },
     { "family": "Montserrat", "reason": "POP" },
     { "family": "Nunito", "reason": "POP" },
-    { "family": "Nunito Sans", "reason": "POP" }
+    { "family": "Nunito Sans", "reason": "POP" },
+    { "family": "Newsreader", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Cormorant", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Cormorant Garamond", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Crimson Pro", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Space Mono", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Plus Jakarta Sans", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Instrument Sans", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "DM Sans", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Outfit", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Playfair Display", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" },
+    { "family": "Lora", "reason": "AI", "added": "2026-09-29", "record": "docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md" }
   ],
   "conditionalPrimaryOnly": [
     { "family": "Source Sans 3", "reason": "overused as standalone; permitted as a paired body face only" },
@@ -45,5 +57,14 @@
     { "family": "Roboto Mono", "reason": "banned as a deliberate design choice; system default use is not checked by this gate" },
     { "family": "IBM Plex Mono", "reason": "HOUSE — whole IBM Plex superfamily banned 2026-09-29 (also listed under hardBan so the gate blocks it)" }
   ],
-  "monospaceApproved": ["JetBrains Mono", "Fira Code"]
+  "monospaceApproved": ["JetBrains Mono", "Fira Code"],
+  "watchlist": [
+    { "family": "Syne", "signals": ["impeccable@114ea1d:new-work.md reflex list"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." },
+    { "family": "DM Serif Display", "signals": ["impeccable@114ea1d:new-work.md reflex list (DM Serif)"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." },
+    { "family": "DM Serif Text", "signals": ["impeccable@114ea1d:new-work.md reflex list (DM Serif)"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." },
+    { "family": "Helvetica", "signals": ["impeccable@114ea1d:OVERUSED_FONTS"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." },
+    { "family": "Mona Sans", "signals": ["impeccable@114ea1d:OVERUSED_FONTS"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." },
+    { "family": "Recoleta", "signals": ["impeccable@114ea1d:OVERUSED_FONTS"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." },
+    { "family": "DejaVu Sans", "signals": ["anthropics/skills@3337550:theme-factory default (body face in 6 of 10 themes)"], "recheck": "2026-12-29", "note": "Watchlist only (one independent AI-tool signal); not banned. State a human-design reason when choosing it." }
+  ]
 }

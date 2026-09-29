@@ -1,0 +1,7 @@
+/* chwezi-slop fixture: gradient-text (should flag). Synthetic; written for this engine. */
+.headline {
+  background: linear-gradient(90deg, #0b5d4b, #1f6f8b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

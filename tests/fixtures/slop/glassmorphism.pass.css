@@ -1,0 +1,3 @@
+/* chwezi-slop fixture: glassmorphism (should pass). Synthetic; written for this engine. */
+.site-header { backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.85); }
+.panel { background: #ffffff; }

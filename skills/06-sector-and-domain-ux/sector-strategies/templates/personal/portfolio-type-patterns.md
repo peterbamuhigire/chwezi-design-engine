@@ -26,7 +26,7 @@ Every creator type has distinct audience expectations and showcase needs.
 ## Writer / Editor / Content Creator
 
 - **Palette:** Warm, literary. Cream backgrounds, serif-forward, editorial feel.
-- **Typography:** Serif-dominant (Cormorant, Literata, Source Serif). Reading-optimised layouts.
+- **Typography:** Serif-dominant (Theano Didot, Literata, Source Serif). Reading-optimised layouts.
 - **Layout:** Text-forward, magazine/editorial style, generous margins and line height.
 - **Key elements:** Published work samples, publication logos, writing categories, word count/output metrics
 - **Unique:** Reading-time estimates, publication filtering, excerpt previews, newsletter signup
@@ -34,7 +34,7 @@ Every creator type has distinct audience expectations and showcase needs.
 ## Photographer
 
 - **Palette:** Minimal — black, white, or neutral. Let images be the colour.
-- **Typography:** Thin, minimal sans (Jost, DM Sans light). Never compete with images.
+- **Typography:** Thin, minimal sans (Jost, Public Sans light). Never compete with images.
 - **Layout:** Full-bleed galleries, minimal UI, large images, masonry/grid layouts.
 - **Key elements:** Gallery categories (portrait, landscape, event, commercial), EXIF data option, print ordering CTA
 - **Unique:** Full-screen lightbox, image comparison module, project story captions, client gallery access

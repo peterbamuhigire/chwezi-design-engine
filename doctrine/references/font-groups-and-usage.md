@@ -25,7 +25,7 @@ Individual font selections may differ by device; category names must not.
 **Use for:** official, legal, finance, government, board, policy, SRS/BRD, business plans,
 formal proposals, statutory or audit-ready documents.
 
-**Baseline faces:** Source Serif 4, Spectral, Crimson Pro, Libre Baskerville.
+**Baseline faces:** Source Serif 4, Spectral, Libre Baskerville, Arapey.
 
 **Premium folder:** `fonts/01-formal-institutional/`
 **Typical role:** serious serif display/body with a quiet sans body or UI layer.
@@ -35,8 +35,8 @@ formal proposals, statutory or audit-ready documents.
 **Use for:** authored reports, whitepapers, essays, thought leadership, premium report covers,
 cultural or magazine-like documents.
 
-**Baseline faces:** Andada Pro (local: Andada ht_2015), Newsreader, Cormorant Garamond, Alegreya,
-Libre Caslon Text.
+**Baseline faces:** Andada Pro (local: Andada ht_2015), Alegreya, Libre Caslon Text, Theano Didot
+(display only).
 
 **Premium folder:** `fonts/02-editorial-literary/`
 **Typical role:** distinctive editorial display with a readable serif or quiet sans body.
@@ -58,7 +58,7 @@ Grotesk, General Sans.
 data products, technical documentation.
 
 **Baseline faces:** Public Sans (with `tabular-nums` for data), Source Serif 4, JetBrains Mono,
-Fira Code, Space Mono for short labels only.
+Fira Code (JetBrains Mono also for short labels).
 
 **Premium folder:** `fonts/04-technical-data-code/`
 **Typical role:** Public Sans for UI/body with JetBrains Mono accents; mono faces only for code,
@@ -79,7 +79,7 @@ forms, service design, accessibility-sensitive interfaces.
 **Use for:** campaign heads, posters, event identities, cultural brands, portfolio covers,
 beauty/luxury moments, bold hero sections.
 
-**Baseline faces:** Syne, Unbounded, Bodoni Moda, Eczar, Theano Didot.
+**Baseline faces:** Syne (watchlist, recheck 2026-12-29), Unbounded, Bodoni Moda, Eczar, Theano Didot.
 
 **Premium folder:** `fonts/06-expressive-display-artistic/`
 **Typical role:** display only, paired with a quiet body face.
@@ -124,4 +124,10 @@ category.
 - Never let body workhorses become a monotype identity.
 - Never place Geist in any folder; it is banned.
 - Never use Fraunces or any IBM Plex face; banned 2026-09-29 (HOUSE).
+- Never use Newsreader, Cormorant / Cormorant Garamond, Crimson Pro, Space Mono, Plus Jakarta Sans,
+  Instrument Sans, DM Sans, Outfit, Playfair Display or Lora; secondary-banned 2026-09-29 [AI]
+  (see `docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md`). Their
+  `fonts/` folders are retained pending Peter's per-operation removal decision; do not select them.
+- Syne is approved but on the watchlist (one AI-tool signal); state a human-design reason when
+  choosing it.
 - State the chosen display + body pair and reason before producing output.

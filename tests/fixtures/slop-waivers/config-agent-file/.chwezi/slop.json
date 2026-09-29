@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "waivers": [
+    {
+      "rule": "ai-beige-ground",
+      "scope": "file",
+      "file": "page.css",
+      "reason": "Codex agent: the client likes this colour a lot",
+      "granted_by": "agent",
+      "date": "2026-09-29"
+    }
+  ]
+}

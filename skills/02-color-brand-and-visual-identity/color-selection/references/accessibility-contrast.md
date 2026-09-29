@@ -296,16 +296,19 @@ input:invalid::after {
 ### Alerts
 ```css
 .alert-success {
-  background: hsl(120, 70%, 92%);         /* Very light green */
-  border-left: 4px solid hsl(120, 70%, 35%); /* Dark green */
-  color: hsl(0, 0%, 20%);                 /* Dark gray text */
+  background: hsl(120, 70%, 92%);         /* Very light green tint */
+  border: 1px solid hsl(120, 70%, 35%);   /* 1px full border, not a side stripe */
+  color: hsl(0, 0%, 20%);                 /* Dark grey text */
 }
 
 .alert-success::before {
-  content: "✓ ";                          /* Icon + text */
-  color: hsl(120, 70%, 35%);              /* Dark green */
+  content: "✓ Success: ";                 /* Icon + text label */
+  color: hsl(120, 70%, 30%);              /* Dark green */
 }
 ```
+
+The tint, icon and text label carry the status; a thick coloured `border-left` stripe is a
+decorative slop tell under the 29 Sep 2026 side-stripe ruling (Option A).
 
 ---
 

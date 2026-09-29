@@ -101,6 +101,35 @@ skill were dropped for lacking a defensible authority — see § Dropped From So
    outline with the brand palette (tinting implies the outline is meant to communicate state or
    brand, which it is not). See `references/geometry-and-alignment.md` for CSS.
 
+## Browser surfaces
+
+The browser draws some surfaces itself, and they keep their defaults unless someone decides.
+Check each one on every web or web-app surface. Each item cites the spec or standard that governs
+it. The list idea is adapted in paraphrase from Impeccable's craft-floor "browser surfaces" check
+(pbakaus/impeccable, Apache-2.0, https://github.com/pbakaus/impeccable, commit 114ea1d).
+
+- [ ] **Selection (`::selection`).** Set a selection colour from the palette, and keep the
+      selected text at 4.5:1 or better against it (CSS Pseudo-Elements Level 4; WCAG 2.2 SC 1.4.3).
+      Only `color`, `background-color` and decoration properties apply; do not rely on others.
+- [ ] **Caret (`caret-color`).** In inputs and editable regions, the caret takes a colour that
+      stays visible on the field background in every theme (CSS Basic User Interface Level 4;
+      WCAG 2.2 SC 1.4.11 for the 3:1 non-text contrast of a UI component).
+- [ ] **Scrollbars (`scrollbar-color`, `scrollbar-width`, `scrollbar-gutter`).** Theme scrollbars
+      only with the standard properties (CSS Scrollbars Styling Level 1), never hide a scrollbar on
+      content that scrolls, and set `scrollbar-gutter: stable` where a scrollbar appearing would shift
+      the layout (CSS Overflow Level 3).
+- [ ] **Focus ring (`:focus-visible`).** Every interactive element shows a visible focus indicator
+      (WCAG 2.2 SC 2.4.7) that sticky headers, footers or sheets do not hide (SC 2.4.11), with 3:1
+      contrast against adjacent colours (SC 1.4.11). Style it with `:focus-visible`. Never write
+      `outline: none` without a `:focus-visible` replacement in the same stylesheet; the detector
+      rule `focus-indicator-removed` checks this
+      (`node tools/slop-detector/cli.mjs --rule focus-indicator-removed <path>`).
+- [ ] **Link underline (`text-underline-offset`, `text-decoration-thickness`).** Keep links
+      underlined in running text, and set the offset so the underline clears descenders instead of
+      removing it (CSS Text Decoration Level 4; WCAG 2.2 SC 1.4.1, colour not the only cue).
+- [ ] **Tabular numerals.** Covered in Workflow step 3 (`font-variant-numeric: tabular-nums`); it is
+      listed here only so the browser-surface pass is complete.
+
 ## Decision Rules
 
 | Condition | Action | Wrong-choice failure |
@@ -138,7 +167,7 @@ unverified rather than presenting it as a confirmed correction.
   layers were never meant to share a curvature centre — produces an odd result, not a coherent one.
 - **Citing this skill's four mechanics as blanket authority for unrelated "polish" claims** (motion
   timing, shadow depth, colour) — those are owned by `motion-design` and other skills respectively;
-  this skill's authority is scoped to the four items above.
+  this skill's authority is scoped to the four items above and the browser-surface checklist.
 
 ## Outputs
 

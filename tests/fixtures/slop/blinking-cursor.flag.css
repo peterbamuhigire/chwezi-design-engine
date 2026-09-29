@@ -1,0 +1,4 @@
+/* chwezi-slop fixture: blinking-cursor (should flag). Synthetic; written for this engine. */
+.hero-title::after { content: "|"; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hero-title::after { animation: none; } }

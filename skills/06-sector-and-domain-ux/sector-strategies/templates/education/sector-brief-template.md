@@ -67,8 +67,8 @@ Rate each trait on the spectrum (mark where your school falls):
 
 **Choose YOUR fonts (use Fontsource for self-hosting):**
 
-- **Header font**: (e.g., Playfair Display, Poppins, Outfit — NOT default Inter/Arial)
-- **Body font**: (e.g., Source Sans Pro, Nunito, DM Sans — NOT default system fonts)
+- **Header font**: (e.g., Bodoni Moda, Bricolage Grotesque, Andada Pro — NOT default Inter/Arial)
+- **Body font**: (e.g., Source Sans Pro, Lexend, Public Sans — NOT default system fonts)
 - **Why these fonts?** (What personality do they convey?)
 
 ### Photography Style

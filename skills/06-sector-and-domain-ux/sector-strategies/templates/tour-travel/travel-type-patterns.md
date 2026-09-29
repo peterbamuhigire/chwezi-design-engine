@@ -15,7 +15,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Premium, muted. Deep navy + gold, charcoal + copper, or forest + cream. Never bright/saturated.
-- **Typography:** Elegant serif headlines (Cormorant, DM Serif Display) + clean sans body. Generous letter-spacing.
+- **Typography:** Elegant serif headlines (Theano Didot, DM Serif Display) + clean sans body. Generous letter-spacing.
 - **Photography:** Professional, atmospheric. Golden hour landscapes, intimate lodge interiors, close-up wildlife.
 - **Tone:** Refined, exclusive, understated. "Where extraordinary becomes your everyday."
 
@@ -47,7 +47,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Bold, energetic. Bright teal + orange, electric blue + yellow, or lime + charcoal. High saturation.
-- **Typography:** Bold geometric sans (Rubik, Outfit, Space Grotesk). No serifs — too formal.
+- **Typography:** Bold geometric sans (Rubik, Bricolage Grotesque, Unbounded). No serifs — too formal.
 - **Photography:** Authentic, user-generated feel. Backpackers at hostels, street food, group selfies.
 - **Tone:** Direct, fun, honest. "Epic adventures. Honest prices. No hidden fees."
 
@@ -79,7 +79,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Warm, earthy. Terracotta + warm gold, ochre + deep brown, or warm violet + cream. Heritage feel.
-- **Typography:** Distinctive serif (Alegreya, Literata, Lora) + warm sans (Plus Jakarta Sans, Nunito). Character-rich.
+- **Typography:** Distinctive serif (Alegreya, Literata, Source Serif 4) + warm sans (Hanken Grotesk, Lexend). Character-rich.
 - **Photography:** Cultural moments — local crafts, cooking, ceremonies, markets, architecture. Warm tones.
 - **Tone:** Warm, curious, respectful. "Meet the people behind the places."
 
@@ -111,7 +111,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Natural, organic. Forest green + sky blue, sage + sand, or olive + warm cream. Never synthetic.
-- **Typography:** Organic rounded sans (Quicksand, Nunito) or natural serif (Lora). Approachable, not corporate.
+- **Typography:** Organic rounded sans (Quicksand, Lexend) or natural serif (Source Serif 4). Approachable, not corporate.
 - **Photography:** Pristine nature, wildlife, community projects, sustainable facilities. Minimal human presence.
 - **Tone:** Purposeful, hopeful, informed. "Travel that gives back more than it takes."
 
@@ -144,7 +144,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Bold, high-contrast. Deep red + electric blue, charcoal + neon accent, or slate + safety orange.
-- **Typography:** Bold geometric sans (Clash Display, Sora, Outfit). Strong weight. Uppercase accents.
+- **Typography:** Bold geometric sans (Clash Display, Sora, Bricolage Grotesque). Strong weight. Uppercase accents.
 - **Photography:** Action shots — climbing, rafting, hiking, diving. Dynamic angles, motion blur.
 - **Tone:** Bold, empowering, direct. "Climb higher. See further. Live wilder."
 
@@ -177,7 +177,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Calm, muted. Sage green + blush pink, soft blue + ivory, or lavender + cream. Low saturation.
-- **Typography:** Light elegant serif (Cormorant Garamond, EB Garamond) + thin sans (Jost, Outfit light). Generous white space.
+- **Typography:** Light elegant serif (Theano Didot, EB Garamond) + thin sans (Jost, Hanken Grotesk light). Generous white space.
 - **Photography:** Serene — yoga poses, spa interiors, natural settings, healthy food. Soft focus, natural light.
 - **Tone:** Calm, nurturing, transformative. "Find your stillness."
 
@@ -210,7 +210,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Maritime. Deep blue + coral, navy + white + gold, or teal + warm accent. Classic nautical.
-- **Typography:** Clean sans for navigation (DM Sans) + serif for elegance (Lora). Balanced.
+- **Typography:** Clean sans for navigation (Public Sans) + serif for elegance (Source Serif 4). Balanced.
 - **Photography:** Ocean panoramas, ship interiors, port destinations, onboard activities.
 - **Tone:** Exciting yet reassuring. "Your floating resort awaits."
 
@@ -235,7 +235,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Urban sophisticated. Charcoal + vibrant accent, dark slate + coral, or off-black + electric colour.
-- **Typography:** Modern sans (Space Grotesk, Satoshi, General Sans). Sharp, contemporary.
+- **Typography:** Modern sans (Unbounded, Satoshi, General Sans). Sharp, contemporary.
 - **Photography:** Street scenes, architecture, food, nightlife, street art. High contrast, urban feel.
 - **Tone:** Insider knowledge, contemporary. "The city, like a local."
 
@@ -260,7 +260,7 @@ No two travel websites should look the same — even within the same type. Each 
 ### Design Direction
 
 - **Palette:** Warm, friendly. Warm blue + sunny yellow, soft green + coral, or sky blue + orange. Approachable.
-- **Typography:** Rounded friendly sans (Nunito, Quicksand for accent) + clean sans body (DM Sans, Inter).
+- **Typography:** Rounded friendly sans (Lexend, Quicksand for accent) + clean sans body (Public Sans).
 - **Photography:** Families together — kids exploring, parents relaxed, multigenerational moments. Joyful, natural.
 - **Tone:** Reassuring, fun, practical. "Adventures the whole family will remember."
 

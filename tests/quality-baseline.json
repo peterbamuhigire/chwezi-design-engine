@@ -3,5 +3,8 @@
   "skills": 101,
   "fully_compliant": 101,
   "failure_counts": {},
-  "note": "Zero-debt conformance baseline after the 2026-09-24 book-driven Kaizen (typesetting, print production, art-direction routes, advertising creative). Any structural or contract finding is a regression and must fail CI."
+  "note": "Zero-debt conformance baseline after the 2026-09-24 book-driven Kaizen (typesetting, print production, art-direction routes, advertising creative). Any structural or contract finding is a regression and must fail CI.",
+  "slop_rules": 49,
+  "slop_fixtures": 98,
+  "slop_note": "chwezi-slop registry floors (M10-09-T05, 2026-09-29): regression-only minima. A drop in rules or flag/pass fixtures fails CI; growth needs no baseline edit."
 }

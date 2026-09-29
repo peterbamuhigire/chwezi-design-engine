@@ -62,6 +62,7 @@ and a text label. Colour is never the only cue.
 
 ```css
 /* Status carries shape + label; colour is reinforcement, never the sole signal. */
+/* chwezi-slop-disable-next-line decorative-side-stripe -- Peter Bamuhigire (side-stripe ruling, 29 Sep 2026): status encoding paired with a text label */
 .vital-tile        { border-left: 6px solid var(--surface-border); background: #fff; }
 .vital-tile.is-normal { border-left-color:#10B981; }           /* + "NORMAL" + flat icon  */
 .vital-tile.is-high   { border-left-color:#B45309; }           /* + "HIGH"   + ▲ icon     */
@@ -71,6 +72,10 @@ and a text label. Colour is never the only cue.
 }
 .vital-status { font-weight:700; display:inline-flex; gap:.25rem; align-items:center; }
 ```
+
+Status-encoding reason (side-stripe ruling, Option A, 29 Sep 2026): the 6px tile stripe encodes
+clinical status and is always paired with the NORMAL / HIGH / LOW / CRITICAL text label and a
+shape icon, so it stays as a recorded, waived status encoding rather than a decorative stripe.
 
 **Alert tiers — escalate intrusiveness with clinical urgency, not with noise:**
 

@@ -1,8 +1,0 @@
-Crimson Pro — SIL Open Font License 1.1 (OFL)
-Crimson Pro is published by Google Fonts under the OFL v1.1. Full text:
-https://openfontlicense.org  (or https://fonts.google.com/specimen/Crimson+Pro/license)
-GRANTED: free personal + commercial use; embed in documents AND live webfonts
-(@font-face); bundle in apps; redistribute — as long as not sold by itself and
-reserved names are respected.
-NOTE: the source download folder did not include the OFL.txt; this note records the
-known license for this well-known family. Replace with upstream OFL.txt if desired.

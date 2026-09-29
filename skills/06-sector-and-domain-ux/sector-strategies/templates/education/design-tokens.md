@@ -37,9 +37,9 @@ Education sites succeed when they convey **credibility, safety, and clear struct
 
 ## Typography
 
-**Serif**: Georgia or Lora (heritage, trust) for headers
-**Sans-serif**: Inter or Poppins (clarity) for body and navigation
-**Display**: Playfair Display (one headline accent on hero)
+**Serif**: Georgia or Source Serif 4 (heritage, trust) for headers
+**Sans-serif**: Public Sans or Hanken Grotesk (clarity) for body and navigation
+**Display**: Bodoni Moda (one headline accent on hero)
 
 ## Key Components (Education-Specific)
 

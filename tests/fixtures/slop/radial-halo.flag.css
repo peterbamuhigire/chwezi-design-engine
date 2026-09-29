@@ -1,0 +1,2 @@
+/* chwezi-slop fixture: radial-halo (should flag). Synthetic; written for this engine. */
+.hero::before { background: radial-gradient(circle, rgba(124, 58, 237, 0.5), transparent 70%); }

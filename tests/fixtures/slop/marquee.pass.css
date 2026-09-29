@@ -1,0 +1,2 @@
+/* chwezi-slop fixture: marquee (should pass). Synthetic; written for this engine. */
+.logo-strip { display: flex; gap: 2rem; }

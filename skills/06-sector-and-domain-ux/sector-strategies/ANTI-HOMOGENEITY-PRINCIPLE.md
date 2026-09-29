@@ -141,7 +141,7 @@ Process:
 1. Sector-brief asks: "What makes you different? (boutique vs. big firm? tech-forward vs. traditional?)"
 2. Answer: "We're a boutique firm focused on intellectual property, tech-forward, 10 people"
 3. Choose colors: Deep charcoal + rust (warm, boutique), not navy
-4. Choose fonts: Modern serif (Instrument Serif) + clean sans (Poppins)
+4. Choose fonts: Modern serif (Andada Pro) + clean sans (Hanken Grotesk)
 5. design-system generates unique visual identity
 Result: Distinctive boutique law firm site
 ```

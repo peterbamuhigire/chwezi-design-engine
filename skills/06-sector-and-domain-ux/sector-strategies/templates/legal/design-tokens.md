@@ -37,8 +37,8 @@ Text:       #2D3748  /* Soft dark */
 ```
 
 **Typography example**:
-- Heading: Lora (warm serif)
-- Body: Nunito (rounded, approachable)
+- Heading: Source Serif 4 (warm serif)
+- Body: Lexend (rounded, approachable)
 
 ---
 
@@ -54,8 +54,8 @@ Text:       #F1F5F9  /* Light on dark sections */
 ```
 
 **Typography example**:
-- Heading: Oswald or Montserrat Bold (strong, direct)
-- Body: Open Sans (highly readable at stress moment)
+- Heading: Oswald or Bricolage Grotesque Bold (strong, direct)
+- Body: Atkinson Hyperlegible (highly readable at stress moment)
 
 ---
 
@@ -70,7 +70,7 @@ Text:       #2C2C2C  /* Rich near-black */
 ```
 
 **Typography example**:
-- Heading: Cormorant Garamond (elegant, legacy-appropriate)
+- Heading: Theano Didot (elegant, legacy-appropriate)
 - Body: Source Serif Pro (readable, authoritative)
 
 ---

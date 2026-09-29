@@ -25,7 +25,7 @@ No two consultancies should look the same. Each corporate type has distinct trus
 **Trust signals:** Technical certifications, technology partnerships, delivery track record
 
 - **Palette:** Deep teal + electric accent. Modern, innovative.
-- **Typography:** Geometric sans (Outfit, Space Grotesk). Tech-forward.
+- **Typography:** Geometric sans (Bricolage Grotesque, Unbounded). Tech-forward.
 - **Photography:** Modern offices, code/dashboards (anonymised), team collaboration.
 - **Tone:** Expert, forward-thinking. "Engineering digital futures."
 - **Key components:** Technology stack showcase, architecture diagrams, sprint methodology, cert badges, demo booking
@@ -61,7 +61,7 @@ No two consultancies should look the same. Each corporate type has distinct trus
 **Trust signals:** Bar admissions, jurisdictions, precedent cases, regulatory expertise
 
 - **Palette:** Navy or burgundy + slate. Conservative, authoritative.
-- **Typography:** Traditional serif headers (Cormorant) + readable sans body. Formal.
+- **Typography:** Traditional serif headers (Theano Didot) + readable sans body. Formal.
 - **Photography:** Office interiors, courtroom/regulatory settings, team portraits.
 - **Tone:** Authoritative, precise, reassuring. "Legal certainty in uncertain times."
 - **Key components:** Practice area grid, attorney profiles (detailed credentials), publication list, jurisdiction map, consultation booking

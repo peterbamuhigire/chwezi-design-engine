@@ -47,9 +47,9 @@ Nonprofit sites succeed when they convey **hope, trust, and tangible impact**. C
 ## Typography
 
 ### Font Stack
-- **Serif (Stories, Trust)**: Georgia, Lora, or Merriweather
-- **Sans-serif (Clarity, Accessibility)**: Inter, Poppins, or Open Sans
-- **Display (Hope, Impact)**: Montserrat, Playfair Display, or Dm Serif
+- **Serif (Stories, Trust)**: Georgia, Source Serif 4, or Merriweather
+- **Sans-serif (Clarity, Accessibility)**: Public Sans, Hanken Grotesk, or Atkinson Hyperlegible
+- **Display (Hope, Impact)**: Bricolage Grotesque, Bodoni Moda, or DM Serif Display
 
 ### Typography Scale
 

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixture</title>
+</head>
+<body>
+<main>
+<!-- T08 acceptance: a failed scroll reveal (content left at opacity 0) and a tooltip clipped by overflow:hidden. -->
+<section>
+  <h1>Clinic services</h1>
+  <p class="reveal" style="opacity: 0; transform: translateY(24px)">Same-day appointments are available at every Kampala clinic.</p>
+  <div style="position: relative; overflow: hidden; width: 220px; height: 44px">
+    <button>Opening hours</button>
+    <span role="tooltip" style="position: absolute; top: 34px; left: 0; width: 200px">Monday to Saturday, 8am to 6pm</span>
+  </div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,4 @@
+/* chwezi-slop fixture: body-leading-tight (should pass). Synthetic; written for this engine. */
+p { line-height: 1.6; }
+h1 { line-height: 1.1; }
+p::first-letter { line-height: 0.8; }

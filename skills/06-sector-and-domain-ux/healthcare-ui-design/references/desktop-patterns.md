@@ -176,7 +176,7 @@ From Nutrisense AI SaaS Dashboard and DocNow booking:
 | Navigation labels | 13px | 500 |
 | Keyboard shortcuts | 11px | 400, monospace |
 
-- Font: Inter, Roboto, or SF Pro — clean, high-legibility at small sizes
+- Font: Atkinson Hyperlegible, Public Sans (`tabular-nums`), or SF Pro on Apple platforms — clean, high-legibility at small sizes
 - Line height: 1.4–1.5 for body text; 1.2 for dense data tables
 - Letter spacing: 0 for body; +0.01em for all-caps labels
 

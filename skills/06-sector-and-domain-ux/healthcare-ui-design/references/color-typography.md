@@ -151,10 +151,16 @@ Provide dark mode for:
 ### Font Selection
 
 **Recommended fonts (in priority order):**
-1. **Inter** — designed for screen legibility; excellent at small sizes; free
-2. **Roboto** — Android native; excellent across clinical dashboards
-3. **SF Pro** — iOS native; use on iOS/macOS only (system font)
-4. **Open Sans** — reliable fallback; slight humanist feel for patient-facing
+1. **Atkinson Hyperlegible** — designed by Applied Design Works for the Braille Institute to
+   maximise character distinction for low-vision readers; strong at small clinical sizes; free (OFL)
+2. **Public Sans** — the US Web Design System's neutral government face; use with `tabular-nums`
+   for dense clinical dashboards; free (OFL)
+3. **SF Pro** — iOS native; use on iOS/macOS only (system font, deliberate platform choice)
+4. **Lexend** — readability-research face (Bonnie Shaver-Troup); a warmer option for
+   patient-facing flows; free (OFL)
+
+Never Inter, Roboto, Open Sans or any other face on `doctrine/references/ai-slop-banned-fonts.md`
+as the primary clinical face.
 
 **Fonts to avoid:**
 - Serif fonts (Times, Georgia) — journalistic connotation, lower screen legibility

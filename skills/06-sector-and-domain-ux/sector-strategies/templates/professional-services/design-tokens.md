@@ -15,7 +15,7 @@ Authority, expertise, trustworthiness. Sophisticated, not flashy. Premium feel.
 - Text: High contrast, professional
 
 ## Typography
-- Headers: Elegant serif (Lora, Merriweather) or premium sans-serif
+- Headers: Elegant serif (Source Serif 4, Merriweather) or premium sans-serif
 - Body: Professional sans-serif
 - Display: Minimal use, premium fonts only
 

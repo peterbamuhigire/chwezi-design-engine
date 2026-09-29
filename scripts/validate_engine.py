@@ -101,6 +101,60 @@ def scan_book_extractions(root: Path) -> list[str]:
     return sorted(set(violations))
 
 
+SLOP_REGISTRY = Path("tools/slop-detector/rules/registry.json")
+MARKER_RE = re.compile(r"<!--\s*rule:([^\s>]+)\s*-->")
+
+
+def heading_slug(heading: str) -> str:
+    """GitHub-style anchor slug (matches tools/slop-detector/lib/registry.mjs slugify)."""
+    return re.sub(r"\s", "-", re.sub(r"[^\w\s-]", "", heading.strip().lower()))
+
+
+def scan_slop_registry(root: Path) -> dict:
+    """Registry integrity for the chwezi-slop detector (M10-09-T05).
+
+    Every rule's flag/pass fixtures exist, every doctrine_ref file and anchor
+    (heading slug or ``rule:<id>`` marker) resolves, and rule IDs are unique.
+    """
+    path = root / SLOP_REGISTRY
+    if not path.is_file():
+        return {"slop_rules": 0, "slop_fixtures": 0, "slop_registry_errors": [f"{SLOP_REGISTRY.as_posix()} missing"]}
+    errors: list[str] = []
+    try:
+        rules = json.loads(path.read_text(encoding="utf-8")).get("rules", [])
+    except json.JSONDecodeError as error:
+        return {"slop_rules": 0, "slop_fixtures": 0, "slop_registry_errors": [f"registry is not valid JSON: {error}"]}
+    ids = [rule.get("id") for rule in rules]
+    for rule_id, count in Counter(ids).items():
+        if count > 1:
+            errors.append(f"duplicate rule id {rule_id}")
+    docs: dict[Path, tuple[set[str], set[str]]] = {}
+    fixtures: set[str] = set()
+    for rule in rules:
+        rule_id = rule.get("id", "?")
+        for key in ("flag", "pass"):
+            rel = (rule.get("fixtures") or {}).get(key)
+            if not rel or not (root / rel).is_file():
+                errors.append(f"{rule_id}: {key} fixture missing ({rel})")
+            else:
+                fixtures.add(rel)
+        ref = rule.get("doctrine_ref", "")
+        doc_rel, _, anchor = ref.partition("#")
+        doc = root / doc_rel
+        if not doc_rel or not doc.is_file():
+            errors.append(f"{rule_id}: doctrine_ref file missing ({doc_rel})")
+            continue
+        if doc not in docs:
+            text = doc.read_text(encoding="utf-8")
+            slugs = {heading_slug(h) for h in re.findall(r"^#{1,6}\s+(.+?)\s*#*\s*$", text, re.M)}
+            docs[doc] = (slugs, set(MARKER_RE.findall(text)))
+        slugs, markers = docs[doc]
+        ok = anchor[5:] in markers if anchor.startswith("rule:") else anchor in slugs
+        if not anchor or not ok:
+            errors.append(f"{rule_id}: doctrine_ref anchor #{anchor} not found in {doc_rel}")
+    return {"slop_rules": len(rules), "slop_fixtures": len(fixtures), "slop_registry_errors": errors}
+
+
 # Report-only size warning beside the 500-line cap (M10-04-T07, Caveman CV-06).
 # Size warnings never enter failure_counts, so baselines and exit status are unchanged.
 DEFAULT_MAX_SKILL_BYTES = 20480
@@ -187,6 +241,7 @@ def scan(root: Path, max_skill_bytes: int = DEFAULT_MAX_SKILL_BYTES) -> dict:
         "findings": [item for item in findings if item["failed"]],
         "size_warnings": size_warnings,
         "max_skill_bytes": max_skill_bytes,
+        **scan_slop_registry(root),
     }
 
 
@@ -210,6 +265,10 @@ def main() -> int:
                 regressions[key] = (before, after)
         if result["skills"] < int(baseline.get("skills", 0)):
             regressions["skill_count_drop"] = (int(baseline["skills"]), result["skills"])
+        # Regression-only floors for the chwezi-slop registry (M10-09-T05).
+        for key in ("slop_rules", "slop_fixtures"):
+            if key in baseline and result[key] < int(baseline[key]):
+                regressions[f"{key}_drop"] = (int(baseline[key]), result[key])
     result["regressions"] = regressions
     if args.json:
         print(json.dumps(result, indent=2))
@@ -221,6 +280,9 @@ def main() -> int:
             print(f"REGRESSION {key}: {values[0]} -> {values[1]}")
         for item in result["book_extraction_violations"]:
             print(f"BOOK-EXTRACTION VIOLATION {item}")
+        print(f"slop_rules={result['slop_rules']} slop_fixtures={result['slop_fixtures']}")
+        for item in result["slop_registry_errors"]:
+            print(f"SLOP-REGISTRY ERROR {item}")
         for item in result["size_warnings"]:
             print(f"WARN skill-bytes {item['path']}: {item['bytes']} bytes > {result['max_skill_bytes']} ({item['lines']} lines; report-only)")
     return 1 if (
@@ -228,6 +290,7 @@ def main() -> int:
         or result["duplicate_names"]
         or result["missing_font_categories"]
         or result["book_extraction_violations"]
+        or result["slop_registry_errors"]
     ) else 0
 
 

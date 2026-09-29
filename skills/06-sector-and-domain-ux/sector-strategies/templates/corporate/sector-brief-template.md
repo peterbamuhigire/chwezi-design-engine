@@ -75,7 +75,7 @@ The sector template suggests Deep Navy/Slate/Blue. Your brand might need somethi
 
 **Choose YOUR fonts — differentiation is required here too.**
 
-The sector template uses Inter (sans) and Lora (serif). Your brand should feel different.
+The sector template uses Public Sans (sans) and Source Serif 4 (serif). Your brand should feel different.
 
 **Heading Font (must have CHARACTER):**
 - Font name: ______________
@@ -84,7 +84,7 @@ The sector template uses Inter (sans) and Lora (serif). Your brand should feel d
 
 **Body Font (must be highly readable):**
 - Font name: ______________
-- Why? (e.g., "DM Sans feels friendly but professional")
+- Why? (e.g., "Public Sans feels friendly but professional")
 
 **Where to find fonts:**
 - Search [Fontsource](https://fontsource.org) (free, self-hosted)

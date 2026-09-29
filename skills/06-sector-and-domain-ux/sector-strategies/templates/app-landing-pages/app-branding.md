@@ -49,12 +49,12 @@ The CTA button must have the **highest contrast on the page**:
 
 | App Type | Header Font | Body Font | Personality |
 |---------|-------------|-----------|-------------|
-| **SaaS/Productivity** | Bold geometric sans (Outfit, Space Grotesk) | Clean sans (DM Sans) | Modern, efficient |
-| **Consumer/Lifestyle** | Friendly rounded sans (Nunito, Quicksand) | Readable sans (Source Sans Pro) | Approachable, warm |
-| **Developer Tools** | Monospace display (JetBrains Mono) | Technical sans (Inter) | Technical, precise |
+| **SaaS/Productivity** | Bold geometric sans (Bricolage Grotesque, Unbounded) | Clean sans (Public Sans) | Modern, efficient |
+| **Consumer/Lifestyle** | Friendly rounded sans (Lexend, Quicksand) | Readable sans (Source Sans Pro) | Approachable, warm |
+| **Developer Tools** | Monospace display (JetBrains Mono) | Technical sans (Public Sans) | Technical, precise |
 | **Creative Tools** | Display font (Clash Display, Cabinet Grotesk) | Clean sans (Satoshi) | Bold, expressive |
-| **Enterprise** | Professional serif or sans (DM Serif, Plus Jakarta Sans) | Clean sans (DM Sans) | Trustworthy, established |
-| **Kids/Education** | Rounded, playful (Baloo 2, Fredoka) | Readable sans (Nunito Sans) | Fun, accessible |
+| **Enterprise** | Professional serif or sans (DM Serif, Hanken Grotesk) | Clean sans (Public Sans) | Trustworthy, established |
+| **Kids/Education** | Rounded, playful (Baloo 2, Fredoka) | Readable sans (Alegreya Sans) | Fun, accessible |
 
 ### Headline Copy Principles
 

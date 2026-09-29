@@ -1,0 +1,4 @@
+/* chwezi-slop fixture: decorative-side-stripe (should pass). Synthetic; written for this engine. */
+.callout { border: 1px solid #0b5d4b; background: #eef6f3; }
+blockquote { border-left: 3px solid #1f2328; }
+.nav a[aria-current] { border-left: 3px solid #0b5d4b; }

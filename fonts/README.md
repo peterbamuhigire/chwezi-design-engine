@@ -72,7 +72,7 @@ Avoid using this category for youthful SaaS launch pages, expressive campaign he
 service onboarding, or playful posters. The usual pairing is a formal display/body serif with a
 quiet body/UI sans from `08-body-ui-workhorses`.
 
-Baseline fallbacks: Source Serif 4, Spectral, Crimson Pro, Libre Baskerville.
+Baseline fallbacks: Source Serif 4, Spectral, Libre Baskerville, Arapey.
 
 ### 02 - Editorial / Literary
 
@@ -88,7 +88,7 @@ Avoid using this category for dashboards, dense admin UI, code-heavy technical d
 startup product chrome. The usual pairing is a distinctive editorial display face with a readable
 serif or quiet sans body face.
 
-Baseline fallbacks: Andada Pro, Newsreader, Cormorant Garamond, Alegreya, Libre Caslon Text.
+Baseline fallbacks: Andada Pro, Alegreya, Libre Caslon Text, Theano Didot (display only).
 
 ### 03 - Modern Product / Grotesque
 
@@ -121,8 +121,8 @@ Avoid using monospace faces for paragraphs, marketing body copy, or non-technica
 Avoid expressive display drama in dense operational tools. The usual pairing is a rational
 proportional UI/body face with a mono accent for code/data.
 
-Baseline fallbacks: Public Sans (with `tabular-nums`), Source Serif 4, JetBrains Mono, Fira Code,
-Space Mono for short labels only.
+Baseline fallbacks: Public Sans (with `tabular-nums`), Source Serif 4, JetBrains Mono (also for
+short labels), Fira Code.
 
 ### 05 - Friendly / Humanist
 
@@ -152,7 +152,7 @@ Avoid using this category for long body copy, dense UI, legal/finance/statutory 
 small labels unless a specific family has been proven readable at that size. The usual pairing is
 one expressive display face with a quiet body face from `08-body-ui-workhorses`.
 
-Baseline fallbacks: Syne, Unbounded, Bodoni Moda, Eczar, Theano Didot.
+Baseline fallbacks: Syne (watchlist, recheck 2026-12-29), Unbounded, Bodoni Moda, Eczar, Theano Didot.
 
 ### 07 - Script / Cursive / Handwritten
 
@@ -216,6 +216,9 @@ Each manifest uses this schema so agents can make defensible choices:
 - Premium commercial families must be added to the right category manifest with explicit
   embedding and redistribution notes before use.
 - Geist is banned. Do not place it in any category.
+- Newsreader, Cormorant Garamond and Crimson Pro were secondary-banned on 2026-09-29 [AI]. Their
+  local folders were deleted on 2026-09-29 on Peter's instruction; do not select them. See
+  `docs/continuous-improvement/slop-doctrine-refresh-2026-10-font-watchlist.md`.
 
 Drop files directly into the category folder, or into family subfolders inside it. Update the
 manifest when the licence, intended routing, or approved use changes; actual file presence is

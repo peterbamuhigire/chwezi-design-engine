@@ -70,12 +70,12 @@ Test all palettes with Deuteranopia, Protanopia, and Tritanopia simulators.
 
 | Facility Type | Header Font | Body Font | Key Rule |
 |---------------|-------------|-----------|----------|
-| **Hospital/General** | Clean sans (DM Sans, Source Sans Pro) | Accessible sans (Atkinson Hyperlegible) | Maximum readability |
-| **Specialist Clinic** | Modern sans (Outfit, Plus Jakarta Sans) | Clean sans (Inter, DM Sans) | Professional clarity |
-| **Wellness/Whole-Person Care** | Soft serif (Lora, Cormorant Garamond) | Rounded sans (Nunito) | Warm, approachable |
-| **Paediatrics** | Rounded friendly (Nunito, Quicksand) | Readable sans (DM Sans) | Child-friendly, parent-reassuring |
-| **Mental Health** | Calm sans (Jost, Outfit) | Readable sans (Source Sans Pro) | Non-threatening, calm |
-| **Dental** | Modern sans (Plus Jakarta Sans) | Clean sans (DM Sans) | Clean, professional |
+| **Hospital/General** | Clean sans (Public Sans, Hanken Grotesk) | Accessible sans (Atkinson Hyperlegible) | Maximum readability |
+| **Specialist Clinic** | Modern sans (Bricolage Grotesque, Hanken Grotesk) | Clean sans (Public Sans) | Professional clarity |
+| **Wellness/Whole-Person Care** | Soft serif (Source Serif 4, Theano Didot) | Rounded sans (Lexend) | Warm, approachable |
+| **Paediatrics** | Rounded friendly (Lexend, Quicksand) | Readable sans (Public Sans) | Child-friendly, parent-reassuring |
+| **Mental Health** | Calm sans (Jost, Bricolage Grotesque) | Readable sans (Source Sans Pro) | Non-threatening, calm |
+| **Dental** | Modern sans (Hanken Grotesk) | Clean sans (Public Sans) | Clean, professional |
 
 ### Key Rules
 - Body text: **18px minimum** (larger than standard — patients include elderly)

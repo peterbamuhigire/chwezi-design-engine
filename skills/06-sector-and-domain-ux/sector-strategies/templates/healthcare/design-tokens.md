@@ -73,7 +73,7 @@ Never use colour alone for status or meaning. Always pair with:
 - Specifically designed for maximum readability
 - Distinguishes similar characters (I, l, 1)
 
-**Clean Sans**: DM Sans (DO NOT USE — find your own)
+**Clean Sans**: Public Sans (DO NOT USE — find your own)
 - Headers, navigation, CTAs
 - Professional, clean, modern
 
@@ -130,7 +130,7 @@ Never use colour alone for status or meaning. Always pair with:
 
 ## Anti-Homogeneity Principle
 
-**Every healthcare website must look different.** Two hospitals in the same city using the same blue + white + DM Sans template destroy trust — patients recognise templates.
+**Every healthcare website must look different.** Two hospitals in the same city using the same blue + white + Public Sans template destroy trust — patients recognise templates.
 
 To ensure uniqueness:
 

@@ -72,8 +72,8 @@ HTML/Tailwind patterns inspired by top university websites. Implemented with Ast
     </div>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+  <!-- Scroll Indicator (static: a bouncing arrow is the bounce tell, see doctrine/references/ai-slop-taxonomy.md) -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white">
     <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
     </svg>
@@ -111,7 +111,7 @@ HTML/Tailwind patterns inspired by top university websites. Implemented with Ast
 ## Student Testimonial Card (Wheaton College, Juniata)
 
 ```html
-<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border-l-4 border-primary-600">
+<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition p-6 border border-primary-600/20">
   <!-- Star Rating -->
   <div class="flex gap-1 mb-4">
     <span class="text-yellow-400 text-lg">★★★★★</span>

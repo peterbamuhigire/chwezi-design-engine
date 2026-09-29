@@ -107,19 +107,19 @@ The sector template suggests Slate + Blue. Your brand might need something compl
 
 **Choose YOUR fonts — differentiation is required.**
 
-The sector template uses Playfair Display + Inter. Your brand should feel different.
+The sector template uses Bodoni Moda + Public Sans. Your brand should feel different.
 
 **Heading Font (must have CHARACTER):**
 - Font name: ______________
 - Why? (What does it say about you?)
   _______________________________________________________________________________
-- Examples: Clash Display, Cabinet Grotesk, Instrument Serif, Theano Didot, Outfit
+- Examples: Clash Display, Cabinet Grotesk, Andada Pro, Theano Didot, Bricolage Grotesque
 
 **Body Font (must be highly readable):**
 - Font name: ______________
 - Why?
   _______________________________________________________________________________
-- Examples: DM Sans, Inter, Sora, Plus Jakarta Sans, Atkinson Hyperlegible
+- Examples: Public Sans, Hanken Grotesk, Sora, Atkinson Hyperlegible
 
 **Find fonts at**: [Fontsource](https://fontsource.org)
 
