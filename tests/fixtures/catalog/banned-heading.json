@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "catalog_revision": "fixture",
+  "$comment": "Expected-failure fixture (M10-10). Minimal catalogue: the lint/contrast check fails before coverage checks run.",
+  "records": [
+    {
+      "id": "type-fixture-banned-heading",
+      "domain": "typography",
+      "status": "active",
+      "title": "Fixture: banned heading face",
+      "tags": [
+        "typography",
+        "fixture"
+      ],
+      "content": {
+        "heading": "Inter",
+        "body": "Public Sans",
+        "group": "04",
+        "use_case": "expected-failure fixture"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "fixture",
+        "reviewed": "2026-09-29"
+      },
+      "licence": "OFL-1.1"
+    }
+  ],
+  "stack_guidance": []
+}

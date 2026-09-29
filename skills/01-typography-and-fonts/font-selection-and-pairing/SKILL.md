@@ -64,6 +64,20 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 8. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed, and to
    `fine-typesetting-and-typesetting-qa` for hierarchy steps, paragraph shape and punctuation.
 
+### Catalogue query
+
+Before step 4, ask the offline catalogue for an approved, cited pairing:
+`python -X utf8 scripts/design_query.py search "<context> typography" --domain typography`.
+Each result names heading, body and mono faces, the font group, the licence and a
+human-authority citation (pairing ID or principle number); every face has passed the
+banned-font and watchlist lint.
+
+The query contract (idea adapted from UI UX Pro Max, MIT, commit 09170ee; paraphrased):
+Keep one dominant intent per query and 2-5 meaningful terms; if the engine abstains, retry
+once with a synonym, then proceed from the references above and say the catalogue abstained.
+Never persist an unverified decision: `design_query.py persist` refuses abstained domains
+unless `--accept-abstention "<who>: <reason>"` is recorded.
+
 ## Decision Rules
 
 | Condition | Action | Wrong-choice failure |

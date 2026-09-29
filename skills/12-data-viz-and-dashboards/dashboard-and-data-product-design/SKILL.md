@@ -158,6 +158,7 @@ Without trusted metrics, deliver a wireframe and metric dependency register, not
 - `doctrine/references/wcag-2.2-criteria.md` — target size 24px, dragging alternative, focus not
   obscured by sticky headers, reflow at 320px, reduced-motion — the accessibility floor for the
   interactive, real-time surface.
+- `doctrine/references/visitor-modes.md` — dashboards, tables and forms are Operate surfaces; exported reports are Read. Sets density, motion and colour posture per surface.
 - **Sibling — `12-data-viz-and-dashboards/data-visualization`** — owns single-chart craft
   (chart choice, decluttering, colour, axes, annotation, storytelling). This skill sits *above*
   it: it decides which charts/KPIs exist, where they go, and how they interact. Do not duplicate

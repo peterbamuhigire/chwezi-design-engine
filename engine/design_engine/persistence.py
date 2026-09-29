@@ -9,6 +9,8 @@ import re
 import tempfile
 from typing import Any
 
+from .decisions import DecisionError, normalise_decision_mode
+
 
 class PersistenceError(ValueError):
     """Raised when a project write would be unsafe or invalid."""
@@ -68,7 +70,12 @@ def load_project(root: str | Path, project_id: str) -> dict[str, Any]:
     target = _project_dir(root, project_id) / "design-system.json"
     if not target.is_file():
         raise PersistenceError(f"project master not found: {target}")
-    return json.loads(target.read_text(encoding="utf-8"))
+    stored = json.loads(target.read_text(encoding="utf-8"))
+    # Legacy "app"/"marketing" modes are normalised at read time (M10-10-T10); the file is untouched.
+    try:
+        return normalise_decision_mode(stored)
+    except DecisionError as exc:
+        raise PersistenceError(f"stored project has an invalid mode: {exc}") from exc
 
 
 def _deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "catalog_revision": "fixture",
+  "$comment": "Expected-failure fixture (M10-10). Minimal catalogue: the lint/contrast check fails before coverage checks run.",
+  "records": [
+    {
+      "id": "color-fixture-low-contrast",
+      "domain": "color",
+      "status": "active",
+      "title": "Fixture: low-contrast primary",
+      "tags": [
+        "color",
+        "fixture"
+      ],
+      "content": {
+        "use_when": "expected-failure fixture",
+        "tokens": {
+          "primary": "#8A8A8A",
+          "on_primary": "#FFFFFF",
+          "secondary": "#E8ECF4",
+          "on_secondary": "#1F2430",
+          "surface": "#FDFDFE",
+          "on_surface": "#1F2430",
+          "background": "#F8F9FB",
+          "foreground": "#1F2430",
+          "muted": "#EEF0F3",
+          "on_muted": "#4F5563",
+          "destructive": "#A3222B",
+          "on_destructive": "#FDFDFE",
+          "border": "#6A7080",
+          "ring": "#3A5BB8"
+        }
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "fixture",
+        "reviewed": "2026-09-29"
+      }
+    }
+  ],
+  "stack_guidance": []
+}

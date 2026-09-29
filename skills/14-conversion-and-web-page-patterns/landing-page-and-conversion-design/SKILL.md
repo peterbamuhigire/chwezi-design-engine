@@ -245,6 +245,7 @@ Without verified proof or offer detail, deliver a wireframe and evidence-request
   downstream of an authored, trustworthy artifact.
 - `doctrine/references/wcag-2.2-criteria.md` — CTA focusability, target size (SC 2.5.8), contrast,
   non-colour state.
+- `doctrine/references/visitor-modes.md` — choose the visitor mode per surface: a landing page is Persuade even for a tool; its forms are Operate.
 - `doctrine/references/web-performance-budgets-2026.md` — hero as LCP, CLS reservation, LCP/INP/CLS
   as design constraints.
 - Sibling skills: `04-web-and-ui-design/distinctive-by-design` (run first; gates the build),

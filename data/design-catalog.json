@@ -1,201 +1,2355 @@
 {
   "schema_version": "1.0",
-  "catalog_revision": "2026-09-20-books-and-doctrine-v1",
+  "catalog_revision": "2026-09-29-m10-10-v1",
   "records": [
     {
       "id": "product-outcome-first",
       "domain": "product",
       "title": "Outcome-first product surface",
-      "tags": ["product", "outcome", "brief", "workflow", "decision"],
+      "tags": [
+        "product",
+        "outcome",
+        "brief",
+        "workflow",
+        "decision"
+      ],
       "status": "active",
       "content": {
         "use_when": "A product request is vague or spans multiple screens.",
         "practice": "State audience, job, desired outcome, constraints, decision authority, and success measure before choosing a visual pattern.",
-        "checks": ["problem is distinct from solution", "primary decision is named", "failure and recovery are in scope"]
+        "checks": [
+          "problem is distinct from solution",
+          "primary decision is named",
+          "failure and recovery are in scope"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "style-legacy-flat",
       "domain": "style",
       "title": "Legacy flat interface baseline",
-      "tags": ["style", "legacy", "flat", "baseline"],
+      "tags": [
+        "style",
+        "legacy",
+        "flat",
+        "baseline"
+      ],
       "status": "deprecated",
       "content": {
         "use_when": "Historical comparison only.",
         "practice": "Do not recommend as a current default; retain only to explain migration decisions.",
-        "checks": ["label as legacy", "record migration path"]
+        "checks": [
+          "label as legacy",
+          "record migration path"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      },
+      "replacement_id": "style-feature-first-hierarchy"
     },
     {
       "id": "style-feature-first-hierarchy",
       "domain": "style",
       "title": "Feature-first hierarchy and authored restraint",
-      "tags": ["style", "hierarchy", "grayscale", "spacing", "personality", "empty-state"],
+      "tags": [
+        "style",
+        "hierarchy",
+        "grayscale",
+        "spacing",
+        "personality",
+        "empty-state"
+      ],
       "status": "active",
       "content": {
         "use_when": "A screen feels generic, noisy, or visually unresolved.",
         "practice": "Establish structure and hierarchy in grayscale, then add type, colour, depth, imagery, and personality as deliberate system choices.",
-        "checks": ["primary action is obvious", "secondary content is de-emphasised", "empty and error states are designed"]
+        "checks": [
+          "primary action is obvious",
+          "secondary content is de-emphasised",
+          "empty and error states are designed"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "typography-readable-scale",
       "domain": "typography",
       "title": "Readable product type scale",
-      "tags": ["typography", "type-scale", "legibility", "line-height", "numbers", "localization"],
+      "tags": [
+        "typography",
+        "type-scale",
+        "legibility",
+        "line-height",
+        "numbers",
+        "localization"
+      ],
       "status": "active",
       "content": {
+        "kind": "guidance",
         "use_when": "Text density, scanning, or responsive reading is a concern.",
         "practice": "Choose a contextual scale, then tune weight, line-height, measure, numeric alignment, tracking, and content expansion.",
-        "checks": ["long labels fit", "numbers remain scannable", "body measure supports reading", "font licensing is recorded"]
+        "checks": [
+          "long labels fit",
+          "numbers remain scannable",
+          "body measure supports reading",
+          "font licensing is recorded"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "color-semantic-state",
       "domain": "color",
       "title": "Semantic colour and state system",
-      "tags": ["color", "colour", "semantic", "contrast", "danger", "focus", "theme"],
+      "tags": [
+        "color",
+        "colour",
+        "semantic",
+        "contrast",
+        "danger",
+        "focus",
+        "theme"
+      ],
       "status": "active",
       "content": {
         "use_when": "A palette must support themes, states, and accessible emphasis.",
         "practice": "Use semantic roles between primitives and components; pair colour with text, shape, position, or icon and verify every theme.",
-        "checks": ["danger is not colour-only", "focus is visible", "dark mode is independently checked", "contrast evidence is dated"]
+        "checks": [
+          "danger is not colour-only",
+          "focus is visible",
+          "dark mode is independently checked",
+          "contrast evidence is dated"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "landing-trust-action",
       "domain": "landing",
       "title": "Landing page trust-to-action sequence",
-      "tags": ["landing", "conversion", "trust", "cta", "proof", "action"],
+      "tags": [
+        "landing",
+        "conversion",
+        "trust",
+        "cta",
+        "proof",
+        "action"
+      ],
       "status": "active",
       "content": {
         "use_when": "A landing page must move a visitor toward a clear next action.",
         "practice": "Sequence promise, relevance, proof, risk reduction, and one dominant next step; remove decorative sections that do not support the decision.",
-        "checks": ["audience is explicit", "proof is attributable", "CTA states verb and outcome", "mobile reading order works"]
+        "checks": [
+          "audience is explicit",
+          "proof is attributable",
+          "CTA states verb and outcome",
+          "mobile reading order works"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "chart-decision-story",
       "domain": "chart",
       "title": "Decision-led chart story",
-      "tags": ["chart", "dashboard", "comparison", "story", "big-idea", "declutter"],
+      "tags": [
+        "chart",
+        "dashboard",
+        "comparison",
+        "story",
+        "big-idea",
+        "declutter"
+      ],
       "status": "active",
       "content": {
         "use_when": "A chart is being selected or revised for an operational decision.",
         "practice": "Name audience, action, comparison, and Big Idea before choosing an encoding; use direct labels and a text alternative.",
-        "checks": ["chart type matches the comparison", "no colour-only meaning", "non-essential marks are removed", "uncertainty is visible"]
+        "checks": [
+          "chart type matches the comparison",
+          "no colour-only meaning",
+          "non-essential marks are removed",
+          "uncertainty is visible"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "ux-observe-fix-retest",
       "domain": "ux",
       "title": "Observe, fix, and retest loop",
-      "tags": ["ux", "usability", "research", "task", "observe", "retest"],
+      "tags": [
+        "ux",
+        "usability",
+        "research",
+        "task",
+        "observe",
+        "retest"
+      ],
       "status": "active",
       "content": {
         "use_when": "A user-facing decision needs behavioural evidence.",
         "practice": "Use a realistic neutral task, observe without rescuing, separate fact from interpretation, fix the smallest high-impact issue, and repeat the task.",
-        "checks": ["consent exists", "sample limits are stated", "severity is recorded", "no population claim from a small qualitative sample"]
+        "checks": [
+          "consent exists",
+          "sample limits are stated",
+          "severity is recorded",
+          "no population claim from a small qualitative sample"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "icons-semantic-safe",
       "domain": "icons",
       "title": "Semantic icon and label pairing",
-      "tags": ["icons", "iconography", "semantic", "label", "decorative", "svg"],
+      "tags": [
+        "icons",
+        "iconography",
+        "semantic",
+        "label",
+        "decorative",
+        "svg"
+      ],
       "status": "active",
       "content": {
         "use_when": "Icons communicate actions, status, or navigation.",
         "practice": "Validate the import/name, size, stroke and viewBox; classify each icon as labelled or decorative and never hide essential meaning in an icon alone.",
-        "checks": ["accessible name is present where needed", "SVG is sanitized", "touch target is tested", "licence is recorded"]
+        "checks": [
+          "accessible name is present where needed",
+          "SVG is sanitized",
+          "touch target is tested",
+          "licence is recorded"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "react-stateful-components",
       "domain": "react",
       "title": "React stateful accessible component",
-      "tags": ["react", "component", "state", "focus", "loading", "error"],
+      "tags": [
+        "react",
+        "component",
+        "state",
+        "focus",
+        "loading",
+        "error"
+      ],
       "status": "active",
-      "stacks": ["react", "nextjs", "shadcn"],
+      "stacks": [
+        "react",
+        "nextjs",
+        "shadcn"
+      ],
       "content": {
         "use_when": "A React component has multiple interaction states or async work.",
         "practice": "Model default, hover, focus, active, disabled, loading, selected, error, and recovery states with semantic DOM and preserved input.",
-        "checks": ["state matrix is finite", "focus outcome is specified", "reduced motion is respected", "server/client boundary is explicit"]
+        "checks": [
+          "state matrix is finite",
+          "focus outcome is specified",
+          "reduced motion is respected",
+          "server/client boundary is explicit"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "web-progressive-enhancement",
       "domain": "web",
       "title": "Web progressive enhancement and responsive resilience",
-      "tags": ["web", "responsive", "semantic", "keyboard", "mobile", "progressive"],
+      "tags": [
+        "web",
+        "responsive",
+        "semantic",
+        "keyboard",
+        "mobile",
+        "progressive"
+      ],
       "status": "active",
-      "stacks": ["html-tailwind", "astro", "vue", "svelte", "angular", "laravel"],
+      "stacks": [
+        "html-tailwind",
+        "astro",
+        "vue",
+        "svelte",
+        "angular",
+        "laravel"
+      ],
       "content": {
         "use_when": "A web flow must remain usable across widths, input modes, and partial failure.",
         "practice": "Preserve source order, semantic controls, fallback content, keyboard operation, readable reflow, and content variation before adding custom enhancement.",
-        "checks": ["320px and 200% zoom are tested", "no horizontal scroll", "no essential tooltip-only content", "fallback is meaningful"]
+        "checks": [
+          "320px and 200% zoom are tested",
+          "no horizontal scroll",
+          "no essential tooltip-only content",
+          "fallback is meaningful"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "google-fonts-licensed-pairing",
       "domain": "google-fonts",
       "title": "Licensed font pairing with fallback",
-      "tags": ["google-fonts", "typography", "license", "pairing", "fallback", "variable"],
+      "tags": [
+        "google-fonts",
+        "typography",
+        "license",
+        "pairing",
+        "fallback",
+        "variable"
+      ],
       "status": "active",
       "content": {
+        "kind": "guidance",
         "use_when": "A design requests a web font or a new font pairing.",
         "practice": "Record source, license, language coverage, variable axes, fallback metrics, loading behavior, and the reason the pairing serves the product.",
-        "checks": ["font is not banned by doctrine", "license is retained", "fallback is legible", "loading does not cause layout failure"]
+        "checks": [
+          "font is not banned by doctrine",
+          "license is retained",
+          "fallback is legible",
+          "loading does not cause layout failure"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
     },
     {
       "id": "gsap-reduced-motion",
       "domain": "gsap",
       "title": "Motion with user control and reduced-motion fallback",
-      "tags": ["gsap", "motion", "reduced-motion", "focus", "interaction", "rollback"],
+      "tags": [
+        "gsap",
+        "motion",
+        "reduced-motion",
+        "focus",
+        "interaction",
+        "rollback"
+      ],
       "status": "active",
       "content": {
         "use_when": "A motion system or interaction transition is being specified.",
         "practice": "Use tokenised duration/easing, preserve focus and state announcements, provide a static or shortened reduced-motion path, and avoid unsolicited movement.",
-        "checks": ["motion has a purpose", "cancel or control is available", "prefers-reduced-motion is honoured", "failure leaves a recoverable state"]
+        "checks": [
+          "motion has a purpose",
+          "cancel or control is available",
+          "prefers-reduced-motion is honoured",
+          "failure leaves a recoverable state"
+        ]
       },
-      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+      "evidence": {
+        "source_type": "original_synthesis",
+        "reviewed": "2026-09-20"
+      }
+    },
+    {
+      "id": "type-01-source-serif-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Formal institutional: Source Serif 4 over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "formal",
+        "institutional",
+        "statutory",
+        "report",
+        "proposal",
+        "srs",
+        "business-plan",
+        "legal"
+      ],
+      "content": {
+        "heading": "Source Serif 4",
+        "body": "Public Sans",
+        "group": "01",
+        "use_case": "Business plan, statutory report, SRS, formal or legal proposal",
+        "rules": [
+          "serif heading 700 against sans body 400 (weight extremes)",
+          "cross categories for contrast"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md F1; font-groups-and-usage.md quick chooser row 1; pairing-principles.md core moves 1, 3, 5 (Bonneville 1-3, 8, 25)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-01-spectral-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Formal public-sector: Spectral over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "formal",
+        "policy",
+        "public-sector",
+        "board",
+        "brief",
+        "government"
+      ],
+      "content": {
+        "heading": "Spectral",
+        "body": "Public Sans",
+        "group": "01",
+        "use_case": "Policy papers, public-sector briefs, board packs",
+        "rules": [
+          "Spectral 600 display, Public Sans 400 body",
+          "one mood: restrained and official"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md F2; font-groups-and-usage.md group 01 baseline faces; pairing-principles.md core moves 1, 7 (Bonneville 1-3, 26)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-01-spectral-source-serif",
+      "domain": "typography",
+      "status": "active",
+      "title": "Formal all-serif register: Spectral over Source Serif 4",
+      "tags": [
+        "typography",
+        "pairing",
+        "formal",
+        "legal",
+        "charter",
+        "annual",
+        "audit",
+        "serif",
+        "constitution"
+      ],
+      "content": {
+        "heading": "Spectral",
+        "body": "Source Serif 4",
+        "group": "01",
+        "use_case": "Charters, constitutions, audited annual statements, legal instruments",
+        "rules": [
+          "Spectral 700 against Source Serif 4 400",
+          "keep the weight gap wide or the pair turns muddy (Segall)"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md F3; pairing-principles.md core moves 2, 5 (two serifs only when structure and weight differ clearly; Bonneville 2-3, 8)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-01-source-serif-public-sans-mono",
+      "domain": "typography",
+      "status": "active",
+      "title": "Technical-formal: Source Serif 4 over Public Sans with JetBrains Mono",
+      "tags": [
+        "typography",
+        "pairing",
+        "formal",
+        "technical",
+        "standards",
+        "srs",
+        "brd",
+        "specification",
+        "governance",
+        "requirements"
+      ],
+      "content": {
+        "heading": "Source Serif 4",
+        "body": "Public Sans",
+        "mono": "JetBrains Mono",
+        "group": "01",
+        "use_case": "Standards, governance packs, SRS and BRD documents with identifiers and figures",
+        "rules": [
+          "mono only for IDs, figures and code",
+          "Public Sans with tabular-nums in tables"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md F4; pairing-principles.md core moves 8, 11 (Bonneville 5, 21, 24)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-02-andada-source-serif",
+      "domain": "typography",
+      "status": "active",
+      "title": "Editorial whitepaper: Andada Pro over Source Serif 4",
+      "tags": [
+        "typography",
+        "pairing",
+        "editorial",
+        "whitepaper",
+        "authored",
+        "premium",
+        "long-form",
+        "thought-leadership"
+      ],
+      "content": {
+        "heading": "Andada Pro",
+        "body": "Source Serif 4",
+        "group": "02",
+        "use_case": "Premium authored reports, whitepapers, thought leadership",
+        "rules": [
+          "Andada Pro 800 headline, Source Serif 4 400 reading text"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md E1; font-groups-and-usage.md quick chooser row 2; pairing-principles.md core move 3 (Bonneville 25)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-02-libre-caslon-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Editorial essay: Libre Caslon Text over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "editorial",
+        "essay",
+        "magazine",
+        "literary",
+        "narrative",
+        "caslon"
+      ],
+      "content": {
+        "heading": "Libre Caslon Text",
+        "body": "Public Sans",
+        "group": "02",
+        "use_case": "Essays, op-eds, magazine features, narrative case studies",
+        "rules": [
+          "old-style serif heading 700, neutral sans body 400"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md E2; pairing-principles.md core moves 1, 3 (Bonneville 1-3, 25)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-02-theano-didot-source-serif",
+      "domain": "typography",
+      "status": "active",
+      "title": "Editorial cover: Theano Didot over Source Serif 4",
+      "tags": [
+        "typography",
+        "pairing",
+        "editorial",
+        "cover",
+        "title-page",
+        "didone",
+        "elegant",
+        "display"
+      ],
+      "content": {
+        "heading": "Theano Didot",
+        "body": "Source Serif 4",
+        "group": "02",
+        "use_case": "Report covers and title pages at display sizes",
+        "rules": [
+          "Theano Didot at display sizes only",
+          "never set running text in the Didone"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md E3; font-groups-and-usage.md group 02 baseline (Theano Didot display only); pairing-principles.md core move 2 (radically different serifs)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-02-alegreya-alegreya-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Humanist editorial: Alegreya over Alegreya Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "editorial",
+        "humanist",
+        "education",
+        "culture",
+        "narrative",
+        "superfamily"
+      ],
+      "content": {
+        "heading": "Alegreya",
+        "body": "Alegreya Sans",
+        "group": "02",
+        "use_case": "Education, culture and long-form narrative reports",
+        "rules": [
+          "Alegreya 700 headings, Alegreya Sans 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md E4; pairing-principles.md core moves 1, 9 (serif/sans cross within one superfamily; Bonneville 13, 21)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-03-bricolage-hanken",
+      "domain": "typography",
+      "status": "active",
+      "title": "Product launch: Bricolage Grotesque over Hanken Grotesk",
+      "tags": [
+        "typography",
+        "pairing",
+        "product",
+        "saas",
+        "landing",
+        "pitch-deck",
+        "startup",
+        "launch",
+        "grotesque"
+      ],
+      "content": {
+        "heading": "Bricolage Grotesque",
+        "body": "Hanken Grotesk",
+        "group": "03",
+        "use_case": "SaaS landing pages, pitch decks, product launches",
+        "rules": [
+          "Bricolage Grotesque 800 display, Hanken Grotesk 400 body",
+          "contrast carried by weight and width extremes"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md P1; font-groups-and-usage.md quick chooser row 4; pairing-principles.md Chwezi default pairings (startup / product row)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-03-cabinet-hanken",
+      "domain": "typography",
+      "status": "active",
+      "title": "Corporate startup: Cabinet Grotesk over Hanken Grotesk",
+      "tags": [
+        "typography",
+        "pairing",
+        "product",
+        "corporate",
+        "startup",
+        "pricing",
+        "investor",
+        "grotesque"
+      ],
+      "content": {
+        "heading": "Cabinet Grotesk",
+        "body": "Hanken Grotesk",
+        "group": "03",
+        "use_case": "Corporate startup sites, pricing pages, investor updates",
+        "rules": [
+          "Cabinet Grotesk 700 display, Hanken Grotesk 400 body",
+          "record the Fontshare licence with the project"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md P3; font-groups-and-usage.md group 03 premium/manual faces; pairing-principles.md core move 5 (Bonneville 8)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "ITF Free Font License (Fontshare); embed allowed, raw redistribution not allowed"
+    },
+    {
+      "id": "type-03-bricolage-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Product marketing long copy: Bricolage Grotesque over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "product",
+        "marketing",
+        "long-copy",
+        "feature-page",
+        "grotesque"
+      ],
+      "content": {
+        "heading": "Bricolage Grotesque",
+        "body": "Public Sans",
+        "group": "03",
+        "use_case": "Product marketing pages with long explanatory copy",
+        "rules": [
+          "Bricolage Grotesque 800 display, Public Sans 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md P4; pairing-principles.md core move 3 (Bonneville 25)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-04-public-sans-tabular-mono",
+      "domain": "typography",
+      "status": "active",
+      "title": "Dashboard and admin UI: Public Sans with tabular figures and JetBrains Mono",
+      "tags": [
+        "typography",
+        "pairing",
+        "dashboard",
+        "admin",
+        "data",
+        "tabular",
+        "table",
+        "technical",
+        "backoffice",
+        "kpi"
+      ],
+      "content": {
+        "heading": "Public Sans",
+        "body": "Public Sans",
+        "mono": "JetBrains Mono",
+        "group": "04",
+        "use_case": "Dashboards, admin panels, analytics and data tables",
+        "rules": [
+          "weight carries hierarchy: Public Sans 700 headings, 400 body",
+          "tabular-nums on every numeric column",
+          "mono confined to IDs, code and logs"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md T1; font-groups-and-usage.md quick chooser row 3; pairing-principles.md Chwezi default pairings (technical / dashboard row), core move 9 (Bonneville 13, 21)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1",
+      "avoid": [
+        "IBM Plex (house ban, 29 September 2026)"
+      ]
+    },
+    {
+      "id": "type-04-source-serif-public-sans-mono",
+      "domain": "typography",
+      "status": "active",
+      "title": "Technical documentation: Source Serif 4 over Public Sans with JetBrains Mono",
+      "tags": [
+        "typography",
+        "pairing",
+        "technical",
+        "documentation",
+        "api",
+        "developer",
+        "manual",
+        "docs"
+      ],
+      "content": {
+        "heading": "Source Serif 4",
+        "body": "Public Sans",
+        "mono": "JetBrains Mono",
+        "group": "04",
+        "use_case": "API documentation, technical manuals, developer guides",
+        "rules": [
+          "serif headings add authority to reference docs",
+          "code samples in JetBrains Mono only"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md T2; font-groups-and-usage.md group 04 baseline faces; pairing-principles.md core moves 1, 11 (Bonneville 1-3, 24)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-04-jetbrains-mono-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Developer tool: JetBrains Mono headings over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "technical",
+        "developer",
+        "cli",
+        "terminal",
+        "engineering",
+        "code"
+      ],
+      "content": {
+        "heading": "JetBrains Mono",
+        "body": "Public Sans",
+        "mono": "JetBrains Mono",
+        "group": "04",
+        "use_case": "Developer tools, CLI documentation, engineering status pages",
+        "rules": [
+          "monospace display is a deliberate developer signal",
+          "proportional body protects reading"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md T3; pairing-principles.md core move 11 (monospace never in the body role; Bonneville 24)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-04-unbounded-public-sans-mono",
+      "domain": "typography",
+      "status": "active",
+      "title": "Technical campaign: Unbounded over Public Sans with JetBrains Mono",
+      "tags": [
+        "typography",
+        "pairing",
+        "technical",
+        "campaign",
+        "conference",
+        "developer",
+        "event"
+      ],
+      "content": {
+        "heading": "Unbounded",
+        "body": "Public Sans",
+        "mono": "JetBrains Mono",
+        "group": "04",
+        "use_case": "Technical product campaigns, developer conference pages",
+        "rules": [
+          "Unbounded 700 for short heads only",
+          "Public Sans keeps data and body clear"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md T4; pairing-principles.md core move 5 (Bonneville 8)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-05-alegreya-atkinson",
+      "domain": "typography",
+      "status": "active",
+      "title": "Service UI: Alegreya over Atkinson Hyperlegible",
+      "tags": [
+        "typography",
+        "pairing",
+        "friendly",
+        "humanist",
+        "healthcare",
+        "education",
+        "service",
+        "accessible",
+        "legibility"
+      ],
+      "content": {
+        "heading": "Alegreya",
+        "body": "Atkinson Hyperlegible",
+        "group": "05",
+        "use_case": "Healthcare, education and public-service products",
+        "rules": [
+          "Alegreya 800 headings, Atkinson Hyperlegible 400 body",
+          "legibility-first body for forms"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md H1; font-groups-and-usage.md quick chooser row 5; pairing-principles.md core move 1 (Bonneville 1-3)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-05-bricolage-lexend",
+      "domain": "typography",
+      "status": "active",
+      "title": "Onboarding and learning: Bricolage Grotesque over Lexend",
+      "tags": [
+        "typography",
+        "pairing",
+        "friendly",
+        "onboarding",
+        "learning",
+        "support",
+        "education",
+        "reading-ease"
+      ],
+      "content": {
+        "heading": "Bricolage Grotesque",
+        "body": "Lexend",
+        "group": "05",
+        "use_case": "Onboarding flows, learning platforms, support content",
+        "rules": [
+          "Bricolage Grotesque 700 heads, Lexend 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md H2; font-groups-and-usage.md group 05 baseline faces; pairing-principles.md core move 5 (Bonneville 8)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-05-atkinson-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Civic service forms: Atkinson Hyperlegible over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "friendly",
+        "civic",
+        "forms",
+        "ngo",
+        "accessibility",
+        "public-service"
+      ],
+      "content": {
+        "heading": "Atkinson Hyperlegible",
+        "body": "Public Sans",
+        "group": "05",
+        "use_case": "Civic service forms, NGO programme portals, accessibility-sensitive interfaces",
+        "rules": [
+          "Atkinson Hyperlegible 700 headings, Public Sans 400 body",
+          "keep the weight gap wide: two sans faces"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "font-groups-and-usage.md quick chooser row 5 (Atkinson Hyperlegible -> Public Sans); pairing-principles.md core move 5 (weight extremes carry the contrast between two sans faces; Bonneville 8)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-06-bodoni-moda-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Luxury and culture: Bodoni Moda over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "expressive",
+        "luxury",
+        "beauty",
+        "culture",
+        "poster",
+        "exhibition",
+        "didone"
+      ],
+      "content": {
+        "heading": "Bodoni Moda",
+        "body": "Public Sans",
+        "group": "06",
+        "use_case": "Luxury, beauty and cultural campaigns, exhibition posters",
+        "rules": [
+          "Bodoni Moda 700 at display sizes",
+          "quiet body beneath a dramatic head"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md A2; font-groups-and-usage.md quick chooser row 6; pairing-principles.md core move 1 (Bonneville 1-3)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-06-eczar-alegreya-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Textured campaign: Eczar over Alegreya Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "expressive",
+        "festival",
+        "arts",
+        "campaign",
+        "textured",
+        "headline"
+      ],
+      "content": {
+        "heading": "Eczar",
+        "body": "Alegreya Sans",
+        "group": "06",
+        "use_case": "Festival, arts and campaign headlines with warm body text",
+        "rules": [
+          "Eczar 700 heads only",
+          "Alegreya Sans 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md A3; font-groups-and-usage.md group 06 baseline faces; pairing-principles.md core move 7 (one personality face, one neutral; Bonneville 26)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-06-unbounded-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Event identity: Unbounded over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "expressive",
+        "event",
+        "identity",
+        "hero",
+        "portfolio",
+        "futuristic"
+      ],
+      "content": {
+        "heading": "Unbounded",
+        "body": "Public Sans",
+        "group": "06",
+        "use_case": "Event identities, portfolio covers, bold hero sections",
+        "rules": [
+          "Unbounded 700 for a few words",
+          "Public Sans 400 for everything readable"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md A4; font-groups-and-usage.md group 06 baseline faces; pairing-principles.md core move 10 (make the contrast obvious; Bonneville 28)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-07-great-vibes-theano-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Signature accent: Great Vibes with Theano Didot and Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "script",
+        "signature",
+        "certificate",
+        "invitation",
+        "formal-accent"
+      ],
+      "content": {
+        "heading": "Theano Didot",
+        "body": "Public Sans",
+        "accent": "Great Vibes",
+        "group": "07",
+        "use_case": "Certificates, invitations and signature lines",
+        "rules": [
+          "script is a signature moment only, never body: a few words at display size",
+          "Theano Didot 400 display, Public Sans 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md C1; font-groups-and-usage.md group 07 guardrail (accent only)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-07-caveat-alegreya-atkinson",
+      "domain": "typography",
+      "status": "active",
+      "title": "Annotation accent: Caveat with Alegreya and Atkinson Hyperlegible",
+      "tags": [
+        "typography",
+        "pairing",
+        "script",
+        "handwritten",
+        "annotation",
+        "note",
+        "service"
+      ],
+      "content": {
+        "heading": "Alegreya",
+        "body": "Atkinson Hyperlegible",
+        "accent": "Caveat",
+        "group": "07",
+        "use_case": "Service products that need a human annotation or handwritten note",
+        "rules": [
+          "script is a signature moment only, never body: a few words at display size",
+          "Alegreya 800 display, Atkinson Hyperlegible 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md C2; font-groups-and-usage.md group 07 guardrail (accent only)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-07-kalam-alegreya-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Workshop accent: Kalam with Alegreya and Alegreya Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "script",
+        "handwritten",
+        "workshop",
+        "classroom",
+        "education"
+      ],
+      "content": {
+        "heading": "Alegreya",
+        "body": "Alegreya Sans",
+        "accent": "Kalam",
+        "group": "07",
+        "use_case": "Education workshops, classroom material, facilitator notes",
+        "rules": [
+          "script is a signature moment only, never body: a few words at display size",
+          "Alegreya 700 display, Alegreya Sans 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md C3; font-groups-and-usage.md group 07 guardrail (accent only)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-07-sacramento-bodoni-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Boutique accent: Sacramento with Bodoni Moda and Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "script",
+        "cursive",
+        "boutique",
+        "lifestyle",
+        "beauty"
+      ],
+      "content": {
+        "heading": "Bodoni Moda",
+        "body": "Public Sans",
+        "accent": "Sacramento",
+        "group": "07",
+        "use_case": "Boutique, lifestyle and beauty brands",
+        "rules": [
+          "script is a signature moment only, never body: a few words at display size",
+          "Bodoni Moda 700 display, Public Sans 400 body"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md C4; font-groups-and-usage.md group 07 guardrail (accent only)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-08-libre-baskerville-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Workhorse body under formal serif: Libre Baskerville over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "workhorse",
+        "body",
+        "ui",
+        "institutional",
+        "letter",
+        "baskerville"
+      ],
+      "content": {
+        "heading": "Libre Baskerville",
+        "body": "Public Sans",
+        "group": "08",
+        "use_case": "Body and UI layer for institutional sites and formal letters",
+        "rules": [
+          "the workhorse is a partner, not the identity",
+          "Libre Baskerville 700 headings"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md group 08 row 'Formal serif display -> Public Sans 400'; font-groups-and-usage.md group 01 baseline (Libre Baskerville); pairing-principles.md core move 1",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-08-spectral-atkinson",
+      "domain": "typography",
+      "status": "active",
+      "title": "Workhorse body for forms: Spectral over Atkinson Hyperlegible",
+      "tags": [
+        "typography",
+        "pairing",
+        "workhorse",
+        "body",
+        "forms",
+        "application",
+        "registration",
+        "legibility"
+      ],
+      "content": {
+        "heading": "Spectral",
+        "body": "Atkinson Hyperlegible",
+        "group": "08",
+        "use_case": "Form-heavy public services, applications, claims and registrations",
+        "rules": [
+          "Atkinson Hyperlegible for labels, inputs, hints and errors",
+          "Spectral 600 for page headings only"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "pairing-catalog.md group 08 row 'Accessibility-first display -> Atkinson Hyperlegible 400'; pairing-principles.md core moves 1, 8 (Bonneville 1-3, 5)",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "type-08-andada-public-sans",
+      "domain": "typography",
+      "status": "active",
+      "title": "Workhorse body under editorial display: Andada Pro over Public Sans",
+      "tags": [
+        "typography",
+        "pairing",
+        "workhorse",
+        "body",
+        "ui",
+        "newsletter",
+        "publication",
+        "web"
+      ],
+      "content": {
+        "heading": "Andada Pro",
+        "body": "Public Sans",
+        "group": "08",
+        "use_case": "Body and UI layer for editorial web publications and newsletters",
+        "rules": [
+          "Public Sans 400 body at 16px or larger",
+          "Andada Pro 800 headings"
+        ]
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "font-groups-and-usage.md quick chooser row 2 (Andada Pro -> Public Sans); pairing-catalog.md group 08 row 'Formal serif display -> Public Sans 400'; pairing-principles.md core move 3",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      },
+      "licence": "OFL-1.1"
+    },
+    {
+      "id": "color-palette-maduuka-institutional",
+      "domain": "color",
+      "title": "Maduuka institutional blue palette (light and dark)",
+      "tags": [
+        "color",
+        "palette",
+        "tokens",
+        "institutional",
+        "blue",
+        "dark-mode",
+        "semantic",
+        "maduuka"
+      ],
+      "status": "active",
+      "content": {
+        "use_when": "Institutional or civic product UI that needs a light and a deliberate dark theme.",
+        "tokens": {
+          "primary": "#1570D1",
+          "on_primary": "#FCFEFF",
+          "secondary": "#FCFEFF",
+          "on_secondary": "#0859AC",
+          "surface": "#FCFEFF",
+          "on_surface": "#15191E",
+          "background": "#F8FAFD",
+          "foreground": "#15191E",
+          "muted": "#F1F4F7",
+          "on_muted": "#51565C",
+          "destructive": "#A92321",
+          "on_destructive": "#FCFEFF",
+          "border": "#70757C",
+          "ring": "#1570D1",
+          "dark": {
+            "primary": "#5597E9",
+            "on_primary": "#0D1014",
+            "secondary": "#23272C",
+            "on_secondary": "#8EBAF4",
+            "surface": "#23272C",
+            "on_surface": "#F8FAFD",
+            "background": "#0D1014",
+            "foreground": "#F8FAFD",
+            "muted": "#15191E",
+            "on_muted": "#9A9FA5",
+            "destructive": "#A92321",
+            "on_destructive": "#FCFEFF",
+            "border": "#9A9FA5",
+            "ring": "#5597E9"
+          }
+        },
+        "rules": [
+          "pair colour with text, shape or icon; never colour-only meaning",
+          "recompute contrast after any token change",
+          "the validator prints every ratio"
+        ]
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "design-tokens-and-naming/examples/tokens.json semantic tier (light) and _themes.dark; OKLCH primitives converted to sRGB hex. border uses border.strong (neutral.500): the default border (neutral.300) is decorative and is not a component boundary.",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2026-12-28"
+      }
+    },
+    {
+      "id": "color-palette-kesilex-green",
+      "domain": "color",
+      "title": "KesiLex green second-brand palette",
+      "tags": [
+        "color",
+        "palette",
+        "tokens",
+        "green",
+        "second-brand",
+        "multi-brand",
+        "semantic",
+        "kesilex"
+      ],
+      "status": "active",
+      "content": {
+        "use_when": "Second brand re-pointed from one component set (multi-brand theming).",
+        "tokens": {
+          "primary": "#197037",
+          "on_primary": "#FCFEFF",
+          "secondary": "#D7F4DC",
+          "on_secondary": "#197037",
+          "surface": "#FCFEFF",
+          "on_surface": "#15191E",
+          "background": "#F8FAFD",
+          "foreground": "#15191E",
+          "muted": "#F1F4F7",
+          "on_muted": "#51565C",
+          "destructive": "#A92321",
+          "on_destructive": "#FCFEFF",
+          "border": "#70757C",
+          "ring": "#197037"
+        },
+        "rules": [
+          "pair colour with text, shape or icon; never colour-only meaning",
+          "recompute contrast after any token change",
+          "the validator prints every ratio"
+        ]
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "design-tokens-and-naming/examples/tokens.json _themes.kesilex (green hue 150). primary is green.700 (the source's bg-hover): green.500 with neutral.0 computes below 4.5:1, so the validator rejects the source's resting value for text.",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2026-12-28"
+      }
+    },
+    {
+      "id": "color-palette-forest-monochrome",
+      "domain": "color",
+      "title": "Forest green monochrome palette",
+      "tags": [
+        "color",
+        "palette",
+        "monochrome",
+        "green",
+        "forest",
+        "agriculture",
+        "environment",
+        "ngo"
+      ],
+      "status": "active",
+      "content": {
+        "use_when": "Environmental, agricultural or NGO reporting surfaces.",
+        "tokens": {
+          "primary": "#176732",
+          "on_primary": "#FCFEFF",
+          "secondary": "#C0F0D0",
+          "on_secondary": "#176732",
+          "surface": "#FCFEFF",
+          "on_surface": "#15191E",
+          "background": "#F8FAFD",
+          "foreground": "#15191E",
+          "muted": "#F1F4F7",
+          "on_muted": "#51565C",
+          "destructive": "#A92321",
+          "on_destructive": "#FCFEFF",
+          "border": "#70757C",
+          "ring": "#176732"
+        },
+        "rules": [
+          "pair colour with text, shape or icon; never colour-only meaning",
+          "recompute contrast after any token change",
+          "the validator prints every ratio"
+        ]
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "color-selection/scripts/palette_generator.py #197037 monochromatic -> ['#176732', '#2ABB5A', '#6DDD93', '#C0F0D0'] (seed = tokens.json green.700); complementary -> ['#186C34', '#6C1850'] not used for text roles. Neutrals and destructive from tokens.json.",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2026-12-28"
+      }
+    },
+    {
+      "id": "color-palette-terracotta-monochrome",
+      "domain": "color",
+      "title": "Terracotta red monochrome palette",
+      "tags": [
+        "color",
+        "palette",
+        "monochrome",
+        "red",
+        "terracotta",
+        "earth",
+        "warm",
+        "hospitality"
+      ],
+      "status": "active",
+      "content": {
+        "use_when": "Warm hospitality, food or cultural brands where red is the brand, not an alert.",
+        "tokens": {
+          "primary": "#6A1515",
+          "on_primary": "#FCFEFF",
+          "secondary": "#F2BFBF",
+          "on_secondary": "#6A1515",
+          "surface": "#FCFEFF",
+          "on_surface": "#15191E",
+          "background": "#F8FAFD",
+          "foreground": "#15191E",
+          "muted": "#F1F4F7",
+          "on_muted": "#51565C",
+          "destructive": "#15191E",
+          "on_destructive": "#FCFEFF",
+          "border": "#70757C",
+          "ring": "#6A1515"
+        },
+        "rules": [
+          "pair colour with text, shape or icon; never colour-only meaning",
+          "recompute contrast after any token change",
+          "the validator prints every ratio"
+        ]
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "color-selection/scripts/palette_generator.py #A92321 monochromatic -> ['#6A1515', '#BF2525', '#E16969', '#F2BFBF'] (seed = tokens.json red.700); complementary -> ['#A62020', '#20A6A6'] not used for text roles. Neutrals and destructive from tokens.json. destructive is neutral.900 because the brand hue is red; pair it with an icon and text.",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2026-12-28"
+      }
+    },
+    {
+      "id": "color-palette-ochre-monochrome",
+      "domain": "color",
+      "title": "Ochre amber monochrome palette",
+      "tags": [
+        "color",
+        "palette",
+        "monochrome",
+        "amber",
+        "ochre",
+        "earth",
+        "warm",
+        "education"
+      ],
+      "status": "active",
+      "content": {
+        "use_when": "Education or community programmes wanting a warm earth accent.",
+        "tokens": {
+          "primary": "#7F4A00",
+          "on_primary": "#FCFEFF",
+          "secondary": "#FFDFB2",
+          "on_secondary": "#7F4A00",
+          "surface": "#FCFEFF",
+          "on_surface": "#15191E",
+          "background": "#F8FAFD",
+          "foreground": "#15191E",
+          "muted": "#F1F4F7",
+          "on_muted": "#51565C",
+          "destructive": "#A92321",
+          "on_destructive": "#FCFEFF",
+          "border": "#70757C",
+          "ring": "#7F4A00"
+        },
+        "rules": [
+          "pair colour with text, shape or icon; never colour-only meaning",
+          "recompute contrast after any token change",
+          "the validator prints every ratio"
+        ]
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "color-selection/scripts/palette_generator.py #AE6700 monochromatic -> ['#7F4A00', '#E58500', '#FEB44C', '#FFDFB2'] (seed = tokens.json amber.700); complementary -> ['#AD6500', '#0048AD'] not used for text roles. Neutrals and destructive from tokens.json.",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2026-12-28"
+      }
+    },
+    {
+      "id": "color-palette-ink-monochrome",
+      "domain": "color",
+      "title": "Deep ink blue monochrome palette",
+      "tags": [
+        "color",
+        "palette",
+        "monochrome",
+        "ink",
+        "navy",
+        "finance",
+        "legal",
+        "report",
+        "formal"
+      ],
+      "status": "active",
+      "content": {
+        "use_when": "Finance, legal and formal reporting dashboards.",
+        "tokens": {
+          "primary": "#093D75",
+          "on_primary": "#FCFEFF",
+          "secondary": "#B8D7F9",
+          "on_secondary": "#093D75",
+          "surface": "#FCFEFF",
+          "on_surface": "#15191E",
+          "background": "#F8FAFD",
+          "foreground": "#15191E",
+          "muted": "#F1F4F7",
+          "on_muted": "#51565C",
+          "destructive": "#A92321",
+          "on_destructive": "#FCFEFF",
+          "border": "#70757C",
+          "ring": "#093D75"
+        },
+        "rules": [
+          "pair colour with text, shape or icon; never colour-only meaning",
+          "recompute contrast after any token change",
+          "the validator prints every ratio"
+        ]
+      },
+      "evidence": {
+        "source_type": "original_synthesis",
+        "citation": "color-selection/scripts/palette_generator.py #0A4483 monochromatic -> ['#093D75', '#116FD4', '#59A3F1', '#B8D7F9'] (seed = tokens.json brand.800); complementary -> ['#0A427F', '#7F460A'] not used for text roles. Neutrals and destructive from tokens.json.",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2026-12-28"
+      }
+    },
+    {
+      "id": "ux-wcag-1-1-1",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.1.1 Non-text Content (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-1-1",
+        "alt",
+        "image",
+        "alternative-text",
+        "decorative"
+      ],
+      "content": {
+        "sc": "1.1.1",
+        "level": "A",
+        "platform": "all",
+        "do": "Give every meaningful image a text alternative; hide decorative images from assistive technology.",
+        "dont": "Leave alt empty on an informative image or describe a decorative flourish.",
+        "severity": "blocker",
+        "code_good": "<img src=\"chart.png\" alt=\"Revenue rose 12% from Q1 to Q2\">",
+        "code_bad": "<img src=\"chart.png\">",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.1.1 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-1-4-3",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.4.3 Contrast (Minimum) (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-4-3",
+        "contrast",
+        "text",
+        "color",
+        "ratio"
+      ],
+      "content": {
+        "sc": "1.4.3",
+        "level": "AA",
+        "platform": "all",
+        "do": "Body text reaches 4.5:1 against its background; large text reaches 3:1.",
+        "dont": "Set grey body text on a tinted surface without computing the ratio.",
+        "severity": "blocker",
+        "code_good": "color: #1F2430; background: #F8F9FB; /* 14.7:1 */",
+        "code_bad": "color: #9AA0A6; background: #FFFFFF; /* 2.6:1 */",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.4.3 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-1-4-4",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.4.4 Resize Text (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-4-4",
+        "resize",
+        "zoom",
+        "text-scaling",
+        "rem"
+      ],
+      "content": {
+        "sc": "1.4.4",
+        "level": "AA",
+        "platform": "web",
+        "do": "Text scales to 200% without loss of content or function; size text in relative units.",
+        "dont": "Fix heights on text containers so zoomed text clips.",
+        "severity": "blocker",
+        "code_good": "font-size: 1rem; min-height: 2.75rem;",
+        "code_bad": "font-size: 14px; height: 20px; overflow: hidden;",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.4.4 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-1-4-10",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.4.10 Reflow (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-4-10",
+        "reflow",
+        "responsive",
+        "320px",
+        "horizontal-scroll"
+      ],
+      "content": {
+        "sc": "1.4.10",
+        "level": "AA",
+        "platform": "web",
+        "do": "Content reflows at 320 CSS px width with no two-dimensional scrolling.",
+        "dont": "Force a fixed-width layout that scrolls sideways on a phone.",
+        "severity": "blocker",
+        "code_good": "grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));",
+        "code_bad": "width: 1200px;",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.4.10 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-1-4-11",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.4.11 Non-text Contrast (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-4-11",
+        "contrast",
+        "border",
+        "focus-ring",
+        "icon",
+        "ui-component"
+      ],
+      "content": {
+        "sc": "1.4.11",
+        "level": "AA",
+        "platform": "all",
+        "do": "Component boundaries, focus indicators and meaningful graphics reach 3:1 against adjacent colours.",
+        "dont": "Draw input borders so faint that the field disappears.",
+        "severity": "blocker",
+        "code_good": "border: 1px solid #6A7080; /* 4.9:1 on white */",
+        "code_bad": "border: 1px solid #E4E6EA; /* 1.2:1 on white */",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.4.11 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-1-4-12",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.4.12 Text Spacing (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-4-12",
+        "text-spacing",
+        "line-height",
+        "letter-spacing",
+        "override"
+      ],
+      "content": {
+        "sc": "1.4.12",
+        "level": "AA",
+        "platform": "web",
+        "do": "Content survives user overrides of line, paragraph, letter and word spacing.",
+        "dont": "Clip text in fixed-height boxes that break when spacing grows.",
+        "severity": "blocker",
+        "code_good": ".card { min-height: 6rem; }",
+        "code_bad": ".card { height: 6rem; overflow: hidden; }",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.4.12 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-1-4-13",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 1.4.13 Content on Hover or Focus (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-1-4-13",
+        "tooltip",
+        "popover",
+        "hover",
+        "dismissible"
+      ],
+      "content": {
+        "sc": "1.4.13",
+        "level": "AA",
+        "platform": "web",
+        "do": "Hover or focus content is dismissible (Escape), hoverable and persistent until dismissed.",
+        "dont": "Show a tooltip that vanishes when the pointer moves onto it.",
+        "severity": "blocker",
+        "code_good": "<button aria-describedby=\"tip\">Info</button><div role=\"tooltip\" id=\"tip\">...</div> <!-- Esc closes; stays while hovered -->",
+        "code_bad": "<span title=\"Critical instructions\">?</span>",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 1.4.13 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-1-1",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.1.1 Keyboard (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-1-1",
+        "keyboard",
+        "operable",
+        "tab",
+        "button"
+      ],
+      "content": {
+        "sc": "2.1.1",
+        "level": "A",
+        "platform": "all",
+        "do": "Every function works from a keyboard, using native controls where they suffice.",
+        "dont": "Attach click handlers to non-focusable elements.",
+        "severity": "blocker",
+        "code_good": "<button type=\"button\" onclick=\"save()\">Save</button>",
+        "code_bad": "<div onclick=\"save()\">Save</div>",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.1.1 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-2-2",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.2.2 Pause, Stop, Hide (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-2-2",
+        "carousel",
+        "auto-play",
+        "pause",
+        "animation"
+      ],
+      "content": {
+        "sc": "2.2.2",
+        "level": "A",
+        "platform": "web",
+        "do": "Auto-starting moving, blinking or updating content lasting over 5 seconds has a pause, stop or hide control.",
+        "dont": "Run an auto-advancing carousel with no pause control.",
+        "severity": "blocker",
+        "code_good": "<button aria-pressed=\"false\">Pause slideshow</button>",
+        "code_bad": "setInterval(nextSlide, 4000); // no control",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.2.2 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-3-1",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.3.1 Three Flashes or Below Threshold (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-3-1",
+        "flash",
+        "seizure",
+        "strobe",
+        "animation"
+      ],
+      "content": {
+        "sc": "2.3.1",
+        "level": "A",
+        "platform": "all",
+        "do": "Nothing flashes more than three times in any one-second period.",
+        "dont": "Use a strobing alert or rapid flashing transition.",
+        "severity": "blocker",
+        "code_good": "animation: fade 600ms ease-out 1;",
+        "code_bad": "animation: blink 100ms steps(2) infinite;",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.3.1 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-4-3",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.4.3 Focus Order (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-4-3",
+        "focus-order",
+        "tabindex",
+        "sequence",
+        "keyboard"
+      ],
+      "content": {
+        "sc": "2.4.3",
+        "level": "A",
+        "platform": "all",
+        "do": "Focus moves in an order that preserves meaning, following the source order.",
+        "dont": "Reorder focus with positive tabindex values.",
+        "severity": "blocker",
+        "code_good": "<input id=\"name\"><input id=\"email\">",
+        "code_bad": "<input id=\"email\" tabindex=\"2\"><input id=\"name\" tabindex=\"1\">",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.4.3 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-4-7",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.4.7 Focus Visible (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-4-7",
+        "focus-visible",
+        "outline",
+        "focus-indicator",
+        "keyboard"
+      ],
+      "content": {
+        "sc": "2.4.7",
+        "level": "AA",
+        "platform": "all",
+        "do": "Keyboard focus is always visible.",
+        "dont": "Remove the outline without a replacement.",
+        "severity": "blocker",
+        "code_good": ":focus-visible { outline: 3px solid #3A5BB8; outline-offset: 2px; }",
+        "code_bad": ":focus { outline: none; }",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.4.7 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-4-11",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum) (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-4-11",
+        "focus",
+        "sticky",
+        "header",
+        "obscured",
+        "scroll-padding"
+      ],
+      "content": {
+        "sc": "2.4.11",
+        "level": "AA",
+        "platform": "web",
+        "do": "The focused element is never entirely hidden by sticky headers, footers or banners.",
+        "dont": "Let a sticky cookie banner cover the field that has focus.",
+        "severity": "blocker",
+        "code_good": "html { scroll-padding-top: 5rem; scroll-padding-bottom: 5rem; }",
+        "code_bad": "header { position: sticky; top: 0; } /* no scroll padding */",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.4.11 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-5-7",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.5.7 Dragging Movements (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-5-7",
+        "drag",
+        "single-pointer",
+        "reorder",
+        "slider"
+      ],
+      "content": {
+        "sc": "2.5.7",
+        "level": "AA",
+        "platform": "all",
+        "do": "Every drag operation has a single-pointer alternative such as buttons or a menu.",
+        "dont": "Allow list reordering only by drag and drop.",
+        "severity": "blocker",
+        "code_good": "<button aria-label=\"Move item up\">Up</button><button aria-label=\"Move item down\">Down</button>",
+        "code_bad": "onDragEnd={reorder} // no alternative",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.5.7 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-2-5-8",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 2.5.8 Target Size (Minimum) (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-2-5-8",
+        "target",
+        "size",
+        "touch",
+        "pointer",
+        "tap",
+        "hit-area"
+      ],
+      "content": {
+        "sc": "2.5.8",
+        "level": "AA",
+        "platform": "all",
+        "do": "Pointer targets are at least 24x24 CSS px (or adequately spaced); aim for 44x44 pt on iOS (Apple HIG) and 48x48 dp on Android (Material).",
+        "dont": "Ship 16px icon buttons packed edge to edge.",
+        "severity": "blocker",
+        "code_good": "button.icon { min-width: 24px; min-height: 24px; } /* touch: 44pt iOS, 48dp Android */",
+        "code_bad": "button.icon { width: 16px; height: 16px; padding: 0; }",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 2.5.8 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-3-2-6",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 3.2.6 Consistent Help (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-3-2-6",
+        "help",
+        "contact",
+        "consistent",
+        "support"
+      ],
+      "content": {
+        "sc": "3.2.6",
+        "level": "A",
+        "platform": "all",
+        "do": "Help mechanisms (contact, chat, FAQ link) appear in the same relative order on every page.",
+        "dont": "Move the help link between header and footer from page to page.",
+        "severity": "blocker",
+        "code_good": "<footer>... <a href=\"/help\">Help</a></footer> <!-- same place on every page -->",
+        "code_bad": "<!-- help link only on some pages, in different places -->",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 3.2.6 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-3-3-7",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 3.3.7 Redundant Entry (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-3-3-7",
+        "redundant",
+        "re-entry",
+        "forms",
+        "autofill",
+        "same-as"
+      ],
+      "content": {
+        "sc": "3.3.7",
+        "level": "A",
+        "platform": "all",
+        "do": "Do not ask again for information already given in the same process; prefill it or offer selection.",
+        "dont": "Make users retype their delivery address as the billing address.",
+        "severity": "blocker",
+        "code_good": "<label><input type=\"checkbox\" checked> Billing address same as delivery</label>",
+        "code_bad": "<!-- second empty address form -->",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 3.3.7 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-3-3-8",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 3.3.8 Accessible Authentication (Minimum) (AA)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-3-3-8",
+        "authentication",
+        "login",
+        "password",
+        "captcha",
+        "paste"
+      ],
+      "content": {
+        "sc": "3.3.8",
+        "level": "AA",
+        "platform": "all",
+        "do": "Offer a sign-in path without a cognitive function test; allow paste and password managers.",
+        "dont": "Block paste in the password field or require a puzzle CAPTCHA with no alternative.",
+        "severity": "blocker",
+        "code_good": "<input type=\"password\" autocomplete=\"current-password\">",
+        "code_bad": "<input type=\"password\" onpaste=\"return false\">",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 3.3.8 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
+    },
+    {
+      "id": "ux-wcag-4-1-2",
+      "domain": "ux",
+      "status": "active",
+      "title": "WCAG 2.2 SC 4.1.2 Name, Role, Value (A)",
+      "tags": [
+        "ux",
+        "wcag",
+        "accessibility",
+        "sc-4-1-2",
+        "aria",
+        "name",
+        "role",
+        "state",
+        "semantics"
+      ],
+      "content": {
+        "sc": "4.1.2",
+        "level": "A",
+        "platform": "all",
+        "do": "Every control exposes an accessible name, role and current state.",
+        "dont": "Build a toggle from a div with no role or state.",
+        "severity": "blocker",
+        "code_good": "<button aria-pressed=\"true\">Bold</button>",
+        "code_bad": "<div class=\"toggle on\">B</div>",
+        "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#perennial-aa-checklist-carried-from-21-must-still-pass"
+      },
+      "evidence": {
+        "source_type": "human_authority",
+        "citation": "W3C WCAG 2.2 Recommendation, SC 4.1.2 (w3.org/TR/WCAG22/); doctrine/references/wcag-2.2-criteria.md",
+        "reviewed": "2026-09-29",
+        "recheck_due": "2027-09-29"
+      }
     }
   ],
   "stack_guidance": [
-    {"stack": "html-tailwind", "supported_versions": "HTML living standard; Tailwind version pinned by project", "guidance": "Use semantic HTML first, utility classes second, and retain a token source of truth."},
-    {"stack": "react", "supported_versions": "React version pinned by project", "guidance": "Keep state contracts explicit and pair async states with focus and live-status behavior."},
-    {"stack": "nextjs", "supported_versions": "Next.js version pinned by project", "guidance": "Declare server/client boundaries, loading/error routes, metadata, and responsive rendering evidence."},
-    {"stack": "astro", "supported_versions": "Astro version pinned by project", "guidance": "Prefer progressive enhancement and island boundaries that preserve semantic HTML."},
-    {"stack": "vue", "supported_versions": "Vue version pinned by project", "guidance": "Keep composables and component state finite, typed where available, and keyboard tested."},
-    {"stack": "nuxtjs", "supported_versions": "Nuxt version pinned by project", "guidance": "Verify SSR, hydration, error, loading, route focus, and responsive states."},
-    {"stack": "nuxt-ui", "supported_versions": "Nuxt UI version pinned by project", "guidance": "Inspect inherited tokens and accessibility behavior before extending variants."},
-    {"stack": "svelte", "supported_versions": "Svelte version pinned by project", "guidance": "Keep transitions cancellable and provide reduced-motion equivalents."},
-    {"stack": "swiftui", "supported_versions": "Xcode and SDK versions pinned by project", "guidance": "Test Dynamic Type, VoiceOver, platform navigation, and native state semantics."},
-    {"stack": "react-native", "supported_versions": "React Native and platform SDKs pinned by project", "guidance": "Test touch, screen reader, platform controls, offline states, and release builds."},
-    {"stack": "flutter", "supported_versions": "Flutter channel and SDK pinned by project", "guidance": "Use semantic widgets, text scaling, focus traversal, and platform adaptation."},
-    {"stack": "shadcn", "supported_versions": "Repository package versions pinned by project", "guidance": "Treat generated components as owned source; check tokens, state coverage, and updates."},
-    {"stack": "jetpack-compose", "supported_versions": "Android Studio and Compose BOM pinned by project", "guidance": "Verify semantics, TalkBack, font scaling, touch targets, and recomposition states."},
-    {"stack": "threejs", "supported_versions": "Three.js version pinned by project", "guidance": "Provide non-canvas alternatives, keyboard controls, performance budgets, and reduced motion."},
-    {"stack": "angular", "supported_versions": "Angular version pinned by project", "guidance": "Keep form semantics, change detection states, routing focus, and error recovery explicit."},
-    {"stack": "laravel", "supported_versions": "Laravel and frontend versions pinned by project", "guidance": "Preserve server validation, old-input recovery, CSRF feedback, and progressive enhancement."},
-    {"stack": "javafx", "supported_versions": "JDK and JavaFX versions pinned by project", "guidance": "Test keyboard traversal, high contrast, scaling, and native window behavior."},
-    {"stack": "wpf", "supported_versions": "Target .NET and Windows versions pinned by project", "guidance": "Verify keyboard access, automation peers, scaling, and high-contrast modes."},
-    {"stack": "winui", "supported_versions": "Windows App SDK version pinned by project", "guidance": "Use native focus, scaling, contrast, and window-state patterns."},
-    {"stack": "avalonia", "supported_versions": "Avalonia version pinned by project", "guidance": "Test rendering parity, keyboard navigation, scaling, and platform-specific gaps."},
-    {"stack": "uno", "supported_versions": "Uno Platform version pinned by project", "guidance": "Record platform divergence and test each supported target rather than inferring parity."},
-    {"stack": "uwp", "supported_versions": "Target Windows SDK pinned by project", "guidance": "Preserve native accessibility, scaling, navigation, and lifecycle behavior."}
+    {
+      "stack": "html-tailwind",
+      "supported_versions": "HTML living standard; Tailwind version pinned by project",
+      "guidance": "Use semantic HTML first, utility classes second, and retain a token source of truth."
+    },
+    {
+      "stack": "react",
+      "supported_versions": "React version pinned by project",
+      "guidance": "Keep state contracts explicit and pair async states with focus and live-status behavior."
+    },
+    {
+      "stack": "nextjs",
+      "supported_versions": "Next.js version pinned by project",
+      "guidance": "Declare server/client boundaries, loading/error routes, metadata, and responsive rendering evidence."
+    },
+    {
+      "stack": "astro",
+      "supported_versions": "Astro version pinned by project",
+      "guidance": "Prefer progressive enhancement and island boundaries that preserve semantic HTML."
+    },
+    {
+      "stack": "vue",
+      "supported_versions": "Vue version pinned by project",
+      "guidance": "Keep composables and component state finite, typed where available, and keyboard tested."
+    },
+    {
+      "stack": "nuxtjs",
+      "supported_versions": "Nuxt version pinned by project",
+      "guidance": "Verify SSR, hydration, error, loading, route focus, and responsive states."
+    },
+    {
+      "stack": "nuxt-ui",
+      "supported_versions": "Nuxt UI version pinned by project",
+      "guidance": "Inspect inherited tokens and accessibility behavior before extending variants."
+    },
+    {
+      "stack": "svelte",
+      "supported_versions": "Svelte version pinned by project",
+      "guidance": "Keep transitions cancellable and provide reduced-motion equivalents."
+    },
+    {
+      "stack": "swiftui",
+      "supported_versions": "Xcode and SDK versions pinned by project",
+      "guidance": "Test Dynamic Type, VoiceOver, platform navigation, and native state semantics."
+    },
+    {
+      "stack": "react-native",
+      "supported_versions": "React Native and platform SDKs pinned by project",
+      "guidance": "Test touch, screen reader, platform controls, offline states, and release builds."
+    },
+    {
+      "stack": "flutter",
+      "supported_versions": "Flutter channel and SDK pinned by project",
+      "guidance": "Use semantic widgets, text scaling, focus traversal, and platform adaptation."
+    },
+    {
+      "stack": "shadcn",
+      "supported_versions": "Repository package versions pinned by project",
+      "guidance": "Treat generated components as owned source; check tokens, state coverage, and updates."
+    },
+    {
+      "stack": "jetpack-compose",
+      "supported_versions": "Android Studio and Compose BOM pinned by project",
+      "guidance": "Verify semantics, TalkBack, font scaling, touch targets, and recomposition states."
+    },
+    {
+      "stack": "threejs",
+      "supported_versions": "Three.js version pinned by project",
+      "guidance": "Provide non-canvas alternatives, keyboard controls, performance budgets, and reduced motion."
+    },
+    {
+      "stack": "angular",
+      "supported_versions": "Angular version pinned by project",
+      "guidance": "Keep form semantics, change detection states, routing focus, and error recovery explicit."
+    },
+    {
+      "stack": "laravel",
+      "supported_versions": "Laravel and frontend versions pinned by project",
+      "guidance": "Preserve server validation, old-input recovery, CSRF feedback, and progressive enhancement."
+    },
+    {
+      "stack": "javafx",
+      "supported_versions": "JDK and JavaFX versions pinned by project",
+      "guidance": "Test keyboard traversal, high contrast, scaling, and native window behavior."
+    },
+    {
+      "stack": "wpf",
+      "supported_versions": "Target .NET and Windows versions pinned by project",
+      "guidance": "Verify keyboard access, automation peers, scaling, and high-contrast modes."
+    },
+    {
+      "stack": "winui",
+      "supported_versions": "Windows App SDK version pinned by project",
+      "guidance": "Use native focus, scaling, contrast, and window-state patterns."
+    },
+    {
+      "stack": "avalonia",
+      "supported_versions": "Avalonia version pinned by project",
+      "guidance": "Test rendering parity, keyboard navigation, scaling, and platform-specific gaps."
+    },
+    {
+      "stack": "uno",
+      "supported_versions": "Uno Platform version pinned by project",
+      "guidance": "Record platform divergence and test each supported target rather than inferring parity."
+    },
+    {
+      "stack": "uwp",
+      "supported_versions": "Target Windows SDK pinned by project",
+      "guidance": "Preserve native accessibility, scaling, navigation, and lifecycle behavior."
+    }
   ]
 }

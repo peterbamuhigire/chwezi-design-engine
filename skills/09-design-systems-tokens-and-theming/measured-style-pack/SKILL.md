@@ -154,6 +154,33 @@ from a real reference, not just colour:
    not launder that. Run `scripts/hedge-word-lint.js` against `spec.json`/any generated handoff
    prose and block the pack from shipping until it passes clean.
 
+### Capture budget
+
+Hold to this budget unless the brief states a reason to raise it:
+
+- **Frames:** at most 4 desktop and 2 mobile captures per reference. Raise the cap only with a
+  written reason in `pack.json`.
+- **Run scripts, do not read them.** Call the measurement and lint scripts; read their source only
+  when debugging a failure.
+- **Never read a raw dump whole.** Pixel samples, computed-style dumps and DOM exports are
+  summarised by a script (counts, medians, MAD, top values) and only the summary is read.
+- **Generate derived files by script.** Token files, tables and handoff JSON are produced from the
+  measured summary by script, not typed by hand.
+- **Write the style pack once, then lint it.** Draft `spec.json` prose in one pass and run
+  `scripts/hedge-word-lint.js` on the extracted prose; fix what it flags instead of rewriting the
+  pack from scratch.
+
+### Element-scope mode
+
+When the brief concerns one component (a pricing card, a data table, a navigation bar), measure
+that element only instead of the whole page: crop captures to the component and its immediate
+surround, and report colour, type and spacing statistics for it alone. The same provenance gate
+applies: the reference must trace to human sign-off, or the result is marked provisional. An
+element-scope pack feeds a component token set, never the project's global primitives.
+
+Capture-budget and element-scope ideas adapted from anydesign (uxKero/anydesign, MIT,
+https://github.com/uxKero/anydesign, commit d81bd89); wording and rules are Chwezi's own.
+
 ## Decision Rules
 
 | Condition | Action | Wrong-choice failure |

@@ -191,6 +191,9 @@ Without synchronous access, run an asynchronous critique with deadlines and the 
   feedback frameworks (I-like/I-wish/what-if; problem-not-solution; ladder of feedback) and when to
   use each, the taste-vs-requirement split rule, the single-decider + decision-capture model,
   psychological-safety practices, and the live-vs-async decision.
+- `references/refinement-verbs.md` — ten bounded critique verbs (bolder, quieter, distill, polish,
+  harden, clarify, typeset, layout, colourise, animate) with scope rules, mode readings, done-checks,
+  and their use as DOCX/PPTX review comments.
 - `doctrine/references/creative-selection-and-taste.md` — **the doctrine spine of this skill**: no
   critique without a concrete demo (rule 1); the **algorithm-vs-heuristic** lens that powers the
   taste-vs-requirement split; the **"41 shades of blue"** lesson (don't outsource a taste decision to

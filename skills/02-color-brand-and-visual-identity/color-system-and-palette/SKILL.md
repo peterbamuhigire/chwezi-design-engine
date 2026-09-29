@@ -139,6 +139,19 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - Build ramps perceptually and test real component, document, and data contexts.
 - Stop release when a core pair fails contrast or two states cannot be distinguished.
 
+### Catalogue query
+
+Before inventing a palette, check the catalogue for a contrast-verified starting point:
+`python -X utf8 scripts/design_query.py search "<sector> palette" --domain color`.
+Palette records carry semantic token pairs whose WCAG ratios the validator computed; treat
+them as a starting point to adapt to the brand, and recompute contrast after any change.
+
+The query contract (idea adapted from UI UX Pro Max, MIT, commit 09170ee; paraphrased):
+Keep one dominant intent per query and 2-5 meaningful terms; if the engine abstains, retry
+once with a synonym, then proceed from the references above and say the catalogue abstained.
+Never persist an unverified decision: `design_query.py persist` refuses abstained domains
+unless `--accept-abstention "<who>: <reason>"` is recorded.
+
 ## Decision Rules
 
 | Condition | Decision | Wrong-choice failure |

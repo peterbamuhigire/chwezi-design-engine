@@ -202,6 +202,9 @@ claim that the experience passes the full gate.
   and a per-pattern recipe (dialog, menu, tabs, combobox, accordion, table, live regions).
 - `references/keyboard-and-focus.md` — keyboard interaction maps, focus order, roving tabindex,
   focus management, visible/unobscured focus, and the manual keyboard-audit checklist.
+- `references/native-control-sufficiency.md` — what native date, colour, file, dialog, details and
+  popover controls give, where they fall short, and the evidence required before a custom control
+  replaces one (native-first is the default, not a universal rule).
 - Pairs with `00-cross-cutting-ops-qa-a11y/design-qa-and-pre-launch-review` (final gate) and
   `02-color-brand-and-visual-identity/accessible-color-and-contrast` (palette/contrast).
 - Use `../../../docs/kaizen/phase-1-task-mobile-accessibility-evidence-pack.md` for the

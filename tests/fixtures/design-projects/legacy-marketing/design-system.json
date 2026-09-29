@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "catalog_revision": "2026-09-20-books-and-doctrine-v1",
+  "decision_id": "legacy-marketing-design-system",
+  "brief": {
+    "name": "Legacy marketing",
+    "audience": "prospective members",
+    "job": "explain membership",
+    "outcome": "start an application",
+    "mode": "marketing",
+    "stack": null,
+    "brand": null,
+    "must_have": [],
+    "must_not": []
+  },
+  "dials": {
+    "density": 5,
+    "motion": 4,
+    "variance": 4
+  },
+  "decisions": {},
+  "$comment": "Fixture: a project persisted before M10-10 with the legacy mode value 'marketing'. Never rewritten by tests."
+}

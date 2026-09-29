@@ -76,6 +76,19 @@ engine conformance.
 8. **Re-measure.** Produce the next audit record and an improvement plan targeting 95/100. Stop
    release if required evidence remains unavailable; recover with the narrowest qualified plan.
 
+### Catalogue query
+
+During Observe and Check, query the offline design catalogue for the approved record behind
+a finding: `python -X utf8 scripts/design_query.py search "<finding terms>"` (add
+`--domain ux` for WCAG A/AA records with do/don't and code pairs). Record the
+`calibration_version` and record ID in the audit evidence.
+
+The query contract (idea adapted from UI UX Pro Max, MIT, commit 09170ee; paraphrased):
+Keep one dominant intent per query and 2-5 meaningful terms; if the engine abstains, retry
+once with a synonym, then proceed from the references above and say the catalogue abstained.
+Never persist an unverified decision: `design_query.py persist` refuses abstained domains
+unless `--accept-abstention "<who>: <reason>"` is recorded.
+
 ## Decision Rules
 
 | Condition | Action | Wrong-choice failure |

@@ -125,6 +125,19 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    platform roles with fallbacks. Do not hardcode a fake glass color or shadow token and call it
    Liquid Glass; the platform material remains owned by the OS.
 
+### Catalogue query
+
+When seeding semantic colour and type tokens, pull approved values rather than typing them:
+`python -X utf8 scripts/design_query.py search "<surface> tokens" --domain color` and
+`... --domain typography`. For a whole brief, `design_query.py design-system --brief <json>`
+returns one decision per domain, with abstentions listed rather than filled by guesswork.
+
+The query contract (idea adapted from UI UX Pro Max, MIT, commit 09170ee; paraphrased):
+Keep one dominant intent per query and 2-5 meaningful terms; if the engine abstains, retry
+once with a synonym, then proceed from the references above and say the catalogue abstained.
+Never persist an unverified decision: `design_query.py persist` refuses abstained domains
+unless `--accept-abstention "<who>: <reason>"` is recorded.
+
 ## Decision Rules
 
 | Condition | Action | Wrong-choice failure |

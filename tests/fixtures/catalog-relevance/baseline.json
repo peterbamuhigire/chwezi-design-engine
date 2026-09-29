@@ -1,0 +1,26 @@
+{
+  "label": "provisional regression gate",
+  "note": "Floors = first measured held-out values minus 0.02, rounded down. Not a quality target until a second reviewer re-judges the cases.",
+  "calibration_version": "2026-10-v1",
+  "floors": {
+    "p_at_1": 0.98,
+    "mrr_at_3": 0.98,
+    "ndcg_at_3": 0.94,
+    "negative_abstention": 0.98,
+    "typo_recovery_at_3": 0.98
+  },
+  "held_out_at_baseline": {
+    "cases": 16,
+    "p_at_1": 1.0,
+    "mrr_at_3": 1.0,
+    "ndcg_at_3": 0.9684,
+    "negative_abstention": 1.0,
+    "typo_recovery_at_3": 1.0
+  },
+  "fingerprints_sha256_lf": {
+    "data/design-catalog.json": "56ffd9a4017d782172a9a48cbf348f8313cdc5e931da19c4fc028ec661671a4a",
+    "data/retrieval-calibration.json": "dde500c0fd6a7f89c43a9089306057797bec665d39cb576adb88e046d2a91169",
+    "engine/design_engine/catalog.py": "f595aa7669830ef09c18ed025240f760f2b2fd5eedecd83286a8ac97c6ad6628",
+    "tests/fixtures/catalog-relevance/cases.json": "39b2826397ae5fc57ed2cd6260323ea9e526fcfd9d2c9115225be2562a28cc85"
+  }
+}

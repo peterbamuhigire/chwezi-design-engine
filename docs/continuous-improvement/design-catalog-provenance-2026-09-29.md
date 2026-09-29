@@ -30,3 +30,12 @@ This position was taken by the orchestrator under Peter Bamuhigire's delegated a
 
 - **Review by:** M10-10 (catalogue data work), which governs the attribution line carried in catalogue documentation.
 - **Reversal trigger:** Peter states a firmer provenance (interface followed, or independent design); record it as a new dated entry below.
+
+## Entry 2026-09-29 — M10-10 catalogue data work
+
+M10-10 adopted, in paraphrase, four further ideas from UI UX Pro Max (MIT, commit `09170ee`): BM25
+ranking with per-domain abstention floors, versioned calibration, a graded relevance harness with
+calibration and held-out splits, and the catalogue query contract. The attribution lines are in
+`THIRD_PARTY_NOTICES.md` (section "M10-10 adoptions"). No upstream data row was imported; the
+catalogue records added in M10-10 cite the engine's own human-authority references. The position
+above (provenance undetermined, attributed defensively) is unchanged.

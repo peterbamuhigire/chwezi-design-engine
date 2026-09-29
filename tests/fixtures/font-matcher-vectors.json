@@ -1,0 +1,85 @@
+{
+  "$comment": "Shared banned-font matcher vectors (M10-10-T01). Consumed by tools/slop-detector/test/font-matcher-vectors.test.mjs (hooks/lib/font-matcher.js) and tests/test_design_engine_runtime.py (engine/design_engine/catalog.py FontDoctrine). 'expect' is the bannedEntry kind (hard, prefix, secondary, mono) or null. Rows with 'context' also check the conditional Source Sans rule: heading context bans, body context allows. Lists are read from doctrine/references/ai-slop-banned-fonts.json at test time, so a doctrine change that alters a row must update this file.",
+  "vectors": [
+    {
+      "family": "Inter",
+      "expect": "hard"
+    },
+    {
+      "family": "inter",
+      "expect": "hard"
+    },
+    {
+      "family": "'Open Sans'",
+      "expect": "hard"
+    },
+    {
+      "family": "  Roboto  ",
+      "expect": "hard"
+    },
+    {
+      "family": "Fraunces",
+      "expect": "hard"
+    },
+    {
+      "family": "IBM Plex Sans Condensed",
+      "expect": "hard"
+    },
+    {
+      "family": "IBM Plex Math",
+      "expect": "prefix"
+    },
+    {
+      "family": "Geist",
+      "expect": "hard"
+    },
+    {
+      "family": "Geist Mono",
+      "expect": "prefix"
+    },
+    {
+      "family": "Poppins",
+      "expect": "secondary"
+    },
+    {
+      "family": "Lora",
+      "expect": "secondary"
+    },
+    {
+      "family": "Plus Jakarta Sans",
+      "expect": "secondary"
+    },
+    {
+      "family": "Roboto Mono",
+      "expect": "mono"
+    },
+    {
+      "family": "Public Sans",
+      "expect": null
+    },
+    {
+      "family": "JetBrains Mono",
+      "expect": null
+    },
+    {
+      "family": "Source Serif 4",
+      "expect": null
+    },
+    {
+      "family": "Interstate",
+      "expect": null
+    },
+    {
+      "family": "Source Sans 3",
+      "expect": null,
+      "context": "body",
+      "context_expect": null
+    },
+    {
+      "family": "Source Sans 3",
+      "expect": null,
+      "context": "heading",
+      "context_expect": "conditional"
+    }
+  ]
+}

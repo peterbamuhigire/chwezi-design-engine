@@ -1,0 +1,39 @@
+{
+  "$comment": "Per-domain BM25 floors and query-token coverage minimum for engine/design_engine/catalog.py. Fitted by tests/eval_catalog_relevance.py --calibrate on the calibration split ONLY; held-out cases are never inspected for tuning. Delete this file to fall back to unfloored BM25.",
+  "calibration_version": "2026-10-v1",
+  "method": "lowest per-domain floors keeping calibration negative abstention >= 0.90 with calibration P@1 drop <= 0.05; coverage minimum fixed at the phase default",
+  "coverage_minimum": 0.34,
+  "domain_floors": {
+    "chart": 0.0,
+    "color": 0.0,
+    "google-fonts": 0.0,
+    "gsap": 0.0,
+    "icons": 0.0,
+    "landing": 0.0,
+    "product": 0.0,
+    "react": 0.0,
+    "style": 0.0,
+    "typography": 0.0,
+    "ux": 0.0,
+    "web": 0.0
+  },
+  "fitting_steps": [],
+  "calibration_metrics": {
+    "unfloored": {
+      "cases": 24,
+      "p_at_1": 1.0,
+      "mrr_at_3": 1.0,
+      "ndcg_at_3": 0.914,
+      "negative_abstention": 0.5,
+      "typo_recovery_at_3": 1.0
+    },
+    "floored": {
+      "cases": 24,
+      "p_at_1": 1.0,
+      "mrr_at_3": 1.0,
+      "ndcg_at_3": 0.9073,
+      "negative_abstention": 1.0,
+      "typo_recovery_at_3": 1.0
+    }
+  }
+}

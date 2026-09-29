@@ -85,6 +85,31 @@ WCAG 2.2 deltas:
 - [ ] 3.3.7 Redundant Entry — don't re-ask info already provided in the flow.
 - [ ] 3.3.8 Accessible Authentication (Min) — no cognitive-function test without alternative.
 
+### Code-level checks: platform and good/bad pairs
+
+Rows above that can be checked in code, with the platform each applies to. `all` means web,
+iOS, Android, React Native and Flutter; the snippets are web, so translate them to the native
+equivalent on other platforms. Each row mirrors one catalogue record (`ux-wcag-<sc>`); query it
+with `python -X utf8 scripts/design_query.py search "<check>" --domain ux`.
+
+| Check | SC | Platform | Good | Bad |
+|---|---|---|---|---|
+| Text contrast | 1.4.3 | all | `color: #1F2430; background: #F8F9FB` (14.7:1) | `color: #9AA0A6; background: #FFFFFF` (2.6:1) |
+| Non-text contrast | 1.4.11 | all | `border: 1px solid #6A7080` (4.9:1 on white) | `border: 1px solid #E4E6EA` (1.2:1) |
+| Keyboard | 2.1.1 | all | `<button type="button">Save</button>` | `<div onclick="save()">Save</div>` |
+| Focus order | 2.4.3 | all | source order matches visual order | `tabindex="1"`, `tabindex="2"` reordering |
+| Focus visible | 2.4.7 | all | `:focus-visible { outline: 3px solid #3A5BB8 }` | `:focus { outline: none }` |
+| Name, role, value | 4.1.2 | all | `<button aria-pressed="true">Bold</button>` | `<div class="toggle on">B</div>` |
+| Alt text | 1.1.1 | all | `alt="Revenue rose 12% from Q1 to Q2"` | `<img src="chart.png">` |
+| Reflow | 1.4.10 | web | `repeat(auto-fit, minmax(16rem, 1fr))` | `width: 1200px` |
+| Resize text | 1.4.4 | web | `font-size: 1rem; min-height: 2.75rem` | `font-size: 14px; height: 20px; overflow: hidden` |
+| Pause, stop, hide | 2.2.2 | web | a visible Pause control on auto-play | `setInterval(nextSlide, 4000)` with no control |
+| Flashing | 2.3.1 | all | `animation: fade 600ms ease-out 1` | `animation: blink 100ms steps(2) infinite` |
+| Focus not obscured | 2.4.11 | web | `html { scroll-padding-top: 5rem }` under sticky chrome | sticky header with no scroll padding |
+| Dragging alternative | 2.5.7 | all | Move up / Move down buttons beside drag handles | drag-and-drop as the only way to reorder |
+| Target size | 2.5.8 | all | `min-width: 24px; min-height: 24px` (touch: 44 pt iOS, 48 dp Android) | `width: 16px; height: 16px; padding: 0` |
+| Accessible authentication | 3.3.8 | all | `autocomplete="current-password"`, paste allowed | `onpaste="return false"` |
+
 > Design with **APCA** for real legibility, then **certify with the WCAG 2.x ratios**
 > (APCA is a design aid, not a W3C method; the WCAG 3.0 draft has not chosen a contrast measure). See `wcag-2.2-criteria.md` §Contrast method.
 

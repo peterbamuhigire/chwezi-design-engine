@@ -1,0 +1,385 @@
+{
+  "$comment": "Graded relevance cases for the design catalogue runtime (M10-10-T06). Grades: 2 = ideal, 1 = acceptable, absent = not relevant. Negative cases must abstain. Held-out cases carry inspect_for_tuning=false: they are scored once per calibration version and never used to fit floors or weights (policy idea adapted from UI UX Pro Max, MIT, commit 09170ee; paraphrased). Judged by the M10-10 executor on 29 September 2026; a second reviewer's re-judgement is still open, so the baseline is a provisional regression gate, not a quality target.",
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "id": "c01",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "statutory report typography",
+      "domain": "typography",
+      "judgements": {
+        "type-01-source-serif-public-sans": 2,
+        "type-01-source-serif-public-sans-mono": 1,
+        "type-01-spectral-public-sans": 1
+      }
+    },
+    {
+      "id": "c02",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "dashboard typography",
+      "judgements": {
+        "type-04-public-sans-tabular-mono": 2,
+        "type-04-source-serif-public-sans-mono": 1
+      }
+    },
+    {
+      "id": "c03",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "whitepaper typography",
+      "judgements": {
+        "type-02-andada-source-serif": 2,
+        "type-02-libre-caslon-public-sans": 1
+      }
+    },
+    {
+      "id": "c04",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "saas landing page fonts",
+      "judgements": {
+        "type-03-bricolage-hanken": 2,
+        "type-03-bricolage-public-sans": 1,
+        "type-03-cabinet-hanken": 1
+      }
+    },
+    {
+      "id": "c05",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "target size touch",
+      "domain": "ux",
+      "judgements": {
+        "ux-wcag-2-5-8": 2
+      }
+    },
+    {
+      "id": "c06",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "focus visible outline",
+      "judgements": {
+        "ux-wcag-2-4-7": 2,
+        "ux-wcag-2-4-11": 1,
+        "ux-wcag-1-4-11": 1
+      }
+    },
+    {
+      "id": "c07",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "keyboard operable controls",
+      "judgements": {
+        "ux-wcag-2-1-1": 2,
+        "ux-wcag-4-1-2": 1
+      }
+    },
+    {
+      "id": "c08",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "palette with dark mode tokens",
+      "judgements": {
+        "color-palette-maduuka-institutional": 2,
+        "color-semantic-state": 1
+      }
+    },
+    {
+      "id": "c09",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "usability research retest",
+      "judgements": {
+        "ux-observe-fix-retest": 2
+      }
+    },
+    {
+      "id": "c10",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "reduced motion fallback",
+      "judgements": {
+        "gsap-reduced-motion": 2,
+        "ux-wcag-2-2-2": 1,
+        "ux-wcag-2-3-1": 1
+      }
+    },
+    {
+      "id": "c11",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "icon label pairing",
+      "judgements": {
+        "icons-semantic-safe": 2
+      }
+    },
+    {
+      "id": "c12",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "healthcare service typography",
+      "judgements": {
+        "type-05-alegreya-atkinson": 2,
+        "type-05-atkinson-public-sans": 1
+      }
+    },
+    {
+      "id": "c13",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "signature script accent",
+      "judgements": {
+        "type-07-great-vibes-theano-public-sans": 2,
+        "type-07-sacramento-bodoni-public-sans": 1,
+        "type-07-caveat-alegreya-atkinson": 1,
+        "type-07-kalam-alegreya-sans": 1
+      }
+    },
+    {
+      "id": "c14",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "text contrast minimum",
+      "judgements": {
+        "ux-wcag-1-4-3": 2,
+        "ux-wcag-1-4-11": 1
+      }
+    },
+    {
+      "id": "c15",
+      "split": "calibration",
+      "kind": "positive",
+      "query": "second brand green palette",
+      "judgements": {
+        "color-palette-kesilex-green": 2,
+        "color-palette-forest-monochrome": 1
+      }
+    },
+    {
+      "id": "c16",
+      "split": "calibration",
+      "kind": "negative",
+      "query": "kubernetes cluster autoscaling",
+      "judgements": {}
+    },
+    {
+      "id": "c17",
+      "split": "calibration",
+      "kind": "negative",
+      "query": "chart of accounts ifrs",
+      "judgements": {}
+    },
+    {
+      "id": "c18",
+      "split": "calibration",
+      "kind": "negative",
+      "query": "mortgage interest rate calculator",
+      "judgements": {}
+    },
+    {
+      "id": "c19",
+      "split": "calibration",
+      "kind": "negative",
+      "query": "football league fixtures",
+      "judgements": {}
+    },
+    {
+      "id": "c20",
+      "split": "calibration",
+      "kind": "negative",
+      "query": "colour of the sky at dusk",
+      "judgements": {}
+    },
+    {
+      "id": "c21",
+      "split": "calibration",
+      "kind": "negative",
+      "query": "react to customer complaint email",
+      "judgements": {}
+    },
+    {
+      "id": "c22",
+      "split": "calibration",
+      "kind": "typo",
+      "query": "dashbord typography",
+      "judgements": {
+        "type-04-public-sans-tabular-mono": 2
+      }
+    },
+    {
+      "id": "c23",
+      "split": "calibration",
+      "kind": "typo",
+      "query": "targt size",
+      "judgements": {
+        "ux-wcag-2-5-8": 2
+      }
+    },
+    {
+      "id": "c24",
+      "split": "calibration",
+      "kind": "typo",
+      "query": "whitepapr typography",
+      "judgements": {
+        "type-02-andada-source-serif": 2,
+        "type-02-libre-caslon-public-sans": 1
+      }
+    },
+    {
+      "id": "h01",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "policy brief typography",
+      "judgements": {
+        "type-01-spectral-public-sans": 2,
+        "type-01-source-serif-public-sans": 1
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h02",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "api documentation fonts",
+      "judgements": {
+        "type-04-source-serif-public-sans-mono": 2,
+        "type-04-jetbrains-mono-public-sans": 1
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h03",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "luxury poster display type",
+      "judgements": {
+        "type-06-bodoni-moda-public-sans": 2,
+        "type-07-sacramento-bodoni-public-sans": 1
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h04",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "drag reorder alternative",
+      "judgements": {
+        "ux-wcag-2-5-7": 2
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h05",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "password paste login",
+      "judgements": {
+        "ux-wcag-3-3-8": 2
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h06",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "alt text for images",
+      "judgements": {
+        "ux-wcag-1-1-1": 2
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h07",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "onboarding learning typography",
+      "judgements": {
+        "type-05-bricolage-lexend": 2
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h08",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "pause carousel autoplay",
+      "judgements": {
+        "ux-wcag-2-2-2": 2
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h09",
+      "split": "held_out",
+      "kind": "positive",
+      "query": "forest green palette",
+      "judgements": {
+        "color-palette-forest-monochrome": 2,
+        "color-palette-kesilex-green": 1
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h10",
+      "split": "held_out",
+      "kind": "negative",
+      "query": "quantum telescope",
+      "judgements": {},
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h11",
+      "split": "held_out",
+      "kind": "negative",
+      "query": "tax return deadline",
+      "judgements": {},
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h12",
+      "split": "held_out",
+      "kind": "negative",
+      "query": "recipe for banana bread",
+      "judgements": {},
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h13",
+      "split": "held_out",
+      "kind": "negative",
+      "query": "vpn firewall rules",
+      "judgements": {},
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h14",
+      "split": "held_out",
+      "kind": "negative",
+      "query": "invoice payment terms",
+      "judgements": {},
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h15",
+      "split": "held_out",
+      "kind": "typo",
+      "query": "pause carousl autoplay",
+      "judgements": {
+        "ux-wcag-2-2-2": 2
+      },
+      "inspect_for_tuning": false
+    },
+    {
+      "id": "h16",
+      "split": "held_out",
+      "kind": "typo",
+      "query": "pasword paste login",
+      "judgements": {
+        "ux-wcag-3-3-8": 2
+      },
+      "inspect_for_tuning": false
+    }
+  ]
+}

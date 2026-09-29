@@ -454,6 +454,7 @@ Apply this checklist to every data visualisation before sharing:
 - Lidwell, Holden, Butler. *Universal Principles of Design.* Rockport, 2010.
 - Ware, Colin. *Information Visualization: Perception for Design.* Morgan Kaufmann, 2004.
 - Atkinson, Cliff. *Beyond Bullet Points.* Microsoft Press, 2011.
+- `references/relationship-diagrams-that-teach.md` — layered before force layouts, node caps, cluster captions, matrix alternatives for dependency and architecture graphs.
 ---
 
 ## Responsive charts on narrow viewports
