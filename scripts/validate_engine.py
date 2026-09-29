@@ -101,10 +101,16 @@ def scan_book_extractions(root: Path) -> list[str]:
     return sorted(set(violations))
 
 
-def scan(root: Path) -> dict:
+# Report-only size warning beside the 500-line cap (M10-04-T07, Caveman CV-06).
+# Size warnings never enter failure_counts, so baselines and exit status are unchanged.
+DEFAULT_MAX_SKILL_BYTES = 20480
+
+
+def scan(root: Path, max_skill_bytes: int = DEFAULT_MAX_SKILL_BYTES) -> dict:
     skill_files = [p for p in root.glob("skills/**/SKILL.md") if "_TEMPLATE" not in p.parts]
     findings: list[dict] = []
     names: list[str] = []
+    size_warnings: list[dict] = []
 
     for path in sorted(skill_files):
         text = path.read_text(encoding="utf-8")
@@ -158,6 +164,9 @@ def scan(root: Path) -> dict:
                 break
         if len(text.splitlines()) > 500:
             failed.append("line_limit")
+        size = path.stat().st_size
+        if size > max_skill_bytes:
+            size_warnings.append({"path": path.relative_to(root).as_posix(), "bytes": size, "lines": len(text.splitlines())})
         if any(marker in text for marker in ENCODING_NOISE):
             failed.append("encoding_noise")
         if not (path.parent / "examples").is_dir():
@@ -176,6 +185,8 @@ def scan(root: Path) -> dict:
         "missing_font_categories": missing_fonts,
         "book_extraction_violations": extraction_violations,
         "findings": [item for item in findings if item["failed"]],
+        "size_warnings": size_warnings,
+        "max_skill_bytes": max_skill_bytes,
     }
 
 
@@ -184,8 +195,10 @@ def main() -> int:
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--baseline", type=Path)
     parser.add_argument("--json", action="store_true")
+    parser.add_argument("--max-skill-bytes", type=int, default=DEFAULT_MAX_SKILL_BYTES,
+                        help="report-only SKILL.md size warning threshold in bytes; never changes the exit status")
     args = parser.parse_args()
-    result = scan(args.root.resolve())
+    result = scan(args.root.resolve(), args.max_skill_bytes)
     regressions: dict[str, tuple[int, int]] = {}
     if args.baseline:
         baseline = json.loads(args.baseline.read_text(encoding="utf-8"))
@@ -208,6 +221,8 @@ def main() -> int:
             print(f"REGRESSION {key}: {values[0]} -> {values[1]}")
         for item in result["book_extraction_violations"]:
             print(f"BOOK-EXTRACTION VIOLATION {item}")
+        for item in result["size_warnings"]:
+            print(f"WARN skill-bytes {item['path']}: {item['bytes']} bytes > {result['max_skill_bytes']} ({item['lines']} lines; report-only)")
     return 1 if (
         regressions
         or result["duplicate_names"]

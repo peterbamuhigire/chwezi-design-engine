@@ -22,6 +22,14 @@ and we note the convergence risk on any the cookbook also happens to push. Corro
 Vercel/shadcn defaults and designer commentary; verified via the digital-research engine's
 source-verification pass (2026-06-21).
 
+Diagram tooling adds a second, non-AI default of the same kind: Mermaid's default theme font stack
+`trebuchet ms, verdana, arial, sans-serif` (mermaid-js `develop`, `theme-default.js` line 36,
+accessed 29 Sep 2026) is what a rendered figure falls back to when no face is set. It is a
+tool default and is recorded as **evidence only** (M10-07, AR-12); Trebuchet MS and Verdana are
+not on the machine-readable ban list, and adding them awaits Peter's ratification. Diagram
+typography is set in
+`skills/13-presentations-and-documents/docx-report-and-document-formatting/references/diagram-visual-standards.md`.
+
 > **Label every ban by its failure mode — they are not all the same.** Four distinct reasons:
 > **[AI]** = genuine AI-ecosystem default / tell · **[POP]** = generic-popular & overused (reads
 > as "no design," predates AI) · **[SYS]** = lazy system default · **[HOUSE]** = house ruling by
@@ -34,23 +42,32 @@ source-verification pass (2026-06-21).
 
 ## 1. Hard ban (primary offenders)
 
+<!-- rule:font.ban.hard.inter -->
 - **Inter** — **[AI]** the single strongest tell; "the Helvetica of the LLM era"; shadcn's
   historic `--font-sans` default. Banned outright.
+<!-- rule:font.ban.hard.geist -->
 - **Geist** — **[AI]** *added 2026-06-21.* Vercel's own font, now the **v0 / shadcn / Vercel
   template default that replaced Inter** — the modern successor AI tell. Banned outright.
+<!-- rule:font.ban.hard.roboto -->
 - **Roboto** — **[POP/AI]** on the Cookbook list; also the #1 Google Font and Android/Material
   system face. Banned.
+<!-- rule:font.ban.hard.open-sans -->
 - **Open Sans** — **[POP]** Cookbook "never use"; ~#2 Google Font. Banned.
+<!-- rule:font.ban.hard.lato -->
 - **Lato** — **[POP]** Cookbook "never use"; ~#3 Google Font. Banned.
+<!-- rule:font.ban.hard.arial -->
 - **Arial** — **[SYS]** "lazy default," reads as no-design. Banned as a deliberate choice.
+<!-- rule:font.ban.hard.fraunces -->
 - **Fraunces** — **[HOUSE]** *added 2026-09-29.* The "soft, wonky" variable serif has become
   the reflex "I avoided Inter" display serif in generated editorial and landing work; flagged by
   the pbakaus/impeccable deterministic detector. Banned outright — as display, heading and body.
+<!-- rule:font.ban.hard.ibm-plex -->
 - **IBM Plex (the entire superfamily)** — **[HOUSE]** *added 2026-09-29.* IBM Plex Sans, Serif,
   Mono, Sans Condensed and every script companion (Sans Arabic, Devanagari, Thai, Thai Looped,
   Hebrew, KR, JP, and any later cut). Listed among the reflex / AI-default fonts by
   pbakaus/impeccable; it had become the engine's own "safe technical" reflex. Banned outright;
   the gate matches any family name beginning "IBM Plex".
+<!-- rule:font.ban.hard.bare-system-stack -->
 - **Bare system-font stacks used alone** — **[SYS]** e.g. `-apple-system, BlinkMacSystemFont,
   "Segoe UI", sans-serif` with no deliberate face layered on top. (Note: a *deliberate,
   documented* system-font fallback chain is different — see `system-font-fallbacks.md`.)
@@ -60,20 +77,28 @@ source-verification pass (2026-06-21).
 The fonts AI reaches for *after* being told to avoid the first list. Banned as a default reflex
 for Chwezi work — but note the honest evidence label:
 
+<!-- rule:font.ban.secondary.space-grotesk -->
 - **Space Grotesk** — **[AI]** named by the Claude Cookbook as *the* convergence trap. The most
   common "escape attempt." Do **not** treat it as the safe distinctive choice.
+<!-- rule:font.ban.secondary.instrument-serif -->
 - **Instrument Serif** — **[AI]** *added 2026-06-21.* Repeatedly named as the AI serif-accent
   reflex. Avoid as the default serif accent.
+<!-- rule:font.ban.secondary.poppins -->
 - **Poppins** — **[POP]** *generic-popular cliché, weak AI-specific evidence.* Kept on the ban
   list as a Chwezi house rule (overused), but the honest reason is "modern-startup cliché," not
   "AI tell."
+<!-- rule:font.ban.secondary.montserrat -->
 - **Montserrat** — **[POP]** ~#4 Google Font; popular human default. Banned as overused, not as
   an AI signature.
+<!-- rule:font.ban.secondary.nunito -->
+<!-- rule:font.ban.secondary.nunito-sans -->
 - **Nunito / Nunito Sans** — **[POP]** no direct AI-tell evidence found; banned as a Chwezi
   house preference (rounded-friendly cliché), not on evidence grounds.
 
 ## 3. Conditional — Source Sans 3 (paired body only)
 
+<!-- rule:font.conditional.source-sans-3 -->
+<!-- rule:font.conditional.source-sans-pro -->
 - **Source Sans 3 / Source Sans Pro** — a competent, human-designed text face (Adobe / Paul D.
   Hunt). It is **overused as a standalone "neutral upgrade,"** so it is **banned as a primary /
   display / standalone face** but **permitted as a quiet paired body face** beneath a
@@ -91,6 +116,7 @@ client deliverable shipped under the Chwezi Core Systems name.
 
 ## 5. Edge cases
 
+<!-- rule:font.ban.mono.roboto-mono -->
 - **Code/monospace** in a technical artifact may need a monospace face — use an approved one
   (JetBrains Mono, Fira Code), never Roboto Mono or IBM Plex Mono as a *design* choice.
 - **Non-Latin script coverage** that previously leaned on an IBM Plex script companion (e.g.
