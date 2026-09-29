@@ -158,7 +158,7 @@ accents, and quiet body/UI workhorses.
 
 Design skills live **only** in this engine. Each domain engine carries a one-line trigger
 block (see `integration/integration-plan.md`) that says: *"Any typography / UI / visual
-formatting / colour / layout work → consult `C:\wamp64\www\design-system-skills` (start at
+formatting / colour / layout work → consult `C:\wamp64\www\chwezi-design-engine` (start at
 its `README.md`), IN ADDITION to the active engine."* Nothing is mirrored — this keeps each
 domain engine's skill count down and prevents drift. The engine is cloned on every device the
 user works on, so the reference always resolves.

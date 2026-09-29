@@ -1,6 +1,6 @@
 schema_version: "1.0"
-engine_id: design-system-skills
-display_name: Design System Skills
+engine_id: chwezi-design-engine
+display_name: Chwezi Design Engine
 contract_version: "1.0"
 version: "1.1.0"
 router:

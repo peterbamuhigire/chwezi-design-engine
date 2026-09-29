@@ -1,6 +1,6 @@
-# Design System Skills
+# Chwezi Design Engine
 
-Design System Skills is the Chwezi cross-cutting engine for the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience. It activates alongside whichever domain engine owns the content, and it governs how that content looks and behaves. Its 101 skills cover selection, specification, production handoff and review, under a written anti-slop doctrine. That doctrine has three working parts. The first is a machine-readable banned-font list (`doctrine/references/ai-slop-banned-fonts.json`), enforced by a write-time gate: a hard ban on Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces and the whole IBM Plex superfamily; a secondary ban on seventeen further faces, including Space Grotesk, Poppins, Montserrat, DM Sans, Playfair Display and Lora; and Source Sans 3 allowed only as a paired body face. The second is `chwezi-slop`, a deterministic detector that checks source files and rendered pages against a rule registry. The third is `design_query`, an offline catalogue with calibrated search that declines to answer when no record fits the query.
+Chwezi Design Engine is the Chwezi cross-cutting engine for the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience. It activates alongside whichever domain engine owns the content, and it governs how that content looks and behaves. Its 101 skills cover selection, specification, production handoff and review, under a written anti-slop doctrine. That doctrine has three working parts. The first is a machine-readable banned-font list (`doctrine/references/ai-slop-banned-fonts.json`), enforced by a write-time gate: a hard ban on Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces and the whole IBM Plex superfamily; a secondary ban on seventeen further faces, including Space Grotesk, Poppins, Montserrat, DM Sans, Playfair Display and Lora; and Source Sans 3 allowed only as a paired body face. The second is `chwezi-slop`, a deterministic detector that checks source files and rendered pages against a rule registry. The third is `design_query`, an offline catalogue with calibrated search that declines to answer when no record fits the query.
 
 The engine works to WCAG 2.2 AA (ISO/IEC 40500:2025) and the WAI-ARIA Authoring Practices, PDF/UA-2 (ISO 14289-2:2024), ISO 9241-161:2025, Google's Core Web Vitals thresholds, Apple's Human Interface Guidelines and Material 3, the SIL Open Font License 1.1 for font embedding, and the ISO 12647 and PDF/X conventions for print. Its outputs include design directions and art-direction boards, brand identity and style guides, colour systems and design-token packs, typeface selections with licence checks, interface and interaction specifications, handoff redlines with acceptance criteria, formatting specifications for DOCX, PDF, PPTX and XLSX, print specifications, dashboards and infographics, recorded UI demo videos, and severity-rated audits (design, WCAG 2.2, anti-slop and whole-product) with remediation plans. It serves designers, product and engineering teams, agencies, and the other Chwezi engines whenever their deliverables need a considered visual layer. Every font approval traces to human design authority. AI-vendor sources are admitted only as evidence for a ban.
 
@@ -8,11 +8,11 @@ The engine works to WCAG 2.2 AA (ISO/IEC 40500:2025) and the WAI-ARIA Authoring 
 
 **Prerequisites.** Node.js 18 or later runs the clone installer, the hooks and the `chwezi-slop` detector. CI uses Node 24. Python 3.11 or later runs the validators, `design_query` and the Codex model-policy helper; CI uses Python 3.12, with `PyYAML` and `pytest`. The detector's browser tier uses the consuming project's own locked Playwright and installs nothing itself.
 
-**Claude Code plugin.** The marketplace is `chwezi-design-system` and the plugin is `design-system` (version 1.1.0, defined in `.claude-plugin/`):
+**Claude Code plugin.** The marketplace is `chwezi-design-engine` and the plugin is `design-engine` (version 1.1.0, defined in `.claude-plugin/`):
 
 ```text
-/plugin marketplace add https://github.com/peterbamuhigire/design-system-skills
-/plugin install design-system@chwezi-design-system
+/plugin marketplace add https://github.com/peterbamuhigire/chwezi-design-engine
+/plugin install design-engine@chwezi-design-engine
 ```
 
 The plugin registers all 101 skills and the enforcement hooks in `hooks/hooks.json`: the banned-font gate, the token-file gate, the destructive-command gate, and the `chwezi-slop` immediate and deep passes. Setting `hooks_enabled` to `false` in the plugin's user configuration turns the hooks off and keeps the skills.
@@ -20,8 +20,8 @@ The plugin registers all 101 skills and the enforcement hooks in `hooks/hooks.js
 **Clone installer.** `install.sh` and `install.ps1` delegate to `scripts/install-engine.js`. The default scope is the user (`~/.claude`); `--scope project` installs into `.claude` under the current directory. The installer also accepts `--dry-run` and `--json`, and `scripts/install-engine.js` provides `uninstall`, `doctor` and `list-installed`.
 
 ```text
-git clone https://github.com/peterbamuhigire/design-system-skills
-cd design-system-skills
+git clone https://github.com/peterbamuhigire/chwezi-design-engine
+cd chwezi-design-engine
 ./install.sh --scope project        # macOS, Linux, Git Bash
 .\install.ps1 --scope project       # Windows PowerShell
 ```

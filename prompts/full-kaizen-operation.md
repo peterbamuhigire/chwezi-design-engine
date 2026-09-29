@@ -20,7 +20,7 @@ Run a full design Kaizen operation on this product. Judge the real rendered expe
 
 ### Routes and authority
 
-Read project instructions. Resolve Design System Skills and read `AGENTS.md`, `README.md`, `doctrine/design-doctrine.md`, glob the live `skills/**/SKILL.md` catalogue, then read only the matched design skills plus `skills/00-cross-cutting-ops-qa-a11y/design-engine-and-product-improvement/SKILL.md` and its Kaizen audit contract. Route content/structure to the owning domain engine and current claims to Digital Research.
+Read project instructions. Resolve Chwezi Design Engine and read `AGENTS.md`, `README.md`, `doctrine/design-doctrine.md`, glob the live `skills/**/SKILL.md` catalogue, then read only the matched design skills plus `skills/00-cross-cutting-ops-qa-a11y/design-engine-and-product-improvement/SKILL.md` and its Kaizen audit contract. Route content/structure to the owning domain engine and current claims to Digital Research.
 
 Before producing visual changes, state the chosen primary typeface and the product-specific reason. Do not use a banned AI-slop primary font: Inter, Geist, Roboto, Arial, Open Sans, Lato, Space Grotesk, or a bare system stack.
 

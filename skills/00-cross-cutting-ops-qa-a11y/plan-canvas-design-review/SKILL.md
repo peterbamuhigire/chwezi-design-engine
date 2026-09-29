@@ -60,30 +60,30 @@ the reviewer's browser with an annotation layer injected, and blocks the agent o
 maintained copy.** That work belongs to whichever engine vendors it first and everyone else
 should call into it.
 
-**Update (2026-09-20, later the same day): the CLI has since been vendored in `srs-skills`.**
-This was checked directly, not assumed — `C:\wamp64\www\srs-skills\scripts\plan-canvas.js` now
-exists, with the full implementation under `srs-skills/scripts/lib/plan-canvas/` and both
-hooks (`plan-canvas-pending.js`, `plan-canvas-sessions.js`) wired into `srs-skills/hooks/hooks.json`.
+**Update (2026-09-20, later the same day): the CLI has since been vendored in `chwezi-sdlc-documentation`.**
+This was checked directly, not assumed — `C:\wamp64\www\chwezi-sdlc-documentation\scripts\plan-canvas.js` now
+exists, with the full implementation under `chwezi-sdlc-documentation/scripts/lib/plan-canvas/` and both
+hooks (`plan-canvas-pending.js`, `plan-canvas-sessions.js`) wired into `chwezi-sdlc-documentation/hooks/hooks.json`.
 It is real, tested infrastructure, not a stub: all 128 of ECC's own ported tests pass there
 (markdown 64/64, sessions 16/16, server integration 28/28, CLI+server e2e 9/9, Stop-hook 7/7,
 SessionStart-hook 4/4), independently re-run and confirmed rather than taken on trust.
 
-**This engine (`design-system-skills`) still has no `scripts/plan-canvas.js` of its own — by
+**This engine (`chwezi-design-engine`) still has no `scripts/plan-canvas.js` of its own — by
 design.** Per the "whichever engine finishes first is canonical" rule stated when this SKILL.md
-was first written, `srs-skills` finished first. **Reuse that implementation rather than vendoring
+was first written, `chwezi-sdlc-documentation` finished first. **Reuse that implementation rather than vendoring
 a second copy of the same server.** From this engine's working directory:
 
 ```bash
-node ../srs-skills/scripts/plan-canvas.js open <file>
-node ../srs-skills/scripts/plan-canvas.js await <file>
+node ../chwezi-sdlc-documentation/scripts/plan-canvas.js open <file>
+node ../chwezi-sdlc-documentation/scripts/plan-canvas.js await <file>
 ```
 
-(adjust the relative path to wherever `srs-skills` is checked out locally; the two repos are
+(adjust the relative path to wherever `chwezi-sdlc-documentation` is checked out locally; the two repos are
 independent, so there is no guarantee of a fixed relative position — resolve the path explicitly
 rather than assuming sibling directories, the same caution the installation-and-distribution
 report raises about the suite marketplace's relative `source` paths). If this engine is ever
-packaged and distributed standalone without `srs-skills` present, vendor a copy at that point
-using the same port process `srs-skills` went through — do not assume the dependency is always
+packaged and distributed standalone without `chwezi-sdlc-documentation` present, vendor a copy at that point
+using the same port process `chwezi-sdlc-documentation` went through — do not assume the dependency is always
 available.
 
 **Historical note, kept for anyone reading the edit history:** earlier the same day, before
@@ -93,27 +93,27 @@ discipline this whole Kaizen operation has followed — not because the informat
 `scripts/plan-canvas.js`, or a shared location `chwezi-engine-agents` ends up owning), point
 this skill's `ecc-plan-canvas` invocations at that single vendored copy rather than copying the
 server/session/rendering code a second time here — re-check
-`C:\wamp64\www\srs-skills\scripts\plan-canvas.js` before vendoring, since whichever engine
+`C:\wamp64\www\chwezi-sdlc-documentation\scripts\plan-canvas.js` before vendoring, since whichever engine
 finishes first should be the canonical source the other reuses. Until then, this skill
 documents the intended workflow; the mechanism itself is not yet runnable in this engine.
 
-## How It Works (via the `srs-skills`-vendored CLI — see the note above)
+## How It Works (via the `chwezi-sdlc-documentation`-vendored CLI — see the note above)
 
 ```bash
 # 1. Open the design artefact in the reviewer's browser (returns immediately)
-node ../srs-skills/scripts/plan-canvas.js open design-preview.html
+node ../chwezi-sdlc-documentation/scripts/plan-canvas.js open design-preview.html
 # or a design-audit report, a screen comp exported as HTML, or a QA checklist:
-node ../srs-skills/scripts/plan-canvas.js open reports/design-audit-2026-09-20.md
+node ../chwezi-sdlc-documentation/scripts/plan-canvas.js open reports/design-audit-2026-09-20.md
 
 # 2. Block until the reviewer responds. Run this as a background task (Bash
 #    run_in_background: true in Claude Code) — see "Stay listening" below —
 #    and re-run if interrupted; queued feedback is never lost.
-node ../srs-skills/scripts/plan-canvas.js await design-preview.html
+node ../chwezi-sdlc-documentation/scripts/plan-canvas.js await design-preview.html
 ```
 
 (`ecc-plan-canvas` below is the conceptual command name from the upstream ECC skill this was
 adapted from — it is not an installed binary in this estate; substitute the real
-`node ../srs-skills/scripts/plan-canvas.js` invocation shown above wherever it appears.)
+`node ../chwezi-sdlc-documentation/scripts/plan-canvas.js` invocation shown above wherever it appears.)
 
 ### Stay listening, or the reviewer talks to an empty chair
 
@@ -128,11 +128,11 @@ the harness eventually time-limits.
 
 Two backstops exist, neither an excuse to skip the above:
 
-- `node ../srs-skills/scripts/plan-canvas.js pending` lists feedback queued with no listener.
+- `node ../chwezi-sdlc-documentation/scripts/plan-canvas.js pending` lists feedback queued with no listener.
 - A Stop hook blocks the agent's turn from ending while canvas feedback is undelivered — already
-  wired and tested in `srs-skills/hooks/hooks.json` (`plan-canvas-pending.js`, 7/7 tests passing).
+  wired and tested in `chwezi-sdlc-documentation/hooks/hooks.json` (`plan-canvas-pending.js`, 7/7 tests passing).
   If this engine's own sessions need the same backstop, wire an equivalent entry into this
-  engine's `hooks/hooks.json` pointing at the reused `srs-skills` script, the same way
+  engine's `hooks/hooks.json` pointing at the reused `chwezi-sdlc-documentation` script, the same way
   `hooks/destructive-bash-gate.js` and `hooks/token-file-gate.js` are already wired here — this
   has not been done yet in this engine and is a reasonable next Kaizen item if this skill sees
   real use.
@@ -164,13 +164,13 @@ Two backstops exist, neither an excuse to skip the above:
 **Always respond in the canvas**, then keep listening:
 
 ```bash
-node ../srs-skills/scripts/plan-canvas.js await <file> --reply "Swapped the CTA to the accent token. Take a look."
+node ../chwezi-sdlc-documentation/scripts/plan-canvas.js await <file> --reply "Swapped the CTA to the accent token. Take a look."
 ```
 
 Silence in the chat panel is indistinguishable from a broken canvas to the reviewer — answer
 there, not only in a terminal summary the reviewer never sees.
 
-**End** when review concludes: `node ../srs-skills/scripts/plan-canvas.js end <file>`.
+**End** when review concludes: `node ../chwezi-sdlc-documentation/scripts/plan-canvas.js end <file>`.
 
 ## Why this engine needs it specifically
 
@@ -301,7 +301,7 @@ convert a missing listener into approval.
 
 - ECC original: `skills/plan-canvas/SKILL.md`, `docs/design/plan-canvas.md`
   (`C:\Users\Peter\Downloads\ECC-main`).
-- Sibling adaptation: `C:\wamp64\www\srs-skills\09-governance-compliance\plan-canvas\SKILL.md`
+- Sibling adaptation: `C:\wamp64\www\chwezi-sdlc-documentation\09-governance-compliance\plan-canvas\SKILL.md`
   — read for the governance-artefact framing pattern; this skill is written separately because
   the design-review framing (annotate a rendered element, not a document clause) differs from
   SRS's clause-level review.

@@ -1,4 +1,4 @@
-# AGENTS.md — design-system-skills
+# AGENTS.md — chwezi-design-engine
 
 ## Codex-only model setup and Kaizen review
 

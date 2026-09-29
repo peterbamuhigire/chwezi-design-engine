@@ -216,8 +216,8 @@ tests but leave fidelity results unverified.
   acceptance criteria).
 - Cross-engine handoffs (resolve via the global engine routing table): measurable UX requirements
   (contrast, target size, response time, breakpoints, assistive technologies) go to
-  `srs-skills/03-design-documentation/05-ux-specification/SKILL.md` and form and content rules to
-  `srs-skills/03-design-documentation/09-ux-content-and-form-specification/SKILL.md`; component
+  `chwezi-sdlc-documentation/03-design-documentation/05-ux-specification/SKILL.md` and form and content rules to
+  `chwezi-sdlc-documentation/03-design-documentation/09-ux-content-and-form-specification/SKILL.md`; component
   code, ARIA wiring and token pipelines go to
   `chwezi-dev-engine/skills/frontend-ux/frontend-architecture/SKILL.md`, and automated
   state and accessibility checks to `chwezi-dev-engine/skills/sdlc-meta/advanced-testing-strategy/SKILL.md`.

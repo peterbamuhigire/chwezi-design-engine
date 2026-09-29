@@ -1,4 +1,4 @@
-# Adding skills to design-system-skills (flawless auto-pickup)
+# Adding skills to chwezi-design-engine (flawless auto-pickup)
 
 This engine is **self-indexing**: consumers discover skills by globbing `skills/**/SKILL.md`
 fresh and reading frontmatter. There is **no registry, index file, or router list to update.**

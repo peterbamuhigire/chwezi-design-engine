@@ -1,4 +1,4 @@
-# Integration Plan — design-system-skills
+# Integration Plan — chwezi-design-engine
 
 How the domain engines connect to this one, and the log of design skills migrated in.
 
@@ -15,28 +15,28 @@ Add this to the routing/engine-table section of each consumer engine. Adapt the 
 if the engine lives elsewhere on a given device.
 
 ```markdown
-<!-- design-system-skills:trigger v3 -->
+<!-- chwezi-design-engine:trigger v4 -->
 ### Design / typography / UI/UX (cross-cutting — consult IN ADDITION)
 
 Any work touching how an artifact LOOKS — font/typeface choice, type scale, colour, layout/grid,
 visual identity, web/desktop/mobile UI screens, or the visual formatting of a DOCX/PPTX/PDF/XLSX
-— routes to the **`design-system-skills`** engine, the single home for ALL design/UI/UX skills
+— routes to the **`chwezi-design-engine`** engine, the single home for ALL design/UI/UX skills
 and the anti-AI-slop doctrine.
 
 **Resolve its location on THIS device from the active runner's global engine-routing table or
 `AGENTS.md`** — never assume an absolute path; it varies per machine. Then read its
 `README.md` → `doctrine/design-doctrine.md` → glob `skills/**/SKILL.md` fresh and route by
 frontmatter (read SKILL.md directly, not via the Skill tool). Content and structure stay in THIS
-engine; presentation comes from design-system-skills. Hard rule: never use a banned AI-slop font
+engine; presentation comes from chwezi-design-engine. Hard rule: never use a banned AI-slop font
 as primary type — hard ban: Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces, IBM Plex (all
 faces); secondary ban: Space Grotesk, Instrument Serif, Instrument Sans, Poppins, Montserrat, Nunito, Nunito Sans, Newsreader, Cormorant (all cuts), Crimson Pro, Plus Jakarta Sans, DM Sans, Outfit, Playfair Display, Lora, Space Mono;
 Roboto Mono and IBM Plex Mono are banned as monospace choices; Source Sans 3 only as a paired
 body face; no bare system stacks alone. State the chosen typeface and reason before producing
 any artifact.
-<!-- /design-system-skills:trigger -->
+<!-- /chwezi-design-engine:trigger -->
 ```
 
-The `<!-- design-system-skills:trigger v2 -->` marker makes the block idempotent (re-runs detect
+The `<!-- chwezi-design-engine:trigger v4 -->` marker makes the block idempotent (re-runs detect
 it) and lets a future version be found and replaced cleanly. The canonical text is
 `integration/trigger-block.md`; every engine copy must be byte-identical to it.
 
@@ -47,13 +47,16 @@ Version history:
   ("the active runner's global engine-routing table or `AGENTS.md`") first used by linux-skills,
   so the block no longer names a Claude-specific path. Engine-specific notes (for example the
   chwezi-dev-engine migration status) sit after the closing marker, never inside the block.
+- `v3` (commit `7a2ab6b`): the font-watchlist ruling moved ten faces to the secondary ban.
+- `v4` (2026-09-29): marker and engine name follow the repository rename to `chwezi-design-engine`;
+  the guidance itself is unchanged from `v3`.
 
 ### Consumer engines (where the block goes)
 
 | Engine | Path | Block added? | `v2` copies (2026-09-29) |
 |---|---|---|---|
 | business-plan-skills | `C:\wamp64\www\business-plan-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| srs-skills | `C:\wamp64\www\srs-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| chwezi-sdlc-documentation | `C:\wamp64\www\chwezi-sdlc-documentation` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
 | proposal-skills | `C:\wamp64\www\proposal-skills` | ✅ 2026-06-21 | `AGENTS.md` |
 | website-skills | `C:\wamp64\www\website-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
 | social-media-skills | `C:\wamp64\www\social-media-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
@@ -64,7 +67,7 @@ Version history:
 Accounting, windows-admin and engine-agents hold no block; M10-02-T06 decides whether to add it.
 
 > The user's global `~/.claude/CLAUDE.md` engine-routing table should also gain a row for
-> design-system-skills as a cross-cutting engine (alongside the finance engine note).
+> chwezi-design-engine as a cross-cutting engine (alongside the finance engine note).
 
 ---
 
@@ -85,7 +88,7 @@ wholesale.
 2. Show the full manifest and get explicit approval before any move/delete (never-destructive rule).
 3. Move with history where practical; otherwise copy-then-remove in a reviewed commit.
 4. For each move, leave a one-line pointer/stub in the source engine's router noting the skill
-   now lives in design-system-skills (so old references resolve).
+   now lives in chwezi-design-engine (so old references resolve).
 5. Update this log and the source engine's skill count after each batch.
 
 ---

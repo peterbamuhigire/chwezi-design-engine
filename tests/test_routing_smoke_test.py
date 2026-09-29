@@ -50,7 +50,7 @@ def test_owner_ranked_below_self_fails(tmp_path, capsys):
 def test_cross_engine_owner_is_not_assessed_locally(tmp_path, capsys):
     path = write(
         tmp_path,
-        POSITIVE + "  negatives:\n    - prompt: Write the ROI business case.\n      owner: srs-skills/02-business-case\n",
+        POSITIVE + "  negatives:\n    - prompt: Write the ROI business case.\n      owner: chwezi-sdlc-documentation/02-business-case\n",
     )
     assert MODULE.main(["--fixtures", str(path)]) == 0
     assert "not_assessed=1" in capsys.readouterr().out

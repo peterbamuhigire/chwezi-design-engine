@@ -1,4 +1,4 @@
-"""Validate design-system-skills structure and prevent quality regression."""
+"""Validate chwezi-design-engine structure and prevent quality regression."""
 
 from __future__ import annotations
 

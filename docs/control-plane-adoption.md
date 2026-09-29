@@ -1,6 +1,6 @@
 # Skills-engine control-plane adoption
 
-This repository exposes the design-system-skills engine through the declarative .skills-engine/engine-manifest.yaml contract.
+This repository exposes the chwezi-design-engine engine through the declarative .skills-engine/engine-manifest.yaml contract.
 
 The engine remains independently usable. Its router and domain SKILL.md files are authoritative. Universal coordination may read the router, discover skills, inspect Git, and review declared validators.
 

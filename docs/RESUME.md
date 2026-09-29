@@ -1,6 +1,6 @@
 # RESUME / Status - where to pick up (updated 2026-09-24)
 
-Single source of truth for "what's done / what's next" on design-system-skills.
+Single source of truth for "what's done / what's next" on chwezi-design-engine.
 (Supersedes `RESUME-2026-06-21.md`, which is historical.)
 
 ## Current state
@@ -13,7 +13,7 @@ Single source of truth for "what's done / what's next" on design-system-skills.
   HIG claims re-verified against w3.org and developer.apple.com (APCA is no longer described as the
   WCAG 3 method; SF Symbols named by iOS 27 generation); the design quality gate now separates
   `HEURISTIC` from `MEASURED` evidence and covers state, keyboard, screen-reader, motion and reflow
-  checks; design-handoff routes to `srs-skills` and `chwezi-dev-engine` are fixture-checked.
+  checks; design-handoff routes to `chwezi-sdlc-documentation` and `chwezi-dev-engine` are fixture-checked.
 - The earlier overall design-readiness audit score remains **81/100** (progression: 51 -> about
   67 -> about 73 -> 80 -> 81). That score measures broader output capability, not skill-contract
   conformance.

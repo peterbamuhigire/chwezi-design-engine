@@ -10,23 +10,23 @@
   target: skills/orchestration/premium-ui-ux-design/references/enterprise-five-outcomes.md
 - id: enterprise-ux-srs-premium-positioning
   source: skills/05-ux-process-research-and-psychology/enterprise-ux-process/SKILL.md
-  reference: srs-skills/01-strategic-vision/07-premium-product-positioning/SKILL.md
-  target_repository: srs-skills
+  reference: chwezi-sdlc-documentation/01-strategic-vision/07-premium-product-positioning/SKILL.md
+  target_repository: chwezi-sdlc-documentation
   target: 01-strategic-vision/07-premium-product-positioning/SKILL.md
 - id: enterprise-ux-srs-ux-specification
   source: skills/05-ux-process-research-and-psychology/enterprise-ux-process/SKILL.md
-  reference: srs-skills/03-design-documentation/05-ux-specification/SKILL.md
-  target_repository: srs-skills
+  reference: chwezi-sdlc-documentation/03-design-documentation/05-ux-specification/SKILL.md
+  target_repository: chwezi-sdlc-documentation
   target: 03-design-documentation/05-ux-specification/SKILL.md
 - id: design-handoff-srs-ux-specification
   source: skills/09-design-systems-tokens-and-theming/design-handoff-and-dev-spec/SKILL.md
-  reference: srs-skills/03-design-documentation/05-ux-specification/SKILL.md
-  target_repository: srs-skills
+  reference: chwezi-sdlc-documentation/03-design-documentation/05-ux-specification/SKILL.md
+  target_repository: chwezi-sdlc-documentation
   target: 03-design-documentation/05-ux-specification/SKILL.md
 - id: design-handoff-srs-ux-content-and-form
   source: skills/09-design-systems-tokens-and-theming/design-handoff-and-dev-spec/SKILL.md
-  reference: srs-skills/03-design-documentation/09-ux-content-and-form-specification/SKILL.md
-  target_repository: srs-skills
+  reference: chwezi-sdlc-documentation/03-design-documentation/09-ux-content-and-form-specification/SKILL.md
+  target_repository: chwezi-sdlc-documentation
   target: 03-design-documentation/09-ux-content-and-form-specification/SKILL.md
 - id: design-handoff-dev-frontend-architecture
   source: skills/09-design-systems-tokens-and-theming/design-handoff-and-dev-spec/SKILL.md

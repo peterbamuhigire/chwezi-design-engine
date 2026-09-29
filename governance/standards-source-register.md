@@ -1,7 +1,7 @@
 # Design-System Standards Source Register
 
 Register date: 2026-08-11
-Owner: design-system-skills maintainer
+Owner: chwezi-design-engine maintainer
 Portfolio source: `C:\wamp64\www\KAIZEN-STANDARDS-SOURCE-REGISTER.md`
 
 This is the design-engine applicability index for externally mutable sources. A source URL

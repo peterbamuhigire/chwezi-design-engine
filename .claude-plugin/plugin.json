@@ -1,6 +1,10 @@
 {
-  "name": "design-system",
+  "name": "design-engine",
   "version": "1.1.0",
+  "description": "Chwezi Design Engine: typography, colour, layout, UX, design systems and tokens, and the anti-AI-slop doctrine",
+  "author": {
+    "name": "Peter Bamuhigire"
+  },
   "skills": [
     "./skills/00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance/",
     "./skills/00-cross-cutting-ops-qa-a11y/click-path-audit/",

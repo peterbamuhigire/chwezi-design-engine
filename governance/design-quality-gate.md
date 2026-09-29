@@ -158,7 +158,7 @@ artefact (screenshot, log, tool output, proof) is linked.
 
 - [ ] Requirements that the design depends on (contrast, target size, response time, supported
       breakpoints, assistive technologies, locales) are stated as measurable acceptance criteria
-      and handed to `srs-skills` (for example `03-design-documentation/05-ux-specification`); the
+      and handed to `chwezi-sdlc-documentation` (for example `03-design-documentation/05-ux-specification`); the
       design engine does not write the requirement, it supplies the value and the test.
 - [ ] Implementation detail (component code, ARIA wiring, token pipeline, test automation) is
       handed to `chwezi-dev-engine` with the state matrix, token names and the evidence still

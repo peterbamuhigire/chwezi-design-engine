@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/peterbamuhigire/design-system-skills/tools/slop-detector/rules/registry.schema.json",
+  "$id": "https://github.com/peterbamuhigire/chwezi-design-engine/tools/slop-detector/rules/registry.schema.json",
   "title": "chwezi-slop rule registry",
   "description": "Rule rows for the chwezi-slop detector. Severity ladder: block needs a standard, an engine doctrine line or a dated house ruling; warning needs an engine doctrine line; advisory covers rules whose only support is AI-tool ban evidence.",
   "type": "object",

@@ -97,7 +97,7 @@ Gantt bars use the same neutral tokens; Mermaid's red critical-path default is n
 
 - Critical work is marked by the darker tint **and** the heavier border, and the plan text or a
   legend names the critical path; colour alone never carries it (WCAG 2.2 SC 1.4.1).
-- Draw the chart at a fixed width sized for the placed measure (the `srs-skills` renderer uses
+- Draw the chart at a fixed width sized for the placed measure (the `chwezi-sdlc-documentation` renderer uses
   720 px with 13 px labels, which prints the smallest label at about 8.1 pt at 6.25 in). A chart
   drawn at the renderer's window width prints its labels far below 8 pt.
 - Leave out the "today" line in a printed plan: it ties the figure to the build date.

@@ -1,5 +1,5 @@
 {
-  "name": "chwezi-design-system",
+  "name": "chwezi-design-engine",
   "owner": {
     "name": "Peter Bamuhigire",
     "email": "peter.bamuhigire@gmail.com"
@@ -9,13 +9,13 @@
   },
   "plugins": [
     {
-      "name": "design-system",
+      "name": "design-engine",
       "source": "./",
       "description": "101 skills covering typography, colour, layout, UX process, design systems and tokens, and the anti-AI-slop doctrine (banned fonts, human design authority)",
       "version": "1.1.0",
       "author": { "name": "Peter Bamuhigire" },
-      "homepage": "https://github.com/peterbamuhigire/design-system-skills",
-      "repository": "https://github.com/peterbamuhigire/design-system-skills",
+      "homepage": "https://github.com/peterbamuhigire/chwezi-design-engine",
+      "repository": "https://github.com/peterbamuhigire/chwezi-design-engine",
       "license": "MIT",
       "keywords": ["design", "typography", "ux", "design-system", "accessibility", "anti-ai-slop"],
       "category": "design",

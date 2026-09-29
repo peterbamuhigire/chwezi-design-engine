@@ -191,8 +191,8 @@ UX Design*, UX Studio (PM collaboration rules). The working methods are paraphra
 ### Operational skills in other engines
 - `website-skills/skills/quality-gates/design-quality-score/SKILL.md` — Category 8 (UX Maturity) scores the same artifacts independently
 - `website-skills/skills/orchestration/premium-ui-ux-design/references/enterprise-five-outcomes.md` — same 5-outcomes gate applied to website templates
-- `srs-skills/01-strategic-vision/07-premium-product-positioning/SKILL.md` — premium-positioning gate using the same 5+5 model
-- `srs-skills/03-design-documentation/05-ux-specification/SKILL.md` — UX spec produced under this process
+- `chwezi-sdlc-documentation/01-strategic-vision/07-premium-product-positioning/SKILL.md` — premium-positioning gate using the same 5+5 model
+- `chwezi-sdlc-documentation/03-design-documentation/05-ux-specification/SKILL.md` — UX spec produced under this process
 
 ### Quick-use checklist
 - `references/maturity-checklist.md` — standalone activity-by-level checklist for use in project workspaces

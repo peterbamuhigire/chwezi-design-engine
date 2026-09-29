@@ -64,7 +64,7 @@
     - prompt: Design the monthly email newsletter template so it renders in Outlook and Gmail.
       owner: email-and-newsletter-design
     - prompt: Write the business case content with ROI, payback and NPV for the new ERP.
-      owner: srs-skills/02-business-case
+      owner: chwezi-sdlc-documentation/02-business-case
 - prompt: Design guest checkout, cart, payment, returns, and transparent total cost without dark patterns.
   expected: ecommerce-and-checkout-ux
 - prompt: Write clear error, empty, offline, loading, and confirmation messages for the product.
