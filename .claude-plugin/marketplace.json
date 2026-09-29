@@ -11,8 +11,8 @@
     {
       "name": "design-system",
       "source": "./",
-      "description": "91 skills covering typography, colour, layout, UX process, design systems and tokens, and the anti-AI-slop doctrine (banned fonts, human design authority)",
-      "version": "1.0.0",
+      "description": "101 skills covering typography, colour, layout, UX process, design systems and tokens, and the anti-AI-slop doctrine (banned fonts, human design authority)",
+      "version": "1.1.0",
       "author": { "name": "Peter Bamuhigire" },
       "homepage": "https://github.com/peterbamuhigire/design-system-skills",
       "repository": "https://github.com/peterbamuhigire/design-system-skills",

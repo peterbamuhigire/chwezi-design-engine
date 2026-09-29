@@ -77,11 +77,11 @@ The shared control plane is adapted to visual and document work in
 registry is `C:\wamp64\www\chwezi-dev-engine\docs\engine-control-plane.json`.
 
 Cross-cutting design & typography engine. Compatible with Claude Code and Codex-style agents.
-Extends the guidance in `CLAUDE.md` with runner-neutral operations and the Codex adapter, kept for dual-compat tooling.
+This file is the single runner-neutral router and doctrine for the engine; `CLAUDE.md` is a thin bridge that imports it (portfolio bridge contract, M10-02).
 
 ## Protocol
 
-1. **Entry:** read `doctrine/design-doctrine.md`.
+1. **Entry:** read `doctrine/design-doctrine.md` first (anti-slop charter + map).
 2. **Select:** glob `skills/**/SKILL.md` **fresh every time** and route by frontmatter
    `description` (the filesystem is the index — never a cached list; this is how new skills are
    picked up with zero registration). The README table is a hint only. Do not use a `Skill`
@@ -100,10 +100,17 @@ any skill, frontmatter, router, doctrine, or governance change.
   stacks alone; secondary ban: Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito, Nunito
   Sans; Roboto Mono and IBM Plex Mono banned as monospace choices; Source Sans 3 paired body only.
 - Always state typeface + reason before producing output.
+- The banned-font rule overrides convenience. If you cannot satisfy the anti-slop checklist, say
+  so and ask — never silently fall back to Inter or a system stack.
 - Always pair (display + body); use weight/size extremes; check licence before embedding.
 - On a new device or after pulling font-taxonomy changes, ensure the eight required
   `fonts/<category>/` directories exist before scanning or adding files. The category names are
   fixed team contract; individual font choices inside them may differ by device.
+- The eight top-level folders under `fonts/` are fixed team taxonomy, not personal preference:
+  `01-formal-institutional`, `02-editorial-literary`, `03-modern-product-grotesque`,
+  `04-technical-data-code`, `05-friendly-humanist`, `06-expressive-display-artistic`,
+  `07-script-cursive-handwritten`, and `08-body-ui-workhorses`. Team members may curate different
+  individual font files inside those folders, but must not rename or replace the categories.
 - Premium font binaries are gitignored — scan `fonts/<category>/`, read its `MANIFEST.md`, fall
   back to the named OFL baseline when a premium family is absent or its licence does not permit
   the intended use.
@@ -112,6 +119,21 @@ any skill, frontmatter, router, doctrine, or governance change.
 
 Referenced, not mirrored. Domain engines consult this one IN ADDITION to their own work for any
 presentation-layer concern. See `integration/integration-plan.md`.
+
+This is the **cross-cutting design & typography engine**. Treat it as the default source of
+presentation-layer skills (typography, colour, layout, visual identity, mobile/web/desktop UI,
+document visual formatting) **in addition to** whichever domain engine is active — the same way
+the finance engine (`chwezi-accounting-doctrine`) is consulted alongside domain work.
+
+A domain engine (business-plan, srs, proposal, website, engineering-catalog, social-media,
+digital-research) should hand off here whenever the work touches how an artifact *looks*: font
+choice, type scale, colour, layout/grid, UI screens, mobile UX, or the visual formatting of a
+DOCX/PPTX/PDF/XLSX. Content and structure stay in the domain engine; presentation comes here.
+
+Advertising and campaign creative arrive from the social-media and digital marketing engine as a
+brief; this engine returns concepts, campaign systems, layouts and placement specifications under
+`skills/11-imagery-illustration-and-art-direction/advertising-creative-art-direction/references/handoff-contract-marketing-engine.md`.
+Strategy, copy, legal release and measurement stay with the marketing engine.
 
 ## Skill-engine release commands
 
