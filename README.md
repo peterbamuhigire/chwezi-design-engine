@@ -18,7 +18,7 @@ cd design-system-skills
 .\install.ps1 --scope project     # Windows PowerShell
 ```
 
-## Skills
+## Capabilities
 
 The table reflects the 101 active `SKILL.md` files under `skills/`, counted from the current tree; the non-skill `_TEMPLATE` scaffold is excluded. Category links open the relevant skill directory.
 
