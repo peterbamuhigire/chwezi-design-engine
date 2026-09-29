@@ -1,6 +1,6 @@
 ---
 name: pdf-proposal-and-bankable-document-design
-description: Use when designing a print-ready fixed-layout PDF proposal, report, feasibility study, business case, tender, or lender document with covers, dividers, exhibits, running furniture, and verified font embedding. Use docx-report-and-document-formatting for editable Word source and deck-system for slides.
+description: Use when designing a print-ready fixed-layout PDF proposal, report, feasibility study, business case, tender, lender document or invoice, including its typeface and type scale, covers, dividers, exhibits, running furniture and verified font embedding. Use docx-report-and-document-formatting for editable Word source and deck-system for slides.
 metadata:
   portable: true
   category: 13-presentations-and-documents
@@ -48,7 +48,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Workflow
 1. **State the type + colour first** (anti-slop charter, `doctrine/design-doctrine.md` §2). Pick a
    **group 01 Editorial** pairing — a distinctive serif display over a refined body (e.g. *Andada Pro →
-   Source Serif 4*, or *Newsreader → Public Sans* for a quieter body). Name the faces, the palette
+   Source Serif 4*, or *Libre Caslon Text → Public Sans* for a quieter body). Name the faces, the palette
    intent, and why they fit a bankable document **before** laying out a single page. Never a banned
    font (`doctrine/references/ai-slop-banned-fonts.md`); scan `fonts/01-formal-institutional/` for a
    licensed premium family first (`premium-font-scan`).

@@ -1,11 +1,34 @@
 - prompt: Choose and pair typefaces for a bankable PDF proposal and check embedding rights.
   expected: font-selection-and-pairing
+  negatives:
+    - prompt: Before we ship the lender PDF, confirm the font licence permits embedding and subsetting.
+      owner: font-embedding-and-licensing
+    - prompt: Audit the live site for generic default fonts and a timid type hierarchy that looks machine-made.
+      owner: ai-slop-typography-audit
+    - prompt: Fix widows, orphans, rag and hyphenation in the final business plan before it ships.
+      owner: fine-typesetting-and-typesetting-qa
+    - prompt: Make the headings scale smoothly between phone and desktop widths with clamp().
+      owner: fluid-responsive-typography
+    - prompt: Turn on tabular figures and tune the weight axis of our variable font.
+      owner: variable-fonts-and-opentype-features
 - prompt: Audit this website for Inter, timid type hierarchy, and other AI typography tells.
   expected: ai-slop-typography-audit
 - prompt: Build semantic colour tokens and an accessible tonal palette for light and dark themes.
   expected: color-system-and-palette
+  negatives:
+    - prompt: Check that these text and background pairs pass WCAG contrast.
+      owner: accessible-color-and-contrast
+    - prompt: Suggest starting hues for a coffee shop website from its photos and mood.
+      owner: color-selection
+    - prompt: Remap our palette for a proper dark theme instead of simply inverting it.
+      owner: dark-mode-and-theming
+    - prompt: Write the brand style guide pages with palette cards and logo rules.
+      owner: brand-style-guide
 - prompt: Check these foreground and background pairs against WCAG contrast requirements.
   expected: accessible-color-and-contrast
+  negatives:
+    - prompt: Build the full colour ramp system with semantic roles for print and screen.
+      owner: color-system-and-palette
 - prompt: Define primitive, semantic, and component design tokens with stable naming.
   expected: design-tokens-and-naming
 - prompt: Prepare redlines, component states, breakpoints, and acceptance criteria for engineering handoff.
@@ -24,8 +47,24 @@
   expected: dashboard-and-data-product-design
 - prompt: Format an editable Word report with named styles, TOC, captions, and accessible tags.
   expected: docx-report-and-document-formatting
+  negatives:
+    - prompt: Lay out the fixed-page lender PDF with a cover, section dividers and exhibits.
+      owner: pdf-proposal-and-bankable-document-design
 - prompt: Design a print-ready lender proposal PDF with cover, dividers, exhibits, and embedded fonts.
   expected: pdf-proposal-and-bankable-document-design
+  negatives:
+    - prompt: Set up named styles, captions and an automatic table of contents in the editable Word report.
+      owner: docx-report-and-document-formatting
+    - prompt: Build the board slide deck with a master layout and speaker notes.
+      owner: deck-system
+    - prompt: Send the printed brochure to press with bleed, ink limits, lamination and binding.
+      owner: print-production-and-finishing
+    - prompt: Format the financial model workbook so lenders can follow the assumptions sheet.
+      owner: xlsx-and-financial-model-presentation
+    - prompt: Design the monthly email newsletter template so it renders in Outlook and Gmail.
+      owner: email-and-newsletter-design
+    - prompt: Write the business case content with ROI, payback and NPV for the new ERP.
+      owner: srs-skills/02-business-case
 - prompt: Design guest checkout, cart, payment, returns, and transparent total cost without dark patterns.
   expected: ecommerce-and-checkout-ux
 - prompt: Write clear error, empty, offline, loading, and confirmation messages for the product.
@@ -40,6 +79,9 @@
   expected: internationalization-and-rtl-design
 - prompt: Create a recognisable visual identity system tying logo usage, colour, typography, imagery, and spacing together.
   expected: brand-visual-identity
+  negatives:
+    - prompt: Draw the wordmark, lockups and favicon variants.
+      owner: logo-and-wordmark-design
 - prompt: Produce a client-facing style guide with logo rules, palette cards, typography specimens, and usage examples.
   expected: brand-style-guide
 - prompt: Construct the actual logo mark, wordmark, lockups, clear space, favicon, and app icon variants.
@@ -48,8 +90,18 @@
   expected: dark-mode-and-theming
 - prompt: Define the column grid, spacing unit, gutters, and alignment system for a report and web page.
   expected: layout-grid-and-spacing
+  negatives:
+    - prompt: Make one focal point dominate the hero through scale and whitespace.
+      owner: composition-and-visual-hierarchy
+    - prompt: Use container queries so the cards reflow on narrow screens.
+      owner: responsive-and-adaptive-layout
+    - prompt: Set the reading measure, sidenotes and pull quotes for a long essay page.
+      owner: editorial-and-long-form-layout
 - prompt: Compose this hero so one focal point wins through scale, weight, whitespace, and intentional asymmetry.
   expected: composition-and-visual-hierarchy
+  negatives:
+    - prompt: Define the twelve-column grid, gutters and an 8-point spacing unit.
+      owner: layout-grid-and-spacing
 - prompt: Create a fluid responsive grid using intrinsic sizing, container queries, and content-led breakpoints.
   expected: responsive-and-adaptive-layout
 - prompt: Lay out a long-form article with readable measure, baseline rhythm, figures, sidenotes, and pull quotes.
@@ -118,7 +170,7 @@
   expected: print-production-and-finishing
 - prompt: Design a lender proposal PDF with cover, dividers, exhibits, running headers and embedded fonts.
   expected: pdf-proposal-and-bankable-document-design
-- prompt: Present three direction boards, safe fit, stretch and bold, built from real content with cost and maintenance tiers for a new website.
+- prompt: Give the client three contrasting looks for the new website, one safe, one stretching and one bold, using their real copy and showing what each costs to build and maintain.
   expected: art-direction-routes
 - prompt: Check whether ribbons, wood-grain panels and auto-rotating carousels are timeless, still relevant or dated, and set the mood board policy.
   expected: art-direction-routes
@@ -130,7 +182,7 @@
   expected: photography-art-direction
 - prompt: Audit signifiers, mapping and feedback on this checkout flow.
   expected: heuristic-evaluation-and-design-critique
-- prompt: Design for low-literacy users on shared phones in rural Uganda.
+- prompt: Our farmers in rural Uganda have low literacy and one family phone; adapt the sign-up flow so they can still get through it.
   expected: inclusive-and-assistive-design
 - prompt: Plan field research with farmers and cooperative leaders.
   expected: ux-research-and-usability-testing

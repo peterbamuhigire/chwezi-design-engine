@@ -14,9 +14,22 @@ jobs:
           python-version: "3.12"
       - run: pip install PyYAML pytest
       - run: python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
-      - run: python -X utf8 scripts/routing_smoke_test.py
+      - run: python -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures
       - run: python -X utf8 scripts/validate_route_existence.py
       - run: python -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json
       - run: python -X utf8 scripts/validate_token_example.py skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/examples/tokens.json
       - run: python -X utf8 scripts/validate_design_catalog.py data/design-catalog.json
       - run: python -X utf8 -m pytest -q -p no:cacheprovider
+      # Node steps (M10-09-T05): chwezi-slop detector suite and the design hook tests.
+      # Node 24 is the active LTS on 2026-09-29 (Node 20 reached end of life on 2026-04-30).
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - run: node tools/slop-detector/cli.mjs --validate-registry
+      - run: node --test tools/slop-detector/test/
+      - run: node hooks/test-banned-font-gate.js
+      - run: node hooks/test-token-file-gate.js
+      - run: node hooks/test-destructive-bash-gate.js
+      - run: node hooks/test-plugin-hook-config.js
+      - run: node hooks/test-slop-immediate.js
+      - run: node hooks/test-slop-deep-pass.js

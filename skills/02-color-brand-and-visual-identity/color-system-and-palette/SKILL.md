@@ -1,6 +1,6 @@
 ---
 name: color-system-and-palette
-description: Use when building a cross-format colour system with an authored anchor, perceptual ramps, semantic roles, contrast contracts, and theme mappings. Unlike color-selection, this operationalises a palette; focused contrast audit routes to accessible-color-and-contrast.
+description: Use when building a cross-format colour system with an authored anchor, perceptual tonal ramps, semantic colour roles and tokens, contrast contracts, and theme mappings. Unlike color-selection, this operationalises a palette; focused contrast audit routes to accessible-color-and-contrast.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
