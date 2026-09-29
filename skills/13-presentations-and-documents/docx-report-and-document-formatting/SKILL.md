@@ -87,7 +87,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 6. **Format tables and figures.** Apply the table style system in
    `references/tables-and-figures.md`: a real header row (repeated across pages, tagged as a
    header), zebra or hairline rules, consistent cell padding, numeric right-alignment, and a
-   numbered **caption style** above tables / below figures ("Table 1.", "Figure 1.").
+   numbered **caption style** above tables / below figures ("Table 1.", "Figure 1."). For
+   architecture, sequence, state, data-flow and ER diagrams, also apply
+   `references/diagram-visual-standards.md` (Public Sans labels, token colours, font-substitution
+   check, 300 ppi PNG plus SVG).
 7. **Embed and subset the fonts.** Per `doctrine/references/embedding-by-format.md`: embed the
    chosen faces and enable **"Embed only the characters used"** (subsetting) so the document
    renders as designed on machines that lack the font, at minimal size. Embed only licence-
@@ -167,5 +170,6 @@ Without Word-compatible rendering, deliver the DOCX marked unverified plus a sty
 - `doctrine/references/wcag-2.2-criteria.md` — the accessibility floor (AA), tagging rules.
 - `references/docx-style-system.md` — the named-style table with pt sizes.
 - `references/tables-and-figures.md` — table style system + caption rules.
+- `references/diagram-visual-standards.md` — diagram typography, colour, export and the per-figure checklist.
 - `references/accessible-docx-tags.md` — DOCX accessibility tagging checklist.
 <!-- dual-compat-end -->

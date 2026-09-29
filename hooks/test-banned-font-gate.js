@@ -115,6 +115,79 @@ const cases = [
     payload: { tool_input: { file_path: '/proj/src/App.css', content: 'h1 { font-family: "Andada Pro", serif; } body { font-family: "Public Sans", sans-serif; } code { font-family: "JetBrains Mono", monospace; }' } },
     expect: 0,
   },
+  // -- Diagram files (M10-07, AR-13) ------------------------------------------
+  {
+    name: 'SVG attribute font-family="Arial" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/_figures/fig-1.svg', content: '<svg><text font-family="Arial" x="0">Label</text></svg>' } },
+    expect: 2,
+  },
+  {
+    name: "SVG attribute font-family='Inter, sans-serif' (single quotes) — BLOCK",
+    payload: { tool_input: { file_path: '/proj/fig.svg', content: "<svg><g font-family='Inter, sans-serif'/></svg>" } },
+    expect: 2,
+  },
+  {
+    name: 'SVG <style> Mermaid default stack "trebuchet ms",verdana,arial — ALLOW with fallback warning (Trebuchet MS not banned; Arial only a fallback)',
+    payload: { tool_input: { file_path: '/proj/fig.svg', content: '<svg><style>#m{font-family:"trebuchet ms",verdana,arial,sans-serif;}</style></svg>' } },
+    expect: 0,
+    stderrIncludes: 'fallback',
+  },
+  {
+    name: 'SVG <style> quoted primary "Arial" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/fig.svg', content: '<svg><style>text{font-family:"Arial",sans-serif}</style></svg>' } },
+    expect: 2,
+  },
+  {
+    name: 'SVG with Public Sans primary — ALLOW',
+    payload: { tool_input: { file_path: '/proj/fig.svg', content: '<svg><style>*{font-family:"Public Sans",sans-serif}</style><text font-family="Public Sans">A</text></svg>' } },
+    expect: 0,
+  },
+  {
+    name: 'Mermaid .mmd init directive "fontFamily":"Inter" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/_generated/FIG-001.mmd', content: '%%{init: {"themeVariables": {"fontFamily":"Inter"}}}%%\nflowchart LR\n  a --> b' } },
+    expect: 2,
+  },
+  {
+    name: "Mermaid .mmd single-quoted directive 'fontFamily': 'Roboto, sans-serif' — BLOCK",
+    payload: { tool_input: { file_path: '/proj/fig.mmd', content: "%%{init: {'themeVariables': {'fontFamily': 'Roboto, sans-serif'}}}%%\nsequenceDiagram\n  A->>B: hi" } },
+    expect: 2,
+  },
+  {
+    name: 'Mermaid .mmd themeCSS quoted IBM Plex Sans (prefix ban) — BLOCK',
+    payload: { tool_input: { file_path: '/proj/fig.mmd', content: '%%{init: {"themeCSS": "* { font-family: \'IBM Plex Sans\', sans-serif; }"}}%%\nflowchart LR\n  a --> b' } },
+    expect: 2,
+  },
+  {
+    name: 'Mermaid .mmd with JetBrains Mono — ALLOW',
+    payload: { tool_input: { file_path: '/proj/fig.mmd', content: '%%{init: {"themeVariables": {"fontFamily": "JetBrains Mono, monospace"}}}%%\nerDiagram' } },
+    expect: 0,
+  },
+  {
+    name: 'Mermaid .mmd with Public Sans primary, Arial fallback — ALLOW with warning',
+    payload: { tool_input: { file_path: '/proj/fig.mmd', content: '%%{init: {"themeVariables": {"fontFamily": "Public Sans, Arial, sans-serif"}}}%%\nflowchart LR' } },
+    expect: 0,
+    stderrIncludes: 'Arial',
+  },
+  {
+    name: 'JSON "fontFamily": "Roboto" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/mermaid-config.json', content: '{\n  "theme": "neutral",\n  "fontFamily": "Roboto"\n}' } },
+    expect: 2,
+  },
+  {
+    name: 'JSON escaped-quote stack "fontFamily": "\\"Geist\\", sans-serif" — BLOCK',
+    payload: { tool_input: { file_path: '/proj/theme.json', content: '{"fontFamily": "\\"Geist\\", sans-serif"}' } },
+    expect: 2,
+  },
+  {
+    name: 'JSON with Public Sans — ALLOW',
+    payload: { tool_input: { file_path: '/proj/theme.json', content: '{"fontFamily": "Public Sans, sans-serif"}' } },
+    expect: 0,
+  },
+  {
+    name: 'JSON data file mentioning "Arial" outside a fontFamily key — ALLOW (only the key form is inspected in .json)',
+    payload: { tool_input: { file_path: '/proj/data/fonts-seen.json', content: '{"observed": ["Arial", "Inter"], "note": "font-family: Inter"}' } },
+    expect: 0,
+  },
 ];
 
 let failures = 0;
@@ -126,7 +199,8 @@ for (const c of cases) {
   } else {
     result = run(c.payload, c.env || {});
   }
-  const pass = result.code === c.expect;
+  const pass = result.code === c.expect &&
+    (!c.stderrIncludes || (result.stderr || '').includes(c.stderrIncludes));
   console.log(`${pass ? 'PASS' : 'FAIL'} — ${c.name} (expected exit ${c.expect}, got ${result.code})`);
   if (!pass) {
     failures++;

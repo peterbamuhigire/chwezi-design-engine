@@ -46,7 +46,13 @@ const RELEVANT_EXTENSIONS = new Set([
   '.css', '.scss', '.sass', '.less', '.html', '.htm',
   '.tsx', '.jsx', '.ts', '.js', '.vue', '.svelte',
   '.py', // python-docx / python-pptx font assignment
+  // Diagram files (M10-07, AR-13): SVG exports, Mermaid sources and JSON
+  // configs (Mermaid config, figure IR, theme files). For .json only the
+  // "fontFamily" key is inspected, so manifests and data files are not
+  // scanned for CSS-shaped text.
+  '.svg', '.mmd', '.json',
 ]);
+const DIAGRAM_EXTENSIONS = new Set(['.svg', '.mmd']);
 
 function readStdin() {
   try {
@@ -171,6 +177,59 @@ function findBannedPrefixInQuotedLiteral(text, bannedPrefixes) {
   return hits;
 }
 
+function stackFamilies(stack) {
+  return stack
+    .split(',')
+    .map((f) => f.replace(/\\/g, '').replace(/["'`]/g, '').trim())
+    .filter(Boolean);
+}
+
+function isBannedFamily(family, bannedNames, bannedPrefixes) {
+  const low = family.toLowerCase();
+  return bannedNames.some((n) => n.toLowerCase() === low) ||
+    bannedPrefixes.some((p) => low.startsWith(p.toLowerCase()));
+}
+
+/**
+ * Diagram-file font stacks (M10-07, AR-13):
+ *   - SVG attribute   font-family="Arial, sans-serif"  or  font-family='…'
+ *   - Mermaid / JSON  "fontFamily": "Inter"  (JSON form, including inside a
+ *                     %%{init: …}%% directive) and 'fontFamily': 'Inter' or
+ *                     fontFamily: 'Inter' (single-quoted directive form)
+ * Returns { hits, fallbacks }: hits are banned PRIMARY families (block);
+ * fallbacks are banned families later in the stack (warn only, because
+ * renderers fall back silently when the primary face is missing).
+ */
+function findBannedInDiagramStacks(text, bannedNames, bannedPrefixes, { svgAttr, fontFamilyKey, cssStack }) {
+  const hits = [];
+  const fallbacks = [];
+  const patterns = [];
+  if (svgAttr) patterns.push({ re: /font-family\s*=\s*(["'])(.*?)\1/gi, group: 2 });
+  if (cssStack) {
+    // CSS inside <style>, style="…" or a Mermaid themeCSS string, including
+    // quoted stacks the plain CSS matcher stops at
+    // (font-family:"trebuchet ms",verdana,arial).
+    patterns.push({ re: /font-family\s*:\s*([^;}<>]+)/gi, group: 1 });
+  }
+  if (fontFamilyKey) {
+    patterns.push({ re: /(["']?)fontFamily\1\s*:\s*"((?:\\.|[^"\\])*)"/g, group: 2 });
+    patterns.push({ re: /(["']?)fontFamily\1\s*:\s*'((?:\\.|[^'\\])*)'/g, group: 2 });
+  }
+  for (const { re, group } of patterns) {
+    let m;
+    while ((m = re.exec(text))) {
+      const families = stackFamilies(m[group]);
+      families.forEach((family, idx) => {
+        if (!isBannedFamily(family, bannedNames, bannedPrefixes)) return;
+        const rec = { family, context: m[0].trim().slice(0, 120) };
+        if (idx === 0) hits.push(rec);
+        else fallbacks.push(rec);
+      });
+    }
+  }
+  return { hits, fallbacks };
+}
+
 function main() {
   if (['off', '0', 'false', 'disabled', 'disable'].includes((process.env.CHWEZI_FONT_GATE || '').toLowerCase())) {
     process.exit(0);
@@ -210,11 +269,39 @@ function main() {
   const text = extractWrittenText(toolInput);
   if (!text) process.exit(0);
 
-  const hits = [
-    ...findBannedInCssFontFamily(text, bannedPrimaryOnly, bannedPrefixes),
-    ...findBannedInQuotedLiteral(text, bannedPrimaryOnly),
-    ...findBannedPrefixInQuotedLiteral(text, bannedPrefixes),
-  ];
+  const isJson = ext === '.json';
+  const isDiagram = DIAGRAM_EXTENSIONS.has(ext);
+  const diagram = (isJson || isDiagram)
+    ? findBannedInDiagramStacks(text, bannedPrimaryOnly, bannedPrefixes, {
+      svgAttr: ext === '.svg',
+      fontFamilyKey: true,
+      cssStack: isDiagram,
+    })
+    : { hits: [], fallbacks: [] };
+
+  let hits;
+  if (isJson) {
+    hits = diagram.hits; // .json: only the fontFamily key form is inspected
+  } else if (isDiagram) {
+    // Diagram files: stack-aware matchers only, so a banned face named as a
+    // fallback warns instead of tripping the bare quoted-literal check.
+    hits = [...findBannedInCssFontFamily(text, bannedPrimaryOnly, bannedPrefixes), ...diagram.hits];
+  } else {
+    hits = [
+      ...findBannedInCssFontFamily(text, bannedPrimaryOnly, bannedPrefixes),
+      ...findBannedInQuotedLiteral(text, bannedPrimaryOnly),
+      ...findBannedPrefixInQuotedLiteral(text, bannedPrefixes),
+    ];
+  }
+
+  if (isDiagram && diagram.fallbacks.length > 0) {
+    const names = [...new Set(diagram.fallbacks.map((f) => f.family))].join(', ');
+    console.error(
+      `[chwezi:banned-font-gate] WARNING — banned font(s) named as a fallback in a diagram stack: ${names}. ` +
+      'Renderers fall back silently when the primary face is missing; load the approved face explicitly ' +
+      'and record a font-substitution check (see diagram-visual-standards.md). Not blocked.'
+    );
+  }
 
   if (hits.length === 0) process.exit(0);
 

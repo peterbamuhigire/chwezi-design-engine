@@ -46,6 +46,8 @@ hand-format individual tables.
   when the PDF is generated.
 - Every meaningful figure gets **alt text** (see `accessible-docx-tags.md`). Decorative rules and
   spacers are marked **decorative** so screen readers skip them.
+- Diagrams (architecture, sequence, state, data flow, ER) follow `diagram-visual-standards.md`
+  for label typeface, colour tokens, line weight, the font-substitution check and export.
 
 ---
 
