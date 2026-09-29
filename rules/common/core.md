@@ -4,9 +4,10 @@
 
 ## Never use a banned AI-slop font as a primary typeface
 
-Inter, Geist, Roboto, Arial, Open Sans, Lato, bare system stacks; nor the
+Inter, Geist, Roboto, Arial, Open Sans, Lato, Fraunces, IBM Plex, bare system stacks; nor the
 secondary escapes Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito,
-or standalone Source Sans. **State the chosen typeface(s) and reason before
+Newsreader, Cormorant, Crimson Pro, Plus Jakarta Sans, DM Sans, Outfit, Playfair
+Display, Lora, or standalone Source Sans. **State the chosen typeface(s) and reason before
 producing any artifact.** If the anti-slop checklist cannot be satisfied, say so
 and ask — never silently fall back to Inter or a system stack.
 
