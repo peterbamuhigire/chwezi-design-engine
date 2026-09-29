@@ -82,6 +82,29 @@ run, record `NOT_ASSESSED` and do not claim conformance.
 - No drop shadows, gradients, 3D effects or decorative icons. (Mermaid's neutral theme adds a
   drop-shadow filter to nodes; renderers must switch it off.)
 
+### 3a. Gantt charts
+
+Gantt bars use the same neutral tokens; Mermaid's red critical-path default is not used.
+
+| Gantt role | Fill | Border / text |
+|---|---|---|
+| Task | `#F4F4F4` (neutral light tint) | `Muted` border, `Ink` text |
+| Critical task or milestone (the emphasis) | `#D8D8D8` (darker tint), or the document's `Accent` tint where one is set | `Ink` border at the heavier weight, `Ink` text |
+| Active task | `#F7F7F7` | `Ink` border |
+| Done task | none (white) | `Muted` border |
+| Grid rules | — | `#D8D8D8` |
+| Alternate section band | `#F7F7F7` | — |
+
+- Critical work is marked by the darker tint **and** the heavier border, and the plan text or a
+  legend names the critical path; colour alone never carries it (WCAG 2.2 SC 1.4.1).
+- Draw the chart at a fixed width sized for the placed measure (the `srs-skills` renderer uses
+  720 px with 13 px labels, which prints the smallest label at about 8.1 pt at 6.25 in). A chart
+  drawn at the renderer's window width prints its labels far below 8 pt.
+- Leave out the "today" line in a printed plan: it ties the figure to the build date.
+- Keep axis dates short (for example `%b %Y` or `%d %b`) so tick labels do not collide; a
+  schedule that still cannot hold 8 pt labels is split by phase or moved to a landscape page, with
+  the full schedule kept as a table.
+
 ## 4. Export
 
 - Export a PNG at **≥ 300 ppi at the placed width** plus an SVG of the same figure; the SVG embeds
