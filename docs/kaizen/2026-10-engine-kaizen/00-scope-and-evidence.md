@@ -1,8 +1,8 @@
 # 00 — Scope and evidence
 
-**Engine:** Chwezi Design Engine (`peterbamuhigire/chwezi-design-engine`)  
-**Cycle:** October 2026 Portfolio Kaizen  
-**Baseline ref:** `c9b334d`  
+**Engine:** Chwezi Design Engine (`peterbamuhigire/chwezi-design-engine`)
+**Cycle:** October 2026 Portfolio Kaizen
+**Baseline ref:** `c9b334d`
 **Branch:** `kaizen/2026-10`
 
 ## Scope decisions

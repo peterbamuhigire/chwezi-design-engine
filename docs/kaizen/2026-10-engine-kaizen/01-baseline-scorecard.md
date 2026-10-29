@@ -1,7 +1,7 @@
 # 01 — Frozen baseline scorecard
 
-**Date:** 2026-10-29  
-**Baseline:** clean design-engine checkout at `c9b334d`, before any content edit  
+**Date:** 2026-10-29
+**Baseline:** clean design-engine checkout at `c9b334d`, before any content edit
 **Scoring:** dimension scores below are fresh October judgments from the named evidence, not copied from the 29 September score. All judgments are provisional to the stated evidence limits.
 
 | Standard dimension | Raw | Evidence and deficiency |
