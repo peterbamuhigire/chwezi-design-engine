@@ -19,6 +19,8 @@ The plugin registers all 101 skills and the enforcement hooks in `hooks/hooks.js
 
 **Clone installer.** `install.sh` and `install.ps1` delegate to `scripts/install-engine.js`. The default scope is the user (`~/.claude`); `--scope project` installs into `.claude` under the current directory. The installer also accepts `--dry-run` and `--json`, and `scripts/install-engine.js` provides `uninstall`, `doctor` and `list-installed`.
 
+The engine validator, clone installer, and plugin-manifest generator enforce a 5,000-file-entry ceiling for both checkout and package-oriented trees. Package counts exclude `.git`, caches, virtual environments, and `node_modules`; source checkouts are preserved. This guard applies to the repository tools that invoke it. Native Claude Code or Codex plugin installation does not run these repository scripts, so this is not a claim about a marketplace or public-directory package review.
+
 ```text
 git clone https://github.com/peterbamuhigire/chwezi-design-engine
 cd chwezi-design-engine
@@ -34,6 +36,8 @@ cd chwezi-design-engine
 python -X utf8 scripts/design_query.py search "editorial report serif" --domain typography
 node tools/slop-detector/cli.mjs --tier deep path/to/project
 python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+python -X utf8 scripts/check_file_count.py . --mode checkout
+python -X utf8 scripts/check_file_count.py . --mode package
 python -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures
 python -X utf8 -m pytest -q
 ```

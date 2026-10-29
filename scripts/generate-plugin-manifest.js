@@ -34,6 +34,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { assertWithinLimit } = require('./file-count');
 
 function parseArgs(argv) {
   const args = { root: 'skills', exclude: '_TEMPLATE,node_modules,.git', check: false };
@@ -84,6 +85,12 @@ function findSkillDirs(dir, excludeSet, out) {
 function main() {
   const args = parseArgs(process.argv.slice(2));
   const ROOT = path.resolve(args.engine);
+  try {
+    assertWithinLimit(ROOT);
+  } catch (error) {
+    console.error(`Refusing manifest generation: source ${error.message}`);
+    process.exit(1);
+  }
   const SKILLS_DIR = path.join(ROOT, args.root);
   const MANIFEST_PATH = path.join(ROOT, '.claude-plugin', 'plugin.json');
   const EXCLUDE_DIRS = new Set(args.exclude.split(',').map((s) => s.trim()).filter(Boolean));

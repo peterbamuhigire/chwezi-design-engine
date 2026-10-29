@@ -37,6 +37,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
+const { assertWithinLimit } = require('./file-count');
 
 const COMPONENT_DIRS = ['skills', 'agents', 'commands', 'hooks', 'rules'];
 
@@ -192,6 +193,12 @@ function cmdInstall(args) {
     process.exit(2);
   }
   const engineRoot = path.resolve(args.engine);
+  try {
+    assertWithinLimit(engineRoot);
+  } catch (error) {
+    console.error(`Refusing install: source ${error.message}`);
+    process.exit(1);
+  }
   const name = engineName(engineRoot);
   const targetRoot = resolveTargetRoot(args.scope);
 
