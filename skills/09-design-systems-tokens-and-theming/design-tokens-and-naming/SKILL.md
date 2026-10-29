@@ -109,7 +109,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    tokens. One rhythm, named once, is what separates "designed" from "assembled."
 
 7. **Choose the export topology, then generate.** Single source of truth = the tier'd token file
-   (JSON, ideally aligned to the **W3C Design Tokens** `$value`/`$type` format). Transform out to:
+   (JSON, ideally aligned to the Design Tokens Community Group's **Design Tokens Format Module 2025.10** `$value`/`$type` format, a Final Community Group Report rather than a W3C Standard). Transform out to:
    CSS custom properties (semantic tokens become `:root` / `[data-theme="dark"]` / `[data-brand]`
    vars), a JSON consumed by app code, a Tailwind theme, and native platforms — via **Style
    Dictionary** so all targets derive from one source and cannot drift. See
@@ -212,8 +212,7 @@ checks and block release of generated platform packages.
 - `references/token-export-formats.md` — CSS custom properties, W3C JSON, and Style Dictionary.
 - Upstream: `02-color-brand-and-visual-identity/color-system-and-palette` (produces the ramps and
   WCAG-gated pairs) and `09-…/dark-mode-and-theming` (the dark palette remap craft).
-- Standards (named for provenance, not in-repo): W3C Design Tokens Format Module
-  (`$value`/`$type`); OKLCH (CSS Color 4); Amazon Style Dictionary.
+- Standards (named for provenance, not in-repo): [Design Tokens Format Module 2025.10](https://www.w3.org/community/reports/design-tokens/CG-FINAL-format-20251028/) (`$value`/`$type`; Final Community Group Report, not a W3C Standard); OKLCH (CSS Color 4); Amazon Style Dictionary.
 ## Book-informed practice route
 
 Use [the design-system operating model](../component-library-architecture/references/design-system-operating-model.md) for source-of-truth, token tiers, transformations, and adoption evidence.
