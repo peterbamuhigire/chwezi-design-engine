@@ -32,8 +32,25 @@ def test_package_mode_excludes_transient_directory_entries(tmp_path):
 
 
 def test_engine_validator_fails_a_checkout_over_the_limit(tmp_path):
-    for index in range(5001):
+    font_categories = (
+        "01-formal-institutional",
+        "02-editorial-literary",
+        "03-modern-product-grotesque",
+        "04-technical-data-code",
+        "05-friendly-humanist",
+        "06-expressive-display-artistic",
+        "07-script-cursive-handwritten",
+        "08-body-ui-workhorses",
+    )
+    for category in font_categories:
+        (tmp_path / "fonts" / category).mkdir(parents=True)
+    registry = tmp_path / "tools" / "slop-detector" / "rules" / "registry.json"
+    registry.parent.mkdir(parents=True)
+    registry.write_text('{"rules": []}\n', encoding="utf-8")
+    for index in range(4999):
         (tmp_path / f"{index}.txt").touch()
+    assert module.count_entries(tmp_path, "checkout") == 5000
+    (tmp_path / "one-over.txt").touch()
     validator = MODULE_PATH.with_name("validate_engine.py")
     result = subprocess.run(
         [sys.executable, str(validator), "--root", str(tmp_path)],
@@ -43,3 +60,5 @@ def test_engine_validator_fails_a_checkout_over_the_limit(tmp_path):
     )
     assert result.returncode == 1
     assert "file-count-checkout=5001/5000" in result.stdout
+    assert "SLOP-REGISTRY ERROR" not in result.stdout
+    assert "missing_font_categories" not in result.stdout
