@@ -48,3 +48,14 @@ The exact upstream font versions and license observations are in [03-experiment-
 ## Independent acceptance review
 
 The acceptance review found that Python's default `os.walk` behavior can suppress a subtree traversal error and return a partial entry count. The file-count gate now supplies an error callback that raises, and its CLI returns exit 2 with a refusal message on traversal failure. A deterministic monkeypatched regression verifies this fail-closed path without relying on host permissions. After the fix, `scripts/validate_engine.py --baseline tests/quality-baseline.json` passed, routing smoke passed at 72 positives / 29 of 29 owned negatives, the full pytest suite passed (145), and the Node file-count suite passed (4). These are repository checks; native host and public-directory behavior remain `NOT_ASSESSED`.
+
+## Final native installation and discovery
+
+Root repeated local installation on clean `6db70dd` using Codex 0.165.0 and
+Claude 2.1.312, both exit 0, inside disposable offline containers. Codex
+`debug prompt-input` with explicitly requested `gpt-6-luna`, high reasoning and
+`skills.max_context_tokens=10000` exposes all **102/102** canonical skill paths,
+including the new diagram skill. The command makes no model call; the model
+argument does not prove account entitlement or task behaviour. Claude's native
+component inventory includes the intended skills plus its existing command.
+Public directory approval and hook behaviour remain NOT_ASSESSED.
