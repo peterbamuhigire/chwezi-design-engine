@@ -14,7 +14,12 @@ PACKAGE_EXCLUDES = {".git", ".cache", "cache", "__pycache__", "node_modules", ".
 def count_entries(root: Path, mode: str) -> int:
     """Count files and symlinks; never follow directory symlinks."""
     count = 0
-    for current, dirs, files in os.walk(root, followlinks=False):
+    def fail_on_walk_error(error: OSError) -> None:
+        # os.walk otherwise suppresses traversal errors and reports a partial
+        # count that can incorrectly pass the release ceiling.
+        raise error
+
+    for current, dirs, files in os.walk(root, followlinks=False, onerror=fail_on_walk_error):
         current_path = Path(current)
         if mode == "package":
             dirs[:] = [name for name in dirs if name not in PACKAGE_EXCLUDES]
@@ -34,7 +39,11 @@ def main() -> int:
     root = Path(args.root).resolve()
     if not root.is_dir():
         parser.error(f"not a directory: {root}")
-    count = count_entries(root, args.mode)
+    try:
+        count = count_entries(root, args.mode)
+    except OSError as exc:
+        print(f"FAIL: cannot count all entries: {exc}")
+        return 2
     print(f"{args.mode}: {count} entries (limit {args.limit})")
     if count > args.limit:
         print(f"FAIL: {args.mode} exceeds the {args.limit}-entry limit")

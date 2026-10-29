@@ -31,6 +31,20 @@ def test_package_mode_excludes_transient_directory_entries(tmp_path):
     assert module.count_entries(tmp_path, "package") == 1
 
 
+def test_unreadable_subtree_fails_closed_instead_of_returning_partial_count(tmp_path, monkeypatch, capsys):
+    (tmp_path / "visible.txt").touch()
+
+    def walk_with_unreadable_subtree(root, *, followlinks, onerror):
+        assert followlinks is False
+        onerror(PermissionError("fixture: unreadable subtree"))
+        yield  # pragma: no cover - onerror must abort before yielding a count
+
+    monkeypatch.setattr(module.os, "walk", walk_with_unreadable_subtree)
+    monkeypatch.setattr(sys, "argv", [str(MODULE_PATH), str(tmp_path)])
+    assert module.main() == 2
+    assert "FAIL: cannot count all entries: fixture: unreadable subtree" in capsys.readouterr().out
+
+
 def test_engine_validator_fails_a_checkout_over_the_limit(tmp_path):
     font_categories = (
         "01-formal-institutional",
