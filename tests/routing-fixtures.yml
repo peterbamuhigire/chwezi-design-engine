@@ -43,6 +43,34 @@
   expected: accessibility-wcag-2-2-compliance
 - prompt: Choose the honest chart type for comparison and avoid a misleading dual axis.
   expected: chart-selection-and-encoding
+- prompt: Draw a clear architecture diagram with dependency arrows, roles, and a handoff source.
+  expected: diagram-design-and-handoff
+  negatives:
+    - prompt: Compare monthly revenue values and choose a truthful chart encoding.
+      owner: chart-selection-and-encoding
+    - prompt: Create an interactive dashboard layout with KPI drill-down and filters.
+      owner: dashboard-and-data-product-design
+- prompt: Map the approval steps as a process diagram and give me editable SVG plus a text equivalent.
+  expected: diagram-design-and-handoff
+  negatives:
+    - prompt: Create a swimlane service blueprint from interview research.
+      owner: journey-mapping-and-service-design
+    - prompt: Illustrate a campaign infographic with a data story and callouts.
+      owner: data-illustration-and-infographics
+- prompt: Review a state-transition diagram for clear edge labels, crossings, and mobile readability.
+  expected: diagram-design-and-handoff
+  negatives:
+    - prompt: Redesign the monthly dashboard zones, filter behavior, and KPI hierarchy.
+      owner: dashboard-and-data-product-design
+    - prompt: Check the scatter chart's axes, outliers, source note, and keyboard access.
+      owner: data-visualization
+- prompt: Turn a documented system boundary into a layered diagram and record owner checks before release.
+  expected: diagram-design-and-handoff
+  negatives:
+    - prompt: Select semantic colour roles and verify foreground/background contrast.
+      owner: color-system-and-palette
+    - prompt: Add screenshots, captions, and alt text to a DOCX report.
+      owner: docx-report-and-document-formatting
 - prompt: Design the page-level KPI hierarchy, filters, drill-down, and data freshness for a dashboard.
   expected: dashboard-and-data-product-design
 - prompt: Format an editable Word report with named styles, TOC, captions, and accessible tags.
