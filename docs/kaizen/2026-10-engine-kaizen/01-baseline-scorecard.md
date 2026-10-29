@@ -14,7 +14,7 @@
 | Output readiness | 54 | The prior output-type rubric identifies diagrams as lowest readiness (42/100); current diagram work still routes to a document reference. Three disposable task runs reveal nonfunctional sorting/state behavior and incomplete rendered-font proof. (Prior measured rubric plus current observed specimens; score is judgment.) |
 | Accessibility and inclusion | 60 | The engine has dedicated WCAG 2.2 and inclusive-design guidance. The disposable screen audit measured a 4.48:1 normal-text contrast ratio, 20×20 CSS-pixel controls, a positive-tabindex order, and missing visible button focus. No production assistive-technology run is held. (Measured on synthetic specimen only; score is judgment.) |
 | Production and handoff | 55 | The PDF and diagram can be rendered in an isolated browser, but the intended Source Serif 4 and Public Sans faces did not load in the initial environment; PDF font embedding is unverified. The repository delivery fixture remains `CONDITIONAL`. (Observed and measured.) |
-| Hygiene | 50 | The local route-existence check passes. The cross-engine route validator reports six unavailable sibling targets. The standards register has one malformed URL; 11 active router/skill/reference files still contain the machine-specific machine-specific Windows webroot root. (Measured; not all historical audit text is current policy.) |
+| Hygiene | 50 | The local route-existence check passes. The first cross-engine check used an unbound workspace layout; the corrected baseline check resolves all declared targets (see correction below). The standards register has one malformed URL; 11 operational files still contain a machine-specific Windows webroot reference. (Measured; not all historical audit text is current policy.) |
 | Safety and integrity | 63 | Native installation succeeded and the offline Codex debug prompt resolves 101/101 manifest paths. Claude native details report 102 skill components and the listed inventory includes `_TEMPLATE`; the reason for the one-entry difference from the offline manifest is not independently assessed. Installer implementation and live Claude hook behavior were not independently reviewed, so those checks remain `NOT_ASSESSED`. (Observed inventory; interpretation qualified.) |
 
 ## Measured inputs
@@ -24,12 +24,12 @@
 - Fixture-coverage count from `tests/routing-fixtures.yml`: 68 positive rows, 22 owned-negative rows including one foreign-owner row; no active skill reaches three positives and two locally owned negatives, so coverage is 0/101. (The routing runner’s denominator is 21 local negatives.)
 - Worked examples: all 101 active skills have at least one example file; total per-skill corpus word count ranges 45–29,506, median 1,142; 11 skills are below 250 words. This count is a coarse example-depth proxy, not a quality score.
 - `python -X utf8 scripts/validate_route_existence.py`: exit 0, zero findings.
-- `python -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <workspace>`: exit 1, six declared routes unresolved because the expected sibling checkouts are absent. Those six are `NOT_ASSESSED`, not broken in the target repositories.
+- The initial `validate_cross_engine_routes.py` invocation used the default sibling layout and returned six missing-path findings. That was a workspace-binding error; the frozen baseline was rerun with the canonical map and all declared routes resolved (see the correction below and [04-validation-record.md](04-validation-record.md)).
 - `python -X utf8 tests/eval_catalog_relevance.py`: exit 0; held-out p@1 1.000, MRR@3 1.000, nDCG@3 0.968, negative abstention 1.000, typo recovery@3 1.000 (n=16). The relevance benchmark does not measure live router quality.
 - `python -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json`: exit 0, valid manifest, `CONDITIONAL`; five delivery stages `NOT_ASSESSED`.
 - `python -X utf8 scripts/validate_token_example.py skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/examples/tokens.json`: exit 0, zero findings.
 - Source register: five records; their next-review dates are 11 November 2026, not yet past on this score date. This does not verify that the claims or links are current. One ISO URL is malformed. Fresh research is a release gate.
-- Current repository-visible machine-specific path count: 11 files under active router/skills/doctrine/governance/integration/scripts contain a machine-specific Windows webroot reference; 17 more are in historical docs. The 11 operational files are enumerated in the backlog/experiment record.
+- Baseline repository-visible machine-specific path count: 11 operational files and 17 historical documentation files. Operational files: `AGENTS.md`, `doctrine/design-doctrine.md`, `governance/standards-source-register.md`, `integration/integration-plan.md`, `integration/migration-manifest.md`, `skills/00-cross-cutting-ops-qa-a11y/plan-canvas-design-review/SKILL.md`, `skills/06-sector-and-domain-ux/fintech-and-financial-product-ui/SKILL.md`, `skills/06-sector-and-domain-ux/hospitality-hotel-restaurant/SKILL.md`, and the three files under `skills/13-presentations-and-documents/xlsx-and-financial-model-presentation/`.
 
 ## Raw and capped scores
 
@@ -47,4 +47,8 @@ Portfolio Standard cap: `min(54.0, 65) = 54.0/100`. The user’s stricter initia
 
 ## Blockers and open evidence
 
-No safety/legal/privacy release blocker was found in the inspected baseline evidence. Current standards verification, real supplied-screen review, selected-font rendering/embedding, device and assistive-technology checks, Tier 3 model evaluation, and missing sibling-engine target checks remain `NOT_ASSESSED`. No canonical doctrine changes are authorized by this task.
+No safety/legal/privacy release blocker was found in the inspected baseline evidence. Current standards verification, real supplied-screen review, selected-font rendering/embedding, device and assistive-technology checks, and Tier 3 model evaluation remain `NOT_ASSESSED`. No canonical doctrine changes are authorized by this task.
+
+## Baseline routing evidence correction
+
+The initial route-check command used the default sibling-checkout layout and reported six cross-engine targets missing. That workspace assumption was wrong. The baseline commit was rechecked in a detached worktree using the canonical workspace map supplied for this cycle; all declared cross-engine routes resolved with zero findings. The exact command and final-checkout result are recorded in [04-validation-record.md](04-validation-record.md). This corrects the initial NOT_ASSESSED statement; it does not change any files in the sibling repositories.

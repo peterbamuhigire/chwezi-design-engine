@@ -31,4 +31,4 @@ No uncommitted user-authored changes were present at baseline (`git status --sho
 
 ## Cross-engine observations (no edits here)
 
-The local cross-engine validator cannot resolve the declared `chwezi-sdlc-documentation` and `chwezi-dev-engine` repositories in the supplied workspace; those routes are `NOT_ASSESSED`, not validated. The diagram/proposal styling boundary and missing diagram skill are recorded in `06-next-cycle.md` for the portfolio/design handoff. No changes are made to those repositories.
+The canonical workspace map supplied for this cycle resolves all declared cross-engine targets. The validator was run against that map for both the frozen baseline worktree and the final checkout; results are recorded in `04-validation-record.md`. No changes are made to sibling repositories. The missing diagram-owning route observed in the practitioner task is addressed within this design repository.

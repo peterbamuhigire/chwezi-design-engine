@@ -11,7 +11,7 @@
     {
       "name": "design-engine",
       "source": "./",
-      "description": "101 skills covering typography, colour, layout, UX process, design systems and tokens, and the anti-AI-slop doctrine (banned fonts, human design authority)",
+      "description": "102 skills covering typography, colour, layout, UX process, design systems and tokens, diagram design and handoff, and the anti-AI-slop doctrine (banned fonts, human design authority)",
       "version": "1.1.0",
       "author": { "name": "Peter Bamuhigire" },
       "homepage": "https://github.com/peterbamuhigire/chwezi-design-engine",

@@ -1,4 +1,6 @@
 import importlib.util
+import subprocess
+import sys
 from pathlib import Path
 
 
@@ -27,3 +29,17 @@ def test_package_mode_excludes_transient_directory_entries(tmp_path):
     (cache / "object").touch()
     assert module.count_entries(tmp_path, "checkout") == 2
     assert module.count_entries(tmp_path, "package") == 1
+
+
+def test_engine_validator_fails_a_checkout_over_the_limit(tmp_path):
+    for index in range(5001):
+        (tmp_path / f"{index}.txt").touch()
+    validator = MODULE_PATH.with_name("validate_engine.py")
+    result = subprocess.run(
+        [sys.executable, str(validator), "--root", str(tmp_path)],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 1
+    assert "file-count-checkout=5001/5000" in result.stdout

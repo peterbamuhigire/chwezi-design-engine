@@ -3,6 +3,14 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-10] - Portfolio Kaizen
+
+- Added a routed diagram-design and handoff skill with a worked specification and routing fixtures.
+- Updated the standards source register from official sources checked 2026-10-29, corrected the ISO 14289-2 URL, and named the Design Tokens Format Module 2025.10 with its report status and limits.
+- Replaced machine-specific checkout locations in active skill guidance with portable engine identifiers.
+- Added a 5,000-file-entry guard to engine validation, the clone installer, and plugin-manifest generation, with checkout and package-tree modes.
+- Recorded practitioner-task render evidence and verified actual Public Sans and Source Serif 4 font loading and PDF embedding in temporary output; this does not establish PDF/UA conformance.
+
 ## [2026-09-29] - Repository renamed to chwezi-design-engine
 
 - The GitHub repository and local folder `design-system-skills` are now `chwezi-design-engine`

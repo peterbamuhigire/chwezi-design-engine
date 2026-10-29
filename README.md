@@ -1,6 +1,6 @@
 # Chwezi Design Engine
 
-Chwezi Design Engine is the Chwezi cross-cutting engine for the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience. It activates alongside whichever domain engine owns the content, and it governs how that content looks and behaves. Its 101 skills cover selection, specification, production handoff and review, under a written anti-slop doctrine. That doctrine has three working parts. The first is a machine-readable banned-font list (`doctrine/references/ai-slop-banned-fonts.json`), enforced by a write-time gate: a hard ban on Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces and the whole IBM Plex superfamily; a secondary ban on seventeen further faces, including Space Grotesk, Poppins, Montserrat, DM Sans, Playfair Display and Lora; and Source Sans 3 allowed only as a paired body face. The second is `chwezi-slop`, a deterministic detector that checks source files and rendered pages against a rule registry. The third is `design_query`, an offline catalogue with calibrated search that declines to answer when no record fits the query.
+Chwezi Design Engine is the Chwezi cross-cutting engine for the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience. It activates alongside whichever domain engine owns the content, and it governs how that content looks and behaves. Its [102 skills](.claude-plugin/plugin.json) cover selection, specification, production handoff and review, under a written anti-slop doctrine. That doctrine has three working parts. The first is a machine-readable banned-font list ([JSON registry](doctrine/references/ai-slop-banned-fonts.json)), enforced by a write-time gate: a hard ban on Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces and the whole IBM Plex superfamily; a secondary ban on seventeen further faces, including Space Grotesk, Poppins, Montserrat, DM Sans, Playfair Display and Lora; and Source Sans 3 allowed only as a paired body face. The second is `chwezi-slop`, a deterministic detector that checks source files and rendered pages against a rule registry. The third is `design_query`, an offline catalogue with calibrated search that declines to answer when no record fits the query.
 
 The engine works to WCAG 2.2 AA (ISO/IEC 40500:2025) and the WAI-ARIA Authoring Practices, PDF/UA-2 (ISO 14289-2:2024), ISO 9241-161:2025, Google's Core Web Vitals thresholds, Apple's Human Interface Guidelines and Material 3, the SIL Open Font License 1.1 for font embedding, and the ISO 12647 and PDF/X conventions for print. Its outputs include design directions and art-direction boards, brand identity and style guides, colour systems and design-token packs, typeface selections with licence checks, interface and interaction specifications, handoff redlines with acceptance criteria, formatting specifications for DOCX, PDF, PPTX and XLSX, print specifications, dashboards and infographics, recorded UI demo videos, and severity-rated audits (design, WCAG 2.2, anti-slop and whole-product) with remediation plans. It serves designers, product and engineering teams, agencies, and the other Chwezi engines whenever their deliverables need a considered visual layer. Every font approval traces to human design authority. AI-vendor sources are admitted only as evidence for a ban.
 
@@ -15,7 +15,7 @@ The engine works to WCAG 2.2 AA (ISO/IEC 40500:2025) and the WAI-ARIA Authoring 
 /plugin install design-engine@chwezi-design-engine
 ```
 
-The plugin registers all 101 skills and the enforcement hooks in `hooks/hooks.json`: the banned-font gate, the token-file gate, the destructive-command gate, and the `chwezi-slop` immediate and deep passes. Setting `hooks_enabled` to `false` in the plugin's user configuration turns the hooks off and keeps the skills.
+The generated Claude plugin manifest lists all 102 skill paths. The repository declares enforcement hooks in `hooks/hooks.json`; verify hook execution and configuration behavior in the target host rather than assuming repository metadata proves runtime behavior.
 
 **Clone installer.** `install.sh` and `install.ps1` delegate to `scripts/install-engine.js`. The default scope is the user (`~/.claude`); `--scope project` installs into `.claude` under the current directory. The installer also accepts `--dry-run` and `--json`, and `scripts/install-engine.js` provides `uninstall`, `doctor` and `list-installed`.
 
@@ -44,7 +44,7 @@ python -X utf8 -m pytest -q
 
 ## Capabilities
 
-The tables below were generated from the 101 active `SKILL.md` files under `skills/`. The `_TEMPLATE` scaffold is excluded. The engine has no `ALIAS.md` entries.
+The tables below were generated from the [102 active `SKILL.md` files listed in the plugin manifest](.claude-plugin/plugin.json) under `skills/`; the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The engine has no `ALIAS.md` entries.
 
 | Category | Folder | Skills |
 |---|---|---:|
@@ -60,11 +60,11 @@ The tables below were generated from the 101 active `SKILL.md` files under `skil
 | Design systems, tokens and theming | `09-design-systems-tokens-and-theming` | 5 |
 | Content design and UX writing | `10-content-design-and-ux-writing` | 3 |
 | Imagery, illustration and art direction | `11-imagery-illustration-and-art-direction` | 6 |
-| Data visualisation and dashboards | `12-data-viz-and-dashboards` | 4 |
+| Data visualisation and dashboards | `12-data-viz-and-dashboards` | 5 |
 | Presentations and documents | `13-presentations-and-documents` | 7 |
 | Conversion and web-page patterns | `14-conversion-and-web-page-patterns` | 5 |
 | Game visual experience | `15-game-visual-experience` | 5 |
-| **Total** | | **101** |
+| **Total** | | **102** |
 
 | Category | Skill | What it does |
 |---|---|---|
@@ -152,6 +152,7 @@ The tables below were generated from the 101 active `SKILL.md` files under `skil
 | Data visualisation and dashboards | `dashboard-and-data-product-design` | Designs dashboards and KPI scorecards with filters, drill-downs and freshness states |
 | Data visualisation and dashboards | `data-illustration-and-infographics` | Designs self-contained infographics for print, presentation, web and social |
 | Data visualisation and dashboards | `data-visualization` | Crafts and reviews single charts for accuracy, annotation and accessibility |
+| Data visualisation and dashboards | `diagram-design-and-handoff` | Designs conceptual diagrams with source, rendered checks, text alternative and implementation handoff |
 | Presentations and documents | `deck-system` | Designs decks, pitches and board updates with a visual system and presenter notes |
 | Presentations and documents | `design-storytelling-and-case-studies` | Structures evidence-backed narratives for design decks and case studies |
 | Presentations and documents | `docx-report-and-document-formatting` | Formats editable DOCX reports with named styles, contents, tables and embedded fonts |
