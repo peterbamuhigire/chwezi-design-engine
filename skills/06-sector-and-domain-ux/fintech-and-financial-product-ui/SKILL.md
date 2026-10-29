@@ -42,7 +42,7 @@ collapsing into the convergent fintech look (cool blue/teal, gradient cards, gla
 - The numbers are analytical/statistical rather than transactional money →
   `12-data-viz-and-dashboards/*`.
 - The accounting *meaning* of the figures (debits/credits, IFRS) is the question, not the UI →
-  the finance engine (`C:\wamp64\www\chwezi-accounting-doctrine`).
+  the finance engine (`chwezi-accounting-doctrine`; resolve its checkout through the current workspace map).
 
 ## Required Inputs
 

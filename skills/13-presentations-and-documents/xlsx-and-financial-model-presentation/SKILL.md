@@ -41,7 +41,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   validation, what-if/Solver/Goal-Seek, scenario engines, VBA/Office-Scripts automation, or the
   *accounting correctness* of the numbers. **This skill owns only how the model is dressed and
   presented; it explicitly defers all calculation and modelling mechanics** to the finance engine
-  (`C:\wamp64\www\chwezi-accounting-doctrine`, for IFRS/IAS statement structure, statutory and
+  (`chwezi-accounting-doctrine`, for IFRS/IAS statement structure, statutory and
   bookkeeping correctness) and to the engineering catalog (`~/.claude/skills`) for spreadsheet
   engineering / automation. If the request is "build/fix the model", route there first; return
   here only to present the result.
@@ -205,7 +205,7 @@ Without spreadsheet recalculation or rendering, produce a style and print specif
   page, repeating headers, header/footer, greyscale-safe palette, tab colour-coding.
 - **Sibling — `12-data-viz-and-dashboards/data-visualization`** owns the chart-choice + perceptual
   ranking + accessible-chart floor this skill *applies* inside Excel; defer encoding theory to it.
-- **Defer to — finance engine** `C:\wamp64\www\chwezi-accounting-doctrine` (IFRS/IAS, statement
+- **Defer to — finance engine** `chwezi-accounting-doctrine` (IFRS/IAS, statement
   structure, statutory/bookkeeping correctness) and the **engineering catalog** `~/.claude/skills`
   (spreadsheet engineering/automation) for **all formula / pivot / macro / model-calculation
   mechanics** — this skill is presentation-only.

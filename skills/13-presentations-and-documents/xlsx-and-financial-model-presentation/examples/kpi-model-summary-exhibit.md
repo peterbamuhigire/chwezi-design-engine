@@ -8,7 +8,7 @@ PDF). This is what "state the choice, then apply real settings" produces; copy t
 
 **Scope note (read first):** everything below is **presentation**. The model's formulas, the
 budget logic, the sensitivity calculation, and the accounting treatment of the numbers were built
-and signed off in the finance engine (`C:\wamp64\www\chwezi-accounting-doctrine`); this exhibit only
+and signed off in the finance engine (`chwezi-accounting-doctrine`; resolve the checkout through the current workspace map); this exhibit only
 dresses the signed-off result. Nothing here changes a number's meaning.
 
 ---

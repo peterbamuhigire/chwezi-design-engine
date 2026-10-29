@@ -61,7 +61,7 @@ maintained copy.** That work belongs to whichever engine vendors it first and ev
 should call into it.
 
 **Update (2026-09-20, later the same day): the CLI has since been vendored in `chwezi-sdlc-documentation`.**
-This was checked directly, not assumed — `C:\wamp64\www\chwezi-sdlc-documentation\scripts\plan-canvas.js` now
+This was checked directly, not assumed — `chwezi-sdlc-documentation/scripts/plan-canvas.js` now
 exists, with the full implementation under `chwezi-sdlc-documentation/scripts/lib/plan-canvas/` and both
 hooks (`plan-canvas-pending.js`, `plan-canvas-sessions.js`) wired into `chwezi-sdlc-documentation/hooks/hooks.json`.
 It is real, tested infrastructure, not a stub: all 128 of ECC's own ported tests pass there
@@ -93,7 +93,7 @@ discipline this whole Kaizen operation has followed — not because the informat
 `scripts/plan-canvas.js`, or a shared location `chwezi-engine-agents` ends up owning), point
 this skill's `ecc-plan-canvas` invocations at that single vendored copy rather than copying the
 server/session/rendering code a second time here — re-check
-`C:\wamp64\www\chwezi-sdlc-documentation\scripts\plan-canvas.js` before vendoring, since whichever engine
+`chwezi-sdlc-documentation/scripts/plan-canvas.js` before vendoring, since whichever engine
 finishes first should be the canonical source the other reuses. Until then, this skill
 documents the intended workflow; the mechanism itself is not yet runnable in this engine.
 
@@ -301,7 +301,7 @@ convert a missing listener into approval.
 
 - ECC original: `skills/plan-canvas/SKILL.md`, `docs/design/plan-canvas.md`
   (`C:\Users\Peter\Downloads\ECC-main`).
-- Sibling adaptation: `C:\wamp64\www\chwezi-sdlc-documentation\09-governance-compliance\plan-canvas\SKILL.md`
+- Sibling adaptation: `chwezi-sdlc-documentation/09-governance-compliance/plan-canvas/SKILL.md` (resolve the checkout through the current workspace map).
   — read for the governance-artefact framing pattern; this skill is written separately because
   the design-review framing (annotate a rendered element, not a document clause) differs from
   SRS's clause-level review.

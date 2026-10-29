@@ -3,7 +3,7 @@
 The exhibit-grade design layer for a spreadsheet. **Presentation only** — number-format syntax,
 named styles, the model-readability colour convention, and conditional formatting used as a
 deliberate visual encoding. **Formula, pivot, macro, and accounting-correctness mechanics are out
-of scope** and defer to the finance engine (`C:\wamp64\www\chwezi-accounting-doctrine`) and the
+of scope** and defer to the finance engine (`chwezi-accounting-doctrine`) and the
 engineering catalog (`~/.claude/skills`). Authority is `doctrine/design-doctrine.md` and
 `doctrine/references/wcag-2.2-criteria.md`; the number-format and model-convention seam is sourced
 from *Advanced Excel for Productivity* (2016), supplemented with current data-bar/icon-set guidance
