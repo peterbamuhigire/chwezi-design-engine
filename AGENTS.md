@@ -162,7 +162,9 @@ fixed before release.
 When the sibling-engine workspace is available, also inspect declared external handoffs with
 `python -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <workspace-parent>`.
 Missing sibling repositories are reported as `NOT ASSESSED`, not as a pass; the local route gate
-remains independently runnable from this repository.
+remains independently runnable from this repository. When checkouts carry other folder names than
+their repository names, pass `--map <repository>=<checkout>` (repeatable), `--workspace-map <json file>`
+or set `CHWEZI_WORKSPACE_MAP`; the script header documents the order of lookup.
 
 ## DOMAIN PROMPT GENERATION CONTRACT
 
