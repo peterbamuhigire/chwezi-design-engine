@@ -155,6 +155,14 @@ Exceptions live in `governance/portability-allowlist.json`, each with a reason a
 historical records, a ratchet that can only shrink. Name sibling engines by repository
 identifier and resolve them through the workspace map, never by a path or a relative link.
 
+Rendered output and token packs: `node scripts/check-rendered-fonts.js <file.pdf>` applies the
+banned-font doctrine to the fonts a PDF actually embeds (exit 0 pass, 2 banned family, 3 only
+fallback faces, 4 not embedded, 1 did not run, which is `NOT ASSESSED`). `python -X utf8
+scripts/validate_token_example.py <tokens.json> --profile generic` checks a real token pack for
+aliases, tiers, the Design Tokens 2025.10 value shapes and every stated contrast ratio. The detector
+(`node tools/slop-detector/cli.mjs`) also measures pointer targets (WCAG 2.5.8, browser tier) and flags
+positive `tabindex` values (2.4.3); it does not script non-text contrast (1.4.11) or reading order (1.3.2).
+
 The baseline is zero-debt: all 101 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.

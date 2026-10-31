@@ -16,7 +16,7 @@
 | Output readiness | 60 | 58 | Task 1 table works in Chromium (Compose uncompiled); Task 3 proposal renders with embedded fonts; but the machine checks that gate those outputs miss four of six seeded accessibility defects and cannot inspect a PDF's fonts. |
 | Accessibility and inclusion | 60 | 58 | Skill names the criteria well (1.3.2 excepted); detector recall on the seeded screen is 2/6 (contrast 1.4.3 and focus removal 2.4.7 only). No assistive-technology run. |
 | Production and handoff | 63 | 60 | PDF built with both faces embedded (as Type 3 outlines for variable fonts); token example not interoperable with the named format edition; no rendered-output font gate. |
-| Hygiene | 65 | 56 | Public repository: 10 operational files with machine-specific paths (3 in the router), 3 markdown links climbing out of the repository, 22 historical files, 29 font licence files with local drive origins. One file lists local epub paths including acquisition-site tags (blocker B1). |
+| Hygiene | 65 | 56 | Public repository: 10 operational files with machine-specific paths (3 in the router), 3 markdown links climbing out of the repository, 21 historical files, 29 font licence files with local drive origins. One file lists local epub paths including acquisition-site tags (blocker B1). |
 | Safety and integrity | 67 | 62 | Hooks and guards pass; but a public file exposes a user name and unlicensed-copy file names (B1), and the font gate cannot fail on a rendered file. |
 
 Weighted raw (same formula as 29 October: output 30%, mean of depth and proof 25%, standards 15%, taxonomy 10%, doctrine 10%, hygiene bucket 10% where the bucket is the mean of hygiene, routing and safety):
@@ -74,7 +74,7 @@ Counts that the validators do not report, taken by an independent script over th
 | Owned-negative rows (local owner) / (foreign owner) | 29 / 1 |
 | Worked-example text per skill: minimum / median words; skills under 250 words | 45 / 1,137; 11 |
 | Operational files with machine-specific paths (a Windows web-root folder, drive letters, `/home/<user>`, `/Users/<user>`; excludes `docs/`, `tests/`, `fonts/`) | **10** (`AGENTS.md`, `doctrine/design-doctrine.md`, `hooks/test-destructive-bash-gate.js` (intentional test inputs), `hooks/token-file-gate.js`, `install.sh` (a comment about drive letters), `integration/integration-plan.md`, `integration/migration-manifest.md`, `design-audit/SKILL.md`, `plan-canvas-design-review/SKILL.md`, `premium-ui-ux-design/references/source-register.md`) |
-| Historical files (`docs/`, `tests/`) with such paths / font licence files with a local drive origin | 22 / 29 |
+| Historical files (`docs/`, `tests/`) with such paths / font licence files with a local drive origin | 21 / 29 (the first count read 22 until the drive-letter pattern stopped matching an escaped newline; corrected 2026-10-31, before any content change) |
 | Markdown links checked outside `docs/`, `tests/`, `fonts/` / links climbing into sibling checkouts | 179 / **3** |
 | Dangling cross-engine references (declared routes that do not resolve with a workspace map) | 0 (6 unresolved by default layout: tooling, not content) |
 | Expired source records / rows due within 30 days | 0 / 3 (DGN-002, DGN-003, DGN-005 on 2026-11-11) |
