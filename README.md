@@ -1,12 +1,14 @@
 # Chwezi Design Engine
 
-Chwezi Design Engine is the Chwezi cross-cutting engine for the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience. It activates alongside whichever domain engine owns the content, and it governs how that content looks and behaves. Its [102 skills](.claude-plugin/plugin.json) cover selection, specification, production handoff and review, under a written anti-slop doctrine. That doctrine has three working parts. The first is a machine-readable banned-font list ([JSON registry](doctrine/references/ai-slop-banned-fonts.json)), enforced by a write-time gate: a hard ban on Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces and the whole IBM Plex superfamily; a secondary ban on seventeen further faces, including Space Grotesk, Poppins, Montserrat, DM Sans, Playfair Display and Lora; and Source Sans 3 allowed only as a paired body face. The second is `chwezi-slop`, a deterministic detector that checks source files and rendered pages against a rule registry. The third is `design_query`, an offline catalogue with calibrated search that declines to answer when no record fits the query.
+Chwezi Design Engine is the Chwezi cross-cutting engine for the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience. It activates alongside whichever domain engine owns the content, and it governs how that content looks and behaves. Its [102 skills](.claude-plugin/plugin.json) cover selection, specification, production handoff and review, under a written anti-slop doctrine. That doctrine has three working parts. The first is a machine-readable banned-font list ([JSON registry](doctrine/references/ai-slop-banned-fonts.json)), enforced by a write-time gate: a hard ban on Inter, Geist, Roboto, Open Sans, Lato, Arial, Fraunces and the whole IBM Plex superfamily; a secondary ban on seventeen further faces, including Space Grotesk, Poppins, Montserrat, DM Sans, Playfair Display and Lora; and Source Sans 3 allowed only as a paired body face. The second is `chwezi-slop`, a deterministic detector that checks source files and rendered pages against a registry of 51 rules (43 static, 8 browser). The third is `design_query`, an offline catalogue with calibrated search that declines to answer when no record fits the query.
 
 The engine works to WCAG 2.2 AA (ISO/IEC 40500:2025) and the WAI-ARIA Authoring Practices, PDF/UA-2 (ISO 14289-2:2024), ISO 9241-161:2025, Google's Core Web Vitals thresholds, Apple's Human Interface Guidelines and Material 3, the SIL Open Font License 1.1 for font embedding, and the ISO 12647 and PDF/X conventions for print. Its outputs include design directions and art-direction boards, brand identity and style guides, colour systems and design-token packs, typeface selections with licence checks, interface and interaction specifications, handoff redlines with acceptance criteria, formatting specifications for DOCX, PDF, PPTX and XLSX, print specifications, dashboards and infographics, recorded UI demo videos, and severity-rated audits (design, WCAG 2.2, anti-slop and whole-product) with remediation plans. It serves designers, product and engineering teams, agencies, and the other Chwezi engines whenever their deliverables need a considered visual layer. Every font approval traces to human design authority. AI-vendor sources are admitted only as evidence for a ban.
 
 ## Installation
 
-**Prerequisites.** Node.js 18 or later runs the clone installer, the hooks and the `chwezi-slop` detector. CI uses Node 24. Python 3.11 or later runs the validators, `design_query` and the Codex model-policy helper; CI uses Python 3.12, with `PyYAML` and `pytest`. The detector's browser tier uses the consuming project's own locked Playwright and installs nothing itself.
+**Prerequisites.** Node.js 18 or later runs the clone installer, the hooks and the `chwezi-slop` detector. CI uses Node 24; the checks in this document were run on Node 22. Python 3.11 or later runs the validators, `design_query` and the Codex model-policy helper; CI uses Python 3.12 and the checks were run here on 3.14. The only third-party Python packages are `PyYAML` (the routing, route-existence, cross-engine and engine validators) and `pytest` (the test suite). The repository has no requirements file and CI installs both unpinned, so pin them in your own environment when you need repeatable runs. The detector's browser tier uses the consuming project's own locked Playwright and installs nothing itself.
+
+**Repository name.** The GitHub repository is `chwezi-design-engine`. A checkout made before the rename may still sit in a directory called `design-system-skills`. The repository scripts find the repository root from their own location, so the directory name does not matter to them.
 
 **Claude Code plugin.** The marketplace is `chwezi-design-engine` and the plugin is `design-engine` (version 1.1.0, defined in `.claude-plugin/`):
 
@@ -30,17 +32,48 @@ cd chwezi-design-engine
 
 **Codex.** Codex reads `AGENTS.md` as the router. Before substantive work it runs `python <engine-root>/.codex/ensure_model_policy.py --runtime codex --check` (see `.codex/README.md`). Claude and other runners skip this step.
 
-**Manual route.** Clone the repository and read `AGENTS.md` (`CLAUDE.md` is a thin bridge to it). Then read `doctrine/design-doctrine.md`, glob `skills/**/SKILL.md` fresh each time, route on the frontmatter `description`, and run `governance/design-quality-gate.md` before you call an artefact finished. In Claude Code, read these skills directly rather than through the `Skill` tool. Useful commands:
+**Manual route.** Clone the repository and read `AGENTS.md` (`CLAUDE.md` is a thin bridge to it). Then read `doctrine/design-doctrine.md`, glob `skills/**/SKILL.md` fresh each time, route on the frontmatter `description`, and run `governance/design-quality-gate.md` before you call an artefact finished. From a bare clone, without the plugin, these skills are not on Claude Code's native discovery path, so read the `SKILL.md` files directly rather than through the `Skill` tool. With the plugin installed, Claude Code lists them as `design-engine:<skill-name>`. Use `python3` on Linux and macOS and `python` on Windows. Commands for using the engine (the checks are under [Validation](#validation)):
 
 ```text
-python -X utf8 scripts/design_query.py search "editorial report serif" --domain typography
+python3 -X utf8 scripts/design_query.py search "editorial report serif" --domain typography
 node tools/slop-detector/cli.mjs --tier deep path/to/project
-python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
-python -X utf8 scripts/check_file_count.py . --mode checkout
-python -X utf8 scripts/check_file_count.py . --mode package
-python -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures
-python -X utf8 -m pytest -q
+node scripts/check-rendered-fonts.js path/to/output.pdf
 ```
+
+`design_query` prints a calibrated JSON result and declines to answer when no record fits. The detector exits `2` when it finds a failing issue (for example a banned face as primary type), `1` when it could not run and `0` otherwise. `check-rendered-fonts.js` reads the fonts a finished PDF embeds through poppler's `pdffonts` and applies the same banned-font doctrine: exit `0` pass, `2` banned family, `3` only fallback faces, `4` font not embedded, `1` did not run, which is `NOT_ASSESSED` and never a pass. It lists Type 3 fonts as a note, because it cannot judge outlined glyphs.
+
+## Validation
+
+Run every command from the repository root. The Python checks need `PyYAML`; the pytest suite also needs `pytest`. The results below were measured on 2026-10-31 on Linux with Python 3.14 and Node 22, with `pytest` 9.0.3 and `PyYAML` 6.0.3 in a separate virtual environment. They are a dated record, not a promise; rerun a command before you quote it.
+
+| Check | Command | Needs | Result on 2026-10-31 |
+|---|---|---|---|
+| Engine contract and regression gate | `python3 -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json` | PyYAML | Exit 0. 102 of 102 skills compliant; 51 rules and 102 detector fixtures; six report-only size warnings; portability findings 0 |
+| Portability | `python3 -X utf8 scripts/validate_portability.py` | none | Exit 0. No unlisted machine-specific path; three allowlisted link findings in dated records |
+| Routing (lexical proxy, not live routing) | `python3 -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures` | PyYAML | Exit 0. 94 fixtures, precision@1 95%, precision@3 100%, owned negatives 46/46, one foreign owner `NOT ASSESSED` |
+| Route existence | `python3 -X utf8 scripts/validate_route_existence.py` | PyYAML | Exit 0. 0 findings |
+| Delivery-evidence record | `python3 -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json` | none | Exit 0. Structure valid; verdict `CONDITIONAL`, with five stages `NOT ASSESSED` |
+| Design token example | `python3 -X utf8 scripts/validate_token_example.py skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/examples/tokens.json` | none | Exit 0. 0 findings (see below) |
+| Design catalogue | `python3 -X utf8 scripts/validate_design_catalog.py data/design-catalog.json` | none | Exit 0. Schema, coverage, font-doctrine, contrast and lifecycle checks pass; 0 stale records |
+| File-entry ceiling | `python3 -X utf8 scripts/check_file_count.py . --mode checkout` and `--mode package` | none | Exit 0 for both; ceiling 5,000 entries |
+| Plugin manifest | `node scripts/generate-plugin-manifest.js --engine . --check` | Node | Exit 0. `plugin.json` is current, 102 skills |
+| Python test suite | `python3 -X utf8 -m pytest -q -p no:cacheprovider` | pytest, PyYAML | Exit 0. 196 passed in 38 s |
+| Detector registry and font doctrine | `node tools/slop-detector/cli.mjs --validate-registry` and `--doctrine-consistency` | Node | Exit 0. 51 rules (43 static, 8 browser); 0 baseline/ban conflicts |
+| Detector suite | `node --test tools/slop-detector/test/` | Node; a locked Playwright project for the browser test | Exit 0. 119 tests: 118 pass, 1 skipped (the browser acceptance test, which needs the locked Playwright project) |
+| Hook tests | `node hooks/test-banned-font-gate.js`, `test-rendered-font-names.js`, `test-token-file-gate.js`, `test-destructive-bash-gate.js`, `test-plugin-hook-config.js`, `test-slop-immediate.js`, `test-slop-deep-pass.js` | Node | Exit 0 each: 45/45, 73/73, 10/10, 61/61, 7/7, 12/12, 10/10 |
+| Installer file guard | `node --test tests/file-count.test.js` | Node | Exit 0. 4 pass |
+| Agent contract | `python3 -X utf8 tests/agent-integration/test_design_agent_contract.py` | PyYAML | Exit 0. Pass; the universal catalogue is not available, so that part is `NOT ASSESSED` |
+| Cross-engine handoffs | `python3 -X utf8 scripts/validate_cross_engine_routes.py` | PyYAML and sibling checkouts | See below |
+
+CI (`.github/workflows/skill-engine-quality.yml`) runs the engine gate, portability, routing, route-existence, delivery-evidence, token-example and catalogue checks, the pytest suite, the detector registry and suite, and the seven hook tests. It does not run `--doctrine-consistency`, the file-count tests, the manifest check, the agent-contract test (pytest does not collect it) or the cross-engine check, and it does not run the token validator on any file other than the shipped example.
+
+**Cross-engine handoffs.** The script checks that every declared handoff to another engine names a repository and a path that exist. A repository it cannot find is `NOT ASSESSED` and fails the run (exit 1); it is never a pass. It looks first at `--map NAME=PATH` (repeatable), then at a JSON file named by `--workspace-map` or the `CHWEZI_WORKSPACE_MAP` environment variable, then at `--workspace-root` (default: the folder that holds this checkout). Use the map when sibling checkouts keep their former folder names. On 2026-10-31 the default run on a workstation with the former folder names exited 1 with six routes `NOT ASSESSED`, and a run with a map for `chwezi-dev-engine` and `chwezi-sdlc-documentation` plus a root holding the other siblings exited 0 with 0 findings. This engine does not read `CHWEZI_ENGINES_ROOT`.
+
+**Design token validator.** `scripts/validate_token_example.py <tokens.json>` checks a three-tier token file (primitive, semantic, component). Every run checks that each `{alias}` resolves, that no alias forms a cycle, that no type changes across an alias, and that component tokens resolve through the semantic tier. By default it also checks that literal colour, dimension, duration, font-family, font-weight and cubic-bezier values use the shapes of the Design Tokens Format Module 2025.10 and its Color Module (Final Community Group Reports of 28 October 2025, not W3C Standards), so a CSS string such as `oklch(...)` or `16px` is rejected, and it recomputes every `vs <token> = N:1` contrast claim in a `$description` from the token values and requires agreement within 0.05. The default profile, `canonical-example`, also requires the roles the shipped example defines and so guards that file. `--profile generic` runs the structural checks alone and suits a project's own pack. `--skip-value-shapes` and `--skip-contrast-claims` relax the two extra checks for a legacy pack. It is a structural and arithmetic guard: it does not claim full Design Tokens conformance and it does not test a Style Dictionary or Figma import.
+
+Unresolved follow-up: the second shipped example, `skills/09-design-systems-tokens-and-theming/measured-style-pack/examples/tokens-from-pack.json`, does not pass this validator. Run on 2026-10-31 it reports 17 findings on the default profile and 14 with `--profile generic`, and exits 1 both times. Fourteen findings are `seeded_primitive_tokens.*: component token must reference semantic token`: the file is a primitive-seed fragment under a custom root, not a three-tier pack. The other three are canonical roles the default profile requires (`semantic.color.action.danger.bg`, `semantic.color.action.danger.fg` and `semantic.radius.control.sm`). The unit test accepts the fourteen as expected. No decision has been taken on whether the example or the validator should change, and CI does not run the validator on this file.
+
+**What needs more than Python and Node.** None of the checks above needs PowerShell, Pandoc, Mermaid, LibreOffice or a container. Three things need more. First, the detector's browser tier needs the consuming project's own locked Playwright: without it the rendered-page rules are reported as `NOT_ASSESSED` and the run still exits 0, so read the output and not only the exit code. Second, `check-rendered-fonts.js` needs poppler's `pdffonts`. Third, the rebuild-and-verify scripts in `examples/p18-synthetic-output-pack/` need LibreOffice, Ghostscript, `python-docx`, `openpyxl`, `python-pptx`, Pillow and PyMuPDF. On the measurement host the Python document libraries were absent, so those scripts were not run (`NOT_ASSESSED`). `install.ps1` is the Windows installer; it needs PowerShell and was not run on the Linux host. The Codex helper (`python3 .codex/ensure_model_policy.py --runtime codex --check`) reads the Codex configuration of the machine it runs on; it was run against an empty scratch directory only (exit 1, drift reported), and `--runtime claude` prints `NOT_APPLICABLE` and exits 0.
 
 ## Capabilities
 
@@ -171,13 +204,36 @@ The tables below were generated from the [102 active `SKILL.md` files listed in 
 | Game visual experience | `game-ui-hud-and-diegetic-interfaces` | Designs HUDs, menus, maps, inventory, controller focus and diegetic interfaces |
 | Game visual experience | `game-visual-experience-orchestration` | Routes a game's player fantasy and loop into HUD, art, feedback and handoff |
 
-**Font doctrine in brief.** The authored source is `doctrine/references/ai-slop-banned-fonts.md`, and the hook reads its machine-readable mirror, `ai-slop-banned-fonts.json` (last synced 29 September 2026). Each ban carries a reason label: `[AI]` for an AI-ecosystem default, `[POP]` for a generic, overused face, `[SYS]` for a lazy system default and `[HOUSE]` for a house ruling.
+**Font doctrine in brief.** The authored source is `doctrine/references/ai-slop-banned-fonts.md`, and the hook reads its machine-readable mirror, `ai-slop-banned-fonts.json` (last synced 29 September 2026). Each ban carries a reason label: `[AI]` for an AI-ecosystem default, `[POP]` for a generic, overused face, `[SYS]` for a lazy system default and `[HOUSE]` for a house ruling. The same sidecar drives the write-time hook `hooks/banned-font-gate.js`, the detector's `banned-primary-font` rule and `scripts/check-rendered-fonts.js`, which reads the fonts a finished PDF embeds.
 
 - **Hard ban:** Inter, Geist (every cut), Roboto, Open Sans, Lato, Arial, Fraunces, and every face of IBM Plex.
 - **Secondary ban:** Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito and Nunito Sans. On 29 September 2026 the list gained Newsreader, Cormorant, Cormorant Garamond, Crimson Pro, Space Mono, Plus Jakarta Sans, Instrument Sans, DM Sans, Outfit, Playfair Display and Lora.
 - **System stacks:** a bare system stack used on its own is banned.
 - **Monospace:** Roboto Mono and IBM Plex Mono are banned as deliberate monospace choices. JetBrains Mono and Fira Code are approved.
 - **Watchlist:** Syne, DM Serif Display, DM Serif Text, Helvetica, Mona Sans, Recoleta and DejaVu Sans are not banned, but choosing one needs a stated human-design reason. They are next reviewed on 29 December 2026.
+
+## Quality and improvement
+
+The improvement records are in [`docs/kaizen/2026-10-engine-kaizen/`](docs/kaizen/2026-10-engine-kaizen/) (29 October 2026) and [`docs/kaizen/2026-10-engine-kaizen-pass-2/`](docs/kaizen/2026-10-engine-kaizen-pass-2/) (31 October 2026). Each holds the same seven files: scope and evidence, baseline scorecard, backlog, experiment log, validation record, final report and next-cycle record. [`docs/README.md`](docs/README.md) indexes the older audits and plans.
+
+**Latest published score.** Pass 2 closed at a raw 60.3 out of 100. The published figure is `min(raw, 65)`, which is also 60.3 ([final report](docs/kaizen/2026-10-engine-kaizen-pass-2/05-final-report.md)). The 29 October cycle closed at a raw 59.0 and published 45.0 under a stricter cap set for that cycle (59.0 under the standard cap). The pass-2 baseline, taken before any change, was 56.9; it sat below the earlier final because the pass tested more. The target is 95 and is not met. The score is a judgement against named evidence. It is not a claim of production readiness.
+
+**Open findings that matter to a user** (from the [next-cycle record](docs/kaizen/2026-10-engine-kaizen-pass-2/06-next-cycle.md)):
+
+- The delivery record is `CONDITIONAL`. No run used a real brief or a supplied screen, no Compose output was compiled, and no PDF/UA-2 or assistive-technology test exists. Each is `NOT_ASSESSED`.
+- Machine checks have known gaps. The detector does not script non-text contrast (WCAG 1.4.11) or reading order (1.3.2). Its target-size and positive-tabindex rules report warnings, so a pipeline that fails only on blocks will not stop them. The rendered-font gate reads names, not licences, and cannot see outlined text. Routing evidence is a lexical proxy, with three recorded routing gaps, and fixture coverage reaches 11 of 102 skills.
+- Depth is uneven. `sector-strategies` still has the generic workflow, and five skills keep depth in `legacy-guidance.md` (`brand-style-guide`, `color-selection`, `ux-psychology`, `legal-sector-ui-ux`, `sector-strategies`). The legal-sector references follow US-style bar rules and carry unsourced conversion statistics.
+- The `tokens-from-pack.json` example fails the token validator (see [Validation](#validation)).
+- Three sources are `NOT_ASSESSED`: ISO 14289-2, the EUR-Lex text of Directive (EU) 2019/882 and the Material guidance site. Model currentness did not pass.
+- Owner decisions are pending: the doctrine header (version 0.2.0), the promised `doctrine/examples/` folder (absent) and a local path in section 5 of the doctrine; public history that still holds paths removed from the working tree; and the local origin line in the font licence files.
+
+**Date-triggered gates.** No validator in this repository fails because of the calendar. The only date logic is the stale-record warning in `validate_design_catalog.py`, which prints warnings and exits 0. This was checked by running it with `--as-of` on 2026-12-28, 2026-12-29, 2027-01-27 and 2027-06-01 (exit 0 each), by stepping `--as-of` day by day from 2026-10-31 to 2027-03-01, and by searching the scripts, hooks, detector and engine package for date handling.
+
+| Date | What changes | Action |
+|---|---|---|
+| 2026-12-20 | `validate_design_catalog.py` starts to list 13 catalogue records as stale (due 2026-12-19); 19 from 2026-12-29 (six more due 2026-12-28). Warnings only | Recheck the records, or set a new `recheck_due` with evidence |
+| 2026-12-29 | Targeted re-check of the font watchlist (seven faces) and any source-register row that moved. No validator reads this date | Re-research the watchlist under `doctrine/references/living-slop-refresh-protocol.md` |
+| 2027-01-27 | Review date of every row in `governance/standards-source-register.md` (DGN-001 to DGN-011 and DGN-013) and of the full re-audit. No validator reads this date | Re-read each primary source and record the access date; sources that cannot be read stay `NOT_ASSESSED` |
 
 ## References
 
