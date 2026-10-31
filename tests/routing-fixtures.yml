@@ -214,3 +214,90 @@
   expected: inclusive-and-assistive-design
 - prompt: Plan field research with farmers and cooperative leaders.
   expected: ux-research-and-usability-testing
+- prompt: Our Figma colours are named after hues like blue-500 and used straight in components; sort them into primitive, semantic and component tiers with stable names.
+  expected: design-tokens-and-naming
+  negatives:
+    - prompt: Design the prop API, variants and slots for our Button component.
+      owner: component-library-architecture
+    - prompt: Write the redlines and acceptance criteria for the checkout screen for the engineers.
+      owner: design-handoff-and-dev-spec
+- prompt: Our dark and white-label themes should re-point semantic role names; set that up without touching component tokens.
+  expected: design-tokens-and-naming
+- prompt: Audit this dialog for keyboard traps, focus order and accessible names against WCAG 2.2 AA.
+  expected: accessibility-wcag-2-2-compliance
+  negatives:
+    - prompt: Design for people with low literacy, cognitive load and unreliable bandwidth beyond the compliance minimum.
+      owner: inclusive-and-assistive-design
+    - prompt: Check whether these brand blues pass contrast on white and fix the failures.
+      owner: accessible-color-and-contrast
+- prompt: Fix the sticky header so it never hides the focused field when tabbing, and meet the WCAG 2.2 target size minimum.
+  expected: accessibility-wcag-2-2-compliance
+- prompt: Lay out the 40-page lender feasibility study as a print-ready PDF with covers, dividers and running headers.
+  expected: pdf-proposal-and-bankable-document-design
+- prompt: Embed the licensed brand font in the PDF and PowerPoint deliverables and verify the licence allows embedding.
+  expected: font-embedding-and-licensing
+  negatives:
+    - prompt: Scan our fonts folder for premium families we already own before choosing a typeface.
+      owner: premium-font-scan
+    - prompt: Pick a display and body pairing for the annual report.
+      owner: font-selection-and-pairing
+- prompt: Self-host the licensed web font files as woff2 and confirm the licence allows embedding on the website.
+  expected: font-embedding-and-licensing
+- prompt: The DOCX opens with Calibri on the client's laptop because the font was not embedded; fix the embedding.
+  expected: font-embedding-and-licensing
+- prompt: Build the Compose screen for the loans list using Material 3 navigation, with adaptive layouts for tablets and foldables.
+  expected: android-ui-ux-design
+  negatives:
+    - prompt: Design the iPhone tab bar and navigation stack following the Human Interface Guidelines.
+      owner: ios-ui-ux-design
+    - prompt: The same product ships on iOS and Android; list which flows, navigation patterns and controls we unify and which stay platform-native.
+      owner: cross-platform-design-parity
+- prompt: Which Material 3 components should the Android loans table use in Compose, and how should it adapt on tablets?
+  expected: android-ui-ux-design
+- prompt: Design the Android bottom navigation and back behaviour for phone and fold postures.
+  expected: android-ui-ux-design
+- prompt: Design what the invoices table shows while loading, when no invoices exist, and after a failed refresh.
+  expected: empty-error-and-loading-states
+  negatives:
+    - prompt: Write the wording for the error banner and the toast when a payment fails.
+      owner: error-empty-and-system-messaging
+    - prompt: Plan the first-run walkthrough that gets a new user to their first transaction.
+      owner: onboarding-and-first-run-design
+- prompt: Offline and permission-denied states for the field-agent app need visuals and a retry pattern.
+  expected: empty-error-and-loading-states
+- prompt: Write error messages for failed validation, the offline notice and the 404 page.
+  expected: error-empty-and-system-messaging
+  negatives:
+    - prompt: Rewrite the button labels and form field hints across the settings screen.
+      owner: ux-writing-and-microcopy
+    - prompt: Design the layout and skeleton for a loading table.
+      owner: empty-error-and-loading-states
+- prompt: Write the confirmation message for a destructive delete action, including the undo toast.
+  expected: error-empty-and-system-messaging
+- prompt: Plan the website for a family-law chambers in Kampala with practice pages, attorney profiles and a confidential consultation form.
+  expected: legal-sector-ui-ux
+  negatives:
+    - prompt: Design the patient portal and appointment booking for a private clinic.
+      owner: healthcare-ui-design
+    - prompt: Pick the visual conventions for a tour and travel website.
+      owner: sector-strategies
+- prompt: Draft attorney profile pages and trust signals for a solicitor firm without making claims the bar rules would forbid.
+  expected: legal-sector-ui-ux
+- prompt: Design the homepage and intake for a criminal defence law firm, with an urgent contact route.
+  expected: legal-sector-ui-ux
+- prompt: Our status badges rely on red and green alone; add non-colour cues and check the pairs against WCAG.
+  expected: accessible-color-and-contrast
+  negatives:
+    - prompt: Create a proper dark theme from our light palette.
+      owner: dark-mode-and-theming
+- prompt: Verify the placeholder, border and focus ring colours of the form fields meet contrast, including in the dark theme.
+  expected: accessible-color-and-contrast
+- prompt: Prepare the developer handoff for the new loan application screen, with states, breakpoints and acceptance criteria.
+  expected: design-handoff-and-dev-spec
+  negatives:
+    - prompt: Define and name the colour, spacing and radius tokens for the new design system.
+      owner: design-tokens-and-naming
+    - prompt: Run the final design QA before the release goes live.
+      owner: design-qa-and-pre-launch-review
+- prompt: Write the redline spec for the dashboard header so engineering can build it without guessing spacing or behaviour.
+  expected: design-handoff-and-dev-spec
