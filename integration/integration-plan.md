@@ -9,10 +9,11 @@ reference always resolves.
 
 ---
 
-## 1. The trigger block (paste into each engine's CLAUDE.md and AGENTS.md)
+## 1. The trigger block (paste into each engine's AGENTS.md)
 
-Add this to the routing/engine-table section of each consumer engine. Adapt the relative path
-if the engine lives elsewhere on a given device.
+Add this to the routing/engine-table section of each consumer engine's `AGENTS.md`. Each engine's
+`CLAUDE.md` is a thin bridge that imports `AGENTS.md`, so it carries no copy. The block names no
+path, so nothing needs adapting per device.
 
 ```markdown
 <!-- chwezi-design-engine:trigger v4 -->
@@ -53,21 +54,29 @@ Version history:
 
 ### Consumer engines (where the block goes)
 
-| Engine | Repository (resolve the checkout through the workspace map) | Block added? | `v2` copies (2026-09-29) |
-|---|---|---|---|
-| business-plan-skills | `business-plan-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| chwezi-sdlc-documentation | `chwezi-sdlc-documentation` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| proposal-skills | `proposal-skills` | ✅ 2026-06-21 | `AGENTS.md` |
-| website-skills | `website-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| social-media-skills | `social-media-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| chwezi-dev-engine (formerly `~/.claude/skills`) | `chwezi-dev-engine` | ✅ 2026-06-21 | `AGENTS.md` (migration note kept after the block) |
-| digital-research-engine | `digital-research-engine` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| linux-skills | `linux-skills` | ✅ (runner-neutral variant, now canonical) | `AGENTS.md`, `CLAUDE.md` |
+Measured on 2026-10-31 by extracting the block from each engine's `AGENTS.md` and comparing it
+with `integration/trigger-block.md`: every engine below carries the `v4` block and every copy is
+byte-identical to the canonical text. No engine's `CLAUDE.md` carries a copy.
 
-Accounting, windows-admin and engine-agents hold no block; M10-02-T06 decides whether to add it.
+| Engine | Repository (resolve the checkout through the workspace map) | Block in `AGENTS.md` |
+|---|---|---|
+| business-plan-skills | `business-plan-skills` | `v4`, identical |
+| chwezi-accounting-doctrine | `chwezi-accounting-doctrine` | `v4`, identical |
+| chwezi-engine-agents | `chwezi-engine-agents` | `v4`, identical |
+| chwezi-sdlc-documentation | `chwezi-sdlc-documentation` | `v4`, identical |
+| proposal-skills | `proposal-skills` | `v4`, identical |
+| website-skills | `website-skills` | `v4`, identical |
+| social-media-skills | `social-media-skills` | `v4`, identical |
+| chwezi-dev-engine | `chwezi-dev-engine` | `v4`, identical (migration note kept after the block) |
+| Digital Research Engine | catalogue id `digital-research-skills` | `v4`, identical |
+| linux-skills | `linux-skills` | `v4`, identical (the runner-neutral variant, now canonical) |
+| windows-admin-engine-skills | `windows-admin-engine-skills` | `v4`, identical |
 
-> The user's global `~/.claude/CLAUDE.md` engine-routing table should also gain a row for
-> chwezi-design-engine as a cross-cutting engine (alongside the finance engine note).
+Earlier versions of this table recorded that accounting, windows-admin and engine-agents held no
+block; that is no longer true.
+
+> A runner's global engine-routing table should also list chwezi-design-engine as a cross-cutting
+> engine (alongside the finance engine note).
 
 ---
 
