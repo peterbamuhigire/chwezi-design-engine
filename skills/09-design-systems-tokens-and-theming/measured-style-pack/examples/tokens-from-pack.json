@@ -59,29 +59,29 @@
     "$description": "TIER 1 -- PRIMITIVE. Fed directly from measured_pack.grade/scale/spacing above, matching the OKLCH + W3C $value/$type shape used by design-tokens-and-naming/examples/tokens.json. Semantic and component tiers are built on top of these the normal way -- not shown here.",
     "color": {
       "accent": {
-        "500": { "$value": "oklch(0.46 0.132 152)", "$type": "color", "$description": "measured mid-band accent, kwera-health-deck-2026-08" }
+        "500": { "$value": { "colorSpace": "oklch", "components": [0.46, 0.132, 152], "hex": "#006a34" }, "$type": "color", "$description": "measured mid-band accent, kwera-health-deck-2026-08" }
       },
       "neutral": {
-        "900": { "$value": "oklch(0.081 0.021 255)", "$type": "color", "$description": "measured shadow band" },
-        "0":   { "$value": "oklch(0.92 0.012 150)",  "$type": "color", "$description": "measured highlight band" }
+        "900": { "$value": { "colorSpace": "oklch", "components": [0.081, 0.021, 255], "hex": "#000206" }, "$type": "color", "$description": "measured shadow band" },
+        "0":   { "$value": { "colorSpace": "oklch", "components": [0.92, 0.012, 150], "hex": "#dfe7e0" },  "$type": "color", "$description": "measured highlight band" }
       }
     },
     "font": {
       "size": {
-        "100": { "$value": "13px", "$type": "dimension" },
-        "200": { "$value": "16px", "$type": "dimension" },
-        "300": { "$value": "20px", "$type": "dimension" },
-        "400": { "$value": "26px", "$type": "dimension" },
-        "500": { "$value": "33px", "$type": "dimension" },
-        "600": { "$value": "42px", "$type": "dimension" }
+        "100": { "$value": { "value": 13, "unit": "px" }, "$type": "dimension" },
+        "200": { "$value": { "value": 16, "unit": "px" }, "$type": "dimension" },
+        "300": { "$value": { "value": 20, "unit": "px" }, "$type": "dimension" },
+        "400": { "$value": { "value": 26, "unit": "px" }, "$type": "dimension" },
+        "500": { "$value": { "value": 33, "unit": "px" }, "$type": "dimension" },
+        "600": { "$value": { "value": 42, "unit": "px" }, "$type": "dimension" }
       }
     },
     "space": {
-      "100": { "$value": "8px",  "$type": "dimension" },
-      "200": { "$value": "16px", "$type": "dimension" },
-      "300": { "$value": "24px", "$type": "dimension" },
-      "400": { "$value": "32px", "$type": "dimension" },
-      "600": { "$value": "48px", "$type": "dimension" }
+      "100": { "$value": { "value": 8, "unit": "px" },  "$type": "dimension" },
+      "200": { "$value": { "value": 16, "unit": "px" }, "$type": "dimension" },
+      "300": { "$value": { "value": 24, "unit": "px" }, "$type": "dimension" },
+      "400": { "$value": { "value": 32, "unit": "px" }, "$type": "dimension" },
+      "600": { "$value": { "value": 48, "unit": "px" }, "$type": "dimension" }
     }
   }
 }

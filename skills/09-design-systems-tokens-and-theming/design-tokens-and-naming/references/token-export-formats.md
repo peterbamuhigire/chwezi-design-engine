@@ -9,13 +9,15 @@ OKLCH (`02-…/color-system-and-palette`).
 
 ## 1. The source of truth: W3C Design Tokens JSON
 
-Author tokens once, in the W3C format, using `$value` / `$type`, with `{dot.path}` references for
-aliasing across tiers. This is the file everything else is generated from.
+Author tokens once, in the Design Tokens Format Module 2025.10 (a Final Community Group Report,
+not a W3C Standard), using `$value` / `$type`, with `{dot.path}` references for aliasing across
+tiers. This is the file everything else is generated from. Literal values take the object shapes
+of that edition; a CSS string such as `oklch(0.55 0.17 255)` or `16px` is not defined there.
 
 ```jsonc
 {
   "color": {
-    "brand":   { "600": { "$value": "oklch(0.55 0.17 255)", "$type": "color" } },  // primitive
+    "brand":   { "600": { "$value": { "colorSpace": "oklch", "components": [0.55, 0.17, 255], "hex": "#1570d1" }, "$type": "color" } },  // primitive
     "action": {
       "primary": {
         "bg": { "$value": "{color.brand.600}", "$type": "color" }                  // semantic → primitive
@@ -30,8 +32,26 @@ aliasing across tiers. This is the file everything else is generated from.
 
 - `$value` holds the value or a `{reference}`. `$type` enables correct per-platform transforms
   (a `color` becomes a hex/RGBA on platforms that can't take OKLCH; a `dimension` becomes `rem`/`pt`/`dp`).
+  The optional `hex` in a colour object is the sRGB fallback for legacy, email and Compose targets;
+  it must match the components when the colour is inside sRGB.
 - References are resolved at build time, so the three-tier graph survives into every output.
 - Use `$description` for handoff notes (e.g. recorded WCAG result). Group with nesting, not flat keys.
+
+### Literal value shapes (2025.10)
+
+| `$type` | `$value` | Not defined in this edition |
+|---|---|---|
+| `color` | `{ "colorSpace": "oklch", "components": [L, C, H], "hex": "#rrggbb" }`; `alpha` optional (0 to 1) | `"oklch(0.6 0.16 255)"`, `"#1570d1"` as a bare string |
+| `dimension` | `{ "value": 16, "unit": "px" }`; unit is `px` or `rem` | `"16px"` |
+| `duration` | `{ "value": 150, "unit": "ms" }`; unit is `ms` or `s` | `"150ms"` |
+| `fontFamily` | `"Public Sans"` or `["Public Sans", "Georgia", "serif"]` | `"Public Sans, Georgia, serif"` |
+| `fontWeight` | `400` or an alias such as `"semi-bold"` | `"400"` (a quoted number) |
+| `cubicBezier` | `[0.2, 0, 0, 1]` (x values from 0 to 1) | `"cubic-bezier(0.2, 0, 0, 1)"` |
+
+Check a pack with `python -X utf8 scripts/validate_token_example.py <tokens.json> --profile generic
+--check-value-shapes --check-contrast-claims`. It also recomputes every `vs <token> = N:1` claim in
+a `$description` from the token values. It does not test a Style Dictionary or Figma import; run
+that against the target toolchain and record the result.
 
 ### Theming in the source
 Keep one base set plus per-theme **overrides that re-point only the semantic tier**:

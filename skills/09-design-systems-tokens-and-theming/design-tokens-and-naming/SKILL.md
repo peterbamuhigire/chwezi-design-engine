@@ -92,7 +92,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 4. **Encode colour primitives in OKLCH, not hex.** Author the ramps in OKLCH (`oklch(L C H)`):
    lightness is perceptual so ramp steps are *actually* even, hue stays put while you adjust
    chroma, and generating a dark variant or a sibling brand is a controlled L/C move rather than
-   eyeballed hex-twiddling. Keep a hex fallback for legacy/email targets in the same token. This
+   eyeballed hex-twiddling. Carry the hex fallback for legacy, email and Compose targets in the colour object's `hex` property. This
    is the perceptual-uniformity rule from the colour system, carried into the token layer.
 
 5. **Hold every themed semantic pair to the WCAG gate as a token-level invariant.** A token set is
@@ -109,7 +109,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    tokens. One rhythm, named once, is what separates "designed" from "assembled."
 
 7. **Choose the export topology, then generate.** Single source of truth = the tier'd token file
-   (JSON, ideally aligned to the Design Tokens Community Group's **Design Tokens Format Module 2025.10** `$value`/`$type` format, a Final Community Group Report rather than a W3C Standard). Transform out to:
+   (JSON in the Design Tokens Community Group's **Design Tokens Format Module 2025.10** `$value`/`$type` format, a Final Community Group Report rather than a W3C Standard; literal values use that edition's object shapes, listed in `references/token-export-formats.md`). Transform out to:
    CSS custom properties (semantic tokens become `:root` / `[data-theme="dark"]` / `[data-brand]`
    vars), a JSON consumed by app code, a Tailwind theme, and native platforms — via **Style
    Dictionary** so all targets derive from one source and cannot drift. See
@@ -150,7 +150,7 @@ unless `--accept-abstention "<who>: <reason>"` is recorded.
 ## Capability Contract
 
 Read and search are required across current design files, token sources, and consuming code. Editing
-is allowed only when token implementation is requested. Execution is preferred for schema,
+is allowed only when token implementation is requested. Run `python -X utf8 scripts/validate_token_example.py <tokens.json> --profile generic` on a real pack: it checks aliases, tiers, cycles, the 2025.10 value shapes and every stated contrast ratio. Execution is preferred for schema,
 contrast, export, and consumer tests; publishing packages requires separate authority.
 
 ## Degraded Mode

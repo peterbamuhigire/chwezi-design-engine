@@ -8,14 +8,15 @@ and components resolve through the semantic tier. Two profiles:
   (`semantic.color.action.danger.*`, `semantic.radius.control.sm`). It guards that file.
 - `generic`: only the structural checks, for a practitioner's own token pack.
 
-Optional checks (opt-in with the flags below; the shipped example is checked with both):
+Two further checks run by default; `--skip-value-shapes` and `--skip-contrast-claims` switch
+them off for a legacy pack that still uses CSS strings:
 
-- `--check-value-shapes`: literal `color`, `dimension`, `duration`, `fontFamily`, `fontWeight`
+- value shapes: literal `color`, `dimension`, `duration`, `fontFamily`, `fontWeight`
   and `cubicBezier` values use the shapes of the Design Tokens Format Module 2025.10 and its
   Color Module (Final Community Group Reports of 28 October 2025, not W3C Standards). A CSS
   string such as `oklch(0.6 0.16 255)` or `16px` is not defined there. An OKLCH colour with a
   `hex` fallback must have a hex that matches its components when the colour is in gamut.
-- `--check-contrast-claims`: every claim of the form `vs <token> = N:1` in a `$description` is
+- contrast claims: every claim of the form `vs <token> = N:1` in a `$description` is
   recomputed from the token values (WCAG relative luminance, via the engine catalogue helper)
   and must agree to within 0.05. Theme overlays under `_themes.<name>` are resolved over the
   base tokens.
@@ -211,8 +212,8 @@ def _check_contrast_claims(base_typed: dict, overlays: dict[str, dict]) -> list[
     return findings
 
 
-def validate(path: Path, profile: str = "canonical-example", check_value_shapes: bool = False,
-             check_contrast_claims: bool = False) -> list[str]:
+def validate(path: Path, profile: str = "canonical-example", check_value_shapes: bool = True,
+             check_contrast_claims: bool = True) -> list[str]:
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
@@ -300,18 +301,19 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("token_source", type=Path)
     parser.add_argument("--profile", choices=("canonical-example", "generic"), default="canonical-example")
-    parser.add_argument("--check-value-shapes", action="store_true", help="literal values use the 2025.10 object shapes")
-    parser.add_argument("--check-contrast-claims", action="store_true", help="recompute every 'vs X = N:1' claim")
+    parser.add_argument("--skip-value-shapes", action="store_true", help="do not require the 2025.10 object shapes (legacy packs)")
+    parser.add_argument("--skip-contrast-claims", action="store_true", help="do not recompute 'vs X = N:1' claims")
     args = parser.parse_args(argv)
-    findings = validate(args.token_source.resolve(), args.profile, args.check_value_shapes, args.check_contrast_claims)
+    check_shapes, check_claims = not args.skip_value_shapes, not args.skip_contrast_claims
+    findings = validate(args.token_source.resolve(), args.profile, check_shapes, check_claims)
     print("token-example-validator:")
     print(f"- source: {args.token_source}")
-    print(f"- profile: {args.profile}; value shapes: {'checked' if args.check_value_shapes else 'not checked'}; contrast claims: {'checked' if args.check_contrast_claims else 'not checked'}")
+    print(f"- profile: {args.profile}; value shapes: {'checked' if check_shapes else 'skipped'}; contrast claims: {'checked' if check_claims else 'skipped'}")
     print(f"- findings: {len(findings)}")
     for finding in findings:
         print(f"[FAIL] {finding}")
     if not findings:
-        print("PASS: aliases, tiers, required roles and cycle checks passed")
+        print("PASS: aliases, tiers, roles and cycles" + (", value shapes" if check_shapes else "") + (", contrast claims" if check_claims else "") + " passed")
     return 1 if findings else 0
 
 

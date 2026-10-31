@@ -35,10 +35,33 @@ class PractitionerPackTests(unittest.TestCase):
     def test_size_is_a_primitive_root_not_an_unreferenced_component(self):
         self.assertFalse(any("size.target-min" in f for f in validate(PACK, "generic")))
 
-    def test_checks_are_opt_in_so_legacy_files_still_get_structural_checks(self):
+    def test_a_legacy_string_pack_can_opt_out_of_shape_and_claim_checks_but_not_structure(self):
         data = pack()
         data["color"]["brand"]["600"]["$value"] = "oklch(0.52 0.09 200)"
         self.assertEqual(run(data, shapes=False, claims=False), [])
+        self.assertEqual(len(run(data, claims=False)), 1)
+
+    def test_shape_and_claim_checks_are_on_by_default(self):
+        data = pack()
+        data["color"]["brand"]["600"]["$value"] = "oklch(0.52 0.09 200)"
+        path = Path(tempfile.mkdtemp(prefix="token-pack-test-")) / "pack.json"
+        path.write_text(json.dumps(data), encoding="utf-8")
+        self.assertEqual(len(validate(path, "generic")), 1)
+
+    def test_the_shipped_example_passes_every_check(self):
+        example = ROOT / "skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/examples/tokens.json"
+        self.assertEqual(validate(example), [])
+        # tokens-from-pack.json is a primitive-seed fragment under a custom root, not a full three-tier
+        # pack, so only the component-tier finding is expected; every value shape must be valid.
+        seed = validate(ROOT / "skills/09-design-systems-tokens-and-theming/measured-style-pack/examples/tokens-from-pack.json", "generic")
+        self.assertTrue(seed and all("component token must reference semantic token" in f for f in seed), seed)
+
+    def test_the_second_brand_label_pair_is_guarded_by_a_claim(self):
+        example = ROOT / "skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/examples/tokens.json"
+        data = json.loads(example.read_text(encoding="utf-8"))
+        data["_themes"]["kesilex"]["semantic"]["color"]["action"]["primary"]["bg"]["$value"] = "{color.green.500}"
+        found = run(data, profile="canonical-example")
+        self.assertTrue(any(f.startswith("kesilex:") and "computed 3.37:1" in f for f in found), found)
 
 
 class ValueShapeTests(unittest.TestCase):

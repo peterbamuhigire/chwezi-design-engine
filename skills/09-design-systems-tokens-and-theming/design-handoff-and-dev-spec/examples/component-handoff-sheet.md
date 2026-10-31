@@ -61,7 +61,7 @@ Element: Submit button  —  Button / primary / md @ v2.3
 | `action.primary.bg` | brand.600 `oklch(0.55 0.17 255)` | brand.400 `oklch(0.67 0.14 255)` (lightened + desaturated) |
 | `text.on-action` | neutral.0 | neutral.950 |
 | `border.focus` | brand.600 | brand.400 |
-| **contrast check** | on-action vs bg = **5.9:1** ✓ | **6.4:1** ✓ (re-checked per theme) |
+| **contrast check** | on-action vs bg = **4.8:1** ✓ | **6.3:1** ✓ (re-checked per theme) |
 
 ---
 
@@ -115,7 +115,7 @@ Element: Submit button  —  Button / primary / md @ v2.3
 - **Non-colour signalling:** disabled conveyed by greyed fg **and** `disabled` semantics + cursor;
   loading by spinner **and** `aria-busy`, not colour alone (1.4.1). Error fields by `border.error`
   **and** `aria-invalid` **and** text message.
-- **Contrast:** label vs bg 5.9:1 (light) / 6.4:1 (dark) ≥ 4.5:1 ✓; focus ring ≥3:1 ✓.
+- **Contrast:** label vs bg 4.8:1 (light) / 6.3:1 (dark) ≥ 4.5:1 ✓; focus ring ≥3:1 ✓.
 
 ---
 

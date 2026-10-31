@@ -21,7 +21,7 @@ re-points. Primitives are authored once; components are authored once.
 | `text.on-action` | `neutral.0` | `neutral.950` | `neutral.0` | foreground on the primary action |
 | `text.link` | `brand.700` (255) | `brand.300` (255) | `green.700` (150) | only KesiLex changes the hue |
 | `border.focus` | `brand.600` | `brand.400` | `green.500` | must clear 3:1 vs adjacent surface in **every** column |
-| `action.primary.bg` | `brand.600` `oklch(0.55 0.17 255)` | `brand.400` `oklch(0.67 0.14 255)` | `green.500` `oklch(0.62 0.15 150)` | dark accent **lightened + desaturated**; KesiLex re-hued |
+| `action.primary.bg` | `brand.600` `oklch(0.55 0.17 255)` | `brand.400` `oklch(0.67 0.14 255)` | `green.700` `oklch(0.48 0.12 150)` | dark accent **lightened + desaturated**; KesiLex re-hued and darkened so the white label clears 4.5:1 (`green.500` gives 3.4:1) |
 | `feedback.error.fg` | `red.700` | `red.700` | = Maduuka | status hues are brand-independent here |
 
 **What didn't change:** every component token (`button.primary.bg → action.primary.bg`,
@@ -36,15 +36,18 @@ body/small ≥ 4.5:1; large text & UI/icons/focus ≥ 3:1 — `doctrine/referenc
 
 | Pairing | Light | Dark | KesiLex (light) | Verdict |
 |---|---|---|---|---|
-| `text.default` on `surface.default` | 14.1:1 | 15.8:1 | 14.1:1 | PASS AAA |
-| `text.muted` on `surface.default` | 6.0:1 | 6.4:1 | 6.0:1 | PASS AA |
-| `text.on-action` on `action.primary.bg` | 6.4:1 | 7.1:1 | 5.2:1 | PASS AA |
-| `text.link` on `surface.default` | 6.7:1 | 7.9:1 | 5.4:1 | PASS AA |
-| `border.focus` ring on `surface.default` | 4.7:1 | 5.5:1 | 4.0:1 | PASS (≥3:1 UI) |
+| `text.default` on `surface.default` | 16.9:1 | 18.2:1 | 16.9:1 | PASS AAA |
+| `text.muted` on `surface.default` | 7.1:1 | 7.2:1 | 7.1:1 | PASS AAA |
+| `text.on-action` on `action.primary.bg` | 4.8:1 | 6.3:1 | 6.0:1 | PASS AA |
+| `text.link` on `surface.default` | 6.6:1 | 9.5:1 | 5.9:1 | PASS AA |
+| `border.focus` ring on `surface.default` | 4.7:1 | 6.3:1 | 3.3:1 | PASS (≥3:1 UI) |
 
 Every cell ≥ its floor in every theme. A token set that *can* produce a failing cell is a bug, not
 a style choice — the dark accent was lightened from `brand.600`→`brand.400` precisely to keep the
-`text.on-action` pairing above 4.5:1 once the surface went dark.
+`text.on-action` pairing above 4.5:1 once the surface went dark. The light-theme label has the
+least headroom (4.8:1). The figures are computed from the `hex` fallbacks in `tokens.json`, and
+`scripts/validate_token_example.py --check-contrast-claims` recomputes them, so a changed colour
+that breaks a claim fails the check instead of leaving a stale number behind.
 
 ---
 
