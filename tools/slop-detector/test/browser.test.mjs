@@ -10,9 +10,9 @@ import path from 'node:path';
 import { cli, FIX } from './helpers.mjs';
 import { lockedPlaywright, expandTargets } from '../lib/browser.mjs';
 
-const BROWSER_RULES = ['clipped-positioned-child', 'content-hidden-at-rest', 'first-viewport-column-overflow', 'horizontal-overflow', 'low-contrast-computed', 'script-error', 'text-occlusion'];
+const BROWSER_RULES = ['clipped-positioned-child', 'content-hidden-at-rest', 'first-viewport-column-overflow', 'horizontal-overflow', 'low-contrast-computed', 'script-error', 'target-size-minimum', 'text-occlusion'];
 
-test('Playwright absent: all seven browser rules are NOT_ASSESSED and exit is 0', () => {
+test('Playwright absent: all eight browser rules are NOT_ASSESSED and exit is 0', () => {
   const empty = fs.mkdtempSync(path.join(os.tmpdir(), 'chwezi-slop-empty-'));
   try {
     const r = cli(['--json', '--tier', 'browser', path.join(FIX, 'slop-browser', 'clean.html')], { cwd: empty });

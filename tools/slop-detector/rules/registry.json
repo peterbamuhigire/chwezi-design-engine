@@ -1555,6 +1555,43 @@
       }
     },
     {
+      "id": "positive-tabindex",
+      "name": "Positive tabindex",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "deep",
+      "engines": [
+        "html",
+        "jsx"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "skills/00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance/references/keyboard-and-focus.md#1-tab-order--dom-order-243",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 2.4.3 Focus Order, and W3C failure technique F44 (Failure of Success Criterion 2.4.3 due to using tabindex to create a tab order that does not preserve meaning and operability)",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (design-engine kaizen pass 2, 31 Oct 2026), added after a seeded-defect audit in which the shipped detector found 2 of 6 defects.",
+      "check": {
+        "kind": "named",
+        "name": "positiveTabindex"
+      },
+      "exceptions": [
+        "tabindex=\"0\" and negative values are never flagged",
+        "a positive value that happens to match DOM order cannot be told apart from one that does not, so every positive value is reported for review"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop/positive-tabindex.flag.html",
+        "pass": "tests/fixtures/slop/positive-tabindex.pass.html"
+      }
+    },
+    {
       "id": "design-system-font",
       "name": "Font outside the design system",
       "category": "quality",
@@ -1958,6 +1995,44 @@
       "fixtures": {
         "flag": "tests/fixtures/slop-browser/first-viewport-column-overflow.flag.html",
         "pass": "tests/fixtures/slop-browser/first-viewport-column-overflow.pass.html"
+      }
+    },
+    {
+      "id": "target-size-minimum",
+      "name": "Pointer target below 24 by 24 CSS pixels",
+      "category": "quality",
+      "as_overlay": "AS7",
+      "severity": "warning",
+      "tier": "browser",
+      "engines": [
+        "browser"
+      ],
+      "modes": [
+        "persuade",
+        "operate",
+        "read",
+        "experience"
+      ],
+      "doctrine_ref": "doctrine/references/wcag-2.2-criteria.md#the-9-new-success-criteria-in-22-deltas-vs-21--each-a-checkable-rule",
+      "authority": {
+        "human_authority": "WCAG 2.2 SC 2.5.8 Target Size (Minimum), W3C Recommendation",
+        "house_ruling": "",
+        "ban_evidence": []
+      },
+      "provenance": "Chwezi original rule (design-engine kaizen pass 2, 31 Oct 2026), added after a seeded-defect audit in which the shipped detector found 2 of 6 defects. Implements the spacing test of the criterion (a 24px circle on each undersized target meets no other target and no other undersized target's circle).",
+      "check": {
+        "kind": "browser",
+        "name": "targetSizeMinimum"
+      },
+      "exceptions": [
+        "targets inside a sentence (inline display)",
+        "native checkboxes and radios drawn by the user agent",
+        "a control whose associated label is at least 24 by 24 CSS px",
+        "an equivalent control on the page and an essential presentation cannot be judged by a script, so a flagged target still needs a person to confirm the exception does not apply"
+      ],
+      "fixtures": {
+        "flag": "tests/fixtures/slop-browser/target-size-minimum.flag.html",
+        "pass": "tests/fixtures/slop-browser/target-size-minimum.pass.html"
       }
     }
   ]

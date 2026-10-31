@@ -11,6 +11,11 @@ Source: WCAG 2.2 + WAI-ARIA Authoring Practices keyboard sections.
 
 - **Author the DOM in reading order.** Visual reordering (CSS `order`, `flex-direction`,
   `grid` placement, absolute positioning) must not desync from focus order.
+- **Reading sequence is its own criterion: 1.3.2 Meaningful Sequence (Level A).** When the order
+  produced by `order`, `row-reverse` or grid placement changes the meaning (a Cancel button that
+  reads before Send, a total that precedes its rows), a screen reader still announces the DOM
+  sequence. Fix the DOM, not the CSS. `chwezi-slop` cannot judge a reorder; tab through the
+  rendered page and read it with a screen reader to check.
 - **Avoid positive `tabindex`** (`tabindex="2"`). It overrides DOM order and is almost always a
   bug. Use only:
   - `tabindex="0"` — make a custom widget focusable in normal order.

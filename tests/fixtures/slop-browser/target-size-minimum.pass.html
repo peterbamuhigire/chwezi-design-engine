@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixture</title>
+<style>
+body { font: 16px/1.5 "Source Serif 4", serif; color: #1f2328; background: #ffffff; margin: 24px; }
+section { margin-bottom: 24px; }
+.full button { width: 24px; height: 24px; padding: 0; border: 1px solid #57606a; background: #ffffff; color: #1f2328; font-size: 12px; }
+.full { display: flex; gap: 2px; }
+.spaced { display: flex; gap: 16px; }
+.spaced button { width: 20px; height: 20px; padding: 0; border: 1px solid #57606a; background: #ffffff; color: #1f2328; font-size: 12px; }
+.custom-check { appearance: none; width: 16px; height: 16px; border: 1px solid #57606a; background: #ffffff; margin: 0; }
+.row { display: flex; align-items: center; gap: 8px; min-height: 32px; }
+</style>
+</head>
+<body>
+<main>
+<!-- chwezi-slop fixture: target-size-minimum (should pass) -->
+<section class="full" role="toolbar" aria-label="Full-size tools">
+  <button type="button" aria-label="Paste number">P</button>
+  <button type="button" aria-label="Pick contact">C</button>
+  <button type="button" aria-label="Clear">X</button>
+</section>
+<section class="spaced" role="toolbar" aria-label="Spaced small tools">
+  <button type="button" aria-label="Zoom in">+</button>
+  <button type="button" aria-label="Zoom out">-</button>
+</section>
+<section>
+  <p>Read the <a href="#terms">terms of service</a> before you continue, or open the <a href="#privacy">privacy notice</a>.</p>
+</section>
+<section class="row">
+  <input type="checkbox" id="native" name="native"><label for="native">Native checkbox drawn by the browser</label>
+</section>
+<section class="row">
+  <input type="checkbox" id="custom" name="custom" class="custom-check"><label for="custom" style="display:inline-block;padding:4px 8px;min-height:24px">Custom checkbox with a label that is itself a 24px target</label>
+</section>
+</main>
+</body>
+</html>

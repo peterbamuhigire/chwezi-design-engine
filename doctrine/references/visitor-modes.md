@@ -63,7 +63,7 @@ Rules that hold in every mode:
 ## Detector rules and modes
 
 `tools/slop-detector/rules/registry.json` carries a `modes` list on each rule. As of
-29 September 2026 **every one of its 49 rules lists all four modes**, so no rule is relaxed or
+31 October 2026 **every one of its 51 rules lists all four modes**, so no rule is relaxed or
 tightened by mode today: the same severities apply everywhere. The mapping below is posture
 guidance for reviewers (which findings to read first on a surface), not a change in severity.
 

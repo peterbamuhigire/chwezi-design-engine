@@ -756,6 +756,21 @@ function focusIndicatorRemoved(doc) {
   return out;
 }
 
+function positiveTabindex(doc) {
+  const out = [];
+  for (const el of doc.elements) {
+    // HTML gives tabindex="3"; JSX gives tabIndex={3} (kept as an expression) or tabIndex="3".
+    const literal = el.attrs.tabindex;
+    const raw = literal !== undefined && literal !== '' ? literal : el.attrs['tabindex:expr'];
+    if (raw === undefined) continue;
+    const m = /^\s*\{?\s*\+?(\d+)\s*\}?\s*$/.exec(String(raw));
+    if (m && Number(m[1]) > 0) {
+      out.push({ line: el.line, message: `tabindex="${m[1]}" on <${el.tag}> overrides the DOM focus order (WCAG 2.4.3, failure F44); keep DOM order and use tabindex="0" or "-1"` });
+    }
+  }
+  return out;
+}
+
 // --------------------------------------------------------- imagery and assets
 
 function brokenLocalImage(doc) {
@@ -852,6 +867,7 @@ export const CHECKS = {
   marquee,
   missingReducedMotion,
   focusIndicatorRemoved,
+  positiveTabindex,
   brokenLocalImage,
   placeholderImageHost,
 };

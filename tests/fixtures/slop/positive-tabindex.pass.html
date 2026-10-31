@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixture</title>
+</head>
+<body>
+<main>
+<!-- chwezi-slop fixture: positive-tabindex (should pass) -->
+<form>
+  <label for="a">Recipient</label><input id="a">
+  <label for="b">Amount</label><input id="b">
+  <div role="group" aria-label="Quick amounts" tabindex="0"><button type="button" tabindex="-1">1,000</button></div>
+</form>
+</main>
+</body>
+</html>

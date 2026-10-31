@@ -5,7 +5,7 @@
 
 export const BROWSER_CHECK_NAMES = [
   'horizontalOverflow', 'clippedPositionedChild', 'textOcclusion', 'contentHiddenAtRest',
-  'scriptError', 'lowContrastComputed', 'firstViewportColumnOverflow',
+  'scriptError', 'lowContrastComputed', 'firstViewportColumnOverflow', 'targetSizeMinimum',
 ];
 
 /**
@@ -15,7 +15,7 @@ export const BROWSER_CHECK_NAMES = [
 export function pageProbe() {
   const out = {
     horizontalOverflow: [], clippedPositionedChild: [], textOcclusion: [], contentHiddenAtRest: [],
-    lowContrastComputed: [], firstViewportColumnOverflow: [],
+    lowContrastComputed: [], firstViewportColumnOverflow: [], targetSizeMinimum: [],
   };
   const vw = window.innerWidth;
   const vh = window.innerHeight;
@@ -121,6 +121,40 @@ export function pageProbe() {
       const large = size >= 24 || (size >= 18.66 && parseInt(cs.fontWeight, 10) >= 700);
       const min = large ? 3 : 4.5;
       if (ratio < min) out.lowContrastComputed.push({ selector: path(el), message: `"${text}" contrast ${ratio.toFixed(2)}:1 is below ${min}:1` });
+    }
+  }
+  // target-size-minimum: WCAG 2.5.8. A pointer target under 24x24 CSS px passes only when a 24px
+  // circle centred on it meets no other target and no other undersized target's circle (spacing
+  // exception). Skipped, as the criterion allows: targets inside a sentence (inline), native
+  // checkboxes and radios drawn by the user agent, and controls with a larger associated label.
+  {
+    const MIN = 24;
+    const selector = 'a[href], button, input:not([type="hidden"]), select, textarea, summary, [role="button"], [role="link"], [role="checkbox"], [role="radio"], [role="switch"], [role="tab"], [role="menuitem"], [role="option"], [tabindex]:not([tabindex^="-"])';
+    const targets = [];
+    for (const el of document.querySelectorAll(selector)) {
+      const cs = getComputedStyle(el);
+      if (cs.display === 'none' || cs.visibility === 'hidden' || el.disabled || hiddenByAttr(el) || isSrOnly(el, cs)) continue;
+      const rect = el.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) continue;
+      targets.push({ el, cs, rect, cx: rect.left + rect.width / 2, cy: rect.top + rect.height / 2, small: rect.width < MIN - 0.05 || rect.height < MIN - 0.05 });
+    }
+    const bigLabel = (el) => !!el.labels && [...el.labels].some((l) => { const r = l.getBoundingClientRect(); return r.width >= MIN - 0.05 && r.height >= MIN - 0.05; });
+    const related = (a, b) => a.contains(b) || b.contains(a);
+    for (const t of targets) {
+      if (!t.small || t.cs.display === 'inline') continue;
+      const isNativeToggle = t.el.tagName === 'INPUT' && /^(checkbox|radio)$/.test(t.el.type) && t.cs.appearance !== 'none';
+      if (isNativeToggle || bigLabel(t.el)) continue;
+      const r = MIN / 2;
+      let blocker = null;
+      for (const o of targets) {
+        if (o === t || related(t.el, o.el)) continue;
+        if (o.small) { if (Math.hypot(o.cx - t.cx, o.cy - t.cy) < MIN) { blocker = o; break; } continue; }
+        const dx = Math.max(o.rect.left - t.cx, 0, t.cx - o.rect.right);
+        const dy = Math.max(o.rect.top - t.cy, 0, t.cy - o.rect.bottom);
+        if (dx * dx + dy * dy < r * r) { blocker = o; break; }
+      }
+      const name = (e) => `"${(e.getAttribute('aria-label') || e.textContent || e.getAttribute('title') || e.tagName.toLowerCase()).replace(/\s+/g, ' ').trim().slice(0, 30)}"`;
+      if (blocker) out.targetSizeMinimum.push({ selector: `${path(t.el)} ${name(t.el)}`, message: `${name(t.el)} (${path(t.el)}) is ${Math.round(t.rect.width)}x${Math.round(t.rect.height)}px and ${name(blocker.el)} is within 24px of it (WCAG 2.5.8 needs 24x24 CSS px or 24px of clear space)` });
     }
   }
   return out;

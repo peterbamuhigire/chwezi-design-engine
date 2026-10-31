@@ -57,7 +57,12 @@ Browser findings carry `"evidence_mode": "browser"` and `"line": null`.
 - **`cli`**: a static finding from source text: CSS, SCSS, LESS, HTML, Vue, Svelte, JSX and TSX,
   Tailwind class lists, CSS-in-JS template literals, `.py` font assignments, and the code fences
   inside Markdown. A `cli` finding is `MEASURED` evidence that the pattern is present in the source.
-- **`browser`**: a finding from a rendered page at 390x844 and 1440x900.
+- **`browser`**: a finding from a rendered page at 390x844 and 1440x900. Besides layout and contrast
+  it measures pointer targets against WCAG 2.5.8 (`target-size-minimum`, a warning: the criterion's
+  exceptions for an equivalent control or an essential presentation need a person to confirm). The
+  static tier flags positive `tabindex` values (`positive-tabindex`, WCAG 2.4.3). Non-text contrast (1.4.11)
+  and a visual order that differs from DOM order (1.3.2) are not scripted: both need a judgement about
+  which borders identify a control and whether a reorder changes meaning.
 - **`not_assessed`**: the rule could not run, for example no token source or no locked
   Playwright. It is never a pass.
 
