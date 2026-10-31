@@ -58,6 +58,15 @@ Changes by theme. Commit hashes are in section 4.
 2. **Supporting documents.** `CONTRIBUTING.md` step 5 and the "new group" paragraph now name the catalogue. `docs/README.md` lists the two new pages and this record, and its closing paragraph names the two README sections that hold the October account.
 3. **README structure, front door and plain English.** One rewrite, section by section, because each section was restructured and reworded together. Structure: front door, contents, task table, four-step "How it works", subsections for install, tools, validation and quality. Plain English: one claim per sentence, evidence lines as nested bullets (Found, Fixed, Re-run, Limits), numbered improvements kept so cross-references ("item 9") still work.
 
+Commits on `kaizen/2026-10-readme-kaizen`, made from `main` at `8976b0e` (one per theme; the structure and plain-English work share one commit because each section was restructured and reworded together):
+
+| Commit | Theme |
+|---|---|
+| `b31f17e` | Relocation targets: `docs/skill-catalogue.md` and `docs/references.md` |
+| `bdb4a64` | This record, the index lines in `docs/README.md` and the `CONTRIBUTING.md` update |
+| `89c9e6e` | README structure, front door and plain English, including the move of the two lists out of the README |
+| `999ac70` | `CHANGELOG.md` entry |
+
 **Deliberate corrections (facts changed on purpose):**
 
 - `./install.sh --scope project` became `bash install.sh --scope project`. The file is committed with mode 100644. In a fresh clone `./install.sh` fails with `Permission denied`, and `bash install.sh --scope project --dry-run` runs (634 files planned). The README now says so. Making the file executable is a script change and out of scope; it is logged in the next-cycle items below.
@@ -70,7 +79,7 @@ Changes by theme. Commit hashes are in section 4.
 
 ## 4. Check
 
-**Validators, before and after.** The 24 runs below are the commands the README's validation table lists, plus the cross-engine check run with a map for the two renamed siblings. "Before" ran on a clone of `main` at `8976b0e`. "After" ran on a clone that held the new README, `CONTRIBUTING.md`, `docs/README.md`, the two new pages and this record. The pytest run used an existing virtual environment (pytest 9.0.3, PyYAML 6.0.3) from a clone with a real `.git` directory. Nothing was installed.
+**Validators, before and after.** The 24 runs below are the commands the README's validation table lists, plus the cross-engine check run with a map for the two renamed siblings. "Before" ran on a clone of `main` at `8976b0e`. "After" ran on a clone of the branch head `999ac70`. The only later edit is the commit table in section 3 of this record, and the portability gate and engine validator were run once more after it (exit 0 each). The pytest run used an existing virtual environment (pytest 9.0.3, PyYAML 6.0.3) from a clone with a real `.git` directory. Nothing was installed.
 
 | Check | Exit before | Exit after | Result after |
 |---|---:|---:|---|
@@ -101,11 +110,11 @@ Exit codes are identical, 24 of 24. No validator reads the README, so none could
 links: old README 44 targets; new README 21; moved to docs 29; LOST 0
 commands: old README 28; kept in README 27; moved to docs 0; LOST 1
   LOST command: ./install.sh --scope project # macOS, Linux, Git Bash
-anchors: 0 README.md#anchor links in tracked files; BROKEN 0
+anchors: 0 anchor links into the README from tracked files; BROKEN 0
 in-page links: 16 anchors used; BROKEN 0
 ```
 
-The one flagged command is the deliberate replacement described in section 3: `bash install.sh --scope project`, with the reason stated in the README. The tool treats a changed command as lost; nothing else was lost. The 29 moved link targets are the reference-list URLs and the catalogue links, now in `docs/references.md` and `docs/skill-catalogue.md`.
+The one flagged command is the deliberate replacement described in section 3: `bash install.sh --scope project`, with the reason stated in the README. The tool treats a changed command as lost; nothing else was lost. (The anchor line above is shortened from the tool's own wording.) The 29 moved link targets are the reference-list URLs and the catalogue links, now in `docs/references.md` and `docs/skill-catalogue.md`.
 
 **Independent content checks** (ad hoc scripts, not stored in the repository):
 
