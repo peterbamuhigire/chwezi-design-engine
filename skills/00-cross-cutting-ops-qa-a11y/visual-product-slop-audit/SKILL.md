@@ -142,7 +142,7 @@ serve a named user task, state, accessibility need, brand rule, or evidence poin
 date, source, and annotation fit; label hypothetical examples and generated assets where confusion
 would matter. Missing render, browser, provenance, or human-review evidence is `NOT_ASSESSED`.
 
-- Shared standard: [`AI-slop responsible publishing`](../../../../chwezi-dev-engine/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+- Shared standard: `AI-slop responsible publishing` (`references/ai-slop-responsible-publishing-standard-2026-09-11.md` in the chwezi-dev-engine repository; resolve the checkout through the workspace map)
 
 ## References
 

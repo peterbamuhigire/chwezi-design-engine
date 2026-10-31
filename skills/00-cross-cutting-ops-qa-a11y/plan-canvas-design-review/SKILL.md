@@ -7,7 +7,7 @@ metadata:
   compatible_with:
   - claude-code
   - codex
-  origin: "Adapted from ECC's plan-canvas skill (C:\\Users\\Peter\\Downloads\\ECC-main\\skills\\plan-canvas\\SKILL.md), reframed for design critique and pre-launch review rather than implementation plans."
+  origin: "Adapted from ECC's plan-canvas skill (`skills/plan-canvas/SKILL.md` in the ECC repository), reframed for design critique and pre-launch review rather than implementation plans."
 ---
 
 # Plan Canvas for Design Review
@@ -300,7 +300,7 @@ convert a missing listener into approval.
 ## References
 
 - ECC original: `skills/plan-canvas/SKILL.md`, `docs/design/plan-canvas.md`
-  (`C:\Users\Peter\Downloads\ECC-main`).
+  (ECC repository root).
 - Sibling adaptation: `chwezi-sdlc-documentation/09-governance-compliance/plan-canvas/SKILL.md` (resolve the checkout through the current workspace map).
   — read for the governance-artefact framing pattern; this skill is written separately because
   the design-review framing (annotate a rendered element, not a document clause) differs from

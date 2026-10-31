@@ -5,8 +5,8 @@
  * a fresh tokens.css, etc.).
  *
  * Modelled on the DENY -> FORCE -> ALLOW pattern documented in the ECC
- * audit's gateguard skill (C:\Users\Peter\Downloads\ECC-main\skills\
- * gateguard\SKILL.md, "Write Gate (first new file creation)"): the first
+ * audit's gateguard skill (`skills/gateguard/SKILL.md` in the ECC
+ * repository, "Write Gate (first new file creation)"): the first
  * attempt to create a token file is denied with a demand for four concrete
  * facts; a repeated Write to the SAME path is allowed, on the theory that
  * presenting those facts is itself what changes the outcome, not a second

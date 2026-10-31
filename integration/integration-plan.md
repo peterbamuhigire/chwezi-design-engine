@@ -53,16 +53,16 @@ Version history:
 
 ### Consumer engines (where the block goes)
 
-| Engine | Path | Block added? | `v2` copies (2026-09-29) |
+| Engine | Repository (resolve the checkout through the workspace map) | Block added? | `v2` copies (2026-09-29) |
 |---|---|---|---|
-| business-plan-skills | `C:\wamp64\www\business-plan-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| chwezi-sdlc-documentation | `C:\wamp64\www\chwezi-sdlc-documentation` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| proposal-skills | `C:\wamp64\www\proposal-skills` | ✅ 2026-06-21 | `AGENTS.md` |
-| website-skills | `C:\wamp64\www\website-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| social-media-skills | `C:\wamp64\www\social-media-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| chwezi-dev-engine (formerly `~/.claude/skills`) | `C:\wamp64\www\chwezi-dev-engine` | ✅ 2026-06-21 | `AGENTS.md` (migration note kept after the block) |
-| digital-research-engine | `C:\wamp64\www\digital-research-engine` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
-| linux-skills | `C:\wamp64\www\linux-skills` | ✅ (runner-neutral variant, now canonical) | `AGENTS.md`, `CLAUDE.md` |
+| business-plan-skills | `business-plan-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| chwezi-sdlc-documentation | `chwezi-sdlc-documentation` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| proposal-skills | `proposal-skills` | ✅ 2026-06-21 | `AGENTS.md` |
+| website-skills | `website-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| social-media-skills | `social-media-skills` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| chwezi-dev-engine (formerly `~/.claude/skills`) | `chwezi-dev-engine` | ✅ 2026-06-21 | `AGENTS.md` (migration note kept after the block) |
+| digital-research-engine | `digital-research-engine` | ✅ 2026-06-21 | `AGENTS.md`, `CLAUDE.md` |
+| linux-skills | `linux-skills` | ✅ (runner-neutral variant, now canonical) | `AGENTS.md`, `CLAUDE.md` |
 
 Accounting, windows-admin and engine-agents hold no block; M10-02-T06 decides whether to add it.
 

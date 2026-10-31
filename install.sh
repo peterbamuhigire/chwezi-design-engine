@@ -6,7 +6,7 @@
 # Bash / MSYS2, converts the POSIX script path to a native Windows path
 # before invoking node, because Node is a native Windows binary and MSYS2's
 # automatic path conversion otherwise produces a doubled, invalid path
-# (e.g. "G:\g\projects\..." instead of the real path). This is the same
+# (a drive-letter path with a doubled directory segment instead of the real path). This is the same
 # fix documented in ECC's install.sh (github.com/affaan-m/ECC).
 
 set -euo pipefail

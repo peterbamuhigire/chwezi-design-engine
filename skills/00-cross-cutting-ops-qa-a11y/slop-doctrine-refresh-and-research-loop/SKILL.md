@@ -135,7 +135,7 @@ the evidence mode. The 25 writing signs remain editorial prompts owned by Digita
 engine translates only evidenced visual consequences. Keep intentional repetition and design-system
 consistency when their function is recorded; otherwise remediate or mark the check `NOT_ASSESSED`.
 
-- Shared standard: [`AI-slop responsible publishing`](../../../../chwezi-dev-engine/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+- Shared standard: `AI-slop responsible publishing` (`references/ai-slop-responsible-publishing-standard-2026-09-11.md` in the chwezi-dev-engine repository; resolve the checkout through the workspace map)
 
 ## References
 

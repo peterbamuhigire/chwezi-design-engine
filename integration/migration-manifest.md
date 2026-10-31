@@ -13,7 +13,7 @@ phase.
 
 ## PHASE 1 — clean, non-duplicated, standalone MOVES (low risk)
 
-### From engineering-catalog (`C:\wamp64\www\skills-web-dev`, relocated 2026-06-21) — 11 skills
+### From engineering-catalog (the `skills-web-dev` repository, relocated 2026-06-21) — 11 skills
 
 | Source skill folder | → Destination group |
 |---|---|
@@ -29,7 +29,7 @@ phase.
 | `skills\android\android-ui-ux-design` | 06-mobile-ui-ux |
 | `skills\ios\ios-ui-ux-design` | 06-mobile-ui-ux |
 
-### From social-media-skills (`C:\wamp64\www\social-media-skills`) — 8 skills
+### From social-media-skills (the `social-media-skills` repository) — 8 skills
 
 | Source skill folder | → Destination group |
 |---|---|

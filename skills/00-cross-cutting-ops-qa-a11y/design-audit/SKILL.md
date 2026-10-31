@@ -98,7 +98,7 @@ recovery states or mark them unverified.
 
 - `doctrine/design-doctrine.md` — the anti-slop charter every audit enforces.
 - ECC `skills/design-system/SKILL.md` §"Mode 2: Visual Audit"
-  (`C:\Users\Peter\Downloads\ECC-main\skills\design-system\SKILL.md`) — source of the §2.0
+  (`skills/design-system/SKILL.md` in the ECC repository) — source of the §2.0
   code-grounded 0–10-per-dimension scoring with mandatory `file:line` fixes.
 - `doctrine/references/ai-slop-taxonomy.md` — the visual/product slop tells the AI Slop dimension checks against.
 - `doctrine/references/ai-slop-banned-fonts.md` — the banned primary typefaces the Typography dimension flags.
