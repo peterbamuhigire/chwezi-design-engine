@@ -1,0 +1,4 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+LiberationSerif-Bold          CID TrueType      Identity-H       yes yes yes      4  0
+BAAAAA+LiberationSans                CID TrueType      Identity-H       yes yes yes      5  0

@@ -47,7 +47,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    - **XLSX:** apply by name; for pixel-perfect branded output, deliver as PDF instead.
 3. **Set the fallback** as a safety net, never as the design.
 4. **Verify** the rendered artifact shows the intended face (not a substitute) and report file-
-   size impact for embedded documents.
+   size impact for embedded documents. For a PDF run `node scripts/check-rendered-fonts.js <file.pdf>`
+   (exit 0 pass, 2 banned family, 3 only fallback faces, 4 not embedded, 1 not run); for DOCX, PPTX
+   or SVG, extract the font names and pass them with `--names`. The gate reads PostScript names,
+   which the source-level banned-font hook does not.
 
 ## Anti-Patterns
 

@@ -18,6 +18,13 @@ Mark each: ✅ pass · ⚠️ fix · n/a.
       (`embedding-by-format.md` §PDF). HTML-to-PDF and DOCX→PDF are the common offenders.
 - [ ] **No banned font** anywhere (`ai-slop-banned-fonts.md`). If a substitute slipped in (Arial,
       Calibri, Inter), a font failed to embed — fix the source, don't accept the substitution.
+- [ ] **Rendered-output font gate passes:** `node scripts/check-rendered-fonts.js <file.pdf>` reads the
+      fonts the PDF actually embeds (via `pdffonts`) and applies the banned-font doctrine to their
+      PostScript names, which the source-level hook cannot see. Exit 0 pass; 2 a banned family; 3 only
+      system or fallback faces (the intended font did not load); 4 a font not embedded; 1 the check
+      did not run (`NOT_ASSESSED`, never a pass). A browser PDF of variable fonts can embed them as
+      Type 3 outlines (observed on 2026-10-31 with Chromium 156); the gate lists them as a note, so
+      confirm acceptance with the print bureau or export static instances for print runs.
 - [ ] Licence permits embedding for distribution (`doctrine/references/licensing-and-embedding.md`;
       group 01 OFL baselines and Fontshare faces are fine to embed).
 

@@ -57,6 +57,9 @@ failure blocks a `PASS` decision.
 - [ ] Typeface(s) **named and justified** in one line, stated *before* the artifact was produced.
 - [ ] No banned AI-slop font as primary (`doctrine/references/ai-slop-banned-fonts.md`), incl.
       the secondary escapes and bare system stacks.
+- [ ] For a rendered PDF, `node scripts/check-rendered-fonts.js <file.pdf>` exits 0 (it reads the
+      embedded PostScript names that the source-level hook cannot match); a run that could not
+      execute is `NOT ASSESSED`.
 - [ ] A deliberate **display + body pairing** — not one font for everything.
 - [ ] Type scale uses a real ratio (≥1.25), with obvious size jumps and weight extremes.
 - [ ] Line-height follows the inverse rule (×1.6 under 32pt; ×1.3–1.1 above).

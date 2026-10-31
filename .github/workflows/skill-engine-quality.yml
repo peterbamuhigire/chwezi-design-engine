@@ -29,6 +29,7 @@ jobs:
       - run: node tools/slop-detector/cli.mjs --validate-registry
       - run: node --test tools/slop-detector/test/
       - run: node hooks/test-banned-font-gate.js
+      - run: node hooks/test-rendered-font-names.js
       - run: node hooks/test-token-file-gate.js
       - run: node hooks/test-destructive-bash-gate.js
       - run: node hooks/test-plugin-hook-config.js

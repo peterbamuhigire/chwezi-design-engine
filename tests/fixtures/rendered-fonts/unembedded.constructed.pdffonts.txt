@@ -1,0 +1,3 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+PublicSans-Thin               Type 3            Custom           no  no  yes      4  0

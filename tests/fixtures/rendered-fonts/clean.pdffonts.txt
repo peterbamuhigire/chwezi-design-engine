@@ -1,0 +1,10 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+AAAAAA+PublicSans-Thin               Type 3            Custom           yes yes yes      4  0
+BAAAAA+SourceSerif4Variable-Roman    Type 3            Custom           yes yes yes      5  0
+CAAAAA+PublicSans-Thin               Type 3            Custom           yes yes yes      6  0
+DAAAAA+SourceSerif4Variable-Roman    Type 3            Custom           yes yes yes     11  0
+EAAAAA+PublicSans-Thin               Type 3            Custom           yes yes yes     14  0
+FAAAAA+PublicSans-Thin               Type 3            Custom           yes yes yes     22  0
+GAAAAA+PublicSans-Thin               Type 3            Custom           yes yes yes     25  0
+HAAAAA+PublicSans-Thin               Type 3            Custom           yes yes yes     28  0
