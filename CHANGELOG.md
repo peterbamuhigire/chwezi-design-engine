@@ -3,6 +3,19 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-10-31] - Documentation wave
+
+Documents only; no skill, script, test, doctrine or detector change. Every number below was measured on 2026-10-31.
+
+- README (`1d3e3ea`): added a "Validation" section (every check with `python3` commands, dependencies, results and what needs extra tools), a description of the design token validator with the unresolved `tokens-from-pack.json` result (17 findings on the default profile, 14 with `--profile generic`), a "Quality and improvement" section (latest published score, open findings, date-triggered calendar), the 51-rule detector count, the repository-name note and the rendered-font gate. The skill tables were checked against the 102 skills on disk.
+- AGENTS.md (`2e57350`): corrected the active-skill count from 101 to 102, switched commands to `python3`, replaced short sibling names with current repository names, added a pointer to the improvement records. The three portfolio-managed router sentences were not edited; the shared renderer proposed no change and a second run changed nothing.
+- `docs/README.md` (`651cee1`): new index of working documents, improvement records, audits and plans. `docs/RESUME.md` (`f92cc39`): current state refreshed (102 skills, 94 routing fixtures, 51 rules, 196 tests, the 60.3 raw score), the 22 June self-assessed 81/100 marked as not comparable.
+- CONTRIBUTING (`0a5e0fc`): adding a skill also needs a regenerated plugin manifest and updated counts (a scratch copy with a 103rd skill failed `--check` and the pinned-count test); full check list and the portability rule added.
+- `fonts/README.md` (`780e087`): Linux and macOS form of the category folder setup. `integration/integration-plan.md` (`9429c5a`): consumer table replaced with the measured state (11 sibling engines carry the identical `v4` block in `AGENTS.md`, none in `CLAUDE.md`).
+- `docs/kaizen/2026-10-engine-kaizen-pass-2/07-docs-followups.md` (`f9cf605`): twelve items that need a script, test, doctrine, dated-record or other-repository change.
+
+Pass-2 commits by theme (descriptions are in the entry below): hygiene and portability gate `b6ab99e`, `0e23a7b`; rendered-output font gate `9bc10bd`; token validation `aca491a`, `355be12`; detector rules `7582bbf`; cross-engine workspace map `285658f`; legal-sector workflow `918dce0`; routing fixtures `2332e14`; source register `7340dfa`; pytest collection `39ec352`; frozen baseline, backlog and closing records `c9f4602`, `075100b`, `72a3a37`.
+
 ## [2026-10-31] - Portfolio Kaizen, pass 2
 
 - Removed local download paths, a user name and acquisition-site file names from the premium-ui-ux-design source register, two skills and a hook comment; replaced web-root paths in the router and integration records and three links into sibling checkouts with repository identifiers.
