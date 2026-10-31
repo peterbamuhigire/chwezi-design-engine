@@ -31,4 +31,4 @@ This folder holds the engine's working documents and its dated records. The repo
 | [`engine-upgrade-july-2026/`](engine-upgrade-july-2026/) | 2026-07 | Upgrade discovery, scorecard, backlog, roadmap and the skill-standard conformance record |
 | [`plans/hardening-june/`](plans/hardening-june/) | 2026-06 | The hardening plan and the examples backfill tracker ([plan](plans/hardening-june/README.md)) |
 
-Scores from different rubrics are not comparable. The October records use the Portfolio Kaizen Standard's ten dimensions and the cap `min(raw, 65)`; the latest published figure and the open findings are summarised in the repository `README.md` under "Quality and improvement".
+Scores from different rubrics are not comparable. The October records use the Portfolio Kaizen Standard's ten dimensions and the cap `min(raw, 65)`; the latest published figure, the open findings and an account of what the October cycles improved are in the repository `README.md` under "Quality and improvement".
