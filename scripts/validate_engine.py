@@ -9,6 +9,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 from check_file_count import count_entries
+from validate_portability import scan_portability
 
 import yaml
 
@@ -246,6 +247,7 @@ def scan(root: Path, max_skill_bytes: int = DEFAULT_MAX_SKILL_BYTES) -> dict:
         },
         "size_warnings": size_warnings,
         "max_skill_bytes": max_skill_bytes,
+        "portability": scan_portability(root),
         **scan_slop_registry(root),
     }
 
@@ -290,6 +292,10 @@ def main() -> int:
             print(f"SLOP-REGISTRY ERROR {item}")
         for mode, data in result["file_counts"].items():
             print(f"file-count-{mode}={data['entries']}/{data['limit']}")
+        portability = result["portability"]
+        print(f"portability_findings={len(portability['findings']) + len(portability['allowlist_problems'])}")
+        for item in portability["allowlist_problems"] + portability["findings"]:
+            print(f"PORTABILITY {item}")
         for item in result["size_warnings"]:
             print(f"WARN skill-bytes {item['path']}: {item['bytes']} bytes > {result['max_skill_bytes']} ({item['lines']} lines; report-only)")
     return 1 if (
@@ -298,6 +304,8 @@ def main() -> int:
         or result["missing_font_categories"]
         or result["book_extraction_violations"]
         or result["slop_registry_errors"]
+        or result["portability"]["findings"]
+        or result["portability"]["allowlist_problems"]
         or any(data["entries"] > data["limit"] for data in result["file_counts"].values())
     ) else 0
 

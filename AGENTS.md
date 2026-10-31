@@ -62,8 +62,8 @@ operates within.
 ## Mandatory Digital Research currentness gate for Kaizen
 
 Every Kaizen audit, skill edit, reference update, validator change, and
-standardisation decision MUST begin with the Digital Research Engine at
-`C:\wamp64\www\digital-research-engine`. Read its `source-evaluation` and
+standardisation decision MUST begin with the Digital Research Engine (resolve its checkout through the
+active engine-routing table or the workspace map; never hard-code a path). Read its `source-evaluation` and
 `source-verification` skills and the currentness gate reference
 `docs/continuous-improvement/kaizen-currentness-gate.md`.
 
@@ -76,7 +76,7 @@ primary sources; quarantine stale/ambiguous/unsupported claims and mark them
 
 The shared control plane is adapted to visual and document work in
 [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md); the central
-registry is `C:\wamp64\www\chwezi-dev-engine\docs\engine-control-plane.json`.
+registry is `docs/engine-control-plane.json` in the chwezi-dev-engine repository (resolve the checkout through the workspace map).
 
 Cross-cutting design & typography engine. Compatible with Claude Code and Codex-style agents.
 This file is the single runner-neutral router and doctrine for the engine; `CLAUDE.md` is a thin bridge that imports it (portfolio bridge contract, M10-02).
@@ -149,6 +149,12 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
+Portability gate: `python -X utf8 scripts/validate_portability.py` (also run by `validate_engine.py`)
+fails on machine-specific paths and on markdown links that leave the repository or break.
+Exceptions live in `governance/portability-allowlist.json`, each with a reason and, for
+historical records, a ratchet that can only shrink. Name sibling engines by repository
+identifier and resolve them through the workspace map, never by a path or a relative link.
+
 The baseline is zero-debt: all 101 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.
@@ -164,4 +170,4 @@ For a prompt handoff, read the local [domain prompt contract](docs/ai-prompting/
 
 ## PORTFOLIO CRAFT CONTRACT
 
-Load `C:\wamp64\www\chwezi-engine-agents\docs\operations\portfolio-craft-standard-2026-09-04.md` when available. Design in perceptible slices: frame the user job and visual thesis, choose one component or flow, inspect the surrounding system and real content, make one purposeful change, render it in context, check hierarchy, states, contrast, motion, input, and responsive behaviour, refine, and record the visual proof. Every typeface, colour, spacing, asset, radius, shadow, and animation needs a product reason; remove decorative defaults. Do not generate a complete polished-looking system without reviewing its actual screens or artefacts. Apply `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure` to kaizen itself. Missing render, device, accessibility, content, or reviewer evidence is `NOT ASSESSED`, never a pass.
+Load `docs/operations/portfolio-craft-standard-2026-09-04.md` from the chwezi-engine-agents repository (resolve the checkout through the workspace map) when available. Design in perceptible slices: frame the user job and visual thesis, choose one component or flow, inspect the surrounding system and real content, make one purposeful change, render it in context, check hierarchy, states, contrast, motion, input, and responsive behaviour, refine, and record the visual proof. Every typeface, colour, spacing, asset, radius, shadow, and animation needs a product reason; remove decorative defaults. Do not generate a complete polished-looking system without reviewing its actual screens or artefacts. Apply `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure` to kaizen itself. Missing render, device, accessibility, content, or reviewer evidence is `NOT ASSESSED`, never a pass.

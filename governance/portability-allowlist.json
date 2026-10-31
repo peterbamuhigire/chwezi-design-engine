@@ -1,0 +1,135 @@
+{
+  "$comment": "Exceptions to scripts/validate_portability.py. Every entry needs a reason; max_hits and max_links are ratchets; an entry that matches no file with an issue is stale and fails.",
+  "entries": [
+    {
+      "path": "doctrine/design-doctrine.md",
+      "max_hits": 2,
+      "reason": "Canonical doctrine, section 5 (line 161) names a Windows web-root checkout path. Doctrine changes need the owner's decision; the question is escalated in the pass-2 next-cycle record."
+    },
+    {
+      "path": "hooks/test-destructive-bash-gate.js",
+      "max_hits": 12,
+      "reason": "Intentional test inputs: destructive-command samples that name Windows web-root paths."
+    },
+    {
+      "path": "tests/test_route_existence.py",
+      "max_hits": 1,
+      "reason": "The legacy-path guard must name the pattern it forbids."
+    },
+    {
+      "path": "fonts/*/LICENSE.txt",
+      "reason": "Purchased-bundle licence records; the origin line is the owner's provenance note. Owner decision pending (see the pass-2 next-cycle record)."
+    },
+    {
+      "path": "fonts/04-technical-data-code/relief-singleline/README.md",
+      "max_hits": 1,
+      "reason": "Vendored third-party README quoting its own installation folder."
+    },
+    {
+      "path": "docs/audits/2026-09-06-kaizen-independent-review.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_links": 1
+    },
+    {
+      "path": "docs/audits/2026-09-06-kaizen.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2,
+      "max_links": 2
+    },
+    {
+      "path": "docs/audits/2026-09-29-m10-reaudit/01-methodology-and-rubric.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/audits/2026-09-29-m10-reaudit/11-measured-evidence.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 4
+    },
+    {
+      "path": "docs/audits/post-phase-1/02-coverage-and-taxonomy-reaudit.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/audits/post-phase-1/05-per-output-type-reaudit.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/audits/post-v2-plan/00-reaudit-summary.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/audits/post-v2-plan/02-coverage-and-taxonomy-reaudit.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/continuous-improvement/book-led-infographic-kaizen-2026-09-11.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 3
+    },
+    {
+      "path": "docs/continuous-improvement/design-engine-book-upgrade-2026-08.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/continuous-improvement/eleken-purpose-fit-premium-ux-kaizen-2026-09-08.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/continuous-improvement/kaizen-wave-1-2026-08-11.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 8
+    },
+    {
+      "path": "docs/continuous-improvement/kaizen-wave-2-2026-08-11.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 12
+    },
+    {
+      "path": "docs/engine-upgrade-july-2026/00-executive-summary.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/engine-upgrade-july-2026/01-discovery.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/initial-analysis/02-coverage-and-taxonomy.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/initial-analysis/04-gap-analysis-new-skills.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/initial-analysis/05-per-output-type-readiness.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/initial-analysis/06-2026-standards-benchmark.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 1
+    },
+    {
+      "path": "docs/initial-analysis/07-hardening-existing-skills.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    },
+    {
+      "path": "docs/kaizen/phase-1-design.md",
+      "reason": "Historical record written before the portability gate; not rewritten. New documents must be clean.",
+      "max_hits": 2
+    }
+  ]
+}

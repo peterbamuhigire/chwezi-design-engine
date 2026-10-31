@@ -14,6 +14,7 @@ jobs:
           python-version: "3.12"
       - run: pip install PyYAML pytest
       - run: python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+      - run: python -X utf8 scripts/validate_portability.py
       - run: python -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures
       - run: python -X utf8 scripts/validate_route_existence.py
       - run: python -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json

@@ -44,7 +44,7 @@ Commands run from the repository root on 2026-10-31 (`python3`, not `python`; no
 | Routing smoke (registered) | `python3 -X utf8 scripts/routing_smoke_test.py` | 0 | passes |
 | Routing smoke (CI floor) | `python3 -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures` | 0 | 72 positives, p@1 94%, p@3 100%, 29/29 owned negatives, 1 foreign-owner `NOT_ASSESSED`, lint 0 findings |
 | Route existence | `python3 -X utf8 scripts/validate_route_existence.py` | 0 | 0 findings |
-| Cross-engine routes, default layout | `python3 -X utf8 scripts/validate_cross_engine_routes.py --workspace-root /home/peter/skill-engines` | 1 | 6 `NOT ASSESSED`: repository names `chwezi-sdlc-documentation` and `chwezi-dev-engine` not found as siblings (finding X-1) |
+| Cross-engine routes, default layout | `python3 -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <parent of the sibling checkouts>` | 1 | 6 `NOT ASSESSED`: repository names `chwezi-sdlc-documentation` and `chwezi-dev-engine` not found as siblings (finding X-1) |
 | Cross-engine routes, workspace map | same command with `--workspace-root <scratch dir of symlinks named by repository name>` | 0 | 0 findings |
 | Catalogue relevance | `python3 -X utf8 tests/eval_catalog_relevance.py` | 0 | held-out p@1 1.000, MRR@3 1.000, nDCG@3 0.968, abstention 1.000, typo recovery 1.000 (n=16) |
 | Design catalogue | `python3 -X utf8 scripts/validate_design_catalog.py data/design-catalog.json` | 0 | pass, 0 stale as of 2026-10-31 |
@@ -73,7 +73,7 @@ Counts that the validators do not report, taken by an independent script over th
 | Skills with no positive fixture | 44 |
 | Owned-negative rows (local owner) / (foreign owner) | 29 / 1 |
 | Worked-example text per skill: minimum / median words; skills under 250 words | 45 / 1,137; 11 |
-| Operational files with machine-specific paths (`wamp64`, drive letters, `/home/<user>`, `/Users/<user>`; excludes `docs/`, `tests/`, `fonts/`) | **10** (`AGENTS.md`, `doctrine/design-doctrine.md`, `hooks/test-destructive-bash-gate.js` (intentional test inputs), `hooks/token-file-gate.js`, `install.sh` (a comment about drive letters), `integration/integration-plan.md`, `integration/migration-manifest.md`, `design-audit/SKILL.md`, `plan-canvas-design-review/SKILL.md`, `premium-ui-ux-design/references/source-register.md`) |
+| Operational files with machine-specific paths (a Windows web-root folder, drive letters, `/home/<user>`, `/Users/<user>`; excludes `docs/`, `tests/`, `fonts/`) | **10** (`AGENTS.md`, `doctrine/design-doctrine.md`, `hooks/test-destructive-bash-gate.js` (intentional test inputs), `hooks/token-file-gate.js`, `install.sh` (a comment about drive letters), `integration/integration-plan.md`, `integration/migration-manifest.md`, `design-audit/SKILL.md`, `plan-canvas-design-review/SKILL.md`, `premium-ui-ux-design/references/source-register.md`) |
 | Historical files (`docs/`, `tests/`) with such paths / font licence files with a local drive origin | 22 / 29 |
 | Markdown links checked outside `docs/`, `tests/`, `fonts/` / links climbing into sibling checkouts | 179 / **3** |
 | Dangling cross-engine references (declared routes that do not resolve with a workspace map) | 0 (6 unresolved by default layout: tooling, not content) |
