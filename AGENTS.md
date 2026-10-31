@@ -128,10 +128,10 @@ presentation-layer skills (typography, colour, layout, visual identity, mobile/w
 document visual formatting) **in addition to** whichever domain engine is active — the same way
 the finance engine (`chwezi-accounting-doctrine`) is consulted alongside domain work.
 
-A domain engine (business-plan, srs, proposal, website, engineering-catalog, social-media,
-digital-research) should hand off here whenever the work touches how an artifact *looks*: font
-choice, type scale, colour, layout/grid, UI screens, mobile UX, or the visual formatting of a
-DOCX/PPTX/PDF/XLSX. Content and structure stay in the domain engine; presentation comes here.
+A domain engine (business-plan-skills, chwezi-sdlc-documentation, proposal-skills, website-skills,
+chwezi-dev-engine, social-media-skills, the Digital Research Engine) should hand off here whenever
+the work touches how an artifact *looks*: font choice, type scale, colour, layout/grid, UI screens,
+mobile UX, or the visual formatting of a DOCX/PPTX/PDF/XLSX. Content and structure stay in the domain engine; presentation comes here.
 
 Advertising and campaign creative arrive from the social-media and digital marketing engine as a
 brief; this engine returns concepts, campaign systems, layouts and placement specifications under
@@ -141,15 +141,17 @@ Strategy, copy, legal release and measurement stay with the marketing engine.
 ## Skill-engine release commands
 
 For visual changes, validate the machine-readable delivery record with
-`python -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json`;
+`python3 -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json`;
 missing renders or required checks block a `PASS` verdict.
 
-```powershell
-python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
-python -X utf8 scripts/routing_smoke_test.py
+```bash
+python3 -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+python3 -X utf8 scripts/routing_smoke_test.py
 ```
 
-Portability gate: `python -X utf8 scripts/validate_portability.py` (also run by `validate_engine.py`)
+Use `python` where the host has no `python3`. The README section "Validation" lists every check with its dependencies, the checks that need extra tools and the result measured on 2026-10-31.
+
+Portability gate: `python3 -X utf8 scripts/validate_portability.py` (also run by `validate_engine.py`)
 fails on machine-specific paths and on markdown links that leave the repository or break.
 Exceptions live in `governance/portability-allowlist.json`, each with a reason and, for
 historical records, a ratchet that can only shrink. Name sibling engines by repository
@@ -157,22 +159,31 @@ identifier and resolve them through the workspace map, never by a path or a rela
 
 Rendered output and token packs: `node scripts/check-rendered-fonts.js <file.pdf>` applies the
 banned-font doctrine to the fonts a PDF actually embeds (exit 0 pass, 2 banned family, 3 only
-fallback faces, 4 not embedded, 1 did not run, which is `NOT ASSESSED`). `python -X utf8
+fallback faces, 4 not embedded, 1 did not run, which is `NOT ASSESSED`). `python3 -X utf8
 scripts/validate_token_example.py <tokens.json> --profile generic` checks a real token pack for
-aliases, tiers, the Design Tokens 2025.10 value shapes and every stated contrast ratio. The detector
+aliases, tiers, the Design Tokens 2025.10 value shapes and every stated contrast ratio; the default
+profile also requires the roles of the shipped example and so guards that file. The detector
 (`node tools/slop-detector/cli.mjs`) also measures pointer targets (WCAG 2.5.8, browser tier) and flags
 positive `tabindex` values (2.4.3); it does not script non-text contrast (1.4.11) or reading order (1.3.2).
 
-The baseline is zero-debt: all 101 active skills currently pass the local contract. The validator
+The baseline is zero-debt: all 102 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.
 
 When the sibling-engine workspace is available, also inspect declared external handoffs with
-`python -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <workspace-parent>`.
+`python3 -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <workspace-parent>`.
 Missing sibling repositories are reported as `NOT ASSESSED`, not as a pass; the local route gate
 remains independently runnable from this repository. When checkouts carry other folder names than
 their repository names, pass `--map <repository>=<checkout>` (repeatable), `--workspace-map <json file>`
 or set `CHWEZI_WORKSPACE_MAP`; the script header documents the order of lookup.
+
+## Quality and improvement
+
+Improvement evidence is in `docs/kaizen/2026-10-engine-kaizen/` and `docs/kaizen/2026-10-engine-kaizen-pass-2/`
+(`docs/README.md` indexes the rest). The latest published score is a raw 60.3 out of 100, published as
+`min(raw, 65)`, which is also 60.3; the target of 95 is not met. Open findings and the calendar of
+re-checks are in the repository `README.md` under "Quality and improvement". Missing evidence
+stays `NOT ASSESSED`; do not describe the engine as production-ready on this evidence.
 
 ## DOMAIN PROMPT GENERATION CONTRACT
 
