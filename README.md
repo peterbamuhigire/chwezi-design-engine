@@ -39,6 +39,7 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 ## Contents
 
 - [At a glance](#at-a-glance)
+- [Capabilities](#capabilities)
 - [When to use it and find the right skill](#when-to-use-it-and-find-the-right-skill)
 - [How it works](#how-it-works)
 - [Font doctrine in brief](#font-doctrine-in-brief)
@@ -51,6 +52,10 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 - [What the October 2026 kaizen added](#what-the-october-2026-kaizen-added)
 - [Sources](#sources)
 - [Contributing, author and licence](#contributing-author-and-licence)
+
+## Capabilities
+
+The engine holds 102 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
 
 ## When to use it and find the right skill
 
