@@ -10,11 +10,14 @@ This folder holds the engine's working documents and its dated records. The repo
 | [`approval-enforcement.md`](approval-enforcement.md) and [`approval-adapter.json`](approval-adapter.json) | The design approval checkpoint and its machine-readable adapter |
 | [`control-plane-adoption.md`](control-plane-adoption.md) | How this engine meets the shared control-plane contract |
 | [`ai-prompting/domain-prompt-compilation-contract.md`](ai-prompting/domain-prompt-compilation-contract.md) | The contract for handing a visual prompt to another tool or agent |
+| [`skill-catalogue.md`](skill-catalogue.md) | All 102 active skills, one row each, with a link to each `SKILL.md` (moved from the repository `README.md`) |
+| [`references.md`](references.md) | The books, repositories, standards and websites the skills and doctrine cite (moved from the repository `README.md`) |
 
 ## Improvement records
 
 | Record | Date | Contents |
 |---|---|---|
+| [`kaizen/2026-10-readme-kaizen/`](kaizen/2026-10-readme-kaizen/) | 2026-10-31 | One file, the record of the scoped kaizen that restructured the repository `README.md`: baseline metrics, what changed, checks and conventions. It published no score |
 | [`kaizen/2026-10-engine-kaizen-pass-2/`](kaizen/2026-10-engine-kaizen-pass-2/) | 2026-10-31 | Seven files: scope and evidence, baseline scorecard, backlog, experiment log, validation record, final report, next-cycle record. Closed at a raw 60.3 out of 100 |
 | [`kaizen/2026-10-engine-kaizen/`](kaizen/2026-10-engine-kaizen/) | 2026-10-29 | The same seven files for the first October cycle. Closed at a raw 59.0, published 45.0 under that cycle's stricter cap |
 | [`kaizen/`](kaizen/) (seven single files) | 2026-09 | Phase 1 and first-wave evidence packs and one booking fixture, from September 2026 |
@@ -31,4 +34,4 @@ This folder holds the engine's working documents and its dated records. The repo
 | [`engine-upgrade-july-2026/`](engine-upgrade-july-2026/) | 2026-07 | Upgrade discovery, scorecard, backlog, roadmap and the skill-standard conformance record |
 | [`plans/hardening-june/`](plans/hardening-june/) | 2026-06 | The hardening plan and the examples backfill tracker ([plan](plans/hardening-june/README.md)) |
 
-Scores from different rubrics are not comparable. The October records use the Portfolio Kaizen Standard's ten dimensions and the cap `min(raw, 65)`; the latest published figure, the open findings and an account of what the October cycles improved are in the repository `README.md` under "Quality and improvement".
+Scores from different rubrics are not comparable. The October records use the Portfolio Kaizen Standard's ten dimensions and the cap `min(raw, 65)`; the latest published figure, the open findings and an account of what the October cycles improved are in the repository `README.md` under "Quality and improvement", "What the October 2026 kaizen improved" and "What the October 2026 kaizen added".

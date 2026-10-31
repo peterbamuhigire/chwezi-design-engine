@@ -16,15 +16,16 @@ The generated plugin manifest and the places that quote the skill count do need 
    The next glob finds the skill without it, but `.claude-plugin/plugin.json` lists every skill
    path and `node scripts/generate-plugin-manifest.js --engine . --check` fails while it is stale.
 5. Update the counts. `tests/test_route_existence.py` pins the active-skill and manifest count, the
-   plugin `description` in `.claude-plugin/marketplace.json` states it, and `README.md` (intro,
-   category table and skill table), `AGENTS.md` and `docs/RESUME.md` quote it. Search for the old
-   number. `CLAUDE.md`, the router and the domain engines need no edit.
+   plugin `description` in `.claude-plugin/marketplace.json` states it, and `README.md` (the
+   intro, "At a glance", the category table and the validation table), `docs/skill-catalogue.md`
+   (one row per skill), `AGENTS.md` and `docs/RESUME.md` quote it. Search for the old number.
+   `CLAUDE.md`, the router and the domain engines need no edit.
 
 ## To add a new group
 
 Create `skills/<NN-newgroup>/` and drop skills in it. It's discovered on the next glob. Add a
-one-line row to the README router table only if you want the human-facing hint (optional — the
-glob is authoritative).
+one-line row to the `docs/skill-catalogue.md` table, and a row to the category table in
+`README.md`, only if you want the human-facing hint (optional — the glob is authoritative).
 
 ## Premium fonts
 
