@@ -1,27 +1,22 @@
-# RESUME / Status - where to pick up (updated 2026-09-24)
+# RESUME / Status - where to pick up (updated 2026-10-31)
 
 Single source of truth for "what's done / what's next" on chwezi-design-engine.
 (Supersedes `RESUME-2026-06-21.md`, which is historical.)
 
 ## Current state
 
-- **101 active skills across 16 groups (15 domain groups plus cross-cutting), 100% example-complete and 100% contract-compliant** (2026-09-24).
-- The zero-debt conformance baseline is enforced in CI. Local validation passes for all 101 active
-  skills; 65 routing fixtures achieve 100% precision at the top-three threshold (85% at top one).
+- **102 active skills across 16 groups (15 domain groups plus cross-cutting), all 102 contract-compliant and all 102 shipping at least one worked example** (measured 2026-10-31: `validate_engine.py` reports 102 of 102 compliant; a file count finds an `examples/` file under every skill).
+- The zero-debt conformance baseline is enforced in CI. 94 routing fixtures give precision@1 95% and precision@3 100%, with 46 of 46 owned negatives; this is a lexical proxy, not live routing. 11 of the 102 skills meet the Portfolio Kaizen Standard's three-positive, two-negative fixture rule.
+- The `chwezi-slop` detector has 51 rules (43 static, 8 browser); the pytest suite has 196 tests and passes. The README "Validation" section lists every check and what it needs.
+- Latest published score: raw 60.3 out of 100, published `min(raw, 65)` = 60.3 (pass 2, 2026-10-31); 59.0 raw on 2026-10-29. Evidence: `docs/kaizen/2026-10-engine-kaizen-pass-2/` and `docs/kaizen/2026-10-engine-kaizen/`. The target is 95 and is not met.
 - 2026-09-24 Kaizen: book-study notes removed; `scripts/validate_engine.py` now fails on any stored
   or cited book extraction (guard tested in `tests/test_book_extraction_guard.py`); WCAG and Apple
   HIG claims re-verified against w3.org and developer.apple.com (APCA is no longer described as the
   WCAG 3 method; SF Symbols named by iOS 27 generation); the design quality gate now separates
   `HEURISTIC` from `MEASURED` evidence and covers state, keyboard, screen-reader, motion and reflow
   checks; design-handoff routes to `chwezi-sdlc-documentation` and `chwezi-dev-engine` are fixture-checked.
-- The earlier overall design-readiness audit score remains **81/100** (progression: 51 -> about
-  67 -> about 73 -> 80 -> 81). That score measures broader output capability, not skill-contract
-  conformance.
-- Latest re-audit: `docs/audits/post-v2-plan/`:
-  - taxonomy and structure: **86**
-  - output-readiness: **78**
-  - skill-depth: **74**
-- The fresh audit replaced the old post-v2 analysis rather than adding another audit folder.
+- The older 81/100 design-readiness score (progression 51 -> about 67 -> about 73 -> 80 -> 81) is the self re-audit of 22 June 2026 in `docs/audits/post-v2-plan/`: self-assessed, with no measured constraint and no strictness cap. The 2026-09-29 re-audit records it as not comparable with later scores; it is equally not comparable with the October scores above.
+- Audit history: `docs/audits/2026-09-29-m10-reaudit/` (published 57.1), then the two October kaizen cycles above. `docs/README.md` indexes every record.
 
 ## Done
 
@@ -47,7 +42,7 @@ Single source of truth for "what's done / what's next" on chwezi-design-engine.
 - Added RN/Expo implementation-readiness gates to `cross-platform-design-parity`, using the local
   React Native book as historical pattern input and current RN/Expo docs as the version-sensitive
   source of truth.
-- The July 2026 normalisation covered 82 active skills; the current 89-skill catalogue retains the
+- The July 2026 normalisation covered 82 active skills; the current 102-skill catalogue retains the
   portable contract with neighbour-aware triggers,
   input/output contracts, decision rules, capability boundaries, degraded mode, stop/recovery
   behaviour, evidence, acceptance conditions, and five concrete anti-patterns.
@@ -57,6 +52,8 @@ Single source of truth for "what's done / what's next" on chwezi-design-engine.
   retaining routing, workflow, decisions, and safety in the entrypoint.
 
 ## Next
+
+The prioritised open findings, with the acceptance evidence each needs, are in `docs/kaizen/2026-10-engine-kaizen-pass-2/06-next-cycle.md`. The list below is the older capability roadmap.
 
 Skill-contract repair is complete. Remaining work is capability expansion:
 
@@ -77,7 +74,9 @@ agents.
 
 For catalogue maintenance, run:
 
-```powershell
-python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
-python -X utf8 scripts/routing_smoke_test.py
+```bash
+python3 -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+python3 -X utf8 scripts/routing_smoke_test.py
 ```
+
+The full list of checks is in the repository `README.md` under "Validation".
