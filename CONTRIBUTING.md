@@ -2,7 +2,7 @@
 
 This engine is **self-indexing**: consumers discover skills by globbing `skills/**/SKILL.md`
 fresh and reading frontmatter. There is **no registry, index file, or router list to update.**
-Adding a skill is one step.
+The generated plugin manifest and the places that quote the skill count do need a touch (steps 4 and 5).
 
 ## To add a skill
 
@@ -12,8 +12,13 @@ Adding a skill is one step.
 3. Write the body using `governance/skill-authoring-standard.md` and the current
    `skills/_TEMPLATE/SKILL.md`. Cite `doctrine/references/*`
    for any canonical rule rather than restating it.
-4. That's it. The next glob finds it — no edits to `README.md`, `CLAUDE.md`, the domain
-   engines, or anything else.
+4. Regenerate the plugin manifest with `node scripts/generate-plugin-manifest.js --engine .`.
+   The next glob finds the skill without it, but `.claude-plugin/plugin.json` lists every skill
+   path and `node scripts/generate-plugin-manifest.js --engine . --check` fails while it is stale.
+5. Update the counts. `tests/test_route_existence.py` pins the active-skill and manifest count, the
+   plugin `description` in `.claude-plugin/marketplace.json` states it, and `README.md` (intro,
+   category table and skill table), `AGENTS.md` and `docs/RESUME.md` quote it. Search for the old
+   number. `CLAUDE.md`, the router and the domain engines need no edit.
 
 ## To add a new group
 
@@ -75,5 +80,11 @@ fails if an extraction folder exists or a file under skills/, doctrine/ or docs/
 - Honour the anti-slop charter (`doctrine/design-doctrine.md`).
 - Declare inputs, outputs, capability limits, degraded mode, decision rules, stop conditions,
   evidence, and acceptance criteria.
-- Run `python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json` and
-  `python -X utf8 scripts/routing_smoke_test.py` before submitting changes.
+- Keep machine-specific paths and links that leave the repository out of every file. Name a
+  sibling engine by its repository identifier. `scripts/validate_portability.py` fails on both;
+  historical exceptions live in `governance/portability-allowlist.json`.
+- Run `python3 -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json`,
+  `python3 -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures` and
+  `python3 -X utf8 -m pytest -q` before submitting changes (use `python` on Windows). The
+  `README.md` section "Validation" lists every check, what each needs and what stays
+  `NOT ASSESSED` without extra tools.
