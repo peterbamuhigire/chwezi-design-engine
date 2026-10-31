@@ -13,6 +13,7 @@ Documents only; no skill, script, test, doctrine or detector change. Every numbe
 - CONTRIBUTING (`0a5e0fc`): adding a skill also needs a regenerated plugin manifest and updated counts (a scratch copy with a 103rd skill failed `--check` and the pinned-count test); full check list and the portability rule added.
 - `fonts/README.md` (`780e087`): Linux and macOS form of the category folder setup. `integration/integration-plan.md` (`9429c5a`): consumer table replaced with the measured state (11 sibling engines carry the identical `v4` block in `AGENTS.md`, none in `CLAUDE.md`).
 - `docs/kaizen/2026-10-engine-kaizen-pass-2/07-docs-followups.md` (`f9cf605`): twelve items that need a script, test, doctrine, dated-record or other-repository change.
+- README (`e07fe86`): the subsection "What the October 2026 kaizen improved" under "Quality and improvement" gives the account of the kept changes, with commit, check and before and after figures for each. The entries below stay the short list of what changed; the README section marks each figure as re-run on 2026-10-31 or recorded from the evidence files.
 
 Pass-2 commits by theme (descriptions are in the entry below): hygiene and portability gate `b6ab99e`, `0e23a7b`; rendered-output font gate `9bc10bd`; token validation `aca491a`, `355be12`; detector rules `7582bbf`; cross-engine workspace map `285658f`; legal-sector workflow `918dce0`; routing fixtures `2332e14`; source register `7340dfa`; pytest collection `39ec352`; frozen baseline, backlog and closing records `c9f4602`, `075100b`, `72a3a37`.
 
