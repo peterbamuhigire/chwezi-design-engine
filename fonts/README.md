@@ -31,7 +31,7 @@ Family subfolders are allowed inside a category.
 ## New-device setup after clone or pull
 
 After cloning this repo on a new device, or after pulling changes on a device whose `fonts/`
-folder may be incomplete, run this from the repository root:
+folder may be incomplete, run one of these from the repository root. On Windows, in PowerShell:
 
 ```powershell
 $fontCategories = @(
@@ -49,8 +49,14 @@ $fontCategories | ForEach-Object {
 }
 ```
 
-The command is idempotent: it creates missing folders and leaves existing folders and local font
-files untouched. It should be treated as a standing pull/setup step for the team. If a category
+On Linux and macOS:
+
+```bash
+mkdir -p fonts/{01-formal-institutional,02-editorial-literary,03-modern-product-grotesque,04-technical-data-code,05-friendly-humanist,06-expressive-display-artistic,07-script-cursive-handwritten,08-body-ui-workhorses}
+```
+
+Both commands are idempotent: they create missing folders and leave existing folders and local font
+files untouched. Treat them as a standing pull/setup step for the team. If a category
 folder is missing, create it before scanning fonts or choosing a typeface.
 
 The matching `MANIFEST.md` files are tracked and should normally arrive with the clone. If a
