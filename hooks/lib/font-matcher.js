@@ -304,8 +304,10 @@ function keyBefore(text, index) {
 
 /** True when the quoted literal that starts at `index` is used as a font (contexts A to D above). */
 function isFontAssignmentContext(text, index) {
-  const lineStart = text.lastIndexOf('\n', index - 1) + 1;
-  const sameLine = text.slice(Math.max(lineStart, index - SAME_LINE_WINDOW), index);
+  // Bounded: a minified file is one line, so never search back to the start of the text.
+  const window = text.slice(Math.max(0, index - SAME_LINE_WINDOW), index);
+  const lineBreak = window.lastIndexOf('\n');
+  const sameLine = lineBreak === -1 ? window : window.slice(lineBreak + 1);
   if (FONT_VALUE_AFTER_KEY.test(sameLine)) return true; // A
   if (RUN_FONT_ATTRIBUTE.test(sameLine) || HTML_FONT_FACE.test(sameLine)) return true; // C, D
   const key = keyBefore(text, index);
