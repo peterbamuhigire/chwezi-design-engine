@@ -3,6 +3,13 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-06] - Banned-font gate: quoted names count only as font use (DG6)
+
+- `hooks/lib/font-matcher.js` (`0398cdf`, `afbce48`): `findBannedQuotedLiterals` reports a quoted family name only where it is used as a font (a font-named key, property or constant, a literal inside a font-named call, object or list, a run-font attribute, an HTML font face). A script that quotes the model-adaptation term LoRA no longer exits 2. The CSS, script-stack and diagram checks, the ban list and the exemption globs are unchanged; no path exemption.
+- `hooks/test-banned-font-gate.js`: 86 tests added, 131 in all. The 64 real-assignment cases pass on the original code too, so the narrowing loses none of them. A bounded search keeps a 1.3 MB one-line file under 2 seconds, where the original took over 120.
+- README "Validation": the hook test count and a note on the 2026-11-06 re-run of every table command except the cross-engine check; all exit 0. Record: `docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md`.
+- Open: `website-skills` carries a registered byte copy of `hooks/lib/font-matcher.js` that now differs until it is re-vendored.
+
 ## [2026-10-31] - Documentation wave
 
 Documents only; no skill, script, test, doctrine or detector change. Every number below was measured on 2026-10-31.

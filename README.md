@@ -268,11 +268,15 @@ The results below were measured on 2026-10-31 on Linux with Python 3.14 and Node
 | Python test suite | `python3 -X utf8 -m pytest -q -p no:cacheprovider` | pytest, PyYAML | Exit 0. 196 passed |
 | Detector registry and font doctrine | `node tools/slop-detector/cli.mjs --validate-registry` and `--doctrine-consistency` | Node | Exit 0. 51 rules (43 static, 8 browser); 0 baseline/ban conflicts |
 | Detector suite | `node --test tools/slop-detector/test/` | Node; a locked Playwright project for the browser test | Exit 0. 119 tests: 118 pass, 1 skipped (the browser acceptance test, which needs the locked Playwright project) |
-| Hook tests, gate hooks (four scripts) | `node hooks/test-banned-font-gate.js`, `test-rendered-font-names.js`, `test-token-file-gate.js`, `test-destructive-bash-gate.js` | Node | Exit 0 each: 45/45, 73/73, 10/10, 61/61 |
+| Hook tests, gate hooks (four scripts) | `node hooks/test-banned-font-gate.js`, `test-rendered-font-names.js`, `test-token-file-gate.js`, `test-destructive-bash-gate.js` | Node | Exit 0 each: 131/131 (45/45 on 2026-10-31), 73/73, 10/10, 61/61 |
 | Hook tests, plugin and detector hooks (three scripts) | `node hooks/test-plugin-hook-config.js`, `test-slop-immediate.js`, `test-slop-deep-pass.js` | Node | Exit 0 each: 7/7, 12/12, 10/10 |
 | Installer file guard | `node --test tests/file-count.test.js` | Node | Exit 0. 4 pass |
 | Agent contract | `python3 -X utf8 tests/agent-integration/test_design_agent_contract.py` | PyYAML | Exit 0. Pass; the universal catalogue is not available, so that part is `NOT ASSESSED` |
 | Cross-engine handoffs | `python3 -X utf8 scripts/validate_cross_engine_routes.py` | PyYAML and sibling checkouts | See [Cross-engine handoffs](#cross-engine-handoffs) |
+
+**Re-run on 2026-11-06.** Every command in the table except the cross-engine check was run again on Linux (Python 3.14.10, Node 22.23.1, pytest 9.2.0, PyYAML 6.0.2). Each exited 0 with the results shown, apart from one change: the banned-font gate now has 131 hook tests, not 45.
+
+The 86 added tests cover one change. A quoted banned family name now blocks only where it is used as a font (for example `run.font.name = "X"`, `Font(name="X")` or `font: 700 2rem "X"`). The model-adaptation term LoRA, quoted in a script, no longer blocks. The record, with its limits, is [`docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md`](docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md).
 
 ### What CI runs
 
