@@ -91,3 +91,15 @@ Behaviour inside a live Claude Code session with the updated plugin, behaviour i
 ## Rollback and review
 
 Revert `afbce48` and `0398cdf`. Keep the new test cases as expected failures. Review when a banned family that is an ordinary word is added to the list, or when a document-generation library is added to the contexts.
+
+## Slop-detector waivers on the gate's own test file (6 November 2026)
+
+The design engine's Stop hook (`slop-deep-pass.js`) scans every file edited in a session with the static detector. It flagged ten `banned-primary-font` findings in `hooks/test-banned-font-gate.js`, at lines 53, 110, 137, 146, 147, 151, 152, 172, 173 and 244.
+
+- **They are not new.** The same ten lines are flagged in the file as it is on `main` (checked by running `node tools/slop-detector/cli.mjs --tier deep` on `git show main:hooks/test-banned-font-gate.js`). DG6 added test payloads that build each family name from fragments, and the detector flags none of them.
+- **They are fixtures, not styling.** Each flagged line is a payload that the banned-font gate must block (a font declaration in a component, a vector-graphics style block, a diagram directive, a configuration file, a Tailwind config). The file's purpose is to assert the block, so it has to hold such declarations.
+- **Waiver.** Ten inline waivers, one above each flagged line, in the form `chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block`. They follow the reason format in `tools/slop-detector/README.md` and are per line, so any new banned declaration elsewhere in the file is still caught. The file-wide form was not used for that reason.
+- **Evidence.** Detector on the file: before the waivers 10 findings, exit 2; after, 0 findings, 10 waived, exit 0; with `--no-waivers`, 10 findings, exit 2. `node hooks/test-banned-font-gate.js`: 131 of 131 passed before and after. The detector over every file the branch changed: 0 findings, 10 waived.
+- **Review.** The waiver was recorded by the implementing agent on the owner's instruction of 6 November 2026. The owner can remove it by deleting the ten comment lines.
+
+No environment override was set for the font gate or the slop hooks.

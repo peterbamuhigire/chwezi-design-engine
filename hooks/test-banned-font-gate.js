@@ -50,6 +50,7 @@ const cases = [
   },
   {
     name: 'MultiEdit new_string with Poppins — BLOCK',
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/src/App.tsx', edits: [{ new_string: 'fontFamily: "Poppins"' }] } },
     expect: 2,
   },
@@ -107,6 +108,7 @@ const cases = [
   },
   {
     name: 'Unlisted Plex cut "IBM Plex Sans Tamil" caught by prefix — BLOCK',
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/src/App.tsx', content: 'fontFamily: "IBM Plex Sans Tamil"' } },
     expect: 2,
   },
@@ -134,6 +136,7 @@ const cases = [
   },
   {
     name: 'SVG <style> quoted primary "Arial" — BLOCK',
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/fig.svg', content: '<svg><style>text{font-family:"Arial",sans-serif}</style></svg>' } },
     expect: 2,
   },
@@ -143,12 +146,16 @@ const cases = [
     expect: 0,
   },
   {
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     name: 'Mermaid .mmd init directive "fontFamily":"Inter" — BLOCK',
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/_generated/FIG-001.mmd', content: '%%{init: {"themeVariables": {"fontFamily":"Inter"}}}%%\nflowchart LR\n  a --> b' } },
     expect: 2,
   },
   {
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     name: "Mermaid .mmd single-quoted directive 'fontFamily': 'Roboto, sans-serif' — BLOCK",
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/fig.mmd', content: "%%{init: {'themeVariables': {'fontFamily': 'Roboto, sans-serif'}}}%%\nsequenceDiagram\n  A->>B: hi" } },
     expect: 2,
   },
@@ -169,7 +176,9 @@ const cases = [
     stderrIncludes: 'Arial',
   },
   {
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     name: 'JSON "fontFamily": "Roboto" — BLOCK',
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/mermaid-config.json', content: '{\n  "theme": "neutral",\n  "fontFamily": "Roboto"\n}' } },
     expect: 2,
   },
@@ -241,6 +250,7 @@ const cases = [
   },
   {
     name: '(d) tailwind.config.cjs fontFamily.sans Inter — BLOCK',
+    // chwezi-slop-disable-next-line banned-primary-font -- Claude agent for Peter Bamuhigire: test fixture the banned-font gate must block, not styling; hooks/test-banned-font-gate.js asserts the block
     payload: { tool_input: { file_path: '/proj/tailwind.config.cjs', content: "module.exports = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } } };" } },
     expect: 2,
   },

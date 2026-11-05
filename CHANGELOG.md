@@ -8,6 +8,7 @@ All notable changes to this engine are recorded here. Earlier changes are record
 - `hooks/lib/font-matcher.js` (`0398cdf`, `afbce48`): `findBannedQuotedLiterals` reports a quoted family name only where it is used as a font (a font-named key, property or constant, a literal inside a font-named call, object or list, a run-font attribute, an HTML font face). A script that quotes the model-adaptation term LoRA no longer exits 2. The CSS, script-stack and diagram checks, the ban list and the exemption globs are unchanged; no path exemption.
 - `hooks/test-banned-font-gate.js`: 86 tests added, 131 in all. The 64 real-assignment cases pass on the original code too, so the narrowing loses none of them. A bounded search keeps a 1.3 MB one-line file under 2 seconds, where the original took over 120.
 - README "Validation": the hook test count and a note on the 2026-11-06 re-run of every table command except the cross-engine check; all exit 0. Record: `docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md`.
+- `hooks/test-banned-font-gate.js`: ten inline slop-detector waivers (`banned-primary-font`, one above each of the ten pre-existing fixture lines the Stop hook flagged), each with a `<who>: <evidence>` reason. Detector on the file: 10 findings before, 0 findings and 10 waived after, 10 findings again with `--no-waivers`. See the record's section on waivers.
 - Open: `website-skills` carries a registered byte copy of `hooks/lib/font-matcher.js` that now differs until it is re-vendored.
 
 ## [2026-10-31] - Documentation wave
