@@ -80,13 +80,13 @@ The stop condition did not fire. A second batch of 60 payloads (48 real forms an
 - Matching is textual. Brackets inside string literals are not tracked.
 - A file with tens of thousands of real hits still exceeds the 5-second timeout, because the original code counts lines from the start of the text for each hit. This is unchanged and was not part of DG6.
 - The slop detector calls the same function for document-generator font assignments. It has no fixture for that path, so the change is covered only through the hook tests.
-- `website-skills` carries a registered byte copy of `hooks/lib/font-matcher.js` (`scripts/vendor/chwezi-slop`). It differs from this file until it is re-vendored with `check-vendored-detector.py --sync-from`, and the portfolio drift check will report the byte drift.
-- The installed plugin copy keeps the old matcher until the plugin is updated.
+- `website-skills` carries a registered byte copy of `hooks/lib/font-matcher.js` (`scripts/vendor/chwezi-slop`). It was re-synced on 2026-11-06 with `check-vendored-detector.py --sync-from` (website commits `126ebc6` and `a75745c`), and the source comparison passes again.
+- The design plugin is read from this folder, not from a copy: `claude plugin list --json` reports a `readFromFolder` for it, and `claude plugin update` answers that it is read from its folder and has nothing to update. A directory in the plugin cache from the original September install is not used. Verified in a live session on 2026-11-06: writing a Python file that quotes the adaptation tag was allowed, and writing a real run-font assignment naming a banned family was blocked.
 - The engine's post-edit slop hook reports banned-family findings on the existing fixtures of the test file, because they name banned families on purpose. None of the findings is in the added block.
 
 ## NOT_ASSESSED
 
-Behaviour inside a live Claude Code session with the updated plugin, behaviour in other runners, and the false-negative rate on a real corpus of document-generation scripts.
+Behaviour in other runners, and the false-negative rate on a real corpus of document-generation scripts.
 
 ## Rollback and review
 
