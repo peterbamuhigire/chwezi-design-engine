@@ -29,6 +29,12 @@
  * blocked only as the first family in a heading/display selector or a
  * --font-display/--font-heading property, never as a paired body face).
  *
+ * A bare quoted literal (a python-docx or openpyxl font name, a JS font setter,
+ * a font-named constant) is blocked only in a font-assignment context (DG6,
+ * 2026-11). The model-adaptation term LoRA, or an ordinary word that is also a
+ * family name, quoted in a script is not font use. The contexts that count are
+ * listed above isFontAssignmentContext in hooks/lib/font-matcher.js.
+ *
  * Graduated controls (mirrors ECC's gateguard pattern):
  *   CHWEZI_FONT_GATE=off              — disable entirely for the session
  *   CHWEZI_FONT_EXEMPT_GLOBS=a,b,c    — comma-separated globs (matched
@@ -130,9 +136,9 @@ function extractTargetPath(toolInput) {
 /**
  * Diagram-file font stacks (M10-07, AR-13):
  *   - SVG attribute   font-family="Arial, sans-serif"  or  font-family='…'
- *   - Mermaid / JSON  "fontFamily": "Inter"  (JSON form, including inside a
- *                     %%{init: …}%% directive) and 'fontFamily': 'Inter' or
- *                     fontFamily: 'Inter' (single-quoted directive form)
+ *   - Mermaid / JSON  "fontFamily": "Face"  (JSON form, including inside a
+ *                     %%{init: …}%% directive) and 'fontFamily': 'Face' or
+ *                     fontFamily: 'Face' (single-quoted directive form)
  * Returns { hits, fallbacks }: hits are banned PRIMARY families (block);
  * fallbacks are banned families later in the stack (warn only, because
  * renderers fall back silently when the primary face is missing).
@@ -238,6 +244,7 @@ function main() {
       .filter(Boolean)
       .map((h) => ({ family: h.family, context: 'font-family' })), ...diagram.hits];
   } else {
+    // Bare quoted literals count only in a font-assignment context (matcher, DG6).
     hits = [
       ...findPrimaryStackHits(text, lists),
       ...matcher.findBannedQuotedLiterals(text, lists),

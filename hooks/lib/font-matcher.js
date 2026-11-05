@@ -188,8 +188,8 @@ function findCssFontDeclarations(text) {
 
 /**
  * Finds font stacks in JS/TS/JSON/Tailwind configs:
- *   fontFamily: "Inter, sans-serif"   fontFamily: 'Inter'   "fontFamily": "…"
- *   fontFamily: { sans: ['Inter', 'sans-serif'], display: ['"Andada Pro"', 'serif'] }
+ *   fontFamily: "Face, sans-serif"   fontFamily: 'Face'   "fontFamily": "…"
+ *   fontFamily: { sans: ['Face', 'sans-serif'], display: ['"Andada Pro"', 'serif'] }
  * Returns [{prop, value, families, selector, index, line}] with selector set to
  * the Tailwind key (so `display`/`heading` keys count as heading context).
  */
@@ -232,26 +232,119 @@ function findScriptFontStacks(text) {
   return out;
 }
 
+// ---- font-assignment context (DG6) -------------------------------------------
+// A quoted banned name counts only when it is used as a font. Several family
+// names are ordinary words or terms of art (a model-adaptation tag, a product
+// category), so a bare quoted literal proves nothing by itself. The contexts
+// that do count, each shown with a placeholder name X:
+//   A. the value of a font-named key, property or constant on the same line:
+//      run.font.name = "X"   HEADING_FONT = "X"   {"font_name": "X"}
+//      fontFace: "X"   font: 700 2rem "X"   ctx.font = '16px "X"'
+//   B. a literal inside a font-named call, object or list (the nearest named
+//      bracket), whatever its keyword: Font(name="X")   font: { name: 'X' }
+//      setFont("X")   registerFont(TTFont("X", f))   font_stack = [\n "X" ]
+//      and the plotting form rc("font", family="X")
+//   C. a WordprocessingML run-font attribute: w:ascii="X"   qn("w:eastAsia"), "X"
+//   D. the face attribute of an HTML font tag.
+// Anything else is not font use and is left to the stack-aware matchers.
+const FONT_NAMED = /font|typeface/i;
+const SAME_LINE_WINDOW = 300; // bounded so a minified one-line file cannot slow the hook
+const ENCLOSING_WINDOW = 600;
+// After the operator of context A: brackets, commas, bare words, numbers and
+// complete quoted strings, then optionally the unfinished string that holds the
+// literal. No second ':' or '=' may appear, so a later key does not inherit the
+// font-named key at the start of the line. Every alternative consumes one
+// character class, so the pattern cannot backtrack catastrophically.
+const VALUE_TAIL = '(?:[\\s,\\[({\\w.%#+/-]|"[^"\\n]*"|\'[^\'\\n]*\'|`[^`\\n]*`)*(?:["\'`][^"\'`\\n]*)?$';
+// The font-named token may sit anywhere left of the operator, so a subscript or
+// call in the target still counts (a font table indexed by key, a run-font
+// attribute map). The lazy gap cannot cross '=', ':' or ';', and '==' is not an
+// assignment, so a comparison or a second statement does not inherit it.
+const FONT_VALUE_AFTER_KEY = new RegExp(
+  '(?:^|[^\\w$.-])[\\w$.-]*(?:font|typeface)[^=:;\\n]*?(?::|=(?!=))' + VALUE_TAIL, 'i');
+const RUN_FONT_ATTRIBUTE = /\bw:(?:ascii|hAnsi|eastAsia|cs)\s*(?:=\s*|["']\s*\)\s*,\s*)$/;
+const HTML_FONT_FACE = /<font\b[^>]*\bface\s*=\s*$/i;
+
+/**
+ * Name directly before an opening bracket: the call name in a call, the key in a
+ * key-and-object pair, with the keyword that receives a nested call kept
+ * (a font-named keyword before a nested dict call is part of the head).
+ */
+function headBefore(text, openIndex) {
+  const m = /((?:[\w$.-]+["'\]]*\s*[:=]\s*)?[\w$.-]+)["'\]]*\s*(?:[:=]\s*)?$/.exec(text.slice(Math.max(0, openIndex - 80), openIndex));
+  return m ? m[1] : '';
+}
+
+/** Up to three unmatched opening brackets before `index`, nearest first, each with its head name. */
+function enclosingOpeners(text, index) {
+  const closer = { '(': ')', '[': ']', '{': '}' };
+  const depth = { ')': 0, ']': 0, '}': 0 };
+  const heads = [];
+  for (let i = index - 1; i >= 0 && index - i <= ENCLOSING_WINDOW; i--) {
+    const ch = text[i];
+    if (ch === ')' || ch === ']' || ch === '}') {
+      depth[ch]++;
+    } else if (ch === '(' || ch === '[' || ch === '{') {
+      if (depth[closer[ch]] > 0) depth[closer[ch]]--;
+      else {
+        heads.push({ open: ch, at: i, head: headBefore(text, i) });
+        if (heads.length === 3) break;
+      }
+    }
+  }
+  return heads;
+}
+
+/** Key or keyword directly before the literal (the name in name=X, the key in a key-and-value pair), else null. */
+function keyBefore(text, index) {
+  const before = text.slice(Math.max(0, index - 120), index).replace(/\s+$/, '');
+  const m = /([\w$.-]+)["'\]]*\s*(?::|=(?!=))$/.exec(before);
+  return m ? m[1] : null;
+}
+
+/** True when the quoted literal that starts at `index` is used as a font (contexts A to D above). */
+function isFontAssignmentContext(text, index) {
+  const lineStart = text.lastIndexOf('\n', index - 1) + 1;
+  const sameLine = text.slice(Math.max(lineStart, index - SAME_LINE_WINDOW), index);
+  if (FONT_VALUE_AFTER_KEY.test(sameLine)) return true; // A
+  if (RUN_FONT_ATTRIBUTE.test(sameLine) || HTML_FONT_FACE.test(sameLine)) return true; // C, D
+  const key = keyBefore(text, index);
+  if (key !== null && FONT_NAMED.test(key)) return true; // font-named key reached across a line break
+  // B: the nearest named bracket owns the literal; anonymous grouping brackets are skipped.
+  const owner = enclosingOpeners(text, index).find((h) => h.head !== '');
+  if (!owner) return false;
+  if (FONT_NAMED.test(owner.head)) return true;
+  return /^\s*["'`]font["'`]\s*[,)]/.test(text.slice(owner.at + 1, owner.at + 24)); // rc("font", family="X")
+}
+
 /**
  * Document-generation assignments (python-docx / python-pptx / openpyxl, JS
- * font-name setters): a banned family inside a quoted literal. The
- * conditional (Source Sans) list is excluded: it is legal as a paired body
- * face, so a bare literal cannot prove misuse (M10-09-T03 c).
+ * font-name setters): a banned family inside a quoted literal that is used as
+ * a font (see isFontAssignmentContext). The conditional (Source Sans) list is
+ * excluded: it is legal as a paired body face, so a bare literal cannot prove
+ * misuse (M10-09-T03 c). A literal outside a font-assignment context is not
+ * reported (DG6): the model-adaptation term LoRA, quoted in a script, is not a
+ * typeface.
  */
 function findBannedQuotedLiterals(text, lists) {
   const l = listsOf(lists);
   const names = [...l.hard.values(), ...l.secondary.values(), ...l.mono.values()].map((f) => f.family);
   const hits = [];
+  const add = (family, index) => {
+    if (isFontAssignmentContext(text, index)) {
+      hits.push({ family, index, line: lineOf(text, index), context: `quoted literal "${family}"` });
+    }
+  };
   for (const name of names) {
     const re = new RegExp(`["'\`]${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["'\`]`, 'gi');
     let m;
-    while ((m = re.exec(text))) hits.push({ family: name, index: m.index, line: lineOf(text, m.index), context: `quoted literal "${name}"` });
+    while ((m = re.exec(text))) add(name, m.index);
   }
   for (const p of l.prefixes) {
     const escaped = p.prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const re = new RegExp(`["'\`](${escaped}[^"'\`\\n]{0,40})["'\`]`, 'gi');
     let m;
-    while ((m = re.exec(text))) hits.push({ family: m[1], index: m.index, line: lineOf(text, m.index), context: `quoted literal "${m[1]}"` });
+    while ((m = re.exec(text))) add(m[1], m.index);
   }
   return hits;
 }

@@ -256,6 +256,128 @@ const cases = [
   },
 ];
 
+// -- DG6 (2026-11): a quoted banned name counts only when it is used as a font ------
+// Several family names are ordinary words or terms of art, so a bare quoted literal
+// proves nothing. The payloads below are built from fragments, so this file holds no
+// quoted family name and these tests do not trip the gate they test. Every expectation
+// is a literal exit code chosen from the gate's contract, not a value computed by the
+// code under test.
+const part = (...p) => p.join('');
+const dq = (s) => '"' + s + '"';
+const sq = (s) => "'" + s + "'";
+const LORA = part('Lo', 'RA'); // the model-adaptation term; also a banned family name
+const LORA_MIXED = part('Lo', 'ra');
+const ROBOTO = part('Ro', 'boto');
+const INTER = part('In', 'ter');
+const POPPINS = part('Pop', 'pins');
+const OUTFIT = part('Out', 'fit');
+const ARIAL = part('Ar', 'ial');
+const MONTSERRAT = part('Mont', 'serrat');
+const PLEX_PREFIX = part('IB', 'M Pl', 'ex ');
+const PLEX_SERIF = part(PLEX_PREFIX, 'Ser', 'if');
+const PLEX_TAMIL = part(PLEX_PREFIX, 'Sans ', 'Tamil');
+
+// Not a font assignment: the gate must allow each (exit 0).
+const NOT_A_FONT = [
+  ['Python list holding the upper-case adaptation tag', 'w.py', 'tags = [' + dq('SYNTH') + ', ' + dq(LORA) + ']'],
+  ['Python assignment of the mixed-case term', 'w.py', 'x = ' + dq(LORA_MIXED)],
+  ['Python replace chain with placeholder digits', 'w.py', 'def fix(x): return x.replace(' + dq('L0RA') + ', ' + dq(LORA) + ').replace(' + dq('L0ra') + ', ' + dq(LORA_MIXED) + ')'],
+  ['JavaScript constant', 'w.js', 'const adapter = ' + dq(LORA) + ';'],
+  ['TypeScript tags array', 'w.ts', 'const tags: string[] = [' + dq('SYNTH') + ', ' + dq(LORA) + '];'],
+  ['TSX constant in single quotes', 'w.tsx', 'export const kind = ' + sq(LORA_MIXED) + ';'],
+  ['ordinary-word category in Python', 'w.py', 'category = ' + dq(OUTFIT)],
+  ['multi-line list of adapter kinds', 'w.py', 'ADAPTERS = [\n    ' + dq(LORA) + ',\n    ' + dq('QLoRA') + ',\n]'],
+  ['comparison, not an assignment', 'w.py', 'if model.kind == ' + dq(LORA_MIXED) + ':\n    pass'],
+  ['HTML data attribute', 'w.html', '<span data-kind=' + dq(LORA) + '>x</span>'],
+  ['CSS content string', 'w.css', '.note::after { content: ' + dq(INTER) + '; }'],
+  ['keyword argument of an unrelated call', 'w.py', 'registry.register(name=' + dq(LORA) + ', kind=' + dq('adapter') + ')'],
+  ['keyword argument named method', 'w.py', '# font gate note\ntrain(method=' + dq(LORA) + ')'],
+  ['later key on a line whose first key is font-named', 'w.py', 'd = {' + dq('font_name') + ': ' + dq('Calibri') + ', ' + dq('tag') + ': ' + dq(LORA) + '}'],
+  ['second statement after a semicolon', 'w.py', 'fonts_dir = ' + dq('/tmp/fonts') + '; tag = ' + dq(LORA)],
+  ['trailing comment mentions a font', 'w.py', 'x = ' + dq(LORA_MIXED) + '  # font adapter'],
+  ['adaptation tag beside an approved face', 'w.py', 'tags = [' + dq(LORA) + ']\nrun.font.name = ' + dq('Public Sans')],
+  ['default of an unrelated parameter', 'w.py', 'def load(kind=' + dq(LORA_MIXED) + '):\n    return kind'],
+  ['Vue component prop', 'w.vue', '<Badge label=' + dq(OUTFIT) + ' />'],
+];
+// A real font assignment: the gate must still block each (exit 2).
+const FONT_ASSIGNMENTS = [
+  ['python-docx run font, mixed-case face', 'a.py', 'run.font.name = ' + dq(LORA_MIXED)],
+  ['python-docx run font, single quotes', 'a.py', 's.font.name = ' + sq(ROBOTO)],
+  ['python-docx run font, value on the next line', 'a.py', 'run.font.name = (\n    ' + dq(ROBOTO) + '\n)'],
+  ['python-docx style font through a subscript', 'a.py', 'doc.styles[' + dq('Normal') + '].font.name = ' + dq(ROBOTO)],
+  ['python-docx font object assignment', 'a.py', 'font = run.font\nfont.name = ' + dq(ROBOTO)],
+  ['python-pptx font name, secondary-ban face', 'a.py', 'p.font.name = ' + dq(MONTSERRAT)],
+  ['python-pptx font name, listed prefix-ban face', 'a.py', 'run.font.name = ' + dq(PLEX_SERIF)],
+  ['python-pptx font name, unlisted prefix-ban face', 'a.py', 'run.font.name = ' + dq(PLEX_TAMIL)],
+  ['python-docx east-asian run font through qn', 'a.py', 'rPr.rFonts.set(qn(' + dq('w:eastAsia') + '), ' + dq(ROBOTO) + ')'],
+  ['python-docx run-font attribute in XML text', 'a.py', "xml = '<w:rFonts w:ascii=" + dq(ROBOTO) + " w:hAnsi=" + dq(ROBOTO) + "/>'"],
+  ['python-docx run-font attribute map', 'a.py', 'rfonts.attrib[qn(' + dq('w:ascii') + ')] = ' + dq(ROBOTO)],
+  ['openpyxl Font with a name keyword', 'a.py', 'ws[' + dq('A1') + '].font = Font(name=' + dq(ROBOTO) + ', size=11)'],
+  ['openpyxl Font with the name on its own line', 'a.py', 'cell.font = Font(\n    name=' + dq(ROBOTO) + ',\n    size=11,\n)'],
+  ['openpyxl Font with a positional name', 'a.py', 'f = Font(' + dq(INTER) + ', bold=True)'],
+  ['openpyxl Font after another keyword', 'a.py', 'ws.cell(row=1, column=1).font = Font(color=' + dq('FF0000') + ', name=' + dq(ROBOTO) + ')'],
+  ['openpyxl named style', 'a.py', 'st = NamedStyle(name=' + dq('h') + ', font=Font(name=' + dq(ROBOTO) + '))'],
+  ['xlsxwriter format with a font_name key', 'a.py', 'fmt = wb.add_format({' + dq('font_name') + ': ' + dq(ROBOTO) + ', ' + dq('bold') + ': True})'],
+  ['xlsxwriter set_font_name call', 'a.py', 'fmt.set_font_name(' + dq(ROBOTO) + ')'],
+  ['reportlab setFont call', 'a.py', 'c.setFont(' + dq(ROBOTO) + ', 12)'],
+  ['reportlab registerFont with TTFont', 'a.py', 'pdfmetrics.registerFont(TTFont(' + dq(INTER) + ', ' + dq('x.ttf') + '))'],
+  ['reportlab ParagraphStyle fontName', 'a.py', 'style = ParagraphStyle(' + dq('body') + ', fontName=' + dq(ROBOTO) + ')'],
+  ['reportlab font family registration', 'a.py', 'registerFontFamily(' + dq('Brand') + ', normal=' + dq(ROBOTO) + ', bold=' + dq(ROBOTO) + ')'],
+  ['fpdf set_font call', 'a.py', 'pdf.set_font(' + dq(ROBOTO) + ', size=12)'],
+  ['Pillow ImageFont.truetype', 'a.py', 'f = ImageFont.truetype(' + dq(ROBOTO) + ', 12)'],
+  ['font-named constant', 'a.py', 'HEADING_FONT = ' + dq(INTER)],
+  ['typeface-named constant', 'a.py', 'TYPEFACE = ' + dq(ROBOTO)],
+  ['font table keyed by role', 'a.py', 'FONTS = {' + dq('heading') + ': ' + dq(ROBOTO) + ', ' + dq('body') + ': ' + dq('Public Sans') + '}'],
+  ['font table over several lines', 'a.py', 'FONTS = {\n    ' + dq('heading') + ': ' + dq(ROBOTO) + ',\n}'],
+  ['font stack list, banned face second', 'a.py', 'font_stack = [' + dq('Public Sans') + ', ' + dq(INTER) + ']'],
+  ['font-named subscript assignment', 'a.py', 'fonts[' + dq('heading') + '] = ' + dq(ROBOTO)],
+  ['nested font key', 'a.py', 'cfg = {' + dq('font') + ': {' + dq('name') + ': ' + dq(ROBOTO) + '}}'],
+  ['matplotlib rcParams font.family', 'a.py', 'plt.rcParams[' + dq('font.family') + '] = ' + dq(ROBOTO)],
+  ['matplotlib rcParams font.sans-serif list', 'a.py', 'plt.rcParams[' + dq('font.sans-serif') + '] = [' + dq(INTER) + ', ' + dq('DejaVu Sans') + ']'],
+  ['matplotlib rc with a font group', 'a.py', 'plt.rc(' + dq('font') + ', family=' + dq(ROBOTO) + ')'],
+  ['plotly nested font dict', 'a.py', 'fig.update_layout(font=dict(family=' + dq(ROBOTO) + '))'],
+  ['plotly font_family keyword', 'a.py', 'fig.update_layout(font_family=' + dq(ROBOTO) + ')'],
+  ['font keyword of a plotting call', 'a.py', 'sns.set(font=' + dq(ROBOTO) + ')'],
+  ['adaptation tag and a real assignment in one file', 'a.py', 'tags = [' + dq(LORA) + ']\nrun.font.name = ' + dq(ROBOTO)],
+  ['real assignment after a statement separator', 'a.py', 'label = ' + dq(LORA) + '; run.font.name = ' + dq(ROBOTO)],
+  ['JavaScript style fontFamily setter', 'a.js', 'el.style.fontFamily = ' + dq(INTER) + ';'],
+  ['JavaScript fontFamily constant', 'a.js', 'const fontFamily = ' + dq(INTER) + ';'],
+  ['JavaScript theme fontFamily with inner quotes', 'a.js', 'theme.typography.fontFamily = ' + sq(dq(ROBOTO)) + ';'],
+  ['JavaScript canvas font shorthand with a quoted face', 'a.js', 'ctx.font = ' + sq('16px ' + dq(INTER)) + ';'],
+  ['JavaScript docx TextRun font', 'a.js', 'new TextRun({ text: ' + dq('Hi') + ', font: ' + dq(ROBOTO) + ' })'],
+  ['JavaScript pptxgenjs fontFace', 'a.js', 'slide.addText(' + dq('Hi') + ', { fontFace: ' + dq(ARIAL) + ' });'],
+  ['JavaScript object font key', 'a.js', 'export const display = { font: ' + dq(POPPINS) + ' };'],
+  ['JavaScript jsPDF setFont', 'a.js', 'doc.setFont(' + dq(ROBOTO) + ');'],
+  ['JavaScript setFontFamily', 'a.js', 'setFontFamily(' + sq(INTER) + ');'],
+  ['JavaScript Font constructor', 'a.js', 'const f = new Font(' + dq(ROBOTO) + ');'],
+  ['JavaScript ExcelJS font object', 'a.js', 'ws.getCell(' + dq('A1') + ').font = { name: ' + dq(ROBOTO) + ' };'],
+  ['JavaScript ExcelJS font object over lines', 'a.js', 'cell.font = {\n  name: ' + sq(ROBOTO) + ',\n  size: 12\n};'],
+  ['TypeScript ExcelJS font object', 'a.ts', 'cell.font = { name: ' + sq(ROBOTO) + ', size: 12 };'],
+  ['TypeScript typeface constant', 'a.ts', 'const typeface = ' + sq(INTER) + ';'],
+  ['TSX font prop', 'a.tsx', '<Text font=' + dq(ROBOTO) + ' />'],
+  ['TSX inline style fontFamily', 'a.tsx', 'const s = <div style={{ fontFamily: ' + dq(POPPINS) + ' }} />;'],
+  ['Svelte font-family attribute', 'a.svelte', '<p style:font-family=' + dq(INTER) + '>x</p>'],
+  ['Vue SVG font-family attribute', 'a.vue', '<text font-family=' + dq(INTER) + '>x</text>'],
+  ['HTML font tag face attribute', 'a.html', '<font face=' + dq(INTER) + '>x</font>'],
+  ['HTML Tailwind arbitrary font class', 'a.html', '<div class="font-[' + sq(ROBOTO) + ']">x</div>'],
+  ['CSS font shorthand with a quoted face', 'a.css', 'h1 { font: 700 2rem ' + dq(INTER) + ', sans-serif; }'],
+  ['CSS font shorthand after another property', 'a.css', 'a { color: red; font: 12px ' + dq(INTER) + '; }'],
+  ['CSS font shorthand with a size and line height', 'a.css', 'h1 { font: bold 24px/1.2 ' + dq(ROBOTO) + ', serif }'],
+  ['CSS font-family declaration', 'a.css', 'body { font-family: ' + INTER + ', sans-serif; }'],
+  ['CSS font-family declaration with a quoted face', 'a.css', 'body { font-family: ' + dq(POPPINS) + ', sans-serif; }'],
+];
+for (const [name, file, content] of NOT_A_FONT) {
+  cases.push({ name: 'DG6 not a font, ALLOW: ' + name, payload: { tool_input: { file_path: '/proj/src/' + file, content } }, expect: 0 });
+}
+for (const [name, file, content] of FONT_ASSIGNMENTS) {
+  cases.push({ name: 'DG6 font assignment, BLOCK: ' + name, payload: { tool_input: { file_path: '/proj/src/' + file, content } }, expect: 2 });
+}
+cases.push(
+  { name: 'DG6 an existing exemption glob still allows a real assignment', payload: { tool_input: { file_path: '/proj/vendor/gen.py', content: 'run.font.name = ' + dq(ROBOTO) } }, env: { CHWEZI_FONT_EXEMPT_GLOBS: '**/vendor/**' }, expect: 0 },
+  { name: 'DG6 a document-generator literal in a MultiEdit is still checked', payload: { tool_input: { file_path: '/proj/gen/report.py', edits: [{ new_string: 'tags = [' + dq(LORA) + ']' }, { new_string: 'run.font.name = ' + dq(ROBOTO) }] } }, expect: 2 },
+  { name: 'DG6 a MultiEdit with only the adaptation tag is allowed', payload: { tool_input: { file_path: '/proj/gen/report.py', edits: [{ new_string: 'tags = [' + dq(LORA) + ']' }] } }, expect: 0 },
+);
+
 let failures = 0;
 for (const c of cases) {
   let result;
