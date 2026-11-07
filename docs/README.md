@@ -17,6 +17,7 @@ This folder holds the engine's working documents and its dated records. The repo
 
 | Record | Date | Contents |
 |---|---|---|
+| [`kaizen/2026-11-app-house-style/`](kaizen/2026-11-app-house-style/) | 2026-11-07 | One file: the audit that turned the Maduuka app's interface work into the Chwezi business-app house style. Kept, rejected and probation patterns, where each part was written in the five engines, and what is not assessed |
 | [`kaizen/dg6-banned-font-gate-context-2026-11-06.md`](kaizen/dg6-banned-font-gate-context-2026-11-06.md) | 2026-11-06 | One file: the banned-font gate counts a quoted family name only where it is used as a font. Baseline, change, acceptance, timings, limits and what is not assessed |
 | [`kaizen/2026-10-readme-kaizen/`](kaizen/2026-10-readme-kaizen/) | 2026-10-31 | One file, the record of the scoped kaizen that restructured the repository `README.md`: baseline metrics, what changed, checks and conventions. It published no score |
 | [`kaizen/2026-10-engine-kaizen-pass-2/`](kaizen/2026-10-engine-kaizen-pass-2/) | 2026-10-31 | Seven files: scope and evidence, baseline scorecard, backlog, experiment log, validation record, final report, next-cycle record. Closed at a raw 60.3 out of 100 |

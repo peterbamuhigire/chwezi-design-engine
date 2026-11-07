@@ -301,3 +301,15 @@
       owner: design-qa-and-pre-launch-review
 - prompt: Write the redline spec for the dashboard header so engineering can build it without guessing spacing or behaviour.
   expected: design-handoff-and-dev-spec
+- prompt: Give our new school-fees admin app the Chwezi look with soft cards on a tinted background, one amber next-step button and colourful hub icons.
+  expected: chwezi-business-app-house-style
+  negatives:
+    - prompt: Name and tier the primitive, semantic and component tokens for a brand that is not ours.
+      owner: design-tokens-and-naming
+    - prompt: Draw a consistent set of line icons on a 24 px grid with matching stroke weight.
+      owner: iconography-system-design
+- prompt: Show the customer statement and trial balance on a phone with K M B abbreviations, Due and Paid lines and a monthly owner summary.
+  expected: money-figures-and-statement-display
+  negatives:
+    - prompt: Design the transfer review and confirm screens so a wrong recipient cannot slip through.
+      owner: fintech-and-financial-product-ui

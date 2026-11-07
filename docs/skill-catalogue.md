@@ -1,8 +1,8 @@
 # Skill catalogue
 
-The 102 active skills of Chwezi Design Engine, one row each. The table moved here from the repository `README.md` on 2026-10-31 so that the README stays short. Each skill name links to its `SKILL.md`.
+The 104 active skills of Chwezi Design Engine, one row each. The table moved here from the repository `README.md` on 2026-10-31 so that the README stays short. Each skill name links to its `SKILL.md`.
 
-The rows were taken from the [102 active `SKILL.md` files listed in the plugin manifest](../.claude-plugin/plugin.json) under `skills/`. The manifest parity check is in [`tests/test_route_existence.py`](../tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded, and the engine has no `ALIAS.md` entries. The category folders and per-category counts are in the README section "What is inside".
+The rows were taken from the [104 active `SKILL.md` files listed in the plugin manifest](../.claude-plugin/plugin.json) under `skills/`. The manifest parity check is in [`tests/test_route_existence.py`](../tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded, and the engine has no `ALIAS.md` entries. The category folders and per-category counts are in the README section "What is inside".
 
 The catalogue is a hint for people. Agents route from the filesystem: they glob `skills/**/SKILL.md` afresh and read each frontmatter `description` (see `AGENTS.md`).
 
@@ -74,6 +74,7 @@ The catalogue is a hint for people. Agents route from the filesystem: they glob 
 | Motion and interaction | [`micro-interactions-and-feedback`](../skills/08-motion-and-interaction/micro-interactions-and-feedback/SKILL.md) | Designs per-control feedback, optimistic actions, rollback and reduced-motion options |
 | Motion and interaction | [`motion-design`](../skills/08-motion-and-interaction/motion-design/SKILL.md) | Defines system timing, easing, transitions, choreography and reduced motion |
 | Motion and interaction | [`motion-react-implementation`](../skills/08-motion-and-interaction/motion-react-implementation/SKILL.md) | Implements approved motion in React or Next.js with `motion/react`, SSR-safe |
+| Design systems, tokens and theming | [`chwezi-business-app-house-style`](../skills/09-design-systems-tokens-and-theming/chwezi-business-app-house-style/SKILL.md) | Applies the Chwezi house style to a business app: colour roles, one amber next step, hub cards, motion and guardrail tests |
 | Design systems, tokens and theming | [`component-library-architecture`](../skills/09-design-systems-tokens-and-theming/component-library-architecture/SKILL.md) | Defines component anatomy, variants, states, slots, APIs and documentation |
 | Design systems, tokens and theming | [`design-handoff-and-dev-spec`](../skills/09-design-systems-tokens-and-theming/design-handoff-and-dev-spec/SKILL.md) | Hands off token-referenced redlines, states and testable acceptance criteria |
 | Design systems, tokens and theming | [`design-tokens-and-naming`](../skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/SKILL.md) | Names and exports primitive, semantic and component tokens across themes and brands |
@@ -93,6 +94,7 @@ The catalogue is a hint for people. Agents route from the filesystem: they glob 
 | Data visualisation and dashboards | [`data-illustration-and-infographics`](../skills/12-data-viz-and-dashboards/data-illustration-and-infographics/SKILL.md) | Designs self-contained infographics for print, presentation, web and social |
 | Data visualisation and dashboards | [`data-visualization`](../skills/12-data-viz-and-dashboards/data-visualization/SKILL.md) | Crafts and reviews single charts for accuracy, annotation and accessibility |
 | Data visualisation and dashboards | [`diagram-design-and-handoff`](../skills/12-data-viz-and-dashboards/diagram-design-and-handoff/SKILL.md) | Designs conceptual diagrams with source, rendered checks, text alternative and implementation handoff |
+| Data visualisation and dashboards | [`money-figures-and-statement-display`](../skills/12-data-viz-and-dashboards/money-figures-and-statement-display/SKILL.md) | Writes and lays out money on screen: K/M/B amounts, statements, trial balance and owner summaries |
 | Presentations and documents | [`deck-system`](../skills/13-presentations-and-documents/deck-system/SKILL.md) | Designs decks, pitches and board updates with a visual system and presenter notes |
 | Presentations and documents | [`design-storytelling-and-case-studies`](../skills/13-presentations-and-documents/design-storytelling-and-case-studies/SKILL.md) | Structures evidence-backed narratives for design decks and case studies |
 | Presentations and documents | [`docx-report-and-document-formatting`](../skills/13-presentations-and-documents/docx-report-and-document-formatting/SKILL.md) | Formats editable DOCX reports with named styles, contents, tables and embedded fonts |

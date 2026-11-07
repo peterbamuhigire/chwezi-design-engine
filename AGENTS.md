@@ -166,7 +166,7 @@ profile also requires the roles of the shipped example and so guards that file. 
 (`node tools/slop-detector/cli.mjs`) also measures pointer targets (WCAG 2.5.8, browser tier) and flags
 positive `tabindex` values (2.4.3); it does not script non-text contrast (1.4.11) or reading order (1.3.2).
 
-The baseline is zero-debt: all 102 active skills currently pass the local contract. The validator
+The baseline is zero-debt: all 104 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.
 

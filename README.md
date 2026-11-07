@@ -1,6 +1,6 @@
 # Chwezi Design Engine
 
-Chwezi Design Engine is a set of [102 design skills](.claude-plugin/plugin.json) for Claude Code and Codex-style agents. It covers the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience.
+Chwezi Design Engine is a set of [104 design skills](.claude-plugin/plugin.json) for Claude Code and Codex-style agents. It covers the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience.
 
 It runs alongside whichever Chwezi engine owns the content, and it governs how that content looks and behaves. It serves designers, product and engineering teams, agencies and the other Chwezi engines whenever a deliverable needs design input.
 
@@ -8,7 +8,7 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 
 ## At a glance
 
-- **102 skills** in 16 categories under `skills/`, each a `SKILL.md` that routes on its `description`.
+- **104 skills** in 16 categories under `skills/`, each a `SKILL.md` that routes on its `description`.
 - **51 detector rules** (43 static, 8 browser) in `chwezi-slop`, which checks source files and rendered pages.
 - **94 routing fixtures**. Lexical precision@1 is 95%. That is a proxy for routing, not live routing.
 - **196 Python tests** pass, and so do the seven hook test files (measured 2026-10-31).
@@ -48,6 +48,7 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 - [Run the tools](#run-the-tools)
 - [Validation](#validation)
 - [Quality and improvement](#quality-and-improvement)
+- [The business-app house style (November 2026)](#the-business-app-house-style-november-2026)
 - [What the October 2026 kaizen improved](#what-the-october-2026-kaizen-improved)
 - [What the October 2026 kaizen added](#what-the-october-2026-kaizen-added)
 - [Sources](#sources)
@@ -55,7 +56,7 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 
 ## Capabilities
 
-The engine holds 102 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
+The engine holds 104 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
 
 ## When to use it and find the right skill
 
@@ -93,6 +94,8 @@ Use the engine when the work touches how an artefact looks or behaves:
 | Design a print-ready lender proposal PDF | `pdf-proposal-and-bankable-document-design` |
 | Design guest checkout, cart and payment | `ecommerce-and-checkout-ux` |
 | Design keyboard focus, names and reflow to WCAG 2.2 AA | `accessibility-wcag-2-2-compliance` |
+| Give a Chwezi business app the house look: soft cards, one amber next step, colourful hub icons | `chwezi-business-app-house-style` |
+| Show statements, trial balance and monthly summaries with K/M/B amounts | `money-figures-and-statement-display` |
 
 The rows follow prompts in `tests/routing-fixtures.yml`. Every skill, with a one-line description, is in the [skill catalogue](docs/skill-catalogue.md). With the plugin installed, Claude Code lists a skill as `design-engine:<skill-name>`.
 
@@ -144,7 +147,7 @@ Each ban carries a reason label: `[AI]` for an AI-ecosystem default, `[POP]` for
 
 ## What is inside
 
-The 102 active skills sit in 16 category folders under `skills/`. The table below was generated from the skills listed in the plugin manifest, and the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The one-line description of every skill is in the [skill catalogue](docs/skill-catalogue.md).
+The 104 active skills sit in 16 category folders under `skills/`. The table below was generated from the skills listed in the plugin manifest, and the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The one-line description of every skill is in the [skill catalogue](docs/skill-catalogue.md).
 
 | Category | Folder | Skills |
 |---|---|---:|
@@ -157,14 +160,14 @@ The 102 active skills sit in 16 category folders under `skills/`. The table belo
 | Sector and domain UX | `06-sector-and-domain-ux` | 7 |
 | Mobile: iOS, Android, cross-platform | `07-mobile-ios-android-cross-platform` | 5 |
 | Motion and interaction | `08-motion-and-interaction` | 3 |
-| Design systems, tokens and theming | `09-design-systems-tokens-and-theming` | 5 |
+| Design systems, tokens and theming | `09-design-systems-tokens-and-theming` | 6 |
 | Content design and UX writing | `10-content-design-and-ux-writing` | 3 |
 | Imagery, illustration and art direction | `11-imagery-illustration-and-art-direction` | 6 |
-| Data visualisation and dashboards | `12-data-viz-and-dashboards` | 5 |
+| Data visualisation and dashboards | `12-data-viz-and-dashboards` | 6 |
 | Presentations and documents | `13-presentations-and-documents` | 7 |
 | Conversion and web-page patterns | `14-conversion-and-web-page-patterns` | 5 |
 | Game visual experience | `15-game-visual-experience` | 5 |
-| **Total** | | **102** |
+| **Total** | | **104** |
 
 The rest of the repository:
 
@@ -274,6 +277,8 @@ The results below were measured on 2026-10-31 on Linux with Python 3.14 and Node
 | Agent contract | `python3 -X utf8 tests/agent-integration/test_design_agent_contract.py` | PyYAML | Exit 0. Pass; the universal catalogue is not available, so that part is `NOT ASSESSED` |
 | Cross-engine handoffs | `python3 -X utf8 scripts/validate_cross_engine_routes.py` | PyYAML and sibling checkouts | See [Cross-engine handoffs](#cross-engine-handoffs) |
 
+**Re-run on 2026-11-07 (Windows, Python 3, this cycle).** After the two new skills: `validate_engine.py` reports 104 of 104 skills compliant, 51 rules, 102 fixtures and 0 portability findings, but exits 1 on this machine because ignored local folders put the checkout at 6,292 entries (Git tracks 1,265 files); it exited 1 for the same reason before the change. Routing: 96 fixtures, precision@1 94%, precision@3 100%, owned negatives 49/49. Route existence, design catalogue, both token packs, portability and the cross-engine check (0 findings across the workspace) exit 0. The pytest suite: 196 passed. The plugin-manifest generator refused to run for the same file-count reason, so the two manifest lines were added by hand and checked by `tests/test_route_existence.py`.
+
 **Re-run on 2026-11-06.** Every command in the table except the cross-engine check was run again on Linux (Python 3.14.10, Node 22.23.1, pytest 9.2.0, PyYAML 6.0.2). Each exited 0 with the results shown, apart from one change: the banned-font gate now has 131 hook tests, not 45.
 
 The 86 added tests cover one change. A quoted banned family name now blocks only where it is used as a font (for example `run.font.name = "X"`, `Font(name="X")` or `font: 700 2rem "X"`). The model-adaptation term LoRA, quoted in a script, no longer blocks. The record, with its limits, is [`docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md`](docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md).
@@ -372,6 +377,17 @@ No validator fails because of the calendar. The only date logic is a stale-recor
 | 2026-12-20 | `validate_design_catalog.py` starts to list 13 catalogue records as stale (due 2026-12-19); 19 from 2026-12-29 (six more due 2026-12-28). Warnings only | Recheck the records, or set a new `recheck_due` with evidence |
 | 2026-12-29 | Targeted re-check of the font watchlist (seven faces) and any source-register row that moved. No validator reads this date | Re-research the watchlist under `doctrine/references/living-slop-refresh-protocol.md` |
 | 2027-01-27 | Review date of every row in `governance/standards-source-register.md` (DGN-001 to DGN-011 and DGN-013) and of the full re-audit. No validator reads this date | Re-read each primary source and record the access date; sources that cannot be read stay `NOT_ASSESSED` |
+
+## The business-app house style (November 2026)
+
+On 7 November 2026 the interface work of the Maduuka Android app became a house style for Peter's other business apps. The audit kept 19 patterns, rejected or corrected 11 and left 2 on probation. The record, with every decision and what stays `NOT_ASSESSED`, is [`docs/kaizen/2026-11-app-house-style/README.md`](docs/kaizen/2026-11-app-house-style/README.md).
+
+- **Two new skills.** [`chwezi-business-app-house-style`](skills/09-design-systems-tokens-and-theming/chwezi-business-app-house-style/SKILL.md) sets colour roles, type, scales, the component catalogue, motion and the guardrail tests. [`money-figures-and-statement-display`](skills/12-data-viz-and-dashboards/money-figures-and-statement-display/SKILL.md) sets the compact-amount ladder and the statement, trial balance and summary layouts.
+- **A token pack** (`chwezi-business-app-house-style/examples/house-style-tokens.json`, light and dark). Its 16 contrast claims were recomputed from the values; `validate_token_example.py --profile generic` reports 0 findings.
+- **Illustrated menu icons** are a new reference in `iconography-system-design`. It requires a recorded source and licence before an icon ships.
+- **Findings from the audit.** Primary blue (4.32:1) and money green (4.10:1) fail as small text on the pale primary container, so on-container text now has its own role. The decorative palette had grown past 40 hues; the style caps it at eight.
+- **Cross-references** were added to five neighbouring skills, plus three routing fixtures. The skill count rose from 102 to 104.
+- **Other engines.** The SDLC, development, dev and writing engines each gained a matching reference in the same cycle. Each change is recorded in that engine's own README.
 
 ## What the October 2026 kaizen improved
 

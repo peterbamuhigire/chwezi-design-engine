@@ -3,6 +3,14 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-07] - Business-app house style
+
+- New skill `skills/09-design-systems-tokens-and-theming/chwezi-business-app-house-style/`: colour roles with measured contrast, type pair, spacing and shape scales, component catalogue (context strip, hub menu card, KPI tile, hero card, highlight tile, insight line, period navigator, button order), motion and guardrail tests. Worked example of a new app whose green brand had to be darkened (3.20:1 to 5.30:1) and kept apart from money green; reference token pack, light and dark, 0 validator findings.
+- New skill `skills/12-data-viz-and-dashboards/money-figures-and-statement-display/`: full, compact and axis forms with boundary tests, hero figure, percentages ("less than 1%"), statement, trial balance, financial position, profit or loss and monthly summary layouts; worked monthly summary.
+- New reference `iconography-system-design/references/illustrated-menu-icons.md`: where illustrated icons belong, one family per app, no tint or disc, licence register (blocking).
+- One cross-reference line each in `fintech-and-financial-product-ui`, `dashboard-and-data-product-design`, `android-ui-ux-design`, `pos-and-retail-operations` and `iconography-system-design`; three routing fixtures; plugin manifest, skill catalogue, README and AGENTS counts 102 to 104; quality baseline raised to 104 of 104 (`tests/test_route_existence.py` pins updated).
+- Audit record: `docs/kaizen/2026-11-app-house-style/README.md` (kept K1-K19, rejected R1-R11, probation P1-P2, not assessed).
+
 ## [2026-11-06] - Banned-font gate: quoted names count only as font use (DG6)
 
 - `hooks/lib/font-matcher.js` (`0398cdf`, `afbce48`): `findBannedQuotedLiterals` reports a quoted family name only where it is used as a font (a font-named key, property or constant, a literal inside a font-named call, object or list, a run-font attribute, an HTML font face). A script that quotes the model-adaptation term LoRA no longer exits 2. The CSS, script-stack and diagram checks, the ban list and the exemption globs are unchanged; no path exemption.

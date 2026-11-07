@@ -189,6 +189,7 @@ payment.
 
 ## References
 
+- `skills/09-design-systems-tokens-and-theming/chwezi-business-app-house-style/SKILL.md` (one amber next-step button, task screens use line icons only)
 - `doctrine/design-doctrine.md`
 - `governance/design-quality-gate.md`
 - `skills/06-sector-and-domain-ux/ecommerce-and-checkout-ux/SKILL.md`

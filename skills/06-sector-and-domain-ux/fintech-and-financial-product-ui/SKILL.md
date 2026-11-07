@@ -148,6 +148,7 @@ collapsing into the convergent fintech look (cool blue/teal, gradient cards, gla
   Never lorem; re-derive specifics per client.
 
 ## References
+- `12-data-viz-and-dashboards/money-figures-and-statement-display` — compact K/M/B amounts, statement rows, trial balance and owner summaries in a business app (this skill keeps money-moving flows).
 - `references/money-ux-patterns.md` — the canonical money-UX rules this skill owns:
   transactions/transfers, statements/balances, trust & security cues, regulatory disclosure,
   number/currency formatting (tabular), error-prevention, confirmation/undo, and status.

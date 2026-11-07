@@ -1,0 +1,706 @@
+{
+  "$description": "Chwezi business-app house style: reference token pack (Maduuka values, 7 Nov 2026). Three tiers: primitive, semantic, component. Only the brand ramp changes between apps; re-run the contrast claims after changing it. sRGB components with hex fallbacks. Contrast claims are recomputed by scripts/validate_token_example.py.",
+  "color": {
+    "brand": {
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.102,
+            0.4275,
+            0.702
+          ],
+          "hex": "#1a6db3"
+        },
+        "$type": "color"
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8392,
+            0.9098,
+            0.9804
+          ],
+          "hex": "#d6e8fa"
+        },
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0431,
+            0.2078,
+            0.4
+          ],
+          "hex": "#0b3566"
+        },
+        "$type": "color"
+      },
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9098,
+            0.9451,
+            0.9882
+          ],
+          "hex": "#e8f1fc"
+        },
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5529,
+            0.7333,
+            0.949
+          ],
+          "hex": "#8dbbf2"
+        },
+        "$type": "color"
+      },
+      "sky": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2196,
+            0.6275,
+            0.9725
+          ],
+          "hex": "#38a0f8"
+        },
+        "$type": "color"
+      }
+    },
+    "neutral": {
+      "0": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hex": "#ffffff"
+        },
+        "$type": "color"
+      },
+      "10": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9765,
+            0.9882,
+            1.0
+          ],
+          "hex": "#f9fcff"
+        },
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7647,
+            0.8157,
+            0.8824
+          ],
+          "hex": "#c3d0e1"
+        },
+        "$type": "color"
+      },
+      "500": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4784,
+            0.5098,
+            0.5686
+          ],
+          "hex": "#7a8291"
+        },
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3373,
+            0.3686,
+            0.4235
+          ],
+          "hex": "#565e6c"
+        },
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1137,
+            0.1529,
+            0.2314
+          ],
+          "hex": "#1d273b"
+        },
+        "$type": "color"
+      },
+      "d50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.902,
+            0.9059,
+            0.9137
+          ],
+          "hex": "#e6e7e9"
+        },
+        "$type": "color"
+      },
+      "d300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7059,
+            0.7294,
+            0.7725
+          ],
+          "hex": "#b4bac5"
+        },
+        "$type": "color"
+      },
+      "d800": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1176,
+            0.149,
+            0.1922
+          ],
+          "hex": "#1e2631"
+        },
+        "$type": "color"
+      },
+      "d900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.1098,
+            0.1412
+          ],
+          "hex": "#161c24"
+        },
+        "$type": "color"
+      }
+    },
+    "amber": {
+      "500": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9725,
+            0.6902,
+            0.1255
+          ],
+          "hex": "#f8b020"
+        },
+        "$type": "color"
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            0.9137,
+            0.7216
+          ],
+          "hex": "#ffe9b8"
+        },
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2392,
+            0.1647,
+            0.0
+          ],
+          "hex": "#3d2a00"
+        },
+        "$type": "color"
+      }
+    },
+    "ink": {
+      "accent": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1059,
+            0.1412,
+            0.1882
+          ],
+          "hex": "#1b2430"
+        },
+        "$type": "color"
+      }
+    },
+    "green": {
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1804,
+            0.4902,
+            0.1961
+          ],
+          "hex": "#2e7d32"
+        },
+        "$type": "color"
+      }
+    },
+    "red": {
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7059,
+            0.1373,
+            0.1373
+          ],
+          "hex": "#b42323"
+        },
+        "$type": "color"
+      }
+    }
+  },
+  "space": {
+    "2": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "4": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "8": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "12": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "16": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "24": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "32": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "48": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    }
+  },
+  "radius": {
+    "8": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "12": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "16": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "20": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    },
+    "28": {
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      },
+      "$type": "dimension"
+    }
+  },
+  "font": {
+    "atkinson": {
+      "$value": [
+        "Atkinson Hyperlegible",
+        "sans-serif"
+      ],
+      "$type": "fontFamily"
+    },
+    "public-sans": {
+      "$value": [
+        "Public Sans",
+        "sans-serif"
+      ],
+      "$type": "fontFamily"
+    }
+  },
+  "duration": {
+    "70": {
+      "$value": {
+        "value": 70,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "140": {
+      "$value": {
+        "value": 140,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "420": {
+      "$value": {
+        "value": 420,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "700": {
+      "$value": {
+        "value": 700,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    },
+    "900": {
+      "$value": {
+        "value": 900,
+        "unit": "ms"
+      },
+      "$type": "duration"
+    }
+  },
+  "semantic": {
+    "color": {
+      "ground": {
+        "$value": "{color.brand.50}",
+        "$type": "color",
+        "$description": "Page background behind cards: a pale tint of the brand hue."
+      },
+      "surface": {
+        "default": {
+          "$value": "{color.neutral.10}",
+          "$type": "color"
+        },
+        "card": {
+          "$value": "{color.neutral.0}",
+          "$type": "color"
+        }
+      },
+      "text": {
+        "default": {
+          "$value": "{color.neutral.900}",
+          "$type": "color",
+          "$description": "vs surface.default = 14.51:1 PASS AAA"
+        },
+        "muted": {
+          "$value": "{color.neutral.600}",
+          "$type": "color",
+          "$description": "vs surface.default = 6.35:1 PASS AA"
+        },
+        "on-ground": {
+          "$value": "{color.neutral.900}",
+          "$type": "color",
+          "$description": "vs ground = 13.10:1 PASS AAA"
+        }
+      },
+      "border": {
+        "hairline": {
+          "$value": "{color.neutral.300}",
+          "$type": "color",
+          "$description": "Decorative card and row divider; never the only sign of a control."
+        },
+        "outline": {
+          "$value": "{color.neutral.500}",
+          "$type": "color",
+          "$description": "vs surface.default = 3.76:1 UI boundary, meets 3:1"
+        }
+      },
+      "action": {
+        "primary": {
+          "bg": {
+            "$value": "{color.brand.700}",
+            "$type": "color",
+            "$description": "vs surface.card = 5.41:1"
+          },
+          "fg": {
+            "$value": "{color.neutral.0}",
+            "$type": "color",
+            "$description": "vs action.primary.bg = 5.41:1 PASS AA"
+          },
+          "on-ground": {
+            "$value": "{color.brand.700}",
+            "$type": "color",
+            "$description": "vs ground = 4.74:1 PASS AA"
+          }
+        },
+        "accent": {
+          "bg": {
+            "$value": "{color.amber.500}",
+            "$type": "color",
+            "$description": "The one next-step button per screen."
+          },
+          "fg": {
+            "$value": "{color.ink.accent}",
+            "$type": "color",
+            "$description": "vs action.accent.bg = 8.36:1 PASS AAA"
+          }
+        },
+        "danger": {
+          "fg": {
+            "$value": "{color.red.700}",
+            "$type": "color",
+            "$description": "vs surface.default = 6.36:1 PASS AA"
+          }
+        }
+      },
+      "container": {
+        "primary": {
+          "bg": {
+            "$value": "{color.brand.100}",
+            "$type": "color"
+          },
+          "fg": {
+            "$value": "{color.brand.900}",
+            "$type": "color",
+            "$description": "vs container.primary.bg = 9.78:1 PASS AAA"
+          }
+        },
+        "accent": {
+          "bg": {
+            "$value": "{color.amber.100}",
+            "$type": "color"
+          },
+          "fg": {
+            "$value": "{color.amber.900}",
+            "$type": "color",
+            "$description": "vs container.accent.bg = 11.51:1 PASS AAA"
+          }
+        }
+      },
+      "money": {
+        "up": {
+          "$value": "{color.green.700}",
+          "$type": "color",
+          "$description": "vs surface.default = 4.98:1 PASS AA; always with a word or arrow"
+        },
+        "down": {
+          "$value": "{color.red.700}",
+          "$type": "color",
+          "$description": "vs surface.default = 6.36:1 PASS AA; always with a word or sign"
+        }
+      },
+      "brand-mark": {
+        "$value": "{color.brand.sky}",
+        "$type": "color",
+        "$description": "Logo and large marks only; 2.78:1 with white, never small text."
+      }
+    },
+    "space": {
+      "gutter": {
+        "$value": "{space.16}",
+        "$type": "dimension"
+      },
+      "card-padding": {
+        "$value": "{space.16}",
+        "$type": "dimension"
+      },
+      "card-gap": {
+        "$value": "{space.12}",
+        "$type": "dimension"
+      },
+      "section-gap": {
+        "$value": "{space.24}",
+        "$type": "dimension"
+      }
+    },
+    "radius": {
+      "card": {
+        "$value": "{radius.20}",
+        "$type": "dimension"
+      },
+      "control": {
+        "sm": {
+          "$value": "{radius.12}",
+          "$type": "dimension"
+        },
+        "button": {
+          "$value": "{radius.16}",
+          "$type": "dimension"
+        }
+      },
+      "hero": {
+        "$value": "{radius.28}",
+        "$type": "dimension"
+      }
+    },
+    "font": {
+      "body": {
+        "$value": "{font.atkinson}",
+        "$type": "fontFamily"
+      },
+      "figures": {
+        "$value": "{font.public-sans}",
+        "$type": "fontFamily"
+      }
+    },
+    "duration": {
+      "reveal": {
+        "$value": "{duration.420}",
+        "$type": "duration"
+      },
+      "stagger": {
+        "$value": "{duration.70}",
+        "$type": "duration"
+      },
+      "count-up": {
+        "$value": "{duration.900}",
+        "$type": "duration"
+      }
+    }
+  },
+  "button": {
+    "accent": {
+      "bg": {
+        "$value": "{semantic.color.action.accent.bg}",
+        "$type": "color"
+      },
+      "fg": {
+        "$value": "{semantic.color.action.accent.fg}",
+        "$type": "color"
+      },
+      "radius": {
+        "$value": "{semantic.radius.control.button}",
+        "$type": "dimension"
+      }
+    },
+    "primary": {
+      "bg": {
+        "$value": "{semantic.color.action.primary.bg}",
+        "$type": "color"
+      },
+      "fg": {
+        "$value": "{semantic.color.action.primary.fg}",
+        "$type": "color"
+      },
+      "radius": {
+        "$value": "{semantic.radius.control.button}",
+        "$type": "dimension"
+      }
+    }
+  },
+  "card": {
+    "hub": {
+      "bg": {
+        "$value": "{semantic.color.surface.card}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.color.border.hairline}",
+        "$type": "color"
+      },
+      "radius": {
+        "$value": "{semantic.radius.card}",
+        "$type": "dimension"
+      },
+      "padding": {
+        "$value": "{semantic.space.card-padding}",
+        "$type": "dimension"
+      }
+    }
+  },
+  "_themes": {
+    "$description": "Dark is a remap of the semantic tier, not an inversion.",
+    "dark": {
+      "semantic": {
+        "color": {
+          "ground": {
+            "$value": "{color.neutral.d900}"
+          },
+          "surface": {
+            "default": {
+              "$value": "{color.neutral.d800}"
+            },
+            "card": {
+              "$value": "{color.neutral.d800}"
+            }
+          },
+          "text": {
+            "default": {
+              "$value": "{color.neutral.d50}",
+              "$description": "vs surface.default = 12.33:1 PASS AAA"
+            },
+            "muted": {
+              "$value": "{color.neutral.d300}",
+              "$description": "vs surface.default = 7.82:1 PASS AAA"
+            }
+          },
+          "action": {
+            "primary": {
+              "bg": {
+                "$value": "{color.brand.200}",
+                "$description": "vs surface.default = 7.64:1 PASS AAA"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

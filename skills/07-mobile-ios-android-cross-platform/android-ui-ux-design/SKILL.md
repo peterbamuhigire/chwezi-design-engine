@@ -106,6 +106,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- `09-design-systems-tokens-and-theming/chwezi-business-app-house-style` — the house colour roles, type pair, components and guardrail tests for Chwezi business apps on Android.
 - `references/material-3-expressive.md` — the current Android visual standard: Material 3 Expressive levers, the M3 role-based colour system, dynamic colour (Material You) vs fixed brand seed, type-scale roles, predictive back, and adaptive layout.
 - `references/android-motion.md` — Android motion: spring/motion-scheme tokens, predictive-back gesture motion, signature moments (container transform, shape morph, shared element), and the reduced-motion path.
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter governing typography, colour, and visual identity.

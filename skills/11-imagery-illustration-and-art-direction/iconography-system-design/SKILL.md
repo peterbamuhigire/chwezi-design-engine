@@ -98,6 +98,7 @@ Without vector or raster rendering, deliver the grid, stroke, metaphor, naming, 
 ## References
 - Icon types (Adams et al. (2012) *Graphic Design Rules*): similar, example, symbolic, arbitrary; keep each icon to one idea.
 - `doctrine/design-doctrine.md` — the anti-slop charter; §0/§2 "looks human-made" applied to icons: name the style first, make one authored move, and refuse the borrowed-library mean.
+- `references/illustrated-menu-icons.md` — when multicolour illustrated icons belong on hub menu cards (and when line icons do), one family per app, drawn untinted with no disc, and the licence register that blocks release.
 - `references/icon-grid-and-stroke.md` — the real grid (artboard/live-area/padding/keylines), stroke weight + per-size hinting, corner/cap/join language, and the optical-balance correction rules with numbers.
 - `doctrine/references/wcag-2.2-criteria.md` — color-not-alone (1.4.1), target size 24px for the containing control (2.5.8), name/role/value for icon-only controls (4.1.2).
 - `doctrine/references/type-scale-and-spacing.md` — icon stroke and size relate to the UI's type weight and spacing rhythm.
