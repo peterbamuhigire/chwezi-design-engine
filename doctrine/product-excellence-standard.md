@@ -2,7 +2,7 @@
 
 **Status:** Adopted by Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team.
 Effective 01 November 2026 until further communication is given on the matter.
-**Version:** 1.0.2 (policy file `product-excellence-policy.yaml` carries the same version)
+**Version:** 1.0.3 (policy file `product-excellence-policy.yaml` carries the same version)
 **Owner:** Peter Bamuhigire / Chwezi Core Systems
 **Applies with:** `doctrine/design-doctrine.md` (presentation doctrine) and
 `governance/design-quality-gate.md` (release gate)
@@ -172,6 +172,38 @@ deck's PDF read on a tablet, an infographic in a phone feed or on a tablet.
 | 2. Documents and publishing | Formal documents as browser reading mode, A4 PDF and DOCX | `doctrine/document-publishing-standard.md` | `PUB-`, `PUB-GATE-01` to `08` |
 | 3. Presentations and slide decks | Decks in PowerPoint and landscape PDF | `doctrine/presentation-standard.md` | `DECK-`, `DECK-GATE-01` to `08` |
 | 4. Infographics and visual communication | Infographics and explanatory diagrams for web, SaaS, social, slides, DOCX, PDF and print to A2 | `doctrine/infographics-standard.md` | `INFO-`, `INFO-GATE-01` to `08` |
+
+**Handoffs between the children.** The children share one verified source and never re-derive it.
+A figure leaves its owner as a pinned reference, never as a picture of a screen:
+
+| From and to | What travels | Rule |
+|---|---|---|
+| Product data to dashboards | Metric contract and evidence snapshot (as-of time, completeness, reconciliation status) | Defined once; every other output labels the same concept |
+| Dashboard to document | A locked snapshot, metric versions, filters, currency, exceptions and commentary | The document states whether it shows live values, a locked reviewed snapshot or an offline subset; timestamps are never mixed across pages |
+| Dashboard or document to deck | A reviewed finding with exact figures and source | The slide may simplify detail but never changes the denominator or the period; no pasted screenshot of a report page |
+| Dashboard or process model to infographic | An approved chart or process model | Redrawn in illustrative form with real text; no invented values, people or connections |
+| Infographic to deck or document | Versioned vector (SVG) or high-resolution figure | Placed with caption, source and alt text; text stays sharp; print figures meet their effective resolution |
+| Deck and document, both ways | Findings and figures | Reused as editable objects with medium-level emphasis, not as page screenshots |
+
+**Recall and supersession.** A released output is a business record. When a leak, a wrong figure or
+a broken export is suspected: (1) suspend distribution of the affected output and preserve the
+evidence; (2) identify the snapshot, source queries, tenant scope, recipients and preview links;
+(3) revoke access and invalidate exposed links; (4) fix the cause and add a regression test;
+(5) regenerate with a new manifest identifier and mark the old output `superseded` with an explicit
+notice; (6) record closure, lessons and any legal or regulatory notification. Keep the previous
+approved version, the source, the configuration, the authorised data (or secure references) and the
+release checksum, and test that a representative PDF, DOCX and infographic can be rebuilt, not only
+the design file.
+
+**The Design Studio Bible.** The Chwezi Core Systems Design Studio Bible (CCS-DSB-001, edition 1.0,
+8 November 2026, a proposed corporate design constitution) is the source of this family structure.
+Where it differs from the adopted text: its example type list (Inter, Source Sans 3, IBM Plex Sans)
+is superseded by the banned-font doctrine; its proposed review weights (factual truth 22, task
+success 20, accessibility 18, performance 15, visual craft 15, delivery 10) are recorded as a
+reference and do not replace this standard's scorecard, which changes only by an owner decision
+under change control. A controlled exception names the rule, the reason, the media affected, the
+accessibility implication, the evidence, the approver and an expiry date, and never becomes a silent
+precedent.
 
 **Design quality gate.** `governance/design-quality-gate.md` remains the gate every artefact
 passes. For Chwezi app work, this standard's scorecard and hard gates run inside that gate as an

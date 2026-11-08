@@ -65,7 +65,7 @@ This engine holds the canonical text. See [Chwezi Product Excellence Standard](#
 The standard, chosen by Peter Bamuhigire and the Chwezi Core Systems design team, binds the UI and UX of every Chwezi app and system on Android, iOS, tablet, desktop and web.
 Where another skill here differs from it on a Chwezi product, the standard wins.
 
-- **Binding text:** [`doctrine/product-excellence-standard.md`](doctrine/product-excellence-standard.md), version 1.0.2.
+- **Binding text:** [`doctrine/product-excellence-standard.md`](doctrine/product-excellence-standard.md), version 1.0.3.
 - **Skill:** [`chwezi-product-excellence-standard`](skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md). It holds 236 rules with stable `PX-` IDs, 16 screen blueprints, 16 component contracts and 50 pattern dossiers.
 - **Policy file:** [`product-excellence-policy.yaml`](skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/examples/product-excellence-policy.yaml) holds the gates, states and release rule for tools.
 - **Record:** [`docs/kaizen/2026-11-product-excellence-standard/`](docs/kaizen/2026-11-product-excellence-standard/README.md), with the owner decisions and what is `NOT_ASSESSED`.

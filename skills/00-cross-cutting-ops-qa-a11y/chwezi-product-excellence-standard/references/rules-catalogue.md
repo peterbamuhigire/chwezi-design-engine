@@ -2,7 +2,7 @@ Parent skill: [chwezi-product-excellence-standard](../SKILL.md)
 
 # Rules Catalogue
 
-Every normative rule of the Chwezi Product Excellence Standard, version 1.0.2, effective
+Every normative rule of the Chwezi Product Excellence Standard, version 1.0.3, effective
 01 November 2026. Binding text: `doctrine/product-excellence-standard.md`. Machine-readable twin:
 [../examples/product-excellence-policy.yaml](../examples/product-excellence-policy.yaml); the two
 must list the same IDs and levels.

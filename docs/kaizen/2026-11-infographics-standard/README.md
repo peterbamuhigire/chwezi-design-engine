@@ -27,6 +27,8 @@ the scoring model and the release declaration. All of it is kept.
 | K7 | Owner integration decision: the parent governs product UI/UX, design tokens, accessibility, performance, brand adaptation and quality assurance; the four child systems govern (1) dashboards and analytics, (2) documents and publishing, (3) presentations and slide decks, (4) infographics and visual communication | Keeps every standard without competing rulebooks |
 | K8 | Mobile and tablet UI stated as the parent's (phones, tablets, POS tills, desktop, web); every child inherits its width classes where its output is viewed on a phone or tablet; the infographics export matrix gained tablet portrait and landscape | Owner question during the kaizen: tablets were covered by the parent, the dashboards child and the publishing child, but missing from the infographics matrix |
 
+K9 (later the same day): the Design Studio Bible cross-check added INFO-CHART-006 (maps, from its Contract 26), making 83 rules; see `docs/kaizen/2026-11-design-bible-wave/README.md`.
+
 ## Mathematics added
 
 Computed on 2026-11-08 (reference `mathematics-and-algorithms.md`, checker `check_infographic.py`):

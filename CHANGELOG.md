@@ -3,6 +3,12 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-08] - Design Studio Bible cross-check, light wave (Product Excellence 1.0.3, INFO-CHART-006)
+
+- Product Excellence Standard 1.0.2 to 1.0.3 (patch, wording only): a table of handoffs between the four child systems, a recall and supersession protocol for released outputs, and the Design Studio Bible note (type list superseded by the banned-font doctrine, proposed review weights recorded not adopted, controlled exceptions carry an expiry date).
+- Infographics standard (still 1.0.0, added before any release against it): INFO-CHART-006 map rule (MUST, INFO-GATE-04), map archetype contract and the Web Mercator area factor; 83 INFO rules.
+- Record: `docs/kaizen/2026-11-design-bible-wave/README.md`, with decisions left to the owner.
+
 ## [2026-11-08] - Chwezi Infographics Design and Production Quality Standard (fourth child standard)
 
 - New doctrine `doctrine/infographics-standard.md` (1.0.0, full handbook edition, adopted 8 November 2026 on the owner's instruction): scope, precedence (banned-font doctrine supersedes the handbook's typeface list), design principles, eight hard gates INFO-GATE-01 to 08 mapped to sibling gates, release decision (score at least 85, weights 25/20/15/15/10/10/5), roles, Kaizen backlog, change control.
