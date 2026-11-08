@@ -47,6 +47,21 @@ Applies whenever the artefact is a screen, flow, component or release of a Chwez
 - [ ] Verification was done by someone other than the implementer, with a human domain reviewer
       for any financial or clinical change.
 
+## Chwezi reporting surfaces (Reporting and Dashboards Standard)
+
+Applies, in addition to the section above, whenever the artefact is a dashboard, KPI screen,
+report, statement, closeout, scheduled report, A4 print or PDF, or CSV or XLSX export.
+
+- [ ] `doctrine/reporting-and-dashboards-standard.md` was applied through the
+      `skills/00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/` skill.
+- [ ] A report contract names the decision, users, output contract and a metric contract for every
+      headline and exported measure.
+- [ ] The eight gates (RPT-GATE-01 to RPT-GATE-08) are stated; each applicable gate is closed on
+      `MEASURED` evidence (reconciliation run, rendered PDF pages, opened export files,
+      lower-role export calls). An applicable gate that is `NOT_ASSESSED` counts as open.
+- [ ] Screen, PDF and spreadsheet totals were compared for the same scope with the five fixture
+      cases (positive, zero, negative, reversed, missing data).
+
 ## Routing and scope
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.

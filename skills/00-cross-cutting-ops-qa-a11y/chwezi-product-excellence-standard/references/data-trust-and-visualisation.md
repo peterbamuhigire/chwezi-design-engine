@@ -11,7 +11,9 @@ This file sets the product-quality contract. For how amounts are written and lai
 screens (compact ladder, statement rows, trial balance) use
 [money-figures-and-statement-display](../../../12-data-viz-and-dashboards/money-figures-and-statement-display/SKILL.md);
 for chart choice use `12-data-viz-and-dashboards/chart-selection-and-encoding`; for dashboard
-composition use `12-data-viz-and-dashboards/dashboard-and-data-product-design`. The one place this
+composition use `12-data-viz-and-dashboards/dashboard-and-data-product-design`. Metric contracts,
+reconciliation across screen, PDF and export, period rules, A4 print and exports are in the companion
+[chwezi-reporting-and-dashboards-standard](../../chwezi-reporting-and-dashboards-standard/SKILL.md). The one place this
 standard overrides the money skill is decimals, in Task 7.
 
 ## Task 1: decide whether an element earns its place

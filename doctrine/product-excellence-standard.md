@@ -2,7 +2,7 @@
 
 **Status:** Adopted by Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team.
 Effective 01 November 2026 until further communication is given on the matter.
-**Version:** 1.0.0 (policy file `product-excellence-policy.yaml` carries the same version)
+**Version:** 1.0.1 (policy file `product-excellence-policy.yaml` carries the same version)
 **Owner:** Peter Bamuhigire / Chwezi Core Systems
 **Applies with:** `doctrine/design-doctrine.md` (presentation doctrine) and
 `governance/design-quality-gate.md` (release gate)
@@ -148,6 +148,11 @@ face or a bare system stack as its primary type; the Android and Compose default
 hard-ban list in `doctrine/references/ai-slop-banned-fonts.md`. Arabic uses a covering face from
 the same design family decision. Figures use tabular numerals everywhere, including amounts inside
 sentences.
+
+**Reporting surfaces.** `doctrine/reporting-and-dashboards-standard.md` is the companion standard
+for dashboards, reports, statements, print and exports. It sits beside this standard at step 4 of
+the ladder (the stricter rule applies), adds the `RPT-` rules and eight `RPT-GATE` gates, and
+leaves every check in this standard unchanged.
 
 **Design quality gate.** `governance/design-quality-gate.md` remains the gate every artefact
 passes. For Chwezi app work, this standard's scorecard and hard gates run inside that gate as an

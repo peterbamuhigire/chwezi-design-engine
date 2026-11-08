@@ -162,6 +162,8 @@ Without Word-compatible rendering, deliver the DOCX marked unverified plus a sty
 
 ## References
 
+
+- [chwezi-reporting-and-dashboards-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) (binding for Chwezi reporting surfaces: A4 report anatomy, repeated table headings, page x of y, legibility floor for product reports).
 - `doctrine/design-doctrine.md` — Anti-Slop Charter, the asymmetry rule, state-the-choice.
 - `doctrine/references/font-groups-and-usage.md` — 01 Formal / Institutional and 02 Editorial / Literary baseline pairings.
 - `doctrine/references/embedding-by-format.md` — DOCX embed + subset rules.

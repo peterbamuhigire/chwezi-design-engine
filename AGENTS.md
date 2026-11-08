@@ -117,7 +117,11 @@ any skill, frontmatter, router, doctrine, or governance change.
 - All Chwezi app/system UI MUST follow `doctrine/product-excellence-standard.md` (the Chwezi
   Product Excellence Standard, effective 01 November 2026); route through the
   `skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/` skill, co-activated with
-  `chwezi-business-app-house-style` for the visual layer. Its 13 hard release gates run inside
+  `chwezi-business-app-house-style` for the visual layer. Every reporting surface (dashboards,
+  KPI screens, reports, statements, A4/PDF, CSV/XLSX exports, scheduled reports) also follows
+  `doctrine/reporting-and-dashboards-standard.md` through the
+  `skills/00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/` skill; its eight
+  `RPT-GATE` gates run inside the same quality gate. Its 13 hard release gates run inside
   `governance/design-quality-gate.md`; an open or unmeasured applicable gate means `BLOCKED`.
 - Premium font binaries are gitignored — scan `fonts/<category>/`, read its `MANIFEST.md`, fall
   back to the named OFL baseline when a premium family is absent or its licence does not permit
@@ -171,7 +175,7 @@ profile also requires the roles of the shipped example and so guards that file. 
 (`node tools/slop-detector/cli.mjs`) also measures pointer targets (WCAG 2.5.8, browser tier) and flags
 positive `tabindex` values (2.4.3); it does not script non-text contrast (1.4.11) or reading order (1.3.2).
 
-The baseline is zero-debt: all 105 active skills currently pass the local contract. The validator
+The baseline is zero-debt: all 106 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.
 

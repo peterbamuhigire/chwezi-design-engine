@@ -159,6 +159,8 @@ Without validated data, produce a conditional chart recommendation using a label
 
 ## References
 
+
+- [chwezi-reporting-and-dashboards-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) (binding for Chwezi reporting surfaces: chart choice by question, greyscale-legible print charts, data-table alternative, no 3D).
 - `skills/09-design-systems-tokens-and-theming/component-library-architecture/references/design-system-operating-model.md` §7 (after Knaflic, *Storytelling with Data*) — audience/action framing, Big Idea, decluttering, direct labelling, and text-alternative requirements.
 
 - `doctrine/design-doctrine.md` — the Mission (authored, human-made charts) and the Anti-Slop

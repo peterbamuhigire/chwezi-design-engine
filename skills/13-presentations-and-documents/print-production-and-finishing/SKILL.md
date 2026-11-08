@@ -145,6 +145,8 @@ printer can run, and proves it with a written specification, a preflight and a h
 
 ## References
 
+
+- [chwezi-reporting-and-dashboards-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) (binding for Chwezi reporting surfaces: A4 report page types and print acceptance tests for product reports).
 - `references/printer-specification-and-preflight.md` - the specification sheet fields, the
   printer question list and the PDF/X preflight checklist.
 - `references/ink-colour-and-finishing-rules.md` - colour building, ink limits, rich black,

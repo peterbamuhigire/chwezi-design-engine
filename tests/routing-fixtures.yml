@@ -322,3 +322,10 @@
       owner: design-qa-and-pre-launch-review
 - prompt: Review this app dashboard against the Chwezi standard and tell me whether the release is PASS, CONDITIONAL or BLOCKED.
   expected: chwezi-product-excellence-standard
+- prompt: The owner dashboard sales total, the daily sales PDF and the Excel export show different totals; fix the report so the metric contract and reconciliation hold.
+  expected: chwezi-reporting-and-dashboards-standard
+  negatives:
+    - prompt: Which chart type should show sales by branch for one month?
+      owner: chart-selection-and-encoding
+- prompt: Design the A4 PDF and CSV export for the Chwezi night audit report with page x of y, repeated table headings and formula-injection safe cells.
+  expected: chwezi-reporting-and-dashboards-standard

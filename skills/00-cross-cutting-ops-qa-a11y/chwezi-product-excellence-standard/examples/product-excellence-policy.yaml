@@ -3,7 +3,7 @@
 # The rules list is generated from references/rules-catalogue.md; the two must agree (PX-AGENT-011).
 policy:
   id: chwezi-product-excellence-standard
-  version: "1.0.0"
+  version: "1.0.1"
   effective_date: "2026-11-01"
   valid_until: "until further communication"
   adopted_by: "Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team"

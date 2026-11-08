@@ -87,6 +87,8 @@ Without validated data, deliver a labelled specification or placeholder, not a f
 
 ## References
 
+
+- [chwezi-reporting-and-dashboards-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) (binding for Chwezi reporting surfaces: each chart states units, period and a factual takeaway; gaps not zeros; print legibility).
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; charts must be authored and clutter-free, never decorative chart-junk.
 - `doctrine/references/ai-slop-taxonomy.md` — the "dashboard decoration" / chart-junk tells (3D, gauges, rainbow palettes) this skill rejects.
 - **Sibling — `03-layout-grid-and-composition/layout-grid-and-spacing`** for the grid, alignment, and spacing rhythm that exhibits sit on (this skill's alignment and white-space rules inherit from it).

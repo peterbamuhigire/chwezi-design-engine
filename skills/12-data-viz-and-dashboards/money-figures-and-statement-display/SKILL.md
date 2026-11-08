@@ -129,6 +129,8 @@ type and the shared cards.
 
 ## References
 
+
+- [chwezi-reporting-and-dashboards-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) (binding for Chwezi reporting surfaces: statements and closeouts reconcile across screen, PDF and export; A4 statement page type).
 - [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Chwezi apps; full amounts take their decimals from the ISO 4217 minor unit (UGX and RWF 0), and a wrong minor unit is hard gate PX-GATE-03).
 - [references/compact-amount-ladder.md](references/compact-amount-ladder.md)
 - [references/statement-and-summary-layouts.md](references/statement-and-summary-layouts.md)

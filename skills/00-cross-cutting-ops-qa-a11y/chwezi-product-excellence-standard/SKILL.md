@@ -209,6 +209,9 @@ the house style.
 
 ## References
 
+- Companion for reporting surfaces (dashboards, reports, statements, A4 PDF, CSV/XLSX exports):
+  [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md).
+
 | File | Use it for |
 |---|---|
 | [references/rules-catalogue.md](references/rules-catalogue.md) | Every rule with ID, level, gate, check and evidence |
