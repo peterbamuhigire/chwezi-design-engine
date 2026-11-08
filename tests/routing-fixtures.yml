@@ -343,3 +343,10 @@
       owner: deck-system
 - prompt: Check the Chwezi board slides open as editable PowerPoint, match the PDF page for page and pass the DECK gates and slide scorecard.
   expected: chwezi-presentation-standard
+- prompt: Release the Chwezi A2 safety poster and its phone card with a provenance register, real text sized for the reading distance and no AI-generated photorealistic people.
+  expected: chwezi-infographics-standard
+  negatives:
+    - prompt: Design a self-contained explanatory infographic with an authored metaphor for a non-Chwezi magazine.
+      owner: data-illustration-and-infographics
+- prompt: Check the Chwezi process infographic for duplicate or orphan steps, misordered numbering and a misleading lie factor before the INFO gates.
+  expected: chwezi-infographics-standard

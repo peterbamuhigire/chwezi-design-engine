@@ -2,7 +2,7 @@
 
 **Status:** Adopted by Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team.
 Effective 01 November 2026 until further communication is given on the matter.
-**Version:** 1.0.1 (policy file `product-excellence-policy.yaml` carries the same version)
+**Version:** 1.0.2 (policy file `product-excellence-policy.yaml` carries the same version)
 **Owner:** Peter Bamuhigire / Chwezi Core Systems
 **Applies with:** `doctrine/design-doctrine.md` (presentation doctrine) and
 `governance/design-quality-gate.md` (release gate)
@@ -35,7 +35,10 @@ and nobody sees data they should not. This standard turns those outcomes into ch
   and adopt the same tokens, states and behaviour. Interaction parity is required, pixel
   identity is not, and no rewrite is implied.
 - **Out of scope.** Marketing websites (the conversion and web-page skills govern them), print
-  collateral and slide decks, except where they reproduce product screens.
+  collateral and slide decks, except where they reproduce product screens. Dashboards, documents,
+  decks and infographics are governed by the four child systems named under "The Chwezi standards
+  family"; this standard's UI/UX, token, accessibility, performance, brand and QA rules still apply
+  to them.
 
 ## Normative language
 
@@ -149,10 +152,26 @@ hard-ban list in `doctrine/references/ai-slop-banned-fonts.md`. Arabic uses a co
 the same design family decision. Figures use tabular numerals everywhere, including amounts inside
 sentences.
 
-**Reporting surfaces.** `doctrine/reporting-and-dashboards-standard.md` is the companion standard
-for dashboards, reports, statements, print and exports. It sits beside this standard at step 4 of
-the ladder (the stricter rule applies), adds the `RPT-` rules and eight `RPT-GATE` gates, and
-leaves every check in this standard unchanged.
+**The Chwezi standards family (owner decision, 8 November 2026).** The Chwezi standard is one
+family: this parent standard and four child systems. The parent governs product UI/UX, design
+tokens, accessibility, performance, brand adaptation and quality assurance everywhere. Each child
+governs one domain of output, sits beside the parent at step 4 of the ladder (the stricter rule
+applies), adds its own rules and eight gates, and leaves every parent check unchanged. The children
+complement each other and never compete: when one artefact falls under two children (an infographic
+inside a deck or a report), both apply and the stricter rule wins.
+
+Mobile and tablet UI belong to the parent: every app screen on Android and iOS phones, tablets, POS
+tills, desktop and web follows this standard's width classes, touch targets, large-text, offline and
+baseline-device rules. Every child inherits them for its own output wherever that output is viewed
+on a phone or tablet: a dashboard at compact and medium widths, a document's browser reading mode, a
+deck's PDF read on a tablet, an infographic in a phone feed or on a tablet.
+
+| Child system | Governs | Binding text | Rules and gates |
+|---|---|---|---|
+| 1. Dashboards and analytics | Dashboards, reports, statements, print and exports in products | `doctrine/reporting-and-dashboards-standard.md` | `RPT-`, `RPT-GATE-01` to `08` |
+| 2. Documents and publishing | Formal documents as browser reading mode, A4 PDF and DOCX | `doctrine/document-publishing-standard.md` | `PUB-`, `PUB-GATE-01` to `08` |
+| 3. Presentations and slide decks | Decks in PowerPoint and landscape PDF | `doctrine/presentation-standard.md` | `DECK-`, `DECK-GATE-01` to `08` |
+| 4. Infographics and visual communication | Infographics and explanatory diagrams for web, SaaS, social, slides, DOCX, PDF and print to A2 | `doctrine/infographics-standard.md` | `INFO-`, `INFO-GATE-01` to `08` |
 
 **Design quality gate.** `governance/design-quality-gate.md` remains the gate every artefact
 passes. For Chwezi app work, this standard's scorecard and hard gates run inside that gate as an

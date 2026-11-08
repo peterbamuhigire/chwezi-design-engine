@@ -141,6 +141,8 @@ For review, verify that balance, contrast, hierarchy, unity, repetition or patte
 
 ## References
 
+
+- [chwezi-infographics-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-infographics-standard/SKILL.md) (binding for Chwezi infographics: provenance register, computed text sizes, honest encodings, checked diagram structure, no synthetic photorealism, eight INFO gates).
 - [`doctrine/design-doctrine.md`](../../../doctrine/design-doctrine.md) for purpose-fit authorship and anti-slop rules.
 - [`references/infographic-systems.md`](references/infographic-systems.md) for the book-informed editorial, visual, and production system.
 - [`../data-visualization/SKILL.md`](../data-visualization/SKILL.md) for analytical chart accuracy and accessibility.

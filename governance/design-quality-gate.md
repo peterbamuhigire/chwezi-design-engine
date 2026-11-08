@@ -88,6 +88,20 @@ Applies whenever a Chwezi deck is released as PPTX or landscape PDF.
 - [ ] The eight gates (DECK-GATE-01 to DECK-GATE-08) are closed on `MEASURED` evidence; the six
       dimensions score at least 4 of 5 and the slide scorecard averages at least 90.
 
+## Chwezi infographics (Infographics Design and Production Quality Standard)
+
+Applies whenever a Chwezi infographic, diagram or poster is released in any format.
+
+- [ ] `doctrine/infographics-standard.md` was applied through the
+      `skills/00-cross-cutting-ops-qa-a11y/chwezi-infographics-standard/` skill.
+- [ ] Every fact is in the provenance register; illustrative numbers are flagged on the graphic.
+- [ ] Process, cycle and hierarchy diagrams passed `scripts/check_infographic.py graph`; the long
+      text equivalent was generated from the same data.
+- [ ] Text sizes were computed from reading distance and output size; every rendition was proofed
+      at actual size, phone and print included; no pseudo-text or synthetic photorealism.
+- [ ] The eight gates (INFO-GATE-01 to INFO-GATE-08) are closed on `MEASURED` evidence, the score is
+      at least 85 and the declaration is signed.
+
 ## Routing and scope
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.

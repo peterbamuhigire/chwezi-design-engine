@@ -127,7 +127,12 @@ any skill, frontmatter, router, doctrine, or governance change.
   `skills/00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/` skill (eight `PUB-GATE` gates).
   Every Chwezi slide deck (PPTX and landscape PDF) follows `doctrine/presentation-standard.md`
   through the `skills/00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/` skill (eight
-  `DECK-GATE` gates, venue-computed legibility, claim ledger). Its 13 hard release gates run inside
+  `DECK-GATE` gates, venue-computed legibility, claim ledger).
+  Every Chwezi infographic (web, SaaS, social, slides, DOCX, PDF, print to A2) follows
+  `doctrine/infographics-standard.md` through the
+  `skills/00-cross-cutting-ops-qa-a11y/chwezi-infographics-standard/` skill (eight `INFO-GATE`
+  gates, provenance register, checked diagram structure, no synthetic photorealism). The four
+  standards are the child standards of the Product Excellence Standard. Its 13 hard release gates run inside
   `governance/design-quality-gate.md`; an open or unmeasured applicable gate means `BLOCKED`.
 - Premium font binaries are gitignored — scan `fonts/<category>/`, read its `MANIFEST.md`, fall
   back to the named OFL baseline when a premium family is absent or its licence does not permit
@@ -181,7 +186,7 @@ profile also requires the roles of the shipped example and so guards that file. 
 (`node tools/slop-detector/cli.mjs`) also measures pointer targets (WCAG 2.5.8, browser tier) and flags
 positive `tabindex` values (2.4.3); it does not script non-text contrast (1.4.11) or reading order (1.3.2).
 
-The baseline is zero-debt: all 108 active skills currently pass the local contract. The validator
+The baseline is zero-debt: all 109 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.
 

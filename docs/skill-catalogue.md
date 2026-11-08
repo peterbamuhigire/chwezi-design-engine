@@ -1,8 +1,8 @@
 # Skill catalogue
 
-The 108 active skills of Chwezi Design Engine, one row each. The table moved here from the repository `README.md` on 2026-10-31 so that the README stays short. Each skill name links to its `SKILL.md`.
+The 109 active skills of Chwezi Design Engine, one row each. The table moved here from the repository `README.md` on 2026-10-31 so that the README stays short. Each skill name links to its `SKILL.md`.
 
-The rows were taken from the [108 active `SKILL.md` files listed in the plugin manifest](../.claude-plugin/plugin.json) under `skills/`. The manifest parity check is in [`tests/test_route_existence.py`](../tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded, and the engine has no `ALIAS.md` entries. The category folders and per-category counts are in the README section "What is inside".
+The rows were taken from the [109 active `SKILL.md` files listed in the plugin manifest](../.claude-plugin/plugin.json) under `skills/`. The manifest parity check is in [`tests/test_route_existence.py`](../tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded, and the engine has no `ALIAS.md` entries. The category folders and per-category counts are in the README section "What is inside".
 
 The catalogue is a hint for people. Agents route from the filesystem: they glob `skills/**/SKILL.md` afresh and read each frontmatter `description` (see `AGENTS.md`).
 
@@ -11,6 +11,7 @@ The catalogue is a hint for people. Agents route from the filesystem: they glob 
 | Quality, accessibility and review | [`accessibility-wcag-2-2-compliance`](../skills/00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance/SKILL.md) | Designs and audits interactive UI against WCAG 2.2 AA: keyboard, focus, names, target size, reflow |
 | Quality, accessibility and review | [`chwezi-reporting-and-dashboards-standard`](../skills/00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) | Applies the Chwezi Reporting and Dashboards Standard: metric contracts, reconciliation, period rules, A4 print, CSV/XLSX export, narrative and eight RPT gates |
 | Quality, accessibility and review | [`chwezi-document-publishing-standard`](../skills/00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/SKILL.md) | Applies the Chwezi Document Reporting and Publishing Standard: document identity, one canonical spec for HTML, PDF and DOCX, output parity, page grammar, eight PUB gates |
+| Quality, accessibility and review | [`chwezi-infographics-standard`](../skills/00-cross-cutting-ops-qa-a11y/chwezi-infographics-standard/SKILL.md) | Applies the Chwezi Infographics Design and Production Quality Standard: provenance register, real text at computed sizes, honest encodings, checked diagram structure, print and phone proofs, eight INFO gates |
 | Quality, accessibility and review | [`chwezi-presentation-standard`](../skills/00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/SKILL.md) | Applies the Chwezi Presentation and Slide Deck Design Standard: claim ledger, assertion headlines, venue-computed legibility, editable PPTX, PDF parity, eight DECK gates and scorecards |
 | Quality, accessibility and review | [`chwezi-product-excellence-standard`](../skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) | Applies the binding Chwezi Product Excellence Standard to app screens: rules, state matrix, 13 hard gates, scorecard verdict |
 | Quality, accessibility and review | [`click-path-audit`](../skills/00-cross-cutting-ops-qa-a11y/click-path-audit/SKILL.md) | Traces controls that silently do nothing: resets, races, stale closures, final-state mismatches |

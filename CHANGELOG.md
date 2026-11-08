@@ -3,6 +3,14 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-08] - Chwezi Infographics Design and Production Quality Standard (fourth child standard)
+
+- New doctrine `doctrine/infographics-standard.md` (1.0.0, full handbook edition, adopted 8 November 2026 on the owner's instruction): scope, precedence (banned-font doctrine supersedes the handbook's typeface list), design principles, eight hard gates INFO-GATE-01 to 08 mapped to sibling gates, release decision (score at least 85, weights 25/20/15/15/10/10/5), roles, Kaizen backlog, change control.
+- New skill `skills/00-cross-cutting-ops-qa-a11y/chwezi-infographics-standard/`: INFO rules; archetypes and eight worked cases; mathematics and algorithms (type size about 23.6 pt per metre of reading distance, print ppi about 3438 / D in, phone canvas scale, lie factor, graph checks for flows, cycles and trees, ring and timeline geometry, colour separation, ink, translation space, score); production and export with print handoff; agent workflow and QA; currentness register IF1-IF9; worked review; `scripts/check_infographic.py` (standard library) with `tests/test_infographics_checker.py`.
+- Product Excellence Standard 1.0.1 to 1.0.2 (patch): the "Reporting surfaces" paragraph becomes "The Chwezi standards family" (owner decision): the parent governs product UI/UX, design tokens, accessibility, performance, brand adaptation and quality assurance, including all mobile and tablet UI; four child systems govern dashboards and analytics, documents and publishing, presentations and slide decks, and infographics and visual communication, and inherit the parent's width classes on phones and tablets. No rule, gate, threshold or weight changed.
+- Wiring: AGENTS, doctrine map, quality-gate section, README section and task row, catalogue, plugin manifest, counts 108 to 109, quality baseline and test pins, links from data-illustration-and-infographics and the sibling standards, two routing fixtures with a negative.
+- Record: `docs/kaizen/2026-11-infographics-standard/README.md`.
+
 ## [2026-11-08] - Chwezi Presentation and Slide Deck Design Standard (companion, binding for Chwezi decks)
 
 - New doctrine `doctrine/presentation-standard.md` (1.0.0, full handbook edition, adopted 8 November 2026 on the owner's instruction): scope, precedence beside the Product Excellence, Reporting and Publishing standards, eight design principles, eight hard gates `DECK-GATE-01` to `DECK-GATE-08`, release decision (six dimensions at least 4 of 5; slide scorecard average at least 90), editorial, design and technical gates, rollout, copies in other engines.

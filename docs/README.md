@@ -10,7 +10,7 @@ This folder holds the engine's working documents and its dated records. The repo
 | [`approval-enforcement.md`](approval-enforcement.md) and [`approval-adapter.json`](approval-adapter.json) | The design approval checkpoint and its machine-readable adapter |
 | [`control-plane-adoption.md`](control-plane-adoption.md) | How this engine meets the shared control-plane contract |
 | [`ai-prompting/domain-prompt-compilation-contract.md`](ai-prompting/domain-prompt-compilation-contract.md) | The contract for handing a visual prompt to another tool or agent |
-| [`skill-catalogue.md`](skill-catalogue.md) | All 108 active skills, one row each, with a link to each `SKILL.md` (moved from the repository `README.md`) |
+| [`skill-catalogue.md`](skill-catalogue.md) | All 109 active skills, one row each, with a link to each `SKILL.md` (moved from the repository `README.md`) |
 | [`references.md`](references.md) | The books, repositories, standards and websites the skills and doctrine cite (moved from the repository `README.md`) |
 
 ## Improvement records

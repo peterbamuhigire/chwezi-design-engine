@@ -1,6 +1,6 @@
 # Chwezi Design Engine
 
-Chwezi Design Engine is a set of [108 design skills](.claude-plugin/plugin.json) for Claude Code and Codex-style agents. It covers the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience.
+Chwezi Design Engine is a set of [109 design skills](.claude-plugin/plugin.json) for Claude Code and Codex-style agents. It covers the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience.
 
 It runs alongside whichever Chwezi engine owns the content, and it governs how that content looks and behaves. It serves designers, product and engineering teams, agencies and the other Chwezi engines whenever a deliverable needs design input.
 
@@ -13,7 +13,7 @@ This engine holds the canonical text. See [Chwezi Product Excellence Standard](#
 
 ## At a glance
 
-- **108 skills** in 16 categories under `skills/`, each a `SKILL.md` that routes on its `description`.
+- **109 skills** in 16 categories under `skills/`, each a `SKILL.md` that routes on its `description`.
 - **51 detector rules** (43 static, 8 browser) in `chwezi-slop`, which checks source files and rendered pages.
 - **98 routing fixtures**. Lexical precision@1 is 94% (2026-11-08). That is a proxy for routing, not live routing.
 - **196 Python tests** pass (2026-11-08, Windows). The seven hook test files passed on 2026-11-06.
@@ -65,7 +65,7 @@ This engine holds the canonical text. See [Chwezi Product Excellence Standard](#
 The standard, chosen by Peter Bamuhigire and the Chwezi Core Systems design team, binds the UI and UX of every Chwezi app and system on Android, iOS, tablet, desktop and web.
 Where another skill here differs from it on a Chwezi product, the standard wins.
 
-- **Binding text:** [`doctrine/product-excellence-standard.md`](doctrine/product-excellence-standard.md), version 1.0.1.
+- **Binding text:** [`doctrine/product-excellence-standard.md`](doctrine/product-excellence-standard.md), version 1.0.2.
 - **Skill:** [`chwezi-product-excellence-standard`](skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md). It holds 236 rules with stable `PX-` IDs, 16 screen blueprints, 16 component contracts and 50 pattern dossiers.
 - **Policy file:** [`product-excellence-policy.yaml`](skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/examples/product-excellence-policy.yaml) holds the gates, states and release rule for tools.
 - **Record:** [`docs/kaizen/2026-11-product-excellence-standard/`](docs/kaizen/2026-11-product-excellence-standard/README.md), with the owner decisions and what is `NOT_ASSESSED`.
@@ -105,9 +105,17 @@ Adopted on 8 November 2026 for every Chwezi slide deck in PowerPoint and landsca
 - **Skill:** [`chwezi-presentation-standard`](skills/00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/SKILL.md). It holds 58 `DECK-` rules, eight hard gates (`DECK-GATE-01` to `DECK-GATE-08`), 29 blueprints by communication job, production contracts for editable PPTX and landscape PDF, the agent workflow with a claim ledger and two scorecards, and the mathematics of legibility: minimum size about 4.5 x (farthest viewer distance / screen height) pt.
 - **Record:** [`docs/kaizen/2026-11-presentation-standard/`](docs/kaizen/2026-11-presentation-standard/README.md).
 
+### Infographics Design and Production Quality Standard (fourth child standard)
+
+Adopted on 8 November 2026 for every Chwezi infographic, from web and SaaS reports to social cards, slides, DOCX, PDF and A2 posters. With it, the Product Excellence Standard has four child standards: Reporting and Dashboards, Document Reporting and Publishing, Presentation and Slide Deck Design, and Infographics.
+
+- **Binding text:** [`doctrine/infographics-standard.md`](doctrine/infographics-standard.md), version 1.0.0.
+- **Skill:** [`chwezi-infographics-standard`](skills/00-cross-cutting-ops-qa-a11y/chwezi-infographics-standard/SKILL.md). It holds the `INFO-` rules, eight hard gates (`INFO-GATE-01` to `INFO-GATE-08`), archetype contracts and eight worked cases, production and print handoff, the agent contract and a standard-library checker for diagram structure, lie factor, type size by reading distance (about 23.6 pt per metre), print resolution and contrast.
+- **Record:** [`docs/kaizen/2026-11-infographics-standard/`](docs/kaizen/2026-11-infographics-standard/README.md).
+
 ## Capabilities
 
-The engine holds 108 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
+The engine holds 109 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
 
 ## When to use it and find the right skill
 
@@ -151,6 +159,7 @@ Use the engine when the work touches how an artefact looks or behaves:
 | Build or review a Chwezi dashboard, report, statement, A4 PDF or spreadsheet export so the totals reconcile | `chwezi-reporting-and-dashboards-standard` |
 | Publish a Chwezi report or formal document as a browser reading mode, A4 PDF and DOCX that agree page for page | `chwezi-document-publishing-standard` |
 | Release a Chwezi board, investor or proposal deck that is legible in the room and matches its PDF | `chwezi-presentation-standard` |
+| Release a Chwezi infographic or poster that is true, structurally correct and legible at its real size | `chwezi-infographics-standard` |
 
 The rows follow prompts in `tests/routing-fixtures.yml`. Every skill, with a one-line description, is in the [skill catalogue](docs/skill-catalogue.md). With the plugin installed, Claude Code lists a skill as `design-engine:<skill-name>`.
 
@@ -202,11 +211,11 @@ Each ban carries a reason label: `[AI]` for an AI-ecosystem default, `[POP]` for
 
 ## What is inside
 
-The 108 active skills sit in 16 category folders under `skills/`. The table below was generated from the skills listed in the plugin manifest, and the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The one-line description of every skill is in the [skill catalogue](docs/skill-catalogue.md).
+The 109 active skills sit in 16 category folders under `skills/`. The table below was generated from the skills listed in the plugin manifest, and the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The one-line description of every skill is in the [skill catalogue](docs/skill-catalogue.md).
 
 | Category | Folder | Skills |
 |---|---|---:|
-| Quality, accessibility and review | `00-cross-cutting-ops-qa-a11y` | 20 |
+| Quality, accessibility and review | `00-cross-cutting-ops-qa-a11y` | 21 |
 | Typography and fonts | `01-typography-and-fonts` | 7 |
 | Colour, brand and visual identity | `02-color-brand-and-visual-identity` | 7 |
 | Layout, grid and composition | `03-layout-grid-and-composition` | 4 |
@@ -222,7 +231,7 @@ The 108 active skills sit in 16 category folders under `skills/`. The table belo
 | Presentations and documents | `13-presentations-and-documents` | 7 |
 | Conversion and web-page patterns | `14-conversion-and-web-page-patterns` | 5 |
 | Game visual experience | `15-game-visual-experience` | 5 |
-| **Total** | | **108** |
+| **Total** | | **109** |
 
 The rest of the repository:
 

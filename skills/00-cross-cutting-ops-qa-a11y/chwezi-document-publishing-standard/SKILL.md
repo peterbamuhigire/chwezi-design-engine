@@ -142,7 +142,8 @@ other engine is required.
 - [currentness-register.md](references/currentness-register.md): CSS paged media, PDF/UA, WCAG, ISO
   32000 and further-reading status.
 - Companion standards: [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md),
-  [chwezi-presentation-standard](../chwezi-presentation-standard/SKILL.md) for slide decks and
+  [chwezi-presentation-standard](../chwezi-presentation-standard/SKILL.md) for slide decks,
+  [chwezi-infographics-standard](../chwezi-infographics-standard/SKILL.md) for infographics and
   [chwezi-product-excellence-standard](../chwezi-product-excellence-standard/SKILL.md).
 
 ## Evidence and currentness

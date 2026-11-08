@@ -129,8 +129,9 @@ brief, storyboard, build, check and release a deck is in this engine; no other e
   scorecards, test matrix, handoff manifest, retrospective, master instruction.
 - [currentness-register.md](references/currentness-register.md): WCAG, PowerPoint accessibility, OOXML,
   PDF/UA, legibility and display-size sources.
-- Companion standards: [chwezi-document-publishing-standard](../chwezi-document-publishing-standard/SKILL.md)
-  and [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md).
+- Companion standards: [chwezi-document-publishing-standard](../chwezi-document-publishing-standard/SKILL.md),
+  [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md) and
+  [chwezi-infographics-standard](../chwezi-infographics-standard/SKILL.md) for infographics on slides.
 
 ## Evidence and currentness
 

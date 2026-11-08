@@ -209,8 +209,11 @@ the house style.
 
 ## References
 
-- Companion for reporting surfaces (dashboards, reports, statements, A4 PDF, CSV/XLSX exports):
-  [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md).
+- The four child standards: [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md)
+  (dashboards, reports, statements, A4 PDF, CSV/XLSX exports),
+  [chwezi-document-publishing-standard](../chwezi-document-publishing-standard/SKILL.md) (formal documents),
+  [chwezi-presentation-standard](../chwezi-presentation-standard/SKILL.md) (decks) and
+  [chwezi-infographics-standard](../chwezi-infographics-standard/SKILL.md) (infographics).
 
 | File | Use it for |
 |---|---|
