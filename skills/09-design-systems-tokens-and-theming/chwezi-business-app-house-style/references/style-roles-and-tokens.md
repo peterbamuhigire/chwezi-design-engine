@@ -28,6 +28,33 @@ carries the same claims and is checked by `scripts/validate_token_example.py`.
 | Money down / error | Due, loss, negative change, destructive buttons | `#B42323` | 6.36:1 on surface | Always with a word or sign |
 | Brand sky (logo) | Logo and large brand marks only | `#38A0F8` | 2.78:1 with white | Never small text; ink on it 5.37:1 |
 
+## Semantic status roles
+
+Owner default, 2026-11-07, from the Chwezi Product Excellence Standard
+(`doctrine/product-excellence-standard.md`): the house style carries five status roles whose
+meaning no product brand or theme may change. Token names are `success`, `warning`, `danger`,
+`info` and `neutral`, each with `on-<role>`, `<role>-container` and `on-<role>-container`.
+`danger` is the token name for the money-down / error role above; "critical" is a severity label
+shown in words, not a colour role. `success` is the money-up role above. Status colour is always
+paired with a word, sign or icon, and the warning role never reuses the amber next-step accent.
+
+The warning, info and neutral values below are **proposed (owner to confirm)**. Contrast was
+computed on 2026-11-08 with the engine's WCAG relative-luminance function
+(`engine.design_engine.catalog.contrast_ratio`); they are not yet in the token pack, so
+`validate_token_example.py` does not cover them, and rendered-device contrast is `NOT_ASSESSED`.
+
+| Role | Light value | Light contrast | Light container / on-container | Dark value | Dark contrast | Dark container / on-container |
+|---|---|---|---|---|---|---|
+| `success` | `#2E7D32` (money up) | 4.98:1 on surface | `NOT_ASSESSED` (to measure) | `NOT_ASSESSED` | `NOT_ASSESSED` | `NOT_ASSESSED` |
+| `danger` | `#B42323` (money down) | 6.36:1 on surface | `NOT_ASSESSED` (to measure) | `NOT_ASSESSED` | `NOT_ASSESSED` | `NOT_ASSESSED` |
+| `warning` | `#9A4F00` | 5.84:1 on surface; 5.27:1 on ground; white on it 6.01:1 | `#FFEBD2` / `#5A2E00` 9.90:1 | `#F5B26B` | 8.33:1 on dark surface | `#4A2A00` / `#FFDDB8` 10.04:1 |
+| `info` | `#0B6E84` | 5.70:1 on surface; 5.15:1 on ground; white on it 5.87:1 | `#DCF1F6` / `#063F4C` 9.85:1 | `#7FCDDF` | 8.50:1 on dark surface | `#0A3B46` / `#C2ECF6` 9.63:1 |
+| `neutral` | `#565E6C` (same as muted) | 6.35:1 on surface; 5.73:1 on ground; white on it 6.54:1 | `#E8EBF0` / `#2B3240` 10.76:1 | `#B4BAC5` | 7.82:1 on dark surface | `#2E3744` / `#DDE2EA` 9.24:1 |
+
+Containers sit about 1.1:1 against the surface: they are fills, never the only boundary or the
+only sign of state. Warning text and the amber accent differ by 3.21:1 and by role: warning is a
+label with a word, the accent is the one next-step button.
+
 ## Colour roles (dark)
 
 | Role | Reference | Measured |
@@ -69,7 +96,7 @@ licence that permits bundling, and has true tabular figures. State the pair and 
 | Scale | Values | Use |
 |---|---|---|
 | Spacing | 2, 4, 8, 12, 16, 24, 32, 48 | Page gutter 16; card padding 16; gap between cards 12; section gap 24 |
-| Radius | 8, 12, 16, 20, 28 | Chips 8; fields 12; buttons and mini tiles 16; cards 20; sheets and hero 28 |
+| Radius | 8, 12, 16, 20, 28 | Chips 8; fields 12; buttons and mini tiles 16; cards 20; sheets and hero 28. These values win over the Product Excellence source's 12-20 dp card range (owner default, 2026-11-07); data tables and dense lists are never over-rounded |
 | Size | touch target 48; hub icon 44; KPI icon 28; bottom-nav icon 24; menu card min height 88 | |
 | Elevation | 0 for cards; 1 to 3 only for sheets, dialogs and a floating cart bar | Separation comes from the ground tint and hairline |
 

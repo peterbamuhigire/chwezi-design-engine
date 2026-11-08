@@ -163,6 +163,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   the focus-visible clause to WCAG 2.4.7/2.4.11/1.4.11, and the per-state a11y notes. Never lorem.
 
 ## References
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (for Chwezi apps, the canonical screen state set, idempotent actions and the KpiCard and other component contracts are binding).
 - `doctrine/design-doctrine.md` — the Anti-Slop Charter; §0 "looks human-made" applied to states
   and transitions (one authored move — pressed shift, brand focus ring — applied via tokens).
 - `doctrine/references/wcag-2.2-criteria.md` — the a11y floor cited throughout: focus-visible &

@@ -44,6 +44,11 @@ Avoid: icon-only grids, cards that hold buttons, a description that repeats the 
 
 ## KPI tile
 
+The component is named `KpiCard` in code and "KPI card" in prose; "KPI tile" is this catalogue's
+name for the same component (owner default, 2026-11-07). Its behaviour contract (states, provenance,
+accessible full value) is in the Product Excellence Standard's component contracts; this entry
+sets its look.
+
 For a handful of headline figures on Home or a module home (two columns on phones).
 
 - A 28 line icon tinted with one illustration hue, the label ("Sales (30 days)"), the figure in a

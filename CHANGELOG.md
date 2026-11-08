@@ -3,6 +3,17 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-08] - Chwezi Product Excellence Standard (binding for all Chwezi apps)
+
+- New binding doctrine `doctrine/product-excellence-standard.md` (version 1.0.0, effective 01 November 2026 until further communication; adopted by Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team): scope, MUST/SHOULD/MAY, precedence ladder, 13 hard release gates, release decision, owner defaults, platform baseline, change control.
+- New skill `skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/`: 236 rules with stable IDs (189 MUST, 47 SHOULD) plus 13 gates, 20 principles, scorecard and sign-off charter, foundations, offline and low-end performance, data trust, accessibility/privacy/localisation, 16 screen blueprints, 16 component contracts, 50 anonymised pattern dossiers in 11 families, product profiles, agent protocol, anti-pattern blacklist, currentness register, machine-readable policy and a worked POS checkout review.
+- Release rule harmonised across doctrine, skill, catalogue (PX-SCORE-002), scorecard and policy: PASS = score >= 85, zero open gates, no dimension below 2; a dimension at 1 caps at CONDITIONAL; 70-84 with owned, dated remediation and written acceptance by product owner and Lead Developer = CONDITIONAL; < 70, a dimension at 0 or any open gate = BLOCKED; an unmeasured applicable gate counts as open.
+- Contiguous document numbering (PX-DATA-013) is now hard gate PX-GATE-13 wherever a screen issues numbered documents.
+- House style: semantic status roles `success`, `warning`, `danger`, `info`, `neutral` (warning, info and neutral values proposed, contrast computed, owner to confirm); "KPI tile" maps to `KpiCard`; card radius note (house values win over the source's 12-20 dp).
+- Money figures: full amounts take decimals from the ISO 4217 minor unit (UGX and RWF 0, KES and USD 2), replacing "always two decimals"; compact K/M/B unchanged.
+- Wiring: AGENTS.md hard rule, design-doctrine map row, design-quality-gate section, two routing fixtures with two owned negatives, cross-reference lines in 13 neighbour skills, plugin manifest, skill catalogue, README counts and one task row, quality baseline and test pins 104 to 105; standards register DGN-010 refreshed (Compose Material 3 1.5.0-rc01, 4 Nov 2026; stable 1.4.0) and DGN-014 added.
+- Record: `docs/kaizen/2026-11-product-excellence-standard/README.md`.
+
 ## [2026-11-07] - Business-app house style
 
 - New skill `skills/09-design-systems-tokens-and-theming/chwezi-business-app-house-style/`: colour roles with measured contrast, type pair, spacing and shape scales, component catalogue (context strip, hub menu card, KPI tile, hero card, highlight tile, insight line, period navigator, button order), motion and guardrail tests. Worked example of a new app whose green brand had to be darkened (3.20:1 to 5.30:1) and kept apart from money green; reference token pack, light and dark, 0 validator findings.

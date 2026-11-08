@@ -1,14 +1,15 @@
 # Skill catalogue
 
-The 104 active skills of Chwezi Design Engine, one row each. The table moved here from the repository `README.md` on 2026-10-31 so that the README stays short. Each skill name links to its `SKILL.md`.
+The 105 active skills of Chwezi Design Engine, one row each. The table moved here from the repository `README.md` on 2026-10-31 so that the README stays short. Each skill name links to its `SKILL.md`.
 
-The rows were taken from the [104 active `SKILL.md` files listed in the plugin manifest](../.claude-plugin/plugin.json) under `skills/`. The manifest parity check is in [`tests/test_route_existence.py`](../tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded, and the engine has no `ALIAS.md` entries. The category folders and per-category counts are in the README section "What is inside".
+The rows were taken from the [105 active `SKILL.md` files listed in the plugin manifest](../.claude-plugin/plugin.json) under `skills/`. The manifest parity check is in [`tests/test_route_existence.py`](../tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded, and the engine has no `ALIAS.md` entries. The category folders and per-category counts are in the README section "What is inside".
 
 The catalogue is a hint for people. Agents route from the filesystem: they glob `skills/**/SKILL.md` afresh and read each frontmatter `description` (see `AGENTS.md`).
 
 | Category | Skill | What it does |
 |---|---|---|
 | Quality, accessibility and review | [`accessibility-wcag-2-2-compliance`](../skills/00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance/SKILL.md) | Designs and audits interactive UI against WCAG 2.2 AA: keyboard, focus, names, target size, reflow |
+| Quality, accessibility and review | [`chwezi-product-excellence-standard`](../skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) | Applies the binding Chwezi Product Excellence Standard to app screens: rules, state matrix, 13 hard gates, scorecard verdict |
 | Quality, accessibility and review | [`click-path-audit`](../skills/00-cross-cutting-ops-qa-a11y/click-path-audit/SKILL.md) | Traces controls that silently do nothing: resets, races, stale closures, final-state mismatches |
 | Quality, accessibility and review | [`design-audit`](../skills/00-cross-cutting-ops-qa-a11y/design-audit/SKILL.md) | Audits one UI, page, flow or document and returns evidence-backed, severity-rated findings |
 | Quality, accessibility and review | [`design-critique-and-review-facilitation`](../skills/00-cross-cutting-ops-qa-a11y/design-critique-and-review-facilitation/SKILL.md) | Runs a critique session with a clear ask, a single decider and recorded outcomes |

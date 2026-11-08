@@ -29,6 +29,24 @@ measurement, keyboard/assistive-technology check, or accountable reviewer
 decision. Missing evidence remains `NOT_ASSESSED`, and any applicable AA
 failure blocks a `PASS` decision.
 
+## Chwezi app and system work (Product Excellence Standard)
+
+Applies whenever the artefact is a screen, flow, component or release of a Chwezi app or system.
+
+- [ ] `doctrine/product-excellence-standard.md` was applied through the
+      `skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/` skill, with the
+      house style (`chwezi-business-app-house-style`) as the visual layer.
+- [ ] A screen contract with the 13-state canonical matrix (PX-STATE-001) exists; any N/A state has a reason.
+- [ ] All 13 hard gates (PX-GATE-01 to PX-GATE-13) are stated; each applicable gate is closed on
+      `MEASURED` evidence. An applicable gate that is `NOT_ASSESSED` counts as open.
+- [ ] The six dimensions are scored with evidence classes in the skill's
+      `references/scorecard-and-release-gate.md`. Verdict: `PASS` only at 85 or more with zero open
+      gates and no dimension below 2; a dimension at 1, or a total of 70-84, is at best
+      `CONDITIONAL`, which also needs owned, dated remediation and written acceptance by the product
+      owner and the Lead Developer; any open gate, a dimension at 0 or a total below 70 is `BLOCKED`.
+- [ ] Verification was done by someone other than the implementer, with a human domain reviewer
+      for any financial or clinical change.
+
 ## Routing and scope
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.

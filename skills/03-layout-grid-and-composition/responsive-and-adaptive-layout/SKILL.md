@@ -242,6 +242,7 @@ stacking on mobile," treat that as the convergent mean to *avoid* — not as end
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (for Chwezi apps, the window-class layout rules and orientation behaviour at 600 dp and above are binding).
 - `doctrine/design-doctrine.md` (§0 Mission — "the moat is looking human-made"; §2 sourcing-
   authority asymmetry rule).
 - `doctrine/references/type-scale-and-spacing.md` (the scale steps and spacing unit that fluid

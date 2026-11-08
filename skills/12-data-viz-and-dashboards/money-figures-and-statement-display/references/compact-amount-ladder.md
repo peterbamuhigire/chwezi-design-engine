@@ -6,12 +6,18 @@ Parent skill: [money-figures-and-statement-display](../SKILL.md)
 
 | Form | Example | Where |
 |---|---|---|
-| Full | `32,450,000.00` | Closing balances, invoice and receipt totals, payment inputs and confirmations, documents and PDFs, the amount a screen reader speaks |
+| Full | `32,450,000` (UGX) or `32,450,000.00` (KES, USD) | Closing balances, invoice and receipt totals, payment inputs and confirmations, documents and PDFs, the amount a screen reader speaks |
 | Compact | `32.45M` | KPI tiles, hero figures, list and statement rows, summary cards, top-three tables, dense columns |
 | Axis | `32.5M` or `32M` | Chart axes and bar labels only |
 
 Default to full when unsure. Compact is a display convenience; it never replaces the exact figure
 where someone may rely on it.
+
+**Decimals in the full form come from the currency's ISO 4217 minor unit** (owner default,
+2026-11-07, from `doctrine/product-excellence-standard.md`, which replaces this skill's earlier
+"always two decimals" rule): UGX and RWF have 0, so `USh 1,250,000`, never `1,250,000.00`; KES, TZS
+and USD have 2. Amounts are stored as integer minor units per currency. The compact and axis forms
+below are unchanged: their two decimals scale the unit (K, M, B), they are not minor units.
 
 ## Compact rules
 
@@ -31,18 +37,18 @@ where someone may rely on it.
 
 Every formatter ships with these cases.
 
-| Input | Compact | Full |
-|---|---|---|
-| 0 | `0` | `0.00` |
-| 7 | `7` | `7.00` |
-| 999.4 | `999` | `999.40` |
-| 999.5 | `1.00K` | `999.50` |
-| 1,000 | `1.00K` | `1,000.00` |
-| 403,380 | `403.38K` | `403,380.00` |
-| 999,995 | `1.00M` | `999,995.00` |
-| 114,960,000 | `114.96M` | `114,960,000.00` |
-| 42,150,000,000 | `42.15B` | `42,150,000,000.00` |
-| -123,456 | `-123.46K` | `-123,456.00` |
+| Input | Compact | Full, 0-decimal currency (UGX, RWF) | Full, 2-decimal currency (KES, USD) |
+|---|---|---|---|
+| 0 | `0` | `0` | `0.00` |
+| 7 | `7` | `7` | `7.00` |
+| 999.4 | `999` | n/a (whole units only) | `999.40` |
+| 999.5 | `1.00K` | n/a (whole units only) | `999.50` |
+| 1,000 | `1.00K` | `1,000` | `1,000.00` |
+| 403,380 | `403.38K` | `403,380` | `403,380.00` |
+| 999,995 | `1.00M` | `999,995` | `999,995.00` |
+| 114,960,000 | `114.96M` | `114,960,000` | `114,960,000.00` |
+| 42,150,000,000 | `42.15B` | `42,150,000,000` | `42,150,000,000.00` |
+| -123,456 | `-123.46K` | `-123,456` | `-123,456.00` |
 
 ## Hero figure
 

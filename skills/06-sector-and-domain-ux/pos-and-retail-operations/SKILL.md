@@ -189,6 +189,7 @@ payment.
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Maduuka and every Chwezi POS: payment state model, idempotent tender, contiguous document numbers (PX-GATE-13), shared-device idle lock).
 - `skills/09-design-systems-tokens-and-theming/chwezi-business-app-house-style/SKILL.md` (one amber next-step button, task screens use line icons only)
 - `doctrine/design-doctrine.md`
 - `governance/design-quality-gate.md`

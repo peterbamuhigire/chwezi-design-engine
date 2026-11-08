@@ -1,17 +1,22 @@
 # Chwezi Design Engine
 
-Chwezi Design Engine is a set of [104 design skills](.claude-plugin/plugin.json) for Claude Code and Codex-style agents. It covers the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience.
+Chwezi Design Engine is a set of [105 design skills](.claude-plugin/plugin.json) for Claude Code and Codex-style agents. It covers the presentation layer: typography, colour, brand identity, layout, interface and interaction design, UX process, content design, imagery, motion, data visualisation, documents, presentations, print and game visual experience.
 
 It runs alongside whichever Chwezi engine owns the content, and it governs how that content looks and behaves. It serves designers, product and engineering teams, agencies and the other Chwezi engines whenever a deliverable needs design input.
 
 A written anti-slop doctrine, a write-time font gate and a rule-based detector check the output against it. "Slop" here means the convergent defaults that AI tools produce.
 
+**Design standard.** The Chwezi Product Excellence Standard is the design style chosen by Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team.
+It is effective from 01 November 2026 until further communication is given on the matter.
+It is mandatory for all Chwezi apps and systems.
+This engine holds the canonical text. See [Chwezi Product Excellence Standard](#chwezi-product-excellence-standard).
+
 ## At a glance
 
-- **104 skills** in 16 categories under `skills/`, each a `SKILL.md` that routes on its `description`.
+- **105 skills** in 16 categories under `skills/`, each a `SKILL.md` that routes on its `description`.
 - **51 detector rules** (43 static, 8 browser) in `chwezi-slop`, which checks source files and rendered pages.
-- **94 routing fixtures**. Lexical precision@1 is 95%. That is a proxy for routing, not live routing.
-- **196 Python tests** pass, and so do the seven hook test files (measured 2026-10-31).
+- **98 routing fixtures**. Lexical precision@1 is 94% (2026-11-08). That is a proxy for routing, not live routing.
+- **196 Python tests** pass (2026-11-08, Windows). The seven hook test files passed on 2026-11-06.
 - **Latest published score: 60.3 out of 100.** The target is 95 and is not met. The delivery record is `CONDITIONAL`.
 - **Needs** Node.js 18 or later and Python 3.11 or later. The validators also need `PyYAML`.
 
@@ -39,6 +44,7 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 ## Contents
 
 - [At a glance](#at-a-glance)
+- [Chwezi Product Excellence Standard](#chwezi-product-excellence-standard)
 - [Capabilities](#capabilities)
 - [When to use it and find the right skill](#when-to-use-it-and-find-the-right-skill)
 - [How it works](#how-it-works)
@@ -54,9 +60,28 @@ A written anti-slop doctrine, a write-time font gate and a rule-based detector c
 - [Sources](#sources)
 - [Contributing, author and licence](#contributing-author-and-licence)
 
+## Chwezi Product Excellence Standard
+
+The standard, chosen by Peter Bamuhigire and the Chwezi Core Systems design team, binds the UI and UX of every Chwezi app and system on Android, iOS, tablet, desktop and web.
+Where another skill here differs from it on a Chwezi product, the standard wins.
+
+- **Binding text:** [`doctrine/product-excellence-standard.md`](doctrine/product-excellence-standard.md), version 1.0.0.
+- **Skill:** [`chwezi-product-excellence-standard`](skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md). It holds 236 rules with stable `PX-` IDs, 16 screen blueprints, 16 component contracts and 50 pattern dossiers.
+- **Policy file:** [`product-excellence-policy.yaml`](skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/examples/product-excellence-policy.yaml) holds the gates, states and release rule for tools.
+- **Record:** [`docs/kaizen/2026-11-product-excellence-standard/`](docs/kaizen/2026-11-product-excellence-standard/README.md), with the owner decisions and what is `NOT_ASSESSED`.
+
+What it governs:
+
+- **13 hard release gates** (`PX-GATE-01` to `PX-GATE-13`), from duplicate records and false confirmation to accessibility and large-text loss. Any open gate blocks release.
+- **The release rule.** PASS needs a weighted score of at least 85, zero open gates and no dimension below 2. A score of 70 to 84 with owned, dated remediation is CONDITIONAL, for a pilot only. Gate evidence that was not measured counts as open.
+- **13 screen states**, from initial loading to session expired and success. Each screen shows every state or declares it not applicable with a reason.
+- **Money.** Full amounts take their decimals from the ISO 4217 minor unit, so UGX shows 0 decimals. This replaces the money-figures skill's fixed two decimals.
+- **Offline and low-end Android.** Queued work is never shown as confirmed, a retry never duplicates, and performance is measured on a declared baseline device.
+- **Languages and numbering.** Seven default languages: English, Luganda, Swahili, French, Arabic (right to left), Kinyarwanda and Spanish. Contiguous document numbering is a hard gate wherever a screen issues numbered documents.
+
 ## Capabilities
 
-The engine holds 104 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
+The engine holds 105 skills in 16 categories, grouped under [What is inside](#what-is-inside). The [skill catalogue](docs/skill-catalogue.md) lists each one. The next section maps common tasks to the skill that handles each.
 
 ## When to use it and find the right skill
 
@@ -96,6 +121,7 @@ Use the engine when the work touches how an artefact looks or behaves:
 | Design keyboard focus, names and reflow to WCAG 2.2 AA | `accessibility-wcag-2-2-compliance` |
 | Give a Chwezi business app the house look: soft cards, one amber next step, colourful hub icons | `chwezi-business-app-house-style` |
 | Show statements, trial balance and monthly summaries with K/M/B amounts | `money-figures-and-statement-display` |
+| Build or review a Chwezi app screen against the binding standard and decide PASS, CONDITIONAL or BLOCKED | `chwezi-product-excellence-standard` |
 
 The rows follow prompts in `tests/routing-fixtures.yml`. Every skill, with a one-line description, is in the [skill catalogue](docs/skill-catalogue.md). With the plugin installed, Claude Code lists a skill as `design-engine:<skill-name>`.
 
@@ -147,11 +173,11 @@ Each ban carries a reason label: `[AI]` for an AI-ecosystem default, `[POP]` for
 
 ## What is inside
 
-The 104 active skills sit in 16 category folders under `skills/`. The table below was generated from the skills listed in the plugin manifest, and the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The one-line description of every skill is in the [skill catalogue](docs/skill-catalogue.md).
+The 105 active skills sit in 16 category folders under `skills/`. The table below was generated from the skills listed in the plugin manifest, and the manifest parity check is in [`tests/test_route_existence.py`](tests/test_route_existence.py). The `_TEMPLATE` scaffold is excluded. The one-line description of every skill is in the [skill catalogue](docs/skill-catalogue.md).
 
 | Category | Folder | Skills |
 |---|---|---:|
-| Quality, accessibility and review | `00-cross-cutting-ops-qa-a11y` | 16 |
+| Quality, accessibility and review | `00-cross-cutting-ops-qa-a11y` | 17 |
 | Typography and fonts | `01-typography-and-fonts` | 7 |
 | Colour, brand and visual identity | `02-color-brand-and-visual-identity` | 7 |
 | Layout, grid and composition | `03-layout-grid-and-composition` | 4 |
@@ -167,7 +193,7 @@ The 104 active skills sit in 16 category folders under `skills/`. The table belo
 | Presentations and documents | `13-presentations-and-documents` | 7 |
 | Conversion and web-page patterns | `14-conversion-and-web-page-patterns` | 5 |
 | Game visual experience | `15-game-visual-experience` | 5 |
-| **Total** | | **104** |
+| **Total** | | **105** |
 
 The rest of the repository:
 
@@ -259,7 +285,7 @@ The results below were measured on 2026-10-31 on Linux with Python 3.14 and Node
 
 | Check | Command | Needs | Result on 2026-10-31 |
 |---|---|---|---|
-| Engine contract and regression gate | `python3 -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json` | PyYAML | Exit 0. 102 of 102 skills compliant; 51 rules and 102 detector fixtures; six report-only size warnings; portability findings 0 |
+| Engine contract and regression gate | `python3 -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json` | PyYAML | Exit 0. 102 of 102 skills compliant (105 on 2026-11-08); 51 rules and 102 detector fixtures; six report-only size warnings; portability findings 0 |
 | Portability | `python3 -X utf8 scripts/validate_portability.py` | none | Exit 0. No unlisted machine-specific path; three allowlisted link findings in dated records |
 | Routing (lexical proxy, not live routing) | `python3 -X utf8 scripts/routing_smoke_test.py --min-rank1 92 --lint-fixtures` | PyYAML | Exit 0. 94 fixtures, precision@1 95%, precision@3 100%, owned negatives 46/46, one foreign owner `NOT ASSESSED` |
 | Route existence | `python3 -X utf8 scripts/validate_route_existence.py` | PyYAML | Exit 0. 0 findings |
@@ -267,7 +293,7 @@ The results below were measured on 2026-10-31 on Linux with Python 3.14 and Node
 | Design token example | `python3 -X utf8 scripts/validate_token_example.py skills/09-design-systems-tokens-and-theming/design-tokens-and-naming/examples/tokens.json` | none | Exit 0. 0 findings (see [Design token validator](#design-token-validator)) |
 | Design catalogue | `python3 -X utf8 scripts/validate_design_catalog.py data/design-catalog.json` | none | Exit 0. Schema, coverage, font-doctrine, contrast and lifecycle checks pass; 0 stale records |
 | File-entry ceiling | `python3 -X utf8 scripts/check_file_count.py . --mode checkout` and `--mode package` | none | Exit 0 for both; ceiling 5,000 entries |
-| Plugin manifest | `node scripts/generate-plugin-manifest.js --engine . --check` | Node | Exit 0. `plugin.json` is current, 102 skills |
+| Plugin manifest | `node scripts/generate-plugin-manifest.js --engine . --check` | Node | Exit 0. `plugin.json` is current, 102 skills (105 listed since 2026-11-08) |
 | Python test suite | `python3 -X utf8 -m pytest -q -p no:cacheprovider` | pytest, PyYAML | Exit 0. 196 passed |
 | Detector registry and font doctrine | `node tools/slop-detector/cli.mjs --validate-registry` and `--doctrine-consistency` | Node | Exit 0. 51 rules (43 static, 8 browser); 0 baseline/ban conflicts |
 | Detector suite | `node --test tools/slop-detector/test/` | Node; a locked Playwright project for the browser test | Exit 0. 119 tests: 118 pass, 1 skipped (the browser acceptance test, which needs the locked Playwright project) |
@@ -277,11 +303,14 @@ The results below were measured on 2026-10-31 on Linux with Python 3.14 and Node
 | Agent contract | `python3 -X utf8 tests/agent-integration/test_design_agent_contract.py` | PyYAML | Exit 0. Pass; the universal catalogue is not available, so that part is `NOT ASSESSED` |
 | Cross-engine handoffs | `python3 -X utf8 scripts/validate_cross_engine_routes.py` | PyYAML and sibling checkouts | See [Cross-engine handoffs](#cross-engine-handoffs) |
 
-**Re-run on 2026-11-07 (Windows, Python 3, this cycle).** After the two new skills: `validate_engine.py` reports 104 of 104 skills compliant, 51 rules, 102 fixtures and 0 portability findings, but exits 1 on this machine because ignored local folders put the checkout at 6,292 entries (Git tracks 1,265 files); it exited 1 for the same reason before the change. Routing: 96 fixtures, precision@1 94%, precision@3 100%, owned negatives 49/49. Route existence, design catalogue, both token packs, portability and the cross-engine check (0 findings across the workspace) exit 0. The pytest suite: 196 passed. The plugin-manifest generator refused to run for the same file-count reason, so the two manifest lines were added by hand and checked by `tests/test_route_existence.py`.
+**Re-run on 2026-11-08 (Windows, Python 3, Node 24.8.0), after the Product Excellence Standard.**
 
-**Re-run on 2026-11-06.** Every command in the table except the cross-engine check was run again on Linux (Python 3.14.10, Node 22.23.1, pytest 9.2.0, PyYAML 6.0.2). Each exited 0 with the results shown, apart from one change: the banned-font gate now has 131 hook tests, not 45.
+- `validate_engine.py`: 105 of 105 skills compliant, 51 rules, 102 fixtures and 0 portability findings. It exits 1 on this machine only because ignored local folders put the checkout at 6,362 entries; the package count is 2,045. It exited 1 for the same reason before the change.
+- Routing: 98 fixtures, precision@1 94%, precision@3 100%, owned negatives 51/51, one `NOT ASSESSED`.
+- Exit 0: route existence, the cross-engine check (0 findings across the workspace), portability, the design catalogue, both token packs and the installer file guard. The pytest suite: 196 passed.
+- On 2026-11-07, after the two house-style skills, the run gave 104 of 104, 96 fixtures and 49/49 owned negatives. The plugin-manifest generator refused to run for the file-count reason, so the manifest lines were added by hand and checked by `tests/test_route_existence.py`.
 
-The 86 added tests cover one change. A quoted banned family name now blocks only where it is used as a font (for example `run.font.name = "X"`, `Font(name="X")` or `font: 700 2rem "X"`). The model-adaptation term LoRA, quoted in a script, no longer blocks. The record, with its limits, is [`docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md`](docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md).
+**Re-run on 2026-11-06.** Every command in the table except the cross-engine check was run again on Linux (Python 3.14.10, Node 22.23.1, pytest 9.2.0, PyYAML 6.0.2). Each exited 0 with the results shown, except that the banned-font gate now has 131 hook tests, not 45. The 86 added tests cover one change: a quoted banned family name blocks only where it is used as a font. The [record](docs/kaizen/dg6-banned-font-gate-context-2026-11-06.md) has the limits.
 
 ### What CI runs
 
@@ -327,7 +356,7 @@ None of the checks above needs PowerShell, Pandoc, Mermaid, LibreOffice or a con
 - **`examples/p18-synthetic-output-pack/`.** Its rebuild-and-verify scripts need LibreOffice, Ghostscript, `python-docx`, `openpyxl`, `python-pptx`, Pillow and PyMuPDF. On the measurement host the Python document libraries were absent, so those scripts were not run (`NOT_ASSESSED`).
 - **`install.ps1`.** It is the Windows installer. It needs PowerShell and was not run on the Linux host.
 
-The Codex helper (`python3 .codex/ensure_model_policy.py --runtime codex --check`) reads the Codex configuration of the machine it runs on. It was run against an empty scratch directory only (exit 1, drift reported). `--runtime claude` prints `NOT_APPLICABLE` and exits 0.
+The Codex helper (`python3 .codex/ensure_model_policy.py --runtime codex --check`) was run against an empty scratch directory only (exit 1, drift reported). `--runtime claude` prints `NOT_APPLICABLE`.
 
 ## Quality and improvement
 
@@ -336,6 +365,7 @@ The improvement records:
 - [`docs/kaizen/2026-10-engine-kaizen/`](docs/kaizen/2026-10-engine-kaizen/) (29 October 2026) and [`docs/kaizen/2026-10-engine-kaizen-pass-2/`](docs/kaizen/2026-10-engine-kaizen-pass-2/) (31 October 2026). Each holds the same seven files: scope and evidence, baseline scorecard, backlog, experiment log, validation record, final report and next-cycle record.
 - [`docs/README.md`](docs/README.md) indexes the older audits and plans.
 - [`docs/kaizen/2026-10-readme-kaizen/readme-kaizen-record.md`](docs/kaizen/2026-10-readme-kaizen/readme-kaizen-record.md) records the scoped kaizen that restructured this README. It published no score.
+- [`docs/kaizen/2026-11-product-excellence-standard/`](docs/kaizen/2026-11-product-excellence-standard/README.md) (8 November 2026) records the adoption of the standard and its independent audit. It published no score.
 
 The change list for both October cycles follows in [What the October 2026 kaizen improved](#what-the-october-2026-kaizen-improved) and [What the October 2026 kaizen added](#what-the-october-2026-kaizen-added).
 
@@ -355,7 +385,8 @@ These come from the [next-cycle record](docs/kaizen/2026-10-engine-kaizen-pass-2
   - The detector does not script non-text contrast (WCAG 1.4.11) or reading order (1.3.2).
   - Its target-size and positive-tabindex rules report warnings, so a pipeline that fails only on blocks will not stop them.
   - The rendered-font gate reads names, not licences, and cannot see outlined text.
-  - Routing evidence is a lexical proxy, with three recorded routing gaps. Fixture coverage reaches 11 of 102 skills.
+  - Routing evidence is a lexical proxy, with three recorded routing gaps. Full fixture coverage reached 11 of 102 skills on 31 October.
+- **The Product Excellence Standard awaits owner confirmation** of the warning, info and neutral colour values, every threshold marked "proposed" and the default evidence folder. No screen built to it has been rendered, and some currentness rows are `NOT_ASSESSED`. The [record](docs/kaizen/2026-11-product-excellence-standard/README.md) lists each one.
 - **Depth is uneven.**
   - `sector-strategies` still has the generic workflow.
   - Five skills keep depth in `legacy-guidance.md`: `brand-style-guide`, `color-selection`, `ux-psychology`, `legal-sector-ui-ux` and `sector-strategies`.
@@ -366,15 +397,12 @@ These come from the [next-cycle record](docs/kaizen/2026-10-engine-kaizen-pass-2
 
 ### Date-triggered gates
 
-No validator fails because of the calendar. The only date logic is a stale-record warning in `validate_design_catalog.py`; it prints warnings and exits 0. Three checks support this:
-
-- runs with `--as-of` on 2026-12-28, 2026-12-29, 2027-01-27 and 2027-06-01 (exit 0 each);
-- `--as-of` stepped day by day from 2026-10-31 to 2027-03-01;
-- a search of the scripts, hooks, detector and engine package for date handling.
+No validator fails because of the calendar. The only date logic is a stale-record warning in `validate_design_catalog.py`, which exits 0. This was checked with `--as-of` stepped day by day from 2026-10-31 to 2027-03-01 and a search of the scripts, hooks and detector for date handling.
 
 | Date | What changes | Action |
 |---|---|---|
 | 2026-12-20 | `validate_design_catalog.py` starts to list 13 catalogue records as stale (due 2026-12-19); 19 from 2026-12-29 (six more due 2026-12-28). Warnings only | Recheck the records, or set a new `recheck_due` with evidence |
+| 2026-12-07 | First review-by date in the standard's currentness register (library versions); platform rows follow on 2027-02-07 and standards rows on 2027-05-07. No validator reads these dates | Re-read each source; a lapsed row becomes `NOT_ASSESSED` and the stricter Chwezi value holds |
 | 2026-12-29 | Targeted re-check of the font watchlist (seven faces) and any source-register row that moved. No validator reads this date | Re-research the watchlist under `doctrine/references/living-slop-refresh-protocol.md` |
 | 2027-01-27 | Review date of every row in `governance/standards-source-register.md` (DGN-001 to DGN-011 and DGN-013) and of the full re-audit. No validator reads this date | Re-read each primary source and record the access date; sources that cannot be read stay `NOT_ASSESSED` |
 
@@ -387,7 +415,8 @@ On 7 November 2026 the interface work of the Maduuka Android app became a house 
 - **Illustrated menu icons** are a new reference in `iconography-system-design`. It requires a recorded source and licence before an icon ships.
 - **Findings from the audit.** Primary blue (4.32:1) and money green (4.10:1) fail as small text on the pale primary container, so on-container text now has its own role. The decorative palette had grown past 40 hues; the style caps it at eight.
 - **Cross-references** were added to five neighbouring skills, plus three routing fixtures. The skill count rose from 102 to 104.
-- **Other engines.** The SDLC, development, dev and writing engines each gained a matching reference in the same cycle. Each change is recorded in that engine's own README.
+- **Other engines.** The SDLC and dev engines, and other Chwezi engines, each gained a matching reference in the same cycle.
+- **Amended on 8 November.** The [Product Excellence Standard](#chwezi-product-excellence-standard) now takes precedence. Full amounts follow the ISO 4217 minor unit, and the house style gained warning, info and neutral roles, whose values await owner confirmation.
 
 ## What the October 2026 kaizen improved
 
@@ -397,12 +426,7 @@ Two improvement cycles ran in October 2026: the first on 29 October and a second
 - The 29 October [experiment log](docs/kaizen/2026-10-engine-kaizen/03-experiment-log.md) lists only retained changes.
 - One 29 October item is left out because it changed no repository file: the font-embedding specimen (D-5).
 
-How the figures were obtained:
-
-- On 2026-10-31 each commit hash below was confirmed to be on `main` with `git merge-base --is-ancestor` and read with `git show --stat`.
-- **Re-run** means the figure was measured again that day in a clean clone of the commit named, with Python 3.14, Node 22 and pytest 9.0.3.
-- **Recorded** means the figure is copied from the evidence file named.
-- Scores are judgements against named evidence, not measurements of single changes. The target of 95 is not met.
+How the figures were obtained: each commit hash was confirmed on `main` on 2026-10-31. **Re-run** means measured again that day in a clean clone of the commit named. **Recorded** means copied from the evidence file named. Scores are judgements against named evidence, and the target of 95 is not met.
 
 | Measure | 29 Oct baseline (`c9b334d`) | 29 Oct close (`fe7bac7`) | Now (tree at `63fc931`) | How obtained |
 |---|---:|---:|---:|---|
@@ -425,7 +449,7 @@ The 29 October cycle published 45.0 under a stricter cap set for it. The pass-2 
 1. **Local paths, a user name and acquisition-site file names in a public repository (critical).**
    - Found: a source register listed local download paths and acquisition-site file names. The router, the integration records, skill files, a hook comment and an installer comment carried web-root, user-name or drive paths.
    - Fixed: they now hold titles and repository identifiers (`f4f1eaf`, `b6ab99e`, `0e23a7b`).
-   - Re-run: operational files with such paths fell from 16 to 10 to 2. The two left are allowlisted with a reason: one canonical doctrine line awaiting the owner, and one file of intentional test inputs. Links into sibling checkouts fell from 3 to 0.
+   - Re-run: operational files with such paths fell from 16 to 10 to 2, both allowlisted with a reason. Links into sibling checkouts fell from 3 to 0.
    - Still open: the old text remains in the history of the public repository, because no history rewrite was permitted.
 2. **The token example contradicted the edition it named, and its contrast figures were wrong.**
    - Found: it used CSS strings where the Design Tokens Format Module 2025.10 specifies object values. Only 2 of its 11 stated ratios matched the rendered colours (recorded in the [pass-2 validation record](docs/kaizen/2026-10-engine-kaizen-pass-2/04-validation-record.md)).
@@ -435,14 +459,13 @@ The 29 October cycle published 45.0 under a stricter cap set for it. The pass-2 
    - Limits: Style Dictionary and Figma imports were not tested, and `tokens-from-pack.json` still fails (see [Design token validator](#design-token-validator)).
 3. **Two wrong source facts.**
    - Found: the standards register held a malformed ISO 14289-2 address, and it attached 21 October 2026 to Compose Material 3 1.4.0. The release notes give 24 September 2025 for stable 1.4.0 and 21 October 2026 for 1.5.0-beta02.
-   - Fixed: the address (`ce4ae24`) and the Compose row (`7340dfa`).
-   - Check: recorded: the correcting page was read directly. Re-run: the diffs of both commits show the two rows changed. The web pages were not read again for this section.
+   - Fixed: the address (`ce4ae24`) and the Compose row (`7340dfa`). Recorded: the correcting page was read directly; the pages were not read again for this section.
 4. **The cross-engine route check could not find renamed sibling checkouts.**
    - Found: it assumed folder names equal to repository names, so the default run on this workstation exits 1 with six routes `NOT ASSESSED`.
    - Fixed: it now accepts `--map NAME=PATH`, `--workspace-map` and `CHWEZI_WORKSPACE_MAP`. A missing target still fails (`285658f`).
    - Re-run: the default run exits 1; the mapped run exits 0 with 0 findings; 13 unit tests pass.
 5. **`legal-sector-ui-ux` still had the generic workflow.**
-   - Fixed: the four generic steps became eight task-specific ones built from the skill's own references. Two conflicts found on the way (an optional free-text intake field, unsourced conversion statistics) are stated in the workflow (`918dce0`).
+   - Fixed: the four generic steps became eight task-specific ones built from the skill's own references (`918dce0`).
    - Re-run: contract validator 102 of 102; skills on the generic workflow 2 to 1 (`sector-strategies` remains).
    - Still open: the references follow US-style bar rules.
 
@@ -464,12 +487,12 @@ The numbering continues from the defect list above. The same rules apply for the
    - Re-run: 51 rules where there were 49. The detector suite passes 119 of 119 with a locked Playwright project, and 118 with one skipped without one. The tabindex flag fixture gives three warnings and the pass fixture none.
    - Limits: non-text contrast (1.4.11) and reading order (1.3.2) are not scripted. The copy vendored in `website-skills` is now out of step.
 9. **A file-entry ceiling, and a defect in it** (`4ec79bc`, `a89d340`, `09ad82d`, `6db70dd`).
-   - A 5,000-entry guard runs in the validator, the clone installer and the manifest generator. The acceptance review then found that `os.walk` hid a traversal error and returned a partial count, so the guard now refuses with exit 2.
+   - A 5,000-entry guard runs in the validator, the clone installer and the manifest generator. A traversal error that returned a partial count now makes it refuse with exit 2.
    - Re-run: `node --test tests/file-count.test.js` 4 pass; `tests/test_file_count.py` 5 pass; 1,697 checkout and 1,252 package entries against 5,000 at `63fc931`.
    - Limits: native plugin hosts do not run these scripts, so this says nothing about marketplace review.
 10. **The Python suite grew by 57 tests** (`39ec352`, the file-count tests of item 9 and the suites behind items 2, 4 and 6).
-    - Re-run under pytest 9.0.3: 139, 145 and 196 at the three commits. The 6 added on 29 October are five file-count tests and one route-existence test. The 51 added in pass 2 are 12, 26 and 13 and are `unittest`-compatible, so they also pass without pytest (51 OK).
-    - `39ec352` adds `tests/conftest.py` so a plain stand-in runner can import `scripts/`. With real pytest the suite passes with and without that file, so its benefit is not shown.
+    - Re-run under pytest 9.0.3: 139, 145 and 196 at the three commits. The 51 added in pass 2 are `unittest`-compatible, so they also pass without pytest.
+    - `39ec352` adds `tests/conftest.py` for a plain stand-in runner. With real pytest the suite passes with and without it, so its benefit is not shown.
 
 ### Routing and discoverability
 
@@ -480,20 +503,17 @@ The numbering continues from the defect list above. The same rules apply for the
     - Limits: routing here is lexical, and overlap with `data-visualization` is untested against real requests.
 12. **Routing fixtures for ten more skills** (`2332e14`).
     - 22 positives and 17 owned negatives took skills with full fixtures from 1 to 11 and precision@1 from 94% to 95%, with owned negatives at 46 of 46 and lint at 0 (re-run).
-    - Ten of the 39 prompts were reworded after the lexical ranker failed them, so the 95% is partly by construction. The three gaps recorded in the [next-cycle record](docs/kaizen/2026-10-engine-kaizen-pass-2/06-next-cycle.md) are the honest signal.
+    - Ten of the 39 prompts were reworded after the lexical ranker failed them, so the 95% is partly by construction. The three gaps in the [next-cycle record](docs/kaizen/2026-10-engine-kaizen-pass-2/06-next-cycle.md) are the honest signal.
 13. **A larger standards register** (`ce4ae24`, `7340dfa`).
     - Five rows became 12 (re-run). The new rows cover EN 301 549 V4.1.1, Directive (EU) 2019/882, Design Tokens Format Module 2025.10, Apple design updates, Compose Material 3, Core Web Vitals and the WCAG 3.0 draft status.
     - The token skill now names the 2025.10 report and says it is a Final Community Group Report and not a W3C Standard.
-    - Recorded: the rows were read from primary pages on 29 October and again on 31 October, except three sources that could not be read (ISO 14289-2, the EUR-Lex text of the Directive and the Material guidance site). Those stay `NOT_ASSESSED`.
-    - The rows record provenance and edition, not legal applicability.
+    - Recorded: the rows were read from primary pages on 29 and 31 October, except the three `NOT_ASSESSED` sources listed under open findings. They record provenance and edition, not legal applicability.
 
 ### Documentation
 
 14. **Documents brought in line with the repository** (`1d3e3ea`, `2e57350`, `651cee1`, `f92cc39`, `0a5e0fc`, `780e087`, `9429c5a`, `f9cf605`).
-    - These added the validation section with commands and measured results, and the router's skill count (101 to 102) with `python3` commands.
-    - They also added a documentation index, a refreshed resume, the manifest and count steps for a new skill, and the Linux and macOS font-folder setup.
-    - They recorded the measured trigger-block state of the sibling engines and twelve documentation follow-ups.
-    - Re-run: the portability gate resolves every link in the files changed. The [skill catalogue](docs/skill-catalogue.md) lists exactly the 102 skills on disk (re-checked on 2026-10-31 after the table moved there from this README). Not run: the PowerShell forms (no `pwsh` on the measurement host).
+    - They added the validation section, the router's skill count (101 to 102), a documentation index, the steps for a new skill, the Linux and macOS font-folder setup and twelve documentation follow-ups.
+    - Re-run: the portability gate resolves every link in the files changed, and the [skill catalogue](docs/skill-catalogue.md) listed exactly the 102 skills on disk on 2026-10-31. Not run: the PowerShell forms.
 
 The evidence behind both lists:
 

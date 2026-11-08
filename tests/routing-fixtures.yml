@@ -313,3 +313,12 @@
   negatives:
     - prompt: Design the transfer review and confirm screens so a wrong recipient cannot slip through.
       owner: fintech-and-financial-product-ui
+- prompt: Build the POS checkout screen for Maduuka so it meets the Chwezi standard on a low-end Android phone.
+  expected: chwezi-product-excellence-standard
+  negatives:
+    - prompt: Give our new school-fees admin app the Chwezi look with soft cards, one amber next-step button and colourful hub icons.
+      owner: chwezi-business-app-house-style
+    - prompt: Run the final design QA on this marketing landing page before it goes live.
+      owner: design-qa-and-pre-launch-review
+- prompt: Review this app dashboard against the Chwezi standard and tell me whether the release is PASS, CONDITIONAL or BLOCKED.
+  expected: chwezi-product-excellence-standard

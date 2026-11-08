@@ -59,7 +59,8 @@ including what was rejected, is in `docs/kaizen/2026-11-app-house-style/README.m
    [references/style-roles-and-tokens.md](references/style-roles-and-tokens.md). Only the brand
    primary changes per app. Measure its contrast with white text and on the tinted ground; stop if
    either is under 4.5:1 and darken the primary until both pass. Derive the ground and the primary
-   container from the primary's hue.
+   container from the primary's hue. Status uses the five semantic roles (`success`, `warning`,
+   `danger`, `info`, `neutral`), which no brand may restyle.
 3. **Fix type.** Use the body face and figure face from the role table, or another pair that
    passes `01-typography-and-fonts/ai-slop-typography-audit`. State the pair and the reason before
    building. Money uses tabular figures everywhere, including amounts inside sentences.
@@ -67,7 +68,7 @@ including what was rejected, is in `docs/kaizen/2026-11-app-house-style/README.m
    role table. Cards use the large radius, a hairline border and no shadow, on the tinted ground.
 5. **Build from the component catalogue.** Use
    [references/component-catalogue.md](references/component-catalogue.md): context strip, hub menu
-   card, KPI tile, hero summary card, soft section card, insight line, highlight tile, rank badge,
+   card, KPI tile (`KpiCard` in code), hero summary card, soft section card, insight line, highlight tile, rank badge,
    period navigator, button hierarchy, bottom navigation. Do not invent a second version of a
    component that the catalogue already names.
 6. **Place the accent.** Find the one next step on each screen (Charge, Pay, Save, Send to
@@ -148,6 +149,7 @@ including what was rejected, is in `docs/kaizen/2026-11-app-house-style/README.m
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (governing product-quality layer above this visual layer: behaviour, states, data trust, 13 hard release gates; it records the owner decisions taken into this skill on 2026-11-08).
 - [references/style-roles-and-tokens.md](references/style-roles-and-tokens.md)
 - [references/component-catalogue.md](references/component-catalogue.md)
 - [references/guardrail-tests.md](references/guardrail-tests.md)

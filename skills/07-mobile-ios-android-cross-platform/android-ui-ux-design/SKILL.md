@@ -106,6 +106,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for every Chwezi Android app: targetSdk 36 edge-to-edge, predictive back, low-end device budgets and the 13 hard release gates).
 - `09-design-systems-tokens-and-theming/chwezi-business-app-house-style` — the house colour roles, type pair, components and guardrail tests for Chwezi business apps on Android.
 - `references/material-3-expressive.md` — the current Android visual standard: Material 3 Expressive levers, the M3 role-based colour system, dynamic colour (Material You) vs fixed brand seed, type-scale roles, predictive back, and adaptive layout.
 - `references/android-motion.md` — Android motion: spring/motion-scheme tokens, predictive-back gesture motion, signature moments (container transform, shape morph, shared element), and the reduced-motion path.

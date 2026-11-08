@@ -99,6 +99,7 @@ visual novelty; high-risk workflows require qualified domain review before relea
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Medic8 and any Chwezi clinical screen: clinical profile rules, critical results never hidden, human clinical sign-off (PX-GATE-12)).
 - `doctrine/design-doctrine.md` — the anti-slop charter; clinical UIs must still read as deliberately designed, not templated.
 - `doctrine/references/ai-slop-banned-fonts.md`, `doctrine/references/pairing-principles.md`, `doctrine/references/type-scale-and-spacing.md` — typography, pairing, and scale rules for the colour/typography choices below.
 - `doctrine/references/system-font-fallbacks.md` — the deliberate device-common fallback tier (relevant to the OS-native font note in Mobile Typography).

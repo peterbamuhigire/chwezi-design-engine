@@ -31,9 +31,9 @@ No hotel, restaurant or pharmacy block: the shop runs none of those modules.
 
 ## Screen-reader text
 
-- Hero: "Sales this month, 48,620,000.00".
-- Profit: "Profit, 8,750,000.00. You kept 21% of what came in."
-- Top customers row 1: "First, Ssekandi Builders, 6,400,000.00".
+- Hero: "Sales this month, 48,620,000 Uganda shillings".
+- Profit: "Profit, 8,750,000 Uganda shillings. You kept 21% of what came in."
+- Top customers row 1: "First, Ssekandi Builders, 6,400,000 Uganda shillings".
 
 ## Checks
 

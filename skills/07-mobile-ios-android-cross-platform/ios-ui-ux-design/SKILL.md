@@ -103,6 +103,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for every Chwezi iOS app: Dynamic Type to 200%, VoiceOver pass on core tasks and the 13 hard release gates).
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter governing typography, colour, and visual identity.
 - `doctrine/references/ai-slop-banned-fonts.md` and `doctrine/references/type-scale-and-spacing.md` for type choices, scale, and spacing.
   - Mobile-platform font caveat: iOS's **San Francisco / SF Pro** is the Apple system face — a platform-native default, allowed (and correct) for native iOS UI; it is not a Chwezi-chosen primary and carries no slop penalty. A deliberate branded display face should still come from the approved font categories (`doctrine/references/font-groups-and-usage.md`) and avoid the banned list.

@@ -151,6 +151,7 @@ Without trusted metrics, deliver a wireframe and metric dependency register, not
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Chwezi app dashboards: provenance and as-of time on decision figures, KpiCard contract, no decorative charts on transaction screens).
 - `12-data-viz-and-dashboards/money-figures-and-statement-display` and `09-design-systems-tokens-and-theming/chwezi-business-app-house-style` — KPI tile, hero card and compact-amount rules for Chwezi business apps.
 - `doctrine/design-doctrine.md` — Mission (looks human-made / authored) and the Anti-Slop
   Charter; a dashboard must be a *designed decision surface*, never a default widget dump.

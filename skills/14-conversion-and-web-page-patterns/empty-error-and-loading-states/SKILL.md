@@ -161,6 +161,7 @@ Without failure and latency semantics, deliver a state matrix and stop before pr
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (for Chwezi apps, the 13-state canonical set (including offline, queued, conflict and session expired) is binding and a missing state is PX-GATE-10).
 - `doctrine/design-doctrine.md` — the Mission and the Anti-Slop Charter; states must look
   authored, never a defaulted spinner-and-sad-icon.
 - `doctrine/references/web-performance-budgets-2026.md` — **skeletons over spinners**, perceived

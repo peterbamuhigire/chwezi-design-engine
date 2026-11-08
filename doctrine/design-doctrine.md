@@ -100,6 +100,7 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | Path | What it holds |
 |---|---|
 | `doctrine/design-doctrine.md` | This charter — the always-load entry point. |
+| `doctrine/product-excellence-standard.md` | **Binding for every Chwezi app and system** (Android, iOS, tablet, desktop, web), effective 01 November 2026: the Chwezi Product Excellence Standard — scope, precedence, 13 hard release gates, scorecard verdict, owner defaults. Route through `skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/`; the house style is its visual layer. |
 | `doctrine/references/` | The canonical rules: the AI-slop taxonomy, banned font list, font categories, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
 | `doctrine/examples/` | Worked examples (good pairings, a slop-audit before/after). |
 | `skills/00-cross-cutting-ops-qa-a11y/` | **Co-activates with every group.** Accessibility (WCAG 2.2), design QA/critique, the visual audits, ethics, performance-as-UX — consult IN ADDITION, never skip. |

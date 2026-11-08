@@ -23,7 +23,7 @@ type and the shared cards.
 <!-- dual-compat-start -->
 ## Use When
 
-- Deciding whether an amount shows in full ("32,450,000.00") or compact ("32.45M").
+- Deciding whether an amount shows in full ("32,450,000" in UGX) or compact ("32.45M").
 - Laying out a customer or supplier statement, a trial balance, a profit or loss, a financial
   position or a cash-flow summary on a phone or a narrow web column.
 - Designing a monthly, daily or shift summary for an owner: hero figure, money in and out, best
@@ -46,7 +46,7 @@ type and the shared cards.
 | Input | Source | Required? | Why |
 |---|---|---|---|
 | The figures and their meaning (sales, receipts, balance, debit, credit) | Finance engine, API contract | yes | A label must say what the amount is |
-| Currency handling (one currency, symbol policy, decimals) | Product owner | yes | Multi-currency apps show no symbol; decimals are fixed |
+| Currency handling (one currency, symbol policy, decimals) | Product owner | yes | Multi-currency apps show no symbol; full-amount decimals follow the ISO 4217 minor unit |
 | Which amounts are legally or contractually exact (closing balances, invoice totals) | Owner, finance | yes | Those never abbreviate |
 | Screen widths and text sizes to support | Product scope | yes | Decides compact columns and wrapping |
 | Plain or formal wording preference | Owner | default plain | Formal statement words become a per-device setting |
@@ -68,7 +68,7 @@ type and the shared cards.
 6. **Check the arithmetic shown.** Percentages never round a non-zero value to 0% ("less than 1%");
    totals shown compact still equal the sum in full; a negative uses one convention per screen.
 7. **Name the period once.** The navigator or top bar names it; cards show the range.
-8. **Give screen readers the full amount** and the label in one phrase ("Profit, 24,260,000.00").
+8. **Give screen readers the full amount** and the label in one phrase ("Profit, 24,260,000 Uganda shillings").
 9. **Prove it** at 360 dp and 200% text with the largest real figure (a billion-scale balance) and
    a zero, a negative and a single-digit value. Missing captures stay `NOT_ASSESSED`.
 
@@ -76,7 +76,7 @@ type and the shared cards.
 
 | Condition | Action | Wrong-choice failure |
 |---|---|---|
-| Amount is a closing balance, invoice total, payment input or document line | Full amount, grouped, two decimals | A compact closing balance hides the exact debt and invites disputes |
+| Amount is a closing balance, invoice total, payment input or document line | Full amount, grouped, decimals from the ISO 4217 minor unit (UGX and RWF 0, KES and USD 2) | A compact closing balance hides the exact debt and invites disputes |
 | Amount is in a tile, list row, summary or a column beside another amount | Compact K/M/B with two decimals | Full figures wrap or truncate at 12 sp on a phone |
 | Value below 1,000 | Whole number, no unit | "0.85K" reads as an error |
 | Share is non-zero but rounds to 0% | Write "less than 1%" | "You kept 0%" beside a positive profit contradicts itself |
@@ -103,7 +103,7 @@ type and the shared cards.
 
 ## Anti-Patterns
 
-- **Bare figures.** "144,000.00" with no word. Correction: "Owes 144,000.00".
+- **Bare figures.** "144,000" with no word. Correction: "Owes 144,000".
 - **Colour-only money.** A red number with no "Due" or minus sign. Correction: word or sign plus
   colour.
 - **Proportional digits.** Amounts that do not line up. Correction: tabular figures, right aligned.
@@ -129,6 +129,7 @@ type and the shared cards.
 
 ## References
 
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Chwezi apps; full amounts take their decimals from the ISO 4217 minor unit (UGX and RWF 0), and a wrong minor unit is hard gate PX-GATE-03).
 - [references/compact-amount-ladder.md](references/compact-amount-ladder.md)
 - [references/statement-and-summary-layouts.md](references/statement-and-summary-layouts.md)
 - `docs/kaizen/2026-11-app-house-style/README.md`

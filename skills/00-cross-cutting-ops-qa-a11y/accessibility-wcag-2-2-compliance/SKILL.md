@@ -193,6 +193,7 @@ claim that the experience passes the full gate.
   9 new 2.2 criteria. Use it as the template for any audit.
 
 ## References
+- [chwezi-product-excellence-standard](../chwezi-product-excellence-standard/SKILL.md) (for Chwezi apps, any applicable WCAG 2.2 AA failure is hard gate PX-GATE-06 and 200% text loss is PX-GATE-07).
 - [`doctrine/design-doctrine.md`](../../../doctrine/design-doctrine.md) — the cross-cutting
   charter; §3 places this skill in `00-cross-cutting-ops-qa-a11y` (co-activates with every group).
 - [`doctrine/references/wcag-2.2-criteria.md`](../../../doctrine/references/wcag-2.2-criteria.md)

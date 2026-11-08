@@ -1,0 +1,390 @@
+# Chwezi Product Excellence Standard - machine-readable policy.
+# Parent skill: ../SKILL.md. Binding text: doctrine/product-excellence-standard.md.
+# The rules list is generated from references/rules-catalogue.md; the two must agree (PX-AGENT-011).
+policy:
+  id: chwezi-product-excellence-standard
+  version: "1.0.0"
+  effective_date: "2026-11-01"
+  valid_until: "until further communication"
+  adopted_by: "Lead Developer Peter Bamuhigire and the Chwezi Core Systems design team"
+  authority: doctrine/product-excellence-standard.md
+  rules_catalogue: skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/references/rules-catalogue.md
+  scope: "Every Chwezi app and system: Android, iOS, tablet, desktop and web. Existing web stacks keep their stack."
+  certification: false
+
+levels:
+  MUST: "Required; observable and binary; no departure. Failure blocks release when the rule maps to a hard gate; otherwise it is a scored finding with an owner and a date."
+  SHOULD: "Default; departure requires a DDR."
+  MAY: "Optional; no record needed."
+
+precedence:
+  - law_safety_privacy
+  - accessibility
+  - data_integrity
+  - product_excellence_standard
+  - house_style_visual_layer
+  - product_brand
+
+evidence_states:
+  facts: [VERIFIED, CHANGED, NOT_ASSESSED]
+  release_evidence: [MEASURED, HEURISTIC, NOT_ASSESSED]
+  gate_closure_requires: MEASURED
+
+evidence_types:
+  SHOT: "Screenshot set with stated widths, themes, text scale and locale"
+  UIT: "Automated UI, unit or integration test result"
+  TRACE: "Trace or benchmark from the declared baseline device"
+  AT: "Assistive-technology or keyboard run log"
+  LINT: "Guardrail, static or dependency check output"
+  CONTRACT: "Screen or component contract file"
+  REVIEW: "Recorded checklist review with reviewer name"
+  RECON: "Reconciliation report against ledger or report"
+  NET: "Network or analytics capture"
+  STUDY: "Usability study or timed task log"
+  FIELD: "Field test report in the real environment"
+  PROFILE: "Device, locale or configuration profile file"
+  DDR: "Design decision record"
+  SIGN: "Signed review or release record"
+
+required_screen_states:
+  na_requires_reason: true
+  states:
+  - {id: initial_loading, na_allowed: false, treatment: "Static skeleton in final geometry; no looping shimmer; announced once"}
+  - {id: content, na_allowed: false, treatment: "Baseline populated state"}
+  - {id: refreshing, na_allowed: true, treatment: "Current content kept; progress in header; never blanks"}
+  - {id: empty, na_allowed: true, treatment: "Names the cause, what belongs here, one next action"}
+  - {id: filtered_empty, na_allowed: true, treatment: "Shows active filter, clear action and 0 of N"}
+  - {id: error, na_allowed: false, treatment: "What happened, what is safe, what next; retry"}
+  - {id: offline_cached, na_allowed: true, treatment: "Cached data labelled with last sync time; mutation rule stated"}
+  - {id: queued_change, na_allowed: true, treatment: "Marked pending; never styled as confirmed"}
+  - {id: syncing, na_allowed: true, treatment: "Progress with count; user keeps working"}
+  - {id: conflict, na_allowed: true, treatment: "Both versions with actor and time; authorised choice; nothing silently dropped"}
+  - {id: permission_restricted, na_allowed: true, treatment: "Explains restriction and who can grant it; masked values say Restricted"}
+  - {id: session_expired, na_allowed: true, treatment: "Re-authentication keeps the draft and returns to the same place"}
+  - {id: success, na_allowed: false, treatment: "States exactly what was saved, queued or completed and the next step"}
+
+hard_fail_gates:
+  - {id: PX-GATE-01, title: Duplicates, test: "Double tap, timeout-retry and offline replay create exactly one record"}
+  - {id: PX-GATE-02, title: False confirmation, test: "No saved, paid, sent or live before confirmation; queued never confirmed; stale never live"}
+  - {id: PX-GATE-03, title: Numbers do not reconcile, test: "Money, stock, tax and clinical values reconcile; currency minor unit correct"}
+  - {id: PX-GATE-04, title: Interface-only authorisation, test: "Low-role API calls to restricted actions are denied"}
+  - {id: PX-GATE-05, title: Sensitive data exposed, test: "Role matrix, recents, screenshot and analytics checks show no exposure"}
+  - {id: PX-GATE-06, title: Accessibility failure, test: "Zero applicable WCAG 2.2 AA failures; core tasks done with screen reader and keyboard"}
+  - {id: PX-GATE-07, title: Large-text loss, test: "No primary action or essential value lost at 200% text"}
+  - {id: PX-GATE-08, title: Work lost or blocked, test: "Kill, rotate, back, offline and non-core outages lose nothing and block nothing"}
+  - {id: PX-GATE-09, title: Invented or fabricated content, test: "No fixtures in production; every field and destination traces to a requirement"}
+  - {id: PX-GATE-10, title: Missing state, test: "Every canonical state evidenced or declared N/A with a reason"}
+  - {id: PX-GATE-11, title: Device budget broken, test: "Baseline-device traces within budget; vitals below bad-behaviour thresholds"}
+  - {id: PX-GATE-12, title: Unverified release, test: "Independent verifier and, for financial or clinical change, a human domain reviewer"}
+  - {id: PX-GATE-13, title: Document numbering broken, applies_when: "screen issues numbered documents", test: "Numbers contiguous per tenant and type, allocated at issue from a locked counter, stable on replay, provisional offline, voided never deleted"}
+
+scorecard:
+  scale: {min: 0, max: 4, scaled_to: 100}
+  rubric:
+    4: "All checks MEASURED and within target"
+    3: "All checks MEASURED; minor misses with owned fixes; no gate affected"
+    2: "Some checks HEURISTIC only, or measured misses on non-critical items"
+    1: "Major gaps; several checks NOT_ASSESSED"
+    0: "Critical failure or no evidence"
+  dimensions:
+    - {id: task_usability_speed, weight: 25}
+    - {id: reliability_recovery, weight: 20}
+    - {id: visual_interaction_craft, weight: 15}
+    - {id: accessibility_inclusion, weight: 15}
+    - {id: performance_efficiency, weight: 15}
+    - {id: security_data_trust, weight: 10}
+  thresholds: {pass: 85, conditional_min: 70, pass_min_dimension_score: 2, dimension_score_capping_at_conditional: 1, dimension_score_blocking: 0}
+  unmeasured_applicable_gate_counts_as_open: true
+  verdicts:
+    PASS: "score >= 85 and zero open gates and no dimension below 2"
+    CONDITIONAL: "zero open gates, no dimension at 0, score 70-84 or any dimension at 1 (a 1 caps at CONDITIONAL); every shortfall owned and dated; written acceptance by product owner and Lead Developer; pilot only"
+    BLOCKED: "any open gate (applicable gate NOT_ASSESSED counts as open), any dimension at 0, score < 70, or CONDITIONAL case lacking owner, date or written acceptance"
+  conditional_acceptance_by: [product_owner, lead_developer]
+  high_score_offsets_gate: false
+
+owner_defaults:
+  recorded: "owner default, 2026-11-07"
+  languages: [English, Luganda, Swahili, French, Arabic, Kinyarwanda, Spanish]
+  rtl_test_language: Arabic
+  test_longest_language: true
+  idle_lock_minutes: {shared_pos: 2, clinical: 5, back_office: 15, level: SHOULD, tenant_configurable: true}
+  accent_model: "per-product brand primary plus one shared amber next-step accent; extra colours need a DDR"
+  semantic_roles: [success, warning, danger, info, neutral]
+  card_radius_source: house_style
+  kpi_component_name: KpiCard
+  fiscal_e_invoicing_label: "fiscal e-invoicing (e.g. URA EFRIS)"
+  stale_after_minutes_operational: 15
+
+currency_minor_units:
+  source: "ISO 4217 List One, published 2026-09-17 (currentness CR:C1)"
+  UGX: 0
+  RWF: 0
+  KES: 2
+  TZS: 2
+  USD: 2
+  overrides_money_figures_two_decimal_rule: true
+
+platform_baselines:
+  android:
+    play_target_api: 36
+    edge_to_edge_opt_out: false
+    predictive_back_default: true
+    orientation_lock_ignored_min_smallest_width_dp: 600
+    touch_target_dp: 48
+    glove_touch_target_dp: 56
+    vitals: {crash_rate_overall_pct: 1.09, anr_rate_overall_pct: 0.47, per_model_pct: 8, window_days: 28}
+    startup_excessive_s: {cold: 5, warm: 2}
+    chwezi_hot_start_target_s: 1
+  ios:
+    touch_target_pt: 44
+    text_scale_min_pct: 200
+  web:
+    target_floor_css_px: 24
+    touch_primary_target_css_px: 44
+    core_web_vitals_good_p75: {lcp_s: 2.5, inp_ms: 200, cls: 0.1}
+  window_width_classes_dp: {compact: [0, 599], medium: [600, 839], expanded: [840, 1199], large: [1200, 1599], extra_large: [1600, null]}
+  window_height_classes_dp: {compact: [0, 479], medium: [480, 899], expanded: [900, null]}
+  text_scale_test_pct: 200
+  wcag: "2.2 AA"
+  reduced_motion: "Chwezi house MUST (WCAG 2.3.3 is AAA)"
+  currentness_access_date: "2026-11-07"
+
+rules:
+  - {id: PX-MANDATE-001, area: MANDATE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-002, area: MANDATE, level: MUST, gate: null, evidence: [DDR]}
+  - {id: PX-MANDATE-003, area: MANDATE, level: MUST, gate: null, evidence: [DDR]}
+  - {id: PX-MANDATE-004, area: MANDATE, level: MUST, gate: PX-GATE-09, evidence: [CONTRACT]}
+  - {id: PX-MANDATE-005, area: MANDATE, level: MUST, gate: null, evidence: [PROFILE, REVIEW]}
+  - {id: PX-MANDATE-006, area: MANDATE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-007, area: MANDATE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-008, area: MANDATE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-009, area: MANDATE, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-010, area: MANDATE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-011, area: MANDATE, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-MANDATE-012, area: MANDATE, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-MANDATE-013, area: MANDATE, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-TOKEN-001, area: TOKEN, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-TOKEN-002, area: TOKEN, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-TOKEN-003, area: TOKEN, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-TOKEN-004, area: TOKEN, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-TOKEN-005, area: TOKEN, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-TOKEN-006, area: TOKEN, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-TOKEN-007, area: TOKEN, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-TOKEN-008, area: TOKEN, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-TOKEN-009, area: TOKEN, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-TYPE-001, area: TYPE, level: SHOULD, gate: null, evidence: [LINT]}
+  - {id: PX-TYPE-002, area: TYPE, level: MUST, gate: PX-GATE-07, evidence: [SHOT]}
+  - {id: PX-TYPE-003, area: TYPE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-TYPE-004, area: TYPE, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-TYPE-005, area: TYPE, level: MUST, gate: PX-GATE-07, evidence: [SHOT]}
+  - {id: PX-TYPE-006, area: TYPE, level: SHOULD, gate: null, evidence: [AT]}
+  - {id: PX-TYPE-007, area: TYPE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-TYPE-008, area: TYPE, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-GEOM-001, area: GEOM, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-GEOM-002, area: GEOM, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-GEOM-003, area: GEOM, level: SHOULD, gate: null, evidence: [LINT]}
+  - {id: PX-GEOM-004, area: GEOM, level: SHOULD, gate: null, evidence: [LINT, SHOT]}
+  - {id: PX-GEOM-005, area: GEOM, level: MUST, gate: PX-GATE-06, evidence: [UIT, REVIEW]}
+  - {id: PX-GEOM-006, area: GEOM, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-GEOM-007, area: GEOM, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-GEOM-008, area: GEOM, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-GEOM-009, area: GEOM, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-COLOUR-001, area: COLOUR, level: MUST, gate: PX-GATE-06, evidence: [REVIEW]}
+  - {id: PX-COLOUR-002, area: COLOUR, level: MUST, gate: PX-GATE-06, evidence: [SHOT, AT]}
+  - {id: PX-COLOUR-003, area: COLOUR, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-COLOUR-004, area: COLOUR, level: MUST, gate: null, evidence: [LINT, SHOT]}
+  - {id: PX-COLOUR-005, area: COLOUR, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-COLOUR-006, area: COLOUR, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-COLOUR-007, area: COLOUR, level: MUST, gate: null, evidence: [FIELD]}
+  - {id: PX-COLOUR-008, area: COLOUR, level: SHOULD, gate: null, evidence: [SHOT]}
+  - {id: PX-COLOUR-009, area: COLOUR, level: MUST, gate: null, evidence: [DDR]}
+  - {id: PX-COLOUR-010, area: COLOUR, level: SHOULD, gate: null, evidence: [SHOT]}
+  - {id: PX-NAV-001, area: NAV, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-NAV-002, area: NAV, level: MUST, gate: PX-GATE-08, evidence: [UIT]}
+  - {id: PX-NAV-003, area: NAV, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-NAV-004, area: NAV, level: MUST, gate: PX-GATE-09, evidence: [CONTRACT]}
+  - {id: PX-NAV-005, area: NAV, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-NAV-006, area: NAV, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-NAV-007, area: NAV, level: SHOULD, gate: null, evidence: [SHOT]}
+  - {id: PX-NAV-008, area: NAV, level: MUST, gate: null, evidence: [UIT, REVIEW]}
+  - {id: PX-INTERACT-001, area: INTERACT, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-INTERACT-002, area: INTERACT, level: MUST, gate: PX-GATE-01, evidence: [UIT]}
+  - {id: PX-INTERACT-003, area: INTERACT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-INTERACT-004, area: INTERACT, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-INTERACT-005, area: INTERACT, level: MUST, gate: null, evidence: [STUDY, UIT]}
+  - {id: PX-INTERACT-006, area: INTERACT, level: MUST, gate: PX-GATE-08, evidence: [UIT]}
+  - {id: PX-INTERACT-007, area: INTERACT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-INTERACT-008, area: INTERACT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-INTERACT-009, area: INTERACT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-INTERACT-010, area: INTERACT, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-INTERACT-011, area: INTERACT, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-INTERACT-012, area: INTERACT, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-INTERACT-013, area: INTERACT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-INTERACT-014, area: INTERACT, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-INTERACT-015, area: INTERACT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-INTERACT-016, area: INTERACT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-INTERACT-017, area: INTERACT, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-INTERACT-018, area: INTERACT, level: MUST, gate: null, evidence: [FIELD]}
+  - {id: PX-MOTION-001, area: MOTION, level: SHOULD, gate: null, evidence: [TRACE]}
+  - {id: PX-MOTION-002, area: MOTION, level: MUST, gate: null, evidence: [SHOT, UIT]}
+  - {id: PX-MOTION-003, area: MOTION, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-MOTION-004, area: MOTION, level: MUST, gate: null, evidence: [REVIEW, TRACE]}
+  - {id: PX-MOTION-005, area: MOTION, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-FORM-001, area: FORM, level: MUST, gate: PX-GATE-06, evidence: [SHOT]}
+  - {id: PX-FORM-002, area: FORM, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-FORM-003, area: FORM, level: MUST, gate: PX-GATE-06, evidence: [UIT, AT]}
+  - {id: PX-FORM-004, area: FORM, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-FORM-005, area: FORM, level: SHOULD, gate: null, evidence: [SHOT]}
+  - {id: PX-FORM-006, area: FORM, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-DESTRUCT-001, area: DESTRUCT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-DESTRUCT-002, area: DESTRUCT, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-DESTRUCT-003, area: DESTRUCT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-LAYOUT-001, area: LAYOUT, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-LAYOUT-002, area: LAYOUT, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-LAYOUT-003, area: LAYOUT, level: SHOULD, gate: null, evidence: [UIT]}
+  - {id: PX-LAYOUT-004, area: LAYOUT, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-LAYOUT-005, area: LAYOUT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-LAYOUT-006, area: LAYOUT, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-LAYOUT-007, area: LAYOUT, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-LAYOUT-008, area: LAYOUT, level: SHOULD, gate: null, evidence: [SHOT]}
+  - {id: PX-ARCH-001, area: ARCH, level: SHOULD, gate: null, evidence: [LINT]}
+  - {id: PX-ARCH-002, area: ARCH, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-ARCH-003, area: ARCH, level: SHOULD, gate: null, evidence: [LINT]}
+  - {id: PX-ARCH-004, area: ARCH, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-ARCH-005, area: ARCH, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-ARCH-006, area: ARCH, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-ARCH-007, area: ARCH, level: MUST, gate: null, evidence: [DDR]}
+  - {id: PX-ARCH-008, area: ARCH, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-ARCH-009, area: ARCH, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-ARCH-010, area: ARCH, level: MUST, gate: null, evidence: [LINT, DDR]}
+  - {id: PX-ARCH-011, area: ARCH, level: SHOULD, gate: null, evidence: [LINT, DDR]}
+  - {id: PX-STATE-001, area: STATE, level: MUST, gate: PX-GATE-10, evidence: [CONTRACT, SHOT]}
+  - {id: PX-STATE-002, area: STATE, level: MUST, gate: PX-GATE-02, evidence: [REVIEW, UIT]}
+  - {id: PX-STATE-003, area: STATE, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-STATE-004, area: STATE, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-STATE-005, area: STATE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-STATE-006, area: STATE, level: MUST, gate: PX-GATE-08, evidence: [UIT]}
+  - {id: PX-STATE-007, area: STATE, level: SHOULD, gate: null, evidence: [UIT]}
+  - {id: PX-PERF-001, area: PERF, level: MUST, gate: PX-GATE-11, evidence: [PROFILE]}
+  - {id: PX-PERF-002, area: PERF, level: MUST, gate: PX-GATE-11, evidence: [TRACE]}
+  - {id: PX-PERF-003, area: PERF, level: MUST, gate: PX-GATE-11, evidence: [TRACE]}
+  - {id: PX-PERF-004, area: PERF, level: MUST, gate: null, evidence: [TRACE, LINT]}
+  - {id: PX-PERF-005, area: PERF, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-006, area: PERF, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-007, area: PERF, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-008, area: PERF, level: MUST, gate: PX-GATE-08, evidence: [UIT]}
+  - {id: PX-PERF-009, area: PERF, level: SHOULD, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-010, area: PERF, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-PERF-011, area: PERF, level: MUST, gate: null, evidence: [NET]}
+  - {id: PX-PERF-012, area: PERF, level: SHOULD, gate: null, evidence: [PROFILE, UIT]}
+  - {id: PX-PERF-013, area: PERF, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-014, area: PERF, level: SHOULD, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-015, area: PERF, level: MUST, gate: PX-GATE-11, evidence: [TRACE]}
+  - {id: PX-PERF-016, area: PERF, level: SHOULD, gate: null, evidence: [TRACE]}
+  - {id: PX-PERF-017, area: PERF, level: MUST, gate: PX-GATE-11, evidence: [TRACE]}
+  - {id: PX-PERF-018, area: PERF, level: SHOULD, gate: null, evidence: [TRACE]}
+  - {id: PX-OFFLINE-001, area: OFFLINE, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-OFFLINE-002, area: OFFLINE, level: MUST, gate: PX-GATE-01, evidence: [UIT]}
+  - {id: PX-OFFLINE-003, area: OFFLINE, level: MUST, gate: PX-GATE-02, evidence: [UIT]}
+  - {id: PX-OFFLINE-004, area: OFFLINE, level: MUST, gate: PX-GATE-02, evidence: [SHOT]}
+  - {id: PX-OFFLINE-005, area: OFFLINE, level: MUST, gate: PX-GATE-08, evidence: [UIT]}
+  - {id: PX-A11Y-001, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [UIT]}
+  - {id: PX-A11Y-002, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [AT]}
+  - {id: PX-A11Y-003, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [AT]}
+  - {id: PX-A11Y-004, area: A11Y, level: SHOULD, gate: null, evidence: [AT]}
+  - {id: PX-A11Y-005, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [AT]}
+  - {id: PX-A11Y-006, area: A11Y, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-A11Y-007, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [AT]}
+  - {id: PX-A11Y-008, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [REVIEW]}
+  - {id: PX-A11Y-009, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [UIT]}
+  - {id: PX-A11Y-010, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [REVIEW]}
+  - {id: PX-A11Y-011, area: A11Y, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-A11Y-012, area: A11Y, level: MUST, gate: PX-GATE-06, evidence: [AT]}
+  - {id: PX-A11Y-013, area: A11Y, level: MUST, gate: null, evidence: [AT, SHOT]}
+  - {id: PX-PRIV-001, area: PRIV, level: MUST, gate: PX-GATE-04, evidence: [UIT]}
+  - {id: PX-PRIV-002, area: PRIV, level: MUST, gate: PX-GATE-05, evidence: [UIT]}
+  - {id: PX-PRIV-003, area: PRIV, level: MUST, gate: PX-GATE-05, evidence: [UIT]}
+  - {id: PX-PRIV-004, area: PRIV, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-PRIV-005, area: PRIV, level: MUST, gate: null, evidence: [NET]}
+  - {id: PX-PRIV-006, area: PRIV, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-PRIV-007, area: PRIV, level: MUST, gate: PX-GATE-05, evidence: [SHOT]}
+  - {id: PX-PRIV-008, area: PRIV, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-PRIV-009, area: PRIV, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-PRIV-010, area: PRIV, level: MUST, gate: PX-GATE-05, evidence: [NET, REVIEW]}
+  - {id: PX-PRIV-011, area: PRIV, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-L10N-001, area: L10N, level: MUST, gate: PX-GATE-03, evidence: [UIT]}
+  - {id: PX-L10N-002, area: L10N, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-L10N-003, area: L10N, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-L10N-004, area: L10N, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-L10N-005, area: L10N, level: MUST, gate: null, evidence: [SHOT, PROFILE]}
+  - {id: PX-L10N-006, area: L10N, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-L10N-007, area: L10N, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-L10N-008, area: L10N, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-L10N-009, area: L10N, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-L10N-010, area: L10N, level: MUST, gate: null, evidence: [SHOT]}
+  - {id: PX-DATA-001, area: DATA, level: MUST, gate: PX-GATE-09, evidence: [LINT]}
+  - {id: PX-DATA-002, area: DATA, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-DATA-003, area: DATA, level: MUST, gate: PX-GATE-03, evidence: [REVIEW]}
+  - {id: PX-DATA-004, area: DATA, level: MUST, gate: PX-GATE-03, evidence: [RECON]}
+  - {id: PX-DATA-005, area: DATA, level: MUST, gate: PX-GATE-03, evidence: [REVIEW]}
+  - {id: PX-DATA-006, area: DATA, level: MUST, gate: PX-GATE-09, evidence: [SIGN]}
+  - {id: PX-DATA-007, area: DATA, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-DATA-008, area: DATA, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-DATA-009, area: DATA, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-DATA-010, area: DATA, level: MUST, gate: PX-GATE-02, evidence: [UIT]}
+  - {id: PX-DATA-011, area: DATA, level: MUST, gate: PX-GATE-03, evidence: [UIT]}
+  - {id: PX-DATA-012, area: DATA, level: MUST, gate: PX-GATE-03, evidence: [RECON]}
+  - {id: PX-DATA-013, area: DATA, level: MUST, gate: PX-GATE-13, evidence: [UIT]}
+  - {id: PX-VIZ-001, area: VIZ, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-VIZ-002, area: VIZ, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-VIZ-003, area: VIZ, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-VIZ-004, area: VIZ, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-VIZ-005, area: VIZ, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-TABLE-001, area: TABLE, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-TABLE-002, area: TABLE, level: MUST, gate: null, evidence: [SHOT, UIT]}
+  - {id: PX-PRINT-001, area: PRINT, level: MUST, gate: null, evidence: [FIELD, UIT]}
+  - {id: PX-NOTIFY-001, area: NOTIFY, level: MUST, gate: null, evidence: [REVIEW, UIT]}
+  - {id: PX-NOTIFY-002, area: NOTIFY, level: SHOULD, gate: null, evidence: [UIT]}
+  - {id: PX-PROFILE-001, area: PROFILE, level: MUST, gate: null, evidence: [STUDY, REVIEW]}
+  - {id: PX-PROFILE-002, area: PROFILE, level: MUST, gate: PX-GATE-02, evidence: [UIT]}
+  - {id: PX-PROFILE-003, area: PROFILE, level: MUST, gate: null, evidence: [UIT, REVIEW]}
+  - {id: PX-PROFILE-004, area: PROFILE, level: MUST, gate: PX-GATE-09, evidence: [SIGN]}
+  - {id: PX-PROFILE-005, area: PROFILE, level: MUST, gate: null, evidence: [FIELD]}
+  - {id: PX-PROFILE-006, area: PROFILE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-PROFILE-007, area: PROFILE, level: MUST, gate: null, evidence: [FIELD, UIT]}
+  - {id: PX-PROFILE-008, area: PROFILE, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-QA-001, area: QA, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-QA-002, area: QA, level: MUST, gate: null, evidence: [SHOT, UIT]}
+  - {id: PX-QA-003, area: QA, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-QA-004, area: QA, level: MUST, gate: PX-GATE-12, evidence: [REVIEW]}
+  - {id: PX-QA-005, area: QA, level: MUST, gate: null, evidence: [DDR]}
+  - {id: PX-QA-006, area: QA, level: MUST, gate: PX-GATE-12, evidence: [SIGN]}
+  - {id: PX-QA-007, area: QA, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-QA-008, area: QA, level: MUST, gate: null, evidence: [SIGN]}
+  - {id: PX-QA-009, area: QA, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-QA-010, area: QA, level: SHOULD, gate: null, evidence: [STUDY]}
+  - {id: PX-QA-011, area: QA, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-QA-012, area: QA, level: MUST, gate: PX-GATE-12, evidence: [REVIEW]}
+  - {id: PX-QA-013, area: QA, level: SHOULD, gate: null, evidence: [FIELD]}
+  - {id: PX-AGENT-001, area: AGENT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-AGENT-002, area: AGENT, level: MUST, gate: null, evidence: [SHOT, TRACE]}
+  - {id: PX-AGENT-003, area: AGENT, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-AGENT-004, area: AGENT, level: MUST, gate: null, evidence: [CONTRACT]}
+  - {id: PX-AGENT-005, area: AGENT, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-AGENT-006, area: AGENT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-AGENT-007, area: AGENT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-AGENT-008, area: AGENT, level: MUST, gate: null, evidence: [UIT]}
+  - {id: PX-AGENT-009, area: AGENT, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-AGENT-010, area: AGENT, level: SHOULD, gate: null, evidence: [REVIEW]}
+  - {id: PX-AGENT-011, area: AGENT, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-SCORE-001, area: SCORE, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-SCORE-002, area: SCORE, level: MUST, gate: null, evidence: [SIGN]}
+  - {id: PX-SCORE-003, area: SCORE, level: SHOULD, gate: null, evidence: [TRACE, STUDY]}
+  - {id: PX-BLACKLIST-001, area: BLACKLIST, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-BLACKLIST-002, area: BLACKLIST, level: MUST, gate: PX-GATE-02, evidence: [UIT, REVIEW]}
+  - {id: PX-BLACKLIST-003, area: BLACKLIST, level: MUST, gate: null, evidence: [LINT]}
+  - {id: PX-BLACKLIST-004, area: BLACKLIST, level: MUST, gate: null, evidence: [TRACE]}
+  - {id: PX-BLACKLIST-005, area: BLACKLIST, level: MUST, gate: null, evidence: [REVIEW]}
+  - {id: PX-BLACKLIST-006, area: BLACKLIST, level: MUST, gate: null, evidence: [REVIEW]}
+
+rule_counts: {total: 236, MUST: 189, SHOULD: 47, MAY: 0, gates: 13}

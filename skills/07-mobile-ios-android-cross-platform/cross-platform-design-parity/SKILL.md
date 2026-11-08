@@ -122,6 +122,7 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
 - `examples/parity-spec-one-screen.md` — the SAME screen (a transactions list + detail in a fintech app) specced for iOS and Android side by side: what stays, what diverges, and why, down to the control level.
 
 ## References
+- [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Chwezi apps on Compose Multiplatform and existing web stacks: interaction parity, not pixel identity).
 - Mobile job map (from McNeil (2013) *The Web Designer's Idea Book, Volume 3*, HOW Books): list what phone visitors come to do and let that, not the desktop sitemap, set mobile order; prefer responsive with task-reordered content over separate mobile sites.
 
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter; §0 (looking human-made/authored) is the basis for "idiomatic port, not clone."

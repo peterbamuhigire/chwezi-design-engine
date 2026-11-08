@@ -192,6 +192,7 @@ risk. Never convert an unrun check into N/A merely to obtain a passing verdict.
   signed NO-SHIP → (after fixes) SHIP verdict. Not lorem — concrete, with real thresholds.
 
 ## References
+- [chwezi-product-excellence-standard](../chwezi-product-excellence-standard/SKILL.md) (for a Chwezi app or system release, use that skill's scorecard and 13 hard gates; this skill stays the generic pre-launch review).
 - `fine-typesetting-and-typesetting-qa` (typesetting QA pass) and `art-direction-routes/references/style-currency-vocabulary.md` (dated treatments).
 
 - `skills/09-design-systems-tokens-and-theming/component-library-architecture/references/design-system-operating-model.md` §7 — requirements trace, component state coverage, usability retest, and evidence-release synthesis.

@@ -10,7 +10,7 @@ survives 200% text. Cards, colours and type come from
 
 **Head card ("What this customer owes").** Two-column label-over-value grid: Owes, Advances held,
 Closing balance, all in full. One primary money action ("Take deposit") as a full-width button.
-Below a divider, each open invoice as its number and "Open 144,000.00".
+Below a divider, each open invoice as its number and "Open 144,000" (UGX, no decimals).
 
 **Rows.** One row per statement line, 10 to a page.
 

@@ -10,13 +10,14 @@ This folder holds the engine's working documents and its dated records. The repo
 | [`approval-enforcement.md`](approval-enforcement.md) and [`approval-adapter.json`](approval-adapter.json) | The design approval checkpoint and its machine-readable adapter |
 | [`control-plane-adoption.md`](control-plane-adoption.md) | How this engine meets the shared control-plane contract |
 | [`ai-prompting/domain-prompt-compilation-contract.md`](ai-prompting/domain-prompt-compilation-contract.md) | The contract for handing a visual prompt to another tool or agent |
-| [`skill-catalogue.md`](skill-catalogue.md) | All 102 active skills, one row each, with a link to each `SKILL.md` (moved from the repository `README.md`) |
+| [`skill-catalogue.md`](skill-catalogue.md) | All 105 active skills, one row each, with a link to each `SKILL.md` (moved from the repository `README.md`) |
 | [`references.md`](references.md) | The books, repositories, standards and websites the skills and doctrine cite (moved from the repository `README.md`) |
 
 ## Improvement records
 
 | Record | Date | Contents |
 |---|---|---|
+| [`kaizen/2026-11-product-excellence-standard/`](kaizen/2026-11-product-excellence-standard/) | 2026-11-08 | One file: adoption of the binding Chwezi Product Excellence Standard into the engine. What was adopted, owner decisions, open confirmations, what is not assessed and the validation results |
 | [`kaizen/2026-11-app-house-style/`](kaizen/2026-11-app-house-style/) | 2026-11-07 | One file: the audit that turned the Maduuka app's interface work into the Chwezi business-app house style. Kept, rejected and probation patterns, where each part was written in the five engines, and what is not assessed |
 | [`kaizen/dg6-banned-font-gate-context-2026-11-06.md`](kaizen/dg6-banned-font-gate-context-2026-11-06.md) | 2026-11-06 | One file: the banned-font gate counts a quoted family name only where it is used as a font. Baseline, change, acceptance, timings, limits and what is not assessed |
 | [`kaizen/2026-10-readme-kaizen/`](kaizen/2026-10-readme-kaizen/) | 2026-10-31 | One file, the record of the scoped kaizen that restructured the repository `README.md`: baseline metrics, what changed, checks and conventions. It published no score |
