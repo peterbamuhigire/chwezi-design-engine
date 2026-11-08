@@ -286,6 +286,8 @@ Design its image-off reading order first, then select only the compatibility pat
 content. This is a decision example, not reusable markup or a layout template.
 
 ## References
+
+- [chwezi-document-publishing-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/SKILL.md) (binding for Chwezi published reports and documents: newsletter at one or two columns for screen reading, article navigation in the PDF).
 - [`doctrine/design-doctrine.md`](../../../doctrine/design-doctrine.md) — §0 Mission (the authored
   choice must survive degradation), §2 sourcing-authority asymmetry and the banned-font
   non-negotiable.

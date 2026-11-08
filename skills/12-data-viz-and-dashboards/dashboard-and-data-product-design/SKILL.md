@@ -152,6 +152,8 @@ Without trusted metrics, deliver a wireframe and metric dependency register, not
 ## References
 
 
+
+- [chwezi-document-publishing-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/SKILL.md) (binding for Chwezi published reports and documents: browser report reader, reading mode, export preview, two layers that agree).
 - [chwezi-reporting-and-dashboards-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/SKILL.md) (binding for Chwezi reporting surfaces: report contract, metric contracts, reporting states, reconciliation, eight RPT gates).
 - [chwezi-product-excellence-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/SKILL.md) (binding for Chwezi app dashboards: provenance and as-of time on decision figures, KpiCard contract, no decorative charts on transaction screens).
 - `12-data-viz-and-dashboards/money-figures-and-statement-display` and `09-design-systems-tokens-and-theming/chwezi-business-app-house-style` — KPI tile, hero card and compact-amount rules for Chwezi business apps.

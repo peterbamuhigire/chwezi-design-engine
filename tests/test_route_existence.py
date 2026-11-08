@@ -18,8 +18,8 @@ def test_new_skills_do_not_reduce_the_frozen_zero_debt_inventory():
     manifest = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8"))
     manifest_skills = {(ROOT / item / "SKILL.md").resolve() for item in manifest["skills"]}
     discovered_skills = {path.resolve() for path in skills.values()}
-    assert baseline["skills"] == baseline["fully_compliant"] == 106
-    assert len(skills) == len(manifest["skills"]) == 106
+    assert baseline["skills"] == baseline["fully_compliant"] == 107
+    assert len(skills) == len(manifest["skills"]) == 107
     assert manifest_skills == discovered_skills
 
 

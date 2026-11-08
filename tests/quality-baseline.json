@@ -1,9 +1,9 @@
 {
   "recorded": "2026-11-08",
-  "skills": 106,
-  "fully_compliant": 106,
+  "skills": 107,
+  "fully_compliant": 107,
   "failure_counts": {},
-  "note": "Zero-debt conformance baseline, raised on 2026-11-08 when the Chwezi Reporting and Dashboards Standard added chwezi-reporting-and-dashboards-standard (106), after the Product Excellence Standard added chwezi-product-excellence-standard (105), after the 2026-11-07 house-style pair (104). Any structural or contract finding is a regression and must fail CI.",
+  "note": "Zero-debt conformance baseline, raised on 2026-11-08 when the Chwezi Document Reporting and Publishing Standard added chwezi-document-publishing-standard (107), after the Chwezi Reporting and Dashboards Standard added chwezi-reporting-and-dashboards-standard (106), after the Product Excellence Standard added chwezi-product-excellence-standard (105), after the 2026-11-07 house-style pair (104). Any structural or contract finding is a regression and must fail CI.",
   "slop_rules": 51,
   "slop_fixtures": 102,
   "slop_note": "chwezi-slop registry floors (M10-09-T05, 2026-09-29): regression-only minima. A drop in rules or flag/pass fixtures fails CI; growth needs no baseline edit."

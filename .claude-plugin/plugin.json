@@ -7,6 +7,7 @@
   },
   "skills": [
     "./skills/00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance/",
+    "./skills/00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/",
     "./skills/00-cross-cutting-ops-qa-a11y/chwezi-product-excellence-standard/",
     "./skills/00-cross-cutting-ops-qa-a11y/chwezi-reporting-and-dashboards-standard/",
     "./skills/00-cross-cutting-ops-qa-a11y/click-path-audit/",

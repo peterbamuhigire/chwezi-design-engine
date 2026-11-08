@@ -329,3 +329,10 @@
       owner: chart-selection-and-encoding
 - prompt: Design the A4 PDF and CSV export for the Chwezi night audit report with page x of y, repeated table headings and formula-injection safe cells.
   expected: chwezi-reporting-and-dashboards-standard
+- prompt: Produce the monthly finance pack as a browser reading mode, an A4 PDF and an editable DOCX that agree page for page, with document identity and every page inspected.
+  expected: chwezi-document-publishing-standard
+  negatives:
+    - prompt: Set Word heading styles, a contents list and page-number fields for a consultancy proposal that is not a Chwezi product report.
+      owner: docx-report-and-document-formatting
+- prompt: Write the company profile and policy handbook for Chwezi with document control, blueprint section order and no testimonials or client logos without permission.
+  expected: chwezi-document-publishing-standard

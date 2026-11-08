@@ -3,6 +3,14 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-08] - Chwezi Document Reporting and Publishing Standard (companion, binding for published reports and documents)
+
+- New doctrine `doctrine/document-publishing-standard.md` (1.0.0, from the full handbook edition, adopted 8 November 2026 on the owner's instruction): scope across Maduuka, Kraal Code ERP, Medic8, Aqar and SpannaMax; precedence beside the Product Excellence and Reporting standards (stricter rule wins; measured palette contrast; "Not available" for missing values); eight design invariants; eight hard gates `PUB-GATE-01` to `PUB-GATE-08` covering the handbook's stop conditions; roles; implementation sequence; copies in other engines.
+- New skill `skills/00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/`: 87 PUB rules (IDENT, ARCH, TOKEN, PAGE, CHART, FIN, READER, RENDER, DOCX, A11Y, PERF, SEC, CONTENT, AUDIT, AGENT, MATH, QA); archetypes, twelve blueprints, component catalogue, twelve page sheets, recipes; tokens and renderer contracts; agent contract, financial tests, edge-case library, acceptance matrix, QA manifest, adoption checklist; mathematics and algorithms (modular scale, measure, baseline grid, line and page breaking by cost minimisation, largest remainder, exact arithmetic, nice ticks, banking to 45 degrees, computed colour, image resolution, content hashing, visual regression); currentness register PB1-PB8; worked review of a monthly finance pack.
+- Kaizen against the full edition: the first draft (from the concise edition) was rebuilt; ten findings in `docs/kaizen/2026-11-document-publishing-standard/README.md`.
+- Routing: descriptions of the reporting, publishing and Product Excellence skills tuned (PX names "Android phone, POS till"); 102 fixtures, precision@1 95% (from 93%), precision@3 100%, negatives 53/53.
+- Wiring: AGENTS hard rule, doctrine map row, quality-gate section, README section and task row, skill catalogue, plugin manifest, counts 106 to 107, quality baseline and test pins, five neighbour references, two fixtures with one owned negative.
+
 ## [2026-11-08] - Chwezi Reporting and Dashboards Standard (companion, binding for reporting surfaces)
 
 - New doctrine `doctrine/reporting-and-dashboards-standard.md` (version 1.0.0, adopted 8 November 2026 on the instruction of Lead Developer Peter Bamuhigire): four output contracts, five reporting questions, precedence beside the Product Excellence Standard, eight hard gates `RPT-GATE-01` to `RPT-GATE-08` mapped to the PX gates they also trip, owner rules (no cross-unit quantity sums, ISO 4217 minor-unit decimals, readable dates and labelled amounts, contiguous document numbers), change control.

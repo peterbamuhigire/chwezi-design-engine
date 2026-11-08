@@ -122,6 +122,8 @@ Without PDF rendering or preflight, deliver source and a conditional proof only.
   note dimensions.
 
 ## References
+
+- [chwezi-document-publishing-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/SKILL.md) (binding for Chwezi published reports and documents: document identity, blueprint order for proposals and profiles, no unpermitted logos or testimonials, every page inspected).
 - `references/proposal-section-architecture.md` — section order, the page grid, heading scale, TOC.
 - `references/cover-and-divider-systems.md` — cover patterns + the section-divider system.
 - `references/print-ready-pdf-checklist.md` — the embed + preflight gate before you ship.

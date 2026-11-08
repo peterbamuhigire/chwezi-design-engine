@@ -1,6 +1,6 @@
 ---
 name: chwezi-reporting-and-dashboards-standard
-description: "Use when a Chwezi dashboard, KPI screen, report, statement, closeout, scheduled report, A4 PDF or CSV/XLSX export is designed, built, reviewed or released: metric contracts, reconciliation, period rules, print, export and narrative gates. Single charts go to chart-selection-and-encoding; general screens to chwezi-product-excellence-standard."
+description: "Use when a Chwezi report, owner dashboard, financial statement, closeout, scheduled report, A4 PDF or CSV/XLSX export is specified or reviewed: metric contracts, reconciled totals, period comparisons, print and export gates. Single charts: chart-selection-and-encoding; app UI: the Product Excellence skill."
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -157,6 +157,11 @@ other engine is required.
   generation record, export jobs, test fixtures, performance, observability, tenant isolation.
 - [currentness-register.md](references/currentness-register.md): PDF/UA, PDF/A and spreadsheet
   injection facts.
+- Mathematical methods shared with the publishing standard (exact arithmetic, largest-remainder
+  rounding of shares, nice axis ticks, banking to 45 degrees, computed contrast):
+  [mathematics-and-algorithms.md](../chwezi-document-publishing-standard/references/mathematics-and-algorithms.md).
+- Publishing companion (identity, one specification for HTML, PDF and DOCX, output parity, every
+  page inspected): [chwezi-document-publishing-standard](../chwezi-document-publishing-standard/SKILL.md).
 - Companion standard: [chwezi-product-excellence-standard](../chwezi-product-excellence-standard/SKILL.md),
   especially its data-trust and visualisation reference.
 

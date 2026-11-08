@@ -62,6 +62,20 @@ report, statement, closeout, scheduled report, A4 print or PDF, or CSV or XLSX e
 - [ ] Screen, PDF and spreadsheet totals were compared for the same scope with the five fixture
       cases (positive, zero, negative, reversed, missing data).
 
+## Published reports and formal documents (Document Reporting and Publishing Standard)
+
+Applies whenever a report or formal document is released as a browser reading mode, A4 PDF, DOCX
+or print, including proposals, profiles, annual reports, handbooks, policies, memos and letters.
+
+- [ ] `doctrine/document-publishing-standard.md` was applied through the
+      `skills/00-cross-cutting-ops-qa-a11y/chwezi-document-publishing-standard/` skill.
+- [ ] The document declares its family and follows the blueprint; the identity block and running
+      header and footer are present.
+- [ ] Every output was rendered from one specification; critical totals agree across outputs.
+- [ ] Every page of every PDF and DOCX was inspected at 100% and in greyscale; the browser report
+      was inspected at the acceptance viewports. The eight gates (PUB-GATE-01 to PUB-GATE-08) are
+      closed on `MEASURED` evidence in a QA manifest; `NOT_ASSESSED` counts as open.
+
 ## Routing and scope
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.

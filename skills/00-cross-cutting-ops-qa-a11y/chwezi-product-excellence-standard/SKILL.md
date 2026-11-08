@@ -1,6 +1,6 @@
 ---
 name: chwezi-product-excellence-standard
-description: "Use when any Chwezi app or system screen (Android, iOS, tablet, desktop, web) is designed, built, reviewed or released: apply the binding Product Excellence rules, state matrix, 13 hard gates and scorecard verdict. Visual tokens route to chwezi-business-app-house-style; money layout to money-figures-and-statement-display."
+description: "Use when any Chwezi app or system screen (Android phone, POS till, iOS, tablet, desktop, web) is designed, built, reviewed or released: apply the binding Product Excellence rules, state matrix, 13 hard gates and scorecard verdict. Visual tokens route to chwezi-business-app-house-style; money layout to money-figures-and-statement-display."
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
