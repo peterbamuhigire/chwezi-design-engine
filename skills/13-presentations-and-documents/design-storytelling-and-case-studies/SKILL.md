@@ -132,6 +132,8 @@ Without outcome evidence, produce a process case study labelled accordingly. Sto
   at each beat (incl. the user-as-protagonist framing and the authored-decision turning point).
 
 ## References
+
+- [chwezi-presentation-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/SKILL.md) (binding for Chwezi decks: deck-type sequences, case studies with baseline, intervention, outcome and limits, no correlation as impact).
 - `references/narrative-frameworks.md` — the named structures (Freytag, Three-Act, Pixar,
   Kishōtenketsu, Contrast beginning-to-end, Peak-End, Rule of Three) and a decision table for
   choosing among them.

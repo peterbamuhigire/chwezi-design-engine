@@ -336,3 +336,10 @@
       owner: docx-report-and-document-formatting
 - prompt: Write the company profile and policy handbook for Chwezi with document control, blueprint section order and no testimonials or client logos without permission.
   expected: chwezi-document-publishing-standard
+- prompt: Release the Chwezi investor deck as PPTX and landscape PDF, with a claim ledger, assertion headlines and text legible from the back of a 10 m boardroom.
+  expected: chwezi-presentation-standard
+  negatives:
+    - prompt: Give this non-Chwezi conference talk a slide economy, a visual system and builds for presenter notes.
+      owner: deck-system
+- prompt: Check the Chwezi board slides open as editable PowerPoint, match the PDF page for page and pass the DECK gates and slide scorecard.
+  expected: chwezi-presentation-standard

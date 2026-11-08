@@ -92,6 +92,8 @@ Without rendering, deliver an outline and slide specification marked unverified.
   These ARE the worked examples for this skill.
 
 ## References
+
+- [chwezi-presentation-standard](../../00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/SKILL.md) (binding for Chwezi decks: claim ledger, assertion headlines, venue-computed legibility, editable PPTX, PDF parity, eight DECK gates).
 - `references/presentation-frameworks.md`, `references/pitch-psychology.md`, `references/storytelling.md`.
 - `references/presentation-structure-room-and-delivery.md` — strategy sheet, storyboard, slide
   text rules, room legibility, seating, handouts, rehearsal scoring and claims not to import

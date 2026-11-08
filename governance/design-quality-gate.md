@@ -76,6 +76,18 @@ or print, including proposals, profiles, annual reports, handbooks, policies, me
       was inspected at the acceptance viewports. The eight gates (PUB-GATE-01 to PUB-GATE-08) are
       closed on `MEASURED` evidence in a QA manifest; `NOT_ASSESSED` counts as open.
 
+## Chwezi slide decks (Presentation and Slide Deck Design Standard)
+
+Applies whenever a Chwezi deck is released as PPTX or landscape PDF.
+
+- [ ] `doctrine/presentation-standard.md` was applied through the
+      `skills/00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/` skill.
+- [ ] The headlines alone make the argument; every material claim is in the claim ledger.
+- [ ] The venue minimum text size was computed (about 4.5 x farthest distance / screen height pt) and
+      met; every slide was rendered and the PDF compared page by page.
+- [ ] The eight gates (DECK-GATE-01 to DECK-GATE-08) are closed on `MEASURED` evidence; the six
+      dimensions score at least 4 of 5 and the slide scorecard averages at least 90.
+
 ## Routing and scope
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.

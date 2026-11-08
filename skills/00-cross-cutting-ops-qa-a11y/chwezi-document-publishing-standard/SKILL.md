@@ -141,8 +141,9 @@ other engine is required.
   content hashing and visual regression.
 - [currentness-register.md](references/currentness-register.md): CSS paged media, PDF/UA, WCAG, ISO
   32000 and further-reading status.
-- Companion standards: [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md)
-  and [chwezi-product-excellence-standard](../chwezi-product-excellence-standard/SKILL.md).
+- Companion standards: [chwezi-reporting-and-dashboards-standard](../chwezi-reporting-and-dashboards-standard/SKILL.md),
+  [chwezi-presentation-standard](../chwezi-presentation-standard/SKILL.md) for slide decks and
+  [chwezi-product-excellence-standard](../chwezi-product-excellence-standard/SKILL.md).
 
 ## Evidence and currentness
 

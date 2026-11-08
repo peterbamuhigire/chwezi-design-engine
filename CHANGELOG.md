@@ -3,6 +3,13 @@
 All notable changes to this engine are recorded here. Earlier changes are recorded in
 `docs/continuous-improvement/`, `docs/audits/` and the Git history.
 
+## [2026-11-08] - Chwezi Presentation and Slide Deck Design Standard (companion, binding for Chwezi decks)
+
+- New doctrine `doctrine/presentation-standard.md` (1.0.0, full handbook edition, adopted 8 November 2026 on the owner's instruction): scope, precedence beside the Product Excellence, Reporting and Publishing standards, eight design principles, eight hard gates `DECK-GATE-01` to `DECK-GATE-08`, release decision (six dimensions at least 4 of 5; slide scorecard average at least 90), editorial, design and technical gates, rollout, copies in other engines.
+- New skill `skills/00-cross-cutting-ops-qa-a11y/chwezi-presentation-standard/`: 58 DECK rules; narrative and 29 blueprints by communication job; mathematics and legibility (venue law: minimum size about 4.5 x farthest distance / screen height pt; display image size; modular scale; grid arithmetic; image resolution; measured white space; runtime budget; contrast; nice ticks; largest remainder); production contracts for editable PPTX and landscape PDF; agent workflow, claim ledger, scorecards, test matrix, handoff manifest; currentness register PR1-PR7; worked review of a board deck.
+- Wiring: AGENTS hard rule, doctrine map row, quality-gate section, README section and task row, skill catalogue, plugin manifest, counts 107 to 108, quality baseline and test pins, references in `deck-system`, `design-storytelling-and-case-studies` and the publishing skill, two fixtures with one owned negative. Routing 104 fixtures, precision@1 95%, precision@3 100%, negatives 54/54.
+- Record: `docs/kaizen/2026-11-presentation-standard/README.md`.
+
 ## [2026-11-08] - Chwezi Document Reporting and Publishing Standard (companion, binding for published reports and documents)
 
 - New doctrine `doctrine/document-publishing-standard.md` (1.0.0, from the full handbook edition, adopted 8 November 2026 on the owner's instruction): scope across Maduuka, Kraal Code ERP, Medic8, Aqar and SpannaMax; precedence beside the Product Excellence and Reporting standards (stricter rule wins; measured palette contrast; "Not available" for missing values); eight design invariants; eight hard gates `PUB-GATE-01` to `PUB-GATE-08` covering the handbook's stop conditions; roles; implementation sequence; copies in other engines.
