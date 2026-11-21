@@ -2,11 +2,6 @@
   "$comment": "Exceptions to scripts/validate_portability.py. Every entry needs a reason; max_hits and max_links are ratchets; an entry that matches no file with an issue is stale and fails.",
   "entries": [
     {
-      "path": "doctrine/design-doctrine.md",
-      "max_hits": 2,
-      "reason": "Canonical doctrine, section 5 (line 161) names a Windows web-root checkout path. Doctrine changes need the owner's decision; the question is escalated in the pass-2 next-cycle record."
-    },
-    {
       "path": "hooks/test-destructive-bash-gate.js",
       "max_hits": 12,
       "reason": "Intentional test inputs: destructive-command samples that name Windows web-root paths."

@@ -40,6 +40,8 @@ Own the visual translation of a complex idea into a memorable, truthful, self-co
 
 ## Workflow
 
+For drawn artwork, select a [cartoon or illustration treatment](../../11-imagery-illustration-and-art-direction/illustration-style-and-systems/references/drawing-recipes.md) and follow its [production and proof workflow](../../11-imagery-illustration-and-art-direction/illustration-style-and-systems/references/drawing-production.md). Keep captions, values and data marks editable in layout.
+
 1. **Frame the job.** Write the audience, decision, consequence of misunderstanding, medium, and one-sentence visual thesis. Load `doctrine/design-doctrine.md` and the portfolio craft loop.
 2. **Reduce the editorial question.** Convert the brief into one primary question, one conclusion, and no more than three supporting beats. Put surplus facts in an appendix or companion text.
 3. **Audit the evidence.** Check source, definitions, missingness, scale, uncertainty, and whether each number supports the intended conclusion. Route current claims through Digital Research; books supply durable concepts only.

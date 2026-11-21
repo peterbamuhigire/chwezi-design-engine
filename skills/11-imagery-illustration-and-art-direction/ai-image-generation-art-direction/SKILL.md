@@ -63,6 +63,8 @@ authority for the look; we art-direct *away* from them, exactly as we do with ba
   and whether it emits content-credentials (C2PA). See `references/ai-image-direction-and-gate.md` §4.
 
 ## Workflow
+
+For drawn artwork, select a [cartoon or illustration treatment](../illustration-style-and-systems/references/drawing-recipes.md) and follow its [production and proof workflow](../illustration-style-and-systems/references/drawing-production.md). Keep captions, values and data marks editable in layout.
 1. **Decide if AI imagery is even allowed here first** (the gate before the gate). If the surface
    makes a **truth claim** — real customers, "our team," a clinical/financial outcome, a named place —
    AI-generated people/scenes are **forbidden** (the "shovelware assets" backlash trap,

@@ -51,6 +51,8 @@ standard-library checker; no other engine is required.
 
 ## Workflow
 
+For drawn artwork, select a [cartoon or illustration treatment](../../11-imagery-illustration-and-art-direction/illustration-style-and-systems/references/drawing-recipes.md) and follow its [production and proof workflow](../../11-imagery-illustration-and-art-direction/illustration-style-and-systems/references/drawing-production.md). Keep captions, values and data marks editable in layout.
+
 1. **Brief** the audience, takeaway, renditions and approvers
    ([agent-workflow-and-qa.md](references/agent-workflow-and-qa.md)).
 2. **Verify** every fact into the provenance register; flag illustrative numbers.

@@ -1,6 +1,6 @@
 ---
 name: illustration-style-and-systems
-description: Use when defining, building, or auditing an illustration language, spot-art set, scene system, character rules, or ownable visual motif. Use photography-art-direction for photographs and iconography-system-design for reductive grid-bound glyphs.
+description: Use when defining, building, or auditing an illustration language, cartoon, drawn poster, infographic vignette, spot-art set, scene system, character rules, or ownable visual motif. Use photography-art-direction for photographs and iconography-system-design for reductive grid-bound glyphs.
 metadata:
   portable: true
   category: 11-imagery-illustration-and-art-direction
@@ -24,6 +24,7 @@ system** with stated attributes and an ownable motif, exactly as the doctrine Mi
 viewer could recognise as *yours* with the logo cropped off.
 
 ## Use When
+- Drawing a woodcut poster, cartoon training panel or infographic vignette where the action, prop and reading distance determine the medium.
 - Defining an **illustration style system** for a brand/product: the style attributes (line,
   shape, colour, perspective/space) that every drawing must obey so the set reads as one author.
 - Building a **spot-art system** (small inline illustrations: empty states, feature tiles,
@@ -74,6 +75,8 @@ viewer could recognise as *yours* with the logo cropped off.
   acceptable on this surface at all — truth/people surfaces usually are not).
 
 ## Workflow
+
+For a drawing, cartoon, illustrated poster or infographic, select a treatment from the fifteen [drawing recipes](references/drawing-recipes.md) and use [drawing production](references/drawing-production.md) to generate, repair and proof it. Apply the [visual slop taxonomy](../../../doctrine/references/ai-slop-taxonomy.md) on the intended surface. Check whether the point of contact, visual motif and setting still identify this client when the logo is hidden.
 1. **State the style choice before drawing a single frame** (the anti-slop non-negotiable #1,
    `doctrine/design-doctrine.md` §2). One paragraph naming the five **style attributes**
    concretely — not adjectives:

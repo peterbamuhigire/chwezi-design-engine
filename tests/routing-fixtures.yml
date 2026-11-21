@@ -1,3 +1,5 @@
+- prompt: Draw a woodcut poster and an original cartoon for a library training handout.
+  expected: illustration-style-and-systems
 - prompt: Choose and pair typefaces for a bankable PDF proposal and check embedding rights.
   expected: font-selection-and-pairing
   negatives:
